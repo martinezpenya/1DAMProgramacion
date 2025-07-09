@@ -1,0 +1,15 @@
+weasyprint == 62.3
+pydyf == 0.10.0
+mkdocs
+mkdocs-carbon
+mkdocs-get-deps
+mkdocs-github
+mkdocs-material
+mkdocs-material-extensions
+mkdocs-minify-plugin
+mkdocs-redirects
+mkdocs-with-pdf
+mkdocs-git-revision-date-localized-plugin
+mkdocs-extra-sass-plugin
+livereload
+qrcode
