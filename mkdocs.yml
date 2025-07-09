@@ -39,20 +39,20 @@ theme:
 #  features:
 #    - navigation.footer
   palette:
-    # Dark Mode
-    - scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Dark mode
-      primary: deep orange
-      accent: orange
     # Light Mode
     - scheme: default
       toggle:
         icon: material/weather-night
         name: Light mode
-      primary: orange
-      accent: deep orange
+      primary: indigo
+      accent: light blue  
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: indigo
+      accent: light blue
   font:
     text: Roboto
     code: Roboto Mono
