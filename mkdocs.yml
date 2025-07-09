@@ -197,6 +197,6 @@ plugins:
         output_path: docs/Libro.pdf
         #enabled_if_env: ENABLE_PDF_EXPORT
         #
-        debug_html: true
+        #debug_html: true
         show_anchors: true
         verbose: true

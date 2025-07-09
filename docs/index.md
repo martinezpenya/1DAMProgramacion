@@ -1,6 +1,6 @@
 # Introducción
 
-![](assets/aws-cast.png)
+![](assets/portada.png)
 
 ## Título del curso
 
