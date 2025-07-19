@@ -1,21 +1,35 @@
 site_name: '1º Programacion (CFGS Desarrollo de Aplicaciones Multiplataforma)'
 site_url: https://martinezpenya.es/1DAMProgramacion/
-#repo_url: https://github.com/martinezpenya/AWSAcademyPrimerosPasos
-#edit_uri: edit/main/docs
+repo_url: https://github.com/martinezpenya/1DAMProgramacion
+edit_uri: edit/main/docs
 
-#nav:
-#  - 'Introduccion': index.md
-#  - '1 ¿Qué es AWSAcademy?': 01_Que_es_AWSAcademy.md
-#  - '2 Primeros pasos en AWSAcademy': 02_Primeros_pasos_en_AWSAcademy.md
-#  - '3 ¿Cómo acceder a AWSAcademy?': 03_Como_acceder_a_AWSAcademy.md
-#  - '4 ¿Cómo crear y personalizar un curso?': 04_Como_crear_un_curso.md
-#  - '5 Crea tu primer Learner Lab': 05_Crea_tu_primer_Learner_Lab.md
-#  - '6 Requisitos de conexión': 06_Requisitos_de_conexion.md
-#  - '7 Acceder al Learner Lab del alumnado': 07_Acceder_al_Learner_Lab_del_alumnado.md
-#  - '8 Creacción de recursos': 08_Creacion_de_recursos.md
-#  - '9 Relación Modulos<->AWS': 09_RelacionModulosAWS.md
-#  - 'Fuentes de información': 99_Fuentes_Informacion.md
-#  - 'Sobre mi...': Sobre_mi.md
+nav:
+  - UD00:
+    - Información importante: index.md
+  - UD01:
+    - Elementos de un programa informático: UD01/UD01_ES.md
+    - Ejercicios: UD01/UD01_ejercicios_ES.md
+    - Talleres:
+      - T01 Java: UD01/UD01_T01_NoMachine_ES.md
+      - T02 VsCode en GitHub: UD01/UD01_T02_JDK&IDE_ES.md
+      - T03 GitHub Online: UD01/UD01_T03_GitHubVsCode_ES.md
+      - T04 Markdown: UD01/UD01_T04_Markdown.md
+  - UD02:
+    - Utilización de Objetos: UD02/UD02_ES.md
+    - Ejercicios: UD02/UD02_ejercicios_ES.md
+  - UD03:
+    - Estructuras de control y Excepciones: UD03/UD03_ES.md
+    - Ejercicios: UD03/UD03_ejercicios_ES.md
+  - UD04:
+    - Estructuras de datos Arrays y matrices. Recursividad: UD04/UD04_ES.md
+    - Anexo Cheatsheet String: UD04/UD04_anexo_ES.md
+    - Ejercicios: UD04/UD04_ejercicios_ES.md
+  - UD05:
+    - Desarrollo de clases: UD05/UD05_ES.md
+    - Anexo Wrappers y Fechas: UD05/UD05_anexo_ES.md
+    - Ejercicios: UD05/UD05_ejercicios_ES.md
+  - Sobre mi: sobremi.md
+  - Fuentes de información: fuentes.md
 
 theme:
   name: material
@@ -58,29 +72,8 @@ theme:
     code: Roboto Mono
 extra_css:
   - css/extra.css
-#ORIGINAL
-# markdown_extensions:
-#   - attr_list
-#   - pymdownx.emoji:
-#       emoji_index: !!python/name:material.extensions.emoji.twemoji
-#       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-#   - pymdownx.highlight:
-#       anchor_linenums: true
-#       line_spans: __span
-#       pygments_lang_class: true
-#   - pymdownx.inlinehilite
-#   - pymdownx.snippets
-#   - pymdownx.superfences:
-#       custom_fences:
-#         - name: mermaid
-#           class: mermaid
-#           format: !!python/name:pymdownx.superfences.fence_code_format
-#   - pymdownx.tabbed:
-#       alternate_style: true
-#   - admonition
-#   - pymdownx.details
-#WITH-PDF
 markdown_extensions:
+  - sane_lists
   - admonition
   - abbr
   - attr_list
@@ -101,10 +94,6 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
-  #old version
-  #- pymdownx.emoji:
-  #    emoji_index: !!python/name:material.extensions.emoji.twemoji
-  #    emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -131,15 +120,17 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+  - pymdownx.arithmatex
+extra_javascript:
+  - js/mathjax-config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js
 extra:
   search:
     language: es
   social:
     - icon: simple/youtube
       link: https://youtube.com/@martinezpenya
-    #old
-    #- icon: simple/linkedin
-    #new
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/martinezpenya
     - icon: fontawesome/brands/github
@@ -173,9 +164,9 @@ plugins:
         cover_subtitle: IES Eduardo Primo Marques (Carlet)
         #custom_template_path: templates
         #
-        #toc_title: TOC TITLE TEXT
+        toc_title: Indice de contenidos
         #heading_shift: false
-        toc_level: 2
+        toc_level: 3
         ordered_chapter_level: 2
         #excludes_children:
         #    - 'release-notes/:upgrading'

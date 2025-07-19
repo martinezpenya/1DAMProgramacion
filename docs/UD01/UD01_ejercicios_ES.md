@@ -1,8 +1,10 @@
-﻿## Retos
+﻿# Ejercicios de la UD01
 
-1. Reto 1: Haga un programa que evalúe una expresión que contenga literales de los cuatro tipos de datos (booleano, entero, real y carácter) y la muestre por pantalla.
+## Retos
 
-2. Reto 2: En su entorno de trabajo, cree el programa siguiente. Obsérvese que pasa exactamente. Entonces, intente arreglar el problema.
+1. (Reto1) Haga un programa que evalúe una expresión que contenga literales de los cuatro tipos de datos  (booleano, entero, real y carácter) y la muestre por pantalla.
+
+2. (Reto2) En su entorno de trabajo, cree el programa siguiente. Obsérvese que  pasa exactamente. Entonces, intente arreglar el problema.
 
     ```java
     // Un programa que usa un entero muuuuy grande
@@ -13,11 +15,11 @@
     }
     ```
 
-3. Reto 3: Haga un programa con dos variables que, sin usar ningún literal ninguna parte excepto para inicializar estas variables, vaya estimando e imprimiendo sucesivamente los 5 primeros valores de la tabla de multiplicar del 4. Puede usar operadores aritméticos y de asignación, si desea.
+3. (Reto3) 3. Reto 3: Haga un programa con dos variables que, sin usar ningún literal ninguna parte excepto para  inicializar estas variables, vaya estimando e imprimiendo sucesivamente  los 5 primeros valores de la tabla de multiplicar del 4. Puede usar  operadores aritméticos y de asignación, si desea.
 
-4. Reto 4: Haga dos programas, uno que muestre por pantalla la tabla de multiplicar del 3, y otro, la del 5. Los dos deben ser exactamente iguales, letra por letra, excepto en un único literal dentro de todo el código.
+4. (Reto4) 4. Reto 4: Haga dos programas, uno que muestre por pantalla la tabla de multiplicar del 3, y otro, la del 5. Los dos deben ser exactamente  iguales, letra por letra, excepto en un único literal dentro de todo el  código.
 
-5. Reto 5: Experimente qué pasa si en el siguiente programa inicializa la variable realLargo con un valor con varios decimales. El programa continúa compilando? ¿Qué resultado da? Después inténtelo asignando un valor superior al rango de los enteros (por ejemplo, 3000000000.0).
+5. (Reto5) 5. Reto 5:  Experimente qué pasa si en el siguiente programa inicializa la variable  realLargo con un valor con varios decimales. El programa continúa  compilando? ¿Qué resultado da? Después inténtelo asignando un valor  superior al rango de los enteros (por ejemplo, 3000000000.0).
 
     ```java
     public class ConversionExplicita {
@@ -32,44 +34,44 @@
     }
     ```
 
-6. Reto 6: Haga un programa que muestre en pantalla de forma tabulada la tabla de verdad de una expresión de disyunción entre dos variables booleanas.
+6. (Reto6) 6. Reto 6: Haga un programa que muestre en pantalla de forma tabulada la tabla de verdad de una  expresión de disyunción entre dos variables booleanas.
 
-7. Reto 7: Haga un programa que muestre por pantalla la multiplicación de tres números reales entrados por teclado.
+7. (Reto7) 7. Reto 7: Haga un programa que muestre por pantalla la multiplicación de tres números reales entrados por teclado.
 
 ## Ejercicios
 
  Solo se puede usar en esta actividad ya que no se a explicado en profundidad en este tema y lo pueden confundir con el  `System.console().readLine()`; 
 
-1. Probar la E/S elemental: Escribe el pequeño programa que aparece a continuación.
+1. (EJS1) Probar la E/S elemental: Escribe el pequeño programa que aparece a continuación.
 
-   ```java
-   import java.util.*;
-   public class EntradaSalida {
-       public static void main (String arg[]){
-           Scanner tec = new Scanner(System.in);
-           int a, b;
-           System.out.println("Introduce un número entero");
-           a = tec.nextInt();
-           System.out.println("Introduce otro número entero");
-           b = tec.nextInt();
-           System.out.println("Los números introducidos son " + a + " y " + b);
-       }
-   }
-   ```
+    ```java
+    import java.util.*;
+    public class EntradaSalida {
+        public static void main (String arg[]){
+            Scanner tec = new Scanner(System.in);
+            int a, b;
+            System.out.println("Introduce un número entero");
+            a = tec.nextInt();
+            System.out.println("Introduce otro número entero");
+            b = tec.nextInt();
+            System.out.println("Los números introducidos son " + a + " y " + b);
+        }
+    }
+    ```
 
-   Ejecútalo para ver como se comporta el programa.
+    Ejecútalo para ver como se comporta el programa.
 
-   ¿Qué ocurre si cuando nos pide un número entero le damos un número real? ¿Y si le damos un carácter no numérico?
+    ¿Qué ocurre si cuando nos pide un número entero le damos un número real? ¿Y si le damos un carácter no numérico?
 
-   ¿Qué ocurre si eliminamos la instrucción `import java.util.*`;
+    ¿Qué ocurre si eliminamos la instrucción `import java.util.*`;
 
-2. Averigua mediante pruebas:
+2. (EJS2) 2. Averigua mediante pruebas:
 
    1. ¿Es posible escribir dos instrucciones en la misma línea de un programa?
    2. ¿Se puede "romper" una instrucción entre varias líneas?
    3. Algunos lenguajes de programación dan un valor por defecto a las variables cuando las declaramos sin inicializarlas. Otros no permiten usar el contenido de una variable que no haya sido previamente inicializada. ¿Cuál es comportamiento de Java? 
 
-3. ¿Cuáles de los siguientes identificadores son válidos y cuales no? Pruébalos cuando tengas duda
+3. (EJS3) 3. ¿Cuáles de los siguientes identificadores son válidos y cuales no? Pruébalos cuando tengas duda
     1. `n`
     2. `MiProblema`
     3. `MiJuego`
@@ -115,7 +117,7 @@
     Después de intercambiar	 v1: 9	 y	 v2: 2
     ```
 
-6. Escribir las siguientes expresiones siguiendo la sintaxis de Java.
+6. (ExpresionesMatematicas) 6. Escribir las siguientes expresiones siguiendo la sintaxis de Java.
     1. $\frac{x}{y}+1$
     2. $\frac{x+y}{x-y}$
     3. $[ \frac{b}{c+d}]$
@@ -188,7 +190,7 @@
     El número 35.5289, redondeado a un decimal es 35.5
     ```
 
-16. Cuál es el valor resultante de dada una de las siguientes expresiones
+16. (ExpresionesAritmeticas) 16. Cuál es el valor resultante de dada una de las siguientes expresiones
     1. `5 * 4 – 3 * 6`
     2. `4 * 5 * 2`
     3. `(24 + 2 * 6) / 4`
@@ -200,9 +202,9 @@
     9. `4 / 2 * 3`
     10. `213 /100`
 
-17. La famosa ecuación de Einstein para la conversión de una masa m en energía viene dada por la fórmula E=mc^2^, donde c es la velocidad de la luz que vale 2.997925 · 10^8^ m/s. Escribir un programa que lea el valor de la masa y obtenga la energía correspondiente según la anterior fórmula.
+17. (Einstein) La famosa ecuación de Einstein para la conversión de una masa m en energía viene dada por la fórmula E=mc^2^, donde c es la velocidad de la luz que vale 2.997925 · 10^8^ m/s. Escribir un programa que lea el valor de la masa y obtenga la energía correspondiente según la anterior fórmula.
 
-18. Indica cuales serán los valores de las variables después de ejecutar cada uno de los siguientes fragmentos de código. Resuelve el ejercicio sin escribir los programas correspondientes y probarlos.
+18. (FragmentosCodigo) Indica cuales serán los valores de las variables después de ejecutar cada uno de los siguientes fragmentos de código. Resuelve el ejercicio sin escribir los programas correspondientes y probarlos.
 
     1. ```java
        int a=3, b = 2;
@@ -255,66 +257,67 @@
        b+=a;
        ```
 
-### Expresiones Lógicas
+## Expresiones Lógicas
 
-Sean 4 variables enteras:
+1. Sean 4 variables enteras:
 
-```java
-int m, j, p, v ;
-```
+    ```java
+    int m, j, p, v ;
+    ```
+    
+    que contienen respectivamente la edad de Miguel, Julio, Pablo y Vicente. 
+    
+    Expresar las siguientes afirmaciones utilizando operadores lógicos y relacionales
+    
+    *Ejemplo*: `Miguel es mayor de edad.`
+    
+    *Solución*: `m >= 18`
 
-que contienen respectivamente la edad de Miguel, Julio, Pablo y Vicente. 
-
-Expresar las siguientes afirmaciones utilizando operadores lógicos y relacionales
-
-*Ejemplo*: `Miguel es mayor de edad.`
-
-*Solución*: `m >= 18`
-
-1. Miguel es menor de edad.
-2. Miguel es mayor que Julio
-3. Miguel es el más viejo.
-4. Miguel es el más joven.
-5. Miguel no es el más joven.
-6. Miguel no es el más viejo.
-7. Alguno de ellos es mayor de edad.
-8. Miguel y Julio son los más jóvenes.
-9. Entre todos tienen más de 100 años.
-10. Entre Miguel y Julio suman más edad que Pablo.
-11. Entre Miguel y Julio suman más edad que Pablo y Vicente juntos.
-12. Si los ordenamos por edades de menor a mayor, Julio es el segundo.
-13. Si los ordenamos por edades de menor a mayor, Julio es el segundo y Pablo el tercero.
-14. Al menos uno de ellos es menor de edad.
-15. Al menos dos de ellos son menores de edad.
-16. Todos son menores de edad.
-17. Solo dos de ellos son menores de edad.
-18. Al menos dos de ellos nacieron el mismo año.
-19. Solo dos de ellos nacieron el mismo año.
-20. Al menos uno de ellos es menor que Julio
-21. Solo uno de ellos es menor que Julio
-22. Miguel es mayor de edad y alguno de los otros es menor de edad.
+    1. (Logica1) 1. Miguel es menor de edad.
+    2. (Logica2) 2. Miguel es mayor que Julio
+    3. (Logica3) 3. Miguel es el más viejo.
+    4. (Logica4) 4. Miguel es el más joven.
+    5. (Logica5) 5. Miguel no es el más joven.
+    6. (Logica6) 6. Miguel no es el más viejo.
+    7. (Logica7) 7. Alguno de ellos es mayor de edad.
+    8. (Logica8) 8. Miguel y Julio son los más jóvenes.
+    9. (Logica9) 9. Entre todos tienen más de 100 años.
+    10. (Logica10) 10. Entre Miguel y Julio suman más edad que Pablo.
+    11. (Logica11) 11. Entre Miguel y Julio suman más edad que Pablo y Vicente juntos.
+    12. (Logica12) 12. Si los ordenamos por edades de menor a mayor, Julio es el segundo.
+    13. (Logica13) 13. Si los ordenamos por edades de menor a mayor, Julio es el segundo y Pablo el tercero.
+    14. (Logica14) 14. Al menos uno de ellos es menor de edad.
+    15. (Logica15) 15. Al menos dos de ellos son menores de edad.
+    16. (Logica16) 16. Todos son menores de edad.
+    17. (Logica17) 17. Solo dos de ellos son menores de edad.
+    18. (Logica18) 18. Al menos dos de ellos nacieron el mismo año.
+    19. (Logica19) 19. Solo dos de ellos nacieron el mismo año.
+    20. (Logica20) 20. Al menos uno de ellos es menor que Julio
+    21. (Logica21) 21. Solo uno de ellos es menor que Julio
+    22. (Logica22) 22. Miguel es mayor de edad y alguno de los otros es menor de edad.
 
 ## Actividades
 
-1. Realiza un conversor de euros a pesetas. La cantidad de euros que se quiere convertir debe ser introducida por teclado.
+1. (Actividad1) 1. Realiza un conversor de euros a pesetas. La cantidad de euros que se quiere convertir debe ser  introducida por teclado.
 
-2. Realiza un conversor de pesetas a euros. La cantidad de pesetas que se quiere convertir debe ser introducida por teclado.
+2. (Actividad2) 2. Realiza un conversor de pesetas a euros. La cantidad de pesetas que  se quiere convertir debe ser introducida por teclado.
 
-3. Escribe un programa que calcule el área de un rectángulo. (`area = base * altura`)
+3. (Actividad3) 3. Escribe un programa que calcule el área de un rectángulo. (`area = base * altura`)
 
-4. Escribe un programa que calcule el área de un triángulo. (`area = (base * altura) / 2`)
+4. (Actividad4) 4. Escribe un programa que calcule el área de un triángulo. (`area = (base * altura) / 2`)
 
-5. Escribe un programa que calcule el salario semanal de un empleado en base a las horas trabajadas, a razón de 12 euros la hora.
+5. (Actividad5) 5. Escribe un programa que calcule el salario semanal de un empleado en base a las horas trabajadas, a razón de 12 euros la hora.
 
-6. Realiza un conversor de MiB a KiB. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
+6. (Actividad6) 6. Realiza un conversor de MiB a KiB. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
 
-7. Realiza un conversor de Kib a Mib. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
+7. (Actividad7) 7. Realiza un conversor de Kib a Mib. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
 
-8. Realiza un programa en Java que genere letras de forma aleatoria.
+8. (Actividad8) 8. Realiza un programa en Java que genere letras de forma aleatoria.
 
-9. Realiza un programa en Java que genere el número premiado del Cupón de la ONCE.
+9. (Actividad9) 9. Realiza un programa en Java que genere el número premiado del Cupón de la ONCE.
 
-10. Modificar el siguiente programa para que compile y funcione:
+10. (Actividad10) 10. Modificar el siguiente programa para que compile y funcione:
+
     ```java
     public class Activ10 {
         public static void main(String[] args) {
@@ -326,7 +329,7 @@ Expresar las siguientes afirmaciones utilizando operadores lógicos y relacional
     }
     ```
 
-11. Modificar el siguiente programa para que compile y funcione:
+11. (Actividad11) Modificar el siguiente programa para que compile y funcione:
 
     ```java
     public class Activ11 {
@@ -337,8 +340,8 @@ Expresar las siguientes afirmaciones utilizando operadores lógicos y relacional
     	}
     }
     ```
-    
-12. Indicar que valor devolverá la ejecución del siguiente programa:
+
+12. (Actividad12) Indicar que valor devolverá la ejecución del siguiente programa:
 
     ```java
     public class Activ12 {
@@ -350,7 +353,7 @@ Expresar las siguientes afirmaciones utilizando operadores lógicos y relacional
     }
     ```
 
-13. Indicar que valor devolverá la ejecución del siguiente programa:
+13. (Actividad13) Indicar que valor devolverá la ejecución del siguiente programa:
 
     ```java
     public class Activ13 {
@@ -361,17 +364,19 @@ Expresar las siguientes afirmaciones utilizando operadores lógicos y relacional
     	}
     }
     ```
-    
-14. Realizar un programa que muestre por pantalla respetando los saltos de carro el siguiente texto (con un solo `println`):
+
+14. (Actividad14) Realizar un programa que muestre por pantalla respetando los saltos de carro el siguiente texto (con un solo `println`):
 
     ```sh
     Me gusta la programación
     cada día más
     ```
 
-17. Realiza un programa en Java que tenga las variables edad, nivel de estudios e ingresos y almacene en una variable llamada jasp el valor verdadero si la edad es menor o igual a 28 y el nivel de estudios es mayor a 3, o bien la edad es menor de 30 y los ingresos superiores a 28000. En caso contrario almacenar el valor falso.
-18. Realizar un programa que realice el cálculo del precio de un producto teniendo en cuenta que el producto vale 120 €, tiene un descuento del 15% y el IVA que se le aplica es del 21%.
-19. Realiza un programa que calcule la nota que hace falta sacar en el segundo examen de la asignatura Programación para obtener la media deseada. Hay que tener en cuenta que la nota del primer examen cuenta el 40% y la del segundo examen un 60%.
+15. (Actividad15) Realiza un programa en Java que tenga las variables edad, nivel de estudios e ingresos y almacene en una variable llamada jasp el valor verdadero si la edad es menor o igual a 28 y el nivel de estudios es mayor a 3, o bien la edad es menor de 30 y los ingresos superiores a 28000. En caso contrario almacenar el valor falso.
+
+16. (Actividad16) Realizar un programa que realice el cálculo del precio de un producto teniendo en cuenta que el producto vale 120 €, tiene un descuento del 15% y el IVA que se le aplica es del 21%.
+
+17. (Actividad17) Realiza un programa que calcule la nota que hace falta sacar en el segundo examen de la asignatura Programación para obtener la media deseada. Hay que tener en cuenta que la nota del primer examen cuenta el 40% y la del segundo examen un 60%.
     Ejemplo 1:
 
     ```sh
@@ -388,7 +393,7 @@ Expresar las siguientes afirmaciones utilizando operadores lógicos y relacional
     Para tener un 7 en el trimestre necesitas sacar un 6.333333333 en el segundo examen.
     ```
 
-20. Realizar un programa que dado un importe en euros nos indique el mínimo número de billetes y la cantidad sobrante de euros. Debes usar el operador condicional `?:`
+18. (Actividad18) Realizar un programa que dado un importe en euros nos indique el mínimo número de billetes y la cantidad sobrante de euros. Debes usar el operador condicional `?:`
 
     ```java
     ¿Cuántos euros tienes?: 232

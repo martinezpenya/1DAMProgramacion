@@ -1456,6 +1456,6 @@ public class P6_2_PropagacionExcepciones {
 - [Curso Java. Excepciones I. Vídeo 142](https://youtu.be/QSohwTY04Go)
 - [Curso Java. Excepciones II. throws try catch. Vídeo 143](https://youtu.be/dD-ntlW5Tlc)
 - Videos de Makigas al respecto:
-  - [Java: introducción a las excepciones](https://www.youtube.com/watch?v=kGzwPunAOxk)
-  - [Java: throw y throws, usos y diferencias ](https://www.youtube.com/watch?v=-xC0o6JQaoE)
+    - [Java: introducción a las excepciones](https://www.youtube.com/watch?v=kGzwPunAOxk)
+    - [Java: throw y throws, usos y diferencias ](https://www.youtube.com/watch?v=-xC0o6JQaoE)
 
