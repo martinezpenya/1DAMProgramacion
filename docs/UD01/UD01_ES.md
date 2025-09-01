@@ -1,3 +1,11 @@
+# Elementos de un programa informático
+
+<p><iframe src="https://www.youtube.com/embed/FzjCHnzx7lQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="315" frameborder="0"></iframe></p>
+
+```
+![type:video](assets/UD01_Elementos_de_un_Programa.mp4)
+```
+
 ## Piensa como un programador
 
 Una de las acepciones que trae el Diccionario de Real Academia de la Lengua Española (RAE) respecto a la palabra Problema es **“Planteamiento de una situación cuya respuesta desconocida debe obtenerse a través de métodos científicos”**. Con miras a lograr esa respuesta, un problema se puede definir como una situación en la cual se trata de alcanzar una meta y para lograrlo se deben hallar y utilizar unos medios y unas estrategias.
@@ -222,13 +230,13 @@ Ejemplo: Mostrar dos números ordenados de menor a mayor.
 
 ```mermaid
 graph TD
-     A(Inicio)
-    A --> B[a, b]
-    B --> C{a > b ?}
-    C -->|Si| D[b, a]
-    C -->|No| E[a, b]
-    D --> F(Fin)
-    E --> F
+  A(Inicio)
+  A --> B[a, b]
+  B --> C{a > b ?}
+  C -->|Si| D[b, a]
+  C -->|No| E[a, b]
+  D --> F(Fin)
+  E --> F
 ```
 O también en otra representación:
 

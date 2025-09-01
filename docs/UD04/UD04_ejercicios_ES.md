@@ -1,8 +1,6 @@
 ﻿# Ejercicios de la UD04
 
-## Ejercicios
-
-### Arrays. Ejercicios de recorrido
+## Arrays. Ejercicios de recorrido
 
 1. (Estaturas*)* Escribir un programa que lea de teclado la estatura de 10 personas y las almacene en un array. Al finalizar la introducción de datos, se mostrarán al usuario los datos introducidos con el siguiente formato:
 
@@ -122,7 +120,7 @@
    - `public static double[] sumaArraysIguales (double[] a, double[] b)` que dados dos arrays de `double` `a` y `b`, del mismo tamaño devuelva un array con la suma de los elementos de `a` y `b`, es decir, devolverá el array `{a[0]+b[0], a[1]+b[1], ....}`
    - `public static double[] sumaArrays(double[] a, double[] b)`. Repite el ejercicio anterior pero teniendo en cuenta que `a` y `b` podrían tener longitudes distintas. En tal caso el número de elementos del array resultante coincidirá con la longitud del array de mayor tamaño.
 
-### Arrays. Ejercicios de búsqueda
+## Arrays. Ejercicios de búsqueda
 
 1. (Lluvias – continuación). Queremos incorporar al programa la siguiente información:
 
@@ -306,9 +304,9 @@
    }
    ```
 
-Completa el programa en los lugares donde aparece el símbolo :question:
+​	Completa el programa en los lugares donde aparece el símbolo :question:
 
-### Matrices
+## Matrices
 
 1. (Notas). Se dispone de una matriz que contiene las notas de una serie de alumnos en una serie de asignaturas. Cada fila corresponde a un alumno, mientras que cada columna corresponde a una asignatura. Desarrollar métodos para:
 
@@ -372,7 +370,7 @@ Completa el programa en los lugares donde aparece el símbolo :question:
 
 ## Recursividad
 
-1. Implemente, tanto de forma recursiva como de forma iterativa, una función que nos diga si una cadena de caracteres es simétrica (un palíndromo). Por ejemplo, "DABALEARROZALAZORRAELABAD" es un palíndromo.
+1. (Palindromo) Implemente, tanto de forma recursiva como de forma iterativa, una función que nos diga si una cadena de caracteres es simétrica (un palíndromo). Por ejemplo, "DABALEARROZALAZORRAELABAD" es un palíndromo.
 
     "La ruta nos aporto otro paso natural"
 
@@ -386,15 +384,15 @@ Completa el programa en los lugares donde aparece el símbolo :question:
 
     > ##### ¿Te atreves a implementar una solución que permita la entrada con espacios? ¿Y permitiendo espacios y signos de puntuación?"
 
-2. Implemente, tanto de forma recursiva como de forma iterativa, una función que le dé la vuelta a una cadena de caracteres. 
+2. (InvertirCadena) Implemente, tanto de forma recursiva como de forma iterativa, una función que le dé la vuelta a una cadena de caracteres. 
 
    > ## Obviamente, si la cadena es un palíndromo, la cadena y su inversa coincidirán.
 
-3. Implemente, tanto de forma recursiva como de forma iterativa, una función que permitan calcular el número de combinaciones de `n` elementos tomados de `m` en `m`. 
+3. (Combinaciones) Implemente, tanto de forma recursiva como de forma iterativa, una función que permitan calcular el número de combinaciones de `n` elementos tomados de `m` en `m`. 
 
    Realice dos versiones de la implementación iterativa, una aplicando la fórmula y otra utilizando una matriz auxiliar (en la que se vaya construyendo el triángulo de Pascal).
 
-4. Implemente, tanto de forma recursiva como de forma iterativa, una función que nos devuelva el máximo común divisor de dos números enteros utilizando el algoritmo de Euclides. 
+4. (MCD) Implemente, tanto de forma recursiva como de forma iterativa, una función que nos devuelva el máximo común divisor de dos números enteros utilizando el algoritmo de Euclides. 
 
    ```
    ALGORITMO DE EUCLIDES MCD
@@ -404,15 +402,15 @@ Completa el programa en los lugares donde aparece el símbolo :question:
    - Si no, el máximo común divisor es MCD(n,r). 
    ```
 
-5. La ordenación por mezcla (mergesort) es un método de ordenación que se basa en un principio muy simple: se ordenan las dos mitades de un vector y, una vez ordenadas, se mezclan. Escriba un programa que implemente este método de ordenación. 
+5. (MergeSort) La ordenación por mezcla (mergesort) es un método de ordenación que se basa en un principio muy simple: se ordenan las dos mitades de un vector y, una vez ordenadas, se mezclan. Escriba un programa que implemente este método de ordenación. 
 
-6. Diseñe e implemente un algoritmo que imprima todas las posibles descomposiciones de un número natural como suma de números menores que él (sumas con más de un sumando). 
+6. (Descomposiciones) Diseñe e implemente un algoritmo que imprima todas las posibles descomposiciones de un número natural como suma de números menores que él (sumas con más de un sumando). 
 
-7. Diseñe e implemente un método recursivo que nos permita obtener el determinante de una matriz cuadrada de dimensión `n`.
+7. (Determinante) Diseñe e implemente un método recursivo que nos permita obtener el determinante de una matriz cuadrada de dimensión `n`.
 
-8. Diseñe e implemente un programa que juegue al juego de cifras de  "Cifras y Letras ". El juego consiste en obtener, a partir de 6 números, un número lo más cercano posible a un número de tres cifras realizando operaciones aritméticas con los 6 números.
+8. (CifrasYLetras) Diseñe e implemente un programa que juegue al juego de cifras de  "Cifras y Letras ". El juego consiste en obtener, a partir de 6 números, un número lo más cercano posible a un número de tres cifras realizando operaciones aritméticas con los 6 números.
 
-9. Problema de las 8 reinas: Se trata de buscar la forma de colocar 8 reinas en un tablero de ajedrez de forma que ninguna de ellas amenace ni se vea amenazada por otra reina.
+9. (OchoReinas) Problema de las 8 reinas: Se trata de buscar la forma de colocar 8 reinas en un tablero de ajedrez de forma que ninguna de ellas amenace ni se vea amenazada por otra reina.
 
    ```
     Algoritmo: 
@@ -421,7 +419,7 @@ Completa el programa en los lugares donde aparece el símbolo :question:
     - Intentar colocar las reinas restantes en las filas que quedan 
    ```
 
-10. Salida de un laberinto: Se trata de encontrar un camino que nos permita salir de un laberinto definido en una matriz NxN. Para movernos por el laberinto, sólo podemos pasar de una casilla a otra que sea adyacente a la primera y no esté marcada como una casilla prohibida (esto es, las casillas prohibidas determinan las paredes que forman el laberinto). 
+10. (Laberinto) Salida de un laberinto: Se trata de encontrar un camino que nos permita salir de un laberinto definido en una matriz NxN. Para movernos por el laberinto, sólo podemos pasar de una casilla a otra que sea adyacente a la primera y no esté marcada como una casilla prohibida (esto es, las casillas prohibidas determinan las paredes que forman el laberinto). 
 
     ```
     Algoritmo:

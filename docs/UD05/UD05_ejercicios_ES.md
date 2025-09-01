@@ -352,13 +352,13 @@ Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, 
 
 ## Actividades
 
-1. Introducir por teclado un valor de tipo `double` , convertirlo en Wrapper e imprimirlo.
+1. (WrapperDouble) Introducir por teclado un valor de tipo `double` , convertirlo en Wrapper e imprimirlo.
 
-2. Introducir por teclado un valor numérico en un `String` y convertirlo en entero e imprimirlo.
+2. (StringAEntero) Introducir por teclado un valor numérico en un `String` y convertirlo en entero e imprimirlo.
 
-3. Introducir por teclado un valor numérico entero en un `String` y convertirlo en un `Wrapper` e imprimirlo.
+3. (StringAWrapper) Introducir por teclado un valor numérico entero en un `String` y convertirlo en un `Wrapper` e imprimirlo.
 
-4. Introducir por teclado dos valores numéricos enteros y la operación que queremos realizar (`suma`, `resta` o `multiplicación`). Realizar la operación y mostrar el resultado en `Binario`, `Hexadecimal` y `Octal`.
+4. (OperacionesBinarias) Introducir por teclado dos valores numéricos enteros y la operación que queremos realizar (`suma`, `resta` o `multiplicación`). Realizar la operación y mostrar el resultado en `Binario`, `Hexadecimal` y `Octal`.
 
    Ejemplo de ejecución:
 
@@ -372,9 +372,9 @@ Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, 
     en hexadecimal: a
    ```
 
-5. Mostrar los segundos transcurridos desde el `1 de Enero de 1970 a las 0:00:00` hasta `hoy`.
+5. (SegundosDesde1970) Mostrar los segundos transcurridos desde el `1 de Enero de 1970 a las 0:00:00` hasta `hoy`.
 
-6. Mostrar la `fecha` y `hora` de hoy con los siguientes formatos (para todos los ejemplos se supone que hoy es 26 de agosto de 2021 a las 17 horas 16 minutos y 8 segundos, tu deberas mostrar la fecha y hora de tu sistema en el momento de ejecución):
+6. (FormatosFechaHora) Mostrar la `fecha` y `hora` de hoy con los siguientes formatos (para todos los ejemplos se supone  que hoy es 26 de agosto de 2021 a las 17 horas 16 minutos y 8 segundos,  tu deberas mostrar la fecha y hora de tu sistema en el momento de  ejecución):
 
    a) `August 26, 2021, 5:16 pm`
    b) `08.26.21`
@@ -384,7 +384,7 @@ Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, 
    f) `Thu Aug 26 17:16:08`
    g) `17:16:08`
 
-7. Introducir un día, un mes y un año y verificar si es una fecha correcta. 
+7. (ValidarFecha) Introducir un día, un mes y un año y verificar si es una fecha correcta.
 
    ```sh
    Introduce un dia para la fecha: 29
@@ -398,7 +398,7 @@ Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, 
    LA FECHA ES CORRECTA
    ```
 
-8. Introducir dos fechas e indicar los días transcurridos entre las dos fechas. 
+8. (DiasEntreFechas) Introducir dos fechas e indicar los días transcurridos entre las dos fechas.
 
    ```sh
    Introduce la fecha inicial con formato dd/mm/yyyy: 01/02/2021
@@ -411,47 +411,48 @@ Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, 
    años: 1
    ```
 
-9. Introducir una fecha y devolver las fecha de los pagos a 30, 60 y 90 días. 
+9. (PagosPlazos) Introducir una fecha y devolver las fecha de los pagos a 30, 60 y 90 días.
 
-10. Introducir tres fechas e indicar la mayor y a menor.
+10. (CompararFechas) Introducir tres fechas e indicar la mayor y a menor.
 
-11. Introducir el día, mes, año. Crear una fecha a partir de los datos introducidos y comprobar e indicar si se trata de la fecha actual, si es una fecha pasada o una fecha futura.
+11. (FechaActualComparacion) Introducir el día, mes, año. Crear una fecha a partir de los datos  introducidos y comprobar e indicar si se trata de la fecha actual, si es una fecha pasada o una fecha futura.
 
-12. Introducir una fecha de nacimiento de un empelado e indicar cuántos años tiene el empleado.
+12. (EdadEmpleado) Introducir una fecha de nacimiento de un empelado e indicar cuántos años tiene el empleado.
 
-13. Introducir la fecha de caducidad de un producto e indicar si el producto está o no caducado. El valor por defecto será la fecha actual y solo se podrán introducir fechas del año en curso.
+13. (ProductoCaducado) Introducir la fecha de caducidad de un producto e indicar si el  producto está o no caducado. El valor por defecto será la fecha actual y solo se podrán introducir fechas del año en curso.
 
-14. Mostrar una fecha con formato dd/mm/aaaa utilizando 0 delante de los días o meses de 1 dígito.
+14. (FormatoFechaCeros) Mostrar una fecha con formato dd/mm/aaaa utilizando 0 delante de los días o meses de 1 dígito.
 
-15. Mostrar una fecha con formato `DiaSemana`, `DiaMes` de `Mes` del `Año` a las `horas:minutos:segundos`. Por ejemplo: Miercoles, 9 de Diciembre del 2015 a las 18:45:32
+15. (FormatoFechaExtendido) Mostrar una fecha con formato `DiaSemana`, `DiaMes` de `Mes` del `Año` a las `horas:minutos:segundos`. Por ejemplo: Miercoles, 9 de Diciembre del 2015 a las 18:45:32
 
-16. Suma 10 años, 4 meses y 5 días a la fecha actual.
+16. (SumarFechaFutura) Suma 10 años, 4 meses y 5 días a la fecha actual.
 
     ```sh
     Hoy es: dijous, 03 de març del 2022
     Dentro de 10 años, 4 meses y 5 dias será: dijous, 08 de juliol del 2032
     ```
 
-17. Resta 5 años, 11 meses y 18 días a la fecha actual.
+17. (RestarFechaPasada) Resta 5 años, 11 meses y 18 días a la fecha actual.
 
-18. Introducir el número de horas trabajadas por un empleado y la fecha en las que las trabajo. Si el día fue sábado o domingo el precio hora trabajada es 20€ en caso contrario 15€. Calcula la cantidad de dinero que habrá que pagar al empleado por las horas trabajadas.
+18. (PagoHorasExtra) Introducir el número de horas trabajadas por un empleado y la fecha en  las que las trabajo. Si el día fue sábado o domingo el precio hora  trabajada es 20€ en caso contrario 15€. Calcula la cantidad de dinero  que habrá que pagar al empleado por las horas trabajadas.
 
-19. Introducir la fecha inicial y final de una nómina y calcular lo que debe cobrar el empleado sabiendo que cada día trabajado recibe 55 € y tiene una retención del 12% sobre el sueldo.
+19. (CalculoNomina) Introducir la fecha inicial y final de una nómina y calcular lo que  debe cobrar el empleado sabiendo que cada día trabajado recibe 55 € y  tiene una retención del 12% sobre el sueldo.
 
-20. Crear una clase `Alumno` con los atributos `codigo`, `nombre`, `apellidos`, `fecha_nacimiento`, `calificacion`. La fecha de nacimiento deberá introducirse como una fecha. Crear constructor, métodos `setter` y `getter` y `toString`. Crear una instancia con los siguientes valores `1`, `'Luis'`, `'Mas Ros'`, `05/10/1990`, `7.5`. Mostrar los datos del alumno además de su edad.
+20. (ClaseAlumno) Crear una clase `Alumno` con los atributos `codigo`, `nombre`, `apellidos`, `fecha_nacimiento`, `calificacion`. La fecha de nacimiento deberá introducirse como una fecha. Crear constructor, métodos `setter` y `getter` y `toString`. Crear una instancia con los siguientes valores `1`, `'Luis'`, `'Mas Ros'`, `05/10/1990`, `7.5`. Mostrar los datos del alumno además de su edad.
 
     ```sh
     Alumno{codigo=1, nombre=Luis, apellidos=Mas Ros, fecha=1990-10-05, calificacion=7.5, edad= 31}
     ```
 
-21. Introducir la fecha de entrega de un documento y nos diga si está dentro o fuera de plazo teniendo en cuenta que la fecha de entrega límite es la fecha actual.
+21. (PlazoEntrega) Introducir la fecha de entrega de un documento y nos diga si está  dentro o fuera de plazo teniendo en cuenta que la fecha de entrega  límite es la fecha actual.
 
-22. Introducir en un array `nombre`, `apellidos` y `sueldo` de varios trabajadores y la `fecha de alta` en la empresa. Las fechas deberán introducirse como fechas. Recorrer el array y mostrar para cada trabajador la retención que debe aplicarse sobre el sueldo teniendo en cuenta que los trabajadores incorporados antes de 1980 tienen una retención del 20%, los trabajadores con fecha entre 1980 y 2000 una retención del 15% y los trabajadores con fecha posterior al 2000 la retención que aplicaremos será el 5% del sueldo.
+22. (RetencionesTrabajadores) Introducir en un array `nombre`, `apellidos` y `sueldo` de varios trabajadores y la `fecha de alta` en la empresa. Las fechas deberán introducirse como fechas. Recorrer el array y mostrar para cada trabajador la retención que debe aplicarse  sobre el sueldo teniendo en cuenta que los trabajadores incorporados  antes de 1980 tienen una retención del 20%, los trabajadores con fecha  entre 1980 y 2000 una retención del 15% y los trabajadores con fecha  posterior al 2000 la retención que aplicaremos será el 5% del sueldo.
 
-23. Realiza un método estático que dada la `fecha de nacimiento` de una persona indique si es mayor de edad.
-    
-26. Realiza una clase `Conversor` que tenga las siguientes características: Toma como parámetro en el constructor un valor entero. Tiene un método `getNumero` que dependiendo del parámetro devolverá el mismo número (String) en el siguiente sistema de numeración: `B Binario`, `H Hexadecimal`, `O Octal`. Realiza un método `main` en la clase para probar todo lo anterior.
+23. (MayorEdad) Realiza un método estático que dada la `fecha de nacimiento` de una persona indique si es mayor de edad.
 
-28. Realiza una clase `ConversorFechas` que tenga los siguientes métodos:
-    - `String normalToAmericano(String fecha)`. Este método convierte una fecha en formato normal `dd/mm/yyyy` a formato americano `mm/dd/yyyy`
-    - `String americanoToNormal(String fecha)`. Este método realiza el paso contrario, convierte fechas en formato americano a formato normal.
+24. (ClaseConversor) Realiza una clase `Conversor` que tenga las siguientes características: Toma como parámetro en el constructor un valor entero. Tiene un método `getNumero` que dependiendo del parámetro devolverá el mismo número (String) en el siguiente sistema de numeración: `B Binario`, `H Hexadecimal`, `O Octal`. Realiza un método `main` en la clase para probar todo lo anterior.
+
+25. (ConversorFechas) Realiza una clase `ConversorFechas` que tenga los siguientes métodos:
+
+    - `String normalToAmericano(String fecha)`. Este método convierte una fecha en formato normal `dd/mm/yyyy` a formato americano `mm/dd/yyyy``
+    - ``String americanoToNormal(String fecha)`. Este método realiza el paso contrario, convierte fechas en formato americano a formato normal.
