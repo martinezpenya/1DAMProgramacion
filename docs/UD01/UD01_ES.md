@@ -2,9 +2,7 @@
 
 <p><iframe src="https://www.youtube.com/embed/FzjCHnzx7lQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="315" frameborder="0"></iframe></p>
 
-```
 ![type:video](assets/UD01_Elementos_de_un_Programa.mp4)
-```
 
 ## Piensa como un programador
 

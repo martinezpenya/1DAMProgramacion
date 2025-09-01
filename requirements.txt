@@ -11,5 +11,6 @@ mkdocs-redirects
 mkdocs-with-pdf
 mkdocs-git-revision-date-localized-plugin
 mkdocs-extra-sass-plugin
+mkdocs-video
 livereload
 qrcode

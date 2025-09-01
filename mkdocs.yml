@@ -145,6 +145,7 @@ extra:
 copyright: "© 2025 David Martínez licensed under CC BY-NC-SA 4.0"
 
 plugins:
+    - mkdocs-video
     - offline
     - search
     - git-revision-date-localized:

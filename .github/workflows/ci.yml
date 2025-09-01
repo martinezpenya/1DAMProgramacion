@@ -38,6 +38,7 @@ jobs:
       - run: pip install mkdocs-minify-plugin
       - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: pip install mkdocs-extra-sass-plugin
+      - run: pip install mkdocs-video
       - run: pip install livereload
       - run: pip install qrcode
       - run: mkdocs build
