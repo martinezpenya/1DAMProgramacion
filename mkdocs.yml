@@ -10,9 +10,9 @@ nav:
     - Elementos de un programa informático: UD01/UD01_ES.md
     - Ejercicios: UD01/UD01_ejercicios_ES.md
     - Talleres:
-      - T01 NoMachine: UD01/UD01_T01_NoMachine_ES.md
-      - T02 JDK e IDE: UD01/UD01_T02_JDK&IDE_ES.md
-      - T03 GitHub: UD01/UD01_T03_GitHubVsCode_ES.md
+      - T01 NoMachine: UD01/UD01_T01_NoMachine.md
+      - T02 JDK e IDE: UD01/UD01_T02_JDK&IDE.md
+      - T03 GitHub: UD01/UD01_T03_GitHub.md
       - T04 Markdown: UD01/UD01_T04_Markdown.md
   - UD02:
     - Utilización de Objetos: UD02/UD02_ES.md
