@@ -1,93 +1,77 @@
-# Taller UD01_03: Como usar el VSCode integrado en GitHub
+# Taller UD01_03: Crear cuenta en GitHub
 
-## `VsCode` integrado en `GitHub`
+## Qué es GitHub
 
-### Localizar repositorio.
+GitHub es una plataforma en la nube basada en Git que permite a los desarrolladores almacenar, gestionar y colaborar en proyectos de código. Es el portafolio universal de los programadores.
 
-Primero localizamos el repositorio con el que queremos colaborar (Por favor, busca uno del año actual, la imagen es solo un ejemplo):
+Crear una cuenta es esencial para quien aprende o busca trabajar en programación porque: sirve como tu currículum técnico, donde muestras tus proyectos y evolución; te permite colaborar en proyectos open source para ganar experiencia real; y es una herramienta fundamental para el control de versiones y trabajo en equipo, usada por prácticamente todas las empresas tech.
 
-1. Buscamos al usuario (En todo `GitHub`):
+### Crea tu cuenta
 
-<img src="assets/vscode_01_localizar_repositorio.png" alt="Localizar repositorio" style="zoom:50%;" />
+Accede a la plataforma GitHub: https://github.com/
 
-2. Elegimos la pestaña `Repositorios`:
+Pulsa sobre el botón [Sign Up] y sigue las instrucciones para crear tu cuenta.
 
-<img src="assets/vscode_02_localizar_repositorio.png" alt="Localizar repositorio 2" style="zoom:50%;" />
+Una vez creada tu cuenta, entra en tu página principal, por ejemplo la mia es esta: https://github.com/martinezpenya (`martinezpenya` es mi usuario de github) y realiza una captura de pantalla.
 
-3. Elegimos el que nos interesa modificar, en nuestro caso `PRG-CFGS-2324`:
+### Solicitar corrección de los apuntes
 
-<img src="assets/vscode_03_repositorio_elegido.png" alt="Repositorio elegido" style="zoom:50%;" />
+Ahora, para probar nuestra nueva cuenta y colaborar con algún proyecto, no hay nada mejor que ayudar a mejorar los apuntes del profesor de Programación :smiley:.
 
+Accedemos a la página de los apuntes en la que hemos detectado el error o queremos sugerir un cambio y en la parte superior derecha debe aparecer el icono:
 
+![Botón editar](assets/GH_01.png)
 
-### Abrir `VSCode` integrado.
+Esto nos llevará a crear un Fork del repositorio (este concepto lo aprenderás más adelante en el módulo de Entornos de Desarrollo):
 
-Github cuenta con un editor online muy potente basado en `VSCode`.
+![Crear un Fork](assets/GH_02.png)
 
-Una vez visualizamos el código del repositorio en cuestión:
+Ahora debemos pulsar el botón **[Fork this repository]**, y a continuación veremos el código de la página en nuestro fork que es `MarkDown` (Puedes aprender más sobre `MarkDown` en el Taller 4):
 
-<img src="assets/vscode_04_codigo.png" alt="Screenshot_20220106_171327" alt="Código" style="zoom:50%;" />
+![código fuente](assets/GH_03.png)
 
-Para abrir el editor solo debemos pulsar la tecla "." (punto) de nuestro teclado:
+Ahora debemos buscar el texto a modificar y una vez hayamos cambiado algo del documento se activará el botón [Commit changes...]:
 
-<img src="assets/vscode_05_vscode1.png" alt="editor VSCode" style="zoom:50%;" />
+![Commit changes button enabled](assets/GH_04.png)
 
-Visualizaremos la estructura de carpetas y archivos en un editor `VSCode` integrado en el navegador Web.
+Ahora debes explicar cual ha sido la modificación que hemos realizado y pulsar el botón [Propose changes]:
 
-### Modificar un archivo.
+![propose changes](assets/GH_05.png)
 
-Una vez detectada la errata dentro del código [markdown](https://markdown.es/) que es muy fácil de interpretar (a poco que le dediquéis unos minutos) podemos modificar el archivo en cuestión, y a su lado aparecerá una **M** porqué el archivo está modificado.
+Todavía no hemos terminado! ahora hay que comunciar los cambios propuestos en nuestro Fork al propietario del repositorio, para que los visualice y valore si los quiere incluir en la página de documentación. Para ello debemos pulsar el botón [Create pull request]:
 
-<img src="assets/vscode_06_vscode2.png" alt="Screenshot_20220106_172048" style="zoom:50%;" />
+![Create pull request](assets/GH_06.png)
 
-### Git integrado
+Ahora podemos modificar el mensaje (pero no hace falta), directamente pulsamos sobre el botón [Create pull request]:
 
-VSCode lleva integrado un gestor de GIT, el tercer icono de la barra lateral: ![Screenshot_20220106_172635](assets/vscode_07_git.png)
+![Create pull request 2](assets/GH_07.png)
 
-1. Verificamos los archivos cambiados:
-<img src="assets/vscode_07_git1.png" alt="Verificar cambios" style="zoom: 80%;" />
+Ahora si, deberías ver una página similar a la siguiente, de la que también deberás obtener una captura y adjuntarla al `.pdf`, y además explicar los 4 campos que hay redondeados:
 
-2. Los pasamos al area "staged" con el símbolo "+":
-<img src="assets/vscode_07_git2.png" alt="pasar a staged" style="zoom:80%;" />
+![Pull request created](assets/GH_08.png)
 
-4. Añadimos el comentario del commit:
-<img src="assets/vscode_07_git3.png" alt="comentario commit" style="zoom:80%;" />
+Como resumen:
 
-4. Realizamos el commit:
-    <img src="assets/vscode_07_git4.png" alt="Screenshot_20220106_173720" style="zoom:80%;" />
+1. Hemos creado un fork de un repositorio
+2. Hemos modificado un archivo en nuestro fork
+3. Hemos comparado nuestro fork con el original y hemos creado un pull request con las diferencias
 
-Como el repositorio no es nuestro mostrará este mensaje:
+Ahora pueden pasar dos cosas, que el propietario del repositorio original acepte nuestros cambios, y por tanto pasaremos a ser colaboradores del repositorio original.
 
-![Screenshot_20220106_173836](assets/vscode_07_git5.png)
+O bien, que el cambio no sea aceptado.
 
-En realidad podemos hacer el fork antes o después, aquí tienes un pequeño [vídeo](https://www.youtube.com/watch?v=zyT0sl3-kxE) que explica que es un fork.
+En cualquiera de los dos casos, si adjuntas las capturas y explicas los campos la actividad estará correcta.
 
-A continuación nos pide el nombre de la rama que se creará y que luego podremos solicitar se incluya en el proyecto original:
+En este caso concreto se ha aceptado la modificación:
 
-<img src="assets/vscode_07_git6.png" alt="branch" style="zoom:80%;" />
-
-Ahora nos pregunta si ya que hemos creado un fork, queremos cambiar el repositorio, y trabajar sobre nuestro fork en lugar de sobre el proyecto original, pulsamos sobre [Switch to Fork]:
-
-<img src="assets/vscode_07_git7.png" alt="cambiar al fork" style="zoom:80%;" />
-
-Ahora ya podemos salir del editor VSCode pulsando sobre el botón de las tres lineas horizontales y elegir la opción "Go to Repository":
-<img src="assets/vscode_07_git8.png" alt="Volver al repositorio" style="zoom:80%;" />
-
-### Pull request
-
-Una vez volvemos a nuestro repositorio (nuestro fork), detectará que hay cambios respecto al repositorio original y nos propone que realicemos un pull request (una petición al usuario propietario del repositorio original para que incluya nuestra modificación).
-
-<img src="assets/vscode_08_pullrequest.png" alt="Screenshot_20220106_175237" style="zoom:80%;" />
-
-Una vez pulsado el botón [Compare & pull request] nos aparece la siguiente pantalla:
-
-![Screenshot_20220106_175639](assets/vscode_09_pullrequest2.png)
-
-Debemos asegurarnos de que la modificación se puede agregar al repositorio original "Able to merge", y que indicamos en los comentarios nuestro nombre completo para que el profesor nos identifique. Fíjate que el nombre del pull request es el nombre del commit que hicimos desde VSCode.
-
-Ahora debemos pulsar el botón [Create pull request].
+![Accepted pull request](assets/GH_09.png)
 
 ## Tarea
 
-Sigue los pasos de este taller guiado para sugerir una modificación de cualquiera de los archivos de los repositorios del profesor [martinezpenya](https://github.com/martinezpenya) (Preferiblemente del curso 24-25). Adjunta a la tarea de AULES un `.pdf` con la **captura** de pantalla similar a esta donde se vé que has solicitado el **pull request** y que estás esperando a que se integre en el repositorio original. Además, **explica** que significan cada uno de los **5 apartados** señalados en la captura:
-![Screenshot_20220106_180847](assets/vscode_10_pullrequest3.png)
+Crea un documento `.pdf` donde debes adjuntar la captura de tu perfil de github.
+
+Añade una **captura** de pantalla donde se vea que has solicitado el **pull request** y que estás esperando a que se integre en el repositorio original. 
+
+Además, **explica** que significan cada uno de los **4 apartados** señalados en la captura.
+
+Adjunta el documento `.pdf` con las capturas y las explicaciones a la tarea de AULES
