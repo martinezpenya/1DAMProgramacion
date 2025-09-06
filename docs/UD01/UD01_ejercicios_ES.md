@@ -67,9 +67,9 @@
 
 2. (EJS2) 2. Averigua mediante pruebas:
 
-   1. ¿Es posible escribir dos instrucciones en la misma línea de un programa?
-   2. ¿Se puede "romper" una instrucción entre varias líneas?
-   3. Algunos lenguajes de programación dan un valor por defecto a las variables cuando las declaramos sin inicializarlas. Otros no permiten usar el contenido de una variable que no haya sido previamente inicializada. ¿Cuál es comportamiento de Java? 
+    1. ¿Es posible escribir dos instrucciones en la misma línea de un programa?
+    2. ¿Se puede "romper" una instrucción entre varias líneas?
+    3. Algunos lenguajes de programación dan un valor por defecto a las variables cuando las declaramos sin inicializarlas. Otros no permiten usar el contenido de una variable que no haya sido previamente inicializada. ¿Cuál es comportamiento de Java? 
 
 3. (EJS3) 3. ¿Cuáles de los siguientes identificadores son válidos y cuales no? Pruébalos cuando tengas duda
     1. `n`
