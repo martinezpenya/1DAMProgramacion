@@ -1228,9 +1228,4 @@ public class EjemploUD01 {
 ```
 
 ## Píldoras informáticas relacionadas
-
-- [Curso Java. Estructuras principales I. Vídeo 4](https://youtu.be/Lj97ujkeUXc)
-- [Curso Java. Estructuras principales II. Vídeo 5](https://youtu.be/OS1F6VNA6hs)
-- [Curso Java. Estructuras principales III. Declaración variables Eclipse Vídeo 6](https://youtu.be/bq6nJRJq27A)
-- [Curso Java. Estructuras principales IV. Constantes y Operadores. Vídeo 7](https://youtu.be/qdxwWkTxcmc)
-- [Curso Java. Estructuras principales V. Constantes y Operadores II. Vídeo 8](https://youtu.be/MoJxxPgCBcg)
+<p><iframe height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
