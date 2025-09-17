@@ -210,9 +210,11 @@ Un algoritmo, para que sea válido, tiene que tener ciertas características fun
 
 > Juego de las monedas (Eduardo Sáenz Cabezón)
 >
->[![Juego de las monedas](https://img.youtube.com/vi/BbA5dpS4CcI/0.jpg)](https://youtu.be/BbA5dpS4CcI?si=5vftn3igSxoPCzqb&t=1610)
->
+> [![Juego de las monedas](https://img.youtube.com/vi/BbA5dpS4CcI/0.jpg)](https://youtu.be/BbA5dpS4CcI?si=5vftn3igSxoPCzqb&t=1610)
+> 
 > *Desde el comienzo del enlace hasta 7 minutos después.*
+
+
 
 #### Representación de algoritmos
 
