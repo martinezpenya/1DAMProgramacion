@@ -6,7 +6,7 @@ GitHub es una plataforma en la nube basada en Git que permite a los desarrollado
 
 Crear una cuenta es esencial para quien aprende o busca trabajar en programación porque: sirve como tu currículum técnico, donde muestras tus proyectos y evolución; te permite colaborar en proyectos open source para ganar experiencia real; y es una herramienta fundamental para el control de versiones y trabajo en equipo, usada por prácticamente todas las empresas tech.
 
-### Crea tu cuenta
+## Crea tu cuenta
 
 Accede a la plataforma GitHub: https://github.com/
 
@@ -14,7 +14,7 @@ Pulsa sobre el botón [Sign Up] y sigue las instrucciones para crear tu cuenta.
 
 Una vez creada tu cuenta, entra en tu página principal, por ejemplo la mia es esta: https://github.com/martinezpenya (`martinezpenya` es mi usuario de github) y realiza una captura de pantalla.
 
-### Solicitar corrección de los apuntes
+## Solicitar corrección de los apuntes
 
 Ahora, para probar nuestra nueva cuenta y colaborar con algún proyecto, no hay nada mejor que ayudar a mejorar los apuntes del profesor de Programación :smiley:.
 
