@@ -2,7 +2,7 @@
 
 ## Introducción a Markdown
 
-<img src="assets/markdown_logo.png" style="zoom:25%;" />
+<img src="assets/markdown_logo.png" style="zoom:10%;" />
 
 **Markdown** nace como herramienta de **conversión de texto plano a HTML**. Fue creada en 2004 por John Gruber, y se distribuye de manera gratuita bajo una [licencia BSD](https://es.wikipedia.org/wiki/Licencia_BSD).
 
