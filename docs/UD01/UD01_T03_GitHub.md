@@ -1,4 +1,4 @@
-# Taller UD01_03: Crear cuenta en GitHub
+# Taller UD01_03: Crear cuenta en GitHub i correguir apuntes
 
 ## Qué es GitHub
 
