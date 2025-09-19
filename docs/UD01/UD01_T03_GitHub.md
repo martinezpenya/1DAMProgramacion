@@ -52,9 +52,9 @@ Ahora si, deberías ver una página similar a la siguiente, de la que también d
 
 Como resumen:
 
-1. Hemos creado un fork de un repositorio
-2. Hemos modificado un archivo en nuestro fork
-3. Hemos comparado nuestro fork con el original y hemos creado un pull request con las diferencias
+1. Hemos creado un fork de un repositorio.
+2. Hemos modificado un archivo en nuestro fork.
+3. Hemos comparado nuestro fork con el original y hemos creado un pull request con las diferencias.
 
 Ahora pueden pasar dos cosas, que el propietario del repositorio original acepte nuestros cambios, y por tanto pasaremos a ser colaboradores del repositorio original.
 
