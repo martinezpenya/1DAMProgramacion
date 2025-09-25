@@ -57,6 +57,7 @@ Gracias a la simplicidad de su sintaxis podrás utilizarlo siempre que necesites
 - ...
 
 
+
 ## Párrafos y saltos de línea
 
 Si queremos generar un nuevo párrafo en Markdown simplemente separa el texto mediante una línea en blanco (**pulsando dos veces intro**).
