@@ -1,7 +1,7 @@
 # Taller UD01_01: Instalar NoMachine para el control remoto
 
 ## ¿Qué es `NoMachine`?
-
+ 
 Conéctese a cualquier computadora de forma remota a la velocidad de la luz. Gracias a nuestra tecnología NX, NoMachine es el escritorio remoto más rápido y de mayor calidad que jamás haya probado. Conecta con tu ordenador al otro lado del mundo con solo unos pocos clics. Vé donde esté tu escritorio, podrás acceder a él desde cualquier otro dispositivo y compartirlo con quien quieras. `NoMachine` es tu servidor personal, privado y seguro. Además, es gratis.
 
 https://www.nomachine.com/
