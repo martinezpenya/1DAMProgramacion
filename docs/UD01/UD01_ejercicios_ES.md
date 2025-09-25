@@ -47,7 +47,7 @@
     ```java
     import java.util.*;
     public class EntradaSalida {
-        public static void main (String arg[]){
+        public static void main (String [] arg) {
             Scanner tec = new Scanner(System.in);
             int a, b;
             System.out.println("Introduce un número entero");
@@ -402,3 +402,4 @@
     1 billete de 10 €
     Sobran 2 €
     ```
+
