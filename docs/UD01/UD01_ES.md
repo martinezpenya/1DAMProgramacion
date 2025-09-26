@@ -318,16 +318,17 @@ Veamos los pasos para compilar e interpretar nuestro primer programa escrito en 
 
 #### Estructura y bloques fundamentales de un programa.
 
-```java
-public class Holamundo {
-    // programa Hola Mundo
-    public static void main(String[] args) {
-        /* lo único que hace este programa es mostrar
-           la cadena "Hola Mundo!" por pantalla */
-        System.out.println("Hola Mundo!");
+!!! example "Ejemplo Holamundo.java"
+    ```java
+    public class Holamundo {
+        // programa Hola Mundo
+        public static void main(String[] args) {
+            /* lo único que hace este programa es mostrar
+        		la cadena "Hola Mundo!" por pantalla */
+            System.out.println("Hola Mundo!");
+        }
     }
-}
-```
+    ```
 
 En Java generalmente una clase lleva el identificador public y corresponde con un fichero. El nombre de la clase coincide con el del fichero `.java` respetando mayúsculas y minúsculas.
 
@@ -437,9 +438,11 @@ Hola Mundo
 >
 > https://stackoverflow.com/questions/54493058/running-a-java-program-without-compiling
 
-## Variables, identificadores, convenciones.
+## Componentes del lenguaje Java
 
-### Variables
+### Variables, identificadores, convenciones.
+
+#### Variables
 
 Una **variable** es una zona en la memoria del computador con un valor que puede ser almacenado para ser usado más tarde en el programa. Las variables vienen determinadas por:
 
@@ -454,7 +457,7 @@ Visibilidad, ámbito o scope de una variable es la parte de código del programa
 
 Al nombre que le damos a la variable se le llama identificador. Los identificadores permiten nombrar los elementos que se están manejando en un programa. Vamos a ver con más detalle ciertos aspectos sobre los identificadores que debemos tener en cuenta.
 
-### Identificadores
+#### Identificadores
 
 Un **identificador** en Java es una secuencia ilimitada sin espacios de letras y dígitos Unicode , de forma que el primer símbolo de la secuencia debe ser una letra, un símbolo de subrayado (`_`) o el símbolo dólar (`$`). Por ejemplo, son válidos los siguientes identificadores:
 
@@ -465,7 +468,7 @@ Un **identificador** en Java es una secuencia ilimitada sin espacios de letras y
 
 Unicode es un código de caracteres o sistema de codificación, un alfabeto que recoge los caracteres de prácticamente todos los idiomas importantes del mundo. Además, el código Unicode es “compatible” con el código ASCII, ya que para los caracteres del código ASCII, Unicode asigna como código los mismos 8 bits, a los que les añade a la izquierda otros 8 bits todos a cero. La conversión de un carácter ASCII a Unicode es inmediata.
 
-### Convenciones
+#### Convenciones
 
 **Normas de estilo para nombrar variables**
 
@@ -496,7 +499,7 @@ Las palabras reservadas en Java son:
 abstract, continue, for, new, switch, assert, default, goto, package, synchronized, boolean, do, if, private, this, break, double, implements, protected, throw, byte, else, import, public, throws, case, enum, instanceof, return, transient, catch, extends, int, short, try, char, final, interface, static, void, class, finally, long, strictfp, volatile, const, float, native, super, while.
 ```
 
-## Tipos de datos.
+### Tipos de datos.
 
 Los tipos de datos se utilizan para declarar variables y el compilador sepa de antemano que tipo de información contendrá la variable.
 
@@ -530,7 +533,7 @@ Ejemplo de declaración y asignación de valores a variables:
 |       boolean | `boolean esPrimero;`<br />`boolean esPar=false;`             |
 > Ojo con los tipo float: https://jvns.ca/blog/2023/01/13/examples-of-floating-point-problems/
 
-## Tipos referenciados
+### Tipos referenciados
 
 A partir de los ocho tipos datos primitivos, se pueden construir otros tipos de datos. Estos tipos de datos se llaman tipos referenciados o referencias, porque se utilizan para almacenar la dirección de los datos en la memoria del ordenador.
 
@@ -558,7 +561,7 @@ Para mostrar por pantalla un mensaje utilizamos `System.out`, conocido como la s
 
 El texto en color gris que aparece entre caracteres // son comentarios que permiten documentar el código, pero no son tenidos en cuenta por el compilador y, por tanto, no afectan a la ejecución del programa.
 
-## Tipos enumerados
+### Tipos enumerados
 
 Los tipos de datos enumerados son una forma de declarar una variable con un conjunto restringido de valores. Por ejemplo, los días de la semana, las estaciones del año, los meses, etc. Es como si definiéramos nuestro propio tipo de datos.
 
@@ -600,7 +603,7 @@ En este ejemplo hemos utilizado el método `System.out.print`. Como podrás comp
 
 Sin embargo, también podemos escribir varias líneas usando una única sentencia. Así lo hacemos en la instrucción `println`, la cual imprime como resultado tres líneas de texto. Para ello hemos utilizado un carácter especial, llamado carácter escape (`\`). Este carácter sirve para darle ciertas órdenes al compilador, en lugar de que salga impreso en pantalla. Después del carácter de escape viene otro carácter que indica la orden a realizar, juntos reciben el nombre de secuencia de escape. La secuencia de escape `\n` recibe el nombre de carácter de nueva línea. Cada vez que el compilador se encuentra en un texto ese carácter, el resultado es que mueve el cursor al principio de la línea siguiente. En el próximo apartado vamos a ver algunas de las secuencias de escape más utilizadas.
 
-## Constantes y literales.
+### Constantes y literales.
 
 Las **constantes** se utilizan para almacenar datos que no varían nunca, asegurándonos que el valor no va a poder ser modificado.
 
@@ -627,9 +630,9 @@ Respecto a los literales existen unos caracteres especiales que se representan u
 | \n                  | Salto de línea  | \’                  | Carácter comillas simples |
 | \f                  | Salto de página | \\\                 | Barra diagonal            |
 
-## Operadores y expresiones.
+### Operadores y expresiones.
 
-### Operadores Aritméticos
+#### Operadores Aritméticos
 
 Los **Operadores Aritméticos** permiten realizar operaciones matemáticas:
 
@@ -654,7 +657,7 @@ division = num1 / num2;  // 1.6
 resto = num1 % num2;     // 3
 ```
 
-### Operadores Relacionales
+#### Operadores Relacionales
 
 Los **Operadores Relacionales** permiten evaluar (la respuesta es un booleano: si o no) la igualdad de los operandos:
 
@@ -681,7 +684,7 @@ compara = valor1 == valor2; // false
 compara = valor1 != valor2; // true
 ```
 
-### Operadores Lógicos
+#### Operadores Lógicos
 
 Los **Operadores Lógicos** permiten realizar operaciones lógicas:
 
@@ -716,7 +719,7 @@ Para representar resultados de operadores Lógicos también se pueden usar tabla
 | `false` | `true`  | `false`  |  `true`  | `true`  | `true`  |
 | `true`  | `true`  |  `true`  |  `true`  | `false` | `false` |
 
-### Operadores Unarios o Unitarios
+#### Operadores Unarios o Unitarios
 
 Los **Operadores Unarios** o **Unitarios** permiten realizar incrementos y decrementos:
 
@@ -741,7 +744,7 @@ b = ++a; // a vale 2 y b vale 2 //coge lo que vale a, le suma 1 y lo guarda en b
 b = a++; // a vale 3 y b vale 2 //coge lo que vale a, lo guarda en b, y suma 1 a lo que vale a
 ```
 
-### Operadores de Asignación
+#### Operadores de Asignación
 
 Los **Operadores de Asignación** permiten asignar valores:
 
@@ -766,7 +769,7 @@ dato2-=dato1; // dato2 vale 2
 dato1%=dato2; // dato1 vale0
 ```
 
-### Operadores de desplazamiento
+#### Operadores de desplazamiento
 
 Los **Operadores de desplazamiento** permiten desplazar los bits de los valores:
 
@@ -813,7 +816,7 @@ int u = q ^ r; // u: 00000000000000000000000000010100
 int v = ~q;    // v: 11111111111111111111111101111011 
 // El resultado da -133 
 ```
-### Operador condicional o ternario `?:`
+#### Operador condicional o ternario `?:`
 
 El **operador condicional** `?:` sirve para evaluar una condición y devolver un resultado en función de si es verdadera o falsa dicha condición. Es el único operador ternario de Java, y como tal, necesita tres operandos para formar una expresión.
 
@@ -841,7 +844,7 @@ mayor=(exp1>exp2)?exp1:exp2;
 
 El operador condicional se puede sustituir por la sentencia `if...then...else` que veremos más adelante.
 
-### Prevalencia de operadores
+#### Prevalencia de operadores
 
 Los operadores tienen diferente **Prioridad** por lo que es interesante utilizar paréntesis para controlar las operaciones sin necesidad de depender de la prioridad de los operadores.
 
@@ -874,11 +877,11 @@ x = (y1 + y2) * y3; // 64
 
 > "**Los paréntesis son como las patatas fritas, cuantas más, mejor!**" (Ana de mates)
 
-## Conversiones de tipo.
+### Conversiones de tipo.
 
 Existen dos tipos de conversiones: **Implícitas** y **Explicitas**. Debemos evitar las conversiones de tipos ya que pueden suponer perdidas de información.
 
-### Conversiones Implícitas
+#### Conversiones Implícitas
 
 Las **Conversiones Implícitas** se realizan de forma automática y requiere que la variable destino tenga más precisión que la variable origen para poder almacenar el valor.
 
@@ -890,7 +893,7 @@ short destino;
 destino=origen;  // 5
 ```
 
-### Conversión Explícita
+#### Conversión Explícita
 
 En la **Conversión Explícita** el programador fuerza la conversión con la operación llamada "**cast**":
 
@@ -902,7 +905,7 @@ byte destino2;
 destino2=(byte)origen2; // 3
 ```
 
-## Comentarios.
+### Comentarios.
 
 Los comentarios son muy importantes a la hora de describir qué hace un determinado programa. A lo largo de la unidad los hemos utilizado para documentar los ejemplos y mejorar la comprensión del código. Para lograr ese objetivo, es normal que cada programa comience con unas líneas de comentario que indiquen, al menos, una breve descripción del programa, el autor del mismo y la última fecha en que se ha modificado.
 
