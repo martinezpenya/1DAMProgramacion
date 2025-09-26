@@ -49,6 +49,19 @@ theme:
     #- navigation.indexes
   icon:
     logo: material/language-java
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/brands/java
+      quote: fontawesome/solid/quote-left
   favicon: assets/favicon.ico
 #  features:
 #    - navigation.footer
