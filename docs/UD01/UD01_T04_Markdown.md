@@ -37,6 +37,7 @@ Gracias a la simplicidad de su sintaxis podrás utilizarlo siempre que necesites
 ### Desventajas
 
 - No tiene muchas funcionalidades (esto es lo que lo hace muy compatible).
+- Al no tener todas las opciones de un procesador de textos a veces tendrás que combinar Markdown con HTML para lograr ciertos formatos.
 
 ## Editores para Markdown
 
