@@ -2,7 +2,7 @@
 
 ## Qué es GitHub
 
-GitHub es una plataforma en la nube basada en Git que permite a los desarrolladores almacenar, gestionar y colaborar en proyectos de código. Es el portafolio universal de los programadores.
+Github es una plataforma en la nube basada en Git que permite a los desarrolladores almacenar, gestionar y colaborar en proyectos de código. Es el portafolio universal de los programadores.
 
 Crear una cuenta es esencial para quien aprende o busca trabajar en programación porque: sirve como tu currículum técnico, donde muestras tus proyectos y evolución; te permite colaborar en proyectos open source para ganar experiencia real; y es una herramienta fundamental para el control de versiones y trabajo en equipo, usada por prácticamente todas las empresas tech.
 
@@ -73,5 +73,6 @@ En este caso concreto se ha aceptado la modificación:
 - Añade una **captura** de pantalla donde se vea que has solicitado el **pull request** y que estás esperando a que se integre en el repositorio original. 
 
 - Además, **explica** que significan cada uno de los **4 apartados** señalados en la captura.
+
 
 **Adjunta el documento `.pdf` con las capturas y las explicaciones a la tarea de AULES.**
