@@ -1,4 +1,4 @@
-# Taller UD01_T03: Markdown
+# Taller UD01_T03: Markdown.
 
 ## Introducción a Markdown
 
