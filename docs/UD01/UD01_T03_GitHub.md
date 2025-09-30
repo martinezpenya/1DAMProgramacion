@@ -16,7 +16,7 @@ Una vez creada tu cuenta, entra en tu página principal, por ejemplo la mia es e
 
 ## Solicitar corrección de los apuntes
 
-Ahora, para probar nuestra nueva cuenta y colaborar con algún proyecto, no hay nada mejor que ayudar a mejorar los apuntes del profesor de Programación :smiley:.
+Ahora, para probar nuestra nueva cuenta y colaborar con algún proyecto, no hay nada mejor que ayudar a mejorar los apuntes del profesor de Programación :smiley: 😄:.
 
 Accedemos a la página de los apuntes en la que hemos detectado el error o queremos sugerir un cambio y en la parte superior derecha debe aparecer el icono:
 
@@ -73,5 +73,6 @@ En este caso concreto se ha aceptado la modificación:
 - Añade una **captura** de pantalla donde se vea que has solicitado el **pull request** y que estás esperando a que se integre en el repositorio original. 
 
 - Además, **explica** que significan cada uno de los **4 apartados** señalados en la captura.
+
 
 **Adjunta el documento `.pdf` con las capturas y las explicaciones a la tarea de AULES.**
