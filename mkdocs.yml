@@ -15,7 +15,7 @@ nav:
       - T03 GitHub: UD01/UD01_T03_GitHub.md
       - T04 Markdown: UD01/UD01_T04_Markdown.md
   - UD02:
-    - Utilización de Objetos: UD02/UD02_ES.md
+    - Utilización de Objetos y Clases: UD02/UD02_ES.md
     - Ejercicios: UD02/UD02_ejercicios_ES.md
   - UD03:
     - Estructuras de control y Excepciones: UD03/UD03_ES.md

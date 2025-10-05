@@ -2,13 +2,16 @@
 
 <p><iframe title="YouTube video player" src="https://www.youtube.com/embed/b-Cr0EWwaTk" width="100%" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></p>
 
+![type:video](assets/UD02_Utilizacion_Objetos_Clases.mp4)
+
 ## Introducción a la POO
 
 **Orientado a objetos** hace referencia a una forma diferente de acometer la tarea del desarrollo de software, frente a otros modelos como el de la programación imperativa, la programación funcional o la programación lógica. Supone una reconsideración de los métodos de programación, de la forma de estructurar la información y, ante todo, de la forma de pensar en la resolución de problemas.
 
 La **programación orientada a objetos (POO)** es un modelo para la elaboración de programas que ha impuesto en los últimos años. Este auge se debe, en parte, a que esta forma de programar está fuertemente basada en la representación de la realidad; pero también a que refuerza el uso de buenos criterios aplicables al desarrollo de programas.
 
-> La orientación a objetos no es un tipo de lenguaje de programación. Es una metodología de trabajo para crear programas.
+!!! danger "Atención"
+    La orientación a objetos no es un tipo de lenguaje de programación. Es una metodología de trabajo para crear programas.
 
 En POO, un programa es una colección de objetos que se relacionan entre sí de distintas formas.
 
@@ -30,7 +33,8 @@ Cuando hablamos de Programación Orientada a Objetos, existen una serie de carac
 
 En este contexto, un objeto de software es una representación de un objeto del mundo real, compuesto de una serie de características y un comportamiento específico. Pero ¿qué es más concretamente un objeto en Programación Orientada a Objetos? Veámoslo.
 
-> Un objeto es un conjunto de datos con las operaciones definidas para ellos. Los objetos tienen un estado y un comportamiento.
+!!! info "Definición"
+    Un objeto es un conjunto de datos con las operaciones definidas para ellos. Los objetos tienen un estado y un comportamiento.
 
 Por tanto, estudiando los objetos que están presentes en un problema podemos dar con la solución a dicho problema. Los objetos tienen unas características fundamentales que los distinguen:
 
@@ -42,7 +46,8 @@ Una clase java se escribe en un fichero con extensión `.java` que tiene el mism
 
 Cuando la clase se compila se obtiene un fichero con el mismo nombre que la clase y extensión `.class`. Ej.: `Vehiculo.class`.
 
-> Los identificadores de clase siguen las mismas reglas que otros identificadores de Java (contienen carácter alfanuméricos y especiales, no pueden comenzar por un dígito, no pueden coincidir con una palabra reservada, etc.). Por convenio los identificadores de las clases comienzan por mayúsculas.
+!!! danger "Atención"
+    Los identificadores de clase siguen las mismas reglas que otros identificadores de Java (contienen carácter alfanuméricos y especiales, no pueden comenzar por un dígito, no pueden coincidir con una palabra reservada, etc.). Por convenio los identificadores de las clases comienzan por mayúsculas.
 
 ### Propiedades y métodos de los objetos
 
@@ -80,16 +85,17 @@ Los métodos realizan algún tipo de acción o tarea y, en ocasiones, devuelven 
 
 Para realizar su trabajo puede ser necesario que pasemos al método cierta información. Por ejemplo, cuando llamamos al método `round` de la clase `Math`, para redondear un número real, debemos indicar al método cual es el número que queremos redondear. A esa información que pasamos a los métodos se le llama **parámetros** o **argumentos**.
 
-```java
-//Al llamar a Math.round, pasamos al método un parámetro 
-int redondeado1 = Math.round(numero);
-int redondeado2 = Math.round(125.687);
-...
-//Al llamar a Math.pow, pasamos al método dos parámetros
-int pot1 = Math.pow(a,b);
-int pot2 = Math.pow(a,6);
-...
-```
+!!! example "Ejemplo"
+    ```java
+    //Al llamar a Math.round, pasamos al método un parámetro 
+    int redondeado1 = Math.round(numero);
+    int redondeado2 = Math.round(125.687);
+    ...
+    //Al llamar a Math.pow, pasamos al método dos parámetros
+    int pot1 = Math.pow(a,b);
+    int pot2 = Math.pow(a,6);
+    ...
+    ```
 
 En la definición de un método se distinguen dos partes
 
@@ -98,25 +104,29 @@ En la definición de un método se distinguen dos partes
 
 Para definirlos, se sigue la siguiente sintaxis (los corchetes indican opcionalidad):
 
-```java
-public static void main (String[] args)
-[ámbito] [static] tipoDevuelto nombreDelMetodo ([parámetros]){
-	//Cuerpo del método (instrucciones)
-	...
-	...
-	...
-}
-```
+!!! example "Ejemplo"
+    ```java
+    public static void main (String[] args)
+    [ámbito] [static] tipoDevuelto nombreDelMetodo ([parámetros]){
+        //Cuerpo del método (instrucciones)
+        ...
+        ...
+        ...
+    }
+    ```
+    donde...
 
-donde  …
+    - ***ámbito*** permite indicar desde qué clases es accesible el método.
 
-- ***ámbito*** permite indicar desde qué clases es accesible el método.
-- ***static***, cuando aparece, indica que el método es estático.
-- ***tipoDevuelto***  indica el tipo de dato que devuelve el método. La palabra reservada *void* (que no es ningún tipo de dato), indicaría que el método no devuelve nada.
-- ***nombreDelMetodo*** es el identificador del método
-- ***parámetros*** es una lista, separada por comas, de los parámetros que recibe el método. De cada parámetro se indica el **tipo** y un **identificador**.
+    - ***static***, cuando aparece, indica que el método es estático.
 
-### Interacción entre objetos.
+    - ***tipoDevuelto***  indica el tipo de dato que devuelve el método. La palabra reservada *void* (que no es ningún tipo de dato), indicaría que el método no devuelve nada.
+
+    - ***nombreDelMetodo*** es el identificador del método
+
+    - ***parámetros*** es una lista, separada por comas, de los parámetros que recibe el método. De cada parámetro se indica el **tipo** y un **identificador**.
+
+### Interacción entre objetos
 
 Dentro de un programa los objetos se comunican llamando unos a otros a sus métodos. Los métodos están dentro de los objetos y describen el comportamiento de un objeto cuando recibe una llamada a uno de sus métodos. En otras palabras, cuando un objeto, `objeto1`, quiere actuar sobre otro, `objeto2`, tiene que ejecutar uno de sus métodos. Entonces se dice que el `objeto2` recibe un mensaje del `objeto1`.
 
@@ -130,13 +140,15 @@ El proceso de interacción entre objetos se suele resumir diciendo que se ha "en
 - **Comunicación** entre los objetos mediante el envío de mensajes unos a otros, o el usuario a los objetos.
 - **Eliminación** de los objetos cuando no son necesarios para dejar espacio libre en la memoria del computador.
 
-> Los objetos se pueden comunicar entre ellos invocando a los métodos de los otros objetos.
+!!! info "Recuerda"
+    Los objetos se pueden comunicar entre ellos invocando a los métodos de los otros objetos.
 
 ### Clases
 
 Hasta ahora hemos visto lo que son los objetos. Un programa informático se compone de muchos objetos, algunos de los cuales comparten la misma estructura y comportamiento. Si tuviéramos que definir su estructura y comportamiento del objeto cada vez que queremos crear un objeto, estaríamos utilizando mucho código redundante. Por ello lo que se hace es crear una clase, que es una descripción de un conjunto de objetos que comparten una estructura y un comportamiento común. Y a partir de la clase, se crean tantas "copias" o "instancias" como necesitemos. Esas copias son los objetos de la clase.
 
-> Las clases constan de datos y métodos que resumen las características comunes de un conjunto de objetos. Un programa informático está compuesto por un conjunto de clases, a partir de las cuales se crean objetos que interactúan entre sí.
+!!! info "Recuerda"
+    Las clases constan de datos y métodos que resumen las características comunes de un conjunto de objetos. Un programa informático está compuesto por un conjunto de clases, a partir de las cuales se crean objetos que interactúan entre sí.
 
 En otras palabras, una clase es una plantilla o prototipo donde se especifican:
 
@@ -149,33 +161,36 @@ Para declarar una clase en Java se utiliza la palabra reservada `class`. La decl
   sólo nos interesa saber que está compuesta por una serie de modificadores, en este caso hemos puesto public que indica que es una clase pública a la que pueden acceder otras clases del programa, la palabra reservada class y el nombre de la clase.
 - **Cuerpo de la clase**. En él se especifican encerrados entre llaves los atributos y los métodos que va a tener la clase.
 
-Ejemplo:
-```java
-//Paquete al que pertenece la clase
-package NombreDePaquete;
+!!! example "Ejemplo"
+    ```java
+    //Paquete al que pertenece la clase
+    package NombreDePaquete;
 
-//Paquetes que importa la clase
-import ...
-
-...
+    //Paquetes que importa la clase
+    import ...
     
-public class NombreDeLaClase {
-	// Atributos de la clase
-	...
-	...
-	...
-	// Métodos de la clase
-	...
-	...
-	...
-}
-```
+    ...
+    
+    public class NombreDeLaClase {
+        // Atributos de la clase
+        ...
+        ...
+        ...
+        // Métodos de la clase
+        ...
+        ...
+        ...
+    }
+    ```
 
-> En la unidad anterior ya hemos utilizado clases, aunque aún no sabíamos su significado exacto. Por ejemplo, en los ejemplos de la unidad o en la tarea, estábamos utilizando clases, todas ellas eran clases principales, no tenían ningún atributo y el único método del que disponían era el método `main()`. 
+!!! example "Ejemplo"
+    En la unidad anterior ya hemos utilizado clases, aunque aún no sabíamos su significado exacto. Por ejemplo, en los ejemplos de la unidad o en la tarea, estábamos utilizando clases, todas ellas eran clases principales, no tenían ningún atributo y el único método del que disponían era el método `main()`. 
 
-> También es una clase `Math` y su método era `random()`, el que nos permitía usar números aleatorios.
+!!! example "Ejemplo"
+    También es una clase `Math` y su método era `random()`, el que nos permitía usar números aleatorios.
 
-> El método `main()` se utiliza para indicar que se trata de una clase principal, a partir de la cual va a empezar la ejecución del programa. Este método no aparece si la clase que estamos creando no va a ser la clase principal del programa.
+!!! example "Ejemplo"
+    El método `main()` se utiliza para indicar que se trata de una clase principal, a partir de la cual va a empezar la ejecución del programa. Este método no aparece si la clase que estamos creando no va a ser la clase principal del programa.
 
 #### ¿Qué significa `public class`?
 
@@ -183,7 +198,8 @@ Significa que la clase que se define es pública. Una clase pública es una clas
 
 Sin embargo, en ocasiones se definen clases (`A`) que solo van a ser utilizadas por una clase determinada (`B`). En ese caso, decimos que la clase `A` es una clase privada de la clase `B`.  Las clases `A` y `B` se definen en el mismo fichero `.java`. 
 
-> En un fichero pueden definirse varias clases pero solo una de ellas puede ser pública. De esta forma, si en un fichero se definen varias clases, una de ellas sería pública y el resto serían clases privadas de la primera, a las que solo ésta tendría acceso.
+!!! danger "Atención"
+     En un fichero pueden definirse varias clases pero solo una de ellas puede ser pública. De esta forma, si en un fichero se definen varias clases, una de ellas sería pública y el resto serían clases privadas de la primera, a las que solo ésta tendría acceso.
 
 ## Utilización de Objetos
 
@@ -193,7 +209,8 @@ Cuando creamos un objeto a partir de una clase se dice que hemos creado una "ins
 
 Los objetos se crean a partir de las clases, y representan casos individuales de éstas.
 
-> Para entender mejor el concepto entre un objeto y su clase, piensa en un molde de galletas y las galletas. El molde sería la clase, que define las características del objeto, por ejemplo su forma y tamaño. Las galletas creadas a partir de ese molde son los objetos o instancias.
+!!! example "Ejemplo"
+    Para entender mejor el concepto entre un objeto y su clase, piensa en un molde de galletas y las galletas. El molde sería la clase, que define las características del objeto, por ejemplo su forma y tamaño. Las galletas creadas a partir de ese molde son los objetos o instancias.
 
 Otro ejemplo, imagina una clase Persona que reúna las características comunes de las personas (`color de pelo`, `ojos`, `peso`, `altura`, etc.) y las acciones que pueden realizar (`crecer`, `dormir`, `comer`, etc.). Posteriormente dentro del programa podremos crear un objeto `Trabajador` que esté basado en esa clase Persona. Entonces se dice que el objeto `Trabajador` es una instancia de la clase `Persona`, o que la clase `Persona` es una abstracción del objeto `Trabajador`.
 
@@ -354,34 +371,35 @@ rect.setSize(200, 200);
 
 A continuación puedes acceder al código del ejemplo:
 
-```java
-/*
- * Muestra como se manipulan objetos en Java
- */
-import java.awt.Rectangle;
+!!! example "Ejemplo"
+    ```java
+    /*
+     * Muestra como se manipulan objetos en Java
+     */
+    import java.awt.Rectangle;
 
-public class Manipular {
-    public static void main(String[] args) {
-        // Instanciamos el objeto rect indicando posicion y dimensiones
-        Rectangle rect = new Rectangle( 50, 50, 150, 150 );
-        //Consultamos las coordenadas x e y del rectangulo
-        System.out.println( "------- Coordenadas esquina superior izqda. -------");
-        System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
-        // Consultamos las dimensiones (altura y anchura) del rectangulo
-        System.out.println( "\n----------------- Dimensiones -------------------");
-        System.out.println("\tAlto = " + rect.height );
-        System.out.println( "\tAncho = " + rect.width);
-        //Cambiar coordenadas del rectangulo
-        rect.height=100;
-        rect.width=100;
-        rect.setSize(200, 200);
-        System.out.println( "\n-- Nuevos valores de los atributos --");
-        System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
-        System.out.println("\tAlto = " + rect.height );
-        System.out.println( "\tAncho = " + rect.width);
+    public class Manipular {
+        public static void main(String[] args) {
+            // Instanciamos el objeto rect indicando posicion y dimensiones
+            Rectangle rect = new Rectangle( 50, 50, 150, 150 );
+            //Consultamos las coordenadas x e y del rectangulo
+            System.out.println( "------- Coordenadas esquina superior izqda. -------");
+            System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
+            // Consultamos las dimensiones (altura y anchura) del rectangulo
+            System.out.println( "\n----------------- Dimensiones -------------------");
+            System.out.println("\tAlto = " + rect.height );
+            System.out.println( "\tAncho = " + rect.width);
+            //Cambiar coordenadas del rectangulo
+            rect.height=100;
+            rect.width=100;
+            rect.setSize(200, 200);
+            System.out.println( "\n-- Nuevos valores de los atributos --");
+            System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
+            System.out.println("\tAlto = " + rect.height );
+            System.out.println( "\tAncho = " + rect.width);
+        }
     }
-}
-```
+    ```
 
 ### Destrucción de objetos y liberación de memoria.
 
@@ -422,14 +440,16 @@ En general, la lista de parámetros de un método se puede declarar de dos forma
 - **Por valor**. El valor de los parámetros no se devuelve al finalizar el método, es decir, cualquier modificación que se haga en los parámetros no tendrá efecto una vez se salga del método. Esto es así porque cuando se llama al método desde cualquier parte del programa, dicho método recibe una copia de los argumentos, por tanto cualquier modificación que haga será sobre la copia, no sobre las variables originales.
 - **Por referencia**. La modificación en los valores de los parámetros sí tienen efecto tras la finalización del método. Cuando pasamos una variable a un método por referencia lo que estamos haciendo es pasar la dirección del dato en memoria, por tanto cualquier cambio en el dato seguirá modificado una vez que salgamos del método.
 
-> En el lenguaje Java, todas las variables se pasan por valor, excepto los objetos que se pasan por referencia. 
+!!! danger "Atención"
+    En el lenguaje Java, todas las variables se pasan por valor, excepto los objetos que se pasan por referencia. 
 
 En Java, la declaración de un método tiene dos restricciones:
 
 - **Un método siempre tiene que devolver un valor (no hay valor por defecto)**. Este valor de retorno es el valor que devuelve el método cuando termina de ejecutarse, al método o programa que lo llamó. Puede ser un tipo primitivo, un tipo referenciado o bien el tipo `void`, que indica que el método no devuelve ningún valor.
 - **Un método tiene un número fijo de argumentos**. Los argumentos son variables a través de las cuales se pasa información al método desde el lugar del que se llame, para que éste pueda utilizar dichos valores durante su ejecución. Los argumentos reciben el nombre de parámetros cuando aparecen en la declaración del método.
 
-> El valor de retorno es la información que devuelve un método tras su ejecución.
+!!! tip "Recuerda"
+    El valor de retorno es la información que devuelve un método tras su ejecución.
 
 Según hemos visto en el apartado anterior, la cabecera de un método se declara como sigue:
 
@@ -445,7 +465,8 @@ La lista de parámetros aparece al final de la cabecera del método, justo despu
 (tipo_parámetro1 nombre_parámetro1, ..., tipo_parámetroN nombre_parámetroN)
 ```
 
-> Cuando se llame al método, se deberá utilizar el nombre del método, seguido de los argumentos que  deben coincidir con la lista de parámetros.
+!!! danger "Atención"
+    Cuando se llame al método, se deberá utilizar el nombre del método, seguido de los argumentos que  deben coincidir con la lista de parámetros.
 
 La lista de argumentos en la llamada a un método debe coincidir en número, tipo y orden con los parámetros del método, ya que de lo contrario se produciría un error de sintaxis.
 
@@ -476,7 +497,8 @@ El método constructor tiene las siguientes particularidades:
 - **El constructor por defecto es aquél que no tiene argumentos o parámetros**. Cuando creamos un objeto llamando al nombre de la clase sin argumentos, estamos utilizando el constructor por defecto.
 - **Es necesario que toda clase tenga al menos un constructor.** Si no definimos constructores para una clase, y sólo en ese caso, el compilador crea un constructor por defecto vacío, que inicializa los atributos a sus valores por defecto, según del tipo que sean: `0` para los tipos numéricos, `false` para los `boolean` y `null` para los tipo carácter y las referencias. Dicho constructor lo que hace es llamar al constructor sin argumentos de la superclase (clase de la cual hereda); si la superclase no tiene constructor sin argumentos se produce un error de compilación.
 
-> Cuando definimos constructores personalizados, el constructor por defecto deja de existir, y si no definimos nosotros un constructor sin argumentos cuando intentemos utilizar el constructor por defecto nos dará un error de compilación. 
+!!! danger "Atención"
+    Cuando definimos constructores personalizados, el constructor por defecto deja de existir, y si no definimos nosotros un constructor sin argumentos cuando intentemos utilizar el constructor por defecto nos dará un error de compilación. 
 
 ### El operador `this`.
 
@@ -536,7 +558,8 @@ Conforme nuestros programas se van haciendo más grandes, el número de clases v
 
 Un **paquete** de clases es una agrupación de clases que consideramos que están relacionadas entre sí o tratan de un tema común.
 
-> Las clases de un mismo paquete tienen un acceso privilegiado a los atributos y métodos de otras clases de dicho paquete. Es por ello por lo que se considera que los paquetes son también, en cierto modo, unidades de encapsulación y ocultación de información.
+!!! tip "Recuerda"
+    Las clases de un mismo paquete tienen un acceso privilegiado a los atributos y métodos de otras clases de dicho paquete. Es por ello por lo que se considera que los paquetes son también, en cierto modo, unidades de encapsulación y ocultación de información.
 
 Java nos ayuda a organizar las clases en paquetes. En cada fichero `.java` que hagamos, al principio, podemos indicar a qué paquete pertenece la clase que hagamos en ese fichero.
 
