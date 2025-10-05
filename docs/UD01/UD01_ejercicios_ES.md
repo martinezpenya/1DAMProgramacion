@@ -15,34 +15,34 @@
     }
     ```
 
-3. (Reto3) 3. Reto 3: Haga un programa con dos variables que, sin usar ningún literal ninguna parte excepto para  inicializar estas variables, vaya estimando e imprimiendo sucesivamente  los 5 primeros valores de la tabla de multiplicar del 4. Puede usar  operadores aritméticos y de asignación, si desea.
+3. (Reto3) Haga un programa con dos variables que, sin usar ningún literal ninguna parte excepto para  inicializar estas variables, vaya estimando e imprimiendo sucesivamente  los 5 primeros valores de la tabla de multiplicar del 4. Puede usar  operadores aritméticos y de asignación, si desea.
 
-4. (Reto4) 4. Reto 4: Haga dos programas, uno que muestre por pantalla la tabla de multiplicar del 3, y otro, la del 5. Los dos deben ser exactamente  iguales, letra por letra, excepto en un único literal dentro de todo el  código.
+4. (Reto4) Haga dos programas, uno que muestre por pantalla la tabla de multiplicar del 3, y otro, la del 5. Los dos deben ser exactamente  iguales, letra por letra, excepto en un único literal dentro de todo el  código.
 
-5. (Reto5) 5. Reto 5:  Experimente qué pasa si en el siguiente programa inicializa la variable  realLargo con un valor con varios decimales. El programa continúa  compilando? ¿Qué resultado da? Después inténtelo asignando un valor  superior al rango de los enteros (por ejemplo, 3000000000.0).
+5. (Reto5) Experimente qué pasa si en el siguiente programa inicializa la variable  realLargo con un valor con varios decimales. El programa continúa  compilando? ¿Qué resultado da? Después inténtelo asignando un valor  superior al rango de los enteros (por ejemplo, 3000000000.0).
 
     ```java
     public class ConversionExplicita {
-    public static void main (String [] args) {
-    double realLlarg = 3000000000.0;
-    // Asignación incorrecta. ¿Un real tiene decimales, no?
-    long enterLlarg = (long) realLlarg;
-    // Asignación incorrecta. ¿Un entero largo tiene un rango mayor que un entero, no?
-    int enter = (int) enterLlarg;
-    System.out.println (enter);
-    }
+    	public static void main (String[] args) {
+    		double realLlarg = 3000000000.0;
+    		// Asignación incorrecta. ¿Un real tiene decimales, no?
+    		long enterLlarg = (long) realLlarg;
+    		// Asignación incorrecta. ¿Un entero largo tiene un rango mayor que un entero, no?
+    		int enter = (int) enterLlarg;
+    		System.out.println (enter);
+    	}
     }
     ```
 
-6. (Reto6) 6. Reto 6: Haga un programa que muestre en pantalla de forma tabulada la tabla de verdad de una  expresión de disyunción entre dos variables booleanas.
+6. (Reto6) Haga un programa que muestre en pantalla de forma tabulada la tabla de verdad de una  expresión de disyunción entre dos variables booleanas.
 
-7. (Reto7) 7. Reto 7: Haga un programa que muestre por pantalla la multiplicación de tres números reales entrados por teclado.
+7. (Reto7) Haga un programa que muestre por pantalla la multiplicación de tres números reales entrados por teclado.
 
 ## Ejercicios
 
- Solo se puede usar en esta actividad ya que no se a explicado en profundidad en este tema y lo pueden confundir con el  `System.console().readLine()`; 
+ Solo se puede usar en esta actividad ya que no se ha explicado en profundidad en este tema y lo pueden confundir con el  `System.console().readLine()`; 
 
-1. (EJS1) Probar la E/S elemental: Escribe el pequeño programa que aparece a continuación.
+1. (Ejs1) Probar la E/S elemental: Escribe el pequeño programa que aparece a continuación.
 
     ```java
     import java.util.*;
@@ -65,13 +65,13 @@
 
     ¿Qué ocurre si eliminamos la instrucción `import java.util.*`;
 
-2. (EJS2) 2. Averigua mediante pruebas:
+2. (Ejs2) Averigua mediante pruebas:
 
     1. ¿Es posible escribir dos instrucciones en la misma línea de un programa?
     2. ¿Se puede "romper" una instrucción entre varias líneas?
     3. Algunos lenguajes de programación dan un valor por defecto a las variables cuando las declaramos sin inicializarlas. Otros no permiten usar el contenido de una variable que no haya sido previamente inicializada. ¿Cuál es comportamiento de Java? 
 
-3. (EJS3) 3. ¿Cuáles de los siguientes identificadores son válidos y cuales no? Pruébalos cuando tengas duda
+3. (Esj3) ¿Cuáles de los siguientes identificadores son válidos y cuales no? Pruébalos cuando tengas duda
     1. `n`
     2. `MiProblema`
     3. `MiJuego`
@@ -103,21 +103,21 @@
 
 5. (Intercambio) Escribir un programa que …
 
-    1. Lea desde teclado dos valores enteros. Llama a las variables v1 y v2.
+    1. Lea desde teclado dos valores de texto. Llama a las variables s1 y s2.
     2. Muestre los valores introducidos por el usuario
-    3. Intercambie el valor de v1 y v2 (v1 pasa a  valer lo que valía v2 y viceversa)
+    3. Intercambie el valor de s1 y s2 (s1 pasa a  valer lo que valía s2 y viceversa)
     4. Muestre de nuevo los valores, ahora con su valor intercambiado
 
     Ejemplo de ejecución:
 
     ```sh
-    Escribe un número para v1: 2
-    Escribe un número para v2: 9
-    Antes de intercambiar	 v1: 2   y	 v2: 9
-    Después de intercambiar	 v1: 9	 y	 v2: 2
+    Escribe un texto para s1: David
+    Escribe un texto para s2: Maria
+    Antes de intercambiar	 s1: David	y	s2: Maria
+    Después de intercambiar	 s1: Maria	y	s2: David
     ```
 
-6. (ExpresionesMatematicas) 6. Escribir las siguientes expresiones siguiendo la sintaxis de Java.
+6. (ExpresionesMatematicas) Escribir las siguientes expresiones siguiendo la sintaxis de Java.
     1. $\frac{x}{y}+1$
     2. $\frac{x+y}{x-y}$
     3. $[ \frac{b}{c+d}]$
@@ -157,105 +157,107 @@
 
 12. (Dados) Escribir un programa que simula el lanzamiento de dos dados.
 
-    ```sh
-    Dado 1 : 5
-    Dado 2: 4
-    Puntuación total: 9
-    ```
+     ```sh
+     Dado 1 : 5
+     Dado 2: 4
+     Puntuación total: 9
+     ```
 
-13. (UltimaCifra) Escribir un programa que muestre la última cifra de un número entero que introduce el usuario por teclado. *Pista: ¿Qué devuelve a%10 ?*
+13. (UltimaCifra) Escribir un programa que muestre la última cifra de un número entero que introduce el usuario por teclado.
 
-    ```sh
-    Introduce un número entero: 3761
-    La última cifra de 3761 es 1
-    ```
-    
+     *Pista: ¿Qué devuelve `a%10` ?*
+
+     ```sh
+     Introduce un número entero: 3761
+     La última cifra de 3761 es 1
+     ```
+
 14. (PenultimaCifra) Escribir un programa que muestre la penúltima cifra de un número entero que introduce el usuario por teclado.
 
-    ```sh
-    Introduce un número entero: 3761
-    La penúltima cifra de 3761 es 6
-    ```
-    
-    Una vez hayas comprobado que el programa funciona correctamente, prueba qué ocurre si el usuario introduce un valor de una sola cifra (por ejemlo 4). Explica el resultado mostrado por el programa.
-    
+     ```sh
+     Introduce un número entero: 3761
+     La penúltima cifra de 3761 es 6
+     ```
+
+     Una vez hayas comprobado que el programa funciona correctamente, prueba qué ocurre si el usuario introduce un valor de una sola cifra (por ejemlo 4). Explica el resultado mostrado por el programa.
+
 15. (Redondear1) `Math.round(x)` redondea x de manera que este queda sin decimales. (*`Math.round(35.5289)` da como resultado `36`)*
 
-    Trata de escribir un programa en el que el usuario introduzca un número real y a continuación se muestre redondeado a un decimal. *Pista : combinar productos, divisiones y Math.round()*
+     Trata de escribir un programa en el que el usuario introduzca un número real y a continuación se muestre redondeado a un decimal. *Pista : combinar productos, divisiones y Math.round()*
 
-    Ejemplo de ejecución:
+     Ejemplo de ejecución:
 
-    ```sh
-    Introduce un número real: 35.5289
-    El número 35.5289, redondeado a un decimal es 35.5
-    ```
+     ```sh
+     Introduce un número real: 35.5289
+     El número 35.5289, redondeado a un decimal es 35.5
+     ```
 
 16. (ExpresionesAritmeticas) 16. Cuál es el valor resultante de dada una de las siguientes expresiones
-    1. `5 * 4 – 3 * 6`
-    2. `4 * 5 * 2`
-    3. `(24 + 2 * 6) / 4`
-    4. `8 / 2 / 2 * 5`
-    5. `3 + 4 * (8  * (4 –  (9 + 3) /  6 ))`
-    6. `4 * 3 * 5 + 8 * 4 * 2`
-    7. `4 – 40 % 5`
-    8. `4 * 3 / 2`
-    9. `4 / 2 * 3`
-    10. `213 /100`
+     1. `5 * 4 – 3 * 6`
+     2. `4 * 5 * 2`
+     3. `(24 + 2 * 6) / 4`
+     4. `8 / 2 / 2 * 5`
+     5. `3 + 4 * (8  * (4 –  (9 + 3) /  6 ))`
+     6. `4 * 3 * 5 + 8 * 4 * 2`
+     7. `4 – 40 % 5`
+     8. `4 * 3 / 2`
+     9. `4 / 2 * 3`
+     10. `213 /100`
 
 17. (Einstein) La famosa ecuación de Einstein para la conversión de una masa m en energía viene dada por la fórmula E=mc^2^, donde c es la velocidad de la luz que vale 2.997925 · 10^8^ m/s. Escribir un programa que lea el valor de la masa y obtenga la energía correspondiente según la anterior fórmula.
 
 18. (FragmentosCodigo) Indica cuales serán los valores de las variables después de ejecutar cada uno de los siguientes fragmentos de código. Resuelve el ejercicio sin escribir los programas correspondientes y probarlos.
 
-    1. ```java
-       int a=3, b = 2;
-       a = b + b;
-       b = a + a;
-       ```
+     1. ```java
+        int a=3, b = 2;
+        a = b + b;
+        b = a + a;
+        ```
 
-    2. ```java
-       int a=3,b=0;
-       b = b - 1;
-       a = a + b;
-       ```
+     2. ```java
+        int a=3,b=0;
+        b = b - 1;
+        a = a + b;
+        ```
 
-    3. ```java
-       int a, b=5;
-       b++;
-       ++b;
-       a= b+1;
-       ```
+     3. ```java
+        int a, b=5;
+        b++;
+        ++b;
+        a= b+1;
+        ```
 
-    4. ```java
-       int a = 5,b;
-       b = a++;
-       ```
+     4. ```java
+        int a = 5,b;
+        b = a++;
+        ```
 
-    5. ```java
-       int a = 5,b;
-       b = ++a;
-       ```
+     5. ```java
+        int a = 5,b;
+        b = ++a;
+        ```
 
-    6. ```java
-       int a=2, b=3;
-       b+=a;
-       ```
+     6. ```java
+        int a=2, b=3;
+        b+=a;
+        ```
 
-    7. ```java
-       int a=2, b=3;
-       b-=a;
-       a=-b;
-       ```
+     7. ```java
+        int a=2, b=3;
+        b-=a;
+        a=-b;
+        ```
 
-    8. ```java
-       int a=2, b=3;
-       b%=a;
-       ```
+     8. ```java
+        int a=2, b=3;
+        b%=a;
+        ```
 
-    9. ```java
-       int a=2,b=3,c=4;
-       a = --b + c++;
-       b+=a;
-       ```
+     9. ```java
+        int a=2,b=3,c=4;
+        a = --b + c++;
+        b+=a;
+        ```
 
 ## Expresiones Lógicas
 
@@ -273,50 +275,50 @@
     
     *Solución*: `m >= 18`
 
-    1. (Logica1) 1. Miguel es menor de edad.
-    2. (Logica2) 2. Miguel es mayor que Julio
-    3. (Logica3) 3. Miguel es el más viejo.
-    4. (Logica4) 4. Miguel es el más joven.
-    5. (Logica5) 5. Miguel no es el más joven.
-    6. (Logica6) 6. Miguel no es el más viejo.
-    7. (Logica7) 7. Alguno de ellos es mayor de edad.
-    8. (Logica8) 8. Miguel y Julio son los más jóvenes.
-    9. (Logica9) 9. Entre todos tienen más de 100 años.
-    10. (Logica10) 10. Entre Miguel y Julio suman más edad que Pablo.
-    11. (Logica11) 11. Entre Miguel y Julio suman más edad que Pablo y Vicente juntos.
-    12. (Logica12) 12. Si los ordenamos por edades de menor a mayor, Julio es el segundo.
-    13. (Logica13) 13. Si los ordenamos por edades de menor a mayor, Julio es el segundo y Pablo el tercero.
-    14. (Logica14) 14. Al menos uno de ellos es menor de edad.
-    15. (Logica15) 15. Al menos dos de ellos son menores de edad.
-    16. (Logica16) 16. Todos son menores de edad.
-    17. (Logica17) 17. Solo dos de ellos son menores de edad.
-    18. (Logica18) 18. Al menos dos de ellos nacieron el mismo año.
-    19. (Logica19) 19. Solo dos de ellos nacieron el mismo año.
-    20. (Logica20) 20. Al menos uno de ellos es menor que Julio
-    21. (Logica21) 21. Solo uno de ellos es menor que Julio
-    22. (Logica22) 22. Miguel es mayor de edad y alguno de los otros es menor de edad.
+    1. (Logica1) Miguel es menor de edad.
+    2. (Logica2) Miguel es mayor que Julio
+    3. (Logica3) Miguel es el más viejo.
+    4. (Logica4) Miguel es el más joven.
+    5. (Logica5) Miguel no es el más joven.
+    6. (Logica6) Miguel no es el más viejo.
+    7. (Logica7) Alguno de ellos es mayor de edad.
+    8. (Logica8) Miguel y Julio son los más jóvenes.
+    9. (Logica9) Entre todos tienen más de 100 años.
+    10. (Logica10) Entre Miguel y Julio suman más edad que Pablo.
+    11. (Logica11) Entre Miguel y Julio suman más edad que Pablo y Vicente juntos.
+    12. (Logica12) Si los ordenamos por edades de menor a mayor, Julio es el segundo.
+    13. (Logica13) Si los ordenamos por edades de menor a mayor, Julio es el segundo y Pablo el tercero.
+    14. (Logica14) Al menos uno de ellos es menor de edad.
+    15. (Logica15) Al menos dos de ellos son menores de edad.
+    16. (Logica16) Todos son menores de edad.
+    17. (Logica17) Solo dos de ellos son menores de edad.
+    18. (Logica18) Al menos dos de ellos nacieron el mismo año.
+    19. (Logica19) Solo dos de ellos nacieron el mismo año.
+    20. (Logica20) Al menos uno de ellos es menor que Julio
+    21. (Logica21) Solo uno de ellos es menor que Julio
+    22. (Logica22) Miguel es mayor de edad y alguno de los otros es menor de edad.
 
 ## Actividades
 
-1. (Actividad1) 1. Realiza un conversor de euros a pesetas. La cantidad de euros que se quiere convertir debe ser  introducida por teclado.
+1. (Actividad1) Realiza un conversor de euros a pesetas. La cantidad de euros que se quiere convertir debe ser  introducida por teclado.
 
-2. (Actividad2) 2. Realiza un conversor de pesetas a euros. La cantidad de pesetas que  se quiere convertir debe ser introducida por teclado.
+2. (Actividad2) Realiza un conversor de pesetas a euros. La cantidad de pesetas que  se quiere convertir debe ser introducida por teclado.
 
-3. (Actividad3) 3. Escribe un programa que calcule el área de un rectángulo. (`area = base * altura`)
+3. (Actividad3) Escribe un programa que calcule el área de un rectángulo. (`area = base * altura`)
 
-4. (Actividad4) 4. Escribe un programa que calcule el área de un triángulo. (`area = (base * altura) / 2`)
+4. (Actividad4) Escribe un programa que calcule el área de un triángulo. (`area = (base * altura) / 2`)
 
-5. (Actividad5) 5. Escribe un programa que calcule el salario semanal de un empleado en base a las horas trabajadas, a razón de 12 euros la hora.
+5. (Actividad5) Escribe un programa que calcule el salario semanal de un empleado en base a las horas trabajadas, a razón de 12 euros la hora.
 
-6. (Actividad6) 6. Realiza un conversor de MiB a KiB. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
+6. (Actividad6) Realiza un conversor de MiB a KiB. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
 
-7. (Actividad7) 7. Realiza un conversor de Kib a Mib. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
+7. (Actividad7) Realiza un conversor de Kib a Mib. [Ayuda](https://es.wikipedia.org/wiki/Prefijo_binario)
 
-8. (Actividad8) 8. Realiza un programa en Java que genere letras de forma aleatoria.
+8. (Actividad8) Realiza un programa en Java que genere letras de forma aleatoria.
 
-9. (Actividad9) 9. Realiza un programa en Java que genere el número premiado del Cupón de la ONCE.
+9. (Actividad9) Realiza un programa en Java que genere el número premiado del Cupón de la ONCE.
 
-10. (Actividad10) 10. Modificar el siguiente programa para que compile y funcione:
+10. (Actividad10) Modificar el siguiente programa para que compile y funcione:
 
     ```java
     public class Activ10 {
