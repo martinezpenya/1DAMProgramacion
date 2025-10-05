@@ -434,7 +434,7 @@ $ java Ejemplo
 Hola Mundo
 ```
 
-> Porqué no necesito compilar mi archivo `.java` antes de ejecutarlo y funciona directamente si me salto ese paso?
+> Por qué no necesito compilar mi archivo `.java` antes de ejecutarlo y funciona directamente si me salto ese paso?
 >
 > https://stackoverflow.com/questions/54493058/running-a-java-program-without-compiling
 
@@ -1004,5 +1004,6 @@ System.out.println("Número decimal introducido es: "+doble3);
 [EjemploUD01.java]( code/EjemploUD01.java){: download }
 
 ## Píldoras informáticas relacionadas
+
 
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
