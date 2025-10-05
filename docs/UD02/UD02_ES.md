@@ -40,7 +40,7 @@ Por tanto, estudiando los objetos que están presentes en un problema podemos da
 
 - **Identidad**. Es la característica que permite diferenciar un objeto de otro. De esta manera, aunque dos objetos sean exactamente iguales en sus atributos, son distintos entre sí. Puede ser una dirección de memoria, el nombre del objeto o cualquier otro elemento que utilice el lenguaje para distinguirlos. Por ejemplo, dos vehículos que hayan salido de la misma cadena de fabricación y sean iguales aparentemente, son distintos porque tienen un código que los identifica.
 - **Estado**. El estado de un objeto viene determinado por una serie de parámetros o atributos que lo describen, y los valores de éstos. Por ejemplo, si tenemos un objeto `Coche`, el estado estaría definido por atributos como `Marca`, `Modelo`, `Color`, `Cilindrada`, etc.
-- **Comportamiento**. Son las acciones que se pueden realizar sobre el objeto. En otras palabras, son los métodos o procedimientos que realiza el objeto. Siguiendo con el ejemplo del objeto Coche, el el comportamiento serían acciones como: `arrancar()`, `parar()`, `acelerar()`, `frenar()`, etc. Definición de clases. 
+- **Comportamiento**. Son las acciones que se pueden realizar sobre el objeto. En otras palabras, son los métodos o procedimientos que realiza el objeto. Siguiendo con el ejemplo del objeto Coche, el el comportamiento serían acciones como: `arrancar()`, `parar()`, `acelerar()`, `frenar()`, etc. Definición de clases.
 
 Una clase java se escribe en un fichero con extensión `.java` que tiene el mismo nombre que la clase. Por ejemplo la clase `Vehículo` se escribiría en el fichero `Vehiculo.java`.
 
@@ -77,11 +77,11 @@ donde  …
 - ***tipo*** indica el tipo de dato del atributo.
 - ***nombreDelAtributo*** es el identificador del atributo.
 
-#### Métodos 
+#### Métodos
 
-Los métodos determinan qué puede hacer un objeto de la clase, es decir, su comportamiento. 
+Los métodos determinan qué puede hacer un objeto de la clase, es decir, su comportamiento.
 
-Los métodos realizan algún tipo de acción o tarea y, en ocasiones, devuelven un resultado. 
+Los métodos realizan algún tipo de acción o tarea y, en ocasiones, devuelven un resultado.
 
 Para realizar su trabajo puede ser necesario que pasemos al método cierta información. Por ejemplo, cuando llamamos al método `round` de la clase `Math`, para redondear un número real, debemos indicar al método cual es el número que queremos redondear. A esa información que pasamos a los métodos se le llama **parámetros** o **argumentos**.
 
@@ -184,7 +184,7 @@ Para declarar una clase en Java se utiliza la palabra reservada `class`. La decl
     ```
 
 !!! example "Ejemplo"
-    En la unidad anterior ya hemos utilizado clases, aunque aún no sabíamos su significado exacto. Por ejemplo, en los ejemplos de la unidad o en la tarea, estábamos utilizando clases, todas ellas eran clases principales, no tenían ningún atributo y el único método del que disponían era el método `main()`. 
+    En la unidad anterior ya hemos utilizado clases, aunque aún no sabíamos su significado exacto. Por ejemplo, en los ejemplos de la unidad o en la tarea, estábamos utilizando clases, todas ellas eran clases principales, no tenían ningún atributo y el único método del que disponían era el método `main()`.
 
 !!! example "Ejemplo"
     También es una clase `Math` y su método era `random()`, el que nos permitía usar números aleatorios.
@@ -196,7 +196,7 @@ Para declarar una clase en Java se utiliza la palabra reservada `class`. La decl
 
 Significa que la clase que se define es pública. Una clase pública es una clase accesible desde otras clases o, dicho de otra forma,  que puede ser utilizada por otras clases. Ya hemos dicho que un programa, de alguna manera, consiste en la creación de objetos de distintas clases, que se relacionan entre sí. Lo más común es que las clases que definimos sean públicas y que en cada fichero de extensión `.java` se defina una única clase.
 
-Sin embargo, en ocasiones se definen clases (`A`) que solo van a ser utilizadas por una clase determinada (`B`). En ese caso, decimos que la clase `A` es una clase privada de la clase `B`.  Las clases `A` y `B` se definen en el mismo fichero `.java`. 
+Sin embargo, en ocasiones se definen clases (`A`) que solo van a ser utilizadas por una clase determinada (`B`). En ese caso, decimos que la clase `A` es una clase privada de la clase `B`.  Las clases `A` y `B` se definen en el mismo fichero `.java`.
 
 !!! danger "Atención"
      En un fichero pueden definirse varias clases pero solo una de ellas puede ser pública. De esta forma, si en un fichero se definen varias clases, una de ellas sería pública y el resto serían clases privadas de la primera, a las que solo ésta tendría acceso.
@@ -218,7 +218,7 @@ Cualquier objeto instanciado de una clase contiene una copia de todos los atribu
 
 En el ejemplo del objeto Trabajador, las variables instancia serían `color_de_pelo`, `peso`, `altura`, etc. Y los métodos instancia serían `crecer()`, `dormir()`, `comer()`, etc.
 
-### Ciclo de vida de los objetos.
+### Ciclo de vida de los objetos
 
 Todo programa en Java parte de una única clase, que como hemos comentado se trata de la clase principal.
 
@@ -232,7 +232,7 @@ A la vista de lo anterior, podemos concluir que los objetos tienen un ciclo de v
 - **Manipulación**, que se lleva a cabo cuando se hace uso de los atributos y métodos del objeto.
 - **Destrucción**, eliminación del objeto y liberación de recursos.
 
-### Declaración.
+### Declaración
 
 Para la creación de un objeto hay que seguir los siguientes pasos:
 
@@ -263,7 +263,7 @@ String mensaje;
 
 Los nombres de la clase empiezan con mayúscula, como `String`, y los nombres de los objetos con minúscula, como `mensaje`, así sabemos qué tipo de elemento utilizando.
 
-Pues bien, `String` es realmente la clase a partir de la cual creamos nuestro objeto llamado mensaje (🤯).
+Pues bien, `String` es realmente la clase a partir de la cual creamos nuestro objeto llamado mensaje(🤯).
 
 Si observas, poco se diferencia esta declaración de las declaraciones de variables que hacíamos para los tipos primitivos. Antes decíamos que `mensaje` era una variable del tipo de dato `String`. Ahora realmente vemos que `mensaje` es un objeto de la clase `String`. Pero mensaje aún no contiene el objeto porque no ha sido instanciado, veamos cómo hacerlo.
 
@@ -275,9 +275,9 @@ String s; //s vale null
 s = saludo; //asignación de referencias
 ```
 
-En las instrucciones anteriores, las variables `s` y` saludo` apuntan al mismo objeto de la clase `String`. Esto implica que cualquier modificación en el objeto saludo modifica también el objeto al que hace referencia la variable `s`, ya que realmente son el mismo.
+En las instrucciones anteriores, las variables `s` y `saludo` apuntan al mismo objeto de la clase `String`. Esto implica que cualquier modificación en el objeto saludo modifica también el objeto al que hace referencia la variable `s`, ya que realmente son el mismo.
 
-### Instanciación.
+### Instanciación
 
 Una vez creada la referencia al objeto, debemos crear la instancia u objeto que se va a guardar en esa referencia. Para ello utilizamos la orden `new` con la siguiente sintaxis:
 
@@ -326,7 +326,7 @@ o para la clase `String`:
 String mensaje = "El primer programa";
 ```
 
-### Manipulación.
+### Manipulación
 
 Una vez creado e instanciado el objeto ¿cómo accedemos a su contenido? Para acceder a los atributos y métodos del objeto utilizaremos el nombre del objeto seguido del operador punto (`.`) y el nombre del **atributo** o **método** que queremos utilizar. Cuando utilizamos el operador `punto` se dice que estamos enviando un mensaje al objeto. La forma general de enviar un mensaje a un objeto es:
 
@@ -377,7 +377,6 @@ A continuación puedes acceder al código del ejemplo:
      * Muestra como se manipulan objetos en Java
      */
     import java.awt.Rectangle;
-
     public class Manipular {
         public static void main(String[] args) {
             // Instanciamos el objeto rect indicando posicion y dimensiones
@@ -401,7 +400,7 @@ A continuación puedes acceder al código del ejemplo:
     }
     ```
 
-### Destrucción de objetos y liberación de memoria.
+### Destrucción de objetos y liberación de memoria
 
 Cuando un objeto deja de ser utilizado, es necesario liberar el espacio de memoria y otros recursos que poseía para poder ser reutilizados por el programa. A esta acción se le denomina destrucción del objeto.
 
@@ -427,12 +426,12 @@ Al igual que las clases, los métodos están compuestos por una cabecera y un cu
 
 Dentro de un método nos encontramos el cuerpo del método que contiene el código de la acción a realizar. Las acciones que un método puede realizar son:
 
-- **Inicializar** los atributos del objeto 
+- **Inicializar** los atributos del objeto
 - **Consultar** los valores de los atributos
 - **Modificar** los valores de los atributos
 - **Llamar a otros métodos**, del mismo del objeto o de objetos externos
 
-### Parámetros y valores devueltos.
+### Parámetros y valores devueltos
 
 Los métodos se pueden utilizar tanto para consultar información sobre el objeto como para modificar su estado. La información consultada del objeto se devuelve a través de lo que se conoce como valor de retorno, y la modificación del estado del objeto, o sea, de sus atributos, se hace mediante la lista de parámetros.
 En general, la lista de parámetros de un método se puede declarar de dos formas diferentes:
@@ -441,7 +440,7 @@ En general, la lista de parámetros de un método se puede declarar de dos forma
 - **Por referencia**. La modificación en los valores de los parámetros sí tienen efecto tras la finalización del método. Cuando pasamos una variable a un método por referencia lo que estamos haciendo es pasar la dirección del dato en memoria, por tanto cualquier cambio en el dato seguirá modificado una vez que salgamos del método.
 
 !!! danger "Atención"
-    En el lenguaje Java, todas las variables se pasan por valor, excepto los objetos que se pasan por referencia. 
+    En el lenguaje Java, todas las variables se pasan por valor, excepto los objetos que se pasan por referencia.
 
 En Java, la declaración de un método tiene dos restricciones:
 
@@ -470,7 +469,7 @@ La lista de parámetros aparece al final de la cabecera del método, justo despu
 
 La lista de argumentos en la llamada a un método debe coincidir en número, tipo y orden con los parámetros del método, ya que de lo contrario se produciría un error de sintaxis.
 
-### Constructores.
+### Constructores
 
 ¿Recuerdas cuando hablábamos de la creación e instanciación de un objeto? Decíamos que utilizábamos el operador `new` seguido del nombre de la clase y una pareja de abrir‐cerrar paréntesis.
 
@@ -498,17 +497,17 @@ El método constructor tiene las siguientes particularidades:
 - **Es necesario que toda clase tenga al menos un constructor.** Si no definimos constructores para una clase, y sólo en ese caso, el compilador crea un constructor por defecto vacío, que inicializa los atributos a sus valores por defecto, según del tipo que sean: `0` para los tipos numéricos, `false` para los `boolean` y `null` para los tipo carácter y las referencias. Dicho constructor lo que hace es llamar al constructor sin argumentos de la superclase (clase de la cual hereda); si la superclase no tiene constructor sin argumentos se produce un error de compilación.
 
 !!! danger "Atención"
-    Cuando definimos constructores personalizados, el constructor por defecto deja de existir, y si no definimos nosotros un constructor sin argumentos cuando intentemos utilizar el constructor por defecto nos dará un error de compilación. 
+    Cuando definimos constructores personalizados, el constructor por defecto deja de existir, y si no definimos nosotros un constructor sin argumentos cuando intentemos utilizar el constructor por defecto nos dará un error de compilación.
 
-### El operador `this`.
+### El operador `this`
 
 Los constructores y métodos de un objeto suelen utilizar el operador `this`. Este operador sirve para referirse a los atributos de un objeto cuando estamos dentro de él. Sobre todo se utiliza cuando existe ambigüedad entre el nombre de un parámetro y el nombre de un atributo, entonces en lugar del nombre del atributo solamente escribiremos `this.nombre_atributo`, y así no habrá duda de a qué elemento nos estamos refiriendo.
 
-### Métodos estáticos.
+### Métodos estáticos
 
 Cuando trabajábamos con cadenas de caracteres utilizando la clase `String`, veíamos las operaciones que podíamos hacer con ellas: obtener longitud, comparar dos cadenas de caracteres, cambiar a mayúsculas o minúsculas, etc. Pues bien, sin saberlo estábamos utilizando métodos estáticos definidos por Java para la clase `String`. Pero ¿qué son los métodos estáticos? Veámoslo.
 
-Los métodos estáticos son aquellos métodos definidos para una clase que se pueden usar directamente, sin necesidad de crear un objeto de dicha clase. También se llaman métodos de clase. 
+Los métodos estáticos son aquellos métodos definidos para una clase que se pueden usar directamente, sin necesidad de crear un objeto de dicha clase. También se llaman métodos de clase.
 
 Para llamar a un método estático utilizaremos:
 
@@ -547,12 +546,11 @@ y en esta otra
 System.out.println(Math.sqrt(4));
 ```
 
-
 En el primer ejemplo, `.setRadio(200)` va precedido por un objeto. La variable `c1` es un objeto de la clase Círculo, por tanto, la instrucción está modificando el radio de un círculo concreto, el que se encuentra en la posición (50,50) . El método `setRadio` es un método no estático. Los métodos no estáticos actúan siempre sobre algún objeto (el que figura a la izquierda del punto).
 
 En el segundo ejemplo, en cambio, a la izquierda de `.sqrt(4)` no se ha puesto el nombre de un objeto, sino el de una clase, la clase `Math`. El método `sqrt` no está actuando sobre un objeto concreto: no tiene sentido hacerlo, solo pretendemos calcular la raíz cuadrada de `4`. `Sqrt` es un método estático. Los métodos estáticos se usan poniendo delante del punto el nombre de la clase en que se encuentran definidos.
 
-## **Librerías de Objetos (Paquetes).**
+## **Librerías de Objetos (Paquetes)**
 
 Conforme nuestros programas se van haciendo más grandes, el número de clases va creciendo. Meter todas las clases en único directorio no ayuda a que estén bien organizadas, lo mejor es hacer grupos de clases, de forma que todas las clases que estén relacionadas o traten sobre un mismo tema estén en el mismo grupo.
 
@@ -583,7 +581,7 @@ public class Bienvenida {
 
 El código es exactamente igual que como hemos venido haciendo hasta ahora, solamente hemos añadido la línea `package ejemplos;` al principio.
 
-### Sentencia `import`.
+### Sentencia `import`
 
 Cuando queremos utilizar una clase que está en un paquete distinto a la clase que estamos utilizando, se suele utilizar la sentencia `import`. Por ejemplo, si queremos utilizar la clase `Scanner` que está en el paquete `java.util` de la Biblioteca de Clases de Java, tendremos que utilizar esta sentencia:
 
@@ -605,20 +603,21 @@ También podemos utilizar la clase sin sentencia `import`, en cuyo caso cada vez
 java.util.Scanner teclado = new java.util.Scanner (System.in);
 ```
 
-
 Hasta aquí todo correcto. Sin embargo, al trabajar con paquetes, Java nos obliga a organizar los directorios, compilar y ejecutar de cierta forma para que todo funcione adecuadamente.
 
-### Librerías Java.
+### Librerías Java
 
 Cuando descargamos el entorno de compilación y ejecución de Java, obtenemos la API de Java. Como ya sabemos, se trata de un conjunto de bibliotecas que nos proporciona paquetes de clases útiles para nuestros programas.
 Utilizar las clases y métodos de la Biblioteca de Java nos va ayudar a reducir el tiempo de desarrollo considerablemente, por lo que es importante que aprendamos a consultarla y conozcamos las clases más utilizadas.
-Ejemplo:
 
-```java
-import java.lang.System; // Se importa la clase System.
-import java.awt.*;       // Se importa todas las clases del paquete awt;
-```
+!!! example "Ejemplo"
+    ```java
+    import java.lang.System; // Se importa la clase System.
+    import java.awt.*;       // Se importa todas las clases del paquete awt;
+    ```
+
 Los paquetes más importantes que ofrece el lenguaje Java son:
+
 | Paquete o librería | Descripción                                                  |
 | ------------------ | ------------------------------------------------------------ |
 | **java.io**        | Contiene las clases que gestionan la entrada y salida, ya sea para manipular ficheros, leer o escribir en pantalla, en memoria, etc. Este paquete contiene por ejemplo la clase BufferedReader que se utiliza para la entrada por teclado. |
@@ -635,7 +634,7 @@ Como se puede comprobar Java ofrece una completa jerarquía de clases organizada
 
 ## Cadenas de caracteres. La clase `String`
 
-### Cadenas de caracteres.
+### Cadenas de caracteres
 
 Hasta ahora hemos utilizado literales de cadenas de caracteres que, como sabemos, se ponen entre comillas dobles, como en la siguiente expresión
 
@@ -643,8 +642,7 @@ Hasta ahora hemos utilizado literales de cadenas de caracteres que, como sabemos
 System.out.println("Hola");
 ```
 
-Para almacenar cadenas de caracteres en variables se utiliza la clase `String`. `String` se encuentra definida en el paquete `java.lang`. *Recordemos que no es necesario importar este paquete para utilizar sus clases.* 
-
+Para almacenar cadenas de caracteres en variables se utiliza la clase `String`. `String` se encuentra definida en el paquete `java.lang`. *Recordemos que no es necesario importar este paquete para utilizar sus clases.*
 
 La forma de `String` es la siguiente:
 
@@ -662,7 +660,7 @@ System.out.println("Mi nombre es " + nombre);
 **Sin embargo**, debido a que es una clase que se utiliza ampliamente en los programas, Java permite una forma abreviada de crear objetos String:
 
 ```java
-String nombreVariable = "texto";	
+String nombreVariable = "texto";
 ```
 
 Ejemplo:
@@ -672,8 +670,7 @@ String nombre = "Javier";
 System.out.println("Mi nombre es " + nombre);
 ```
 
-
-### Leer cadenas desde teclado.
+### Leer cadenas desde teclado
 
 #### Clase `Scanner`
 
@@ -730,7 +727,7 @@ public class EjemploUD02 {
 }
 ```
 
-### La clase `String`.
+### La clase `String`
 
 Además de permitir almacenar cadenas de caracteres, `String` tiene métodos para realizar cálculos u operaciones con ellas.
 
@@ -740,7 +737,6 @@ Así por ejemplo, la clase tiene un método `toUpperCase()` que devuelve el `Str
 String nombre = "Javier";
 System.out.println(nombre.toUpperCase()); // Se muestra JAVIER por pantalla
 ```
-
 
 Accede a la documentación en línea de Java y estudia los siguientes métodos de la clase:
 
@@ -778,7 +774,7 @@ System.out.format("El valor de la variable float es" +
 
 Puedes investigar más sobre `printf` o `format` en este [enlace](https://docs.oracle.com/javase/tutorial/java/data/numberformat.html)
 
-### Salida de error.
+### Salida de error
 
 La salida de error está representada por el objeto `System.err`. No parece muy útil utilizar `out` y `err` si su destino es la misma pantalla, o al menos en el caso de la consola del sistema donde las dos salidas son representadas con el mismo color y no notamos diferencia alguna. En cambio en la consola de varios entornos integrados de desarrollo como NetBeans o Eclipse la salida de `err` se ve en un color diferente. Teniendo el siguiente código:
 
@@ -799,34 +795,33 @@ Las clases se suelen representar como un rectángulo, y dentro de él se sitúan
 
 En la imagen, la clase `Pajaro` está compuesta por tres atributos, uno de ellos el `nombre` y otros dos que indican la posición del ave, `posX` y `posY`. Tiene tres métodos constructores y un método `volar()`. Como sabemos, los métodos constructores reciben el mismo nombre de la clase, y puede haber varios para una misma clase, dentro de ella se diferencian unos de otros por los parámetros que utilizan.
 
-Enunciado:
+!!! example "Enunciado:"
+    Dada una clase principal llamada `Pajaro`, se definen los atributos y métodos que aparecen en la imagen. Los métodos realizan las siguientes acciones:
 
-> Dada una clase principal llamada `Pajaro`, se definen los atributos y métodos que aparecen en la imagen. Los métodos realizan las siguientes acciones:
->
->```mermaid
->classDiagram
->    Pajaro
->    class Pajaro{
->        -String nombre
->        -int posX
->        -int posY
->        +Pajaro()
->        +Pajaro(String nombre)
->        +Pajaro(String nombre, int posX, int posY)
->        +double volar(int posX, int posY)
->    }
->```
->
->- `Pajaro()`. Constructor por defecto. En este caso, el constructor por defecto no contiene ninguna instrucción, ya que Java inicializa de forma automática las variables miembro, si no le damos ningún valor.
->- `Pajaro(String nombre)`. Constructor que recibe como argumentos una cadena de texto (el nombre del pájaro).
->- `Pajaro(String nombre, int posX, int posY)`. Constructor que recibe como argumentos una cadena de texto y dos enteros para inicializar el valor de los atributos.
->- `double volar(int posX, int posY)`. Método que recibe como argumentos dos enteros: `posX` y `posY`, y devuelve un valor de tipo `double` como resultado, usando la palabra clave `return`. El valor devuelto es el resultado de aplicar un desplazamiento de acuerdo con la siguiente fórmula:
->
->$$
->desplazamiento = \sqrt{posX · posX + posY · posY}
->$$
->
->Diseña un programa que utilice la clase `Pajaro`, cree una instancia de dicha clase y ejecute sus métodos.
+    ```mermaid
+    classDiagram
+        Pajaro
+        class Pajaro{
+            -String nombre
+            -int posX
+            -int posY
+            +Pajaro()
+            +Pajaro(String nombre)
+            +Pajaro(String nombre, int posX, int posY)
+            +double volar(int posX, int posY)
+        }
+    ```
+    
+    - `Pajaro()`. Constructor por defecto. En este caso, el constructor por defecto no contiene ninguna instrucción, ya que Java inicializa de forma automática las variables miembro, si no le damos ningún valor.
+    - `Pajaro(String nombre)`. Constructor que recibe como argumentos una cadena de texto (el nombre del pájaro).
+    - `Pajaro(String nombre, int posX, int posY)`. Constructor que recibe como argumentos una cadena de texto y dos enteros para inicializar el valor de los atributos.
+    - `double volar(int posX, int posY)`. Método que recibe como argumentos dos enteros: `posX` y `posY`, y devuelve un valor de tipo `double` como resultado, usando la palabra clave `return`. El valor devuelto es el resultado de aplicar un desplazamiento de acuerdo con la siguiente fórmula:
+
+    $$
+    desplazamiento = \sqrt{posX · posX + posY · posY}
+    $$
+
+    Diseña un programa que utilice la clase `Pajaro`, cree una instancia de dicha clase y ejecute sus métodos.
 
 Lo primero que debemos hacer es crear la clase `Pajaro`, con sus métodos y atributos. De acuerdo con los datos que tenemos, el código de la clase sería el siguiente:
 
@@ -870,9 +865,9 @@ También es conveniente imprimir el resultado de ejecutar el método `volar()`. 
 - Invocar al método volar.
 - Imprimir por pantalla la distancia recorrida.
 
-Para inicializar el objeto utilizaremos el constructor con parámetros, después ejecutaremos el método `volar()` del objeto creado y finalmente imprimiremos el valor que nos devuelve el método. 
+Para inicializar el objeto utilizaremos el constructor con parámetros, después ejecutaremos el método `volar()` del objeto creado y finalmente imprimiremos el valor que nos devuelve el método.
 
-Luego crearemos otro pajaro2 usando el constructor por defecto (sin parámetros). Le asignaremos el nombre y la posición manualmente, y calcularemos su desplazamiento llamando al método, pero usando los atributos del objeto (pajaro2.posX y pajaro2.posY) en lugar de constantes. El código del método `main()` quedaría como sigue:
+Luego crearemos otro `pajaro2` usando el constructor por defecto (sin parámetros). Le asignaremos el nombre y la posición manualmente, y calcularemos su desplazamiento llamando al método, pero usando los atributos del objeto (`pajaro2.posX` y `pajaro2.posY`) en lugar de constantes. El código del método `main()` quedaría como sigue:
 
 ```java
 public static void main(String[] args) {
@@ -900,70 +895,59 @@ El desplazamiento de Piolín ha sido 42.42640687119285
 
 ### Clase `String`
 
-```java
-package UD02;
+!!! example "Ejemplo:"
+    ```java
+    package UD02;
 
-import java.util.Scanner;
+    import java.util.Scanner;
 
-public class EjemploUD02 {
+    public class EjemploUD02 {
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
-        Scanner teclado = new Scanner(System.in);
+            Scanner teclado = new Scanner(System.in);
 
-        //Introducir texto desde teclado
-        String texto;
-        System.out.print("Introduce un texto: ");
-        texto = teclado.nextLine();
-        System.out.println("El texto introducido es: " + texto);
+            //Introducir texto desde teclado
+            String texto;
+            System.out.print("Introduce un texto: ");
+            texto = teclado.nextLine();
+            System.out.println("El texto introducido es: " + texto);
 
-        //Introducir un número entero desde teclado
-        String texto2;
-        int entero2;
-        System.out.print("Introduce un número: ");
-        texto2 = teclado.nextLine();
-        entero2 = Integer.parseInt(texto2);
-        System.out.println("El número introducido es:" + entero2);
+            //Introducir un número entero desde teclado
+            String texto2;
+            int entero2;
+            System.out.print("Introduce un número: ");
+            texto2 = teclado.nextLine();
+            entero2 = Integer.parseInt(texto2);
+            System.out.println("El número introducido es:" + entero2);
 
-        //Introducir un número decimal desde teclado
-        String texto3;
-        double doble3;
-        System.out.print("Introduce un número decimal: ");
-        texto3 = teclado.nextLine();
-        doble3 = Double.parseDouble(texto3); // convertimos texto a doble
-        System.out.println("Número decimal introducido es: " + doble3);
+            //Introducir un número decimal desde teclado
+            String texto3;
+            double doble3;
+            System.out.print("Introduce un número decimal: ");
+            texto3 = teclado.nextLine();
+            doble3 = Double.parseDouble(texto3); // convertimos texto a doble
+            System.out.println("Número decimal introducido es: " + doble3);
 
-        System.out.println("La clase String");
-        String nombre = "Javier "; //Observa que hay un espacio final
-        System.out.println(nombre.toUpperCase()); //JAVIER 
-        System.out.println(nombre.charAt(4)); //e
-        System.out.println(nombre.indexOf("i"));//3
-        System.out.println(nombre.substring(0, 3));//Javi
-        System.out.println(nombre.toLowerCase());//javier
-        System.out.println(nombre.trim());//Javier sin espacios finales
-        System.out.printf("%,.2f\n", 12345.1684);
-        nombre.toUpperCase().substring(0,3).indexOf("I"); //3
-        System.out.format("El valor de la variable float es %f"
-                + ", mientras que el valor del entero es %d"
-                + " y el string contiene %s", doble3, entero2, texto);
-        
-        System.err.println("Salida de error por pantalla");
+            System.out.println("La clase String");
+            String nombre = "Javier "; //Observa que hay un espacio final
+            System.out.println(nombre.toUpperCase()); //JAVIER 
+            System.out.println(nombre.charAt(4)); //e
+            System.out.println(nombre.indexOf("i"));//3
+            System.out.println(nombre.substring(0, 3));//Javi
+            System.out.println(nombre.toLowerCase());//javier
+            System.out.println(nombre.trim());//Javier sin espacios finales
+            System.out.printf("%,.2f\n", 12345.1684);
+            nombre.toUpperCase().substring(0,3).indexOf("I"); //3
+            System.out.format("El valor de la variable float es %f"
+                    + ", mientras que el valor del entero es %d"
+                    + " y el string contiene %s", doble3, entero2, texto);
+            
+            System.err.println("Salida de error por pantalla");
+        }
     }
-}
-```
+    ```
 
 ## Píldoras informáticas relacionadas
 
-- [Curso Java. Manipulación de cadenas. Clase String I. Vídeo 11](https://youtu.be/YMyJLs22uY4)
-- [Curso Java. Manipulación de cadenas. Clase String II. Vídeo 12](https://youtu.be/8yU7jLJ4xvo)
-- [Curso Java. Entrada Salida datos I. Vídeo 14](https://youtu.be/Ng0_7uZyIoA)
-- [Curso Java. Entrada Salida datos II. Vídeo 15](https://youtu.be/F_48qh3BcDs)
-- [Curso Java. POO I. Vídeo 27](https://youtu.be/XmUz5WJmJVU)
-- [Curso Java. POO II. Vídeo 28](https://youtu.be/ZY5pwm92cWQ)
-- [Curso Java. POO III. Vídeo 29](https://youtu.be/RZOSJ2zuxIs)
-- [Curso Java POO VI. Construcción objetos. Vídeo 32](https://youtu.be/jht07O7_R9w)
-- [Curso Java POO VII. Construcción objetos II. Vídeo 33](https://youtu.be/l8NmSp7Dz-0)
-- [Curso Java POO VIII. Construcción objetos III. Vídeo 34](https://youtu.be/UfF2pqCewqo)
-- [Curso Java POO IX. Construcción objetos IV. Vídeo 35](https://youtu.be/63Uhd3pUZxA)
-- [Curso Java. Métodos static. Vídeo 38](https://youtu.be/V0wIZ-OglsY)
-- [Curso Java. Sobrecarga de constructores. Vídeo 39](https://youtu.be/_ZWcobe9afw)
+<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
