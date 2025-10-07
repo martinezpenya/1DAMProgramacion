@@ -117,13 +117,13 @@ Para definirlos, se sigue la siguiente sintaxis (los corchetes indican opcionali
     donde...
 
     - ***ámbito*** permite indicar desde qué clases es accesible el método.
-
+    
     - ***static***, cuando aparece, indica que el método es estático.
-
+    
     - ***tipoDevuelto***  indica el tipo de dato que devuelve el método. La palabra reservada *void* (que no es ningún tipo de dato), indicaría que el método no devuelve nada.
-
+    
     - ***nombreDelMetodo*** es el identificador del método
-
+    
     - ***parámetros*** es una lista, separada por comas, de los parámetros que recibe el método. De cada parámetro se indica el **tipo** y un **identificador**.
 
 ### Interacción entre objetos
@@ -816,11 +816,11 @@ En la imagen, la clase `Pajaro` está compuesta por tres atributos, uno de ellos
     - `Pajaro(String nombre)`. Constructor que recibe como argumentos una cadena de texto (el nombre del pájaro).
     - `Pajaro(String nombre, int posX, int posY)`. Constructor que recibe como argumentos una cadena de texto y dos enteros para inicializar el valor de los atributos.
     - `double volar(int posX, int posY)`. Método que recibe como argumentos dos enteros: `posX` y `posY`, y devuelve un valor de tipo `double` como resultado, usando la palabra clave `return`. El valor devuelto es el resultado de aplicar un desplazamiento de acuerdo con la siguiente fórmula:
-
+    
     $$
     desplazamiento = \sqrt{posX · posX + posY · posY}
     $$
-
+    
     Diseña un programa que utilice la clase `Pajaro`, cree una instancia de dicha clase y ejecute sus métodos.
 
 Lo primero que debemos hacer es crear la clase `Pajaro`, con sus métodos y atributos. De acuerdo con los datos que tenemos, el código de la clase sería el siguiente:
@@ -900,19 +900,19 @@ El desplazamiento de Piolín ha sido 42.42640687119285
     package UD02;
 
     import java.util.Scanner;
-
+    
     public class EjemploUD02 {
-
+    
         public static void main(String[] args) {
-
+    
             Scanner teclado = new Scanner(System.in);
-
+    
             //Introducir texto desde teclado
             String texto;
             System.out.print("Introduce un texto: ");
             texto = teclado.nextLine();
             System.out.println("El texto introducido es: " + texto);
-
+    
             //Introducir un número entero desde teclado
             String texto2;
             int entero2;
@@ -920,7 +920,7 @@ El desplazamiento de Piolín ha sido 42.42640687119285
             texto2 = teclado.nextLine();
             entero2 = Integer.parseInt(texto2);
             System.out.println("El número introducido es:" + entero2);
-
+    
             //Introducir un número decimal desde teclado
             String texto3;
             double doble3;
@@ -928,7 +928,7 @@ El desplazamiento de Piolín ha sido 42.42640687119285
             texto3 = teclado.nextLine();
             doble3 = Double.parseDouble(texto3); // convertimos texto a doble
             System.out.println("Número decimal introducido es: " + doble3);
-
+    
             System.out.println("La clase String");
             String nombre = "Javier "; //Observa que hay un espacio final
             System.out.println(nombre.toUpperCase()); //JAVIER 
@@ -947,6 +947,12 @@ El desplazamiento de Piolín ha sido 42.42640687119285
         }
     }
     ```
+
+## Ejemplos UD02
+
+[EjemploUD02.java]( code/EjemploUD02.java){: download }
+
+[Pajaro.java]( code/Pajaro.java){: download }
 
 ## Píldoras informáticas relacionadas
 
