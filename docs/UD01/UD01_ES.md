@@ -1001,7 +1001,7 @@ System.out.println("Número decimal introducido es: "+doble3);
 
 ## Ejemplo UD01
 
-[EjemploUD01.java]( code/EjemploUD01.java){: download }
+[EjemploUD01.java]( code/EjemploUD01.java){: download ="EjemploUD01.java" }
 
 ## Píldoras informáticas relacionadas
 

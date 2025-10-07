@@ -950,9 +950,9 @@ El desplazamiento de Piolín ha sido 42.42640687119285
 
 ## Ejemplos UD02
 
-[EjemploUD02.java]( code/EjemploUD02.java){: download }
+[EjemploUD02.java]( code/EjemploUD02.java){: download ="EjemploUD02.java"}
 
-[Pajaro.java]( code/Pajaro.java){: download }
+[Pajaro.java]( code/Pajaro.java){: download="Pajaro.java" }
 
 ## Píldoras informáticas relacionadas
 
