@@ -17,6 +17,8 @@ nav:
   - UD02:
     - Utilización de Objetos y Clases: UD02/UD02_ES.md
     - Ejercicios: UD02/UD02_ejercicios_ES.md
+    - Talleres:
+      - T01 GitHub Classroom: UD02/UD02_T01_GitHub_Classroom.md
   - UD03:
     - Estructuras de control y Excepciones: UD03/UD03_ES.md
     - Ejercicios: UD03/UD03_ejercicios_ES.md
