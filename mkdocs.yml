@@ -150,6 +150,9 @@ extra:
       link: https://linkedin.com/in/martinezpenya
     - icon: fontawesome/brands/github
       link: https://github.com/martinezpenya
+    - icon: fontawesome/solid/mug-saucer
+      link: https://buymeacoffee.com/martinezpenya
+      name: Buy me a coffee
 #  consent:
 #    title: Consentimiento de cookie
 #    description: >-

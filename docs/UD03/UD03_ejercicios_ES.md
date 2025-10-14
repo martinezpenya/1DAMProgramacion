@@ -28,6 +28,9 @@
 
 2. (Reto2) modifique el programa para que, en lugar de un único valor secreto, haya dos. Para ganar, basta con acertar uno de los dos. La condición lógica que necesitará ya no se puede resolver con una expresión compuesta por una única comparación. Será más compleja.
 
+    !!! warning "Atención"
+        Para pasar satisfactoriamente los tests, la variable `VALOR_SECRETO` debe ser renombrada a `VALOR_SECRETO1`, y la nueva debe llamarse `VALOR_SECRETO2`
+
    ```java
    import java.util.Scanner;
    
@@ -54,7 +57,8 @@
 3. (Reto3) modifique el ejemplo anterior (Adivina) para que comprueben que el valor que ha introducido el usuario se encuentra dentro del rango de valores correcto (entre 0 y 10).
 
 4. (Reto4) aplique el mismo tipo de control sobre los datos de la entrada del ejemplo siguiente al ejercicio del reto 1.
-
+    !!! warning "Atención"
+        Para pasar satisfactoriamente los tests, el mensaje de error cuando no se introduzca un entero debe contener la palabra "ERROR"
    ```java
    import java.util.Scanner;
    
