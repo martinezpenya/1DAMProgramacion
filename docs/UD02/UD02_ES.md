@@ -246,7 +246,7 @@ Para la creación de un objeto hay que seguir los siguientes pasos:
   
   Donde:
 
-  - **tipo** es la case a partir de la cual se va a crear el objeto, y
+  - **tipo** es la clase a partir de la cual se va a crear el objeto, y
   - **nombre_objeto** es el nombre de la variable referencia con la cual nos referiremos al objeto.
 
 Los tipos referenciados o referencias se utilizan para guardar la dirección de los datos en la memoria del ordenador.
@@ -955,5 +955,6 @@ El desplazamiento de Piolín ha sido 42.42640687119285
 [Pajaro.java]( code/Pajaro.java){: download="Pajaro.java" }
 
 ## Píldoras informáticas relacionadas
+
 
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
