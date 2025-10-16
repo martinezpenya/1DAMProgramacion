@@ -9,7 +9,7 @@ Necesitamos:
 
 ## Unirnos a GitHub Classroom
 
-Aceptamos el *Assignement* (la tarea/ejercicio) a partir del link del profesor, en este caso: https://classroom.github.com/a/IzehQ0c7
+Aceptamos el *Assignement* (la tarea/ejercicio) a partir del link del profesor, en este caso: https://classroom.github.com/a/LTEIJf5H
 
 ![Aceptar tarea](assets/aceptar_assignement.png)
 
@@ -172,3 +172,4 @@ Aunque aparentemente todo te funcionará el docente será notificado e invalidar
 ## Tarea
 
 Debes enviar tus soluciones a GitHub Classroom y superar al menos la mitad de los tests, cuantos más tests superados, mejor nota tendrás en la tarea.
+
