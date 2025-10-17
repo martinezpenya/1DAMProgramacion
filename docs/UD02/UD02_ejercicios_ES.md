@@ -4,11 +4,13 @@
 
 1. (Temperatura) Crear una clase llamada Temperatura con dos métodos:
     - `celsiusToFarenheit`. Convierte grados *Celsius* a *Farenheit*.
+
     $$
     F=(1,8*C)+32
     $$
 
     - `farenheitToCelsius`. Convierte grados *Farenheit* a *Celsius*.
+    
     $$
     C=\frac{F-32}{1,8}
     $$
@@ -27,6 +29,7 @@
     ```
 
     Añade los siguientes métodos:
+
     - `int getVelocidad()`. Devuelve la velocidad del objeto moto.
     - `void acelera(int mas)`. Permite aumentar la velocidad del objeto moto.
     - `void frena(int menos)`. Permite reducir la velocidad del objeto moto.
@@ -410,5 +413,6 @@
 6. (RadioAleatorioCentrado) Crear una pizarra de tamaño aleatorio. Dibujar en centro de la pizarra un círculo de radio aleatorio (entre 50 y 200 pixels de radio)
 
 7. (RadioAleatorio) Crear una pizarra de tamaño aleatorio. Dibujar en la esquina superior izquierda un círculo de radio aleatorio (entre 50 y 200)
+
 
 
