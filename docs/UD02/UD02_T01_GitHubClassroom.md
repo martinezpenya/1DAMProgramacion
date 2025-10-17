@@ -130,7 +130,7 @@ En agosto 2021 GitHub eliminó la autenticación por contraseña para operacione
     ssh -T git@github.com
     ```
 
-    Deberías ver algo parecido a esto (después de contestar `yes` a la pregunta):
+    Deberías ver algo parecido a esto (después de contestar `yes` a la pregunta, fíjate que aparece tu nombre de GitHub, en mi caso `martinezpenya`):
 
     ```powershell
     The authenticity of host 'github.com (140.82.121.3)' can't be established.
