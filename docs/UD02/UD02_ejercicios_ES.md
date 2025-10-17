@@ -3,15 +3,15 @@
 ## Actividades
 
 1. (Temperatura) Crear una clase llamada Temperatura con dos métodos:
-      - `celsiusToFarenheit`. Convierte grados *Celsius* a *Farenheit*.
-        $$
-        F=(1,8*C)+32
-        $$
+    - `celsiusToFarenheit`. Convierte grados *Celsius* a *Farenheit*.
+    $$
+    F=(1,8*C)+32
+    $$
 
-      - `farenheitToCelsius`. Convierte grados *Farenheit* a *Celsius*.
-        $$
-        C=\frac{F-32}{1,8}
-        $$
+    - `farenheitToCelsius`. Convierte grados *Farenheit* a *Celsius*.
+    $$
+    C=\frac{F-32}{1,8}
+    $$
 
 2. (Moto) A partir de la siguiente clase:
 
@@ -26,16 +26,15 @@
     }
     ```
 
-     Añade los siguientes métodos:
-   
-        - `int getVelocidad()`. Devuelve la velocidad del objeto moto.
-        - `void acelera(int mas)`. Permite aumentar la velocidad del objeto moto.
-        - `void frena(int menos)`. Permite reducir la velocidad del objeto moto.
+    Añade los siguientes métodos:
+    - `int getVelocidad()`. Devuelve la velocidad del objeto moto.
+    - `void acelera(int mas)`. Permite aumentar la velocidad del objeto moto.
+    - `void frena(int menos)`. Permite reducir la velocidad del objeto moto.
 
 4. (Rebajas) Crea una clase `Rebajas` con un método `descubrePorcentaje()` que descubra el descuento aplicado en un producto. El método recibe el precio original del producto y el rebajado y devuelve el porcentaje aplicado. Podemos calcular el descuento realizando la operación:
-   $$
-   porcentajeDescuento = \frac{precioOriginal-precioRebajado}{precioOriginal}
-   $$
+    $$
+    porcentajeDescuento = \frac{precioOriginal-precioRebajado}{precioOriginal}
+    $$
 
 5. (Finanzas) Realiza una clase `Finanzas` que convierta dólares a euros y viceversa. Codifica los métodos `dolaresToEuros` y `eurosToDolares`. Prueba que dicha clase funciona correctamente haciendo conversiones entre euros y dólares. La clase tiene que tener:
       - Un constructor `Finanzas()` por defecto el cual establece el cambio Dólar-Euro en 1.36.
@@ -411,4 +410,5 @@
 6. (RadioAleatorioCentrado) Crear una pizarra de tamaño aleatorio. Dibujar en centro de la pizarra un círculo de radio aleatorio (entre 50 y 200 pixels de radio)
 
 7. (RadioAleatorio) Crear una pizarra de tamaño aleatorio. Dibujar en la esquina superior izquierda un círculo de radio aleatorio (entre 50 y 200)
+
 
