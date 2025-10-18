@@ -67,7 +67,7 @@ En agosto 2021 GitHub eliminó la autenticación por contraseña para operacione
 
    Abre el archivo en el Bloc de notas y copia el contenido del fichero
 
-### Paso 3: Iniciar el agente y agregar la clave privada
+### Paso 3: Iniciar el agente y agregar la clave privada (opcional)
 
 1. Abre PowerShell (esta vez necesitaras hacerlo como Administrador)
 
@@ -82,7 +82,7 @@ En agosto 2021 GitHub eliminó la autenticación por contraseña para operacione
    ```powershell
    #Instalar cliente SSH
    Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
-   #Instalar servidor SSH (opcional)
+   #Instalar servidor SSH
    Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
    ```
 

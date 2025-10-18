@@ -3,12 +3,12 @@
 ## Actividades
 
 1. (Temperatura) Crear una clase llamada Temperatura con dos métodos:
-      - `celsiusToFarenheit`. Convierte grados *Celsius* a *Farenheit*.
+      - `celsiusToFahrenheit`. Convierte grados *Celsius* a *Fahrenheit*.
         $$
         F=(1,8*C)+32
         $$
 
-      - `farenheitToCelsius`. Convierte grados *Farenheit* a *Celsius*.
+      - `fahrenheitToCelsius`. Convierte grados *Fahrenheit* a *Celsius*.
         $$
         C=\frac{F-32}{1,8}
         $$
