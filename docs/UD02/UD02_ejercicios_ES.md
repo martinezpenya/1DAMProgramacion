@@ -3,15 +3,17 @@
 ## Actividades
 
 1. (Temperatura) Crear una clase llamada Temperatura con dos métodos:
-      - `celsiusToFahrenheit`. Convierte grados *Celsius* a *Fahrenheit*.
-        $$
-        F=(1,8*C)+32
-        $$
+    - `celsiusToFahrenheit`. Convierte grados *Celsius* a *Fahrenheit*.
 
-      - `fahrenheitToCelsius`. Convierte grados *Fahrenheit* a *Celsius*.
-        $$
-        C=\frac{F-32}{1,8}
-        $$
+    $$
+    F=(1,8*C)+32
+    $$
+
+    - `fahrenheitToCelsius`. Convierte grados *Fahrenheit* a *Celsius*.
+    
+    $$
+    C=\frac{F-32}{1,8}
+    $$
 
 2. (Moto) A partir de la siguiente clase:
 
@@ -26,25 +28,26 @@
     }
     ```
 
-     Añade los siguientes métodos:
-      - `int getVelocidad()`. Devuelve la velocidad del objeto moto.
-      - `void acelera(int mas)`. Permite aumentar la velocidad del objeto moto.
-      - `void frena(int menos)`. Permite reducir la velocidad del objeto moto.
+    Añade los siguientes métodos:
 
-3. (Rebajas) Crea una clase `Rebajas` con un método `descubrePorcentaje()` que descubra el descuento aplicado en un producto. El método recibe el precio original del producto y el rebajado y devuelve el porcentaje aplicado. Podemos calcular el descuento realizando la operación:
-   $$
-   porcentajeDescuento = \frac{precioOriginal-precioRebajado}{precioOriginal}
-   $$
+    - `int getVelocidad()`. Devuelve la velocidad del objeto moto.
+    - `void acelera(int mas)`. Permite aumentar la velocidad del objeto moto.
+    - `void frena(int menos)`. Permite reducir la velocidad del objeto moto.
 
-4. (Finanzas) Realiza una clase `Finanzas` que convierta dólares a euros y viceversa. Codifica los métodos `dolaresToEuros` y `eurosToDolares`. Prueba que dicha clase funciona correctamente haciendo conversiones entre euros y dólares. La clase tiene que tener:
+4. (Rebajas) Crea una clase `Rebajas` con un método `descubrePorcentaje()` que descubra el descuento aplicado en un producto. El método recibe el precio original del producto y el rebajado y devuelve el porcentaje aplicado. Podemos calcular el descuento realizando la operación:
+    $$
+    porcentajeDescuento = \frac{precioOriginal-precioRebajado}{precioOriginal}
+    $$
+
+5. (Finanzas) Realiza una clase `Finanzas` que convierta dólares a euros y viceversa. Codifica los métodos `dolaresToEuros` y `eurosToDolares`. Prueba que dicha clase funciona correctamente haciendo conversiones entre euros y dólares. La clase tiene que tener:
       - Un constructor `Finanzas()` por defecto el cual establece el cambio Dólar-Euro en 1.36.
       - Un constructor `Finanzas(double cambio)`, el cual permitirá configurar el cambio Dólar-euro a una cantidad personalizada.
 
-5. (MiNumero) Realiza una clase `MiNumero` que proporcione el doble, triple y cuádruple de un número proporcionado en su constructor (realiza un método para `doble`, otro para `triple` y otro para `cuadruple`). 
+6. (MiNumero) Realiza una clase `MiNumero` que proporcione el doble, triple y cuádruple de un número proporcionado en su constructor (realiza un método para `doble`, otro para `triple` y otro para `cuadruple`). 
 
     *(Opcional, no hay puntos)* Haz que la clase tenga un método `main` y comprueba los distintos métodos.
 
-6. (Numero) Realiza una clase `Numero` que almacene un número entero y tenga las siguientes características:
+7. (Numero) Realiza una clase `Numero` que almacene un número entero y tenga las siguientes características:
     - Constructor por defecto que inicializa a 0 el número interno.
     - Constructor que inicializa el número interno.
     - Método `anade` que permite sumarle un número al valor interno.
@@ -54,7 +57,7 @@
     - Método `getTriple`. Devuelve el triple del valor interno.
     - Método `setNumero`. Inicializa de nuevo el valor interno.
 
-7. (Peso) Crea la clase `Peso`, la cual tendrá las siguientes características:
+8. (Peso) Crea la clase `Peso`, la cual tendrá las siguientes características:
     - Deberá tener un atributo donde se almacene el peso de un objeto en kilogramos.
       En el constructor se le pasará el peso y la medida en la que se ha tomado ("Lb" para libras, "Li" para lingotes, "Oz" para onzas, "P" para peniques, "K" para kilos, "G" para gramos y "Q" para quintales).
     - Deberá de tener los siguientes métodos:
@@ -70,15 +73,15 @@
 
     *(Opcional, no hay puntos)* Crea además un método `main` para testear y verificar los métodos de esta clase.
 
-8. (Millas) Crea una clase con un método `millasAMetros()` que toma como parámetro de entrada un valor en millas marinas y las convierte a metros. Una vez tengas este método escribe otro `millasAKilometros()` que realice la misma conversión, pero esta vez exprese el resultado en kilómetros.
+9. (Millas) Crea una clase con un método `millasAMetros()` que toma como parámetro de entrada un valor en millas marinas y las convierte a metros. Una vez tengas este método escribe otro `millasAKilometros()` que realice la misma conversión, pero esta vez exprese el resultado en kilómetros.
 
     *Nota: 1 milla marina equivale a 1852 metros.*
 
-9. (Coche) Crea la clase `Coche` con dos constructores. Uno no toma parámetros y el otro sí. Los dos constructores inicializarán los atributos `marca` y `modelo` de la clase.  El constructor por defecto (sin parametros) crea el coche "Ford" modelo "C-MAX". 
+10. (Coche) Crea la clase `Coche` con dos constructores. Uno no toma parámetros y el otro sí. Los dos constructores inicializarán los atributos `marca` y `modelo` de la clase.  El constructor por defecto (sin parametros) crea el coche "Ford" modelo "C-MAX". 
 
     *(Opcional, no hay puntos)*  Crea dos objetos (cada objeto llama a un constructor distinto) y verifica que todo funciona correctamente.
 
-10. (Consumo) Implementa una clase `Consumo`, la cual forma parte del "ordenador de a bordo" de un coche y tiene las siguientes características:
+11. (Consumo) Implementa una clase `Consumo`, la cual forma parte del "ordenador de a bordo" de un coche y tiene las siguientes características:
     - Atributos:
        - kilometros.
        - litros. Litros de combustible consumido.
@@ -91,15 +94,15 @@
 
     No olvides crear un constructor para la clase que establezca el valor de los atributos. Elige el tipo de datos más apropiado para cada atributo.
 
-11. (ConsumoModificadores) Para la clase anterior implementa los siguientes métodos, los cuales podrán modificar los valores de los atributos de la clase:
+12. (ConsumoModificadores) Para la clase anterior implementa los siguientes métodos, los cuales podrán modificar los valores de los atributos de la clase:
       - `setKms`
       -  `setLitros`
       - `setVmed`
       - `setPgas`
 
-12. (Restaurante) Un restaurante cuya especialidad son las patatas con carne nos pide diseñar un método (`calcularClientes`) con el que se pueda saber cuántos clientes pueden atender con la materia prima que tienen en el almacén. El método recibe la cantidad de patatas y carne en kilos y devuelve el número de clientes que puede atender el restaurante teniendo en cuenta que por cada tres personas, utilizan un dos kilos de patatas y un kilo de carne.
+13. (Restaurante) Un restaurante cuya especialidad son las patatas con carne nos pide diseñar un método (`calcularClientes`) con el que se pueda saber cuántos clientes pueden atender con la materia prima que tienen en el almacén. El método recibe la cantidad de patatas y carne en kilos y devuelve el número de clientes que puede atender el restaurante teniendo en cuenta que por cada tres personas, utilizan un dos kilos de patatas y un kilo de carne.
 
-13. (RestauranteClase) Modifica el programa anterior creando una clase que permita almacenar los kilos de patatas y carne del restaurante. Implementa los siguientes métodos:
+14. (RestauranteClase) Modifica el programa anterior creando una clase que permita almacenar los kilos de patatas y carne del restaurante. Implementa los siguientes métodos:
 
      - `public void addCarne(int x)`. Añade x kilos de carne a los ya existentes.
      - `public void addPatatas(int x)`. Añade x kilos de patatas a los ya existentes.
@@ -107,7 +110,7 @@
      - `public double getCarne()`. Devuelve los kilos de carne que hay en el almacén.
      - `public double getPatatas()`. Devuelve los kilos de patatas que hay en el almacén.
 
-14. (Proveedor) Crear un clase llamada `Proveedor` con las siguientes propiedades:
+15. (Proveedor) Crear un clase llamada `Proveedor` con las siguientes propiedades:
        - `CIF`
        - `nombreEmpresa`
        - `descripcion`
@@ -134,7 +137,7 @@
      - Verifique si el correo es válido.
      - Muestre todos los datos del `proveedor`.
 
-15. (Producto) Crear una clase llamada `Producto` con las siguientes propiedades:
+16. (Producto) Crear una clase llamada `Producto` con las siguientes propiedades:
      - `codProducto`
      - `nombreProducto`
      - `descripcion`
@@ -161,7 +164,7 @@
      - Calcula el IVA de los dos objetos `Producto` que hemos creado.
      - Mostrar los datos de los dos objetos `Producto`, así como sus importes de IVA y los precios finales de cada una de las instancias.
     
-16. (Cuenta) Crea una clase llamada `Cuenta` que tendrá los siguientes atributos: `titular` y `cantidad` (puede tener decimales).
+17. (Cuenta) Crea una clase llamada `Cuenta` que tendrá los siguientes atributos: `titular` y `cantidad` (puede tener decimales).
 
      Al crear una instancia del objeto Cuenta, el titular será obligatorio y la cantidad es opcional. Crea dos constructores que cumplan lo anterior, es decir debemos crear dos métodos constructores con el mismo nombre que será el nombre del objeto.
 
@@ -180,7 +183,7 @@
      - Retirar 500 € en la instancia `cuentaEmpresa1`.
      - Mostrar los datos de las dos instancias del objeto `Cuenta`.
 
-17. (Libro) Crea una clase llamada `Libro` que guarde la información de cada uno de los libros de una biblioteca. La clase debe guardar las siguientes propiedades:
+18. (Libro) Crea una clase llamada `Libro` que guarde la información de cada uno de los libros de una biblioteca. La clase debe guardar las siguientes propiedades:
 
      - `título`
      - `autor`
@@ -212,7 +215,7 @@
      - Muestra los ejemplares de la instancia `libroInformatica1`.
      - Muestra todos los datos de la instancia `libroInformatica1`.
 
-18. (Hospital) Crear una clase llamada `Hospital` con las siguientes propiedades y métodos: 
+19. (Hospital) Crear una clase llamada `Hospital` con las siguientes propiedades y métodos: 
 
      - Propiedades:
 
@@ -245,7 +248,7 @@
          - Muestra las habitaciones ocupadas de la instancia `hospitalRibera`.
          - Muestre todos los datos de la instancia `hospitalRibera`.
 
-19. (Medico) Crear un clase llamada `Medico` con las siguientes propiedades y métodos:
+20. (Medico) Crear un clase llamada `Medico` con las siguientes propiedades y métodos:
 
      - Propiedades:
 
@@ -410,3 +413,6 @@
 6. (RadioAleatorioCentrado) Crear una pizarra de tamaño aleatorio. Dibujar en centro de la pizarra un círculo de radio aleatorio (entre 50 y 200 pixels de radio)
 
 7. (RadioAleatorio) Crear una pizarra de tamaño aleatorio. Dibujar en la esquina superior izquierda un círculo de radio aleatorio (entre 50 y 200)
+
+
+
