@@ -16,7 +16,7 @@ Una vez creada tu cuenta, entra en tu página principal, por ejemplo la mia es e
 
 ## Solicitar corrección de los apuntes
 
-Ahora, para probar nuestra nueva cuenta y colaborar con algún proyecto, no hay nada mejor que ayudar a mejorar los apuntes del profesor de Programación :smiley:.
+Ahora, para probar nuestra nueva cuenta y colaborar con algún proyecto, no hay nada mejor que ayudar a mejorar los apuntes del profesor de Programación :grinning:.
 
 Accedemos a la página de los apuntes en la que hemos detectado el error o queremos sugerir un cambio y en la parte superior derecha debe aparecer el icono:
 
@@ -76,3 +76,4 @@ En este caso concreto se ha aceptado la modificación:
 
 
 **Adjunta el documento `.pdf` con las capturas y las explicaciones a la tarea de AULES.**
+
