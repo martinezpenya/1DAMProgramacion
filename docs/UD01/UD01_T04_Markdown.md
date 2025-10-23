@@ -12,7 +12,7 @@ Este método te permitirá añadir formatos tales como **negritas**, *cursivas* 
 
 Con Markdown **no vas a reemplazar *todo***, sino cubrir las funcionalidades más comunes que se requieren para escribir un documento relativamente complicado.
 
-## Para qué sirve Markdown
+## Para qué sirve Markdown?
 
 Markdown será perfecto para ti sobre todo **si publicas de manera constante en Internet**, donde el lenguaje HTML está más que presente: WordPress, Squarespace, Jekyll…
 
@@ -24,7 +24,7 @@ Gracias a la simplicidad de su sintaxis podrás utilizarlo siempre que necesites
 
 ## Por qué utilizar Markdown
 
-### Ventajas
+### Ventajas:
 
 - **Markdown para todo**. Para crear apuntes, documentos, notas, sitios web, libros, documentación técnica, etc. de forma off-line.
 
@@ -34,7 +34,7 @@ Gracias a la simplicidad de su sintaxis podrás utilizarlo siempre que necesites
 
   > Si en el futuro Microsoft Word desapareciese perderías acceso a todo el contenido que has creado durante años utilizando dicho procesador. Así que lo más inteligente para evitar eso es **generar tu contenido de la manera más sencilla posible**: utilizando texto plano.
 
-### Desventajas
+### Desventajas:
 
 - No tiene muchas funcionalidades (esto es lo que lo hace muy compatible).
 - Al no tener todas las opciones de un procesador de textos a veces tendrás que combinar Markdown con HTML para lograr ciertos formatos.
