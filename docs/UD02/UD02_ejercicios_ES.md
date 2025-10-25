@@ -95,7 +95,7 @@
     No olvides crear un constructor para la clase que establezca el valor de los atributos. Elige el tipo de datos más apropiado para cada atributo.
 
 12. (ConsumoModificadores) Para la clase anterior implementa los siguientes métodos, los cuales podrán modificar los valores de los atributos de la clase:
-      - `setKms`
+      - `setKilometros`
       -  `setLitros`
       - `setVmed`
       - `setPgas`
@@ -129,7 +129,7 @@
      - Método `verificaCorreo` que devuelve true si la dirección de correo contiene `@`.
      - Método que muestre todos los datos del proveedor.
 
-     Crear una clase principal `main` ejecutable que:
+     Crear un método principal `main` ejecutable que:
 
      - Cree una instancia del objeto `Proveedor` llamado `proveedor`.
      - Cambie el sector del `proveedor`.
@@ -153,9 +153,9 @@
      - `aumentaStock`: Permite aumentar el stock de unidades del producto. Se le pasa el dato de unidades que aumentamos.
      - `disminuyeStock`: Permite disminuir el stock de unidades del producto. Se le pasa el dato de unidades que disminuimos.
      - `ivaProducto`: Permite calcular el IVA aplicado al precio del producto. Se le pasa el dato del porcentaje de IVA.
-     - `mostrarDatos`: Muestra los datos del producto.
+     - `mostrarDatos`: Muestra los datos del producto. (No tiene test)
     
-     Crear una clase principal `main` ejecutable que:
+     Crear un método principal `main` ejecutable que:
     
      - Crear dos instancias de la clase `Producto` llamadas `productoHardware` y `productoSoftware`.
      - Mostrar los datos de los dos objetos `Producto` que hemos creado.
@@ -173,7 +173,7 @@
      - `ingresar(double cantidad)`: se ingresa una cantidad a la cuenta, si la cantidad introducida es negativa, no se hará nada.
      - `retirar(double cantidad)`: se retira una cantidad a la cuenta, si restando la cantidad actual a la que nos pasan es negativa, la cantidad de la cuenta pasa a ser 0 retirando el importe máximo en función de la cantidad disponible en el objeto.
 
-     Crear una clase principal `main` ejecutable:
+     Crear una método principal `main` ejecutable:
 
      - Crear una instancia del objeto Cuenta llamada `cuentaParticular1` con el nombre del titular.
      - Crear una instancia del objeto Cuenta llamada `cuentaEmpresa1` con el nombre del titular y una cantidad inicial de dinero.
@@ -201,7 +201,7 @@
      - Método `perdido` que decremente el atributo número de ejemplares por perdida de ejemplar. No se podrán perder libros que no tengan ejemplares o no se hayan prestado. Devuelve `true` si se ha podido realizar la operación y `false` en caso contrario.
      - Método `mostrarDatos` para mostrar los datos de los libros.
 
-     Crear una clase principal `main` ejecutable:
+     Crear un método principal `main` ejecutable:
 
      - Crear una instancia del objeto libro `libroInformatica1` con los datos de un libro.
      - Consultar el título de la instancia `libroInformatica1`.
@@ -237,7 +237,7 @@
          - Método `alta` que decrementa las habitaciones ocupadas. No puede realizarse el alta las habitaciones ocupadas son 0. Devuelve `true` si se ha podido realizar el alta.
          - Método que muestre todos los datos del hospital.
 
-     - Crear una clase principal `main` ejecutable que:
+     - Crear un método principal `main` ejecutable que:
 
          - Cree una instancia de la clase `Hospital` llamada `hospitalRibera`.
          - Cambie el número de habitaciones de la instancia `hospitalRibera`.
@@ -272,7 +272,7 @@
          - `retencionMedico`: Permite calcular la retención aplicada al sueldo del médico. Se le pasa el dato del porcentaje de retención.
          - `mostrarDatos`: Muestra los datos del médico.
          
-     - Crear una clase principal `main` ejecutable que:
+     - Crear un método principal `main` ejecutable que:
 
          - Crear dos instancias de la clase `Medico` llamados `medicoDigestivo` y `medicoTraumatologo`.
          - Cambia el sueldo del `medicoTraumatologo`.
