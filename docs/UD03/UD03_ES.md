@@ -2,6 +2,8 @@
 
 <p><iframe title="YouTube video player" src="https://www.youtube.com/embed/rNY5eWogl18" width="100%" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></p>
 
+![type:video](assets/UD03_Estructuras_de_control_y_excepciones.mp4)
+
 ## Introducción
 
 En unidades anteriores has podido aprender cuestiones básicas sobre el lenguaje JAVA: definición de variables, tipos de datos, asignación de valores, uso de literales, diferentes operadores que se pueden aplicar, conversiones de tipos, inserción de comentarios, etc. Posteriormente, nos sumergimos de lleno en el mundo de los objetos. Primero hemos conocido su filosofía, para más tarde ir recorriendo los conceptos y técnicas más importantes relacionadas con ellos: Propiedades, métodos, clases, declaración y uso de objetos, librerías, etc.
@@ -128,12 +130,11 @@ public class Organizacion_sentencias_3 {
 
 En este tercer archivo, podrás apreciar que se ha organizado el código en las siguientes partes: declaración de variables, petición de datos de entrada, procesamiento de dichos datos y obtención de la salida. Este tipo de organización está más estandarizada y hace que nuestros programas ganen en legibilidad.
 
-> Construyas de una forma o de otra tus programas, debes tener en cuenta siempre en Java las siguientes premisas:
->
-> - **Declara** cada variable antes de utilizarla.
-> - **Inicializa** con un valor cada variable la primera vez que la utilices.
->
-> No es recomendable usar variables no inicializadas en nuestros programas, pueden provocar errores o resultados imprevistos.
+!!! warning "Atención"
+    Construyas de una forma o de otra tus programas, debes tener en cuenta siempre en Java las siguientes premisas:
+    - **Declara** cada variable antes de utilizarla.
+    - **Inicializa** con un valor cada variable la primera vez que la utilices.
+    No es recomendable usar variables no inicializadas en nuestros programas, pueden provocar errores o resultados imprevistos.
 
 ## Estructuras de selección
 
@@ -197,7 +198,8 @@ if (expresión-lógica){
 
 Si la evaluación de la expresión‐lógica ofrece un resultado  verdadero, se ejecutará la primera sentencia o el primer bloque de sentencias. Si, por el contrario, la evaluación de la expresión‐lógica ofrece un resultado falso, no se ejecutará la primera sentencia o el  primer bloque y sí se ejecutará la segunda sentencia o el segundo bloque.
 
-> Haciendo una interpretación cercana al pseudocódigo tendríamos que si se cumple la condición (expresión lógica), se ejecutará un conjunto de instrucciones y si no se cumple, se ejecutará otro conjunto de instrucciones. 
+!!! info "Ejemplo"
+    Haciendo una interpretación cercana al pseudocódigo tendríamos que si se cumple la condición (expresión lógica), se ejecutará un conjunto de instrucciones y si no se cumple, se ejecutará otro conjunto de instrucciones. 
 
 Hay que tener en cuenta que la cláusula `else` de la sentencia `if` no es obligatoria. En algunos casos no necesitaremos utilizarla, pero sí se recomienda cuando es necesario llevar a cabo alguna acción en el caso de que la expresión lógica no se cumpla.
 
@@ -350,7 +352,8 @@ La utilización de unos bucles u otros para solucionar un problema dependerá en
 
 Estas y otras preguntas tendrán su respuesta en cuanto analicemos cada una de estructuras repetitivas en detalle.
 
-> Estudia cada tipo de estructura repetitiva, conoce su funcionamiento y podrás llegar a la conclusión de que algunos de estos bucles son equivalentes entre sí. Un mismo problema, podrá ser resuelto empleando diferentes tipos de bucles y obtener los mismos resultados. 
+!!! info "Definición"
+    Estudia cada tipo de estructura repetitiva, conoce su funcionamiento y podrás llegar a la conclusión de que algunos de estos bucles son equivalentes entre sí. Un mismo problema, podrá ser resuelto empleando diferentes tipos de bucles y obtener los mismos resultados. 
 
 ### Estructura `for`
 
@@ -365,11 +368,10 @@ En general, existen tres operaciones que se llevan a cabo en este tipo de bucles
 - Se evalúa el valor de la variable contador, por medio de una comparación de su valor con el número de iteraciones especificado.
 - Se modifica o actualiza el valor del contador a través de incrementos o decrementos de éste, en cada una de las iteraciones.
 
-> La inicialización de la variable contadora debe realizase correctamente para garantizar que el bucle lleve a cabo, al menos, la primera repetición de su código interno.
->
-> La condición de terminación del bucle debe variar en el interior del mismo, de no ser así, podemos caer en la creación de un bucle infinito. Cuestión que se debe evitar por todos los medios.
->
-> Es necesario estudiar el número de veces que se repite el bucle, pues debe ajustarse al número de veces estipulado.
+!!! info "Ejemplo"
+    La inicialización de la variable contadora debe realizase correctamente para garantizar que el bucle lleve a cabo, al menos, la primera repetición de su código interno.
+    La condición de terminación del bucle debe variar en el interior del mismo, de no ser así, podemos caer en la creación de un bucle infinito. Cuestión que se debe evitar por todos los medios.
+    Es necesario estudiar el número de veces que se repite el bucle, pues debe ajustarse al número de veces estipulado.
 
 Sintaxis estructura `for` con una única sentencia:
 
@@ -432,7 +434,8 @@ El bucle `while` es la primera de las estructuras de repetición controladas por
 
 La característica fundamental de este tipo de estructura repetitiva estriba en ser útil en aquellos casos en los que las instrucciones que forman el cuerpo del bucle podría ser necesario ejecutarlas o no. Es decir, en el bucle `while` siempre se evaluará la condición que lo controla, y si dicha condición es cierta, el cuerpo del bucle se ejecutará una vez, y se seguirá ejecutando mientras la condición sea cierta. Pero si en la evaluación inicial de la condición ésta no es verdadera, el cuerpo del bucle no se ejecutará.
 
-> Es imprescindible que en el interior del bucle `while` se realice alguna acción que modifique la condición que controla la ejecución del mismo, en caso contrario estaríamos ante un bucle infinito.
+!!! danger "¡Atención!"
+    Es imprescindible que en el interior del bucle `while` se realice alguna acción que modifique la condición que controla la ejecución del mismo, en caso contrario estaríamos ante un bucle infinito.
 
 Sintaxis estructura `while` con una única sentencia:
 
@@ -592,7 +595,8 @@ Es decir, la sentencia `continue` forzará a que se ejecute la siguiente iteraci
 
 ### Etiquetas de salto
 
-> Los saltos incondicionales y en especial, saltos a una etiqueta son totalmente **desaconsejables**.
+!!! danger "¡Atención!"
+    Los saltos incondicionales y en especial, saltos a una etiqueta son totalmente **desaconsejables**.
 
 Java permite asociar etiquetas cuando se va a realizar un salto. De este modo puede conseguirse algo más de legibilidad en el código.
 
@@ -607,9 +611,9 @@ La sintaxis será:
 break <etiqueta>;
 ```
 
-> Quizá a aquellos/as que han programado en HTML les suene esta herramienta, ya que tiene cierta similitud con las anclas que pueden crearse en el interior de una página web, a las que nos llevará el hiperenlace o link que hayamos asociado.
->
-> También para aquellos/as que han creado alguna vez archivos por lotes o archivos batch bajo MSDOS es probable que también les resulte familiar el uso de etiquetas, pues la sentencia GOTO que se utilizaba en este tipo de archivos, hacía saltar el flujo del programa al lugar donde se ubicaba la etiqueta que se indicara en dicha sentencia.
+!!! info "Curiosidad"
+    Quizá a aquellos/as que han programado en HTML les suene esta herramienta, ya que tiene cierta similitud con las anclas que pueden crearse en el interior de una página web, a las que nos llevará el hiperenlace o link que hayamos asociado.
+    También para aquellos/as que han creado alguna vez archivos por lotes o archivos batch bajo MSDOS es probable que también les resulte familiar el uso de etiquetas, pues la sentencia GOTO que se utilizaba en este tipo de archivos, hacía saltar el flujo del programa al lugar donde se ubicaba la etiqueta que se indicara en dicha sentencia.
 
 ### `return`
 
@@ -619,7 +623,8 @@ La sentencia `return` puede utilizarse de dos formas:
 - Para terminar la ejecución del método donde esté escrita, con lo que transferirá el control al punto desde el que se hizo la llamada al método, continuando el programa por la sentencia inmediatamente posterior.
 - Para devolver o retornar un valor, siempre que junto a `return` se incluya una expresión de un tipo determinado. Por tanto, en el lugar donde se invocó al método se obtendrá el valor resultante de la evaluación de la expresión que acompañaba al método.
 
-> En general, una sentencia `return` suele aparecer al final de un método, de este modo el método tendrá una entrada y una salida. También es posible utilizar una sentencia `return` en cualquier punto de un método, con lo que éste finalizará en el lugar donde se encuentre dicho `return`. No será recomendable incluir más de un `return` en un método y por regla general, deberá ir al final del método como hemos comentado.
+!!! warning  "Importante"
+    En general, una sentencia `return` suele aparecer al final de un método, de este modo el método tendrá una entrada y una salida. También es posible utilizar una sentencia `return` en cualquier punto de un método, con lo que éste finalizará en el lugar donde se encuentre dicho `return`. No será recomendable incluir más de un `return` en un método y por regla general, deberá ir al final del método como hemos comentado.
 
 El valor de retorno es opcional, si lo hubiera debería de ser del mismo tipo o de un tipo compatible al tipo del valor de retorno definido en la cabecera del método, pudiendo ser desde un entero a un objeto creado por nosotros. Si no lo tuviera, el tipo de retorno sería `void`, y `return` serviría para salir del método sin necesidad de llegar a ejecutar todas las instrucciones que se encuentran después del `return`.
 
@@ -736,11 +741,11 @@ Cada `catch` maneja un tipo de excepción. Cuando se produce una excepción, se 
 
 Por eso el último `catch` debe ser el que capture excepciones genéricas y los primeros deben ser los más específicos. Lógicamente si vamos a tratar a todas las excepciones (sean del tipo que sean) igual, entonces basta con un solo `catch` que capture objetos `Exception`.
 
-> En Java, cuando un bloque de código puede provocar una excepción pero no se maneja adecuadamente, se produce lo que se conoce como una "excepción no controlada" o "excepción no capturada". Cuando ocurre una excepción no controlada,  Java sigue un conjunto de reglas específicas para manejarla:
->
-> 1. **Propagación de excepciones**: Java busca en la pila de llamadas (el seguimiento de la ejecución del programa) para ver si el método actual maneja la excepción. Si el método actual no maneja la excepción, la excepción se "propaga" hacia arriba en la pila de llamadas. (Piensa en una burbuja de aire en el fondo del mar intentando buscar una salida)
-> 2. **Búsqueda de un manejador de excepciones**: La excepción propagada continúa buscando un manejador de excepciones adecuado a medida que se retrocede a través de los métodos que llamaron al método actual. Si se encuentra un bloque `try-catch` que puede manejar la excepción, se ejecutará el código del bloque `catch` correspondiente.
-> 3. **Si no se encuentra un manejador adecuado**: Si la excepción llega a la parte superior de la pila de llamadas y no se encuentra un manejador de excepciones adecuado, el programa se detendrá y se imprimirá un mensaje de error en la consola, que contiene información sobre la excepción, como su tipo, mensaje y seguimiento de pila (`stack trace`).
+!!! info "Recuerda"
+    En Java, cuando un bloque de código puede provocar una excepción pero no se maneja adecuadamente, se produce lo que se conoce como una "excepción no controlada" o "excepción no capturada". Cuando ocurre una excepción no controlada,  Java sigue un conjunto de reglas específicas para manejarla:
+    1. **Propagación de excepciones**: Java busca en la pila de llamadas (el seguimiento de la ejecución del programa) para ver si el método actual maneja la excepción. Si el método actual no maneja la excepción, la excepción se "propaga" hacia arriba en la pila de llamadas. (Piensa en una burbuja de aire en el fondo del mar intentando buscar una salida)
+    2. **Búsqueda de un manejador de excepciones**: La excepción propagada continúa buscando un manejador de excepciones adecuado a medida que se retrocede a través de los métodos que llamaron al método actual. Si se encuentra un bloque `try-catch` que puede manejar la excepción, se ejecutará el código del bloque `catch` correspondiente.
+    3. **Si no se encuentra un manejador adecuado**: Si la excepción llega a la parte superior de la pila de llamadas y no se encuentra un manejador de excepciones adecuado, el programa se detendrá y se imprimirá un mensaje de error en la consola, que contiene información sobre la excepción, como su tipo, mensaje y seguimiento de pila (`stack trace`).
 
 ### Delegación de excepciones con `throws`
 
@@ -850,7 +855,8 @@ En Java, puedes distinguir entre excepciones comprobadas y no comprobadas princi
    - Las excepciones no comprobadas suelen ser subclases directas de la clase `RuntimeException`.
    - Ejemplos comunes incluyen `NullPointerException`, `ArrayIndexOutOfBoundsException`, y cualquier excepción que herede directamente de `RuntimeException`.
 
-> Ten en cuenta que estas son pautas generales y puede haber excepciones personalizadas o situaciones específicas en las que estas reglas no se apliquen estrictamente. Para obtener información precisa sobre un tipo de excepción específico, puedes consultar la documentación de Java o examinar la jerarquía de clases y herencia de la excepción en cuestión.
+!!! warning "Importante"
+    Ten en cuenta que estas son pautas generales y puede haber excepciones personalizadas o situaciones específicas en las que estas reglas no se apliquen estrictamente. Para obtener información precisa sobre un tipo de excepción específico, puedes consultar la documentación de Java o examinar la jerarquía de clases y herencia de la excepción en cuestión.
 
 ## Aserciones (`Assertions`)
 Una aserción (afirmación) permite probar la exactitud de cualquier suposición que se haya hecho en el programa. Una afirmación se logra utilizando la declaración de `assertion` en Java. Al ejecutar una aserción, se cree que es cierta. Si falla, JVM genera un error denominado `AssertionError`. Se utiliza principalmente con fines de prueba durante el desarrollo.
@@ -895,13 +901,11 @@ La edad del votante es de 14
 
 Después de habilitar las assertions:
 
-> Puedes habilitar las assertions añadiendo los parámetros de la JVM en IntelliJ:
->
-> `-ea`: Enable Assertions (habilitar aserciones) 
->
-> `-da`: Disable Assertions (deshabilitar aserciones, que es la opción por defecto)
->
-> Puedes consultar este enlace para saber donde agregar estas opciones: https://stackoverflow.com/questions/68848158/java-assertions-in-intellij-idea-community
+!!! info "Ejemplo"
+    Puedes habilitar las assertions añadiendo los parámetros de la JVM en IntelliJ:
+    `-ea`: Enable Assertions (habilitar aserciones) 
+    `-da`: Disable Assertions (deshabilitar aserciones, que es la opción por defecto)
+    Puedes consultar este enlace para saber donde agregar estas opciones: https://stackoverflow.com/questions/68848158/java-assertions-in-intellij-idea-community
 
 Salida:  
 
@@ -1447,17 +1451,4 @@ public class P6_2_PropagacionExcepciones {
 ```
 
 ## Píldoras informáticas relacionadas
-
-- [Java course. Conditionals I. Video 16](https://youtu.be/b2ZtZndiT1Y)
-- [Java course. Conditional II. Video 17](https://youtu.be/8t5-D5dZu5Y)
-- [Course Java Loops I Video 18](https://youtu.be/HQz8xwAjCsI)
-- [Java course. Loops II. Video 19](https://youtu.be/TMIoxn4nMtA)
-- [Java Course Loops III. Video 20](https://youtu.be/gzJn5MTSL5U)
-- [Curso Java Bucles IV. Vídeo 21](https://youtu.be/EUCmFmtX26I)
-- [Curso Java Bucles V. Vídeo 22](https://youtu.be/V1Wgi_FsehM)
-- [Curso Java. Excepciones I. Vídeo 142](https://youtu.be/QSohwTY04Go)
-- [Curso Java. Excepciones II. throws try catch. Vídeo 143](https://youtu.be/dD-ntlW5Tlc)
-- Videos de Makigas al respecto:
-    - [Java: introducción a las excepciones](https://www.youtube.com/watch?v=kGzwPunAOxk)
-    - [Java: throw y throws, usos y diferencias ](https://www.youtube.com/watch?v=-xC0o6JQaoE)
-
+<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
