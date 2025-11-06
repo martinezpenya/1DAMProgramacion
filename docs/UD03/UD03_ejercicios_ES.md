@@ -4,160 +4,160 @@
 
 1. (Reto1) modifique el programa para que, en lugar de realizar un descuento del 8% si la compra es de 100 € o más, aplique una penalización de 2 € si el precio es inferior a 30 €.
 
-   ```java
-   import java.util.Scanner;
-   //Un programa que calcula descuentos.
-   
-   public class Descuento{
-       public static final float DESCUENTO= 8;
-       public static final float COMPRA_MIN = 100;
-   
-       public static void main(String[] args) {
-           Scanner lector = new Scanner(System.in);
-           System.out.print("¿Cuál es el precio del producto, en euros?");
-           float precio= lector.nextFloat();
-           lector.nextLine();
-           if (precio>= COMPRA_MIN) {
-               float descuentoHecho= precio * DESCUENTO / 100;
-               precio = precio - descuentoHecho;
-           }
-           System.out.println("El precio final a pagar es de "+ precio +" euros.");
-       }
-   }
-   ```
+    ```java
+    import java.util.Scanner;
+    //Un programa que calcula descuentos.
+    
+    public class Descuento{
+        public static final float DESCUENTO= 8;
+        public static final float COMPRA_MIN = 100;
+    
+        public static void main(String[] args) {
+            Scanner lector = new Scanner(System.in);
+            System.out.print("¿Cuál es el precio del producto, en euros?");
+            float precio= lector.nextFloat();
+            lector.nextLine();
+            if (precio>= COMPRA_MIN) {
+                float descuentoHecho= precio * DESCUENTO / 100;
+                precio = precio - descuentoHecho;
+            }
+            System.out.println("El precio final a pagar es de "+ precio +" euros.");
+        }
+    }
+    ```
 
 2. (Reto2) modifique el programa para que, en lugar de un único valor secreto, haya dos. Para ganar, basta con acertar uno de los dos. La condición lógica que necesitará ya no se puede resolver con una expresión compuesta por una única comparación. Será más compleja.
 
-    !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, la variable `VALOR_SECRETO` debe ser renombrada a `VALOR_SECRETO1`, y la nueva debe llamarse `VALOR_SECRETO2`
+!!! warning "Atención"
+    Para pasar satisfactoriamente los tests, la variable `VALOR_SECRETO` debe ser renombrada a `VALOR_SECRETO1`, y la nueva debe llamarse `VALOR_SECRETO2`
 
-   ```java
-   import java.util.Scanner;
-   
-   public class Adivina{
-   
-       public static final int VALOR_SECRETO = 4;
-   
-       public static void main(String[] args) {
-           Scanner lector = new Scanner(System.in);
-           System.out.println("Empecemos el juego.");
-           System.out.print("Adivina el valor entero, entre 0 y 10: ");
-           int valorUsuario = lector.nextInt();
-           lector.nextLine();
-           if (VALOR_SECRETO == valorUsuario) {
-               System.out.println("¡Exactamente! Era " + VALOR_SECRETO + ".");
-           } else {
-               System.out.println("¡Te has equivocado!");
-           }
-           System.out.println("Hemos terminado el juego.");
-       }
-   }
-   ```
+    ```java
+    import java.util.Scanner;
+    
+    public class Adivina{
+    
+        public static final int VALOR_SECRETO = 4;
+    
+        public static void main(String[] args) {
+            Scanner lector = new Scanner(System.in);
+            System.out.println("Empecemos el juego.");
+            System.out.print("Adivina el valor entero, entre 0 y 10: ");
+            int valorUsuario = lector.nextInt();
+            lector.nextLine();
+            if (VALOR_SECRETO == valorUsuario) {
+                System.out.println("¡Exactamente! Era " + VALOR_SECRETO + ".");
+            } else {
+                System.out.println("¡Te has equivocado!");
+            }
+            System.out.println("Hemos terminado el juego.");
+        }
+    }
+    ```
 
 3. (Reto3) modifique el ejemplo anterior (Adivina) para que comprueben que el valor que ha introducido el usuario se encuentra dentro del rango de valores correcto (entre 0 y 10).
 
 4. (Reto4) aplique el mismo tipo de control sobre los datos de la entrada del ejemplo siguiente al ejercicio del reto 1.
-    !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, el mensaje de error cuando no se introduzca un entero debe contener la palabra "ERROR"
-   ```java
-   import java.util.Scanner;
-   
-   public class AdivinaControlErroresEntrada{
-   
-       public static final int VALOR_SECRETO = 4;
-   
-       public static void main(String[] args) {
-           Scanner lector = new Scanner(System.in);
-           System.out.println("Empecemos el juego.");
-           System.out.print("Adivina el valor entero, entre 0 y 10: ");
-           boolean tipoCorrecto = lector.hasNextInt();
-           if (tipoCorrecto) {
-               //Se ha escrito un entero correctamente. Ya puede leerse.
-               int valorUsuario = lector.nextInt();
-               lector.nextLine();
-               if (VALOR_SECRETO == valorUsuario) {
-                   System.out.println("Exacto! Era " + VALOR_SECRETO + ".");
-               } else {
-                   System.out.println("Te has equivocado!");
-               }
-               System.out.println("Hemos terminado el juego.");
-           } else {
-               //No se ha escrito un entero.
-               System.out.println("El valor introducido no es un entero.");
-           }
-       }
-   }
-   ```
+!!! warning "Atención"
+    Para pasar satisfactoriamente los tests, el mensaje de error cuando no se introduzca un entero debe contener la palabra "ERROR"
+    ```java
+    import java.util.Scanner;
+    
+    public class AdivinaControlErroresEntrada{
+    
+        public static final int VALOR_SECRETO = 4;
+    
+        public static void main(String[] args) {
+            Scanner lector = new Scanner(System.in);
+            System.out.println("Empecemos el juego.");
+            System.out.print("Adivina el valor entero, entre 0 y 10: ");
+            boolean tipoCorrecto = lector.hasNextInt();
+            if (tipoCorrecto) {
+                //Se ha escrito un entero correctamente. Ya puede leerse.
+                int valorUsuario = lector.nextInt();
+                lector.nextLine();
+                if (VALOR_SECRETO == valorUsuario) {
+                    System.out.println("Exacto! Era " + VALOR_SECRETO + ".");
+                } else {
+                    System.out.println("Te has equivocado!");
+                }
+                System.out.println("Hemos terminado el juego.");
+            } else {
+                //No se ha escrito un entero.
+                System.out.println("El valor introducido no es un entero.");
+            }
+        }
+    }
+    ```
 
 5. (Reto5) Modifique el ejemplo para que primero pregunte al usuario cuántos caracteres "-" quiere escribir por pantalla, y entonces los escriba. Cuando pruebe el programa, no introduzca un número muy alto!
 
-   ```java
-   //Un programa que escribe una línea con 100 caracteres '−'.
-   
-   public class Linea {
-   
-       public static void main(String[] args) {
-           //Inicializamos un contador
-       
-           int i = 0;
-           //¿Ya hemos hecho esto 100 veces?
-           while (i < 100) {
-               System.out.print("−");
-               //Lo hemos hecho una vez, sumamos 1 al contador
-       
-               i = i + 1;
-           }
-           //Forzamos un salto de línea
-           System.out.println();
-       }
-   }
-   ```
+    ```java
+    //Un programa que escribe una línea con 100 caracteres '−'.
+    
+    public class Linea {
+    
+        public static void main(String[] args) {
+            //Inicializamos un contador
+        
+            int i = 0;
+            //¿Ya hemos hecho esto 100 veces?
+            while (i < 100) {
+                System.out.print("−");
+                //Lo hemos hecho una vez, sumamos 1 al contador
+        
+                i = i + 1;
+            }
+            //Forzamos un salto de línea
+            System.out.println();
+        }
+    }
+    ```
 
 6. (Reto6) un contador tanto puede empezar a contar desde 0 e ir subiendo, como desde el final e ir disminuyendo como una cuenta atrás. Modifique este programa para que la tabla de multiplicar comience mostrando el valor para 10 y vaya bajando hasta el 1.
 
-   ```java
-   import java.util.Scanner;
-   public class TablaMultiplicar{
-   
-       public static void main(String[] args) {
-           Scanner lector = new Scanner(System.in);
-           System.out.print("¿Qué tabla de multiplicar quieres? ");
-           int tabla = lector.nextInt();
-           lector.nextLine();
-           int i = 1;
-           while (i <= 10) {
-               int resultado = tabla * i;
-               System.out.println(tabla + " * " + i + " = " + resultado);
-               i = i + 1;
-           }
-           System.out.println("Ésta ha sido la tabla del " + tabla);
-       }
-   }
-   ```
+    ```java
+    import java.util.Scanner;
+    public class TablaMultiplicar{
+    
+        public static void main(String[] args) {
+            Scanner lector = new Scanner(System.in);
+            System.out.print("¿Qué tabla de multiplicar quieres? ");
+            int tabla = lector.nextInt();
+            lector.nextLine();
+            int i = 1;
+            while (i <= 10) {
+                int resultado = tabla * i;
+                System.out.println(tabla + " * " + i + " = " + resultado);
+                i = i + 1;
+            }
+            System.out.println("Ésta ha sido la tabla del " + tabla);
+        }
+    }
+    ```
 
 7. (Reto7) el uso de contadores y acumuladores no es excluyente, sino que puede ser complementario. Piense cómo se podría modificar el programa para calcular el resultado del módulo y la división entera a la vez. Recuerde que la división entera simplemente sería contar cuántas veces se ha podido restar el divisor.
 
-   ```java
-   import java.util.Scanner;
-   
-   public class Modulo{
-   
-       public static void main(String[] args) {
-           Scanner lector = new Scanner(System.in);
-           System.out.print("¿Cuál es el dividendo? ");
-           int dividendo = lector.nextInt();
-           lector.nextLine();
-           System.out.print("¿Cuál es el divisor? ");
-           int divisor = lector.nextInt();
-           lector.nextLine();
-           while (dividendo >= divisor) {
-               dividendo = dividendo - divisor;
-               System.out.println("Bucle: por ahora el dividendo vale " + dividendo + ".");
-           }
-           System.out.println("El resultado final es" + dividendo + ".");
-       }
-   }
-   ```
+    ```java
+    import java.util.Scanner;
+    
+    public class Modulo{
+    
+        public static void main(String[] args) {
+             Scanner lector = new Scanner(System.in);
+            System.out.print("¿Cuál es el dividendo? ");
+            int dividendo = lector.nextInt();
+            lector.nextLine();
+            System.out.print("¿Cuál es el divisor? ");
+            int divisor = lector.nextInt();
+            lector.nextLine();
+            while (dividendo >= divisor) {
+                dividendo = dividendo - divisor;
+                System.out.println("Bucle: por ahora el dividendo vale " + dividendo + ".");
+            }
+            System.out.println("El resultado final es" + dividendo + ".");
+        }
+    }
+    ```
 
 ## Ejercicios
 
@@ -1613,4 +1613,5 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
     343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
 
 56. (MayorDeTres) Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La  función debe recibir como parámetros los tres números y devolver el  mayor.
+
 
