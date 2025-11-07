@@ -57,8 +57,10 @@
 3. (Reto3) modifique el ejemplo anterior (Adivina) para que comprueben que el valor que ha introducido el usuario se encuentra dentro del rango de valores correcto (entre 0 y 10).
 
 4. (Reto4) aplique el mismo tipo de control sobre los datos de la entrada del ejemplo siguiente al ejercicio del reto 1.
-!!! warning "Atención"
-    Para pasar satisfactoriamente los tests, el mensaje de error cuando no se introduzca un entero debe contener la palabra "ERROR"
+
+    !!! warning "Atención"
+        Para pasar satisfactoriamente los tests, el mensaje de error cuando no se introduzca un entero debe contener la palabra "ERROR"
+
     ```java
     import java.util.Scanner;
     
@@ -1617,6 +1619,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
     343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
 
 56. (MayorDeTres) Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La  función debe recibir como parámetros los tres números y devolver el  mayor.
+
 
 
 
