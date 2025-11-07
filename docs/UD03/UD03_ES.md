@@ -42,91 +42,88 @@ Este epígrafe lo utilizaremos para reafirmar cuestiones que son obvias y que en
 
 - **¿Qué es un bloque de sentencias?** Es un conjunto de sentencias que se encierra entre llaves y que se ejecutaría como si fuera una única orden. Sirve para agrupar sentencias y para clarificar el código. Los bloques de sentencias son utilizados en Java en la práctica totalidad de estructuras de control de flujo, clases, métodos, etc. La siguiente tabla muestra dos formas de construir un bloque de sentencias.
 
-  | Bloque de sentencias 1                           | Bloque de sentencias 2                                       |
-  | ------------------------------------------------ | ------------------------------------------------------------ |
-  | ```{sentencia1; sentencia2; ...; sentenciaN;}``` | `{`<br />    `sentencia1;`<br />    `sentencia2;`<br />    `...;`<br />    `sentenciaN;`<br />`}` |
+    | Bloque de sentencias 1                           | Bloque de sentencias 2                                       |
+    | ------------------------------------------------ | ------------------------------------------------------------ |
+    | ```{sentencia1; sentencia2; ...; sentenciaN;}``` | `{`<br />    `sentencia1;`<br />    `sentencia2;`<br />    `...;`<br />    `sentenciaN;`<br />`}` |
 
 - **¿En un bloque de sentencias, éstas deben estar colocadas con un orden exacto?** En ciertos casos sí, aunque si al final de su ejecución se obtiene el mismo resultado, podrían ocupar diferentes posiciones en nuestro programa.
 
 **DEBES CONOCER**
 Observa los tres archivos que te ofrecemos a continuación y compara su código fuente. Verás que los tres obtienen el mismo resultado, pero la organización de las sentencias que los componen es diferente entre ellos.
 
-Ejemplo 1:
-
-```java
-package organizacion_sentencias1;
-/**
-*
-* Organización de sentencias secuencial
-*/
-public class Organizacion_sentencias_1 {
-    public static void main(String[] args) {
-        System.out.println ("Organización secuencial de sentencias");
-        int dia=12;
-        System.out.println ("El día es: " + dia);
-        int mes=11;
-        System.out.println ("El mes es: " + mes);
-        int anio=2011;
-        System.out.println ("El anio es: " + anio);
+!!! example "Ejemplo 1:"
+    ```java
+    package organizacion_sentencias1;
+    /**
+    *
+    * Organización de sentencias secuencial
+    */
+    public class Organizacion_sentencias_1 {
+        public static void main(String[] args) {
+            System.out.println ("Organización secuencial de sentencias");
+            int dia=12;
+            System.out.println ("El día es: " + dia);
+            int mes=11;
+            System.out.println ("El mes es: " + mes);
+            int anio=2011;
+            System.out.println ("El anio es: " + anio);
+        }
     }
-}
-```
+    ```
 
 En este primer archivo, las sentencias están colocadas en orden secuencial.
 
-Ejemplo 2:
-
-```java
-package organizacion_sentencias2;
-/**
-*
-* Organización de sentencias con declaración previa de variables
-*/
-public class Organizacion_sentencias_2 {
-    public static void main(String[] args) {
-        // Zona de declaración de variables
-        int dia=10;
-        int mes=11;
-        int anio=2011;
-        System.out.println ("Organización con declaración previa de variables");
-        System.out.println ("El día es: " + dia);
-        System.out.println ("El mes es: " + mes);
-        System.out.println ("El año es: " + anio);
+!!! example "Ejemplo 2:"
+    ```java
+    package organizacion_sentencias2;
+    /**
+    *
+    * Organización de sentencias con declaración previa de variables
+    */
+    public class Organizacion_sentencias_2 {
+        public static void main(String[] args) {
+            // Zona de declaración de variables
+            int dia=10;
+            int mes=11;
+            int anio=2011;
+            System.out.println ("Organización con declaración previa de variables");
+            System.out.println ("El día es: " + dia);
+            System.out.println ("El mes es: " + mes);
+            System.out.println ("El año es: " + anio);
+        }
     }
-}
-```
+    ```
 
 En este segundo archivo, se declaran al principio las variables necesarias. En Java no es imprescindible hacerlo así, pero sí que antes de utilizar cualquier variable ésta debe estar previamente declarada. Aunque la declaración de dicha variable puede hacerse en cualquier lugar de nuestro programa.
 
-Ejemplo 3:
-
-```java
-package organizacion_sentencias3;
-/**
-*
-* Organización de sentencias en zonas diferenciadas
-* según las operaciones que se realicen en el código
-*/
-public class Organizacion_sentencias_3 {
-    public static void main(String[] args) {
-        // Zona de declaración de variables
-        int dia;
-        int mes;
-        int anio;
-        String fecha;
-        //Zona de inicialización o entrada de datos
-        dia=10;
-        mes=11;
-        anio=2011;
-        fecha="";
-        //Zona de procesamiento
-        fecha=dia+"/"+mes+"/"+anio;
-        //Zona de salida
-        System.out.println ("Organización con zonas diferenciadas en el código");
-        System.out.println ("La fecha es: " + fecha);
+!!! example "Ejemplo 3:"
+    ```java
+    package organizacion_sentencias3;
+    /**
+    *
+    * Organización de sentencias en zonas diferenciadas
+    * según las operaciones que se realicen en el código
+    */
+    public class Organizacion_sentencias_3 {
+        public static void main(String[] args) {
+            // Zona de declaración de variables
+            int dia;
+            int mes;
+            int anio;
+            String fecha;
+            //Zona de inicialización o entrada de datos
+            dia=10;
+            mes=11;
+            anio=2011;
+            fecha="";
+            //Zona de procesamiento
+            fecha=dia+"/"+mes+"/"+anio;
+            //Zona de salida
+            System.out.println ("Organización con zonas diferenciadas en el código");
+            System.out.println ("La fecha es: " + fecha);
+        }
     }
-}
-```
+    ```
 
 En este tercer archivo, podrás apreciar que se ha organizado el código en las siguientes partes: declaración de variables, petición de datos de entrada, procesamiento de dichos datos y obtención de la salida. Este tipo de organización está más estandarizada y hace que nuestros programas ganen en legibilidad.
 
@@ -157,44 +154,42 @@ A continuación, detallaremos las características y funcionamiento de cada una 
 La estructura `if` es una estructura de selección o estructura condicional, en la que se evalúa una expresión lógica o sentencia de decisión y en función del resultado, se ejecuta una sentencia o un bloque de éstas.
 La estructura `if` puede presentarse de las siguientes formas:
 
-**Estructura `if` simple:**
 
-```java
-if (expresión-lógica)
-    sentencia1;
-```
-```java
-if (expresión-lógica){
-    sentencia1;
-    sentencia2;
-    ...;
-    sentenciaN;
-}
-```
+!!! example "**Estructura `if` simple:**"
+    ```java
+    if (expresión-lógica)
+        sentencia1;
+    ```
+    ```java
+    if (expresión-lógica){
+        sentencia1;
+        sentencia2;
+        ...;
+        sentenciaN;
+    }
+    ```
 
 Si la evaluación de la expresión‐lógica ofrece un resultado verdadero, se ejecuta la sentencia1 o bien el bloque de sentencias asociado. Si el resultado de dicha evaluación es falso, no se ejecutará ninguna instrucción asociada a la estructura condicional.
 
-**Estructura `if` de doble alternativa.**
-
-```java
-if (expresión-lógica)
-	sentencia1;
-else
-	sentencia2;
-sentencia3;
-```
-
-```java
-if (expresión-lógica){
-    sentencia1;
-    ...;
-    sentenciaN;
-} else {
-    sentencia1;
-    ...;
-    sentenciaN;
-}
-```
+!!! example "**Estructura `if` de doble alternativa.**"
+    ```java
+    if (expresión-lógica)
+        sentencia1;
+    else
+        sentencia2;
+    sentencia3;
+    ```
+    ```java
+    if (expresión-lógica){
+        sentencia1;
+        ...;
+        sentenciaN;
+    } else {
+        sentencia1;
+        ...;
+        sentenciaN;
+    }
+    ```
 
 Si la evaluación de la expresión‐lógica ofrece un resultado  verdadero, se ejecutará la primera sentencia o el primer bloque de sentencias. Si, por el contrario, la evaluación de la expresión‐lógica ofrece un resultado falso, no se ejecutará la primera sentencia o el  primer bloque y sí se ejecutará la segunda sentencia o el segundo bloque.
 
@@ -229,44 +224,42 @@ if (condicion1) {
 }
 ```
 
-El mismo ejemplo usando `if else if` quedaría de este modo:
-
-```java
-if (condicion1) {
-    sentencias1;
-} else if (condicion2) {
-    sentencias2;
-} else if (condicion3) {
-    sentencias3;
-} else {
-    sentencias4;
-}
-```
+!!! example "El mismo ejemplo usando `if else if` quedaría de este modo:"
+    ```java
+    if (condicion1) {
+        sentencias1;
+    } else if (condicion2) {
+        sentencias2;
+    } else if (condicion3) {
+        sentencias3;
+    } else {
+        sentencias4;
+    }
+    ```
 
 ### Estructura `switch`
 
 ¿Qué podemos hacer cuando nuestro programa debe elegir entre más de dos alternativas?, una posible solución podría ser emplear estructuras if anidadas, aunque no siempre esta solución es la más eficiente. Cuando estamos ante estas situaciones podemos utilizar la estructura de selección múltiple switch. En la siguiente tabla se muestra tanto la sintaxis, como el funcionamiento de esta estructura.
 
-**Sintaxis:**
-
-```java
-switch (expresion) {
-    case valor1:
-        sentencia1_1;
-        sentencia1_2;
-        ....
-        break;
-    case valor2:
-        ....
-    case valorN:
-        sentenciaN_1;
-        sentenciaN_2;
-        ....
-        break;
-    default:
-   	sentencias-default;
-}
-```
+!!! example "**Sintaxis switch:**"
+    ```java
+    switch (expresion) {
+        case valor1:
+            sentencia1_1;
+            sentencia1_2;
+            ....
+            break;
+        case valor2:
+            ....
+        case valorN:
+            sentenciaN_1;
+            sentenciaN_2;
+            ....
+            break;
+        default:
+        sentencias-default;
+    }
+    ```
 
 **Condiciones:**
 
@@ -288,17 +281,18 @@ switch (expresion) {
 
 En las [novedades de Java 12](https://picodotdev.github.io/blog-bitix/2019/03/novedades-de-java-12/) se añadió la posibilidad de los switch fueran expresiones que retornan un valor en vez de sentencias y se evita el uso de la palabra reservada break.
 
-```java
-int entero = 5;
+!!! example "Sentencia Switch mejorada"
+    ```java
+    int entero = 5;
 
-String numericString = switch (entero) {
-    case 0 -> "cero";
-    case 1, 3, 5, 7, 9 -> "impar";
-    case 2, 4, 6, 8, 10 -> "par";
-    default -> "error";
-};
-System.out.println(numericString); //impar
-```
+    String numericString = switch (entero) {
+        case 0 -> "cero";
+        case 1, 3, 5, 7, 9 -> "impar";
+        case 2, 4, 6, 8, 10 -> "par";
+        default -> "error";
+    };
+    System.out.println(numericString); //impar
+    ```
 
 En Java 13 en vez de únicamente el valor a retornar se permite crear bloques de sentencias para cada rama `case` y retornar el valor con la palabra reservada `yield`. En los bloques de sentencias puede haber algún cálculo más complejo que directamente retornar el valor deseado.
 
@@ -373,23 +367,21 @@ En general, existen tres operaciones que se llevan a cabo en este tipo de bucles
     La condición de terminación del bucle debe variar en el interior del mismo, de no ser así, podemos caer en la creación de un bucle infinito. Cuestión que se debe evitar por todos los medios.
     Es necesario estudiar el número de veces que se repite el bucle, pues debe ajustarse al número de veces estipulado.
 
-Sintaxis estructura `for` con una única sentencia:
+!!! example "Sintaxis estructura `for` con una única sentencia:"
+    ```java
+    for (inicialización; condición; iteración)
+        sentencia;
+    ```
 
-```java
-for (inicialización; condición; iteración)
-	sentencia;
-```
-
-Sintaxis estructura `for` con un bloque de sentencias:
-
-```java
-for (inicialización; condición; iteración) {
-	sentencia1;
-	sentencia2;
-	...
-	sentenciaN;
-}
-```
+!!! example "Sintaxis estructura `for` con un bloque de sentencias:"
+    ```java
+    for (inicialización; condición; iteración) {
+        sentencia1;
+        sentencia2;
+        ...
+        sentenciaN;
+    }
+    ```
 
 Donde...:
 
@@ -405,15 +397,14 @@ Este tipo de bucles permite realizar recorridos sobre arrays y colecciones de ob
 
 Este bucle es nombrado también como bucle `for` mejorado, o bucle `foreach`. En otros lenguajes de programación existen bucles muy parecidos a este.
 
-La sintaxis es la siguiente:
-
-```java
-for (declaración: expresión) {
-    sentencia1;
-    ...
-    sentenciaN;
-}
-```
+!!! example "La sintaxis `for` es la siguiente:"
+    ```java
+    for (declaración: expresión) {
+        sentencia1;
+        ...
+        sentenciaN;
+    }
+    ```
 
 Donde...:
 
@@ -426,7 +417,8 @@ Observa el contenido del código representado en la siguiente imagen, puedes apr
 
 Los bucles `for`/`in` permitirán al programador despreocuparse del número de veces que se ha de iterar, pero no sabremos en qué iteración nos encontramos salvo que se añada artificialmente alguna variable contadora que nos pueda ofrecer esta información.
 
-> Esta estructura tomará sentido cuando avancemos en el curso y veamos los Arrays y las colecciones de Objetos.
+!!! info "Información"
+    Esta estructura tomará sentido cuando avancemos en el curso y veamos los Arrays y las colecciones de Objetos.
 
 ### Estructura `while`
 
@@ -437,22 +429,20 @@ La característica fundamental de este tipo de estructura repetitiva estriba en 
 !!! danger "¡Atención!"
     Es imprescindible que en el interior del bucle `while` se realice alguna acción que modifique la condición que controla la ejecución del mismo, en caso contrario estaríamos ante un bucle infinito.
 
-Sintaxis estructura `while` con una única sentencia:
+!!! example "Sintaxis estructura `while` con una única sentencia:"
+    ```java
+    while (condición)
+        sentencia;
+    ```
 
-```java
-while (condición)
-	sentencia;
-```
-
-Sintaxis estructura `while` con un bloque de sentencias:
-
-```java
-while (condición) {
-    sentencia1;
-    ...
-    sentenciaN;
-}
-```
+!!! example "Sintaxis estructura `while` con un bloque de sentencias:"
+    ```java
+    while (condición) {
+        sentencia1;
+        ...
+        sentenciaN;
+    }
+    ```
 
 **Funcionamiento:**
 Mientras la condición sea cierta, el bucle se repetirá, ejecutando la/s instrucción/es de su interior.
@@ -461,7 +451,7 @@ En el momento en el que la condición no se cumpla, el control del flujo del pro
 
 La condición se evaluará siempre al principio, y podrá darse el caso de que las instrucciones contenidas en él no lleguen a ejecutarse nunca si no se satisface la condición de partida.
 
-### Estructura `do­ while`
+### Estructura `do while`
 
 La segunda de las estructuras repetitivas controladas por sucesos es `do­ while`. En este caso, la pregunta que nos planteamos es la siguiente: ¿Qué podemos hacer si lo único que sabemos es que se han de ejecutar, al menos una vez, un conjunto de instrucciones y seguir repitiéndose hasta que se cumpla una determinada condición?.
 
@@ -469,23 +459,21 @@ La característica fundamental de este tipo de estructura repetitiva estriba en 
 
 Es imprescindible que en el interior del bucle se realice alguna acción que modifique la condición que controla la ejecución del mismo, en caso contrario estaríamos ante un bucle infinito.
 
-Sintaxis estructura `while` con una única sentencia:
+!!! example "Sintaxis estructura `while` con una única sentencia:"
+    ```java
+    do
+        sentencia;
+    while (condición);
+    ```
 
-```java
-do
-	sentencia;
-while (condición);
-```
-
-Sintaxis estructura `while` con un bloque de sentencias:
-
-```java
-do {
-	sentencia1;
-	...
-	sentenciaN;
-} while (condición);
-```
+!!! example "Sintaxis estructura `while` con un bloque de sentencias:"
+    ```java
+    do {
+        sentencia1;
+        ...
+        sentenciaN;
+    } while (condición);
+    ```
 
 **Funcionamiento:**
 
@@ -499,62 +487,64 @@ En ese momento el control del flujo del programa pasará a la siguiente instrucc
 
 Uno de los errores más comunes al implementar cualquier tipo de bucle es que nunca pueda salir, es decir, el bucle se ejecuta durante un número infinito de veces.
 
-Podemos provocarlo intencionadamente como en estos dos ejemplos equivalentes (**NO RECOMENDABLE**):
+Podemos provocarlo intencionadamente como en estos dos ejemplos equivalentes:
 
-```java
-for(;;){
-    //sentencias
-}
-```
-
-```java
-while(true){
-    //sentencias
-}
-```
+!!! example "(**NO RECOMENDABLE**)"
+    ```java
+    for(;;){
+        //sentencias
+    }
+    ```
+    ```java
+    while(true){
+        //sentencias
+    }
+    ```
 
 O sucede cuando la condición falla por alguna razón, como en el siguiente ejemplo:
 
-```java
-//Programa Java para ilustrar varias trampas de bucles.
-public class BucleInfinito{
-    
-    public static void main(String[] args)
-    {
-        // bucle infinito porque la condición no es apta
-        // la condición; debería haber sido i>0.
-        for (int i = 5; i != 0; i -= 2){
-            System.out.println(i);
-        }
+!!! example "Bucle infinito"
+    ```java
+    //Programa Java para ilustrar varias trampas de bucles.
+    public class BucleInfinito{
 
-        int x = 5; 
-        // bucle infinito porque la actualización
-        // no se proporciona
-        while (x == 5)
+        public static void main(String[] args)
         {
-            System.out.println("En el bucle");
+            // bucle infinito porque la condición no es apta
+            // la condición; debería haber sido i>0.
+            for (int i = 5; i != 0; i -= 2){
+                System.out.println(i);
+            }
+
+            int x = 5; 
+            // bucle infinito porque la actualización
+            // no se proporciona
+            while (x == 5)
+            {
+                System.out.println("En el bucle");
+            }
         }
     }
-}
-```
+    ```
 
 Otro inconveniente es que puede estar agregando algo en su objeto de colección a través de un bucle y puede **quedarse sin memoria**. Si intenta ejecutar el siguiente programa, después de un tiempo, se producirá una excepción de falta de memoria. En este ejemplo se hace uso de la colección ArrayList, pero de momento solo necesitamos saber que se comporta como un casillero al que vamos asignando elementos (que evidentemente ocupan memoria)
 
-```java
-//Programa Java para la excepción de falta de memoria.
-import java.util.ArrayList;
-public class HeapSpace
-{
-    public static void main(String[] args)
+!!! example "Provocar falta de memoria:"
+    ```java
+    //Programa Java para la excepción de falta de memoria.
+    import java.util.ArrayList;
+    public class HeapSpace
     {
-        ArrayList<Integer> ar = new ArrayList<>();
-        for (int i = 0; i < Integer.MAX_VALUE; i++)
+        public static void main(String[] args)
         {
-            ar.add(i);
+            ArrayList<Integer> ar = new ArrayList<>();
+            for (int i = 0; i < Integer.MAX_VALUE; i++)
+            {
+                ar.add(i);
+            }
         }
     }
-}
-```
+    ```
 
 Salida:
 
@@ -578,7 +568,7 @@ Estas estructuras de salto corresponden a las sentencias `break`, `continue`, la
 
 Se trata de dos instrucciones que permiten modificar el comportamiento de otras estructuras o sentencias de control, simplemente por el hecho de estar incluidas en algún punto de su secuencia de instrucciones.
 
-La sentencia `break` incidirá sobre las estructuras de control `switch`, `while`, `for` y `do­ while` del siguiente modo:
+La sentencia `break` incidirá sobre las estructuras de control `switch`, `while`, `for` y `do while` del siguiente modo:
 
 - Si aparece una sentencia `break` dentro de la secuencia de instrucciones de cualquiera de las estructuras mencionadas anteriormente, dicha estructura terminará inmediatamente. 
 
@@ -692,7 +682,7 @@ classDiagram
 
 Y aquí tenemos una lista de las más habituales con su explicación:
 
-| **NOMBRE**                         | DESCRIPCIÓN                                   |
+| **NOMBRE**                         | **DESCRIPCIÓN**                                  |
 | ---------------------------------- | ------------------------------------------------------------ |
 | **FileNotFoundException**| Lanza una excepción cuando el fichero no se encuentra. |
 | **ClassNotFoundException**| Lanza una excepción cuando no existe la clase.|
@@ -719,21 +709,20 @@ Para poder capturar excepciones, emplearemos la estructura de captura de excepci
 
 Básicamente, para capturar una excepción lo que haremos será declarar bloques de código donde es posible que ocurra una excepción. Esto lo haremos mediante un bloque `try` (intentar). Si ocurre una excepción dentro de estos bloques, se lanza una excepción. Estas excepciones lanzadas se pueden capturar por medio de bloques `catch`. Será dentro de este tipo de bloques donde se hará el manejo de las excepciones.
 
-Su sintaxis es:
-
-```java
-try {
-	//código que puede generar excepciones;
-} catch (Tipo_excepcion_1 objeto_excepcion) {
-	//Manejo de excepción de Tipo_excepcion_1;
-} catch (Tipo_excepcion_2 objeto_excepcion) {
-	//Manejo de excepción de Tipo_excepcion_2;
-}
-...
-finally {
-	//instrucciones que se ejecutan siempre
-}
-```
+!!! example "Sintaxis `try-catch`:"
+    ```java
+    try {
+        //código que puede generar excepciones;
+    } catch (Tipo_excepcion_1 objeto_excepcion) {
+        //Manejo de excepción de Tipo_excepcion_1;
+    } catch (Tipo_excepcion_2 objeto_excepcion) {
+        //Manejo de excepción de Tipo_excepcion_2;
+    }
+    ...
+    finally {
+        //instrucciones que se ejecutan siempre
+    }
+    ```
 
 En esta estructura, la parte `catch` puede repetirse tantas veces como excepciones diferentes se deseen capturar. La parte `finally` es opcional y, si aparece, solo podrá hacerlo una vez.
 
@@ -755,16 +744,17 @@ Quizá pudiéramos pensar que debería ser el propio método el que se encargue 
 
 Para establecer esta delegación, en la cabecera del método se declara el tipo de excepciones que puede generar y que deberán ser gestionadas por quien invoque a dicho método. Utilizaremos para ello la sentencia `throws` y tras esa palabra se indica qué excepciones puede provocar el código del método. Si ocurre una excepción en el método, el código abandona ese método y regresa al código desde el que se llamó al método. Allí se buscará el `catch` apropiado para esa excepción. Su sintaxis es la siguiente:
 
-```java
-public class Delegacion_Excepciones {
-	...
-	public int leeAnio(BufferedReader lector) throws IOException, NumberFormatException{
-		String linea = teclado.readLine();
-        return Integer.parseInt(linea);
-	}
-	...
-}
-```
+!!! example "Sintaxis `throws`:
+    ```java
+    public class Delegacion_Excepciones {
+        ...
+        public int leeAnio(BufferedReader lector) throws IOException, NumberFormatException{
+            String linea = teclado.readLine();
+            return Integer.parseInt(linea);
+        }
+        ...
+    }
+    ```
 
 Donde `IOException` y `NumberFormatException`, serían dos posibles excepciones que el método `leeAnio` podría generar, pero que no gestiona. Por tanto, un método puede incluir en su cabecera un listado de excepciones que puede lanzar, separadas por comas	
 
