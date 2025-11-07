@@ -732,6 +732,7 @@ Por eso el último `catch` debe ser el que capture excepciones genéricas y los 
 
 !!! info "Recuerda"
     En Java, cuando un bloque de código puede provocar una excepción pero no se maneja adecuadamente, se produce lo que se conoce como una "excepción no controlada" o "excepción no capturada". Cuando ocurre una excepción no controlada,  Java sigue un conjunto de reglas específicas para manejarla:
+	
     1. **Propagación de excepciones**: Java busca en la pila de llamadas (el seguimiento de la ejecución del programa) para ver si el método actual maneja la excepción. Si el método actual no maneja la excepción, la excepción se "propaga" hacia arriba en la pila de llamadas. (Piensa en una burbuja de aire en el fondo del mar intentando buscar una salida)
     2. **Búsqueda de un manejador de excepciones**: La excepción propagada continúa buscando un manejador de excepciones adecuado a medida que se retrocede a través de los métodos que llamaron al método actual. Si se encuentra un bloque `try-catch` que puede manejar la excepción, se ejecutará el código del bloque `catch` correspondiente.
     3. **Si no se encuentra un manejador adecuado**: Si la excepción llega a la parte superior de la pila de llamadas y no se encuentra un manejador de excepciones adecuado, el programa se detendrá y se imprimirá un mensaje de error en la consola, que contiene información sobre la excepción, como su tipo, mensaje y seguimiento de pila (`stack trace`).
@@ -744,7 +745,8 @@ Quizá pudiéramos pensar que debería ser el propio método el que se encargue 
 
 Para establecer esta delegación, en la cabecera del método se declara el tipo de excepciones que puede generar y que deberán ser gestionadas por quien invoque a dicho método. Utilizaremos para ello la sentencia `throws` y tras esa palabra se indica qué excepciones puede provocar el código del método. Si ocurre una excepción en el método, el código abandona ese método y regresa al código desde el que se llamó al método. Allí se buscará el `catch` apropiado para esa excepción. Su sintaxis es la siguiente:
 
-!!! example "Sintaxis `throws`:
+!!! example "Sintaxis `throws`:"
+    
     ```java
     public class Delegacion_Excepciones {
         ...
@@ -768,24 +770,27 @@ Para crear una nueva excepción tenemos que crear una clase derivada (subclase) 
 
 La clase `Exception` tiene dos constructores, uno sin parámetros y otro que acepta un `String` con un texto descriptivo de la excepción. Todas las excepciones de usuario las crearemos de la siguiente forma:
 
-```java
-class NombreExcepcion extends Exception {
-	public NombreExcepcion(){
-        super();
-    }
-	public NombreExcepcion(String msg){
-        super(msg);
-    }
-}
-```
+!!! example "Constructores de Exception:"
+
+	```java
+	class NombreExcepcion extends Exception {
+		public NombreExcepcion(){
+	        super();
+	    }
+		public NombreExcepcion(String msg){
+	        super(msg);
+	    }
+	}
+	```
 
 #### Lanzar una excepción
 
 Las excepciones se lanzan mediante la instrucción `throw`. La sintaxis es:
 
-```java
-throw new NombreExcepcion("Mensaje descriptivo de la situación inesperada");
-```
+!!! example "Instrucción `throw`:"
+	```java
+	throw new NombreExcepcion("Mensaje descriptivo de la situación inesperada");
+	```
 
 Ya que se tratará de una excepción comprobada, en la cabecera del método que lanza la excepción habrá que propagarla. 
 
@@ -798,38 +803,38 @@ En Java, las excepciones se dividen en dos categorías principales: excepciones 
    - Ejemplos de excepciones comprobadas incluyen `IOException` y `SQLException`.
    - Estas excepciones suelen representar situaciones en las que un programa no puede continuar normalmente y se espera que el código las maneje de manera adecuada.
 
-Ejemplo de excepción comprobada:
+!!! example "Excepción comprobada:"
 
-```java
-import java.io.FileReader;
-import java.io.FileNotFoundException;
-
-public class EjemploCheckedException {
-    public static void main(String[] args) {
-        try {
-            FileReader file = new FileReader("archivo.txt");
-        } catch (FileNotFoundException e) {
-            System.out.println("Archivo no encontrado: " + e.getMessage());
-        }
-    }
-}
-```
+	```java
+	import java.io.FileReader;
+	import java.io.FileNotFoundException;
+	
+	public class EjemploCheckedException {
+	    public static void main(String[] args) {
+	        try {
+	            FileReader file = new FileReader("archivo.txt");
+	        } catch (FileNotFoundException e) {
+	            System.out.println("Archivo no encontrado: " + e.getMessage());
+	        }
+	    }
+	}
+	```
 
 2. **Excepciones No Comprobadas (Unchecked Exceptions):**
    - Las excepciones no comprobadas son aquellas que el compilador no requiere que se manejen explícitamente. Normalmente, son subclases de `RuntimeException`.
    - Estas excepciones suelen deberse a errores de programación, como acceder a un índice fuera de los límites de un array (`ArrayIndexOutOfBoundsException`) o intentar convertir un objeto a un tipo incompatible (`ClassCastException`).
    - Aunque no se requiere que se manejen explícitamente, es buena práctica manejarlas para evitar que el programa termine abruptamente.
 
-Ejemplo de excepción no comprobada:
+!!! example "Excepción no comprobada:"
 
-   ```java
-public class EjemploUncheckedException {
-    public static void main(String[] args) {
-        int[] numeros = {1, 2, 3};
-        System.out.println(numeros[4]);  // Esto lanzará ArrayIndexOutOfBoundsException
-    }
-}
-   ```
+	```java
+	public class EjemploUncheckedException {
+	    public static void main(String[] args) {
+	        int[] numeros = {1, 2, 3};
+	        System.out.println(numeros[4]);  // Esto lanzará ArrayIndexOutOfBoundsException
+	    }
+	}
+	```
 
 #### ¿Como sé si una excepción es de un tipo o de otro?
 
@@ -853,34 +858,34 @@ Una aserción (afirmación) permite probar la exactitud de cualquier suposición
 
 La declaración de afirmación se usa con una expresión booleana y se puede escribir de dos maneras diferentes.
 
-Primera forma:
+!!! example "Primera forma:"
 
-```java
-assert expression;
-```
+	```java
+	assert expression;
+	```
 
-Segunda forma:  
+!!! example "Segunda forma:"
 
-```java
-assert expression1 : expression2;
-```
+	```java
+	assert expression1 : expression2;
+	```
 
-Ejemplo:
+!!! example "Ejemplo:"
 
-```java
-import java.util.Scanner;
-
-public class P7_Assertions {
-    // Programa Java para demostrar el uso de las assertions
-    public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        System.out.print("Introduce tu edad: ");
-        int age = entrada.nextInt();
-        assert (age >= 18): "No puede votar";
-        System.out.println("La edad del votante es de " + age);
-    }
-}
-```
+	```java
+	import java.util.Scanner;
+	
+	public class P7_Assertions {
+	    // Programa Java para demostrar el uso de las assertions
+	    public static void main(String[] args) {
+	        Scanner entrada = new Scanner(System.in);
+	        System.out.print("Introduce tu edad: ");
+	        int age = entrada.nextInt();
+	        assert (age >= 18): "No puede votar";
+	        System.out.println("La edad del votante es de " + age);
+	    }
+	}
+	```
 
 Salida sin assertions:
 
@@ -891,7 +896,7 @@ La edad del votante es de 14
 
 Después de habilitar las assertions:
 
-!!! info "Ejemplo"
+!!! info "Saber más..."
     Puedes habilitar las assertions añadiendo los parámetros de la JVM en IntelliJ:
     `-ea`: Enable Assertions (habilitar aserciones) 
     `-da`: Disable Assertions (deshabilitar aserciones, que es la opción por defecto)
@@ -905,19 +910,19 @@ Exception in thread "main" java.lang.AssertionError: No puede votar
 	at UD03.P7_Assertions.main(P7_Assertions.java:11)
 ```
 
-Otro ejemplo:
+!!! example "Otro ejemplo:"
 
-```java
-package UD03;
-
-public class P7_Assertions2 {
-    public static void main(String[] args) {
-        System.out.println("Probando Aserciones...");
-        assert true : "Nunca veremos esto.";
-        assert false : "Esto solo lo veremos si activamos las aserciones.";
-    }
-}
-```
+	```java
+	package UD03;
+	
+	public class P7_Assertions2 {
+	    public static void main(String[] args) {
+	        System.out.println("Probando Aserciones...");
+	        assert true : "Nunca veremos esto.";
+	        assert false : "Esto solo lo veremos si activamos las aserciones.";
+	    }
+	}
+	```
 
 Ejecución sin aserciones:
 
@@ -960,7 +965,6 @@ Las aserciones se utilizan principalmente para comprobar situaciones lógicament
 - Las aserciones no deben usarse para verificar argumentos en los métodos públicos, ya que pueden ser proporcionados por el usuario. 
 - Para manejar los errores proporcionados por los usuarios usaremos las excepciones.
 - Las aserciones no deben usarse en argumentos de línea de comando.
-
 
 ## Ejemplos UD03
 
@@ -1446,4 +1450,5 @@ public class P6_2_PropagacionExcepciones {
 Videos de Makigas al respecto:
 
 - [Java: introducción a las excepciones](https://www.youtube.com/watch?v=kGzwPunAOxk)
+
 - [Java: throw y throws, usos y diferencias ](https://www.youtube.com/watch?v=-xC0o6JQaoE)
