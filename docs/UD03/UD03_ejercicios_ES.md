@@ -2,7 +2,7 @@
 
 ## Retos
 
-1. (Reto1) modifique el programa para que, en lugar de realizar un descuento del 8% si la compra es de 100 € o más, aplique una penalización de 2 € si el precio es inferior a 30 €.
+1. (Descuento) modifique el programa para que, en lugar de realizar un descuento del 8% si la compra es de 100 € o más, aplique una penalización de 2 € si el precio es inferior a 30 €.
 
     ```java
     import java.util.Scanner;
@@ -26,7 +26,7 @@
     }
     ```
 
-2. (Reto2) modifique el programa para que, en lugar de un único valor secreto, haya dos. Para ganar, basta con acertar uno de los dos. La condición lógica que necesitará ya no se puede resolver con una expresión compuesta por una única comparación. Será más compleja.
+2. (Adivina) modifique el programa para que, en lugar de un único valor secreto, haya dos. Para ganar, basta con acertar uno de los dos. La condición lógica que necesitará ya no se puede resolver con una expresión compuesta por una única comparación. Será más compleja.
 
     !!! warning "Atención"
         Para pasar satisfactoriamente los tests, la variable `VALOR_SECRETO` debe ser renombrada a `VALOR_SECRETO1`, y la nueva debe llamarse `VALOR_SECRETO2`
@@ -54,9 +54,9 @@
     }
     ```
 
-3. (Reto3) modifique el ejemplo anterior (Adivina) para que comprueben que el valor que ha introducido el usuario se encuentra dentro del rango de valores correcto (entre 0 y 10).
+3. (AdivinaCorrecto) modifique el ejemplo anterior (Adivina) para que comprueben que el valor que ha introducido el usuario se encuentra dentro del rango de valores correcto (entre 0 y 10).
 
-4. (Reto4) aplique el mismo tipo de control sobre los datos de la entrada del ejemplo siguiente al ejercicio del reto 1.
+4. (AdivinaControlErroresEntrada) aplique el mismo tipo de control sobre los datos de la entrada del ejemplo siguiente al ejercicio del reto 1.
 
     !!! warning "Atención"
         Para pasar satisfactoriamente los tests, el mensaje de error cuando no se introduzca un entero debe contener la palabra "ERROR"
@@ -91,7 +91,7 @@
     }
     ```
 
-5. (Reto5) Modifique el ejemplo para que primero pregunte al usuario cuántos caracteres "-" quiere escribir por pantalla, y entonces los escriba. Cuando pruebe el programa, no introduzca un número muy alto!
+5. (Linea) Modifique el ejemplo para que primero pregunte al usuario cuántos caracteres "-" quiere escribir por pantalla, y entonces los escriba. Cuando pruebe el programa, no introduzca un número muy alto!
 
     ```java
     //Un programa que escribe una línea con 100 caracteres '−'.
@@ -115,7 +115,7 @@
     }
     ```
 
-6. (Reto6) un contador tanto puede empezar a contar desde 0 e ir subiendo, como desde el final e ir disminuyendo como una cuenta atrás. Modifique este programa para que la tabla de multiplicar comience mostrando el valor para 10 y vaya bajando hasta el 1.
+6. (TablaMultiplicar) un contador tanto puede empezar a contar desde 0 e ir subiendo, como desde el final e ir disminuyendo como una cuenta atrás. Modifique este programa para que la tabla de multiplicar comience mostrando el valor para 10 y vaya bajando hasta el 1.
 
     ```java
     import java.util.Scanner;
@@ -137,7 +137,7 @@
     }
     ```
 
-7. (Reto7) el uso de contadores y acumuladores no es excluyente, sino que puede ser complementario. Piense cómo se podría modificar el programa para calcular el resultado del módulo y la división entera a la vez. Recuerde que la división entera simplemente sería contar cuántas veces se ha podido restar el divisor.
+7. (Modulo) el uso de contadores y acumuladores no es excluyente, sino que puede ser complementario. Piense cómo se podría modificar el programa para calcular el resultado del módulo y la división entera a la vez. Recuerde que la división entera simplemente sería contar cuántas veces se ha podido restar el divisor.
 
     ```java
     import java.util.Scanner;
@@ -167,15 +167,15 @@
 
 1. (MenorDeDos) Escribir un método que devuelva el menor de dos números enteros introducidos por teclado.
 
-2. (MenorDeTres) Escribir un método que devuelve el menor de tres números enteros introducidos por teclado. Haz dos versiones:
-    - V1: utilizando los operadores lógicos necesarios (&&,||, ...)
-    - V2: sin utilizar ninguno (habrá que usar sentencias if else anidadas)
+2. (MenorDeTres) Escribir dos métodos que devuelve el menor de tres números recibidos por parámetros. Haz dos versiones:
+    - `MenorDeTresV1`: utilizando los operadores de comparación (<, >, ==) y lógicos (&&,||, ...) necesarios
+    -  `MenorDeTresV2`: sin utilizar ninguno de los operadores lógicos (habrá que usar sentencias if else anidadas)
 
 3. (IntermedioDeTres) Escribir un método que devuelva el intermedio de tres números introducidos por teclado.
 
 4. (NotasTexto) Escribir un método que acepte del usuario la nota de un examen (valor numérico entre 1 y 10) y devuelva el literal correspondiente a dicha nota según ("insuficiente", "suficiente", "bien", "notable", "sobresaliente" y "matricula de honor").
 
-5. (División) Escribir un programa que pida al usuario dos números enteros y le muestre el resultado de la división. Tener en cuenta que si dividimos un número por cero se producirá un error de ejecución y debemos evitarlo.
+5. (Division) Escribir un programa que pida al usuario dos números enteros y le muestre el resultado de la división. Tener en cuenta que si dividimos un número por cero se producirá un error de ejecución y debemos evitarlo.
 
 6. (Raiz) Se desea calcular la raíz cuadrada real de un número real cualquiera pedido inicialmente al usuario. Como dicha operación no está definida para los números negativos es necesario tratar, de algún modo, dicho posible error sin que el programa detenga su ejecución.
 
