@@ -82,27 +82,28 @@
     *(Opcional, no hay puntos)*  Crea dos objetos (cada objeto llama a un constructor distinto) y verifica que todo funciona correctamente.
 
 11. (Consumo) Implementa una clase `Consumo`, la cual forma parte del "ordenador de a bordo" de un coche y tiene las siguientes características:
+
     - Atributos:
-       - kilometros.
-       - litros. Litros de combustible consumido.
-       - vmed. Velocidad media.
-       - pgas. Precio de la gasolina.
+        - kilometros.
+        - litros. Litros de combustible consumido.
+        - vmed. Velocidad media.
+        - pgas. Precio de la gasolina.
     - Métodos:
-       - `getTiempo`. Indicará el tiempo empleado en realizar el viaje.
-       - `consumoMedio`. Consumo medio del vehículo (en litros cada 100 kilómetros).
-       - `consumoEuros`. Consumo medio del vehículo (en euros cada 100 kilómetros).
+        - `getTiempo`. Indicará el tiempo empleado en realizar el viaje.
+        - `consumoMedio`. Consumo medio del vehículo (en litros cada 100 kilómetros).
+        - `consumoEuros`. Consumo medio del vehículo (en euros cada 100 kilómetros).
 
     No olvides crear un constructor para la clase que establezca el valor de los atributos. Elige el tipo de datos más apropiado para cada atributo.
 
-12. (ConsumoModificadores) Para la clase anterior implementa los siguientes métodos, los cuales podrán modificar los valores de los atributos de la clase:
+13. (ConsumoModificadores) Para la clase anterior implementa los siguientes métodos, los cuales podrán modificar los valores de los atributos de la clase:
       - `setKilometros`
       -  `setLitros`
       - `setVmed`
       - `setPgas`
 
-13. (Restaurante) Un restaurante cuya especialidad son las patatas con carne nos pide diseñar un método (`calcularClientes`) con el que se pueda saber cuántos clientes pueden atender con la materia prima que tienen en el almacén. El método recibe la cantidad de patatas y carne en kilos y devuelve el número de clientes que puede atender el restaurante teniendo en cuenta que por cada tres personas, utilizan un dos kilos de patatas y un kilo de carne.
+14. (Restaurante) Un restaurante cuya especialidad son las patatas con carne nos pide diseñar un método (`calcularClientes`) con el que se pueda saber cuántos clientes pueden atender con la materia prima que tienen en el almacén. El método recibe la cantidad de patatas y carne en kilos y devuelve el número de clientes que puede atender el restaurante teniendo en cuenta que por cada tres personas, utilizan un dos kilos de patatas y un kilo de carne.
 
-14. (RestauranteClase) Modifica el programa anterior creando una clase que permita almacenar los kilos de patatas y carne del restaurante. Implementa los siguientes métodos:
+15. (RestauranteClase) Modifica el programa anterior creando una clase que permita almacenar los kilos de patatas y carne del restaurante. Implementa los siguientes métodos:
 
      - `public void addCarne(int x)`. Añade x kilos de carne a los ya existentes.
      - `public void addPatatas(int x)`. Añade x kilos de patatas a los ya existentes.
@@ -110,7 +111,7 @@
      - `public double getCarne()`. Devuelve los kilos de carne que hay en el almacén.
      - `public double getPatatas()`. Devuelve los kilos de patatas que hay en el almacén.
 
-15. (Proveedor) Crear un clase llamada `Proveedor` con las siguientes propiedades:
+16. (Proveedor) Crear un clase llamada `Proveedor` con las siguientes propiedades:
        - `CIF`
        - `nombreEmpresa`
        - `descripcion`
@@ -137,7 +138,7 @@
      - Verifique si el correo es válido.
      - Muestre todos los datos del `proveedor`.
 
-16. (Producto) Crear una clase llamada `Producto` con las siguientes propiedades:
+17. (Producto) Crear una clase llamada `Producto` con las siguientes propiedades:
      - `codProducto`
      - `nombreProducto`
      - `descripcion`
@@ -164,7 +165,7 @@
      - Calcula el IVA de los dos objetos `Producto` que hemos creado.
      - Mostrar los datos de los dos objetos `Producto`, así como sus importes de IVA y los precios finales de cada una de las instancias.
     
-17. (Cuenta) Crea una clase llamada `Cuenta` que tendrá los siguientes atributos: `titular` y `cantidad` (puede tener decimales).
+18. (Cuenta) Crea una clase llamada `Cuenta` que tendrá los siguientes atributos: `titular` y `cantidad` (puede tener decimales).
 
      Al crear una instancia del objeto Cuenta, el titular será obligatorio y la cantidad es opcional. Crea dos constructores que cumplan lo anterior, es decir debemos crear dos métodos constructores con el mismo nombre que será el nombre del objeto.
 
@@ -183,7 +184,7 @@
      - Retirar 500 € en la instancia `cuentaEmpresa1`.
      - Mostrar los datos de las dos instancias del objeto `Cuenta`.
 
-18. (Libro) Crea una clase llamada `Libro` que guarde la información de cada uno de los libros de una biblioteca. La clase debe guardar las siguientes propiedades:
+19. (Libro) Crea una clase llamada `Libro` que guarde la información de cada uno de los libros de una biblioteca. La clase debe guardar las siguientes propiedades:
 
      - `título`
      - `autor`
@@ -215,7 +216,7 @@
      - Muestra los ejemplares de la instancia `libroInformatica1`.
      - Muestra todos los datos de la instancia `libroInformatica1`.
 
-19. (Hospital) Crear una clase llamada `Hospital` con las siguientes propiedades y métodos: 
+20. (Hospital) Crear una clase llamada `Hospital` con las siguientes propiedades y métodos: 
 
      - Propiedades:
 
@@ -248,7 +249,7 @@
          - Muestra las habitaciones ocupadas de la instancia `hospitalRibera`.
          - Muestre todos los datos de la instancia `hospitalRibera`.
 
-20. (Medico) Crear un clase llamada `Medico` con las siguientes propiedades y métodos:
+21. (Medico) Crear un clase llamada `Medico` con las siguientes propiedades y métodos:
 
      - Propiedades:
 
@@ -413,6 +414,7 @@
 6. (RadioAleatorioCentrado) Crear una pizarra de tamaño aleatorio. Dibujar en centro de la pizarra un círculo de radio aleatorio (entre 50 y 200 pixels de radio)
 
 7. (RadioAleatorio) Crear una pizarra de tamaño aleatorio. Dibujar en la esquina superior izquierda un círculo de radio aleatorio (entre 50 y 200)
+
 
 
 
