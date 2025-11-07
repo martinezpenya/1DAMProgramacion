@@ -590,30 +590,30 @@
 
     1.  fragmento a
 
-       ```java
-       if (x > 25)
-       	y = x
-       else
-       	y = z;
-       ```
+        ```java
+        if (x > 25)
+            y = x
+        else
+            y = z;
+        ```
 
     2. fragmento b
 
-       ```java
-       if (x<0)
-       	System.out.println("El valor de x es" +x);
-       	System.out.println ("x es negativo");
-       else
-       	System.out.println ("El valor de x es"+x);
-       	System.out.println ("x es positivo");
-       ```
+        ```java
+        if (x<0)
+            System.out.println("El valor de x es" +x);
+            System.out.println ("x es negativo");
+        else
+            System.out.println ("El valor de x es"+x);
+            System.out.println ("x es positivo");
+        ```
 
     3. fragmento c
 
-       ```java
-       if (x = 0) System.out.println ("x igual a cero");
-       else System.out.println ("x distinto de cero");
-       ```
+        ```java
+        if (x = 0) System.out.println ("x igual a cero");
+        else System.out.println ("x distinto de cero");
+        ```
 
 3. (SalidaExacta) Cuál es la salida exacta por pantalla del siguiente fragmento de programa
 
@@ -639,43 +639,43 @@
 
     1. fragmento a
 
-       ```java
-       double desc = 0.0;
-       if (total <= 500)
-       	if (total >= 2000) desc = 30.0;
-       	else desc = 50.0;
-       total = total * desc / 100.0;
-       ```
+        ```java
+        double desc = 0.0;
+        if (total <= 500)
+            if (total >= 2000) desc = 30.0;
+            else desc = 50.0;
+        total = total * desc / 100.0;
+        ```
 
     2. fragmento b
 
-       ```java
-       double desc = 0.0;
-       if (total >= 500)
-       	if (total <= 2000) desc = 30.0;
-       	else desc = 50.0;
-       total = total * desc / 100.0;
-       ```
+        ```java
+        double desc = 0.0;
+        if (total >= 500)
+            if (total <= 2000) desc = 30.0;
+            else desc = 50.0;
+        total = total * desc / 100.0;
+        ```
 
     3. fragmento c
 
-       ```java
-       double desc = 0.0;
-       if (total <= 2000){
-       	if (total >= 500) desc = 30.0;
-       	} else desc = 50.0;
-       total = total * desc / 100.0;
-       ```
+        ```java
+        double desc = 0.0;
+        if (total <= 2000){
+            if (total >= 500) desc = 30.0;
+            } else desc = 50.0;
+        total = total * desc / 100.0;
+        ```
 
     4. fragmento d
 
-       ```java
-       double desc = 0.0;
-       if (total > 500)
-       	if (total < 2000) desc = 30.0;
-       	else desc = 50.0;
-       total = total * desc /100.0;
-       ```
+        ```java
+        double desc = 0.0;
+        if (total > 500)
+            if (total < 2000) desc = 30.0;
+            else desc = 50.0;
+        total = total * desc /100.0;
+        ```
 
 29. (Salida) ¿Qué salida producirá el siguiente fragmento de programa si la variable entera platos vale 1? ¿Y si
     vale 3? ¿Y si vale 0?
@@ -715,132 +715,132 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 1. (Traza1) **Datos de entrada: 2, 5**
 
     1. 
-       ```java
-       public static void main (String[] args){
-           Scanner tec = new Scanner(System.in);
-           int x,y,a;
-           x = tec.nextInt();
-           y = tec.nextInt();
-           a = x+y;
-           System.out.println(a);
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            Scanner tec = new Scanner(System.in);
+            int x,y,a;
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = x+y;
+            System.out.println(a);
+        }
+        ```
 
     2. 
-       ```java
-       public static void main (String[] args){
-           Scanner tec = new Scanner(System.in);
-           int x,a;
-           x = tec.nextInt();
-           x = tec.nextInt();
-           a= x+x;
-           System.out.println(a);
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            Scanner tec = new Scanner(System.in);
+            int x,a;
+            x = tec.nextInt();
+            x = tec.nextInt();
+            a= x+x;
+            System.out.println(a);
+        }
+        ```
 
     3. 
-       ```java
-       public static void main (String[] args){
-           Scanner tec = new Scanner(System.in);
-           int x,y,a;
-           x = tec.nextInt();
-           y = tec.nextInt();
-           a = x+y;
-           a = x*y;
-           System.out.println(a);
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            Scanner tec = new Scanner(System.in);
+            int x,y,a;
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = x+y;
+            a = x*y;
+            System.out.println(a);
+        }
+        ```
 
     4. 
-       ```java
-       public static void main (String[] args){
-           Scanner tec = new Scanner(System.in);
-           int x,y,a;
-           x = tec.nextInt();
-           y = tec.nextInt();
-           a = x+y;
-           System.out.println(a);
-           a = x*y;
-           System.out.println(a);
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            Scanner tec = new Scanner(System.in);
+            int x,y,a;
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = x+y;
+            System.out.println(a);
+            a = x*y;
+            System.out.println(a);
+        }
+        ```
 
     5. 
-       ```java
-       public static void main (String[] args){
-           Scanner tec = new Scanner(System.in);
-           int x,y,a;
-           x = tec.nextInt();
-           y = tec.nextInt();
-           a = x+y;
-           a = a+x+y;
-           a = a+a;
-           System.out.println(a);
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            Scanner tec = new Scanner(System.in);
+            int x,y,a;
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = x+y;
+            a = a+x+y;
+            a = a+a;
+            System.out.println(a);
+        }
+        ```
 
     6. 
-       ```java
-       public static void main (String[] args){
-           Scanner tec = new Scanner(System.in);
-           int x,y,a;
-           x = tec.nextInt();
-           y = tec.nextInt();
-           a = x;
-           a = doble(x);
-           System.out.format ("%d%n%d%n%d",x,y,a);
-       }
-       public static int doble(int num){
-           return 2*num;
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            Scanner tec = new Scanner(System.in);
+            int x,y,a;
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = x;
+            a = doble(x);
+            System.out.format ("%d%n%d%n%d",x,y,a);
+        }
+        public static int doble(int num){
+            return 2*num;
+        }
+        ```
 
     7. 
-       ```java
-       public static void main (String[] args) {
-           Scanner tec = new Scanner(System.in);
-           int x,y,a;
-           x = tec.nextInt();
-           y = tec.nextInt();
-           a = x;
-           doble(a);
-           System.out.format("%d%n%d%n%d%n",x,y,a);
-       }
-       public static void doble(int x){
-       	x = 2*x;
-       }
-       ```
+        ```java
+        public static void main (String[] args) {
+            Scanner tec = new Scanner(System.in);
+            int x,y,a;
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = x;
+            doble(a);
+            System.out.format("%d%n%d%n%d%n",x,y,a);
+        }
+        public static void doble(int x){
+            x = 2*x;
+        }
+        ```
 
     8. 
-       ```java
-       public static void main (String[] args){
-           Scanner tec = new Scanner(System.in);
-           int x,y,a;
-           x = tec.nextInt();
-           y = tec.nextInt();
-           a = calcular(y,x);
-           System.out.format("%d%n%d%n%d%n",x,y,a);
-       }
-       public static int calcular (int x, int y){
-       	return x-y;
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            Scanner tec = new Scanner(System.in);
+            int x,y,a;
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = calcular(y,x);
+            System.out.format("%d%n%d%n%d%n",x,y,a);
+        }
+        public static int calcular (int x, int y){
+            return x-y;
+        }
+        ```
 
     9. 
-       ```java
-       public static void main (String[] args){
-       	Scanner tec = new Scanner(System.in);
-       	int x,y,a;
-       	x = tec.nextInt();
-       	y = tec.nextInt();
-       	y = calcular(x);
-       	a = calcular(y);
-       	System.out.format("%d%n%d%n%d%n",x,y,a);
-       }
-       public static int calcular (int x){
-       	return x*x;
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            Scanner tec = new Scanner(System.in);
+            int x,y,a;
+            x = tec.nextInt();
+            y = tec.nextInt();
+            y = calcular(x);
+            a = calcular(y);
+            System.out.format("%d%n%d%n%d%n",x,y,a);
+        }
+        public static int calcular (int x){
+            return x*x;
+        }
+        ```
 
 2. (Traza2) **Datos de entrada: 2, 5, 7**
 
@@ -866,96 +866,96 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 3. (Traza3) **Datos de entrada: 2, 5, 7, 9, -9, -7, -5, -2**
 
     1. 
-       ```java
-       public static void main (String[] args){
-           int x,y;
-           x = 0;
-           y = tec.nextInt();
-           while(!(y<0)) {
-               x+=-y;
-               y = tec.nextInt();
-               System.out.format("%d, %d",x,y);
-           }
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            int x,y;
+            x = 0;
+            y = tec.nextInt();
+            while(!(y<0)) {
+                x+=-y;
+                y = tec.nextInt();
+                System.out.format("%d, %d",x,y);
+            }
+        }
+        ```
 
     2. 
-       ```java
-       public static void main (String[] args){
-           int x,y,z,a;
-           x = y = z = a = 0;
-           x = tec.nextInt();
-           while(x>0) {
-               if (y < z) y = tec.nextInt();
-               else z= tec.nextInt();
-               a = a-x+y*z;
-               x = tec.nextInt();
-               System.out.format("%d, %d, %d, %d",a,x,y,z);
-           }
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            int x,y,z,a;
+            x = y = z = a = 0;
+            x = tec.nextInt();
+            while(x>0) {
+                if (y < z) y = tec.nextInt();
+                else z= tec.nextInt();
+                a = a-x+y*z;
+                x = tec.nextInt();
+                System.out.format("%d, %d, %d, %d",a,x,y,z);
+            }
+        }
+        ```
 
 4. (Traza4) **Datos de entrada: 5, 5, 7, -5, -4, 2**
 
     1. 
-       ```java
-       public static void main (String[] args){
-           int x, y, a=0;
-           x = 0;
-           y = 99;
-           while (x >= 0) {
-               x = tec.nextInt();
-               y = tec.nextInt();
-               a = a + x*y;
-           }
-           System.out.println(a);
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            int x, y, a=0;
+            x = 0;
+            y = 99;
+            while (x >= 0) {
+                x = tec.nextInt();
+                y = tec.nextInt();
+                a = a + x*y;
+            }
+            System.out.println(a);
+        }
+        ```
 
     2. 
-       ```java
-       public static void main (String[] args){
-           int x, y, a=0;
-           x = 0;
-           y = 99;
-           while (x >= 0 && y >= 0) {
-               x = tec.nextInt();
-               y = tec.nextInt();
-               a = a + x*y;
-           }
-           System.out.println(a);
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            int x, y, a=0;
+            x = 0;
+            y = 99;
+            while (x >= 0 && y >= 0) {
+                x = tec.nextInt();
+                y = tec.nextInt();
+                a = a + x*y;
+            }
+            System.out.println(a);
+        }
+        ```
 
     3. 
-       ```java
-       public static void main (String[] args){
-           int x, y, a=0;
-           x = 0;
-           y = 99;
-           while (x >= 0 && y <= 0) {
-               x = tec.nextInt();
-               y = tec.nextInt();
-               a = a + x*y;
-           }
-           System.out.println(a);
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            int x, y, a=0;
+            x = 0;
+            y = 99;
+            while (x >= 0 && y <= 0) {
+                x = tec.nextInt();
+                y = tec.nextInt();
+                a = a + x*y;
+            }
+            System.out.println(a);
+        }
+        ```
 
     4. 
-       ```java
-       public static void main (String[] args){
-           int x, y, a=0;
-           x = 0;
-           y = 99;
-           while (x >= 0 || y >= 0) {
-               x = tec.nextInt();
-               y = tec.nextInt();
-               a = a + x*y;
-           }
-           System.out.println(a);
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            int x, y, a=0;
+            x = 0;
+            y = 99;
+            while (x >= 0 || y >= 0) {
+                x = tec.nextInt();
+                y = tec.nextInt();
+                a = a + x*y;
+            }
+            System.out.println(a);
+        }
+        ```
 
 5. (Traza5) **Datos de entrada: 5, 5, 7, -5, -4, 2**
 
@@ -978,32 +978,32 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 6. (Traza6) **Datos de entrada: 2, 4, 7, 5, -6, -3, 6, 6**
 
     1. 
-       ```java
-       public static void main (String[] args){
-           int a,b;
-           do{
-               a = tec.nextInt();
-               b = tec.nextInt();
-               for (int i=a ; i<=b ; i++)
-               System.out.println(i);
-           } while (a!=b)
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            int a,b;
+            do{
+                a = tec.nextInt();
+                b = tec.nextInt();
+                for (int i=a ; i<=b ; i++)
+                System.out.println(i);
+            } while (a!=b)
+        }
+        ```
 
     2. 
-       ```java
-       public static void main (String[] args){
-           int a,b;
-           a=5;
-           b=5;
-           do {
-               for (int i=a ; i<=b ; i++)
-               System.out.println(i);
-               a = tec.nextInt();
-               b = tec.nextInt();
-           } while (a!=b);
-       }
-       ```
+        ```java
+        public static void main (String[] args){
+            int a,b;
+            a=5;
+            b=5;
+            do {
+                for (int i=a ; i<=b ; i++)
+                System.out.println(i);
+                a = tec.nextInt();
+                b = tec.nextInt();
+            } while (a!=b);
+        }
+        ```
 
 7. (Traza7) **Datos de entrada: 3, 3, 5, 5, -3, -7, 2, 2**
 
@@ -1024,15 +1024,14 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 8. (Traza8) **Datos de entrada: 3, 2, 1, 4**
 
-    1. 
-       ```java
-       public static void main (String[] args){
-           int a=0,b;
-           b = tec.nextInt();
-           for(int i=1;i<=b,i++) a=(a+i)*i;
-           System.out.println(a);
-       }
-       ```
+    ```java
+    public static void main (String[] args){
+        int a=0,b;
+        b = tec.nextInt();
+        for(int i=1;i<=b,i++) a=(a+i)*i;
+        System.out.println(a);
+    }
+    ```
 
 9. (Traza9) **Datos de entrada:** No aplica
 
@@ -1078,8 +1077,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 1. (Edades) Escribe un programa que solicite al usuario la edad de cinco personas y calcule la media. La edad  de una persona debe ser un valor entero comprendido en el rango [0,110]. Realiza tres versiones:
        1. Si se introduce mal la edad de una persona se vuelve a pedir la edad de esa persona.
-           2. Si se introduce mal la edad de una persona, el programa muestra un mensaje de error, no calcula la media y termina.
-           3. Si se introduce mal la edad de una persona, el programa vuelve a solicitar la edad de las cinco personas (comienza el proceso).
+       2. Si se introduce mal la edad de una persona, el programa muestra un mensaje de error, no calcula la media y termina.
+       3. Si se introduce mal la edad de una persona, el programa vuelve a solicitar la edad de las cinco personas (comienza el proceso).
 
 2. (PosicionLetra) Escribe los programas que se indican a continuación. Ejecuta cada programa haciendo que la entrada del usuario provoque una excepción. Anota el nombre de la excepción que se produce y cuál es la jerarquía de objetos de la que desciende:
 
@@ -1091,13 +1090,13 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
     2. Programa que solicita al usuario su nombre y una posición dentro del nombre. Se muestra al usuario la letra del nombre cuya posición se ha indicado. Por ejemplo:
 
-    ```sh
-    Introduce nombre: Javi
-    Introduce posición: 2
-    En la posición 2 de Javi está la letra a
-    ```
+        ```sh
+        Introduce nombre: Javi
+        Introduce posición: 2
+        En la posición 2 de Javi está la letra a
+        ```
 
-      1. El usuario introduce una posición inválida.
+    3. El usuario introduce una posición inválida.
 
 3. (PosicionLetraMain) Repite el ejercicio anterior utilizando métodos y llamándolos desde el método `main`:
     1. Un método `dividir` que devuelva el cociente de dos números que recibe como parámetro
@@ -1309,58 +1308,58 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 11. (SalidaPantalla6) Indica cuál será la salida del siguiente programa y por qué
 
-     ```java
-     public class Seis {
-        public static void procA()  {
-            try {
-                System.out.println("dentro del procA"); 2
-                throw new RuntimeException("demo"); 3
-            } finally {
-                System.out.println("Finally del procA"); 4
-            }
-         }
-     
-        public static void procB() {
+    ```java
+    public class Seis {
+       public static void procA()  {
+           try {
+               System.out.println("dentro del procA"); 2
+               throw new RuntimeException("demo"); 3
+           } finally {
+               System.out.println("Finally del procA"); 4
+           }
+        }
+    
+       public static void procB() {
+           try  {
+               System.out.println("dentro del procB"); 6
+               return; 7
+           } finally {
+               System.out.println("finally del procB"); 8
+           }
+        }
+    
+        public static void main(String args[])  {
             try  {
-                System.out.println("dentro del procB"); 6
-                return; 7
-            } finally {
-                System.out.println("finally del procB"); 8
+                procA(); 1
+            } catch(Exception e) {
+                procB(); 5
             }
          }
-     
-         public static void main(String args[])  {
-             try  {
-                 procA(); 1
-             } catch(Exception e) {
-                 procB(); 5
-             }
-          }
-     }
-     ```
+    }
+    ```
 
 12. (SalidaPantalla7) Indica cuál será la salida del siguiente programa y por qué
 
-     ```java
-     public class Siete {
-        public static void metodo() {
-            try  {
-                throw new NullPointerException("demo"); 2
-            } catch (NullPointerException e) {
-                System.out.println("capturada en método"); 3
-                throw e; 4
+    ```java
+    public class Siete {
+       public static void metodo() {
+           try  {
+               throw new NullPointerException("demo"); 2
+           } catch (NullPointerException e) {
+               System.out.println("capturada en método"); 3
+               throw e; 4
+           }
+        }
+    
+        public static void main (String args[])  {
+            try   {
+                metodo(); 1
+            }  catch(NullPointerException e)  {
+               System.out.println("capturada en main " + e); 5
             }
-         }
-     
-         public static void main (String args[])  {
-             try   {
-                 metodo(); 1
-             }  catch(NullPointerException e)  {
-                System.out.println("capturada en main " + e); 5
-             }
-         }
-     }
-     ```
+        }
+    }
+    ```
 
 13. (DivisionPorCero)  Crea un programa que intente dividir dos números enteros ingresados por  el usuario y maneja la excepción de división por cero. [Aquí](https://stackoverflow.com/questions/2381544/why-doesnt-java-throw-an-exception-when-dividing-by-0-0) tienes la explicación de porqué la división entre 0 no provoca excepciones para `double` y `float`.
 
@@ -1382,50 +1381,50 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 1. (Aserciones1) A partir del siguiente fragmento de código, añade una linea debajo del comentario de la linea 4 que haga lo que se solicita:
 
-   ```java
-   class Main {
-       public static void main(String args[]) {
-           String[] finde = {"viernes", "sabado", "domingo"};
-           //Añade una aserción que compruebe que solo hay dos dias en el fin de semana.
-           
-           System.out.println("Solo hay " + weekends.length + "  dias en el fin de semana");
-       }
-   }
-   ```
+    ```java
+    class Main {
+        public static void main(String args[]) {
+            String[] finde = {"viernes", "sabado", "domingo"};
+            //Añade una aserción que compruebe que solo hay dos dias en el fin de semana.
+
+            System.out.println("Solo hay " + weekends.length + "  dias en el fin de semana");
+        }
+    }
+    ```
 
 2. (Aserciones2) Escribe un método llamado `validarEdad(int edad)` que acepte como parámetro la edad de una persona. Usa una aserción para verificar que la edad sea un valor positivo y menor que 150. Si la edad es negativa o extremadamente alta, la aserción debería fallar.
 
-   ```java
-   // Ejemplo de uso:
-   validarEdad(25); // Debería pasar la aserción
-   validarEdad(-5); // Debería fallar la aserción
-   ```
+    ```java
+    // Ejemplo de uso:
+    validarEdad(25); // Debería pasar la aserción
+    validarEdad(-5); // Debería fallar la aserción
+    ```
 
 3. (Aserciones3) Crea un método llamado `esPar(int numero)` que devuelva `true` si el número es par y `false` en caso contrario. Luego, escribe una aserción para verificar que el resultado es `true` cuando el número proporcionado es efectivamente par.
 
-   ```java
-   // Ejemplo de uso:
-   assert esPar(4) : "El número 4 debería ser par";
-   assert !esPar(3) : "El número 3 no debería ser par";
-   ```
+    ```java
+    // Ejemplo de uso:
+    assert esPar(4) : "El número 4 debería ser par";
+    assert !esPar(3) : "El número 3 no debería ser par";
+    ```
 
 4. (Aserciones4) Implementa un método llamado `dentroDeRango(int numero, int min, int max)` que devuelva `true` si el número está en el rango `[min, max]` y `false` en caso contrario. Usa aserciones para probar que el método devuelve `true` para un número dentro del rango y `false` para uno fuera.
 
-   ```java
-   // Ejemplo de uso:
-   assert dentroDeRango(5, 1, 10) : "El número 5 debería estar en el rango [1, 10]";
-   assert !dentroDeRango(15, 1, 10) : "El número 15 no debería estar en el rango [1, 10]";
-   ```
+    ```java
+    // Ejemplo de uso:
+    assert dentroDeRango(5, 1, 10) : "El número 5 debería estar en el rango [1, 10]";
+    assert !dentroDeRango(15, 1, 10) : "El número 15 no debería estar en el rango [1, 10]";
+    ```
 
 ## Actividades
 
 1. (TransformarBucle) Transforma el siguiente bucle for en un bucle while:
 
-   ```java
-   for (i=5; i<15; i++) { 
-       System.out.println(i);
-   }
-   ```
+    ```java
+    for (i=5; i<15; i++) { 
+        System.out.println(i);
+    }
+    ```
    
 2. (NumerosPares) Programa que muestre por pantalla los 5 primeros números pares.
 
@@ -1433,19 +1432,19 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 4. (TablasMultiplicar) Programa que muestre en pantalla la tabla de multiplicar del 1 al 10 con el formato:
 
-   ```sh
-   ...
-   Tabla del 2
-   ***********
-   2 x 1 = 2
-   2 x 2 = 4
-   ...
-   2 x 10 = 20
-   
-   Tabla del 3
-   ***********
-   ...
-   ```
+    ```sh
+    ...
+    Tabla del 2
+    ***********
+    2 x 1 = 2
+    2 x 2 = 4
+    ...
+    2 x 10 = 20
+
+    Tabla del 3
+    ***********
+    ...
+    ```
 
 5. (SinMultiplos5) Programa que muestre los números del 1 al 100 sin mostrar los múltiplos de 5.
 
@@ -1619,8 +1618,3 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
     343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
 
 56. (MayorDeTres) Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La  función debe recibir como parámetros los tres números y devolver el  mayor.
-
-
-
-
-
