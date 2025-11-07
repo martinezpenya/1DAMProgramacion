@@ -28,8 +28,8 @@
 
 2. (Reto2) modifique el programa para que, en lugar de un único valor secreto, haya dos. Para ganar, basta con acertar uno de los dos. La condición lógica que necesitará ya no se puede resolver con una expresión compuesta por una única comparación. Será más compleja.
 
-!!! warning "Atención"
-    Para pasar satisfactoriamente los tests, la variable `VALOR_SECRETO` debe ser renombrada a `VALOR_SECRETO1`, y la nueva debe llamarse `VALOR_SECRETO2`
+    !!! warning "Atención"
+        Para pasar satisfactoriamente los tests, la variable `VALOR_SECRETO` debe ser renombrada a `VALOR_SECRETO1`, y la nueva debe llamarse `VALOR_SECRETO2`
 
     ```java
     import java.util.Scanner;
@@ -1617,6 +1617,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
     343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
 
 56. (MayorDeTres) Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La  función debe recibir como parámetros los tres números y devolver el  mayor.
+
 
 
 
