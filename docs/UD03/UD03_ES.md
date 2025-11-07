@@ -899,8 +899,8 @@ Después de habilitar las assertions:
 !!! info "Saber más..."
     Puedes habilitar las assertions añadiendo los parámetros de la JVM en IntelliJ:
 	
-    `-ea`: Enable Assertions (habilitar aserciones) 
-    `-da`: Disable Assertions (deshabilitar aserciones, que es la opción por defecto)
+    - `-ea`: Enable Assertions (habilitar aserciones) 
+    - `-da`: Disable Assertions (deshabilitar aserciones, que es la opción por defecto)
     
 	Puedes consultar este enlace para saber donde agregar estas opciones: https://stackoverflow.com/questions/68848158/java-assertions-in-intellij-idea-community
 
@@ -1454,4 +1454,5 @@ Videos de Makigas al respecto:
 - [Java: introducción a las excepciones](https://www.youtube.com/watch?v=kGzwPunAOxk)
 
 - [Java: throw y throws, usos y diferencias ](https://www.youtube.com/watch?v=-xC0o6JQaoE)
+
 
