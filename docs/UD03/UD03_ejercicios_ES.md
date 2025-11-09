@@ -396,7 +396,7 @@
     	La suma de todos los divisores del número 15 (sin él mismo) son: 9
     ```
 
-3. (PotenciasDe2) Crea un método (`potencias`) que recibe un entero `n` y devuelve las `n` primeras potencias de 2. Es decir, 2^0^, 2^1^, 2^2^, 2^3^, …, 2^n^. Crea un método `main` que solicite un número al usuario y muestre por pantalla todas las potencias de 2. Soluciona el ejercicio sin utilizar `Math.pow`. Ten en cuenta que, por ejemplo, 2^3^ = 1* 2 * 2 * 2 o que 2^4^ = 1* 2 * 2 * 2 * 2:
+3. (PotenciasDe2) Crea un método (`potencias`) que recibe un entero `n` positivo y devuelve las `n` primeras potencias de 2. Es decir, 2^0^, 2^1^, 2^2^, 2^3^, …, 2^n^. Crea un método `main` que solicite un número al usuario y muestre por pantalla todas las potencias de 2. Soluciona el ejercicio sin utilizar `Math.pow`. Ten en cuenta que, por ejemplo, 2^3^ = 1* 2 * 2 * 2 o que 2^4^ = 1* 2 * 2 * 2 * 2:
 
     ```sh
     Dime n: 20
