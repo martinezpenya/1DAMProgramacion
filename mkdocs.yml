@@ -22,6 +22,9 @@ nav:
   - UD03:
     - Estructuras de control y Excepciones: UD03/UD03_ES.md
     - Ejercicios: UD03/UD03_ejercicios_ES.md
+    - Talleres:
+      - T01 GitHub Classroom: UD03/UD03_T01_GitHubClassroom.md
+      - T02 Acepta el reto: UD03/UD03_T02_AceptaElReto.md
   - UD04:
     - Estructuras de datos Arrays y matrices. Recursividad: UD04/UD04_ES.md
     - Anexo Cheatsheet String: UD04/UD04_anexo_ES.md
