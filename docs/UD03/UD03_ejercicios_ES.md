@@ -451,13 +451,26 @@
     Ancianidad: 	0	0.0%
     ```
 
-5. (Primo) Escribir un programa en el que el usuario escriba un número entero y se le diga si se trata o no de un número primo. Recuerda que un nº primo es aquel que solo es divisible por 1 y por sí mismo (Es decir tiene SOLO y EXCLUSIVAMENTE dos divisores cuyo resto sea cero). 
+5. (Primo) Escribir un método `esPrimo` que recibe un entero y devuelve si es primo o no. Escribe un método `main` en el que el usuario escriba un número entero y se le diga si se trata o no de un número primo, usando el método `esPrimo`. Recuerda que un nº primo es aquel que solo es divisible por 1 y por sí mismo (Es decir tiene SOLO y EXCLUSIVAMENTE dos divisores cuyo resto sea cero).
 
-6. (Primos) Escribir un programa en el que el usuario escriba un número entero y se le diga todos los números primos entre 1 y el número introducido.
+     ```sh 
+     Este te dice si un número es primo:
+     Introduce un número: 15
+     El número es primo?: false
+     
+     Este te dice si un número es primo:
+     Introduce un número: 7
+     El número es primo?: true
+     ```
+
+6. (Primos) Escribir un programa en el que el usuario escriba un número entero y se le diga todos los números primos entre 1 y el número introducido (Puedes usar el método `esPrimo` que has escrito en el ejercicio anterior.
 
 7. (EsPrimoMejorada) Haz una nueva versión del programa del ejercicio anterior teniendo en cuenta lo siguiente:  
      - El único número par que es primo es el 2.
      - Un número *n* no puede tener divisores mayores que n/2 (o mayores que Math.sqrt(n))
+
+     !!! warning "Atención"
+         Para pasar satisfactoriamente los tests de rendimiento, debes tener el ejercicio 6 (Primos) y 7 (EsPrimoMejorada) y el rendimiento del 7 debe ser un 20% mejor (más rápido) que el del 6
 
 8. (Divisores) Escribir un programa que muestre los tres primeros divisores de un número n introducido por el usuario. Por ejemplo, si el usuario introduce el número 45, el programa mostrará los divisores 1, 3 y 5. Ten en cuenta que la posibilidad de que el número n tenga menos de 3 divisores. Prueba qué pasa si el usuario pide, por ejemplo, los tres primeros divisores de 7.  
 
@@ -465,61 +478,61 @@
 
 10. (Cifras) Escribir un método (`cifras`) que recibe un número entero cualquiera (positivo, negativo o cero) y devuelve cuantas cifras tiene. Pistas: ¿Cuantas cifras tiene el nº 25688? ¿Cuántas veces podemos dividir el nº 25688 por 10 hasta que se hace cero? Cuidado, el nº 0 tiene una cifra.
 
-    ```sh
-    Vamos a decirte cuantas cifras tiene un número:
-    Introduce un número: 0
-    El número tiene 1 cifras.
-    
-    Vamos a decirte cuantas cifras tiene un número:
-    Introduce un número: 25688
-    El número tiene 5 cifras.
-    
-    Vamos a decirte cuantas cifras tiene un número:
-    Introduce un número: -14
-    El número tiene 2 cifras.
-    ```
+     ```sh
+     Vamos a decirte cuantas cifras tiene un número:
+     Introduce un número: 0
+     El número tiene 1 cifras.
+     
+     Vamos a decirte cuantas cifras tiene un número:
+     Introduce un número: 25688
+     El número tiene 5 cifras.
+     
+     Vamos a decirte cuantas cifras tiene un número:
+     Introduce un número: -14
+     El número tiene 2 cifras.
+     ```
 
 11. (Transportes) Una empresa de transportes cobra 30€ por cada bulto que transporta. Además, si el peso total de todos los bultos supera los 300 kilos, cobra 0.9€ por cada kg extra. Por último si el trasporte debe realizarse en sábado, cobra un plus de 60€. La empresa no realiza el pedido si hay que transportar más de 30 bultos, si el peso total supera los 1000 kg o si se solicita hacerlo en domingo. Realizar un método `main` que solicite el número de bultos, el día de la semana (valor entre 1 y 7) y el peso de cada uno de los bultos y muestre el coste del transporte en caso de que pueda realizarse o un mensaje adecuado en caso contrario:
 
-     ```sh
-     ¿Cuantos bultos debes enviar?: 3
-     ¿Qué dia de la semana se realiza el envio (entre 1=lunes y 7=domingo)?: 7
-     No se puede realizar el envio por superar los 30 bultos o ser domingo
-     
-     ¿Cuantos bultos debes enviar?: 4
-     ¿Qué dia de la semana se realiza el envio (entre 1=lunes y 7=domingo)?: 6
-     Cuanto pesa el bulto 1 de 4 : 25
-     Cuanto pesa el bulto 2 de 4 : 120
-     Cuanto pesa el bulto 3 de 4 : 35
-     Cuanto pesa el bulto 4 de 4 : 78
-     El coste del envio será de: 180.0
-     
-     ¿Cuantos bultos debes enviar?: 2
-     ¿Qué dia de la semana se realiza el envio (entre 1=lunes y 7=domingo)?: 1
-     Cuanto pesa el bulto 1 de 2 : 700
-     Cuanto pesa el bulto 2 de 2 : 400
-     No se puede realizar el envio por superar los 1000Kg
-     ```
+       ```sh
+       ¿Cuantos bultos debes enviar?: 3
+       ¿Qué dia de la semana se realiza el envio (entre 1=lunes y 7=domingo)?: 7
+       No se puede realizar el envio por superar los 30 bultos o ser domingo
+       
+       ¿Cuantos bultos debes enviar?: 4
+       ¿Qué dia de la semana se realiza el envio (entre 1=lunes y 7=domingo)?: 6
+       Cuanto pesa el bulto 1 de 4 : 25
+       Cuanto pesa el bulto 2 de 4 : 120
+       Cuanto pesa el bulto 3 de 4 : 35
+       Cuanto pesa el bulto 4 de 4 : 78
+       El coste del envio será de: 180.0
+       
+       ¿Cuantos bultos debes enviar?: 2
+       ¿Qué dia de la semana se realiza el envio (entre 1=lunes y 7=domingo)?: 1
+       Cuanto pesa el bulto 1 de 2 : 700
+       Cuanto pesa el bulto 2 de 2 : 400
+       No se puede realizar el envio por superar los 1000Kg
+       ```
 
 12. (Containers) La capacidad de un buque que transporta containers está limitada tanto por la cantidad de containers como por el peso, pudiendo transportar un máximo de 100 containers y un máximo de 700 toneladas. Hacer un programa en el que se vaya introduciendo el peso de los containers (en toneladas) a medida que se cargan en el barco, hasta que se llegue al máximo de capacidad. Mostrar al final la cantidad de containers cargados y el peso total. En el momento en que se desee cargar un container que haga que la carga total supere las 700 toneladas, se dará por finalizada la carga, aunque pudieran existir containers menos pesados con posibilidad de ser cargados.
 
 13. (Notas) Realizar un método `main` que permita introducir las notas de varios examenes de un alumno de un curso. El usuario irá introduciendo las notas una tras otra. Se considerará finalizado el proceso de introducción de notas cuando el usuario introduzca una nota negativa. Al final, el programa le dirá:
-      - El número de notas introducidas.
-      - El número de aprobados (mayor o igual a 5 puntos)
-      - La nota media
+        - El número de notas introducidas.
+        - El número de aprobados (mayor o igual a 5 puntos)
+        - La nota media
 
-     ```sh
-     Vamos a darte información sobre tus notas, introduce una nota tras otra. Para finalizar escribe una nota negativa:
-     Introduce la nota 1: 5,5
-     Introduce la nota 2: 6,7
-     Introduce la nota 3: 8,4
-     Introduce la nota 4: 3,2
-     Introduce la nota 5: 1,5
-     Introduce la nota 6: -3
-     Has introducido un total de 5 notas,
-     de las cuales has aprobado 3,
-     con una media de 4.
-     ```
+       ```sh
+       Vamos a darte información sobre tus notas, introduce una nota tras otra. Para finalizar escribe una nota negativa:
+       Introduce la nota 1: 5,5
+       Introduce la nota 2: 6,7
+       Introduce la nota 3: 8,4
+       Introduce la nota 4: 3,2
+       Introduce la nota 5: 1,5
+       Introduce la nota 6: -3
+       Has introducido un total de 5 notas,
+       de las cuales has aprobado 3,
+       con una media de 4.
+       ```
 
 14. (NotasExtremas) Modificar el ejercicio anterior para que además calcule la nota máxima y la nota mínima.
 
@@ -1855,22 +1868,22 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 17. (Factorial) Pedir un número y calcular su factorial (el factorial se representa con el simbolo  `!`).
 
-       Aquí tienes el factorial de los 5 primeros números enteros:
-
-       ```shell
-       1! = 1
-       2! = 2 * 1 = 2
-       3! = 3 * 2 * 1 = 6
-       4! = 4 * 3 * 2 * 1 = 24
-       5! = 5 * 4 * 3 * 2 * 1 = 120
-       ```
-
-       Ejemplo de ejecución del programa:
-
-       ```shell
-       Dime el número para calcular su factorial: 6
-       6! = 6 * 5 * 4 * 3 * 2 * 1 = 720
-       ```
+        Aquí tienes el factorial de los 5 primeros números enteros:
+    
+        ```shell
+        1! = 1
+        2! = 2 * 1 = 2
+        3! = 3 * 2 * 1 = 6
+        4! = 4 * 3 * 2 * 1 = 24
+        5! = 5 * 4 * 3 * 2 * 1 = 120
+        ```
+    
+        Ejemplo de ejecución del programa:
+    
+        ```shell
+        Dime el número para calcular su factorial: 6
+        6! = 6 * 5 * 4 * 3 * 2 * 1 = 720
+        ```
 
 18. (MediaPosNeg) Pedir 10 números. Mostrar la media de los números positivos, la media  de los números negativos y la cantidad de ceros.
 
@@ -1906,28 +1919,28 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 34. (NotaProgramacion) Calcula la nota de un trimestre de la asignatura Programación. El  programa pedirá las dos notas que ha sacado el alumno en los dos  primeros controles. Si la media de los dos controles da un número mayor o igual a 5, el alumno está aprobado y se mostrará la media. En caso de  que la media sea un número menor que 5, el alumno habrá tenido que hacer el examen de recuperación que se califica como apto o no apto, por  tanto se debe preguntar al usuario ¿Cuál ha sido el resultado de la  recuperación? (apto/no apto). Si el resultado de la recuperación es  apto, la nota será un 5; en caso contrario, la nota será 1.
 
-       Ejemplo 1:
-
-       ```sh
-       Nota del primer control: 7 Nota del segundo control: 10
-       Tu nota de Programación es 8.5
-       ```
-
-       Ejemplo 2:
-
-       ```sh
-       Nota del primer control: 6 Nota del segundo control: 3
-       ¿Cuál ha sido el resultado de la recuperación? (apto/no apto): apto
-       Tu nota de Programación es 5
-       ```
-
-       Ejemplo 3:
-
-       ```sh
-       Nota del primer control: 6 Nota del segundo control: 3
-       ¿Cuál ha sido el resultado de la recuperación? (apto/no apto): no apto
-       Tu nota de Programación es 1
-       ```
+        Ejemplo 1:
+    
+        ```sh
+        Nota del primer control: 7 Nota del segundo control: 10
+        Tu nota de Programación es 8.5
+        ```
+    
+        Ejemplo 2:
+    
+        ```sh
+        Nota del primer control: 6 Nota del segundo control: 3
+        ¿Cuál ha sido el resultado de la recuperación? (apto/no apto): apto
+        Tu nota de Programación es 5
+        ```
+    
+        Ejemplo 3:
+    
+        ```sh
+        Nota del primer control: 6 Nota del segundo control: 3
+        ¿Cuál ha sido el resultado de la recuperación? (apto/no apto): no apto
+        Tu nota de Programación es 1
+        ```
 
 35. (Multiplos5For) Muestra los números múltiplos de 5 entre el 0 y el 100 utilizando un bucle `for`.
 
@@ -1943,89 +1956,95 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 41. (CajaFuerte) Realiza el control de  acceso a una caja fuerte. La combinación será un número de 4 cifras. El  programa nos pedirá la combinación para abrirla. Si no acertamos, se nos mostrará el mensaje "**Esa no es la combinación correcta**" y si acertamos se nos dirá "**La caja fuerte se ha abierto correctamente**". Tendremos cuatro oportunidades para abrir la caja fuerte, si lo sobrepasamos nos dirá "**Has sobrepasado el número de intentos permitido**".
 
-    !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, la combinación de apertura debe estar configurada en "1234"
+     !!! warning "Atención"
+         Para pasar satisfactoriamente los tests, la combinación de apertura debe estar configurada en "1234"
 
 42. (CuadradoCubo) Escribe un programa que muestre en tres columnas, el cuadrado y el cubo de los 5 primeros números enteros a partir de uno que se introduce por  teclado.
 
 43. (Potencia) Escribe un método (`potencia`) que reciba una base y un exponente (enteros positivos) y que calcule la potencia (sin usar `Math`). Escribe un método `main` para pedir los datos al usuario y usando el método `potencia` mostrar el resultado.
 
-     ```sh
-     Vamos a calcular una potencia.
-     Introduce la BASE: 6
-     Introduce el EXPONENTE: 5
-     El resultado de elevar la BASE: 6 al EXPONENTE: 5 resulta en: 7776
-     ```
+      ```sh
+      Vamos a calcular una potencia.
+      Introduce la BASE: 6
+      Introduce el EXPONENTE: 5
+      El resultado de elevar la BASE: 6 al EXPONENTE: 5 resulta en: 7776
+      ```
 
 44. (Suma100Siguientes) Realiza un programa que sume los 100 números siguientes a un número  entero y positivo introducido por teclado. Se debe comprobar que el dato introducido es correcto (que es un número positivo).
 
-45. (NumerosEntre7) Escribe un programa que imprima por pantalla los números enteros comprendidos entre  dos números introducidos por teclado y validados como distintos, el  programa debe empezar por el menor de los enteros introducidos e ir incrementando de 7 en 7.
+45. (N/*
 
-     ```sh
-     Introduce dos números DIFERENTES!
-     Introduce el primer número: 8
-     Introduce el segundo número: 8
-     Los números no son DIFERENTES!
-     
-     Introduce dos números DIFERENTES!
-     Introduce el primer número: 6
-     Introduce el segundo número: 50
-     6
-     13
-     20
-     27
-     34
-     41
-     48
-     ```
+      * (Primos) Escribir un programa en el que el usuario escriba un número entero y
+      * se le diga todos los números primos entre 1 y el número introducido.
+        */
 
-46. (EstadisticasNumeros) Realiza un programa que vaya pidiendo números hasta que se introduzca  un numero negativo y nos diga cuantos números se han introducido, la  media de los impares y el mayor de los pares. El número negativo sólo se utiliza para indicar el final de la introducción de datos pero no se  incluye en el cómputo.
+46. umerosEntre7) Escribe un programa que imprima por pantalla los números enteros comprendidos entre  dos números introducidos por teclado y validados como distintos, el  programa debe empezar por el menor de los enteros introducidos e ir incrementando de 7 en 7.
 
-47. (SumaHasta10000) Escribe un programa que permita ir introduciendo una serie  indeterminada de números mientras su suma no supere el valor 10000.  Cuando esto último ocurra, se debe mostrar el total acumulado, el  contador de los números introducidos y la media.
+      ```sh
+      Introduce dos números DIFERENTES!
+      Introduce el primer número: 8
+      Introduce el segundo número: 8
+      Los números no son DIFERENTES!
+      
+      Introduce dos números DIFERENTES!
+      Introduce el primer número: 6
+      Introduce el segundo número: 50
+      6
+      13
+      20
+      27
+      34
+      41
+      48
+      ```
 
-48. (Multiplos3) Escribe un programa que muestre, cuente y sume los múltiplos de 3 que hay entre 1 y un número leído por teclado.
+47. (EstadisticasNumeros) Realiza un programa que vaya pidiendo números hasta que se introduzca  un numero negativo y nos diga cuantos números se han introducido, la  media de los impares y el mayor de los pares. El número negativo sólo se utiliza para indicar el final de la introducción de datos pero no se  incluye en el cómputo.
 
-49. (PrecioFinal) Escribe un programa que calcule el precio final de un producto según su base imponible (precio antes de impuestos), el tipo de IVA aplicado  (general, reducido o superreducido) y el código promocional. Los tipos  de IVA general, reducido y superreducido son del 21%, 10% y 4%  respectivamente. Los códigos promocionales pueden ser nopro, mitad,  meno5 o 5porc que significan respectivamente que no se aplica promoción, el precio se reduce a la mitad, se descuentan 5 euros o se descuenta el 5%.
+48. (SumaHasta10000) Escribe un programa que permita ir introduciendo una serie  indeterminada de números mientras su suma no supere el valor 10000.  Cuando esto último ocurra, se debe mostrar el total acumulado, el  contador de los números introducidos y la media.
 
-       Ejemplo:
+49. (Multiplos3) Escribe un programa que muestre, cuente y sume los múltiplos de 3 que hay entre 1 y un número leído por teclado.
 
-       ```sh
-       Introduzca la base imponible: 25
-       Introduzca el tipo de IVA (general, reducido o superreducido): reducido
-       Introduzca el código promocional (nopro, mitad, meno5 o 5porc): mitad
-       Base imponible 25.00
-       Cód. promo. (mitad): -12.50
-       IVA (10%) 1.25
-       Precio con IVA 13.75
-       TOTAL 13.75
-       ```
+50. (PrecioFinal) Escribe un programa que calcule el precio final de un producto según su base imponible (precio antes de impuestos), el tipo de IVA aplicado  (general, reducido o superreducido) y el código promocional. Los tipos  de IVA general, reducido y superreducido son del 21%, 10% y 4%  respectivamente. Los códigos promocionales pueden ser nopro, mitad,  meno5 o 5porc que significan respectivamente que no se aplica promoción, el precio se reduce a la mitad, se descuentan 5 euros o se descuenta el 5%.
 
-50. (AnioBisiesto) Pedir un año e indicar  si es bisiesto, teniendo en cuenta que son bisiestos todos los años  divisibles por 4, excluyendo los que sean divisibles por 100, pero no  los que sean divisibles por 400.
+        Ejemplo:
+    
+        ```sh
+        Introduzca la base imponible: 25
+        Introduzca el tipo de IVA (general, reducido o superreducido): reducido
+        Introduzca el código promocional (nopro, mitad, meno5 o 5porc): mitad
+        Base imponible 25.00
+        Cód. promo. (mitad): -12.50
+        IVA (10%) 1.25
+        Precio con IVA 13.75
+        TOTAL 13.75
+        ```
 
-       En pseudocódigo se calcularía así:
+51. (AnioBisiesto) Pedir un año e indicar  si es bisiesto, teniendo en cuenta que son bisiestos todos los años  divisibles por 4, excluyendo los que sean divisibles por 100, pero no  los que sean divisibles por 400.
 
-       ```pseudocode
-       SI ((año divisible por 4) Y ((año no divisible por 100) O (año divisible por 400)))ENTONCES
-       	es bisiesto
-       SINO
-       	no es bisiesto
-       FIN_SI
-       ```
+        En pseudocódigo se calcularía así:
+    
+        ```pseudocode
+        SI ((año divisible por 4) Y ((año no divisible por 100) O (año divisible por 400)))ENTONCES
+        	es bisiesto
+        SINO
+        	no es bisiesto
+        FIN_SI
+        ```
 
-51. (NumeroALetras) Pedir un número de 20 a 99 y mostrarlo escrito. Por ejemplo, para 56 mostrar: cincuenta y seis.
+52. (NumeroALetras) Pedir un número de 20 a 99 y mostrarlo escrito. Por ejemplo, para 56 mostrar: cincuenta y seis.
 
-52. (VehiculoIVA) Introducir datos de un vehículo (marca, modelo y precio). Devolver el  precio con IVA del vehículo. Controlar con Excepciones que el precio del vehículo introducido son números y que el cálculo de Precio Final con  IVA no devuelva error.
+53. (VehiculoIVA) Introducir datos de un vehículo (marca, modelo y precio). Devolver el  precio con IVA del vehículo. Controlar con Excepciones que el precio del vehículo introducido son números y que el cálculo de Precio Final con  IVA no devuelva error.
 
-53. (NotaMediaAlumnos) Introducir códigos de alumnos, nombre y nota hasta que se introduzca un código de alumno negativo. Devolver la nota media de los alumnos la  clase. Controlar con Excepciones que las notas introducidas son números y que si no se introducen alumnos el cálculo de la media no devuelva  error.
+54. (NotaMediaAlumnos) Introducir códigos de alumnos, nombre y nota hasta que se introduzca un código de alumno negativo. Devolver la nota media de los alumnos la  clase. Controlar con Excepciones que las notas introducidas son números y que si no se introducen alumnos el cálculo de la media no devuelva  error.
 
-54. (ImporteFinal) Crear una función o método llamado `impFinal`, que calcule el importe final de una compra. Los parámetros que se le pasarán a la función son el `precio` del producto, las `cantidad de unidades` compradas, el `porcentaje de iva` y el `porcentaje de descuento`. El método principal debe pedir por teclado el precio del producto, las  unidades adquiridas, el porcentaje de IVA y el porcentaje de descuento y devolver el `Importe final` de la Factura.
+55. (ImporteFinal) Crear una función o método llamado `impFinal`, que calcule el importe final de una compra. Los parámetros que se le pasarán a la función son el `precio` del producto, las `cantidad de unidades` compradas, el `porcentaje de iva` y el `porcentaje de descuento`. El método principal debe pedir por teclado el precio del producto, las  unidades adquiridas, el porcentaje de IVA y el porcentaje de descuento y devolver el `Importe final` de la Factura.
 
-55. (CapacidadDisco) Crear una función que calcule la capacidad de un disco. La capacidad se calcula multiplicando los Cabezales o pistas del disco por los  Cilindros por los Sectores por Tamaño de Sector. El método principal  debe pedir por teclado los Cabezales o Pistas del disco, los Cilindros,  Sectores y Tamaño de Sector y devolver la Capacidad del disco en  Gigabytes.
+56. (CapacidadDisco) Crear una función que calcule la capacidad de un disco. La capacidad se calcula multiplicando los Cabezales o pistas del disco por los  Cilindros por los Sectores por Tamaño de Sector. El método principal  debe pedir por teclado los Cabezales o Pistas del disco, los Cilindros,  Sectores y Tamaño de Sector y devolver la Capacidad del disco en  Gigabytes.
 
-       Por ejemplo: Calcular la  capacidad de un disco teniendo en cuenta que dispone de 10 Cabezales o  Pistas, 65535 Cilindros, 1024 Sectores/pista y un Tamaño de 512  bytes/sector:
+        Por ejemplo: Calcular la  capacidad de un disco teniendo en cuenta que dispone de 10 Cabezales o  Pistas, 65535 Cilindros, 1024 Sectores/pista y un Tamaño de 512  bytes/sector:
+    
+        Capacidad del disco = 10 * 65535 * 1024 * 512 = 343597383680 bytes
+    
+        343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
 
-       Capacidad del disco = 10 * 65535 * 1024 * 512 = 343597383680 bytes
-
-       343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
-
-56. (MayorDeTres) Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La  función debe recibir como parámetros los tres números y devolver el  mayor.
+57. (MayorDeTres) Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La  función debe recibir como parámetros los tres números y devolver el  mayor.
