@@ -29,7 +29,7 @@
 2. (Adivina) modifique el programa para que, en lugar de un único valor secreto, haya dos. Para ganar, basta con acertar uno de los dos. La condición lógica que necesitará ya no se puede resolver con una expresión compuesta por una única comparación. Será más compleja.
 
     !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, la variable `VALOR_SECRETO` debe ser renombrada a `VALOR_SECRETO1`, y la nueva debe llamarse `VALOR_SECRETO2`
+        Para pasar satisfactoriamente los tests, la variable `VALOR_SECRETO` debe ser renombrada a `VALOR_SECRETO1`, y la nueva debe llamarse `VALOR_SECRETO2` (deberá generarse aleatoriamente) y aunque el nombre sea de constante, no puede ser final.
 
     ```java
     import java.util.Scanner;
@@ -171,7 +171,7 @@
     - `menorDeTresV1`: utilizando los operadores de comparación (<, >, ==) y lógicos (&&,||, ...) necesarios
     - `menorDeTresV2`: sin utilizar ninguno de los operadores lógicos (habrá que usar sentencias if else anidadas)
 
-3. (IntermedioDeTres) Escribir un método (`intermedioDeTres`) que devuelva el intermedio de tres números introducidos por teclado.
+3. (IntermedioDeTres) Escribir un método (`intermedioDeTres`) que devuelva el intermedio de tres números recibidos por parámetros.
 
 4. (NotasTexto) Escribir un método (`notas2Texto`) que recibe un valor numérico (se supone entre 1 y 10 y puede contener decimales) y devuelva el literal correspondiente a dicha nota según ("insuficiente", "suficiente", "bien", "notable", "sobresaliente" y "matricula de honor").
 
