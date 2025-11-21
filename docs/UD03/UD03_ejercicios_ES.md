@@ -1012,7 +1012,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
             System.out.println(a);
         }
         ```
-
+    
     2. 
         ```java
         public static void main (String[] args){
@@ -1024,7 +1024,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
             System.out.println(a);
         }
         ```
-
+    
     3. 
         ```java
         public static void main (String[] args){
@@ -1037,7 +1037,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
             System.out.println(a);
         }
         ```
-
+    
     4. 
         ```java
         public static void main (String[] args){
@@ -1051,7 +1051,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
             System.out.println(a);
         }
         ```
-
+    
     5. 
         ```java
         public static void main (String[] args){
@@ -1081,7 +1081,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
             return 2*num;
         }
         ```
-
+    
     7. 
         ```java
         public static void main (String[] args) {
@@ -1097,7 +1097,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
             x = 2*x;
         }
         ```
-
+    
     8. 
         ```java
         public static void main (String[] args){
@@ -1112,7 +1112,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
             return x-y;
         }
         ```
-
+    
     9. 
         ```java
         public static void main (String[] args){
@@ -1165,7 +1165,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
             }
         }
         ```
-
+    
     2. 
         ```java
         public static void main (String[] args){
