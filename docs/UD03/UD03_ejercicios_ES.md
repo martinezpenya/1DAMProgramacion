@@ -1956,8 +1956,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 41. (CajaFuerte) Realiza el control de  acceso a una caja fuerte. La combinación será un número de 4 cifras. El  programa nos pedirá la combinación para abrirla. Si no acertamos, se nos mostrará el mensaje "**Esa no es la combinación correcta**" y si acertamos se nos dirá "**La caja fuerte se ha abierto correctamente**". Tendremos cuatro oportunidades para abrir la caja fuerte, si lo sobrepasamos nos dirá "**Has sobrepasado el número de intentos permitido**".
 
-     !!! warning "Atención"
-         Para pasar satisfactoriamente los tests, la combinación de apertura debe estar configurada en "1234"
+    !!! warning "Atención"
+        Para pasar satisfactoriamente los tests, la combinación de apertura debe estar configurada en "1234"
 
 42. (CuadradoCubo) Escribe un programa que muestre en tres columnas, el cuadrado y el cubo de los 5 primeros números enteros a partir de uno que se introduce por  teclado.
 
@@ -1972,31 +1972,25 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 44. (Suma100Siguientes) Realiza un programa que sume los 100 números siguientes a un número  entero y positivo introducido por teclado. Se debe comprobar que el dato introducido es correcto (que es un número positivo).
 
-45. (N/*
+45. (NumerosEntre7) Escribe un programa que imprima por pantalla los números enteros comprendidos entre  dos números introducidos por teclado y validados como distintos, el  programa debe empezar por el menor de los enteros introducidos e ir incrementando de 7 en 7.
 
-      * (Primos) Escribir un programa en el que el usuario escriba un número entero y
-      * se le diga todos los números primos entre 1 y el número introducido.
-        */
-
-46. umerosEntre7) Escribe un programa que imprima por pantalla los números enteros comprendidos entre  dos números introducidos por teclado y validados como distintos, el  programa debe empezar por el menor de los enteros introducidos e ir incrementando de 7 en 7.
-
-      ```sh
-      Introduce dos números DIFERENTES!
-      Introduce el primer número: 8
-      Introduce el segundo número: 8
-      Los números no son DIFERENTES!
-      
-      Introduce dos números DIFERENTES!
-      Introduce el primer número: 6
-      Introduce el segundo número: 50
-      6
-      13
-      20
-      27
-      34
-      41
-      48
-      ```
+       ```sh
+       Introduce dos números DIFERENTES!
+       Introduce el primer número: 8
+       Introduce el segundo número: 8
+       Los números no son DIFERENTES!
+       
+       Introduce dos números DIFERENTES!
+       Introduce el primer número: 6
+       Introduce el segundo número: 50
+       6
+       13
+       20
+       27
+       34
+       41
+       48
+       ```
 
 47. (EstadisticasNumeros) Realiza un programa que vaya pidiendo números hasta que se introduzca  un numero negativo y nos diga cuantos números se han introducido, la  media de los impares y el mayor de los pares. El número negativo sólo se utiliza para indicar el final de la introducción de datos pero no se  incluye en el cómputo.
 
