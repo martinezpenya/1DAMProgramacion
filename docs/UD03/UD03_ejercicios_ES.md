@@ -1954,7 +1954,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 40. (ContarAtrasDoWhile) Muestra los números del 320 al 160, contando de 20 en 20 utilizando un bucle `do-while`.
 
-41. (CajaFuerte) Realiza el control de  acceso a una caja fuerte. La combinación será un número de 4 cifras. El  programa nos pedirá la combinación para abrirla. Si no acertamos, se nos mostrará el mensaje "**Esa no es la combinación correcta**" y si acertamos se nos dirá "**La caja fuerte se ha abierto correctamente**". Tendremos cuatro oportunidades para abrir la caja fuerte, si lo sobrepasamos nos dirá "**Has sobrepasado el número de intentos permitido**".
+41. (CajaFuerte) Realiza el control de  acceso a una caja fuerte. La combinación será un número de 4 cifras. El  programa nos pedirá la combinación para abrirla. Si no acertamos, se nos mostrará el mensaje "**Esa no es la combinación correcta**" y si acertamos se nos dirá "**La caja se ha abierto correctamente**". Tendremos cuatro oportunidades para abrir la caja fuerte, si lo sobrepasamos nos dirá "**Has sobrepasado el número de intentos permitido**".
 
     !!! warning "Atención"
         Para pasar satisfactoriamente los tests, la combinación de apertura debe estar configurada en "1234"
