@@ -1897,22 +1897,22 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 17. (Factorial) Pedir un número y calcular su factorial (el factorial se representa con el simbolo  `!`).
 
-         Aquí tienes el factorial de los 5 primeros números enteros:
-         
-         ```shell
-         1! = 1
-         2! = 2 * 1 = 2
-         3! = 3 * 2 * 1 = 6
-         4! = 4 * 3 * 2 * 1 = 24
-         5! = 5 * 4 * 3 * 2 * 1 = 120
-         ```
-         
-         Ejemplo de ejecución del programa:
-         
-         ```shell
-         Dime el número para calcular su factorial: 6
-         6! = 6 * 5 * 4 * 3 * 2 * 1 = 720
-         ```
+    Aquí tienes el factorial de los 5 primeros números enteros:
+
+        ```shell
+        1! = 1
+        2! = 2 * 1 = 2
+        3! = 3 * 2 * 1 = 6
+        4! = 4 * 3 * 2 * 1 = 24
+        5! = 5 * 4 * 3 * 2 * 1 = 120
+        ```
+
+    Ejemplo de ejecución del programa:
+    
+        ```shell
+        Dime el número para calcular su factorial: 6
+        6! = 6 * 5 * 4 * 3 * 2 * 1 = 720
+        ```
 
 18. (MediaPosNeg) Pedir 10 números. Mostrar la media de los números positivos, la media  de los números negativos y la cantidad de ceros.
 
