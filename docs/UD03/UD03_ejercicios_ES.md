@@ -409,7 +409,7 @@
     | :----------- | ----------------------------------- |
     | Pubertad     | De 11 a 14 años         |
     | Adolescencia | De 15 a 21 años         |
-    | Adultez      | De 22 a 55 años         |
+    | Adultez      | De 22 a 54 años         |
     | Vejez        | De 55 a 70 años         |
     | Ancianidad   | A partir de los 71 años |
 
@@ -660,6 +660,9 @@
     dd
     ```
 
+    !!! warning "Atención"
+        Para pasar satisfactoriamente los tests, en lugar de usar `System.out.println`, debes usar `System.out.print` con un `\n` al final de la cadena a imprimir.
+
 8. (CombinarLetras3) Repite el ejercicio anterior mostrando palabras de tres letras
 
     ```sh
@@ -669,6 +672,9 @@
     ddc
     ddd
     ```
+
+!!! warning "Atención"
+        Para pasar satisfactoriamente los tests, en lugar de usar `System.out.println`, debes usar `System.out.print` con un `\n` al final de la cadena a imprimir.
 
 9. (LetraALetra) Escribe un programa en el que se solicite al usuario un texto de forma repetida hasta que el usuario introduzca la cadena vacía. Con cada texto que introduzca el usuario se le mostrará carácter a carácter, cada carácter en una línea
 
@@ -687,6 +693,9 @@
     Introduce texto: 
     Fin del programa
     ```
+
+    !!! warning "Atención"
+        Para pasar satisfactoriamente los tests, en lugar de usar `System.out.println`, debes usar `System.out.print` con un `\n` al final de la cadena a imprimir.
 
 10. (DibujarFiguras1) Escribe una clase que contenga los métodos que se indican a continuación. En el método `main` solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
 
@@ -769,73 +778,73 @@
 
 11. (dibujarFiguras2) Escribe una clase que contenga los métodos que se indican a continuación. En el método main solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
 
-      1. `void dibRectNumeros3 (int ancho, int alto)` dibuja un rectángulo 	utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+       1. `void dibRectNumeros3 (int ancho, int alto)` dibuja un rectángulo 	utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-         ```sh
-         1 2 3 4 5 6 7 7 6 5 4 3 2 1
-         1 2 3 4 5 6 7 7 6 5 4 3 2 1
-         1 2 3 4 5 6 7 7 6 5 4 3 2 1
-         ```
+          ```sh
+          1 2 3 4 5 6 7 7 6 5 4 3 2 1
+          1 2 3 4 5 6 7 7 6 5 4 3 2 1
+          1 2 3 4 5 6 7 7 6 5 4 3 2 1
+          ```
 
-      2. 
-         `void dibRectAsteriscos1 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+       2. 
+          `void dibRectAsteriscos1 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-         ```sh
-         * * * * * * *
-         * * * * * * *
-         * * * * * * *
-         ```
+          ```sh
+          * * * * * * *
+          * * * * * * *
+          * * * * * * *
+          ```
 
-      3. 
-         `void dibRectAsteriscos2 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*), espacios en blanco y el carácter ‘+’, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+       3. 
+          `void dibRectAsteriscos2 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*), espacios en blanco y el carácter ‘+’, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-         ```yaml
-         * + * + * + *
-         * + * + * + *
-         * + * + * + *
-         ```
+          ```yaml
+          * + * + * + *
+          * + * + * + *
+          * + * + * + *
+          ```
 
-      4. 
-         `void dibRectAsteriscos3 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+       4. 
+          `void dibRectAsteriscos3 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-         ```sh
-         * * * * * * *
-         *           *
-         * * * * * * *
-         ```
+          ```sh
+          * * * * * * *
+          *           *
+          * * * * * * *
+          ```
 
-      5. 
-         `void dibTriangulo1 (int base)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo base es 5
+       5. 
+          `void dibTriangulo1 (int base)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo base es 5
 
-         ```sh
-         *
-         * *
-         * * * 
-         * * * * 
-         * * * * *
-         ```
+          ```sh
+          *
+          * *
+          * * * 
+          * * * * 
+          * * * * *
+          ```
 
-      6. 
-         `void dibTriangulo2 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
+       6. 
+          `void dibTriangulo2 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
 
-         ```sh
-                 *
-               * *
-             * * * 
-           * * * * 
-         * * * * *
-         ```
+          ```sh
+                  *
+                * *
+              * * * 
+            * * * * 
+          * * * * *
+          ```
 
-      7. 
-         `void dibTriangulo3 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
+       7. 
+          `void dibTriangulo3 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
 
-         ```sh
-                 *
-               * * *
-             * * * * *
-           * * * * * * *
-         * * * * * * * * *
-         ```
+          ```sh
+                  *
+                * * *
+              * * * * *
+            * * * * * * *
+          * * * * * * * * *
+          ```
 
 ### `switch`
 
@@ -1823,6 +1832,9 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
     ...
     ```
 
+    !!! warning "Atención"
+        Para pasar satisfactoriamente los tests, en lugar de usar `System.out.println`, debes usar `System.out.print` con un `\n` al final de la cadena a imprimir.
+
 6. (CuadradoHastaNegativo) Leer un número y mostrar su cuadrado, repetir el proceso hasta que se introduzca un número negativo.
 
 7. (PositivoNegativo) Leer un número e indicar si es positivo o negativo. El proceso se repetirá hasta que se introduzca un 0.
@@ -1868,22 +1880,22 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 17. (Factorial) Pedir un número y calcular su factorial (el factorial se representa con el simbolo  `!`).
 
-        Aquí tienes el factorial de los 5 primeros números enteros:
-        
-        ```shell
-        1! = 1
-        2! = 2 * 1 = 2
-        3! = 3 * 2 * 1 = 6
-        4! = 4 * 3 * 2 * 1 = 24
-        5! = 5 * 4 * 3 * 2 * 1 = 120
-        ```
-        
-        Ejemplo de ejecución del programa:
-        
-        ```shell
-        Dime el número para calcular su factorial: 6
-        6! = 6 * 5 * 4 * 3 * 2 * 1 = 720
-        ```
+         Aquí tienes el factorial de los 5 primeros números enteros:
+         
+         ```shell
+         1! = 1
+         2! = 2 * 1 = 2
+         3! = 3 * 2 * 1 = 6
+         4! = 4 * 3 * 2 * 1 = 24
+         5! = 5 * 4 * 3 * 2 * 1 = 120
+         ```
+         
+         Ejemplo de ejecución del programa:
+         
+         ```shell
+         Dime el número para calcular su factorial: 6
+         6! = 6 * 5 * 4 * 3 * 2 * 1 = 720
+         ```
 
 18. (MediaPosNeg) Pedir 10 números. Mostrar la media de los números positivos, la media  de los números negativos y la cantidad de ceros.
 
@@ -1919,28 +1931,28 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 34. (NotaProgramacion) Calcula la nota de un trimestre de la asignatura Programación. El  programa pedirá las dos notas que ha sacado el alumno en los dos  primeros controles. Si la media de los dos controles da un número mayor o igual a 5, el alumno está aprobado y se mostrará la media. En caso de  que la media sea un número menor que 5, el alumno habrá tenido que hacer el examen de recuperación que se califica como apto o no apto, por  tanto se debe preguntar al usuario ¿Cuál ha sido el resultado de la  recuperación? (apto/no apto). Si el resultado de la recuperación es  apto, la nota será un 5; en caso contrario, la nota será 1.
 
-        Ejemplo 1:
-        
-        ```sh
-        Nota del primer control: 7 Nota del segundo control: 10
-        Tu nota de Programación es 8.5
-        ```
-        
-        Ejemplo 2:
-        
-        ```sh
-        Nota del primer control: 6 Nota del segundo control: 3
-        ¿Cuál ha sido el resultado de la recuperación? (apto/no apto): apto
-        Tu nota de Programación es 5
-        ```
-        
-        Ejemplo 3:
-        
-        ```sh
-        Nota del primer control: 6 Nota del segundo control: 3
-        ¿Cuál ha sido el resultado de la recuperación? (apto/no apto): no apto
-        Tu nota de Programación es 1
-        ```
+         Ejemplo 1:
+         
+         ```sh
+         Nota del primer control: 7 Nota del segundo control: 10
+         Tu nota de Programación es 8.5
+         ```
+         
+         Ejemplo 2:
+         
+         ```sh
+         Nota del primer control: 6 Nota del segundo control: 3
+         ¿Cuál ha sido el resultado de la recuperación? (apto/no apto): apto
+         Tu nota de Programación es 5
+         ```
+         
+         Ejemplo 3:
+         
+         ```sh
+         Nota del primer control: 6 Nota del segundo control: 3
+         ¿Cuál ha sido el resultado de la recuperación? (apto/no apto): no apto
+         Tu nota de Programación es 1
+         ```
 
 35. (Multiplos5For) Muestra los números múltiplos de 5 entre el 0 y el 100 utilizando un bucle `for`.
 
@@ -1956,89 +1968,89 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 41. (CajaFuerte) Realiza el control de  acceso a una caja fuerte. La combinación será un número de 4 cifras. El  programa nos pedirá la combinación para abrirla. Si no acertamos, se nos mostrará el mensaje "**Esa no es la combinación correcta**" y si acertamos se nos dirá "**La caja se ha abierto correctamente**". Tendremos cuatro oportunidades para abrir la caja fuerte, si lo sobrepasamos nos dirá "**Has sobrepasado el número de intentos permitido**".
 
-    !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, la combinación de apertura debe estar configurada en "1234"
+     !!! warning "Atención"
+         Para pasar satisfactoriamente los tests, la combinación de apertura debe estar configurada en "1234"
 
 42. (CuadradoCubo) Escribe un programa que muestre en tres columnas, el cuadrado y el cubo de los 5 primeros números enteros a partir de uno que se introduce por  teclado.
 
 43. (Potencia) Escribe un método (`potencia`) que reciba una base y un exponente (enteros positivos) y que calcule la potencia (sin usar `Math`). Escribe un método `main` para pedir los datos al usuario y usando el método `potencia` mostrar el resultado.
 
-      ```sh
-      Vamos a calcular una potencia.
-      Introduce la BASE: 6
-      Introduce el EXPONENTE: 5
-      El resultado de elevar la BASE: 6 al EXPONENTE: 5 resulta en: 7776
-      ```
+       ```sh
+       Vamos a calcular una potencia.
+       Introduce la BASE: 6
+       Introduce el EXPONENTE: 5
+       El resultado de elevar la BASE: 6 al EXPONENTE: 5 resulta en: 7776
+       ```
 
 44. (Suma100Siguientes) Realiza un programa que sume los 100 números siguientes a un número  entero y positivo introducido por teclado. Se debe comprobar que el dato introducido es correcto (que es un número positivo).
 
 45. (NumerosEntre7) Escribe un programa que imprima por pantalla los números enteros comprendidos entre  dos números introducidos por teclado y validados como distintos, el  programa debe empezar por el menor de los enteros introducidos e ir incrementando de 7 en 7.
 
-       ```sh
-       Introduce dos números DIFERENTES!
-       Introduce el primer número: 8
-       Introduce el segundo número: 8
-       Los números no son DIFERENTES!
-       
-       Introduce dos números DIFERENTES!
-       Introduce el primer número: 6
-       Introduce el segundo número: 50
-       6
-       13
-       20
-       27
-       34
-       41
-       48
-       ```
-
-47. (EstadisticasNumeros) Realiza un programa que vaya pidiendo números hasta que se introduzca  un numero negativo y nos diga cuantos números se han introducido, la  media de los impares y el mayor de los pares. El número negativo sólo se utiliza para indicar el final de la introducción de datos pero no se  incluye en el cómputo.
-
-48. (SumaHasta10000) Escribe un programa que permita ir introduciendo una serie  indeterminada de números mientras su suma no supere el valor 10000.  Cuando esto último ocurra, se debe mostrar el total acumulado, el  contador de los números introducidos y la media.
-
-49. (Multiplos3) Escribe un programa que muestre, cuente y sume los múltiplos de 3 que hay entre 1 y un número leído por teclado.
-
-50. (PrecioFinal) Escribe un programa que calcule el precio final de un producto según su base imponible (precio antes de impuestos), el tipo de IVA aplicado  (general, reducido o superreducido) y el código promocional. Los tipos  de IVA general, reducido y superreducido son del 21%, 10% y 4%  respectivamente. Los códigos promocionales pueden ser nopro, mitad,  meno5 o 5porc que significan respectivamente que no se aplica promoción, el precio se reduce a la mitad, se descuentan 5 euros o se descuenta el 5%.
-
-        Ejemplo:
-        
         ```sh
-        Introduzca la base imponible: 25
-        Introduzca el tipo de IVA (general, reducido o superreducido): reducido
-        Introduzca el código promocional (nopro, mitad, meno5 o 5porc): mitad
-        Base imponible 25.00
-        Cód. promo. (mitad): -12.50
-        IVA (10%) 1.25
-        Precio con IVA 13.75
-        TOTAL 13.75
+        Introduce dos números DIFERENTES!
+        Introduce el primer número: 8
+        Introduce el segundo número: 8
+        Los números no son DIFERENTES!
+        
+        Introduce dos números DIFERENTES!
+        Introduce el primer número: 6
+        Introduce el segundo número: 50
+        6
+        13
+        20
+        27
+        34
+        41
+        48
         ```
 
-51. (AnioBisiesto) Pedir un año e indicar  si es bisiesto, teniendo en cuenta que son bisiestos todos los años  divisibles por 4, excluyendo los que sean divisibles por 100, pero no  los que sean divisibles por 400.
+46. (EstadisticasNumeros) Realiza un programa que vaya pidiendo números hasta que se introduzca  un numero negativo y nos diga cuantos números se han introducido, la  media de los impares y el mayor de los pares. El número negativo sólo se utiliza para indicar el final de la introducción de datos pero no se  incluye en el cómputo.
 
-        En pseudocódigo se calcularía así:
-        
-        ```pseudocode
-        SI ((año divisible por 4) Y ((año no divisible por 100) O (año divisible por 400)))ENTONCES
-        	es bisiesto
-        SINO
-        	no es bisiesto
-        FIN_SI
-        ```
+47. (SumaHasta10000) Escribe un programa que permita ir introduciendo una serie  indeterminada de números mientras su suma no supere el valor 10000.  Cuando esto último ocurra, se debe mostrar el total acumulado, el  contador de los números introducidos y la media.
 
-52. (NumeroALetras) Pedir un número de 20 a 99 y mostrarlo escrito. Por ejemplo, para 56 mostrar: cincuenta y seis.
+48. (Multiplos3) Escribe un programa que muestre, cuente y sume los múltiplos de 3 que hay entre 1 y un número leído por teclado.
 
-53. (VehiculoIVA) Introducir datos de un vehículo (marca, modelo y precio). Devolver el  precio con IVA del vehículo. Controlar con Excepciones que el precio del vehículo introducido son números y que el cálculo de Precio Final con  IVA no devuelva error.
+49. (PrecioFinal) Escribe un programa que calcule el precio final de un producto según su base imponible (precio antes de impuestos), el tipo de IVA aplicado  (general, reducido o superreducido) y el código promocional. Los tipos  de IVA general, reducido y superreducido son del 21%, 10% y 4%  respectivamente. Los códigos promocionales pueden ser nopro, mitad,  meno5 o 5porc que significan respectivamente que no se aplica promoción, el precio se reduce a la mitad, se descuentan 5 euros o se descuenta el 5%.
 
-54. (NotaMediaAlumnos) Introducir códigos de alumnos, nombre y nota hasta que se introduzca un código de alumno negativo. Devolver la nota media de los alumnos la  clase. Controlar con Excepciones que las notas introducidas son números y que si no se introducen alumnos el cálculo de la media no devuelva  error.
+         Ejemplo:
+         
+         ```sh
+         Introduzca la base imponible: 25
+         Introduzca el tipo de IVA (general, reducido o superreducido): reducido
+         Introduzca el código promocional (nopro, mitad, meno5 o 5porc): mitad
+         Base imponible 25.00
+         Cód. promo. (mitad): -12.50
+         IVA (10%) 1.25
+         Precio con IVA 13.75
+         TOTAL 13.75
+         ```
 
-55. (ImporteFinal) Crear una función o método llamado `impFinal`, que calcule el importe final de una compra. Los parámetros que se le pasarán a la función son el `precio` del producto, las `cantidad de unidades` compradas, el `porcentaje de iva` y el `porcentaje de descuento`. El método principal debe pedir por teclado el precio del producto, las  unidades adquiridas, el porcentaje de IVA y el porcentaje de descuento y devolver el `Importe final` de la Factura.
+50. (AnioBisiesto) Pedir un año e indicar  si es bisiesto, teniendo en cuenta que son bisiestos todos los años  divisibles por 4, excluyendo los que sean divisibles por 100, pero no  los que sean divisibles por 400.
 
-56. (CapacidadDisco) Crear una función que calcule la capacidad de un disco. La capacidad se calcula multiplicando los Cabezales o pistas del disco por los  Cilindros por los Sectores por Tamaño de Sector. El método principal  debe pedir por teclado los Cabezales o Pistas del disco, los Cilindros,  Sectores y Tamaño de Sector y devolver la Capacidad del disco en  Gigabytes.
+         En pseudocódigo se calcularía así:
+         
+         ```pseudocode
+         SI ((año divisible por 4) Y ((año no divisible por 100) O (año divisible por 400)))ENTONCES
+         	es bisiesto
+         SINO
+         	no es bisiesto
+         FIN_SI
+         ```
 
-        Por ejemplo: Calcular la  capacidad de un disco teniendo en cuenta que dispone de 10 Cabezales o  Pistas, 65535 Cilindros, 1024 Sectores/pista y un Tamaño de 512  bytes/sector:
-        
-        Capacidad del disco = 10 * 65535 * 1024 * 512 = 343597383680 bytes
-        
-        343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
+51. (NumeroALetras) Pedir un número de 20 a 99 y mostrarlo escrito. Por ejemplo, para 56 mostrar: cincuenta y seis.
 
-57. (MayorDeTres) Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La  función debe recibir como parámetros los tres números y devolver el  mayor.
+52. (VehiculoIVA) Introducir datos de un vehículo (marca, modelo y precio). Devolver el  precio con IVA del vehículo. Controlar con Excepciones que el precio del vehículo introducido son números y que el cálculo de Precio Final con  IVA no devuelva error.
+
+53. (NotaMediaAlumnos) Introducir códigos de alumnos, nombre y nota hasta que se introduzca un código de alumno negativo. Devolver la nota media de los alumnos la  clase. Controlar con Excepciones que las notas introducidas son números y que si no se introducen alumnos el cálculo de la media no devuelva  error.
+
+54. (ImporteFinal) Crear una función o método llamado `impFinal`, que calcule el importe final de una compra. Los parámetros que se le pasarán a la función son el `precio` del producto, las `cantidad de unidades` compradas, el `porcentaje de iva` y el `porcentaje de descuento`. El método principal debe pedir por teclado el precio del producto, las  unidades adquiridas, el porcentaje de IVA y el porcentaje de descuento y devolver el `Importe final` de la Factura.
+
+55. (CapacidadDisco) Crear una función que calcule la capacidad de un disco. La capacidad se calcula multiplicando los Cabezales o pistas del disco por los  Cilindros por los Sectores por Tamaño de Sector. El método principal  debe pedir por teclado los Cabezales o Pistas del disco, los Cilindros,  Sectores y Tamaño de Sector y devolver la Capacidad del disco en  Gigabytes.
+
+         Por ejemplo: Calcular la  capacidad de un disco teniendo en cuenta que dispone de 10 Cabezales o  Pistas, 65535 Cilindros, 1024 Sectores/pista y un Tamaño de 512  bytes/sector:
+         
+         Capacidad del disco = 10 * 65535 * 1024 * 512 = 343597383680 bytes
+         
+         343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
+
+56. (MayorDeTres) Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La  función debe recibir como parámetros los tres números y devolver el  mayor.
