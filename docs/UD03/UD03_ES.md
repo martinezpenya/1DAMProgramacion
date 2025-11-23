@@ -515,7 +515,7 @@ O sucede cuando la condición falla por alguna razón, como en el siguiente ejem
             for (int i = 5; i != 0; i -= 2){
                 System.out.println(i);
             }
-
+    
             int x = 5; 
             // bucle infinito porque la actualización
             // no se proporciona
@@ -902,7 +902,7 @@ Después de habilitar las assertions:
     - `-ea`: Enable Assertions (habilitar aserciones) 
     - `-da`: Disable Assertions (deshabilitar aserciones, que es la opción por defecto)
     
-	Puedes consultar este enlace para saber donde agregar estas opciones: https://stackoverflow.com/questions/68848158/java-assertions-in-intellij-idea-community
+    Puedes consultar este enlace para saber donde agregar estas opciones: https://stackoverflow.com/questions/68848158/java-assertions-in-intellij-idea-community
 
 Salida:  
 
@@ -1446,7 +1446,62 @@ public class P6_2_PropagacionExcepciones {
 }
 ```
 
+#### Ejemplo de excepción personalizada
+
+En este ejemplo definimos nuestra propia clase de Excepciones (en una clase interna), la lanzamos en un método de manera personalizada, y posteriormente capturamos la excepción en el método `main`.
+
+```java
+import java.util.Scanner;
+
+public class ValidadorEdad {
+
+    public static void validarEdad(int edad) throws EdadInvalidaException {
+        // Validaciones específicas con mensajes personalizados
+        if (edad < 0) {
+            throw new EdadInvalidaException("La edad no puede ser negativa");
+        } else if (edad > 150) {
+            throw new EdadInvalidaException("La edad parece incorrecta (muy alta)");
+        } else if (edad < 18) {
+            throw new EdadInvalidaException("Acceso denegado: Menor de edad");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Dime una edad para validar: ");
+        int edadInput = sc.nextInt();
+            try {
+                System.out.println("Validando edad: " + edadInput);
+                validarEdad(edadInput);
+                //Si llegamos hasta aquí, la edad es válida
+                System.out.println("Edad válida. Acceso permitido.");
+            } catch (EdadInvalidaException e) {
+                // Capturamos y manejamos nuestra excepción personalizada
+                System.out.println("Excepción capturada: " + e.getMessage());
+            } catch (Exception e) {
+                // Capturamos cualquier otra excepción genérica
+                System.out.println("Error inesperado: " + e.getMessage());
+            }
+        }
+    }
+	//Clase interna, ni public, ni static, ni private
+    class EdadInvalidaException extends Exception {
+        // Constructor que recibe un mensaje personalizado
+        public EdadInvalidaException(String s) {
+            //Llamamos al constructor de la clase base Exception y pasamos el mensaje que recibimos
+            super(s);
+        }
+        // Constructor por defecto
+        public EdadInvalidaException() {
+            super("Edad inválida");
+    }
+}
+```
+
+
+
 ## Píldoras informáticas relacionadas
+
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
 
 Videos de Makigas al respecto:
@@ -1454,5 +1509,4 @@ Videos de Makigas al respecto:
 - [Java: introducción a las excepciones](https://www.youtube.com/watch?v=kGzwPunAOxk)
 
 - [Java: throw y throws, usos y diferencias ](https://www.youtube.com/watch?v=-xC0o6JQaoE)
-
 
