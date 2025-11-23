@@ -700,142 +700,141 @@
 10. (DibujarFiguras1) Escribe una clase que contenga los métodos que se indican a continuación. En el método `main` solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
 
     a. (`void dibRecAsteriscos (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos, como el siguiente. En el ejemplo ancho es 7 y alto es 3
-
-        ```sh
-        * * * * * * *
-        * * * * * * *
-        * * * * * * *
-        ```
-
-        ```sh
-        Vamos a dibujar figuras.
-        Introduce el ancho: 8
-        Introduce el alto: 4
-        * * * * * * * * 
-        * * * * * * * * 
-        * * * * * * * * 
-        * * * * * * * * 
-        ```
+    ```sh
+    * * * * * * *
+    * * * * * * *
+    * * * * * * *
+    ```
+    
+    ```sh
+    Vamos a dibujar figuras.
+    Introduce el ancho: 8
+    Introduce el alto: 4
+    * * * * * * * * 
+    * * * * * * * * 
+    * * * * * * * * 
+    * * * * * * * * 
+    ```
 
     b. (`void dibRecNumeros1 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-        ```sh
-        1 2 3 4 5 6 7
-        1 2 3 4 5 6 7
-        1 2 3 4 5 6 7
-        ```
+    ```sh
+    1 2 3 4 5 6 7
+    1 2 3 4 5 6 7
+    1 2 3 4 5 6 7
+    ```
 
     c. (`void dibRecNumeros2 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-        ```sh
-        7 6 5 4 3 2 1
-        7 6 5 4 3 2 1
-        7 6 5 4 3 2 1
-        ```
+    ```sh
+    7 6 5 4 3 2 1
+    7 6 5 4 3 2 1
+    7 6 5 4 3 2 1
+    ```
 
     d. (`void dibRecNumeros3 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-        ```sh
-        01 02 03 04 05 06 07
-        08 09 10 11 12 13 14
-        15 16 17 18 19 20 21
-        ```
+    ```sh
+    01 02 03 04 05 06 07
+    08 09 10 11 12 13 14
+    15 16 17 18 19 20 21
+    ```
 
     e. (`void dibDiagonal (int ancho, int alto)` dibuja un rectángulo con ceros y unos. Los 1 están en las posiciones en las que fila y columna coinciden. En el ejemplo ancho es 7 y alto es 3
 
-        ```java
-        1 0 0 0 0 0 0
-        0 1 0 0 0 0 0
-        0 0 1 0 0 0 0
-        ```
+    ```sh
+    1 0 0 0 0 0 0
+    0 1 0 0 0 0 0
+    0 0 1 0 0 0 0
+    ```
 
     f. (`void dibRecLetras (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
 
-        ```sh
-        a a a a a a a
-        b b b b b b b
-        c c c c c c c
-        ```
+    ```sh
+    a a a a a a a
+    b b b b b b b
+    c c c c c c c
+    ```
 
     g. (`void dibRecLetras2 (int ancho, int alto)` dibuja un rectángulo letras sucesivas terminando por la "a". En el ejemplo ancho es 7 y alto es 3
 
-        ```sh
-        c c c c c c c
-        b b b b b b b
-        a a a a a a a
-        ```
+    ```sh
+    c c c c c c c
+    b b b b b b b
+    a a a a a a a
+    ```
 
     h. (`void dibRecLetras3 (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
 
-        ```sh
-        a b c d e f g
-        h i j k l m n
-        o p q r s t u
-        ```
+    ```sh
+    a b c d e f g
+    h i j k l m n
+    o p q r s t u
+    ```
 
 11. (dibujarFiguras2) Escribe una clase que contenga los métodos que se indican a continuación. En el método main solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
 
     a. `void dibRectNumeros3 (int ancho, int alto)` dibuja un rectángulo 	utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-          ```sh
-          1 2 3 4 5 6 7 7 6 5 4 3 2 1
-          1 2 3 4 5 6 7 7 6 5 4 3 2 1
-          1 2 3 4 5 6 7 7 6 5 4 3 2 1
-          ```
+    ```sh
+    1 2 3 4 5 6 7 7 6 5 4 3 2 1
+    1 2 3 4 5 6 7 7 6 5 4 3 2 1
+    1 2 3 4 5 6 7 7 6 5 4 3 2 1
+    ```
 
     b. `void dibRectAsteriscos1 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-        ```sh
-        * * * * * * *
-        * * * * * * *
-        * * * * * * *
-        ```
+    ```sh
+    * * * * * * *
+    * * * * * * *
+    * * * * * * *
+    ```
 
     c. `void dibRectAsteriscos2 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*), espacios en blanco y el carácter ‘+’, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-        ```yaml
-        * + * + * + *
-        * + * + * + *
-        * + * + * + *
-        ```
+    ```sh
+    * + * + * + *
+    * + * + * + *
+    * + * + * + *
+    ```
 
     d. `void dibRectAsteriscos3 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-        ```sh
-        * * * * * * *
-        *           *
-        * * * * * * *
-        ```
+    ```sh
+    * * * * * * *
+    *           *
+    * * * * * * *
+    ```
 
     e. `void dibTriangulo1 (int base)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo base es 5
 
-        ```sh
-        *
-        * *
-        * * * 
-        * * * * 
-        * * * * *
-        ```
+    ```sh
+    *
+    * *
+    * * * 
+    * * * * 
+    * * * * *
+    ```
 
     f. `void dibTriangulo2 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
 
-        ```sh
-                *
-              * *
-            * * * 
-          * * * * 
-        * * * * *
-        ```
+    ```sh
+            *
+          * *
+        * * * 
+      * * * * 
+    * * * * *
+    ```
 
     g. `void dibTriangulo3 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
 
-        ```sh
-                *
-              * * *
-            * * * * *
-          * * * * * * *
-        * * * * * * * * *
-        ```
+    ```sh
+            *
+          * * *
+        * * * * *
+      * * * * * * *
+    * * * * * * * * *
+    ```
 
 ### `switch`
 
