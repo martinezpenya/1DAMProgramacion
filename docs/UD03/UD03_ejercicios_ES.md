@@ -673,7 +673,7 @@
     ddd
     ```
 
-!!! warning "Atención"
+    !!! warning "Atención"
         Para pasar satisfactoriamente los tests, en lugar de usar `System.out.println`, debes usar `System.out.print` con un `\n` al final de la cadena a imprimir.
 
 9. (LetraALetra) Escribe un programa en el que se solicite al usuario un texto de forma repetida hasta que el usuario introduzca la cadena vacía. Con cada texto que introduzca el usuario se le mostrará carácter a carácter, cada carácter en una línea
@@ -1010,7 +1010,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 1. (Traza1) **Datos de entrada: 2, 5**
 
-    1. 
+    1.
+
         ```java
         public static void main (String[] args){
             Scanner tec = new Scanner(System.in);
@@ -1022,7 +1023,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
     
-    2. 
+    2.
+
         ```java
         public static void main (String[] args){
             Scanner tec = new Scanner(System.in);
@@ -1033,8 +1035,9 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
             System.out.println(a);
         }
         ```
-    
-    3. 
+
+    3.
+
         ```java
         public static void main (String[] args){
             Scanner tec = new Scanner(System.in);
@@ -1047,7 +1050,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
     
-    4. 
+    4.
+
         ```java
         public static void main (String[] args){
             Scanner tec = new Scanner(System.in);
@@ -1061,7 +1065,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
     
-    5. 
+    5.
+
         ```java
         public static void main (String[] args){
             Scanner tec = new Scanner(System.in);
@@ -1075,7 +1080,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
 
-    6. 
+    6.
+
         ```java
         public static void main (String[] args){
             Scanner tec = new Scanner(System.in);
@@ -1091,7 +1097,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
     
-    7. 
+    7.
+
         ```java
         public static void main (String[] args) {
             Scanner tec = new Scanner(System.in);
@@ -1107,7 +1114,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
     
-    8. 
+    8.
+
         ```java
         public static void main (String[] args){
             Scanner tec = new Scanner(System.in);
@@ -1123,6 +1131,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         ```
     
     9. 
+
         ```java
         public static void main (String[] args){
             Scanner tec = new Scanner(System.in);
@@ -1161,7 +1170,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 3. (Traza3) **Datos de entrada: 2, 5, 7, 9, -9, -7, -5, -2**
 
-    1. 
+    1.
+
         ```java
         public static void main (String[] args){
             int x,y;
@@ -1175,7 +1185,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
     
-    2. 
+    2.
+
         ```java
         public static void main (String[] args){
             int x,y,z,a;
@@ -1193,7 +1204,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 4. (Traza4) **Datos de entrada: 5, 5, 7, -5, -4, 2**
 
-    1. 
+    1.
+
         ```java
         public static void main (String[] args){
             int x, y, a=0;
@@ -1208,7 +1220,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
 
-    2. 
+    2.
+
         ```java
         public static void main (String[] args){
             int x, y, a=0;
@@ -1223,7 +1236,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
 
-    3. 
+    3.
+
         ```java
         public static void main (String[] args){
             int x, y, a=0;
@@ -1238,7 +1252,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
 
-    4. 
+    4.
+
         ```java
         public static void main (String[] args){
             int x, y, a=0;
@@ -1273,7 +1288,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 6. (Traza6) **Datos de entrada: 2, 4, 7, 5, -6, -3, 6, 6**
 
-    1. 
+    1.
+
         ```java
         public static void main (String[] args){
             int a,b;
@@ -1286,7 +1302,8 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         }
         ```
 
-    2. 
+    2.
+
         ```java
         public static void main (String[] args){
             int a,b;
