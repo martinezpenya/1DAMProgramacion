@@ -2064,10 +2064,12 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 55. (CapacidadDisco) Crear una función que calcule la capacidad de un disco. La capacidad se calcula multiplicando los Cabezales o pistas del disco por los  Cilindros por los Sectores por Tamaño de Sector. El método principal  debe pedir por teclado los Cabezales o Pistas del disco, los Cilindros,  Sectores y Tamaño de Sector y devolver la Capacidad del disco en  Gigabytes.
 
-    Por ejemplo: Calcular la  capacidad de un disco teniendo en cuenta que dispone de 10 Cabezales o  Pistas, 65535 Cilindros, 1024 Sectores/pista y un Tamaño de 512  bytes/sector:
-
-    Capacidad del disco = 10 * 65535 * 1024 * 512 = 343597383680 bytes
-
-    343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
+    !!! example "Ejemplo"
+        Por ejemplo: Calcular la  capacidad de un disco teniendo en cuenta que dispone de 10 Cabezales o  Pistas, 65535 Cilindros, 1024 Sectores/pista y un Tamaño de 512  bytes/sector:
+        
+        Capacidad del disco = 10 * 65535 * 1024 * 512 = 343597383680 bytes
+        
+        343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
+        
 
 56. (MayorDeTres) Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La  función debe recibir como parámetros los tres números y devolver el  mayor.
