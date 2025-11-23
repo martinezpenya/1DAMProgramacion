@@ -1170,103 +1170,103 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 3. (Traza3) **Datos de entrada: 2, 5, 7, 9, -9, -7, -5, -2**
 
-    1.
+    a.
 
-        ```java
-        public static void main (String[] args){
-            int x,y;
-            x = 0;
+    ```java
+    public static void main (String[] args){
+        int x,y;
+        x = 0;
+        y = tec.nextInt();
+        while(!(y<0)) {
+            x+=-y;
             y = tec.nextInt();
-            while(!(y<0)) {
-                x+=-y;
-                y = tec.nextInt();
-                System.out.format("%d, %d",x,y);
-            }
+            System.out.format("%d, %d",x,y);
         }
-        ```
+    }
+    ```
     
-    2.
+    b.
 
-        ```java
-        public static void main (String[] args){
-            int x,y,z,a;
-            x = y = z = a = 0;
+    ```java
+    public static void main (String[] args){
+        int x,y,z,a;
+        x = y = z = a = 0;
+        x = tec.nextInt();
+        while(x>0) {
+            if (y < z) y = tec.nextInt();
+            else z= tec.nextInt();
+            a = a-x+y*z;
             x = tec.nextInt();
-            while(x>0) {
-                if (y < z) y = tec.nextInt();
-                else z= tec.nextInt();
-                a = a-x+y*z;
-                x = tec.nextInt();
-                System.out.format("%d, %d, %d, %d",a,x,y,z);
-            }
+            System.out.format("%d, %d, %d, %d",a,x,y,z);
         }
-        ```
+    }
+    ```
 
 4. (Traza4) **Datos de entrada: 5, 5, 7, -5, -4, 2**
 
-    1.
+    a.
 
-        ```java
-        public static void main (String[] args){
-            int x, y, a=0;
-            x = 0;
-            y = 99;
-            while (x >= 0) {
-                x = tec.nextInt();
-                y = tec.nextInt();
-                a = a + x*y;
-            }
-            System.out.println(a);
+    ```java
+    public static void main (String[] args){
+        int x, y, a=0;
+        x = 0;
+        y = 99;
+        while (x >= 0) {
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = a + x*y;
         }
-        ```
+        System.out.println(a);
+    }
+    ```
 
-    2.
+    b.
 
-        ```java
-        public static void main (String[] args){
-            int x, y, a=0;
-            x = 0;
-            y = 99;
-            while (x >= 0 && y >= 0) {
-                x = tec.nextInt();
-                y = tec.nextInt();
-                a = a + x*y;
-            }
-            System.out.println(a);
+    ```java
+    public static void main (String[] args){
+        int x, y, a=0;
+        x = 0;
+        y = 99;
+        while (x >= 0 && y >= 0) {
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = a + x*y;
         }
-        ```
+        System.out.println(a);
+    }
+    ```
 
-    3.
+    c.
 
-        ```java
-        public static void main (String[] args){
-            int x, y, a=0;
-            x = 0;
-            y = 99;
-            while (x >= 0 && y <= 0) {
-                x = tec.nextInt();
-                y = tec.nextInt();
-                a = a + x*y;
-            }
-            System.out.println(a);
+    ```java
+    public static void main (String[] args){
+        int x, y, a=0;
+        x = 0;
+        y = 99;
+        while (x >= 0 && y <= 0) {
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = a + x*y;
         }
-        ```
+        System.out.println(a);
+    }
+    ```
 
-    4.
+    d.
 
-        ```java
-        public static void main (String[] args){
-            int x, y, a=0;
-            x = 0;
-            y = 99;
-            while (x >= 0 || y >= 0) {
-                x = tec.nextInt();
-                y = tec.nextInt();
-                a = a + x*y;
-            }
-            System.out.println(a);
+    ```java
+    public static void main (String[] args){
+        int x, y, a=0;
+        x = 0;
+        y = 99;
+        while (x >= 0 || y >= 0) {
+            x = tec.nextInt();
+            y = tec.nextInt();
+            a = a + x*y;
         }
-        ```
+        System.out.println(a);
+    }
+    ```
 
 5. (Traza5) **Datos de entrada: 5, 5, 7, -5, -4, 2**
 
@@ -1288,35 +1288,35 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 6. (Traza6) **Datos de entrada: 2, 4, 7, 5, -6, -3, 6, 6**
 
-    1.
+    a.
 
-        ```java
-        public static void main (String[] args){
-            int a,b;
-            do{
-                a = tec.nextInt();
-                b = tec.nextInt();
-                for (int i=a ; i<=b ; i++)
-                System.out.println(i);
-            } while (a!=b)
-        }
-        ```
+    ```java
+    public static void main (String[] args){
+        int a,b;
+        do{
+            a = tec.nextInt();
+            b = tec.nextInt();
+            for (int i=a ; i<=b ; i++)
+            System.out.println(i);
+        } while (a!=b)
+    }
+    ```
 
-    2.
+    b.
 
-        ```java
-        public static void main (String[] args){
-            int a,b;
-            a=5;
-            b=5;
-            do {
-                for (int i=a ; i<=b ; i++)
-                System.out.println(i);
-                a = tec.nextInt();
-                b = tec.nextInt();
-            } while (a!=b);
-        }
-        ```
+    ```java
+    public static void main (String[] args){
+        int a,b;
+        a=5;
+        b=5;
+        do {
+            for (int i=a ; i<=b ; i++)
+            System.out.println(i);
+            a = tec.nextInt();
+            b = tec.nextInt();
+        } while (a!=b);
+    }
+    ```
 
 7. (Traza7) **Datos de entrada: 3, 3, 5, 5, -3, -7, 2, 2**
 
