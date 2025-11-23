@@ -699,7 +699,7 @@
 
 10. (DibujarFiguras1) Escribe una clase que contenga los métodos que se indican a continuación. En el método `main` solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
 
-    a. (`void dibRecAsteriscos (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    a. `void dibRecAsteriscos (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos, como el siguiente. En el ejemplo ancho es 7 y alto es 3
     ```sh
     * * * * * * *
     * * * * * * *
@@ -716,7 +716,7 @@
     * * * * * * * * 
     ```
 
-    b. (`void dibRecNumeros1 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    b. `void dibRecNumeros1 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
     ```sh
     1 2 3 4 5 6 7
@@ -724,7 +724,7 @@
     1 2 3 4 5 6 7
     ```
 
-    c. (`void dibRecNumeros2 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    c. `void dibRecNumeros2 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
     ```sh
     7 6 5 4 3 2 1
@@ -732,7 +732,7 @@
     7 6 5 4 3 2 1
     ```
 
-    d. (`void dibRecNumeros3 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    d. `void dibRecNumeros3 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
     ```sh
     01 02 03 04 05 06 07
@@ -740,7 +740,7 @@
     15 16 17 18 19 20 21
     ```
 
-    e. (`void dibDiagonal (int ancho, int alto)` dibuja un rectángulo con ceros y unos. Los 1 están en las posiciones en las que fila y columna coinciden. En el ejemplo ancho es 7 y alto es 3
+    e. `void dibDiagonal (int ancho, int alto)` dibuja un rectángulo con ceros y unos. Los 1 están en las posiciones en las que fila y columna coinciden. En el ejemplo ancho es 7 y alto es 3
 
     ```sh
     1 0 0 0 0 0 0
@@ -748,7 +748,7 @@
     0 0 1 0 0 0 0
     ```
 
-    f. (`void dibRecLetras (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
+    f. `void dibRecLetras (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
 
     ```sh
     a a a a a a a
@@ -756,7 +756,7 @@
     c c c c c c c
     ```
 
-    g. (`void dibRecLetras2 (int ancho, int alto)` dibuja un rectángulo letras sucesivas terminando por la "a". En el ejemplo ancho es 7 y alto es 3
+    g. `void dibRecLetras2 (int ancho, int alto)` dibuja un rectángulo letras sucesivas terminando por la "a". En el ejemplo ancho es 7 y alto es 3
 
     ```sh
     c c c c c c c
@@ -764,7 +764,7 @@
     a a a a a a a
     ```
 
-    h. (`void dibRecLetras3 (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
+    h. `void dibRecLetras3 (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
 
     ```sh
     a b c d e f g
