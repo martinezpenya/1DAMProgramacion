@@ -1010,142 +1010,142 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 1. (Traza1) **Datos de entrada: 2, 5**
 
-    1.
+    a.
 
-        ```java
-        public static void main (String[] args){
-            Scanner tec = new Scanner(System.in);
-            int x,y,a;
-            x = tec.nextInt();
-            y = tec.nextInt();
-            a = x+y;
-            System.out.println(a);
-        }
-        ```
+    ```java
+    public static void main (String[] args){
+        Scanner tec = new Scanner(System.in);
+        int x,y,a;
+        x = tec.nextInt();
+        y = tec.nextInt();
+        a = x+y;
+        System.out.println(a);
+    }
+    ```
     
-    2.
+    b.
 
-        ```java
-        public static void main (String[] args){
-            Scanner tec = new Scanner(System.in);
-            int x,a;
-            x = tec.nextInt();
-            x = tec.nextInt();
-            a= x+x;
-            System.out.println(a);
-        }
-        ```
+    ```java
+    public static void main (String[] args){
+        Scanner tec = new Scanner(System.in);
+        int x,a;
+        x = tec.nextInt();
+        x = tec.nextInt();
+        a= x+x;
+        System.out.println(a);
+    }
+    ```
 
-    3.
+    c.
 
-        ```java
-        public static void main (String[] args){
-            Scanner tec = new Scanner(System.in);
-            int x,y,a;
-            x = tec.nextInt();
-            y = tec.nextInt();
-            a = x+y;
-            a = x*y;
-            System.out.println(a);
-        }
-        ```
+    ```java
+    public static void main (String[] args){
+        Scanner tec = new Scanner(System.in);
+        int x,y,a;
+        x = tec.nextInt();
+        y = tec.nextInt();
+        a = x+y;
+        a = x*y;
+        System.out.println(a);
+    }
+    ```
     
-    4.
+    d.
 
-        ```java
-        public static void main (String[] args){
-            Scanner tec = new Scanner(System.in);
-            int x,y,a;
-            x = tec.nextInt();
-            y = tec.nextInt();
-            a = x+y;
-            System.out.println(a);
-            a = x*y;
-            System.out.println(a);
-        }
-        ```
+    ```java
+    public static void main (String[] args){
+        Scanner tec = new Scanner(System.in);
+        int x,y,a;
+        x = tec.nextInt();
+        y = tec.nextInt();
+        a = x+y;
+        System.out.println(a);
+        a = x*y;
+        System.out.println(a);
+    }
+    ```
     
-    5.
+    e.
 
-        ```java
-        public static void main (String[] args){
-            Scanner tec = new Scanner(System.in);
-            int x,y,a;
-            x = tec.nextInt();
-            y = tec.nextInt();
-            a = x+y;
-            a = a+x+y;
-            a = a+a;
-            System.out.println(a);
-        }
-        ```
+    ```java
+    public static void main (String[] args){
+        Scanner tec = new Scanner(System.in);
+        int x,y,a;
+        x = tec.nextInt();
+        y = tec.nextInt();
+        a = x+y;
+        a = a+x+y;
+        a = a+a;
+        System.out.println(a);
+    }
+    ```
 
-    6.
+    f.
 
-        ```java
-        public static void main (String[] args){
-            Scanner tec = new Scanner(System.in);
-            int x,y,a;
-            x = tec.nextInt();
-            y = tec.nextInt();
-            a = x;
-            a = doble(x);
-            System.out.format ("%d%n%d%n%d",x,y,a);
-        }
-        public static int doble(int num){
-            return 2*num;
-        }
-        ```
+    ```java
+    public static void main (String[] args){
+        Scanner tec = new Scanner(System.in);
+        int x,y,a;
+        x = tec.nextInt();
+        y = tec.nextInt();
+        a = x;
+        a = doble(x);
+        System.out.format ("%d%n%d%n%d",x,y,a);
+    }
+    public static int doble(int num){
+        return 2*num;
+    }
+    ```
     
-    7.
+    g.
 
-        ```java
-        public static void main (String[] args) {
-            Scanner tec = new Scanner(System.in);
-            int x,y,a;
-            x = tec.nextInt();
-            y = tec.nextInt();
-            a = x;
-            doble(a);
-            System.out.format("%d%n%d%n%d%n",x,y,a);
-        }
-        public static void doble(int x){
-            x = 2*x;
-        }
-        ```
+    ```java
+    public static void main (String[] args) {
+        Scanner tec = new Scanner(System.in);
+        int x,y,a;
+        x = tec.nextInt();
+        y = tec.nextInt();
+        a = x;
+        doble(a);
+        System.out.format("%d%n%d%n%d%n",x,y,a);
+    }
+    public static void doble(int x){
+        x = 2*x;
+    }
+    ```
     
-    8.
+    h.
 
-        ```java
-        public static void main (String[] args){
-            Scanner tec = new Scanner(System.in);
-            int x,y,a;
-            x = tec.nextInt();
-            y = tec.nextInt();
-            a = calcular(y,x);
-            System.out.format("%d%n%d%n%d%n",x,y,a);
-        }
-        public static int calcular (int x, int y){
-            return x-y;
-        }
-        ```
+    ```java
+    public static void main (String[] args){
+        Scanner tec = new Scanner(System.in);
+        int x,y,a;
+        x = tec.nextInt();
+        y = tec.nextInt();
+        a = calcular(y,x);
+        System.out.format("%d%n%d%n%d%n",x,y,a);
+    }
+    public static int calcular (int x, int y){
+        return x-y;
+    }
+    ```
     
-    9. 
+    i. 
 
-        ```java
-        public static void main (String[] args){
-            Scanner tec = new Scanner(System.in);
-            int x,y,a;
-            x = tec.nextInt();
-            y = tec.nextInt();
-            y = calcular(x);
-            a = calcular(y);
-            System.out.format("%d%n%d%n%d%n",x,y,a);
-        }
-        public static int calcular (int x){
-            return x*x;
-        }
-        ```
+    ```java
+    public static void main (String[] args){
+        Scanner tec = new Scanner(System.in);
+        int x,y,a;
+        x = tec.nextInt();
+        y = tec.nextInt();
+        y = calcular(x);
+        a = calcular(y);
+        System.out.format("%d%n%d%n%d%n",x,y,a);
+    }
+    public static int calcular (int x){
+        return x*x;
+    }
+    ```
 
 2. (Traza2) **Datos de entrada: 2, 5, 7**
 
