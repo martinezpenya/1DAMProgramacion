@@ -699,7 +699,7 @@
 
 10. (DibujarFiguras1) Escribe una clase que contenga los métodos que se indican a continuación. En el método `main` solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
 
-    1. (`void dibRecAsteriscos (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    a. (`void dibRecAsteriscos (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
         ```sh
         * * * * * * *
@@ -717,7 +717,7 @@
         * * * * * * * * 
         ```
 
-    2. (`void dibRecNumeros1 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    b. (`void dibRecNumeros1 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
         ```sh
         1 2 3 4 5 6 7
@@ -725,7 +725,7 @@
         1 2 3 4 5 6 7
         ```
 
-    3. (`void dibRecNumeros2 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    c. (`void dibRecNumeros2 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
         ```sh
         7 6 5 4 3 2 1
@@ -733,7 +733,7 @@
         7 6 5 4 3 2 1
         ```
 
-    4. (`void dibRecNumeros3 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    d. (`void dibRecNumeros3 (int ancho, int alto)` dibuja un rectángulo utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
         ```sh
         01 02 03 04 05 06 07
@@ -741,7 +741,7 @@
         15 16 17 18 19 20 21
         ```
 
-    5. (`void dibDiagonal (int ancho, int alto)` dibuja un rectángulo con ceros y unos. Los 1 están en las posiciones en las que fila y columna coinciden. En el ejemplo ancho es 7 y alto es 3
+    e. (`void dibDiagonal (int ancho, int alto)` dibuja un rectángulo con ceros y unos. Los 1 están en las posiciones en las que fila y columna coinciden. En el ejemplo ancho es 7 y alto es 3
 
         ```java
         1 0 0 0 0 0 0
@@ -749,36 +749,33 @@
         0 0 1 0 0 0 0
         ```
 
-    6. 
-       (`void dibRecLetras (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
+    f. (`void dibRecLetras (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
 
-       ```sh
-       a a a a a a a
-       b b b b b b b
-       c c c c c c c
-       ```
+        ```sh
+        a a a a a a a
+        b b b b b b b
+        c c c c c c c
+        ```
 
-    7. 
-       (`void dibRecLetras2 (int ancho, int alto)` dibuja un rectángulo letras sucesivas terminando por la "a". En el ejemplo ancho es 7 y alto es 3
+    g. (`void dibRecLetras2 (int ancho, int alto)` dibuja un rectángulo letras sucesivas terminando por la "a". En el ejemplo ancho es 7 y alto es 3
 
-       ```sh
-       c c c c c c c
-       b b b b b b b
-       a a a a a a a
-       ```
+        ```sh
+        c c c c c c c
+        b b b b b b b
+        a a a a a a a
+        ```
 
-    8. 
-       (`void dibRecLetras3 (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
+    h. (`void dibRecLetras3 (int ancho, int alto)` dibuja un rectángulo letras sucesivas comenzando por la "a". En el ejemplo ancho es 7 y alto es 3
 
-       ```sh
-       a b c d e f g
-       h i j k l m n
-       o p q r s t u
-       ```
+        ```sh
+        a b c d e f g
+        h i j k l m n
+        o p q r s t u
+        ```
 
 11. (dibujarFiguras2) Escribe una clase que contenga los métodos que se indican a continuación. En el método main solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
 
-       1. `void dibRectNumeros3 (int ancho, int alto)` dibuja un rectángulo 	utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    a. `void dibRectNumeros3 (int ancho, int alto)` dibuja un rectángulo 	utilizando números, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
           ```sh
           1 2 3 4 5 6 7 7 6 5 4 3 2 1
@@ -786,65 +783,59 @@
           1 2 3 4 5 6 7 7 6 5 4 3 2 1
           ```
 
-       2. 
-          `void dibRectAsteriscos1 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    b. `void dibRectAsteriscos1 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-          ```sh
-          * * * * * * *
-          * * * * * * *
-          * * * * * * *
-          ```
+        ```sh
+        * * * * * * *
+        * * * * * * *
+        * * * * * * *
+        ```
 
-       3. 
-          `void dibRectAsteriscos2 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*), espacios en blanco y el carácter ‘+’, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    c. `void dibRectAsteriscos2 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*), espacios en blanco y el carácter ‘+’, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-          ```yaml
-          * + * + * + *
-          * + * + * + *
-          * + * + * + *
-          ```
+        ```yaml
+        * + * + * + *
+        * + * + * + *
+        * + * + * + *
+        ```
 
-       4. 
-          `void dibRectAsteriscos3 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo ancho es 7 y alto es 3
+    d. `void dibRectAsteriscos3 (int ancho, int alto)` dibuja un rectángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo ancho es 7 y alto es 3
 
-          ```sh
-          * * * * * * *
-          *           *
-          * * * * * * *
-          ```
+        ```sh
+        * * * * * * *
+        *           *
+        * * * * * * *
+        ```
 
-       5. 
-          `void dibTriangulo1 (int base)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo base es 5
+    e. `void dibTriangulo1 (int base)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo base es 5
 
-          ```sh
-          *
-          * *
-          * * * 
+        ```sh
+        *
+        * *
+        * * * 
+        * * * * 
+        * * * * *
+        ```
+
+    f. `void dibTriangulo2 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
+
+        ```sh
+                *
+              * *
+            * * * 
           * * * * 
-          * * * * *
-          ```
+        * * * * *
+        ```
 
-       6. 
-          `void dibTriangulo2 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
+    g. `void dibTriangulo3 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
 
-          ```sh
-                  *
-                * *
-              * * * 
-            * * * * 
-          * * * * *
-          ```
-
-       7. 
-          `void dibTriangulo3 (int altura)` dibuja un triángulo utilizando asteriscos (*) y espacios en blanco, como el siguiente. En el ejemplo altura es 5
-
-          ```sh
-                  *
-                * * *
-              * * * * *
-            * * * * * * *
-          * * * * * * * * *
-          ```
+        ```sh
+                *
+              * * *
+            * * * * *
+          * * * * * * *
+        * * * * * * * * *
+        ```
 
 ### `switch`
 
@@ -1271,19 +1262,18 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 5. (Traza5) **Datos de entrada: 5, 5, 7, -5, -4, 2**
 
     ```java
-        public static void main(String[] args) {
-            int x, y;
-    
-            x = 2;
-            y = 3;
-            while (x + y > 0) {
-                x = tec.nextInt();
-                y = tec.nextInt();
-                x += y;
-                y = x - y;
-                System.out.format("%d, %d", x, y);
-            }
+    public static void main(String[] args) {
+        int x, y;
+        x = 2;
+        y = 3;
+        while (x + y > 0) {
+            x = tec.nextInt();
+            y = tec.nextInt();
+            x += y;
+            y = x - y;
+            System.out.format("%d, %d", x, y);
         }
+    }
     ```
 
 6. (Traza6) **Datos de entrada: 2, 4, 7, 5, -6, -3, 6, 6**
@@ -2070,6 +2060,5 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
         Capacidad del disco = 10 * 65535 * 1024 * 512 = 343597383680 bytes
         
         343597383680 bytes / 1024 / 1024 / 1024 = 320 Gbytes
-        
-
+    
 56. (MayorDeTres) Función que devuelva el mayor de tres números. El método principal debe pedir por teclado los tres números introducidos por el teclado. La  función debe recibir como parámetros los tres números y devolver el  mayor.
