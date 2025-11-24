@@ -1,6 +1,12 @@
 # Estructuras de datos: Arrays y matrices. Recursividad.
 
-<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/s7Lv6Zdr63I" width="100%" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></p>
+![type:video](assets/UD04_Estructuras_y_Recursividad.mp4)
+
+<p><iframe title="YouTube video player"
+    src="https://www.youtube.com/embed/s7Lv6Zdr63I" width="100%" height="315"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen="allowfullscreen"></iframe></p>
 
 ## Introducción
 
@@ -24,7 +30,8 @@ En la siguiente figura se muestra un array `c` de enteros:
 
 <img src="assets/arrayC.png" alt="Array c" style="zoom: 75%;" />
 
-> El primer subíndice de un array es el cero. El último subíndice es la longitud del array menos uno.
+!!! warning "Importante"
+    El primer subíndice de un array es el cero. El último subíndice es la longitud del array menos uno.
 
 El número de componentes de un array se establece inicialmente al crearlo y no es posible cambiarlo de tamaño. Es por esto que reciben el nombre de estructuras de datos estáticas.
 
@@ -136,7 +143,8 @@ Aun así, es probable que estos no sean los valores con los que queremos inicial
   int edad3[] = {25,10,23,34,65,23,1,67,54,12};
   ```
 
->Es decir, enumerando los valores con los que se quiere inicializar cada componente, encerrados entre llaves. De hacerlo así, no hay que crear el array con el operador `new`. Java crea el array con tantos componentes como valores hemos puesto entre llaves. Además no es necesario indicar el número de elementos del mismo.
+!!! info "Más información"
+    Es decir, enumerando los valores con los que se quiere inicializar cada componente, encerrados entre llaves. De hacerlo así, no hay que crear el array con el operador `new`. Java crea el array con tantos componentes como valores hemos puesto entre llaves. Además no es necesario indicar el número de elementos del mismo.
 
 ### Un ejemplo práctico
 
@@ -160,7 +168,8 @@ Devolver el nombre del mes indicado se reduce a devolver el componente del array
 
 Hasta el momento sólo se ha considerado el paso de parámetros por valor; de manera que cualquier cambio que el método realice sobre los parámetros formales no modifica el valor que tiene el parámetro real con el que se llama al método. En java, todos los parámetros de tipo simple (`byte`, `short`, `int`, ...) se pasan por valor.
 
-> Por el contrario, los arrays no son variables de tipo primitivo, y como cualquier otro objeto, se pasa siempre por referencia.
+!!! warning "Importante"
+    Por el contrario, los arrays no son variables de tipo primitivo, y como cualquier otro objeto, se pasa siempre por referencia.
 
 En el paso de parámetros por referencia lo que se pasa en realidad al método es la dirección de la variable u objeto. Es por esto que el papel del parámetro formal es el de ser una referencia al parámetro real; la llamada al método no provoca la creación de una nueva variable. De esta forma, las modificaciones que el método pueda realizar sobre estos parámetros se realizan efectivamente sobre los parámetros reales. En este caso, ambos parámetros (formal y real) se pueden considerar como la misma variable con dos nombres, uno en el método llamante y otro en el llamado o invocado, pero hacen referencia a la misma posición de memoria.
 
@@ -181,7 +190,8 @@ public static void metodo(int[] x, int y){ //recibir un array como parámetro
 }
 ```
 
-> Como podemos observar, para pasar un array a un método, simplemente usamos el nombre de la variable en la llamada. En la cabecera del método, sin embargo, tenemos que utilizar los corchetes `[]` para indicar que el parámetro es un array.
+!!! warning "Importante"
+    Como podemos observar, para pasar un array a un método, simplemente usamos el nombre de la variable en la llamada. En la cabecera del método, sin embargo, tenemos que utilizar los corchetes `[]` para indicar que el parámetro es un array.
 
 ### El atributo `length`
 
@@ -305,20 +315,21 @@ la salida seguirá siendo la misma:
 1 2 3 4 5 6 7 8
 ```
 
-> Ojo! con el segundo método no tenemos acceso a la posición o índice del array, este método no serviría para métodos en los que necesitamos conocer la posición o utilizarla de alguna manera.
+!!! danger "Cuidado!"
+    Con el segundo método no tenemos acceso a la posición o índice del array, este método no serviría para métodos en los que necesitamos conocer la posición o utilizarla de alguna manera.
+    Traducimos el método de `pluviosidadMedia` con un bucle `loop`:
 
-> Traducimos el método de `pluviosidadMedia` con un bucle `loop`:
-> ```java
-> public static double pluviosidadMediaLoop(double[] lluvia){
->     double suma = 0;
->     //Recorremos el array con el loop
->     for (int i : lluvia){
->         suma += i;
->     }
->     double media = suma / lluvia.length;
->     return media;
-> }
-> ```
+        ```java
+        public static double pluviosidadMediaLoop(double[] lluvia){
+            double suma = 0;
+            //Recorremos el array con el loop
+            for (int i : lluvia){
+                suma += i;
+            }
+            double media = suma / lluvia.length;
+            return media;
+        }
+        ```
 
 ### Problemas de búsqueda
 
@@ -530,7 +541,8 @@ public static void insercionDirecta(int[] array) {
 }
 ```
 
-> Ejemplos visuales de distintos métodos de ordenación, con distintos tipos de entradas: https://www.toptal.com/developers/sorting-algorithms
+!!! info "Más información"
+    Ejemplos visuales de distintos métodos de ordenación, con distintos tipos de entradas: https://www.toptal.com/developers/sorting-algorithms
 
 ## Arrays bidimensionales: matrices
 
@@ -550,7 +562,8 @@ Una aproximación más conveniente para la representación de estos datos consis
 
 ### Matrices en Java
 
-> En Java, una matriz es, en realidad un array en el que cada componente es, a su vez, un array. Dicho de otra manera, una matriz de enteros es un array de arrays de enteros.
+!!! info "Definición"
+    En Java, una matriz es, en realidad un array en el que cada componente es, a su vez, un array. Dicho de otra manera, una matriz de enteros es un array de arrays de enteros.
 
 Esto, que no es igual en otros lenguajes de programación, tiene ciertas consecuencias en la declaración, creación y uso de las matrices en Java:
 
@@ -687,7 +700,8 @@ notas[2][3][1]=5;//El alumno 2, para la asignatura 3 de la primera evaluación h
 double[][][][][] w = new double [2][7][10][4][10];
 ```
 
-> Sin embargo, encontrar ejemplos en los que sean necesarios arrays de más de tres dimensiones es bastante raro, y aún cuando los encontramos solemos utilizar arrays de uno o dos subíndices porque nos resulta menos complejo manejarlos.
+!!! info "Más información"
+    Sin embargo, encontrar ejemplos en los que sean necesarios arrays de más de tres dimensiones es bastante raro, y aún cuando los encontramos solemos utilizar arrays de uno o dos subíndices porque nos resulta menos complejo manejarlos.
 
 ## Recursividad
 
@@ -699,21 +713,21 @@ A la hora de crear programas complejos, uno de los aspectos que diferencia el bu
 
 A menudo encontrareis que explicar de palabra la idea general de una estrategia puede ser sencillo, pero traducirla instrucciones de Java ya no lo es tanto. Retomamos ahora el caso de la búsqueda dicotómica o binaria, dado que hay que ir repitiendo unos pasos en sucesivas iteraciones, está más o menos claro que el problema planteado para realizar búsquedas eficientes se basa en una estructura de repetición. Pero no se recorren todos los elementos y el índice no se incrementa uno a uno, sino que se va cambiando a valores muy diferentes para cada iteración. No es un caso evidente. Precisamente, este ejemplo no se ha elegido al azar, ya que es un caso en el que os puede ir bien aplicar un nuevo concepto que permite facilitar la definición de algoritmos complejos donde hay repeticiones.
 
-> La **recursividad** es una forma de describir un proceso para resolver un problema de manera que, a lo largo de esta descripción, se usa el proceso mismo que se está describiendo, pero aplicado a un caso más simple.
-
-De hecho, tal vez sin darse cuenta de ello en, ya se ha usado recursividad para describir cómo resolver un problema. Para ver qué significa exactamente la definición formal apenas descrita, se repetirá el texto en cuestión, pero remarcando el aspecto recursivo de la descripción:
-
-"*Generalmente, la mejor estrategia para adivinar un número secreto entre 0 y N sería primero probar N/2. Si no se ha acertado, entonces si el número secreto es más alto se intenta adivinar entre (N/2 + 1) y N. Si era más bajo, se intenta adivinar el valor entre 0 y N-1. Para cada caso, se vuelve a probar el valor que hay en el centro del nuevo intervalo. Y así sucesivamente, hasta adivinarlo.*"
-
-O sea, **el proceso de adivinar un número se basa en el proceso de intentar adivinar un número!** Esto parece hacer trampas, ya es como usar la misma palabra que se quiere definir a su propia definición. Pero fíjese en un detalle muy importante. Los nuevos usos del proceso de "adivinar" son casos más simples, ya que primero se adivina entre N valores posibles, luego entre N/2 valores, después entre N/4, etc. Este hecho no es casual y de él depende poder definir un proceso recursivo de manera correcta.
-
-> Otro ejemplo de recursividad es la definición de las iniciales del sistema operativo GNU quieren decir "*GNU is Not Unix*"
+!!! info "Definición"
+    La **recursividad** es una forma de describir un proceso para resolver un problema de manera que, a lo largo de esta descripción, se usa el proceso mismo que se está describiendo, pero aplicado a un caso más simple.
+    De hecho, tal vez sin darse cuenta de ello en, ya se ha usado recursividad para describir cómo resolver un problema. Para ver qué significa exactamente la definición formal apenas descrita, se repetirá el texto en cuestión, pero remarcando el aspecto recursivo de la descripción:
+    "*Generalmente, la mejor estrategia para adivinar un número secreto entre 0 y N sería primero probar N/2. Si no se ha acertado, entonces si el número secreto es más alto se intenta adivinar entre (N/2 + 1) y N. Si era más bajo, se intenta adivinar el valor entre 0 y N-1. Para cada caso, se vuelve a probar el valor que hay en el centro del nuevo intervalo. Y así sucesivamente, hasta adivinarlo.*"
+    O sea, **el proceso de adivinar un número se basa en el proceso de intentar adivinar un número!** Esto parece hacer trampas, ya es como usar la misma palabra que se quiere definir a su propia definición. Pero fíjese en un detalle muy importante. Los nuevos usos del proceso de "adivinar" son casos más simples, ya que primero se adivina entre N valores posibles, luego entre N/2 valores, después entre N/4, etc. Este hecho no es casual y de él depende poder definir un proceso recursivo de manera correcta.
+    
+!!! info "Más ejemplos"
+    Otro ejemplo de recursividad es la definición de las iniciales del sistema operativo GNU quieren decir "*GNU is Not Unix*"
 
 ### Implementación de la recursividad
 
 La implementación de la recursividad dentro del código fuente de un programa se hace a nivel de método.
 
-> Un **método recursivo** es aquel que, dentro de su bloque de instrucciones, tiene alguna invocación a él mismo.
+!!! info "Definición"
+    Un **método recursivo** es aquel que, dentro de su bloque de instrucciones, tiene alguna invocación a él mismo.
 
 El bloque de código de un método recursivo siempre se basa en una estructura de selección múltiple, donde cada rama es de alguno de los dos casos posibles descritos a continuación.
 
@@ -883,9 +897,10 @@ public class Recursividad {
 
 En el ejemplo anterior si se llama a `desbordamientoPila(10)`, llamará a `desbordamientoPila (9)`, `desbordamientoPila(8)`, `desbordamientoPila(7)`, etc., pero el número nunca llegará a 100. Por lo tanto, no se alcanza la condición base. Si la memoria se agota con estos métodos en la pila, provocará un error de desbordamiento de pila (`java.lang.StackOverflowError`).
 
-> Al escribir métodos recursivos, debe tener una instrucción condicional, como un `if`, en algún lugar para forzar el retorno del método sin que se ejecute la llamada recursiva. Si no lo hace, una vez que llame al método, nunca retornará. Este tipo de error es muy común cuando se trabaja con recursividad.
+!!! warning "Importante"
+    Al escribir métodos recursivos, debe tener una instrucción condicional, como un `if`, en algún lugar para forzar el retorno del método sin que se ejecute la llamada recursiva. Si no lo hace, una vez que llame al método, nunca retornará. Este tipo de error es muy común cuando se trabaja con recursividad.
 
-## Ejemplo UD04
+## Ejemplos UD04
 
 ### EjemploUD04
 
@@ -1291,7 +1306,5 @@ public class Recursividad {
 
 ## Píldoras informáticas relacionadas
 
-- [Curso Java Arrays I. Vídeo 23](https://youtu.be/UID_EKKfpcE)
-- [Curso Java Arrays II. Vídeo 24](https://youtu.be/NwztwM_xGgU)
-- [Curso Java Arrays III. Arrays bidimensionales. Vídeo 25](https://youtu.be/_tUncS0AsNE)
-- [Curso Java Arrays IV. Arrays bidimensionales II. Vídeo 26](https://youtu.be/xEHkuRApCno)
+<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+

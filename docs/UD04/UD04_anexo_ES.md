@@ -68,144 +68,147 @@ La clase String contiene varios métodos que operan en cadenas. Aquí se detalla
 
 - `int length()`: Devuelve la cantidad de caracteres del String.
 
-```java
-"Javadesdecero.es".length(); // retorna 16
-```
+    ```java
+    "Javadesdecero.es".length(); // retorna 16
+    ```
 
 - `Char charAt(int i)`: Devuelve el carácter en el índice *i*.
 
-```java
-System.out.println("Javadesdecero.es".charAt(3)); // retorna 'a'
-```
+    ```java
+    System.out.println("Javadesdecero.es".charAt(3)); // retorna 'a'
+    ```
 
 - `String substring(int i)`: Devuelve la subcadena del i-ésimo carácter de índice al final.
 
-```java
-"Javadesdecero.es".substring(4); // retorna desdecero.es
-```
+    ```java
+    "Javadesdecero.es".substring(4); // retorna desdecero.es
+    ```
 
 - `String substring(int i, int j)`: Devuelve la subcadena del índice *i* a *j-1*.
 
-```java
-"Javadesdecero.es".substring(4,9); // retorna desde
-```
+    ```java
+    "Javadesdecero.es".substring(4,9); // retorna desde
+    ```
 
 - `String concat(String str)`: Concatena la cadena especificada al final de esta cadena.
 
-```java
-String s1 = "Java";
-String s2 = "desdeCero;
-String salida = s1.concat(s2); // retorna "JavadesdeCero"
-```
+    ```java
+    String s1 = "Java";
+    String s2 = "desdeCero;
+    String salida = s1.concat(s2); // retorna "JavadesdeCero"
+    ```
 
 - `int indexOf(String s)`: Devuelve el índice dentro de la cadena de la primera aparición de la cadena especificada.
 
-```java
-String s = "Java desde Cero";
-int salida = s.indexOf("Cero"); // retorna 11
-```
+    ```java
+    String s = "Java desde Cero";
+    int salida = s.indexOf("Cero"); // retorna 11
+    ```
 
 - `int indexOf(String s, int i)`: Devuelve el índice dentro de la cadena de la primera aparición de la  cadena especificada, comenzando en el índice especificado.
 
-```java
-String s = "Java desde Cero";
-int salida = s.indexOf('a',2); //retorna 3
-```
+    ```java
+    String s = "Java desde Cero";
+    int salida = s.indexOf('a',2); //retorna 3
+    ```
 
 - `int lastIndexOf(int ch)`: Devuelve el índice dentro de la cadena de la última aparición de la cadena especificada.
 
-```java
-String s = "Java desde Cero";
-int salida = s.lastIndexOf('a'); // retorna 3
-```
+    ```java
+    String s = "Java desde Cero";
+    int salida = s.lastIndexOf('a'); // retorna 3
+    ```
 
 - `boolean equals(Objeto otroObjeto)`: Compara este String con el objeto especificado.
 
-```java
-Boolean salida = "Java".equals("Java"); // retorna true
-Boolean salida = "Java".equals("java"); // retorna false
-```
+    ```java
+    Boolean salida = "Java".equals("Java"); // retorna true
+    Boolean salida = "Java".equals("java"); // retorna false
+    ```
 
 - `boolean equalsIgnoreCase(String otroString)`: Compares string to another string, ignoring case considerations.
 
-```java
-Boolean salida= "Java".equalsIgnoreCase("Java"); // retorna true
-Boolean salida = "Java".equalsIgnoreCase("java"); // retorna true
-```
+    ```java
+    Boolean salida= "Java".equalsIgnoreCase("Java"); // retorna true
+    Boolean salida = "Java".equalsIgnoreCase("java"); // retorna true
+    ```
 
 - `int compareTo(String otroString)`: Compara dos cadenas lexicográficamente.
 
-```java
-int salida = s1.compareTo(s2); // donde s1 y s2 son strings que se comparan
-/*
- Esto devuelve la diferencia s1-s2. Si:
- 	salida < 0 // s1 es menor que s2
- 	salida = 0 // s1 y s2 son iguales
- 	salida > 0 // s1 es mayor que s2
- */
-```
+    ```java
+    int salida = s1.compareTo(s2); // donde s1 y s2 son strings que se comparan
+    /*
+     Esto devuelve la diferencia s1-s2. Si:
+        salida < 0 // s1 es menor que s2
+        salida = 0 // s1 y s2 son iguales
+        salida > 0 // s1 es mayor que s2
+     */
+    ```
 
 - `int compareToIgnoreCase(String otroString)`: Compara dos cadenas lexicográficamente, ignorando las consideraciones *case*.
 
-```java
-int salida = s1.compareToIgnoreCase(s2); // donde s1 y s2 son strings que se comparan
-/*
- Esto devuelve la diferencia s1-s2. Si:
-	salida < 0 // s1 es menor que s2
-	salida = 0 // s1 y s2 son iguales
-	salida > 0 // s1 es mayor que s2
-*/
-```
+    ```java
+    int salida = s1.compareToIgnoreCase(s2); // donde s1 y s2 son strings que se comparan
+    /*
+     Esto devuelve la diferencia s1-s2. Si:
+        salida < 0 // s1 es menor que s2
+        salida = 0 // s1 y s2 son iguales
+        salida > 0 // s1 es mayor que s2
+    */
+    ```
 
-> En este caso, no considerará el *case* de una letra (ignorará si está en mayúscula o minúscula). 
+    !!! info "Más información"
+        En este caso, no considerará el *case* de una letra (ignorará si está en mayúscula o minúscula). 
 
 - `String toLowerCase()`: Convierte todos los caracteres de String a minúsculas.
 
-```java
-String palabra1 = "HoLa";
-String palabra2 = palabra1.toLowerCase(); // retorna "hola"
-```
+    ```java
+    String palabra1 = "HoLa";
+    String palabra2 = palabra1.toLowerCase(); // retorna "hola"
+    ```
 
 - `String toUpperCase()`: Convierte todos los caracteres de String a mayúsculas.
 
-```java
-String palabra1 = "HoLa";
-String palabra2 = palabra1.toUpperCase(); // retorna "HOLA"
-```
+    ```java
+    String palabra1 = "HoLa";
+    String palabra2 = palabra1.toUpperCase(); // retorna "HOLA"
+    ```
 
 - `String trim()`: Devuelve la copia de la cadena, eliminando espacios en blanco en ambos extremos. No afecta los espacios en blanco en el medio.
 
-```java
-String palabra1 = " Java desde Cero ";
-String palabra2 = palabra1.trim(); // retorna "Java desde Cero"
-```
+    ```java
+    String palabra1 = " Java desde Cero ";
+    String palabra2 = palabra1.trim(); // retorna "Java desde Cero"
+    ```
 
 - `String replace(char oldChar, char newChar)`: Devuelve una nueva cadena al reemplazar todas las ocurrencias de oldChar con newChar.
 
-```java
-String palabra1 = "yavadesdecero";
-String palabra2 = palabra1.replace('y' ,'j'); //retorna javadesdecero
-```
+    ```java
+    String palabra1 = "yavadesdecero";
+    String palabra2 = palabra1.replace('y' ,'j'); //retorna javadesdecero
+    ```
 
-> palabra1 sigue siendo yavadesdecero y palabra2, javadesdecero 
+    !!! info "Más información"
+        palabra1 sigue siendo yavadesdecero y palabra2, javadesdecero 
 
 - `String replaceAll(String regex, String replacement)`: devuelve una cadena que reemplaza toda la secuencia de caracteres que coinciden con la expresión regular `regex` por la cadena de reemplazo `replacement`.
 
-```java
-String str = "Ejemplo con espacios en blanco y tabs";
-String str2 = str.replaceAll("\\s", ""); //retorna Ejemploconespaciosenblancoytabs
-```
+    ```java
+    String str = "Ejemplo con espacios en blanco y tabs";
+    String str2 = str.replaceAll("\\s", ""); //retorna Ejemploconespaciosenblancoytabs
+    ```
 
-> Otras expresiones regulares (entre otras muchísimas):
->
-> - `\w` Cualquier cosa que sea un carácter de palabra
-> - `\W` Cualquier cosa que no sea un carácter de palabra (incluida la puntuación, etc.)
-> - `\s` Cualquier cosa que sea un carácter de espacio (incluido el espacio, los caracteres de tabulación, etc.)
-> - `\S` Cualquier cosa que no sea un carácter de espacio (incluidas letras y números, así como puntuación, etc.)
->
-> Debe escapar de la barra invertida si desea que `\s` alcance el motor de expresiones regulares, lo que da como resultado `\\s`). 
->
-> Más información sobre expresiones regulares en java: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
+    !!! info "Más información" 
+        Otras expresiones regulares (entre otras muchísimas):
+        
+        - `\w` Cualquier cosa que sea un carácter de palabra
+        - `\W` Cualquier cosa que no sea un carácter de palabra (incluida la puntuación, etc.)
+        - `\s` Cualquier cosa que sea un carácter de espacio (incluido el espacio, los caracteres de tabulación, etc.)
+        - `\S` Cualquier cosa que no sea un carácter de espacio (incluidas letras y números, así como puntuación, etc.)
+
+        Debe escapar de la barra invertida si desea que `\s` alcance el motor de expresiones regulares, lo que da como resultado `\\s`).
+        
+        Más información sobre expresiones regulares en java: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
 
 ## Ejemplo de todos los métodos de `String`
 
