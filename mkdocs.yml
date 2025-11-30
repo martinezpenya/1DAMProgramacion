@@ -29,6 +29,8 @@ nav:
     - Estructuras de datos Arrays y matrices. Recursividad: UD04/UD04_ES.md
     - Anexo Cheatsheet String: UD04/UD04_anexo_ES.md
     - Ejercicios: UD04/UD04_ejercicios_ES.md
+    - Talleres:
+      - T01 GitHub Classroom: UD04/UD04_T01_GitHubClassroom.md
   - UD05:
     - Desarrollo de clases: UD05/UD05_ES.md
     - Anexo Wrappers y Fechas: UD05/UD05_anexo_ES.md

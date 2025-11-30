@@ -79,7 +79,11 @@
 
     Desde el método `main` crearemos e inicializaremos un array, llamaremos a `invertirArray` y mostraremos el array invertido.
 
-    NOTA: Puede ser útil un método que imprima por pantalla un Array `public static void imprimirArray(int[] v)`, y así poder imprimir el Array v
+    Implementa un método que imprima por pantalla un Array `public static void imprimirArray(int[] v)`, y así poder imprimir el Array v (con espacios entre cada elemento) aquí tienes el resultado de imprimir el array con los 10 primeros números:
+
+    ```sh
+    1 2 3 4 5 6 7 8 9 10
+    ```
 
 5. (SumasParciales) Se quiere diseñar un método `public static int[] sumaParcial(int[] v)`, que dado un array de enteros `v`, devuelva otro array de enteros t de forma que `t[i] = v[0] + v[1] + ...+ v[i]`. Es decir:
 
@@ -143,9 +147,14 @@
 
     Optimiza el algoritmo para que no tenga en cuenta si se escribe el nombre en mayúsculas, minúsculas o cualquier combinación de mayúsculas y minúsculas.
 
-3. (SumaDespuesImpar) Escribir un método que, dado un array de enteros, devuelva la suma de los elementos que aparecen tras el primer valor impar. Usar `main` para probar el método.
+3. (SumaDespuesImpar) Escribir un método (`sumaDespuesImpar`) que, dado un array de enteros, devuelva la suma de los elementos que aparecen tras el primer valor impar. Usar `main` para probar el método.
 
-3. (HayPares) Para determinar si existe algún valor par en un array se proponen varias soluciones. Indica cual/cuales son válidas para resolver el problema.
+    ```sh
+    Para el array: {0,2,4,6,3,4,7,8,1}
+    El total a partir del primer impar es: 23
+    ```
+
+4. (HayPares) (En papel) Para determinar si existe algún valor par en un array se proponen varias soluciones. Indica cual/cuales son válidas para resolver el problema.
 
     ```java
     public static boolean haypares1(int[] v) {
@@ -277,13 +286,23 @@
     }
     ```
 
-4. (Capicúa) Escribir un método para determinar si un array de palabras (`String`) es capicúa, esto es, si la primera y última palabra del array son la misma, la segunda y la penúltima palabras también lo son, y así sucesivamente. Escribir el método main para probar el método anterior.
+5. (Capicúa) Escribir un método (`capicua`) para determinar si un array de palabras (`String`) es capicúa, esto es, si la primera y última palabra del array son la misma, la segunda y la penúltima palabras también lo son, y así sucesivamente. Escribir el método `main` para probar el método anterior.
 
-5. (Subsecuencia) Escribir un método que, dado un array, determine la posición de la primera subsecuencia del array que comprenda al menos tres números enteros consecutivos en posiciones consecutivas del array. De no existir dicha secuencia devolverá -1. 
+    ```sh
+    El array: {"Ana", "Barcelona", "Casa", "David", "Elena", "David", "Casa", "Barcelona", "Ana"} es capicua?: true
+    El array: {"Amigo", "Besugo", "Cita", "Dia", "Enano", "Dia"} es capicua?: false
+    ```
 
-    Por ejemplo: en el array {23, 8, 12, 6, 7, **9, 10, 11**, 2} hay 3 números consecutivos en tres posiciones consecutivas, a partir de la posición 5: {9,10,11}
+6. (Subsecuencia) Escribir un método (`subsecuencia`) que, dado un array, determine la posición de la primera subsecuencia del array que comprenda al menos tres números enteros consecutivos en posiciones consecutivas del array. De no existir dicha secuencia devolverá -1. Realiza al menos una prueba del método en el `main`.
 
-6. (MismosValores) Se desea comprobar si dos arrays de `double` contienen los mismos valores, aunque sea en orden distinto. Para ello se ha escrito el siguiente método, que aparece incompleto:
+    Por ejemplo: en el array {23, 8, 12, 6, 7, **9, 10, 11**, 2} hay 3 números consecutivos en tres posiciones consecutivas, a partir de la posición 6 humana (5 del array): {9,10,11}
+
+    ```sh
+    En el array: {23, 8, 12, 6, 7, 9, 10, 11, 1}
+    Posición de la subsecuencia: 6
+    ```
+
+7. (MismosValores) Se desea comprobar si dos arrays de `double` contienen los mismos valores, aunque sea en orden distinto. Para ello se ha escrito el siguiente método, que aparece incompleto:
 
     ```java
     public static boolean mismosValores(double[] v1, double[] v2) {
@@ -312,21 +331,70 @@
 
 ## Matrices
 
-1. (Notas). Se dispone de una matriz que contiene las notas de una serie de alumnos en una serie de asignaturas. Cada fila corresponde a un alumno, mientras que cada columna corresponde a una asignatura. Desarrollar métodos para:
+1. (Notas). Se dispone de una matriz (de doubles) que contiene las notas de una serie de alumnos en una serie de asignaturas. Cada fila corresponde a un alumno, mientras que cada columna corresponde a una asignatura. Desarrollar métodos para:
 
-    1. Imprimir las notas alumno por alumno. 
-    2. Imprimir las notas asignatura por asignatura.
-    3. Imprimir la media de cada alumno.
-    4. Imprimir la media de cada asignatura.
-    5. Indicar cual es la asignatura más fácil, es decir la de mayor nota media.
-    6. ¿Hay algún alumno que suspenda todas las asignaturas? ¿Quién?
-    7. ¿Hay alguna asignatura en la que suspendan todos los alumnos? ¿Cual es?
+    1. Imprimir las notas alumno por alumno `imprimirXAlumno`. 
+    2. Imprimir las notas asignatura por asignatura `imprimirXAsignatura`.
+    3. Imprimir la media de cada alumno `imprimirMediaXAlumno`.
+    4. Imprimir la media de cada asignatura `imprimirMediaXAsignatura`.
+    5. Indicar cual es la asignatura más fácil, es decir la de mayor nota media `indicarAsignaturaMasFacil`.
+    6. ¿Hay algún alumno que suspenda todas las asignaturas? ¿Quién? `alumnosSuspendenTodas`
+    7. ¿Hay alguna asignatura en la que suspendan todos los alumnos? ¿Cual es? `asignaturasSuspendenTodos`
 
     Generar la matriz (al menos 5x5) en el método main, rellenarla, y comprobar los métodos anteriores.
 
+    Ejemplo de ejecución:
+
+    ```sh
+    {{5.3, 6.8, 8.2, 3.4,  5.0, 3.0},
+    {0.0, 4.5, 3.0, 2.8,  4.9, 2.0},
+    {7.8, 8.8, 9.8, 8.9,  9.9, 1.2},
+    {6.5, 5.5, 4.5, 7.8, 10.0, 2.2},
+    {5.5, 6.6, 5.6, 6.7,  7.0, 3.3}}
+    
+    --- IMPRIMIR POR ALUMNOS ---
+    Notas para el Alumno 0: 5,30 6,80 8,20 3,40 5,00 3,00 
+    Notas para el Alumno 1: 0,00 4,50 3,00 2,80 4,90 2,00 
+    Notas para el Alumno 2: 7,80 8,80 9,80 8,90 9,90 1,20 
+    Notas para el Alumno 3: 6,50 5,50 4,50 7,80 10,00 2,20 
+    Notas para el Alumno 4: 5,50 6,60 5,60 6,70 7,00 3,30 
+    
+    --- IMPRIMIR POR ASIGNATURAS ---
+    Notas para la Asignatura 0: 5,30 0,00 7,80 6,50 5,50 
+    Notas para la Asignatura 1: 6,80 4,50 8,80 5,50 6,60 
+    Notas para la Asignatura 2: 8,20 3,00 9,80 4,50 5,60 
+    Notas para la Asignatura 3: 3,40 2,80 8,90 7,80 6,70 
+    Notas para la Asignatura 4: 5,00 4,90 9,90 10,00 7,00 
+    Notas para la Asignatura 5: 3,00 2,00 1,20 2,20 3,30 
+    
+    --- IMPRIMIR MEDIA POR ALUMNO ---
+    Media para el Alumno 0: 5,28
+    Media para el Alumno 1: 2,87
+    Media para el Alumno 2: 7,73
+    Media para el Alumno 3: 6,08
+    Media para el Alumno 4: 5,78
+    
+    --- IMPRIMIR MEDIA POR ASIGNATURA ---
+    Media para la Asignatura 0: 5,02
+    Media para la Asignatura 1: 6,44
+    Media para la Asignatura 2: 6,22
+    Media para la Asignatura 3: 5,92
+    Media para la Asignatura 4: 7,36
+    Media para la Asignatura 5: 2,34
+    
+    --- INDICAR LA ASIGNATURA MÁS FACIL---
+    4
+    
+    --- ¿HAY ALGUN ALUMNO QUE SUSPENDA TODAS? ---
+    El alumno 1 las suspende todas
+    
+    --- ¿HAY ALGUNA ASIGNATURA QUE SUSPENDAN TODOS? ---
+    La asignatura 5 la suspenden todos
+    ```
+
 2. (Ventas). Una empresa comercializa 10 productos para lo cual tiene 5 distribuidores.
 
-    Los datos de ventas los tenemos almacenados en una matriz de 5 filas x 10 columnas, `ventas`, con el número de unidades de cada producto que ha vendido cada distribuidor. Cada fila corresponde a las ventas de un distribuidor (la primera fila, del primer distribuidor, etc.), mientras que cada columna corresponde a un producto :
+    Los datos de ventas los tenemos almacenados en una matriz (de enteros) de 5 filas x 10 columnas, `ventas`, con el número de unidades de cada producto que ha vendido cada distribuidor. Cada fila corresponde a las ventas de un distribuidor (la primera fila, del primer distribuidor, etc.), mientras que cada columna corresponde a un producto :
 
     | 100  | 25   | 33   | 89   | 23   | 90   | 87   | 6    | 5    | 233  |
     | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
@@ -342,19 +410,51 @@
 
     Escribe el programa y los métodos necesarios para averiguar:
 
-    1. Distribuidor que más artículos ha vendido.
-    2. El artículo que más se vende.
-    3. Sabiendo que los distribuidores que realizan ventas superiores a 30.000€ cobran una comisión del 5% de las ventas y los que superan los 70.000€ una comisión del 8%, emite un informe de los distribuidores que cobran comisión, indicando nº de distribuidor, importe de las ventas, porcentaje de comisión e importe de la comisión en €.
+    1. Distribuidor que más artículos ha vendido `int distribuidorMasVende(int[][] matriz)` .
+    2. El artículo que más se vende `int articuloMasVende(int[][] matriz)`.
+    3. Sabiendo que los distribuidores que realizan ventas superiores a 30.000€ cobran una comisión del 5% de las ventas y los que superan los 70.000€ una comisión del 8%, emite un informe de los distribuidores que cobran comisión, indicando nº de distribuidor, importe de las ventas, porcentaje de comisión e importe de la comisión en € `void informe(int[][] ventas, double[] precio)`.
 
-3. (Utiles) Dada una matríz con el mismo número de filas y de columnas, diseñar los siguientes métodos:
+    Ejemplo de ejecución
+
+    ```sh
+    --- VENTAS DE DISTRIBUIDORES ---
+    Distribuidores (filas) y productos (columnas)
+    {
+    {5, 10, 15, 20, 25, 30, 35, 40, 45, 50},
+    {55, 45, 35, 25, 20, 10, 15, 25, 30, 50},
+    {25, 30, 35, 30, 25, 30, 35, 30, 25, 30},
+    {60, 59, 58, 57, 56, 55, 54, 53, 52, 51},
+    {10, 20, 30, 40, 50, 40, 30, 20, 10, 5}
+    }
+    --------------------------------
+    PRECIOS DE LOS PRODUCTOS
+    {55.0, 65.5, 85, 95.5, 55.5, 65, 85.5, 59, 510, 511}
+    --------------------------------
+    EL DISTRIBUIDOR QUE MÁS VENDE: 3
+    EL ARTÍCULO QUE MÁS SE VENDE: 9
+    
+    --- INFORME DE VENTAS ---
+    El distribuidor número 0 ha vendido 61.305,00. Lo que supone un porcentaje de 5% que supone 3.065,25 €.
+    El distribuidor número 1 ha vendido 56.702,50. Lo que supone un porcentaje de 5% que supone 2.835,13 €.
+    El distribuidor número 2 ha vendido 45.360,00. Lo que supone un porcentaje de 5% que supone 2.268,00 €.
+    El distribuidor número 3 ha vendido 84.546,00. Lo que supone un porcentaje de 8% que supone 6.763,68 €.
+    El distribuidor número 4 ha vendido 25.005,00. Lo que no supone ninguna comisión.
+    ```
+
+    
+
+3. (Utiles) Dada una matríz (de enteros) con el mismo número de filas y de columnas, diseñar los siguientes métodos:
 
     - `public static void mostrarDiagonal(int[][] m)` que muestre por pantalla los elementos de la diagonal principal.
 
-    - `public static int filaDelMayor (int[][] m)`, que devuelva la fila en que se encuentra el mayor elemento de la matriz.
+    - `public static int filaDelMayor (int[][] m)`, que devuelva la fila en que se encuentra el mayor elemento de la matriz. (Si aparece más de una vez, el primero que aparezca de arriba a abajo)
 
     - `public static void intercambiarFilas(int[][] m, int f1, int f2)`, que intercambie los elementos de las filas indicadas.
 
     - Escribir un método `public static boolean esSimetrica (int[][] m)` que devuelva true si la matriz m es simétrica. Una matriz es simétrica si tiene el mismo número de filas que de columnas y además `m[i][j] = m[j][i]` para todo par de índices `i,j`.
+
+    !!! info "Atajo"
+        Puedes usar `Arrays.deepToString(m)` para imprimir las matrices
 
     Por ejemplo, es simétrica:
 
@@ -364,18 +464,150 @@
     3 7 5
     ```
 
+    Ejemplo de ejecución
+
+    ```sh
+    MATRIZ:
+    {{1, 5, 3},
+    {5, 4, 7},
+    {3, 7, 5}}
+    MOSTRAR DIAGONAL: 1 4 5 
+    FILA DEL MAYOR: 1
+    ANTES DE INVERTIR LA FILA 1 Y LA 3
+    [[1, 5, 3], [5, 4, 7], [3, 7, 5]]
+    DESPUES DE INVERTIR LA FILA 1 Y LA 3
+    [[3, 7, 5], [5, 4, 7], [1, 5, 3]]
+    VOLVEMOS A INVERTIR LAS FILAS PARA CONSEGUIR LA MATRIZ ORIGINAL
+    [[1, 5, 3], [5, 4, 7], [3, 7, 5]]
+    LA MATRIZ ES SIMETRICA?: true
+    ```
+
 4. (Tetris) Supongamos que estamos desarrollando un Tetris en Java y para representar la partida utilizamos una matriz bidimensional de enteros 15 filas por 8 columnas. Se utiliza el valor 0 para indicar que la celda está vacía y un valor distinto de cero para las celdas que contienen parte de una pieza (distintos valores para distintos colores):
 
     <img src="assets/tetris.png" alt="Tetris" style="zoom:75%;" />
 
     Escribir un método que reciba la matriz y elimine las filas completas, haciendo caer las piezas que hay por encima de las celdas eliminadas tal y como se hace en el juego.
 
-    !!! info "Información"
-        Puede ser útil para ver resultados crear un método `public static void imprimePartida(int[][] partida)` que imprima el estado actual de la matriz `partida`
+    Métodos a implementar:
+    
+    - `boolean esFilaLlena(int[] fila)`: devuelve true si la fila está llena (ningún cero)
+    - `void limpiarFilas(int[][] partida)`: Recorremos todas las filas de abajo hacia arriba, si la fila está llena: la eliminamos y bajamos todas las celdas superiores y volvemos a comprobar la fila donde estábamos. Sino seguimos hacia arriba.
+    - `void imprimePartida(int[][] partida)`: imprime la partida por consola
+    
+    Ejemplo de ejecución1:
+    
+    ```sh
+    Comienzo1
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 2, 0, 0, 0, 0, 0]
+    [1, 0, 2, 2, 2, 2, 2, 0]
+    [1, 0, 2, 4, 4, 0, 3, 0]
+    [1, 1, 2, 4, 4, 3, 3, 3]
+    Limpia1
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 2, 0, 0, 0, 0, 0]
+    [1, 0, 2, 2, 2, 2, 2, 0]
+    [1, 0, 2, 4, 4, 0, 3, 0]
+    ```
+    
+    Ejemplo de ejecución 2:
+    
+    ```sh
+    Comienzo2
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 2, 0, 0, 0, 0, 0]
+    [1, 0, 2, 2, 2, 2, 2, 0]
+    [1, 3, 2, 4, 4, 4, 3, 4]
+    [1, 1, 2, 4, 4, 3, 3, 3]
+    Limpia2
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 2, 0, 0, 0, 0, 0]
+    [1, 0, 2, 2, 2, 2, 2, 0]
+    ```
+    
+    Ejemplo de ejecución 3:
+    
+    ```sh
+    Comienzo3
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [5, 5, 5, 5, 5, 4, 4, 4]
+    [0, 0, 0, 0, 4, 4, 0, 0]
+    [0, 0, 0, 0, 4, 4, 0, 0]
+    [0, 0, 0, 0, 4, 6, 0, 0]
+    [0, 0, 0, 0, 4, 7, 0, 0]
+    [0, 0, 0, 0, 4, 3, 0, 0]
+    [0, 0, 2, 0, 3, 2, 0, 0]
+    [1, 0, 2, 2, 2, 2, 2, 0]
+    [1, 3, 2, 4, 4, 4, 3, 4]
+    [1, 1, 2, 4, 4, 3, 3, 3]
+    Limpia3
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 4, 4, 0, 0]
+    [0, 0, 0, 0, 4, 4, 0, 0]
+    [0, 0, 0, 0, 4, 6, 0, 0]
+    [0, 0, 0, 0, 4, 7, 0, 0]
+    [0, 0, 0, 0, 4, 3, 0, 0]
+    [0, 0, 2, 0, 3, 2, 0, 0]
+    [1, 0, 2, 2, 2, 2, 2, 0]
+    ```
 
 ## Recursividad
 
-1. (Palindromo) Implemente, tanto de forma recursiva como de forma iterativa, una función que nos diga si una cadena de caracteres es simétrica (un palíndromo). Por ejemplo, "DABALEARROZALAZORRAELABAD" es un palíndromo.
+1. (Palindromo) Implemente, tanto de forma recursiva (`boolean palindromoRecursivo(String frase)`) como de forma iterativa (`boolean palindromoIterativo(String frase)`), métodos que nos digan si una cadena de caracteres es simétrica (un palíndromo). Por ejemplo, "DABALEARROZALAZORRAELABAD" es un palíndromo.
 
     "La ruta nos aporto otro paso natural"
 
@@ -387,19 +619,30 @@
 
     "Yo hago yoga hoy"
 
-    !!! info "Reto"
-        ¿Te atreves a implementar una solución que permita la entrada con espacios? ¿Y permitiendo espacios y signos de puntuación?"
+    !!! warning "Importante"
+        Recuerda que no se debe tener en cuenta si la letra está en mayúsculas o minúsculas, solo si es la misma, por tanto `Ana` también es un palíndromo.
 
-2. (InvertirCadena) Implemente, tanto de forma recursiva como de forma iterativa, una función que le dé la vuelta a una cadena de caracteres. 
+    !!! info "Reto"
+        ¿Te atreves a implementar una solución que permita la entrada con espacios `PalindromoConEspacios`? ¿Y permitiendo espacios y signos de puntuación `PalindromoConEspaciosYPuntuacion`?"
+
+2. (Voltear) Implemente, tanto de forma recursiva (`String recursiva(String frase)`) como de forma iterativa (`String iterativa(String frase)`), una función que le dé la vuelta a una cadena de caracteres. 
 
     !!! warning "Importante"
         Obviamente, si la cadena es un palíndromo, la cadena y su inversa coincidirán.
+
+    Ejemplo de ejecución:
+
+    ```sh
+    Introduce una frase para darle la vuelta: David es el mejor
+    Iterativa: rojem le se divaD
+    Recursiva: rojem le se divaD
+    ```
 
 3. (Combinaciones) Implemente, tanto de forma recursiva como de forma iterativa, una función que permitan calcular el número de combinaciones de `n` elementos tomados de `m` en `m`. 
 
     Realice dos versiones de la implementación iterativa, una aplicando la fórmula y otra utilizando una matriz auxiliar (en la que se vaya construyendo el triángulo de Pascal).
 
-4. (MCD) Implemente, tanto de forma recursiva como de forma iterativa, una función que nos devuelva el máximo común divisor de dos números enteros utilizando el algoritmo de Euclides. 
+4. (MCD) Implemente, tanto de forma recursiva (`int recursiva(int m, int n)`) como de forma iterativa (`int iterativa(int m, int n)`), una función que nos devuelva el máximo común divisor de dos números enteros utilizando el algoritmo de Euclides. 
 
     ```
     ALGORITMO DE EUCLIDES MCD
