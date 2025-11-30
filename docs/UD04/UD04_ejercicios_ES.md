@@ -441,8 +441,6 @@
     El distribuidor número 4 ha vendido 25.005,00. Lo que no supone ninguna comisión.
     ```
 
-    
-
 3. (Utiles) Dada una matríz (de enteros) con el mismo número de filas y de columnas, diseñar los siguientes métodos:
 
     - `public static void mostrarDiagonal(int[][] m)` que muestre por pantalla los elementos de la diagonal principal.
