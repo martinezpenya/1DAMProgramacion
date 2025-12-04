@@ -405,8 +405,9 @@
 
 4. (Etapas) El ser humano pasa por una serie de etapas en su vida que, con carácter general se asocian a las edades que aparecen en la tabla siguiente.  
 
-    | Infancia     | Hasta los 10 años|
+    | Etapa        | Rango                   |
     | :----------- | ----------------------------------- |
+    | Infancia     | Hasta los 10 años|
     | Pubertad     | De 11 a 14 años         |
     | Adolescencia | De 15 a 21 años         |
     | Adultez      | De 22 a 54 años         |
@@ -476,7 +477,7 @@
 
 9. (SumaSerie) Dado un número `n`, introducido por el usuario, calcula y muestra por pantalla la siguiente suma 1/1+1/2+1/3+ ··· + 1/`n` 
 
-10. (Cifras) Escribir un método (`cifras`) que recibe un número entero cualquiera (positivo, negativo o cero) y devuelve cuantas cifras tiene. Pistas: ¿Cuantas cifras tiene el nº 25688? ¿Cuántas veces podemos dividir el nº 25688 por 10 hasta que se hace cero? Cuidado, el nº 0 tiene una cifra.
+10. (Cifras) Escribir un método (`numeroCifras`) que recibe un número entero cualquiera (positivo, negativo o cero) y devuelve cuantas cifras tiene. Pistas: ¿Cuantas cifras tiene el nº 25688? ¿Cuántas veces podemos dividir el nº 25688 por 10 hasta que se hace cero? Cuidado, el nº 0 tiene una cifra.
 
      ```sh
      Vamos a decirte cuantas cifras tiene un número:
