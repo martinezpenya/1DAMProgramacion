@@ -3,7 +3,7 @@
 ![type:video](assets/UD05_Desarrollo_de_Clases.mp4)
 
 !!! Warning ""¿Cómo estudiar esta unidad?"
-    Si lees esta unidad de principio a fin, veras que es como la [Unidad 2: Utilización de Objetos y Clases](../UD02/UD02_ES), pero con algunos conceptos más desarrollados y otros nuevos.
+    Si lees esta unidad de principio a fin, veras que es como la [Unidad 2: Utilización de Objetos y Clases](../UD02/UD02_ES.md), pero con algunos conceptos más desarrollados y otros nuevos.
 
     Si tienes absolutamente clara la Unidad 2, puedes leer solamente los siguientes puntos, que contienen las principales novedades. Si por el contrario tienes dudas, lagunas o algunos conceptos no quedaron claros, este es la última oportunidad de estudiarlos, preguntar al docente, entender los ejemplos y hacer los ejercicios. Desde esta unidad en adelante, los Objetos y Clases formaran parte del dia a dia, si te pierdes ahora será difícil seguir el ritmo.
     
@@ -1910,7 +1910,7 @@ Para calcular la letra `NIF` correspondiente a un número de `DNI` puedes consul
 
 **Respuesta**:
 
-Inténtalo por tu cuenta y cuando te quedes atascado tienes la solución en el apartado [Clase DNI](##clase-dni)
+Inténtalo por tu cuenta y cuando te quedes atascado tienes la solución en el apartado [Clase DNI](#clase-dni)
 
 ## Ejemplos UD05
 
