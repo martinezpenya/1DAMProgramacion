@@ -19,7 +19,7 @@
 
 🏫 Actualmente con destino en [IES Eduardo Primo Marqués](http://www.ieseduardoprimo.es) de Carlet
 
-[🤖 Modelos de Inteligencia Artificial](https://martinezpenya.es/ModelosIA/) © 2025   by  [David Martínez ](https://github.com/martinezpenya) is licensed under [CC BY-NC-SA 4.0 
+[🤖 Programación](https://martinezpenya.es/1DAMProgramacion/) © 2025   by  [David Martínez ](https://github.com/martinezpenya) is licensed under [CC BY-NC-SA 4.0 
 ![img](https://mirrors.creativecommons.org/presskit/icons/cc.svg){width=22}
 ![img](https://mirrors.creativecommons.org/presskit/icons/by.svg){width=22}
 ![img](https://mirrors.creativecommons.org/presskit/icons/nc.svg){width=22}
