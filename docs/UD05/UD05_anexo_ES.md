@@ -4,7 +4,8 @@
 
 Los wrappers permiten "envolver" datos primitivos en objetos, también se llaman clases contenedoras. La diferencia entre un tipo primitivo y un wrapper es que este último es una clase y por tanto, cuando trabajamos con wrappers estamos trabajando con objetos. 
 
-> Como son objetos debemos tener cuidado en el paso como parámetro en métodos ya que en el wrapper se realiza por referencia.
+!!! danger "Recuerda"
+    Como son objetos debemos tener cuidado en el paso como parámetro en métodos ya que en el wrapper se realiza por referencia.
 
 Una de las principales ventajas del uso de wrappers son la facilidad de conversión entre tipos primitivos y cadenas.
 
@@ -134,11 +135,12 @@ String s5 = Long.toOctalString(254); // Convierte 254 a octal
 System.out.println("254(oct) = " + s5); // Resultado: "254(oct) = 376"
 ```
 
-> Para resumir, los métodos esenciales para las conversiones son:
->
-> - **`primitive xxxValue()`** – Para convertir de `Wrapper` a `primitive`
-> - **`primitive parseXxx(String)`** – Para convertir un `String` en `primitive`
-> - **`Wrapper valueOf(String)`** – Para convertir `String` en `Wrapper`
+!!! info "Resumen"
+    Para resumir, los métodos esenciales para las conversiones son:
+
+    - **`primitive xxxValue()`** – Para convertir de `Wrapper` a `primitive`
+    - **`primitive parseXxx(String)`** – Para convertir un `String` en `primitive`
+    - **`Wrapper valueOf(String)`** – Para convertir `String` en `Wrapper`
 
 ## Clase `Date`
 
@@ -340,7 +342,8 @@ LocalDate mifecha = LocalDate.parse(fechaCadena, formato);
 System.out.println(formato.format(mifecha)); //16/08/2016
 ```
 
-> Ojo! a partir de Java 8 `y` es para el año de la era (BC AD), y para el año debemos usar `u`
+!!! danger "Ojo!"
+    A partir de Java 8 `y` es para el año de la era (BC AD), y para el año debemos usar `u`
 
 Más detalles sobre los formatos: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
 

@@ -1,31 +1,25 @@
 # Desarrollo de clases
 
-<p><iframe src="https://www.youtube.com/embed/Mi_sRAfs7TE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="315" frameborder="0"></iframe></p>
+![type:video](assets/UD05_Desarrollo_de_Clases.mp4)
 
-## ¿Cómo estudiar esta unidad?
+!!! Warning ""¿Cómo estudiar esta unidad?"
+    Si lees esta unidad de principio a fin, veras que es como la [Unidad 2: Utilización de Objetos y Clases](../UD02/UD02_ES), pero con algunos conceptos más desarrollados y otros nuevos.
 
-Si lees esta unidad de principio a fin, veras que es como la Unidad 2: Utilización de Objetos y Clases, pero con algunos conceptos más desarrollados y otros nuevos.
-
-Si tienes absolutamente clara la Unidad 2, puedes leer solamente los siguientes puntos, que contienen las principales novedades. Si por el contrario tienes dudas, lagunas o algunos conceptos no quedaron claros, este es la última oportunidad de estudiarlos, preguntar al docente, entender los ejemplos y hacer los ejercicios. Desde esta unidad en adelante, los Objetos y Clases formaran parte del dia a dia, si te pierdes ahora será dificil seguir el ritmo.
-
-Novedades respecto a la Unidad 2:
-
-- 4.2. [Modificadores de acceso](#modificadores-de-acceso-nuevo)
-
-- 5.3. [Modificadores en la declaración de un método](# Modificadores en la declaración de un método. :new:)
-
-- 5.7. [Sobrecarga de operadores](# Sobrecarga de operadores {NUEVO})
-
-- 6.1 [Ocultación de atributos. Métodos de acceso](# Ocultación de atributos. Métodos de acceso {NUEVO})
-
-- 6.2 [Ocultación de métodos](# Ocultación de métodos {NUEVO})
-
-- 8.4 [Constructores de copia](# Constructores de copia {NUEVO})
-- 9 [Clases Anidadas, Clases Internas (*Inner Class*)](# Clases Anidadas, Clases Internas (*Inner Class*) {NUEVO})
-- 10 [Introducción a la herencia](# Introducción a la herencia {NUEVO})
-- 11 [Conversión entre objetos (Casting)](# Conversión entre objetos (Casting) {NUEVO})
-- 12 [Acceso a métodos de la superclase](# Acceso a métodos de la superclase {NUEVO})
-- 13 [Empaquetado de clases](# Empaquetado de clases {NUEVO})
+    Si tienes absolutamente clara la Unidad 2, puedes leer solamente los siguientes puntos, que contienen las principales novedades. Si por el contrario tienes dudas, lagunas o algunos conceptos no quedaron claros, este es la última oportunidad de estudiarlos, preguntar al docente, entender los ejemplos y hacer los ejercicios. Desde esta unidad en adelante, los Objetos y Clases formaran parte del dia a dia, si te pierdes ahora será difícil seguir el ritmo.
+    
+    Novedades respecto a la Unidad 2:
+        
+    - 4.2. [Modificadores de acceso](#modificadores-de-acceso)
+    - 5.3. [Modificadores en la declaración de un método](#modificadores-en-la-declaracion-de-un-metodo)
+    - 5.7. [Sobrecarga de operadores](#sobrecarga-de-operadores)
+    - 6.1 [Ocultación de atributos. Métodos de acceso](#ocultacion-de-atributos-metodos-de-acceso)
+    - 6.2 [Ocultación de métodos](#ocultacion-de-metodos)
+    - 8.4 [Constructores de copia](#constructores-de-copia)
+    - 9 [Clases Anidadas, Clases Internas (*Inner Class*)](#clases-anidadas-clases-internas-inner-class)
+    - 10 [Introducción a la herencia](#introduccion-a-la-herencia)
+    - 11 [Conversión entre objetos (Casting)](#conversion-entre-objetos-casting)
+    - 12 [Acceso a métodos de la superclase](#acceso-a-metodos-de-la-superclase)
+    - 13 [Empaquetado de clases](#empaquetado-de-clases)
 
 ## Introducción
 
@@ -33,22 +27,23 @@ Como ya has visto en anteriores unidades, las clases están compuestas por atrib
 
 De esta forma los programas que escribas estarán formados por un conjunto de clases a partir de las cuales irás creando objetos que se interrelacionarán unos con otros.
 
-> En esta unidad se va a utilizar el concepto de objeto así como algunas de las diversas estructuras de control básicas que ofrece cualquier lenguaje de programación. Todos esos conceptos han sido explicados y utilizados en las unidades anteriores. Si consideras que es necesario hacer un repaso del concepto de objeto o del uso de las estructuras de control elementales, éste es el momento de hacerlo.
+!!! info "Información"
+    En esta unidad se va a utilizar el concepto de objeto así como algunas de las diversas estructuras de control básicas que ofrece cualquier lenguaje de programación. Todos esos conceptos han sido explicados y utilizados en las unidades anteriores. Si consideras que es necesario hacer un repaso del concepto de objeto o del uso de las estructuras de control elementales, éste es el momento de hacerlo.
 
 ### Repaso del concepto de objeto
 
 Desde el comienzo del módulo llevas utilizando el concepto de objeto para desarrollar tus programas de ejemplo. En las unidades anteriores se ha descrito un objeto como una entidad que contiene información y que es capaz de realizar ciertas operaciones con esa información. Según los valores que tenga esa información el objeto tendrá un estado determinado y según las operaciones que pueda llevar a cabo con esos datos serán responsables de un comportamiento concreto.
 
-> Recuerda que entre las características fundamentales de un objeto se encontraban la **identidad** (los objetos son únicos y por tanto distinguibles entre sí, aunque pueda haber objetos exactamente iguales), un **estado** (los atributos que describen al objeto y los valores que tienen en cada momento ) y un determinado **comportamiento** (acciones que se pueden realizar sobre el objeto).
+!!! info "Recuerda"
+    Recuerda que entre las características fundamentales de un objeto se encontraban la **identidad** (los objetos son únicos y por tanto distinguibles entre sí, aunque pueda haber objetos exactamente iguales), un **estado** (los atributos que describen al objeto y los valores que tienen en cada momento ) y un determinado **comportamiento** (acciones que se pueden realizar sobre el objeto).
 
 Algunos ejemplos de objetos que podríamos imaginar podrían ser:
-
-- Un coche de color rojo, marca SEAT, modelo Toledo, del año 2003. En este ejemplo tenemos una serie de atributos, como el color (en este caso rojo), la marca, el modelo, el año, etc. Así mismo también podríamos imaginar determinadas características como la cantidad de combustible que le queda, o el número de kilómetros recorridos hasta el momento.
-- Un coche de color amarillo, marca Opel, modelo Astra, del año 2002.
-- Otro coche de color amarillo, marca Opel, modelo Astra y también del año 2002. Se trataría de otro objeto con las mismas propiedades que el anterior, pero sería un segundo objeto.
-- Un cocodrilo de cuatro metros de longitud y de veinte años de edad. 
-- Un círculo de radio 2 centímetros, con centro en las coordenadas (0,0) y relleno de color amarillo.
-- Un círculo de radio 3 centímetros, con centro en las coordenadas (1,2) y relleno de color verde.
+    - Un coche de color rojo, marca SEAT, modelo Toledo, del año 2003. En este ejemplo tenemos una serie de atributos, como el color (en este caso rojo), la marca, el modelo, el año, etc. Así mismo también podríamos imaginar determinadas características como la cantidad de combustible que le queda, o el número de kilómetros recorridos hasta el momento.
+    - Un coche de color amarillo, marca Opel, modelo Astra, del año 2002.
+    - Otro coche de color amarillo, marca Opel, modelo Astra y también del año 2002. Se trataría de otro objeto con las mismas propiedades que el anterior, pero sería un segundo objeto.
+    - Un cocodrilo de cuatro metros de longitud y de veinte años de edad. 
+    - Un círculo de radio 2 centímetros, con centro en las coordenadas (0,0) y relleno de color amarillo.
+    - Un círculo de radio 3 centímetros, con centro en las coordenadas (1,2) y relleno de color verde.
 
 Si observas los ejemplos anteriores podrás distinguir sin demasiada dificultad al menos tres familias de objetos diferentes, que no tienen nada que ver una con otra:
 
@@ -62,7 +57,8 @@ Por otro lado, también podrías imaginar algunos atributos cuyos valores podrí
 
 Como puedes ver, un objeto puede ser cualquier cosa que puedas describir en términos de atributos y acciones. 
 
-> Un objeto no es más que la representación de cualquier entidad concreta o abstracta que puedas percibir o imaginar y que pueda resultar de utilidad para modelar los elementos el entorno del problema que deseas resolver.
+!!! info "Definición"
+    Un objeto no es más que la representación de cualquier entidad concreta o abstracta que puedas percibir o imaginar y que pueda resultar de utilidad para modelar los elementos el entorno del problema que deseas resolver.
 
 ### El concepto de clase
 
@@ -70,7 +66,8 @@ Está claro que dentro de un mismo programa tendrás la oportunidad de encontrar
 
 Es aquí donde entra en escena el concepto de clase. Está claro que no podemos definir la estructura y el comportamiento de cada objeto cada vez que va a ser utilizado dentro de un programa, pues la escritura del código sería una tarea interminable y redundante. La idea es poder disponer de una plantilla o modelo para cada conjunto de objetos que sean del mismo tipo, es decir, que tengan los mismos atributos y un comportamiento similar.
 
-> Una clase consiste en la definición de un tipo de objeto. Se trata de una descripción detallada de cómo van a ser los objetos que pertenezcan a esa clase indicando qué tipo de información contendrán (atributos) y cómo se podrá interactuar con ellos (comportamiento).
+!!! info "Definición"
+    Una clase consiste en la definición de un tipo de objeto. Se trata de una descripción detallada de cómo van a ser los objetos que pertenezcan a esa clase indicando qué tipo de información contendrán (atributos) y cómo se podrá interactuar con ellos (comportamiento).
 
 Como ya has visto en unidades anteriores, una clase consiste en un plantilla en la que se especifican:
 
@@ -81,7 +78,8 @@ A partir de este momento podrás hablar ya sin confusión de objetos y de clases
 
 Si nos volvemos a fijar en los ejemplos de objetos del apartado anterior podríamos observar que las clases serían lo que clasificamos como "familias" de objetos (coches, cocodrilos y círculos). 
 
-> En el lenguaje cotidiano de muchos programadores puede ser habitual la confusión entre los términos clase y objeto. Aunque normalmente el contexto nos permite distinguir si nos estamos refiriendo realmente a una clase (definición abstracta) o a un objeto (instancia concreta), hay que tener cuidado con su uso para no dar lugar a interpretaciones erróneas, especialmente durante el proceso de aprendizaje.
+!!! warning "Atención"
+    En el lenguaje cotidiano de muchos programadores puede ser habitual la confusión entre los términos clase y objeto. Aunque normalmente el contexto nos permite distinguir si nos estamos refiriendo realmente a una clase (definición abstracta) o a un objeto (instancia concreta), hay que tener cuidado con su uso para no dar lugar a interpretaciones erróneas, especialmente durante el proceso de aprendizaje.
 
 ## Estructura y miembros de una clase
 
@@ -89,20 +87,19 @@ En unidades anteriores ya se indicó que para declarar una clase en Java se usa 
 
 - **Cabecera de la clase**. Compuesta por una serie de modificadores de acceso, la palabra reservada `class` y el nombre de la clase.
 - **Cuerpo de la clase**. En él se especifican los distintos miembros de la clase: atributos y métodos. Es decir, el contenido de la clase.
-
-```java
-public class NombreDeLaClase [herencia] [interfaces]
-{
-	// Atributos de la clase
-	...
-	...
-	...
-	// Métodos de la clase
-	...
-	...
-	...
-}
-```
+    ```java
+    public class NombreDeLaClase [herencia] [interfaces]
+    {
+        // Atributos de la clase
+        ...
+        ...
+        ...
+        // Métodos de la clase
+        ...
+        ...
+        ...
+    }
+    ```
 
 Como puedes observar, el cuerpo de la clase es donde se declaran los atributos que caracterizan a los objetos de la clase y donde se define e implementa el comportamiento de dichos objetos; es decir, donde se declaran e implementan los métodos.
 
@@ -276,7 +273,8 @@ public int y;
 
 De esta manera estarías indicando que ambos atributos son públicos, es decir, accesibles por cualquier parte del código programa que tenga acceso a un objeto de esa clase.
 
-> Como ya verás más adelante al estudiar el concepto de encapsulación, lo normal es declarar todos los atributos (o al menos la mayoría) como privados (`private`) de manera que si se desea acceder o manipular algún atributo se tenga que hacer a través de los métodos proporcionados por la clase.
+!!! danger "Atención"
+    Como ya verás más adelante al estudiar el concepto de encapsulación, lo normal es declarar todos los atributos (o al menos la mayoría) como privados (`private`) de manera que si se desea acceder o manipular algún atributo se tenga que hacer a través de los métodos proporcionados por la clase.
 
 ### Declaración de atributos.
 
@@ -325,7 +323,7 @@ Aquí tienes la sintaxis completa de la declaración de un atributo teniendo en 
 
 Vamos a estudiar con detalle cada uno de ellos.
 
-### Modificadores de acceso. (NUEVO)
+### Modificadores de acceso :new:
 
 Los modificadores de acceso disponibles en Java para un atributo son:
 
@@ -343,7 +341,8 @@ A continuación puedes observar un resumen de los distintos niveles accesibilida
 | Sin modificador (`package`) |      ✔      |       ✔       |    ❌     |      ❌       |
 |                   `private` |      ✔      |       ❌       |    ❌     |      ❌       |
 
-> ¡Recuerda que **los modificadores de acceso son excluyentes**! Sólo se puede utilizar uno de ellos en la declaración de un atributo.
+!!! danger "Recuerda"
+    ¡Recuerda que **los modificadores de acceso son excluyentes**! Sólo se puede utilizar uno de ellos en la declaración de un atributo.
 
 ### Modificadores de contenido.
 
@@ -383,7 +382,8 @@ class Punto {
 
 Obviamente, para que esto funcione como estás pensando, también habrá que escribir el código necesario para que cada vez que se cree un objeto de la clase `Punto` se incremente el valor del atributo `cantidadPuntos`.
 
-> Volverás a este ejemplo para implementar esa otra parte cuando estudies los constructores.
+!!! info "Más información"
+    Volverás a este ejemplo para implementar esa otra parte cuando estudies los constructores.
 
 ## Métodos
 
@@ -391,7 +391,8 @@ Como ya has visto anteriormente, los métodos son las herramientas que nos sirve
 
 En el proceso de declaración de una clase que estás estudiando ya has visto cómo escribir la cabecera de la clase y cómo especificar sus atributos dentro del cuerpo de la clase. Tan solo falta ya declarar los métodos, que estarán también en el interior del cuerpo de la clase junto con los atributos.
 
-> Los métodos suelen declararse después de los atributos. Aunque atributos y métodos pueden aparecer mezclados por todo el interior del cuerpo de la clase es aconsejable no hacerlo para mejorar la claridad y la legibilidad del código. De ese modo, cuando echemos un vistazo rápido al contenido de una clase, podremos ver rápidamente los atributos al principio (normalmente ocuparán menos líneas de código y serán fáciles de reconocer) y cada uno de los métodos inmediatamente después.
+!!! warning "Importante"
+    Los métodos suelen declararse después de los atributos. Aunque atributos y métodos pueden aparecer mezclados por todo el interior del cuerpo de la clase es aconsejable no hacerlo para mejorar la claridad y la legibilidad del código. De ese modo, cuando echemos un vistazo rápido al contenido de una clase, podremos ver rápidamente los atributos al principio (normalmente ocuparán menos líneas de código y serán fáciles de reconocer) y cada uno de los métodos inmediatamente después.
 
 Cada método puede ocupar un número de líneas de código más o menos grande en función de la complejidad del proceso que pretenda implementar.
 
@@ -462,7 +463,7 @@ En el ejemplo de la clase `Punto`, puedes observar cómo los métodos `obtenerX`
   int obtenerY()
   ```
 
-### Modificadores en la declaración de un método. :new:
+### Modificadores en la declaración de un método :new:
 
 En la declaración de un método también pueden aparecer modificadores (como en la declaración de la clase o delos atributos). Un método puede tener los siguientes tipos de modificadores:
 
@@ -586,9 +587,10 @@ Lo que sí habría producido un error de compilación habría sido por ejemplo i
 
 También debes tener en cuenta que el tipo devuelto por el método no es considerado a la hora de identificar un método, así que un tipo devuelto diferente no es suficiente para distinguir un método de otro. Es decir, no podrías definir dos métodos exactamente iguales en nombre y lista de parámetros e intentar distinguirlos indicando un tipo devuelto diferente. El compilador producirá un error de duplicidad en el nombre del método y no te lo permitirá. 
 
-> Es conveniente no abusar de sobrecarga de métodos y utilizarla con cierta moderación (cuando realmente puede beneficiar su uso), dado que podría hacer el código menos legible.
+!!! danger "Recuerda"
+    Es conveniente no abusar de sobrecarga de métodos y utilizarla con cierta moderación (cuando realmente puede beneficiar su uso), dado que podría hacer el código menos legible.
 
-### Sobrecarga de operadores. {NUEVO}
+### Sobrecarga de operadores. :new:
 
 Del mismo modo que hemos visto la posibilidad de sobrecargar métodos (disponer de varias versiones de un método con el mismo nombre cambiando su lista de parámetros), podría plantearse también la opción de sobrecargar operadores del lenguaje tales como `+`, `‐`, `*`, `( )`, `<`, `>`, etc. para darles otro significado dependiendo del tipo de objetos con los que vaya a operar.
 
@@ -634,7 +636,8 @@ class Punto{
 
 En este caso ha sido indispensable el uso de `this`, pues si no sería imposible saber en qué casos te estás refiriendo al parámetro `x` y en cuáles al atributo `x`. Para el compilador el identificador `x` será siempre el parámetro, pues ha "ocultado" al atributo.
 
-> En algunos casos puede resultar útil hacer uso de la referencia `this` aunque no sea necesario, pues puede ayudara mejorar la legibilidad del código.
+!!! info "Más información"
+    En algunos casos puede resultar útil hacer uso de la referencia `this` aunque no sea necesario, pues puede ayudara mejorar la legibilidad del código.
 
 ### Métodos estáticos.
 
@@ -705,7 +708,7 @@ En el caso de los miembros, disponías de otras dos posibilidades más de nivele
 - Privado (modificador `private`), donde sólo la propia clase tiene acceso al miembro.
 - Protegido (modificador `protected`), lo podrán ver las clases del mismo paquete y también las clases herederas.
 
-### Ocultación de atributos. Métodos de acceso. {NUEVO}
+### Ocultación de atributos. Métodos de acceso. :new:
 
 Los atributos de una clase suelen ser declarados como privados a la clase o, como mucho, `protected` (accesibles también por clases heredadas), pero no como `public`. De esta manera puedes evitar que sean manipulados inadecuadamente (por ejemplo modificarlos sin ningún tipo de control) desde el exterior del objeto.
 
@@ -743,7 +746,7 @@ También pueden darse casos en los que no interesa que pueda observarse directam
 
 En otros casos puede interesar disponer de métodos de modificación de un atributo pero a través de un determinado procesamiento previo para por ejemplo poder controlar errores o valores inadecuados. Volviendo al ejemplo del `NIF`, un método para modificar un `DNI` (método `setDNI`) podría incluir la letra (`NIF` completo), de manera que así podría comprobarse si el número de `DNI` y la letra coinciden (es un `NIF` válido). En tal caso se almacenará el `DNI` y en caso contrario se producirá un error de validación (por ejemplo lanzando una excepción). En cualquier caso, el `DNI` que se almacenara sería solamente el número y no la letra (pues la letra es calculable a partir del número de `DNI`).
 
-### Ocultación de métodos. {NUEVO}
+### Ocultación de métodos. :new:
 
 Normalmente los métodos de una clase pertenecen a su interfaz y por tanto parece lógico que sean declarados como públicos. Pero también es cierto que pueden darse casos en los que exista la necesidad de disponer de algunos métodos privados a la clase. Se trata de métodos que realizan operaciones intermedias o auxiliares y que son utilizados por los métodos que sí forman parte de la interfaz. Ese tipo de métodos (de comprobación, de adaptación de formatos, de cálculos intermedios, etc.) suelen declararse como privados pues no son de interés (o no es apropiado que sean visibles) fuera del contexto del interior del objeto.
 
@@ -806,7 +809,8 @@ De la tarea de reservar memoria para la estructura del objeto (sus atributos má
 
 Cuando escribas el código de una clase no es necesario que implementes el método constructor si no quieres hacerlo. Java se encarga de dotar de un constructor por omisión (también conocido como constructor por defecto) a toda clase. Ese constructor por omisión se ocupará exclusivamente de las tareas de reserva de memoria. Si deseas que el constructor realice otras tareas adicionales, tendrás que escribirlo tú. El constructor por omisión no tiene parámetros.
 
-> El constructor por defecto no se ve en el código de una clase. Lo incluirá el compilador de Java al compilar la clase si descubre que no se ha creado ningún método constructor para esa clase. 
+!!! warning "Recuerda"
+    El constructor por defecto no se ve en el código de una clase. Lo incluirá el compilador de Java al compilar la clase si descubre que no se ha creado ningún método constructor para esa clase. 
 
 Algunos ejemplos de instanciación o creación de objetos podrían ser:
 
@@ -818,7 +822,8 @@ cocheAntonio = new Coche();
 palabra = new String; //palabra = new String("");
 ```
 
-> En el caso de los constructores, si éstos no tienen parámetros, pueden omitirse los paréntesis vacíos.
+!!! warning "Importante"
+    En el caso de los constructores, si éstos no tienen parámetros, pueden omitirse los paréntesis vacíos.
 
 Un objeto puede ser declarado e instanciado en la misma línea. Por ejemplo:
 
@@ -868,7 +873,8 @@ Como has visto en el apartado anterior, durante la fase de construcción o insta
 
 El proceso de declaración y creación de un objeto mediante el operador `new` ya ha sido estudiado en apartados anteriores. Sin embargo las clases que hasta ahora has creado no tenían constructor. Has estado utilizando los constructores por defecto que proporciona Java al compilar la clase. Ha llegado el momento de que empieces a implementar tus propios constructores.
 
-> Los métodos constructores se encargan de llevar a cabo el proceso de creación o construcción de un objeto.
+!!! info "Información"
+    Los métodos constructores se encargan de llevar a cabo el proceso de creación o construcción de un objeto.
 
 ### Concepto de constructor.
 
@@ -882,7 +888,8 @@ Hasta el momento ya has utilizado en numerosas ocasiones el operador `new` para 
 
 Por otro lado, si un constructor es al fin y al cabo una especie de método (aunque algo especial) y Java soporta la sobrecarga de métodos, podrías plantearte la siguiente pregunta: ¿podrá una clase disponer de más de constructor? En otras palabras, ¿será posible la sobrecarga de constructores? La respuesta es afirmativa.
 
-> Una misma clase puede disponer de varios constructores. **Los constructores soportan la sobrecarga.**
+!!! warning "Importante"
+    Una misma clase puede disponer de varios constructores. **Los constructores soportan la sobrecarga.**
 
 Es necesario que toda clase tenga al menos un constructor. Si no se define ningún constructor en una clase, el compilador creará por nosotros un constructor por defecto vacío que se encarga de inicializar todos los atributos a sus valores por defecto (0 para los numéricos, null para las referencias, false para los boolean, etc.).
 
@@ -907,9 +914,10 @@ Cuando se escribe el código de una clase normalmente se pretende que los objeto
 
 Como puedes observar, la estructura de los constructores es similar a la de cualquier método, con las excepciones de que no tiene tipo de dato devuelto (no devuelve ningún valor) y que el nombre del método constructor debe ser obligatoriamente el nombre de la clase.
 
-> Si defines constructores personalizados para una clase, el constructor por defecto (sin parámetros) para esa clase deja de ser generado por el compilador, de manera que tendrás que crearlo tú si quieres poder utilizarlo.
->
-> Si se ha creado un constructor con parámetros y no se ha implementado el constructor por defecto, el intento de utilización del constructor por defecto producirá un error de compilación (el compilador no lo hará por nosotros).
+!!! danger "Recuerda"
+    Si defines constructores personalizados para una clase, el constructor por defecto (sin parámetros) para esa clase deja de ser generado por el compilador, de manera que tendrás que crearlo tú si quieres poder utilizarlo.
+
+    Si se ha creado un constructor con parámetros y no se ha implementado el constructor por defecto, el intento de utilización del constructor por defecto producirá un error de compilación (el compilador no lo hará por nosotros).
 
 Un ejemplo de constructor para la clase Punto podría ser:
 
@@ -935,7 +943,7 @@ p1= new Punto(10, 7);
 
 En este caso no se estaría utilizando el constructor por defecto sino el constructor que acabas de implementar en el cual además de reservar memoria se asigna un valor a algunos de los atributos.
 
-### Constructores de copia. {NUEVO}
+### Constructores de copia. :new:
 
 Una forma de iniciar un objeto podría ser mediante la copia de los valores de los atributos de otro objeto ya existente. Imagina que necesitas varios objetos iguales (con los mismos valores en sus atributos) y que ya tienes uno de ellos perfectamente configurado (sus atributos contienen los valores que tú necesitas). Estaría bien disponer de un constructor que hiciera copias idénticas de ese objeto.
 
@@ -991,7 +999,7 @@ Si necesitas implementar un destructor (normalmente no será necesario), debes t
 - Sólo puede haber un destructor en una clase. No es posible la sobrecarga dado que no tiene parámetros.
 - No puede devolver ningún valor. Debe ser de tipo `void`.
 
-## Clases Anidadas, Clases Internas (*Inner Class*) {NUEVO}
+## Clases Anidadas, Clases Internas (*Inner Class*) :new:
 
 ### **Clase Anidada (Nested Class):**
 
@@ -1184,7 +1192,7 @@ Uso común:
    Para clases con métodos estáticos (por ejemplo, `Utils` o `Constants`), es común colocarlas en un único archivo, ya que suelen ser pequeñas y no tienen lógica compleja.
 
 
-## Introducción a la herencia. {NUEVO}
+## Introducción a la herencia. :new:
 
 La herencia es uno de los conceptos fundamentales que introduce la programación orientada a objetos. La idea fundamental es permitir crear nuevas clases aprovechando las características (atributos y métodos) de otras clases ya creadas evitando así tener que volver a definir esas características (reutilización).
 
@@ -1234,9 +1242,10 @@ En el caso de Java, cualquier clase con la que trabajes tendrá un ascendiente. 
 
 También irás viendo al estudiar distintos componentes de las bibliotecas de Java (por ejemplo en el caso de las interfaces gráficas) que para poder crear objetos basados en las clases proporcionadas por esas bibliotecas tendrás que crear tus propias clases que hereden de algunas de esas clases. Para ellos tendrás que hacer uso de la palabra reservada `extends`.
 
-> En Java todas las clases son descendientes (de manera explícita o implícita) de la clase `Object`.
+!!! danger "Recuerda"
+    En Java todas las clases son descendientes (de manera explícita o implícita) de la clase `Object`.
 
-## Conversión entre objetos (Casting) {NUEVO}
+## Conversión entre objetos (Casting) :new:
 
 La esencia de Casting permite convertir un dato de tipo primitivo en otro generalmente de más precisión.
 
@@ -1368,29 +1377,29 @@ Las reglas a la hora de realizar casting es que:
 - cuando se utiliza una clase más específicas (más abajo en la jerarquía) no hace falta casting. Es lo que llamamos **casting implícito**.
 - cuando se utiliza una clase menos específica (más arriba en la jerarquía) hay que hacer un **casting explícito**.
 
-> **¿Porqué a la hora de imprimir el casting implicito la clase más genérica se imprime con el método más especializado?**
->
-> Debes entender que en realidad `encargadoCarniceria` es un `Encargado` que se *disfraza* de `Persona`, pero en realidad sus métodos son los especializados (el `toString()` más moderno sobrescribe al de sus padres. Recuerda que la anotación `@override` es opcional, y aunque no se indique el método sigue sobrescribiendo al de su padre)
->
-> Si por ejemplo usamos este fragmento:
->
-> ```java
-> //Persona
-> Persona David = new Persona ("David");
-> System.out.println(David);
-> ```
->
-> Se imprimirá con el método `toString()` de la clase `Persona` (sólo el nombre).
->
-> Y si hacemos un casting del objeto David a uno más genérico (Object) seguirá usando el método más especializado:
->
-> ```java
-> //Object
-> Object oDavid = David;
-> System.out.println(oDavid);
-> ```
+!!! danger "¿Porqué a la hora de imprimir el casting implicito la clase más genérica se imprime con el método más especializado?"
+    
+    Debes entender que en realidad `encargadoCarniceria` es un `Encargado` que se *disfraza* de `Persona`, pero en realidad sus métodos son los especializados (el `toString()` más moderno sobrescribe al de sus padres. Recuerda que la anotación `@override` es opcional, y aunque no se indique el método sigue sobrescribiendo al de su padre)
+    
+    Si por ejemplo usamos este fragmento:
+    
+    ```java
+    //Persona
+    Persona David = new Persona ("David");
+    System.out.println(David);
+    ```
+    
+    Se imprimirá con el método `toString()` de la clase `Persona` (sólo el nombre).
+    
+    Y si hacemos un casting del objeto David a uno más genérico (Object) seguirá usando el método más especializado:
+    
+    ```java
+    //Object
+    Object oDavid = David;
+    System.out.println(oDavid);
+    ```
 
-## Acceso a métodos de la superclase {NUEVO}
+## Acceso a métodos de la superclase :new:
 
 Para acceder a los métodos de la superclase se utiliza la sentencia **`super`**. La sentencia **`this`** permite acceder a los campos y métodos de la clase. La sentencia `super` permite acceder a los campos y métodos de la superclase. El uso de `super` lo hemos visto en las clases `Empleado` y `Encargado` anteriores:
 
@@ -1441,7 +1450,7 @@ public class Anexo4SuperClase {
 }
 ```
 
-## Empaquetado de clases {NUEVO}
+## Empaquetado de clases :new:
 
 La encapsulación de la información dentro de las clases ha permitido llevar a cabo el proceso de ocultación, que es fundamental para el trabajo con clases y objetos. Es posible que conforme vaya aumentando la complejidad de tus aplicaciones necesites que algunas de tus clases puedan tener acceso a parte de la implementación de otras debido a las relaciones que se establezcan entre ellas a la hora de diseñar tu modelo de datos. En estos casos se puede hablar de un nivel superior de encapsulamiento y ocultación conocido como empaquetado.
 
@@ -1903,7 +1912,7 @@ Para calcular la letra `NIF` correspondiente a un número de `DNI` puedes consul
 
 Inténtalo por tu cuenta y cuando te quedes atascado tienes la solución en el apartado [Clase DNI](##clase-dni)
 
-## Ejemplo UD05
+## Ejemplos UD05
 
 ### Clase `Rectangulo`
 
@@ -2397,16 +2406,5 @@ public class ClasesAnidadas {
 
 ## Píldoras informáticas relacionadas
 
-- [Curso Java. POO I. Vídeo 27](https://youtu.be/XmUz5WJmJVU)
-- [Curso Java. POO II. Vídeo 28](https://youtu.be/ZY5pwm92cWQ)
-- [Curso Java. POO III. Vídeo 29](https://youtu.be/RZOSJ2zuxIs)
-- [Curso Java POO VI. Construcción objetos. Vídeo 32](https://youtu.be/jht07O7_R9w)
-- [Curso Java POO VII. Construcción objetos II. Vídeo 33](https://youtu.be/l8NmSp7Dz-0)
-- [Curso Java POO VIII. Construcción objetos III. Vídeo 34](https://youtu.be/UfF2pqCewqo)
-- [Curso Java POO IX. Construcción objetos IV. Vídeo 35](https://youtu.be/63Uhd3pUZxA)
-- [Curso Java. Constantes Uso final. Vídeo 36](https://youtu.be/tZekQAcSY8o)
-- [Curso Java . Uso static. Vídeo 37](https://youtu.be/QIV7FfXa-zY)
-- [Curso Java. Métodos static. Vídeo 38](https://youtu.be/V0wIZ-OglsY)
-- [Curso Java. Sobrecarga de constructores. Vídeo 39](https://youtu.be/_ZWcobe9afw)
-- [Curso Java. Modificadores de acceso. Clase Object. Vídeo 47](https://youtu.be/eQWnegzD6ug)
-- [Curso Java Excepciones V. Cláusula throw. Vídeo 146](https://youtu.be/qzrw5E3_s7s)
+<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
