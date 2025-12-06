@@ -35,6 +35,15 @@ nav:
     - Desarrollo de clases: UD05/UD05_ES.md
     - Anexo Wrappers y Fechas: UD05/UD05_anexo_ES.md
     - Ejercicios: UD05/UD05_ejercicios_ES.md
+    - Talleres:
+      - T01 GitHub Classroom: UD05/UD05_T01_GitHubClassroom.md
+  - UD06:
+    - Lectura y escritura de información: UD06/UD06_ES.md
+    - Comparativa CRUD: UD06/UD06_comparativa_CRUD.md
+    - Ejercicios: UD06/UD06_ejercicios_ES.md
+    - Talleres:
+      - T01 GitHub Classroom: UD06/UD06_T01_GitHubClassroom.md
+      - T02 Sockets en AWS: UD06/UD06_T02_Sockets_ES.md
   - Sobre mi: sobremi.md
   - Fuentes de información: fuentes.md
 
@@ -210,8 +219,8 @@ plugins:
         #headless_chrome_path: headless-chromium
         #
         output_path: docs/Libro.pdf
-        #enabled_if_env: ENABLE_PDF_EXPORT
-        #
-        #debug_html: true
-        show_anchors: true
-        verbose: true
+    #     #enabled_if_env: ENABLE_PDF_EXPORT
+    #     #
+    #     #debug_html: true
+    #     show_anchors: true
+    #     verbose: true
