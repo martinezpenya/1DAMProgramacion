@@ -1,17 +1,6 @@
----
-title: Ejercicios de la UD07
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2024, Programacion, Java]
-IES: IES Eduardo Primo Marqués (Carlet) [www.ieseduardoprimo.es]
-header: ${title} - ${subject} (ver. ${today}) 
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url:${filename}/../
-typora-copy-images-to:${filename}/../assets
----
-[toc]
-# Ejercicios
+# Ejercicios de la UD07
+
+## Ejercicios
 
 1. (**`package Varios`**) Diseñar la clase `Varios` con los siguientes métodos **estáticos** que se harán apoyándose en alguna clase de las vistas al estudiar las colecciones de Java:
    - `int[] quitarDuplicados (int[] v)`, que dado un array de enteros devuelva otro array con los mismos valores que el original pero sin duplicados.
@@ -97,7 +86,7 @@ typora-copy-images-to:${filename}/../assets
 
 7. (**`clase PalabrasOrdenadas`**) Escribe un programa que, dado un fichero de texto cuya ubicación indica el usuario, muestre sus palabras ordenadas ascendentemente y, después, descendentemente. Cada palabra se mostrará una sola vez, aunque en el texto aparezca varias.  
 
-# Actividades
+## Actividades
 
 **Actividad 1**. Realizar las siguientes actividades relacionadas con `ArrayList`.
 
@@ -183,7 +172,7 @@ La clase `GestionPacientes` tiene un método `main` en el que se crea un archiva
 
 - Volver a indicar si el Map divisas está vacío.
 
-# Ejercicios Genericidad
+## Ejercicios Genericidad
 
 1. Crear una clase Genericos (proyecto Genéricos, paquete Genericos) que incorpore los métodos genéricos que se indican a continuación. Los métodos creados serán *public* *static.* En el proyecto se creará además la clase o clases necesarias para probar los métodos desarrollados.
 
@@ -231,7 +220,7 @@ La clase `GestionPacientes` tiene un método `main` en el que se crea un archiva
 
       NOTA: También lo puedes implementar con una Colección de las vistas en el tema anterior.
 
-# Programación funcional. Funciones Lambda.
+## Programación funcional. Funciones Lambda.
 
 1. Supongamos que tenemos implementada una clase `Libro` que tiene los atributos de `titulo`, `autor` y `precio`, con el correspondiente constructor y sus getters. Disponemos además de una lista de libros en una variable `libros`. Se pide implementar un método que muestre los títulos de los libros por pantalla, ordenados de menor a mayor.
 
@@ -308,14 +297,3 @@ La clase `GestionPacientes` tiene un método `main` en el que se crea un archiva
    - Obtener una lista de todas las disciplinas que no tengan participantes.
    - Calcular la edad media de todos los participantes agrupada por disciplinas.
    - Obtener las disciplinas con los participantes más joven y más viejo.
-
-# Fuentes de información
-
-- [Wikipedia](https://es.wikipedia.org)
-- [Programación (Grado Superior) - Juan Carlos Moreno Pérez (Ed. Ra-ma)](https://www.ra-ma.es/libro/programacion-grado-superior_48302/)
-- Apuntes IES Henri Matisse (Javi García Jimenez?)
-- Apuntes AulaCampus
-- [Apuntes José Luis Comesaña](https://www.sitiolibre.com/)
-- [Apuntes IOC Programació bàsica (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_asx_m03_/web/fp_asx_m03_htmlindex/index.html)
-- [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)
-- [Apuntes Lionel](https://github.com/lionel-ict/ApuntesProgramacion)
