@@ -8,6 +8,8 @@
 - [Apuntes IOC Programació bàsica (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_asx_m03_/web/fp_asx_m03_htmlindex/index.html)
 - [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)
 - [Apuntes Lionel](https://github.com/lionel-ict/ApuntesProgramacion)
+- https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+- https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html
 - https://awsacademyinstructure.com
 - https://www.jetbrains.com
 - [ChatGPT](https://chatgpt.com/)
