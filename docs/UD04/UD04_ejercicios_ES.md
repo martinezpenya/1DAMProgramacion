@@ -147,7 +147,7 @@
 
     Optimiza el algoritmo para que no tenga en cuenta si se escribe el nombre en mayúsculas, minúsculas o cualquier combinación de mayúsculas y minúsculas.
 
-3. (SumaDespuesImpar) Escribir un método (`sumaDespuesImpar`) que, dado un array de enteros, devuelva la suma de los elementos que aparecen tras el primer valor impar. Usar `main` para probar el método.
+3. (SumaDespuesImpar) Escribir un método (`sumaDespuesImpar`) que, dado un array de enteros, devuelva la suma de los elementos que aparecen tras el primer valor impar (la suma debe incluir el valor impar encontrado). Usar `main` para probar el método.
 
     ```sh
     Para el array: {0,2,4,6,3,4,7,8,1}
@@ -676,3 +676,4 @@
     - Cuando llegamos a una situación en la que no podemos realizar ningún movimiento que nos lleve a una celda que no hayamos visitado ya, retrocedemos sobre nuestros pasos y buscamos un camino alternativo. 
 
     ```
+
