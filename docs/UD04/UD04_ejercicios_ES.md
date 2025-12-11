@@ -434,11 +434,11 @@
     EL ARTÍCULO QUE MÁS SE VENDE: 9
     
     --- INFORME DE VENTAS ---
-    El distribuidor número 0 ha vendido 61.305,00. Lo que supone un porcentaje de 5% que supone 3.065,25 €.
-    El distribuidor número 1 ha vendido 56.702,50. Lo que supone un porcentaje de 5% que supone 2.835,13 €.
-    El distribuidor número 2 ha vendido 45.360,00. Lo que supone un porcentaje de 5% que supone 2.268,00 €.
-    El distribuidor número 3 ha vendido 84.546,00. Lo que supone un porcentaje de 8% que supone 6.763,68 €.
-    El distribuidor número 4 ha vendido 25.005,00. Lo que no supone ninguna comisión.
+    El distribuidor número 1 ha vendido 61.305,00. Lo que supone un porcentaje de 5% que supone 3.065,25 €.
+    El distribuidor número 2 ha vendido 56.702,50. Lo que supone un porcentaje de 5% que supone 2.835,13 €.
+    El distribuidor número 3 ha vendido 45.360,00. Lo que supone un porcentaje de 5% que supone 2.268,00 €.
+    El distribuidor número 4 ha vendido 84.546,00. Lo que supone un porcentaje de 8% que supone 6.763,68 €.
+    El distribuidor número 5 ha vendido 25.005,00. Lo que no supone ninguna comisión.
     ```
 
 3. (Utiles) Dada una matríz (de enteros) con el mismo número de filas y de columnas, diseñar los siguientes métodos:
@@ -674,4 +674,5 @@
     - Se comienza en la casilla (0,0) y se termina en la casilla (N-1, N-1) 
     - Nos movemos a una celda adyacente si esto es posible. 
     - Cuando llegamos a una situación en la que no podemos realizar ningún movimiento que nos lleve a una celda que no hayamos visitado ya, retrocedemos sobre nuestros pasos y buscamos un camino alternativo. 
+
     ```
