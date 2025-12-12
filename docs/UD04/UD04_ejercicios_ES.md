@@ -396,7 +396,7 @@
 
     Los datos de ventas los tenemos almacenados en una matriz (de enteros) de 5 filas x 10 columnas, `ventas`, con el número de unidades de cada producto que ha vendido cada distribuidor. Cada fila corresponde a las ventas de un distribuidor (la primera fila, del primer distribuidor, etc.), mientras que cada columna corresponde a un producto :
 
-    |         | columna[0] | columna[1] |  columna[2] | columna[3] | columna[4] | columna[5] | columna[6] | columna[7] | columna[8] | columna[9] |
+    | ventas  | columna[0] | columna[1] |  columna[2] | columna[3] | columna[4] | columna[5] | columna[6] | columna[7] | columna[8] | columna[9] |
     | ------  | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
     | fila[0] | 100  | 25   | 33   | 89   | 23   | 90   | 87   | 6    | 5    | 233  |
     | fila[1] | 28   | 765  | 65   | 77   | 987  | 55   | 4    | 66   | 4    | 8    |
@@ -677,5 +677,6 @@
     - Cuando llegamos a una situación en la que no podemos realizar ningún movimiento que nos lleve a una celda que no hayamos visitado ya, retrocedemos sobre nuestros pasos y buscamos un camino alternativo. 
 
     ```
+
 
 
