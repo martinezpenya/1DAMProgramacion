@@ -396,17 +396,18 @@
 
     Los datos de ventas los tenemos almacenados en una matriz (de enteros) de 5 filas x 10 columnas, `ventas`, con el número de unidades de cada producto que ha vendido cada distribuidor. Cada fila corresponde a las ventas de un distribuidor (la primera fila, del primer distribuidor, etc.), mientras que cada columna corresponde a un producto :
 
-    | 100  | 25   | 33   | 89   | 23   | 90   | 87   | 6    | 5    | 233  |
-    | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-    | 28   | 765  | 65   | 77   | 987  | 55   | 4    | 66   | 4    | 8    |
-    | ...  |      |      |      |      |      |      |      |      |      |
-    |      |      |      |      |      |      |      |      |      |      |
-    |      |      |      |      |      |      |      |      |      |      |
+    |         | columna[0] | columna[1] |  columna[2] | columna[3] | columna[4] | columna[5] | columna[6] | columna[7] | columna[8] | columna[9] |
+    | ------  | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+    | fila[0] | 100  | 25   | 33   | 89   | 23   | 90   | 87   | 6    | 5    | 233  |
+    | fila[1] | 28   | 765  | 65   | 77   | 987  | 55   | 4    | 66   | 4    | 8    |
+    | ...     | ...  |      |      |      |      |      |      |      |      |      |
+    | ...     |      |      |      |      |      |      |      |      |      |      |
 
     El array `precio`, de 10 elementos, contiene el precio en € de cada uno de los 10 productos.
 
-    | 125.2 | 234.4 | 453.9 | ...  |      |      |      |      |      |       |
-    | ----- | ----- | ----- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+    | precio[0] | precio[1] | precio[2] | ...  |      |      |      |      |      |      |
+    | -----     | -----     | -----     | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+    | 125.2     | 234.4     | 453.9     | ...  |      |      |      |      |      |      |
 
     Escribe el programa y los métodos necesarios para averiguar:
 
@@ -441,7 +442,7 @@
     El distribuidor número 5 ha vendido 25.005,00. Lo que no supone ninguna comisión.
     ```
 
-3. (Utiles) Dada una matríz (de enteros) con el mismo número de filas y de columnas, diseñar los siguientes métodos:
+4. (Utiles) Dada una matríz (de enteros) con el mismo número de filas y de columnas, diseñar los siguientes métodos:
 
     - `public static void mostrarDiagonal(int[][] m)` que muestre por pantalla los elementos de la diagonal principal.
 
@@ -480,7 +481,7 @@
     LA MATRIZ ES SIMETRICA?: true
     ```
 
-4. (Tetris) Supongamos que estamos desarrollando un Tetris en Java y para representar la partida utilizamos una matriz bidimensional de enteros 15 filas por 8 columnas. Se utiliza el valor 0 para indicar que la celda está vacía y un valor distinto de cero para las celdas que contienen parte de una pieza (distintos valores para distintos colores):
+5. (Tetris) Supongamos que estamos desarrollando un Tetris en Java y para representar la partida utilizamos una matriz bidimensional de enteros 15 filas por 8 columnas. Se utiliza el valor 0 para indicar que la celda está vacía y un valor distinto de cero para las celdas que contienen parte de una pieza (distintos valores para distintos colores):
 
     <img src="assets/tetris.png" alt="Tetris" style="zoom:75%;" />
 
@@ -676,4 +677,5 @@
     - Cuando llegamos a una situación en la que no podemos realizar ningún movimiento que nos lleve a una celda que no hayamos visitado ya, retrocedemos sobre nuestros pasos y buscamos un camino alternativo. 
 
     ```
+
 
