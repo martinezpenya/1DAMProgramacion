@@ -442,7 +442,7 @@
     El distribuidor número 5 ha vendido 25.005,00. Lo que no supone ninguna comisión.
     ```
 
-4. (Utiles) Dada una matríz (de enteros) con el mismo número de filas y de columnas, diseñar los siguientes métodos:
+3. (Utiles) Dada una matríz (de enteros) con el mismo número de filas y de columnas, diseñar los siguientes métodos:
 
     - `public static void mostrarDiagonal(int[][] m)` que muestre por pantalla los elementos de la diagonal principal.
 
@@ -451,6 +451,9 @@
     - `public static void intercambiarFilas(int[][] m, int f1, int f2)`, que intercambie los elementos de las filas indicadas.
 
     - Escribir un método `public static boolean esSimetrica (int[][] m)` que devuelva true si la matriz m es simétrica. Una matriz es simétrica si tiene el mismo número de filas que de columnas y además `m[i][j] = m[j][i]` para todo par de índices `i,j`.
+
+    !!! danger "Atención"
+        Todos los métodos se llaman y devuelven con los valores "reales" de las filas y columnas (0-based), pero los valores se muestra al usuario con los valores "amigables" (1-based)
 
     !!! info "Atajo"
         Puedes usar `Arrays.deepToString(m)` para imprimir las matrices
@@ -471,7 +474,7 @@
     {5, 4, 7},
     {3, 7, 5}}
     MOSTRAR DIAGONAL: 1 4 5 
-    FILA DEL MAYOR: 1
+    FILA DEL MAYOR: 2
     ANTES DE INVERTIR LA FILA 1 Y LA 3
     [[1, 5, 3], [5, 4, 7], [3, 7, 5]]
     DESPUES DE INVERTIR LA FILA 1 Y LA 3
@@ -675,7 +678,7 @@
     - Se comienza en la casilla (0,0) y se termina en la casilla (N-1, N-1) 
     - Nos movemos a una celda adyacente si esto es posible. 
     - Cuando llegamos a una situación en la que no podemos realizar ningún movimiento que nos lleve a una celda que no hayamos visitado ya, retrocedemos sobre nuestros pasos y buscamos un camino alternativo. 
-
+    
     ```
 
 
