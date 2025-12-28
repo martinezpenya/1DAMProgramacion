@@ -329,7 +329,7 @@ Los árboles son estructuras complejas de manejar y que permiten operaciones muy
 
 Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en un árbol a nivel interno (inserción de nodos, eliminación de nodos, búsqueda de un valor, etc.). Nos aprovecharemos de las colecciones para hacer uso de su potencial. En la siguiente tabla tienes un uso comparado de `TreeSet` y `LinkedHashSet` . Su creación es similar a como se hace con `HashSet` , simplemente sustituyendo el nombre de la clase `HashSet` por una de las otras. Ni `TreeSet` , ni `LinkedHashSet` admiten duplicados, y se usan los mismos métodos ya vistos antes, los existentes en la interfaz `Set` (que es la interfaz que implementan).
 
-- Conjunto `TreeSet` ([Ejemplo01](#Ejemplo01)):
+- Conjunto `TreeSet` ([Ejemplo01](#ejemplo01)):
 
   ```java
   TreeSet<Integer> t = new TreeSet<>();
@@ -348,7 +348,7 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
   1 3 4 99
   ```
 
-- Conjunto `LinkedHashSet` ([Ejemplo02](#Ejemplo02)):
+- Conjunto `LinkedHashSet` ([Ejemplo02](#ejemplo02)):
 
   ```java
   LinkedHashSet<Integer> t = new LinkedHashSet<>();
@@ -428,7 +428,7 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 
 > ### Recuerda, estas operaciones son comunes a todas las colecciones.
 
-Consulta el [Ejemplo03](#Ejemplo03)
+Consulta el [Ejemplo03](#ejemplo03)
 
 #### Ordenación
 
@@ -461,9 +461,9 @@ Una vez creado el comparador simplemente tenemos que pasarlo como parámetro en 
 TreeSet<Objeto> ts=new TreeSet<>(new ComparadorDeObjetos());
 ```
 
-Hay otra manera de definir esta ordenación, pero lo estudiaremos más a fondo en el punto [Comparadores](#Comparadores)
+Hay otra manera de definir esta ordenación, pero lo estudiaremos más a fondo en el punto [Comparadores](#comparadores)
 
-Para entender mejor los Sets revisa el [Ejemplo04](#Ejemplo04)
+Para entender mejor los Sets revisa el [Ejemplo04](#ejemplo04)
 
 ### Listas
 
@@ -542,7 +542,7 @@ al.subList(0, 2).clear();
 
 Lo mismo ocurre al añadir un elemento, se añade en la sublista y en la lista original.
 
-Puedes consultar el código en el [Ejemplo05](#Ejemplo05)
+Puedes consultar el código en el [Ejemplo05](#ejemplo05)
 
 #### `LinkedList` y `ArrayList`
 
@@ -610,7 +610,7 @@ El resultado de ejecutar el código anterior es que se muestran los números 44 
 !!! info "Información"
     "*Controlar la complejidad es la esencia de la programación*." **[Brian Kernighan](https://es.wikipedia.org/wiki/Brian_Kernighan)**
 
-Consulta el [Ejemplo06](#Ejemplo06)
+Consulta el [Ejemplo06](#ejemplo06)
 
 ### Conjuntos de pares [clave/valor] (Diccionario)
 
@@ -637,7 +637,7 @@ El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada 
 | `boolean isEmpty();`                   | Retornará true si el mapa está vacío, false en cualquier otro caso. |
 | `void clear();`                        | Vacía el mapa.                                               |
 
-Revisa el [Ejemplo07](#Ejemplo07)
+Revisa el [Ejemplo07](#ejemplo07)
 
 ## Iteradores
 
@@ -735,7 +735,7 @@ Lo único que tienes que tener en cuenta es que el conjunto generado por `keySet
 
     *Los problemas son debidos a que el método `remove` del iterador elimina el elemento de dos sitios: de la colección y del iterador en sí (que mantiene interiormente información del orden de los elementos). Si usas el método `remove` de la colección, la información solo se elimina de un lugar, de la colección.*
 
-Consulta el [Ejemplo08](#Ejemplo08) y el [Ejemplo09](#Ejemplo09) (que es la versión del [Ejemplo06](#Ejemplo06) con iteradores).
+Consulta el [Ejemplo08](#ejemplo08) y el [Ejemplo09](#ejemplo09) (que es la versión del [Ejemplo06](#ejemplo06) con iteradores).
 
 ## Comparadores
 
@@ -787,7 +787,7 @@ El funcionamiento del método `compareTo` es el mismo que el método `compare` d
 
 Ordenar ahora la lista de artículos es sencillo, fíjate que fácil: `Collections.sort(coleccionArticulos);`
 
-Consulta el código de [Ejemplo10](#Ejemplo10) y [Ejemplo11](#Ejemplo11)
+Consulta el código de [Ejemplo10](#ejemplo10) y [Ejemplo11](#ejemplo11)
 
 ## Extras
 

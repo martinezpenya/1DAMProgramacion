@@ -9,17 +9,17 @@
     
     Novedades respecto a la Unidad 2:
         
-    - 4.2. [Modificadores de acceso](#modificadores-de-acceso)
-    - 5.3. [Modificadores en la declaración de un método](#modificadores-en-la-declaracion-de-un-metodo)
-    - 5.7. [Sobrecarga de operadores](#sobrecarga-de-operadores)
-    - 6.1 [Ocultación de atributos. Métodos de acceso](#ocultacion-de-atributos-metodos-de-acceso)
-    - 6.2 [Ocultación de métodos](#ocultacion-de-metodos)
-    - 8.4 [Constructores de copia](#constructores-de-copia)
-    - 9 [Clases Anidadas, Clases Internas (*Inner Class*)](#clases-anidadas-clases-internas-inner-class)
-    - 10 [Introducción a la herencia](#introduccion-a-la-herencia)
-    - 11 [Conversión entre objetos (Casting)](#conversion-entre-objetos-casting)
-    - 12 [Acceso a métodos de la superclase](#acceso-a-metodos-de-la-superclase)
-    - 13 [Empaquetado de clases](#empaquetado-de-clases)
+    - 4.2. [Modificadores de acceso](#modificadores-de-acceso-nuevo)
+    - 5.3. [Modificadores en la declaración de un método](#modificadores-en-la-declaracion-de-un-metodo-nuevo)
+    - 5.7. [Sobrecarga de operadores](#sobrecarga-de-operadores-nuevo)
+    - 6.1 [Ocultación de atributos. Métodos de acceso](#ocultacion-de-atributos-metodos-de-acceso-nuevo)
+    - 6.2 [Ocultación de métodos](#ocultacion-de-metodos-nuevo)
+    - 8.4 [Constructores de copia](#constructores-de-copia-nuevo)
+    - 9 [Clases Anidadas, Clases Internas (*Inner Class*)](#clases-anidadas-clases-internas-inner-class-nuevo)
+    - 10 [Introducción a la herencia](#introduccion-a-la-herencia-nuevo)
+    - 11 [Conversión entre objetos (Casting)](#conversion-entre-objetos-casting-nuevo)
+    - 12 [Acceso a métodos de la superclase](#acceso-a-metodos-de-la-superclase-nuevo)
+    - 13 [Empaquetado de clases](#empaquetado-de-clases-nuevo)
 
 ## Introducción
 
@@ -323,7 +323,7 @@ Aquí tienes la sintaxis completa de la declaración de un atributo teniendo en 
 
 Vamos a estudiar con detalle cada uno de ellos.
 
-### Modificadores de acceso :new:
+### Modificadores de acceso  [NUEVO]
 
 Los modificadores de acceso disponibles en Java para un atributo son:
 
@@ -463,7 +463,7 @@ En el ejemplo de la clase `Punto`, puedes observar cómo los métodos `obtenerX`
   int obtenerY()
   ```
 
-### Modificadores en la declaración de un método :new:
+### Modificadores en la declaración de un método  [NUEVO]
 
 En la declaración de un método también pueden aparecer modificadores (como en la declaración de la clase o delos atributos). Un método puede tener los siguientes tipos de modificadores:
 
@@ -590,7 +590,7 @@ También debes tener en cuenta que el tipo devuelto por el método no es conside
 !!! danger "Recuerda"
     Es conveniente no abusar de sobrecarga de métodos y utilizarla con cierta moderación (cuando realmente puede beneficiar su uso), dado que podría hacer el código menos legible.
 
-### Sobrecarga de operadores. :new:
+### Sobrecarga de operadores.  [NUEVO]
 
 Del mismo modo que hemos visto la posibilidad de sobrecargar métodos (disponer de varias versiones de un método con el mismo nombre cambiando su lista de parámetros), podría plantearse también la opción de sobrecargar operadores del lenguaje tales como `+`, `‐`, `*`, `( )`, `<`, `>`, etc. para darles otro significado dependiendo del tipo de objetos con los que vaya a operar.
 
@@ -708,7 +708,7 @@ En el caso de los miembros, disponías de otras dos posibilidades más de nivele
 - Privado (modificador `private`), donde sólo la propia clase tiene acceso al miembro.
 - Protegido (modificador `protected`), lo podrán ver las clases del mismo paquete y también las clases herederas.
 
-### Ocultación de atributos. Métodos de acceso. :new:
+### Ocultación de atributos. Métodos de acceso.  [NUEVO]
 
 Los atributos de una clase suelen ser declarados como privados a la clase o, como mucho, `protected` (accesibles también por clases heredadas), pero no como `public`. De esta manera puedes evitar que sean manipulados inadecuadamente (por ejemplo modificarlos sin ningún tipo de control) desde el exterior del objeto.
 
@@ -746,7 +746,7 @@ También pueden darse casos en los que no interesa que pueda observarse directam
 
 En otros casos puede interesar disponer de métodos de modificación de un atributo pero a través de un determinado procesamiento previo para por ejemplo poder controlar errores o valores inadecuados. Volviendo al ejemplo del `NIF`, un método para modificar un `DNI` (método `setDNI`) podría incluir la letra (`NIF` completo), de manera que así podría comprobarse si el número de `DNI` y la letra coinciden (es un `NIF` válido). En tal caso se almacenará el `DNI` y en caso contrario se producirá un error de validación (por ejemplo lanzando una excepción). En cualquier caso, el `DNI` que se almacenara sería solamente el número y no la letra (pues la letra es calculable a partir del número de `DNI`).
 
-### Ocultación de métodos. :new:
+### Ocultación de métodos.  [NUEVO]
 
 Normalmente los métodos de una clase pertenecen a su interfaz y por tanto parece lógico que sean declarados como públicos. Pero también es cierto que pueden darse casos en los que exista la necesidad de disponer de algunos métodos privados a la clase. Se trata de métodos que realizan operaciones intermedias o auxiliares y que son utilizados por los métodos que sí forman parte de la interfaz. Ese tipo de métodos (de comprobación, de adaptación de formatos, de cálculos intermedios, etc.) suelen declararse como privados pues no son de interés (o no es apropiado que sean visibles) fuera del contexto del interior del objeto.
 
@@ -943,7 +943,7 @@ p1= new Punto(10, 7);
 
 En este caso no se estaría utilizando el constructor por defecto sino el constructor que acabas de implementar en el cual además de reservar memoria se asigna un valor a algunos de los atributos.
 
-### Constructores de copia. :new:
+### Constructores de copia.  [NUEVO]
 
 Una forma de iniciar un objeto podría ser mediante la copia de los valores de los atributos de otro objeto ya existente. Imagina que necesitas varios objetos iguales (con los mismos valores en sus atributos) y que ya tienes uno de ellos perfectamente configurado (sus atributos contienen los valores que tú necesitas). Estaría bien disponer de un constructor que hiciera copias idénticas de ese objeto.
 
@@ -999,7 +999,7 @@ Si necesitas implementar un destructor (normalmente no será necesario), debes t
 - Sólo puede haber un destructor en una clase. No es posible la sobrecarga dado que no tiene parámetros.
 - No puede devolver ningún valor. Debe ser de tipo `void`.
 
-## Clases Anidadas, Clases Internas (*Inner Class*) :new:
+## Clases Anidadas, Clases Internas (*Inner Class*) [NUEVO]
 
 ### **Clase Anidada (Nested Class):**
 
@@ -1192,7 +1192,7 @@ Uso común:
    Para clases con métodos estáticos (por ejemplo, `Utils` o `Constants`), es común colocarlas en un único archivo, ya que suelen ser pequeñas y no tienen lógica compleja.
 
 
-## Introducción a la herencia. :new:
+## Introducción a la herencia.  [NUEVO]
 
 La herencia es uno de los conceptos fundamentales que introduce la programación orientada a objetos. La idea fundamental es permitir crear nuevas clases aprovechando las características (atributos y métodos) de otras clases ya creadas evitando así tener que volver a definir esas características (reutilización).
 
@@ -1245,7 +1245,7 @@ También irás viendo al estudiar distintos componentes de las bibliotecas de Ja
 !!! danger "Recuerda"
     En Java todas las clases son descendientes (de manera explícita o implícita) de la clase `Object`.
 
-## Conversión entre objetos (Casting) :new:
+## Conversión entre objetos (Casting)  [NUEVO]
 
 La esencia de Casting permite convertir un dato de tipo primitivo en otro generalmente de más precisión.
 
@@ -1399,7 +1399,7 @@ Las reglas a la hora de realizar casting es que:
     System.out.println(oDavid);
     ```
 
-## Acceso a métodos de la superclase :new:
+## Acceso a métodos de la superclase  [NUEVO]
 
 Para acceder a los métodos de la superclase se utiliza la sentencia **`super`**. La sentencia **`this`** permite acceder a los campos y métodos de la clase. La sentencia `super` permite acceder a los campos y métodos de la superclase. El uso de `super` lo hemos visto en las clases `Empleado` y `Encargado` anteriores:
 
@@ -1450,7 +1450,7 @@ public class Anexo4SuperClase {
 }
 ```
 
-## Empaquetado de clases :new:
+## Empaquetado de clases  [NUEVO]
 
 La encapsulación de la información dentro de las clases ha permitido llevar a cabo el proceso de ocultación, que es fundamental para el trabajo con clases y objetos. Es posible que conforme vaya aumentando la complejidad de tus aplicaciones necesites que algunas de tus clases puedan tener acceso a parte de la implementación de otras debido a las relaciones que se establezcan entre ellas a la hora de diseñar tu modelo de datos. En estos casos se puede hablar de un nivel superior de encapsulamiento y ocultación conocido como empaquetado.
 

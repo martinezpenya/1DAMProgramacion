@@ -49,6 +49,22 @@ nav:
     - Ejercicios: UD07/UD07_ejercicios_ES.md
     - Talleres:
       - T01 GitHub Classroom: UD07/UD07_T01_GitHubClassroom.md
+  - UD08:
+    - Composición, Herencia y Polimorfismo: UD08/UD08_ES.md
+    - Ejercicios: UD08/UD08_ejercicios_ES.md
+    - Talleres:
+      - T01 GitHub Classroom: UD08/UD08_T01_GitHubClassroom.md
+      - T02 Librerias Jar vs Maven: UD08/UD08_T02_LibreriasMavenJar_ES.md
+      - T03 Json vs YAML: UD08/UD08_T03_JSON&YAML_ES.md
+  - UD09:
+    - Interfaz gráfica: UD09/UD09_ES.md
+    - Ejercicios: UD09/UD09_ejercicios_ES.md
+    - Talleres:
+      - T01 GitHub Classroom: UD09/UD09_T01_GitHubClassroom.md
+      - T02 SceneBuilder & IntelliJ: UD09/UD09_T02_SceneBuilder_IntelliJ_ES.md
+      - T03 Proyecto JavaFX Maven: UD09/UD09_T03_ProyectoJavaFXMaven_ES.md
+      - T04 Calculadora JavaFX: UD09/UD09_T04_Calculadora_en_JavaFX_IntelliJ_ES.md
+
   - Fuentes de información: fuentes.md
 
 theme:
