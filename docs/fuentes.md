@@ -21,6 +21,7 @@
 - https://blog.devgenius.io/flutter-internationalization-i18n-with-getx-d3a6465d1282
 - https://github.com/openjfx/openjfx-docsopen
 - https://github.com/openjfx/samples
+- https://www.objectdb.com/java/jpa
 - https://awsacademyinstructure.com
 - https://www.jetbrains.com
 - [ChatGPT](https://chatgpt.com/)
