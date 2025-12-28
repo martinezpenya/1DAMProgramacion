@@ -64,7 +64,7 @@ nav:
       - T02 SceneBuilder & IntelliJ: UD09/UD09_T02_SceneBuilder_IntelliJ_ES.md
       - T03 Proyecto JavaFX Maven: UD09/UD09_T03_ProyectoJavaFXMaven_ES.md
       - T04 Calculadora JavaFX: UD09/UD09_T04_Calculadora_en_JavaFX_IntelliJ_ES.md
-
+  - Sobre mi: sobremi.md
   - Fuentes de información: fuentes.md
 
 theme:
