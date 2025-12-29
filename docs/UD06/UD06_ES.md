@@ -2,6 +2,8 @@
 
 ![type:video](assets/UD06_Lectura_y_escritura_de_informacion.mp4)
 
+![Diagrama](assets/UD06_Diagrama.png)
+
 En Java, la interacción de nuestro programa con el mundo exterior—desde leer una pulsación de tecla hasta comunicarse a través de una red—se maneja de manera elegante y simplificada a través del concepto de **Streams (flujos)**. Imagina un *stream* como un conducto lógico universal: Java se encarga de la compleja tarea de vincular este conducto a cualquier dispositivo físico (teclado, monitor, ficheros, *sockets*), **liberándote** de tener que codificar para cada dispositivo individualmente. Estos canales se clasifican en flujos orientados a **bytes** (`InputStream` y `OutputStream`), perfectos para datos binarios, y flujos orientados a **caracteres** (`Reader` y `Writer`), esenciales para manejar la codificación Unicode y garantizar que tu aplicación sea internacionalizable. Más allá de la memoria volátil, veremos cómo asegurar que los datos persistan mediante el uso de **ficheros** (de texto o binarios). Finalmente, exploraremos potentes mecanismos como la **serialización**, que permite guardar y transmitir el estado completo de un objeto, y el uso de **sockets** para establecer la comunicación fundamental entre programas cliente y servidor.
 
 ## Streams (Flujos)

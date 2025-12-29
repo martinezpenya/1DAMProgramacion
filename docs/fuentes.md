@@ -23,6 +23,9 @@
 - https://github.com/openjfx/samples
 - https://www.objectdb.com/java/jpa
 - https://awsacademyinstructure.com
+- https://dev.mysql.com
+- https://aws.amazon.com/es/getting-started/hands-on/create-mysql-db/
+- https://github.com/miguelmarti/FreakDataBases
 - https://www.jetbrains.com
 - [ChatGPT](https://chatgpt.com/)
 - [DeepSeek](https://www.deepseek.com/)

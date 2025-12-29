@@ -1,35 +1,23 @@
-﻿---
-title: Ejercicios de la UD10
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2025, Programacion, Java]
-IES: IES Eduardo Primo Marqués [www.ieseduardoprimo.es]
-header: ${title} - ${subject} (ver. ${today}) 
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url:${filename}/../
-typora-copy-images-to:${filename}/../assets
----
-[toc]
-# Paso previo inicial :warning:<u>REQUERIDO!</u>:warning::
+﻿# Ejercicios de la UD10
 
-Para la realización de los ejercicios deberás crear una base de datos en tu **Sistema Gestor de Bases de Datos** [SGBD] (MySql/MariaDB) de nombre `pr2425_tuNombre` (en mi caso `pr2425_DavidMartinez`) .
+!!! danger "Paso previo inicial [REQUERIDO!]"
+    Para la realización de los ejercicios deberás crear una base de datos en tu **Sistema Gestor de Bases de Datos** [SGBD] (MySql/MariaDB) de nombre `prXXYY_tuNombre` ( donde XXYY hace referencia al curso en mi caso `pr2526_DavidMartinez`) .
 
-Tu SGBD puedes escogerlo tu mismo, mi recomendación es que uses AWS para tener tu base de datos siempre disponible en la nube.
+    Tu SGBD puedes escogerlo tu mismo, mi recomendación es que uses AWS para tener tu base de datos siempre disponible en la nube.
 
-De tu SGBD necesitarás saber:
+    De tu SGBD necesitarás saber:
 
-- `username`:  tu nombre de usuario
-- `password`: tu contraseña
-- `url`: dirección donde se encuentra tu SGBD
-- `port`: puerto en el que escucha tu SGBD
-- `database_name`: nombre de la BBDD (un SGBD puede gestionar más de una Base de Datos, en mi caso `pr2425_DavidMartinez`)
+    - `username`:  tu nombre de usuario
+    - `password`: tu contraseña
+    - `url`: dirección donde se encuentra tu SGBD
+    - `port`: puerto en el que escucha tu SGBD
+    - `database_name`: nombre de la BBDD (un SGBD puede gestionar más de una Base de Datos, en mi caso `pr2425_DavidMartinez`)
 
-Descarga el fichero sql [**tablas.sql**](assets/tablas.sql) e impórtalas en tu SGBD. Para ello, ve a la pestaña de phpMyAdmin `Importa`, selecciona el fichero descargado anteriormente y ejecútalo.
+    Descarga el fichero sql [**tablas.sql**](assets/tablas.sql) e impórtalas en tu SGBD. Para ello, ve a la pestaña de phpMyAdmin `Importa`, selecciona el fichero descargado anteriormente y ejecútalo.
 
-# Actividades
+## Actividades
 
-## UD10_00_GestionProveedores
+### UD10_00_GestionProveedores
 
 Tenemos nuestra base de datos [**tablas.sql**](assets/tablas.sql) que almacena información sobre `proveedores`. La tabla `proveedores` tiene las siguientes columnas:
 
@@ -40,7 +28,7 @@ Tenemos nuestra base de datos [**tablas.sql**](assets/tablas.sql) que almacena i
 
 Crea un ejercicio de nombre `UD10_00_GestionProveedores` en el que se liste todos los `proveedores`.
 
-## UD10_01_GestionEmpleados
+### UD10_01_GestionEmpleados
 
 Tenemos nuestra base de datos [**tablas.sql**](assets/tablas.sql) que almacena información sobre empleados. La tabla empleados tiene las siguientes columnas:
 
@@ -81,7 +69,7 @@ Es escribir un programa `UD10_01_GestionEmpleados` que realice las siguientes op
 > 2. Ajustar la cadena de conexión a tu base de datos y reemplazar "usuario" y "contraseña" con las credenciales adecuadas.
 >    
 
-## UD10_02_GestionProductos
+### UD10_02_GestionProductos
 
 En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `productos`. La tabla `productos` tiene las siguientes columnas:
 
@@ -94,7 +82,7 @@ Tu tarea es escribir un programa `UD10_02_GestionProductos` que realice las sigu
 1. `mostrarProductosPorPagina()`: Mostrar una página de productos cada vez que el usuario lo solicite. Cada página debe contener 5 productos. Implementa las funciones para mover el cursor a la primera página, página siguiente, página anterior, última página y una página específica utilizando el método `absolute(int row)`.
 2. `buscarProductoPorNombre(String nombre)`: Permitir al usuario buscar un producto por su nombre. Utiliza el método `relative(int registros)` para desplazar el cursor hacia adelante o hacia atrás según la coincidencia del nombre.
 
-## UD10_03_GestionAlumnos
+### UD10_03_GestionAlumnos
 
 En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `alumnos`. La tabla `alumnos` tiene las siguientes columnas:
 
@@ -107,7 +95,7 @@ Tu tarea es escribir un programa `UD10_03_GestionAlumnos` que realice las siguie
 - **Mostrar la información del alumno más joven y más viejo**: Utiliza los métodos `first()` y `last()` para mover el cursor a la primera y última fila respectivamente y obtener la información del alumno más joven y más viejo.
 - **Desplazarse por los alumnos en orden inverso de edad**: Muestra la información de los alumnos en orden inverso de edad. Utiliza el método `previous()` para desplazarte hacia atrás a través de los registros.
 
-## UD10_04_GestionLibros
+### UD10_04_GestionLibros
 
 En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `libros`. La tabla `libros` tiene las siguientes columnas:
 
@@ -137,7 +125,7 @@ Tu tarea es escribir un programa `UD10_04_GestionLibros` que realice las siguien
 >
 > 2. Utiliza el método `preparedStatement(sql)` con una consulta en la que se listen los libros que contengan la cadena autor dentro del campo autor.
 
-## UD10_05_GestionVentas
+### UD10_05_GestionVentas
 
 En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `ventas`. La tabla `ventas` tiene las siguientes columnas:
 
@@ -151,7 +139,7 @@ Tu tarea es escribir un programa `UD10_05_GestionVentas` que realice las siguien
 - Calcular el total de ventas: Utiliza el método `next()` para recorrer todas las ventas y sumar los totales para obtener el total general de ventas.
 - Buscar ventas por producto: Permite al usuario ingresar el nombre de un producto y muestra todas las ventas asociadas a ese producto. Utiliza el método `relative(int registros)` para desplazarte a través de los registros según las coincidencias del producto.
 
-## UD10_06_GestionPedidos
+### UD10_06_GestionPedidos
 
 En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `pedidos`. La tabla `pedidos` tiene las siguientes columnas:
 
@@ -166,14 +154,14 @@ Tu tarea es escribir un programa `UD_06_GestionPedidos` que realice las siguient
 - Listar pedidos por cliente: Permite al usuario ingresar el nombre de un cliente y mostrar todos los pedidos realizados por ese cliente. Utiliza el método `relative(int registros)` para desplazarte a través de los registros según las coincidencias del cliente.
 - Buscar pedidos por fecha: Permite al usuario ingresar una fecha y mostrar todos los pedidos realizados en esa fecha. Utiliza el método `afterLast()` y `previous()` para mover el cursor al final y luego retroceder, así puedes comenzar desde la última fila.
 
-## UD10_07_GestionEmpleados (continuación)
+### UD10_07_GestionEmpleados (continuación)
 
 Continuando con el ejercicio de gestión de empleados, copia el programa `UD10_01_GestionEmpleados`, cambia el nombre a `UD10_07_GestionEmpleados` y agrega algunas funcionalidades adicionales:
 
 - **Mostrar información del empleado por ID**: Permite al usuario ingresar el ID de un empleado y muestra toda la información relacionada con ese empleado. Utiliza el método `absolute(int row)` para posicionarte en el registro del empleado especificado.
 - **Buscar empleados por salario**: Permite al usuario ingresar un rango de salarios y mostrar todos los empleados cuyo salario esté dentro de ese rango. Utiliza el método `next()` para recorrer todas las filas y filtrar los empleados según el criterio de salario.
 
-## UD10_08_GestionEstudiantes
+### UD10_08_GestionEstudiantes
 
 En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `estudiantes`. La tabla `estudiantes` tiene las siguientes columnas:
 
@@ -187,21 +175,21 @@ Tu tarea es escribir un programa `UD_08_GestionEstudiantes` que realice las sigu
 - **Mostrar la posición actual del estudiante**: Muestra la posición del estudiante actual en el conjunto de resultados. Utiliza el método `getRow()` para obtener el número de registro actual.
 - **Validar la posición del cursor**: Verifica si el cursor está antes del primer registro, en el primer registro, en el último registro o después del último registro. Utiliza los métodos `isBeforeFirst()`, `isFirst()`, `isLast()` e `isAfterLast()` para realizar estas verificaciones.
 
-## UD10_09_GestionProductos (continuación)
+### UD10_09_GestionProductos (continuación)
 
 Continuando con el ejercicio `UD10_02_GestionProductos`, copia el programa y cambia el nombre a `UD10_09_GestionProductos` y agrega algunas funcionalidades adicionales:
 
 - **Mostrar el número total de productos**: Muestra el número total de productos en la base de datos. Utiliza el método `getRow()` para obtener el número de registro actual y `last()` para mover el cursor a la última fila.
 - **Verificar si hay productos disponibles**: Verifica si hay algún producto disponible en la base de datos. Utiliza los métodos `isBeforeFirst()` e `isAfterLast()` para determinar si el cursor está antes del primer registro o después del último registro, respectivamente.
 
-## UD10_10_GestionEmpleados (continuación)
+### UD10_10_GestionEmpleados (continuación)
 
 Continuando con el ejercicio de gestión de empleados `UD10_07_GestionEmpleados` haz una copia y nómbralo `UD10_10_GestionEmpleados` y agrega algunas funcionalidades adicionales:
 
 - **Verificar si hay empleados en la base de datos**: Verifica si hay algún empleado registrado en la base de datos. Utiliza los métodos `isBeforeFirst()` e `isAfterLast()` para determinar si el cursor está antes del primer registro o después del último registro, respectivamente.
 - **Mostrar el primer empleado**: Muestra la información del primer empleado en la base de datos. Utiliza el método `first()` para mover el cursor al primer registro y luego muestra la información del empleado.
 
-## UD10_11_GestionVendedores
+### UD10_11_GestionVendedores
 
 En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `vendedores`. La tabla `vendedores` tiene las siguientes columnas:
 
@@ -214,14 +202,3 @@ Tu tarea es escribir un programa `UD10_11_GestionVendedores` que realice las sig
 
 - **Mostrar la posición actual del vendedor**: Muestra la posición actual del vendedor en el conjunto de resultados. Utiliza el método `getRow()` para obtener el número de registro actual.
 - **Mostrar información del último cliente**: Muestra la información del último cliente en la base de datos. Utiliza el método `last()` para mover el cursor al último registro y luego muestra la información del cliente.
-
-# Fuentes de información
-
-- [Wikipedia](https://es.wikipedia.org)
-- [Programación (Grado Superior) - Juan Carlos Moreno Pérez (Ed. Ra-ma)](https://www.ra-ma.es/libro/programacion-grado-superior_48302/)
-- Apuntes IES Henri Matisse (Javi García Jimenez?)
-- Apuntes AulaCampus
-- [Apuntes José Luis Comesaña](https://www.sitiolibre.com/)
-- [Apuntes IOC Programació bàsica (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_asx_m03_/web/fp_asx_m03_htmlindex/index.html)
-- [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)
-- https://arturoblasco.github.io/prg

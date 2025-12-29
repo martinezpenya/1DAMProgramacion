@@ -1,5 +1,8 @@
 ﻿# Bases de Datos Orientadas a Objetos
 ![type:video](assets/UD11_BBDD_OO.mp4)
+
+![Diagrama](assets/UD11_Diagrama.png)
+
 ## Introducción
 
 Si bien las BD relacionales son las más populares y las que más aceptan, su utilización dentro de una aplicación orientada a objetos implica un proceso de traducción del diagrama UML original a un modelo relacional, totalmente basado en tablas. En esta traducción se pierden muchas de las funcionalidades básicas de la orientación a objetos, que deben simularse de algún modo: referencias a objetos, clases asociativas, listas de objetos, herencia, etc. Cuando el diagrama es de cierta complejidad, la traducción puede resultar muy complicada.
@@ -216,7 +219,7 @@ Como hemos explicado anteriormente, cada BDOO utilitza su propio lenguaje ODL y 
 
 Trabajar con Java Persistence API (JPA) consiste en utilizar las siguientes interfaces:
 
-<img src="/assets/image.png" alt="Interfaces involucradas"/>
+<img src="assets/image.png" alt="Interfaces involucradas"/>
 
 **Descripción general**
 
@@ -307,7 +310,7 @@ Administrar una base de datos de objetos `ObjectDB` usando JPA requiere el uso d
 El ciclo de vida de los objetos de entidad consta de cuatro estados: Nuevo, Administrado, Eliminado y Separado.
 
 
-![img](/assets/ciclo_vida_objeto_entidad.png)
+![img](assets/ciclo_vida_objeto_entidad.png)
 
 Cuando se crea inicialmente un objeto de entidad, su estado es **Nuevo**. En este estado, el objeto aún no está asociado con un [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) y no tiene representación en la base de datos.
 

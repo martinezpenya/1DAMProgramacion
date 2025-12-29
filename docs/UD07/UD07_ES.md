@@ -2,6 +2,8 @@
 
 ![type:video](assets/UD07_Colecciones.mp4)
 
+![Diagrama](assets/UD07_Diagrama.png)
+
 ## Introducción
 
 Cuando el volumen de datos a manejar por una aplicación es elevado, no basta con utilizar variables. Manejar los datos de un único pedido en una aplicación puede ser relativamente sencillo, pues un pedido está compuesto por una serie de datos y eso simplemente se traduce en varias variables. 

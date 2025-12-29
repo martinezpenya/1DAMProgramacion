@@ -2,6 +2,8 @@
 
 ![type:video](assets/UD08_Composicion_Herencia_Polimorfismo.mp4)
 
+![Diagrama](assets/UD08_Diagrama.png)
+
 ## Relaciones entre clases.
 
 Cuando estudiaste el concepto de clase, ésta fue descrita como una especie de mecanismo de definición (plantillas), en el que se basaría el entorno de ejecución a la hora de construir un objeto: un mecanismo de definición de objetos.

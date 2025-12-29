@@ -1,24 +1,12 @@
-﻿---
-title: Taller UD11_1: Añadir ObjectDB a un proyecto IntelliJ (Maven)
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2025, Programacion, Java]
-IES: IES Eduardo Primo Marqués (Carlet)
-header: ${title} - ${subject} (ver. ${today}) 
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url:${filename}/../
-typora-copy-images-to:${filename}/../assets
----
+﻿
+# Taller UD11_T02: Añadir ObjectDB a un proyecto IntelliJ (Maven)
 
 
-[toc]
-
-# Que es ObjectDB
+## Que es ObjectDB
 
 **ObjectDB** es un potente sistema de gestión de bases de datos orientado a objetos (`ODBMS`). Es compacto, fiable, fácil de usar y extremadamente rápido. **ObjectDB** proporciona todos los servicios estándar de administración de bases de datos (almacenamiento y recuperación, transacciones, administración de bloqueos, procesamiento de consultas, etc.), pero de una manera que facilita el desarrollo y acelera las aplicaciones.
 
-## Características clave de la base de datos **ObjectDB**
+### Características clave de la base de datos **ObjectDB**
 
 - Sistema de gestión de bases de datos orientado a objetos (ODBMS) 100% puro Java.
 - Sin API propietaria - administrado únicamente por API de Java estándar (JPA 2 / JDO 2).
@@ -38,17 +26,17 @@ Se recomienda probar **ObjectDB** antes de comprar una licencia.
 
 Más información sobre tipos de licencias: https://www.objectdb.com/database/purchase
 
-# Añadir ObjectDB mediante Maven
+## Añadir ObjectDB mediante Maven
 
 **1. Crear un Nuevo Proyecto con Maven:**
 
 - Al crear un nuevo proyecto en IntelliJ, selecciona "Maven" como sistema de construcción.
 
-  <img src="/assets/T1_crea_proyecto_maven.png" alt="Craer proyecto Maven de Java" style="zoom: 67%;" />
+  <img src="assets/T1_crea_proyecto_maven.png" alt="Craer proyecto Maven de Java" style="zoom: 67%;" />
 
 - IntelliJ generará la estructura del proyecto y el archivo `pom.xml`.
 
-<img src="/assets/T1_nuevo_proyecto_pomxml.png" alt="image-20250501110018265" style="zoom:67%;" />
+<img src="assets/T1_nuevo_proyecto_pomxml.png" alt="image-20250501110018265" style="zoom:67%;" />
 
 **2. Agregar Dependencias:**
 
@@ -78,9 +66,9 @@ Más información sobre tipos de licencias: https://www.objectdb.com/database/pu
 
 - Si cambias el archivo `pom.xml`, IntelliJ mostrará un botón para cargar los cambios:
 
-![image-20250501110419123](/assets/T1_boton_pom.png)
+![image-20250501110419123](assets/T1_boton_pom.png)
 
-# Tu primer proyecto con ObjectDB
+## Tu primer proyecto con ObjectDB
 
 En la web del proyecto ObjectDB puedes descargar un tutorial con un proyecto ya creado para ver como funciona, pero nosotros lo vamos a crear desde cero.
 
@@ -195,7 +183,7 @@ En la web del proyecto ObjectDB puedes descargar un tutorial con un proyecto ya 
 
    Una vez creado todo el proyecto, y comprobado que no tenga errores de compilación, ejecuta el método `main` de la clase `TestPunto` y veras aparecer una carpeta llamada `DB` en la ruta que contiene un único fichero `puntos.odb`.
 
-   <img src="/assets/T1_ruta_DB.png" alt="image-20250501113351121" style="zoom:67%;" />
+   <img src="assets/T1_ruta_DB.png" alt="image-20250501113351121" style="zoom:67%;" />
 
    
 
@@ -218,17 +206,17 @@ En la web del proyecto ObjectDB puedes descargar un tutorial con un proyecto ya 
 
 > ### Puede que hayas observado que la palabra Punto dentro de las consultas SQL aparece subrayado en rojo. Eso es porque IntelliJ no detecta la clase Punto como una entidad JPA:
 >
-> ![image-20250501114711764](/assets/T1_Punto_not_JPA.png)
+> ![image-20250501114711764](assets/T1_Punto_not_JPA.png)
 >
 > La solución es tan simple como hacer clic en la bombilla roja que aparece, y elegir la opción de que IntelliJ nos añada el complemento necesario de JPA para "entender" la persistencia de datos.
 >
-> ![image-20250501114846651](/assets/T1_add_JPA_facet.png)
+> ![image-20250501114846651](assets/T1_add_JPA_facet.png)
 
 Ten en cuenta que cada vez que ejecutas el código se añaden 1000 puntos más a la BDOO, así que si lo ejecutas un par de veces más tendras 3000 puntos en la base de datos.
 
 Si quieres volver a empezar solo debes borrar el fichero `*.odb` y al volver a ejecutar el código se generará de nuevo el fichero con 1000 puntos.
 
-# Actividades
+## Entrega
 
 Ahora genera un documento `pdf` con el siguiente contenido:
 
@@ -241,16 +229,3 @@ Ahora genera un documento `pdf` con el siguiente contenido:
 
 
 Envía tu fichero `pdf` con explicaciones detallas sobre los cambios requeridos, adjuntando fragmentos del código añadido (con capturas de pantalla o recortes de código fuente) a la tarea de Aules.
-
-# Fuentes de información
-
-- [Wikipedia](https://es.wikipedia.org)
-- [Programación (Grado Superior) - Juan Carlos Moreno Pérez (Ed. Ra-ma)](https://www.ra-ma.es/libro/programacion-grado-superior_48302/)
-- Apuntes IES Henri Matisse (Javi García Jimenez?)
-- Apuntes AulaCampus
-- [Apuntes José Luis Comesaña](https://www.sitiolibre.com/)
-- [Apuntes IOC Programació bàsica (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_asx_m03_/web/fp_asx_m03_htmlindex/index.html)
-- [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)
-- [FXDocs](https://github.com/FXDocs/docs)
-- https://openjfx.io/openjfx-docs/
-- https://arturoblasco.github.io/pr

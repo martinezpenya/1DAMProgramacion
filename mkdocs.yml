@@ -186,8 +186,7 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.arithmatex
 extra_javascript:
-  - js/mathjax-config.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - ./js/mathjax-config.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js
 extra:
   search:
@@ -243,7 +242,7 @@ plugins:
         #exclude_pages:
         #    - 'bugs/'
         #    - 'appendix/contribute/'
-        #convert_iframe:
+        #convert_iframe:/assets/LoadMavenChanges.png
         #    - src: IFRAME SRC
         #      img: POSTER IMAGE URL
         #      text: ALTERNATE TEXT

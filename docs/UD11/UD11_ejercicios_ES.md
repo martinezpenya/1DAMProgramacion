@@ -1,21 +1,8 @@
-﻿---
-title: Ejercicios de la UD11
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2024, Programacion, Java]
-IES: IES Eduardo Primo Marqués (Carlet) [www.ieseduardoprimo.es]
-header: ${title} - ${subject} (ver. ${today}) 
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url:${filename}/../
-typora-copy-images-to:${filename}/../assets
----
-[toc]
-# Ejercicios
+﻿# Ejercicios de la UD11
 
-# Actividades
+## Actividades
 
-## Definición de clases mediante ODL
+### Definición de clases mediante ODL
 
 El objetivo de esta actividad es ver cómo especificar clases usando el lenguaje ODL.
 
@@ -24,9 +11,9 @@ Genere la declaración ODL de las clases del diagrama siguiente:
 
 
 
-![img](/assets/wdamm03u5_12.png)
+![img](assets/wdamm03u5_12.png)
 
-### Solución
+#### Solución
 
 
 ```java
@@ -66,7 +53,7 @@ class Intersecció {
 }
 ```
 
-## Instalación y uso de db4o
+### Instalación y uso de db4o
 
 El objetivo de esta actividad es ver cómo usar las librerías de *db4o* para trabajar con BDOO mediante su IDE.
 
@@ -125,7 +112,7 @@ public class ProvaDB4O {
 }
 ```
 
-## Gestión de grupos de trabajo de estudiantes mediante db4o
+### Gestión de grupos de trabajo de estudiantes mediante db4o
 
 El objetivo de esta actividad es ver cómo gestionar la persistencia de objetos usando la BDOO *db4o*.
 
@@ -207,7 +194,7 @@ public class GrupTreball {
 
 
 
-### Solución
+#### Solución
 
 
 ```java
@@ -298,6 +285,8 @@ public class GestionarTreballs {
       }
     };
  
+```
+```java
     ObjectSet<Estudiant> estudiants = db.query(p);
  
  
@@ -382,7 +371,7 @@ public class GestionarTreballs {
 }
 ```
 
-## Gestión de clientes y encargos mediante db4o
+### Gestión de clientes y encargos mediante db4o
 
 El objetivo de esta actividad es ver cómo gestionar la persistencia de objetos usando la BDOO *db4o*.
 
@@ -400,9 +389,9 @@ El programa debe poder dar las siguientes opciones:
 
 Los tipos de producto y los clientes se identifican de forma única por el nombre (sólo puede haber un único objeto con un nombre dado). Para este ejercicio no es necesario gestionar la persistencia de actualizaciones entre diferentes ejecuciones.
 
-### Solución
+#### Solución
 
-```
+```java
 public class TipusProducte {
   private String nom;
   private float preu;
@@ -417,6 +406,8 @@ public class TipusProducte {
     return  nom + ":" + preu;
   }
 }
+```
+```java
 public class Quantitat {
   private TipusProducte tipusProducte;
   private int nre;
@@ -430,8 +421,9 @@ public class Quantitat {
   public String toString() {
     return tipusProducte.toString() + " - " + nre;
   }
-
 }
+```
+```java
 import java.util.*;
  
 public class Client {
@@ -487,10 +479,10 @@ public class Client {
      }
     return res;
   }
- 
 }
+```
+```java
 import java.util.*;
- 
  
 public class Encarrec {
  
@@ -515,6 +507,8 @@ public class Encarrec {
     return res;
   }
 }
+```
+```java
 import java.util.*;
 import com.db4o.*;
 import com.db4o.config.EmbeddedConfiguration;
@@ -595,7 +589,8 @@ public class GestionarClients {
       System.out.println("Client emmagatzemat");
     }
   }
- 
+```
+```java
   public void afegirEncarrec(ObjectContainer db) {
     String nom = llegirText("Nom del Client");
     //Cal cercar si el client existeix
@@ -678,7 +673,8 @@ public class GestionarClients {
     }
     return res;
   }
- 
+```
+```java
  public float llegirReal(String pregunta) {
     Scanner in = new Scanner(System.in);
     float res = -1;
@@ -698,19 +694,18 @@ public class GestionarClients {
     GestionarClients programa = new GestionarClients();
     programa.start();
   }
- 
 }
 ```
 
-## Instalación y uso de JDO
+### Instalación y uso de JDO
 
 El objetivo de esta actividad es ver cómo usar una BDDOO basada en JDO mediante su IDE.
 
 Vaya a la página de BDOO [JDOInstruments](http://sourceforge.net/projects/jdoinstruments/develop) y descargue sus bibliotecas y la documentación. Lea la documentación para ver cómo puede utilizar las bibliotecas para generar programas mediante su IDE. Una vez hecho, ejecute correctamente el ejemplo proporcionado con las librerías (en la carpeta “linuxexample” o “windiowsexample”, según su sistema operativo).
 
-# Ejercicios
+## Ejercicios
 
-## Ejercicio 1
+### Ejercicio 1
 
 A partir del siguiente fragmento de ODL, que describe en términos generales un juego donde jugadores se desplazan por un laberinto:
 
@@ -755,7 +750,7 @@ Marque si son verdaderas (V) o falsas (F) las siguientes opciones. Siguiendo est
 | 9    | En el programa puede haber jugadores con la misma ubicación. | v    |      |
 | 10   | No puede haber ningún ítem en ninguna sala.                  | v    |      |
 
-## Ejercicio 2
+### Ejercicio 2
 
 Dada la consulta OQL siguiente:
 
@@ -775,7 +770,7 @@ Elija la opción correcta. Si se desea obtener estrictamente los mismos datos re
 | 3    | En una BDOO basada en JDO, es posible hacerlo usando una búsqueda `query.execute(…)`. |      |
 | 4    | Ninguna de las anteriores afirmaciones es cierta.            | esta |
 
-## Ejercicio 3
+### Ejercicio 3
 
 Se dispone de la siguiente clase, cuyos objetos están almacenados en una BDOO *db4o*. Para gestionarlos, sólo se desea utilizar búsquedas por ejemplo (*Queries-By-Example*).
 
@@ -803,7 +798,7 @@ Marque si son verdaderas (V) o falsas (F) las siguientes opciones:
 | 7    | Es posible buscar la asignatura con más estudiantes en la actualidad. |      | f    |
 | 8    | Es posible buscar las asignaturas sin estudiantes en la actualidad. |      | f    |
 
-## Ejercicio 4
+### Ejercicio 4
 
 Complete las afirmaciones con la palabra que considere más adecuada:
 
@@ -819,7 +814,7 @@ Complete las afirmaciones con la palabra que considere más adecuada:
 | 6    | Para almacenar objetos en una BDOO *db4o* se usa el método…  |      |
 | 7    | Para almacenar objetos en una BDOO JDO se usa el método…     |      |
 
-## Ejercicio 5
+### Ejercicio 5
 
 Dado el siguiente diagrama de clases y fragmento de código de una BDOO *db4o*:
 
@@ -848,7 +843,7 @@ Elija la opción correcta:
 | 3    | Este código es incorrecto, pero no siempre creará inconsistencias en BDOO. | ESTA |
 | 4    | Este código es redundante, ya que no es necesario el bucle.  |      |
 
-# Ejercicios propuestos
+## Ejercicios propuestos
 
 1. Investiga la sintaxis de uso de la API Criteria y propón algún ejemplo.
 2. ¿Es posible mezclar parámetros por nombre y parámetros posicionales en una query?
@@ -856,7 +851,7 @@ Elija la opción correcta:
 4. ¿Para qué se utilizan los scripts enhancer.bat y enhancer.sh?
 5. Indica qué significado tiene marcar un campo persistente con alguna de las siguientes marcas: @OneToO0ne, @ManyToOne, @OnetoMany, @ManyToMany, Basic. Propón ejemplos ilustrativos.
 
-# Supuestos prácticos
+## Supuestos prácticos
 
 1. Se necesita implementar un programa que administre la información de los vehículos y personas que los conducen cuando entran en un recinto privado. De los vehículos se desea almacenar su identificador (número entero), la matrícula (cadena de caracteres), la fecha de matriculación (fecha) y la persona que lo conduce (clase persona). De los vehículos que sean coches, además, se desea almacenar el tipo de energía que lo propulsa (enumerado: GASOLINA, DIÉSEL, ELÉCTRICO, HÍBRIDO). De las personas que conducen los vehículos se desea almacenar su nombre (cadena de caracteres) y su DNI (cadena de caracteres). De aquellas personas que además sean trabajadores se desea almacenar su número de registro personal (número entero). Implementa las clases entidad que permitan manejar y volcar esta información a una base de datos denominada control, así como un programa que añada los datos de 4 vehículos (2 de ellos coches) y 4 conductores (2 de ellos trabajadores). Utiliza el explorador ObJjectDB Explorer para comprobar que se han introducido correctamente.
 
@@ -874,7 +869,7 @@ Elija la opción correcta:
 
 5. Modifica el programa del supuesto práctico anterior para que añada la opción “Alta trabajador” al menú y permita leer los datos desde teclado para almacenarlos en la base de datos.
 
-# Auto evaluación
+## Auto evaluación
 
 1. ¿Cuál de las siguientes no es una declaración de tipo persistente?
 
@@ -970,14 +965,4 @@ Elija la opción correcta:
     c) `em.getTransaction().begin()`; y `em.getTransaction().commit()`.
     d) `em.getTransaction().start()`; y `em.getTransaction().commit()`.
 
-![image-20240903190856889](/assets/image-20240903190856889.png)
-
-# Fuentes de información
-
-- [Wikipedia](https://es.wikipedia.org)
-- [Programación (Grado Superior) - Juan Carlos Moreno Pérez (Ed. Ra-ma)](https://www.ra-ma.es/libro/programacion-grado-superior_48302/)
-- Apuntes IES Henri Matisse (Javi García Jimenez?)
-- Apuntes AulaCampus
-- [Apuntes José Luis Comesaña](https://www.sitiolibre.com/)
-- [Apuntes IOC Programació bàsica (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_asx_m03_/web/fp_asx_m03_htmlindex/index.html)
-- [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)
+![image-20240903190856889](assets/image-20240903190856889.png)

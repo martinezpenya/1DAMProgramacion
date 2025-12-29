@@ -2,6 +2,8 @@
 
 ![type:video](assets/UD10_BBDD_Relacionales.mp4)
 
+![Diagrama](assets/UD10_Diagrama.png)
+
 ## Introducción
 
 Hoy en día, la mayoría de aplicaciones informáticas necesitan almacenar y gestionar gran cantidad de datos. Esos datos, se suelen guardar en **bases de datos relacionales**, ya que éstas son las más extendidas actualmente.
@@ -26,39 +28,42 @@ Java, mediante **JDBC** ( Java Database Connectivity, API que permite la ejecuci
 - Aprovechar la experiencia de los APIs de bases de datos existentes,
 - Ser sencillo.
 
-> ## **Qué es una API?**
->
-> ​	**API**: *Application Programming Interface* (Interfaz de Programación de Aplicaciones). Conjunto de reglas y protocolos que permite a diferentes aplicaciones o sistemas comunicarse entre sí. En pocas palabras, actúa como un intermediario que permite que dos programas informáticos se comuniquen y compartan datos entre ellos de manera segura y eficiente. Las APIs se utilizan comúnmente en el desarrollo de software para permitir la integración de diferentes sistemas, la creación de aplicaciones de terceros y la automatización de procesos.
-> ​	Un ejemplo sencillo de API podría ser el servicio de pronóstico del tiempo proporcionado por una compañía meteorológica. Imagina que tienes una aplicación de clima en tu teléfono. Esta aplicación necesita mostrar el pronóstico del tiempo actualizado, pero no tiene la capacidad de predecir el clima por sí misma.
-> ​	En lugar de eso, la aplicación utiliza una API proporcionada por una empresa meteorológica. Esta API permite que la aplicación envíe una solicitud con la ubicación actual del usuario y, a cambio, recibe datos sobre el clima en esa ubicación. La API proporciona estos datos en un formato estructurado, como JSON o XML, que la aplicación puede interpretar y mostrar de manera comprensible para el usuario.
-> ​	En resumen, la aplicación de clima utiliza la API de la empresa meteorológica para obtener datos actualizados sobre el pronóstico del tiempo sin tener que desarrollar su propio sistema de predicción meteorológica. La API actúa como un puente entre la aplicación y los recursos de la compañía meteorológica, permitiendo que la aplicación acceda y utilice esos recursos de manera fácil y eficiente.
+!!! info "Qué es una API?"
 
-> ## **Bases de datos NoSQL vs Bases de datos relacionales**
->
-> Las bases de datos NoSQL (Not Only SQL) son sistemas de gestión de bases de datos que no siguen el modelo relacional tradicional. Están diseñadas para manejar datos no estructurados o semiestructurados y para proporcionar flexibilidad en la forma en que se almacenan y acceden a los datos. Existen diferentes tipos:
->
-> - **Documentales:** Almacenan datos en documentos similares a JSON, como [MongoDB](https://www.mongodb.com/).
-> - **Clave-Valor:** Almacenan pares de clave-valor, como [Redis](https://redis.io/).
-> - **Columnar:** Almacenan datos en columnas en lugar de filas, como [Cassandra](https://cassandra.apache.org/_/index.html).
-> - **Grafos:** Almacenan datos en estructuras de grafos, como [Neo4j](https://neo4j.com/).
->
-> Entre sus ventajas, podemos encontrar las siguientes:
->
-> - **Escalabilidad Horizontal:** Pueden manejar grandes volúmenes de datos mediante la distribución de la carga en múltiples servidores.
-> - **Flexibilidad:** No requieren un esquema fijo, lo que permite manejar datos heterogéneos y evolucionar el modelo de datos fácilmente.
-> - **Alto Rendimiento:** Optimizadas para operaciones de lectura y escritura rápidas.
->
-> **Diferencias con Bases de Datos Relacionales**
->
-> Referente al Modelo de Datos, las **Relacionales** utilizan un modelo tabular con filas y columnas, y relaciones definidas mediante claves primarias y foráneas. Mientras que las **NoSQL** utilizan diversos modelos de datos (documentos, clave-valor, columnar, grafos) que permiten una mayor flexibilidad.
->
-> En cuanto a su Esquema, las **Relacionales:** tienen esquemas rígidos y predefinidos. Cambiar el esquema puede ser complejo. Por contra, las **NoSQL** tienen esquemas dinámicos o inexistentes, permitiendo agregar nuevos campos sobre la marcha sin necesidad de modificar el esquema de la base de datos.
->
-> Las Consultas en las **Relacionales** utilizan SQL (Structured Query Language) para realizar consultas complejas y uniones entre tablas. Sin embargo, las **NoSQL** utilizan diferentes lenguajes de consulta o API específicos para el tipo de base de datos, que pueden ser menos complejos y más rápidos para ciertas operaciones.
->
-> Si hablamos de Escalabilidad, las **Relacionales** tienen escalabilidad vertical (mejorar el hardware del servidor). Pero las **NoSQL** cuentan con escalabilidad horizontal (añadir más servidores al clúster).
->
-> Por último, referente a la Integridad y Transacciones, las **Relacionales** cuentan con una fuerte consistencia y soporte robusto para transacciones ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad). Por contra, las **NoSQL** en muchos casos, priorizan la disponibilidad y la partición tolerante sobre la consistencia (sistema BASE: Basic Availability, Soft state, Eventual consistency).
+    **API**: *Application Programming Interface* (Interfaz de Programación de Aplicaciones). Conjunto de reglas y protocolos que permite a diferentes aplicaciones o sistemas comunicarse entre sí. En pocas palabras, actúa como un intermediario que permite que dos programas informáticos se comuniquen y compartan datos entre ellos de manera segura y eficiente. Las APIs se utilizan comúnmente en el desarrollo de software para permitir la integración de diferentes sistemas, la creación de aplicaciones de terceros y la automatización de procesos.
+    
+    Un ejemplo sencillo de API podría ser el servicio de pronóstico del tiempo proporcionado por una compañía meteorológica. Imagina que tienes una aplicación de clima en tu teléfono. Esta aplicación necesita mostrar el pronóstico del tiempo actualizado, pero no tiene la capacidad de predecir el clima por sí misma.
+    
+    En lugar de eso, la aplicación utiliza una API proporcionada por una empresa meteorológica. Esta API permite que la aplicación envíe una solicitud con la ubicación actual del usuario y, a cambio, recibe datos sobre el clima en esa ubicación. La API proporciona estos datos en un formato estructurado, como JSON o XML, que la aplicación puede interpretar y mostrar de manera comprensible para el usuario.
+    
+    En resumen, la aplicación de clima utiliza la API de la empresa meteorológica para obtener datos actualizados sobre el pronóstico del tiempo sin tener que desarrollar su propio sistema de predicción meteorológica. La API actúa como un puente entre la aplicación y los recursos de la compañía meteorológica, permitiendo que la aplicación acceda y utilice esos recursos de manera fácil y eficiente.
+
+!!! info "Bases de datos NoSQL vs Bases de datos relacionales"
+
+    Las bases de datos NoSQL (Not Only SQL) son sistemas de gestión de bases de datos que no siguen el modelo relacional tradicional. Están diseñadas para manejar datos no estructurados o semiestructurados y para proporcionar flexibilidad en la forma en que se almacenan y acceden a los datos. Existen diferentes tipos:
+    
+    - **Documentales:** Almacenan datos en documentos similares a JSON, como [MongoDB](https://www.mongodb.com/).
+    - **Clave-Valor:** Almacenan pares de clave-valor, como [Redis](https://redis.io/).
+    - **Columnar:** Almacenan datos en columnas en lugar de filas, como [Cassandra](https://cassandra.apache.org/_/index.html).
+    - **Grafos:** Almacenan datos en estructuras de grafos, como [Neo4j](https://neo4j.com/).
+    
+    Entre sus ventajas, podemos encontrar las siguientes:
+    
+    - **Escalabilidad Horizontal:** Pueden manejar grandes volúmenes de datos mediante la distribución de la carga en múltiples servidores.
+    - **Flexibilidad:** No requieren un esquema fijo, lo que permite manejar datos heterogéneos y evolucionar el modelo de datos fácilmente.
+    - **Alto Rendimiento:** Optimizadas para operaciones de lectura y escritura rápidas.
+    
+    **Diferencias con Bases de Datos Relacionales**
+    
+    Referente al Modelo de Datos, las **Relacionales** utilizan un modelo tabular con filas y columnas, y relaciones definidas mediante claves primarias y foráneas. Mientras que las **NoSQL** utilizan diversos modelos de datos (documentos, clave-valor, columnar, grafos) que permiten una mayor flexibilidad.
+    
+    En cuanto a su Esquema, las **Relacionales:** tienen esquemas rígidos y predefinidos. Cambiar el esquema puede ser complejo. Por contra, las **NoSQL** tienen esquemas dinámicos o inexistentes, permitiendo agregar nuevos campos sobre la marcha sin necesidad de modificar el esquema de la base de datos.
+    
+    Las Consultas en las **Relacionales** utilizan SQL (Structured Query Language) para realizar consultas complejas y uniones entre tablas. Sin embargo, las **NoSQL** utilizan diferentes lenguajes de consulta o API específicos para el tipo de base de datos, que pueden ser menos complejos y más rápidos para ciertas operaciones.
+    
+    Si hablamos de Escalabilidad, las **Relacionales** tienen escalabilidad vertical (mejorar el hardware del servidor). Pero las **NoSQL** cuentan con escalabilidad horizontal (añadir más servidores al clúster).
+    
+    Por último, referente a la Integridad y Transacciones, las **Relacionales** cuentan con una fuerte consistencia y soporte robusto para transacciones ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad). Por contra, las **NoSQL** en muchos casos, priorizan la disponibilidad y la partición tolerante sobre la consistencia (sistema BASE: Basic Availability, Soft state, Eventual consistency).
 
 ### Conexión a las BBDD: conectores
 
@@ -77,21 +82,23 @@ Para poder ser más operativos, había que desvincular los lenguajes de programa
 
 Java puede conectarse con distintos SGBD y en diferentes sistemas operativos. Independientemente del método en que se almacenen los datos debe existir siempre un **mediador** entre la aplicación y el sistema de base de datos y en Java esa función la realiza **JDBC**. 
 
-> ### Para la conexión a las bases de datos utilizaremos la API estándar de JAVA denominada **JDBC** (*Java Data Base Connectivity*).
+!!! warning "Importante"
+    Para la conexión a las bases de datos utilizaremos la API estándar de JAVA denominada **JDBC** (*Java Data Base Connectivity*).
 
 JDBC es un API incluido dentro del lenguaje Java para el acceso a bases de datos. Consiste en un conjunto de clases e interfaces escritas en Java que ofrecen un completo API para la programación con bases de datos, por lo tanto es la única solución 100% Java que permite el acceso a bases de datos.
 
 JDBC es una especificación formada por una colección de interfaces y clases abstractas, que todos los fabricantes de drivers deben implementar si quieren realizar una implementación de su driver 100% Java y compatible con JDBC (JDBC-compliant driver). Debido a que JDBC está escrito completamente en Java también posee la ventaja de ser independiente de la plataforma. 
 
-> ### No será necesario escribir un programa para cada tipo de base de datos, una misma aplicación escrita utilizando JDBC podrá manejar bases de datos Oracle, Sybase, SQL Server, etc.
+!!! warning "Importante"
+    No será necesario escribir un programa para cada tipo de base de datos, una misma aplicación escrita utilizando JDBC podrá manejar bases de datos Oracle, Sybase, SQL Server, etc.
 
-<img src="assets/jdbc2.png" alt="jdbc_rdbms" style="zoom:50%;" />
+![jdbc_rdbms](assets/jdbc2.png){width=400}
 
 Además podrá ejecutarse en cualquier sistema operativo que posea una Máquina Virtual de Java, es decir, serán aplicaciones completamente independientes de la plataforma. Otras API'S que se suelen utilizar bastante para el acceso a bases de datos son DAO (Data Access Objects) y RDO (Remote Data Objects), y ADO (ActiveX Data Objects), pero el problema que ofrecen estas soluciones es que sólo son para plataformas Windows.
 
 JDBC tiene sus clases en el paquete `java.sql` y otras extensiones en el paquete `javax.sql`.
 
-<img src="assets/jdbc_clases2.png" alt="jdbc paquetes" style="zoom: 50%;" />
+![jdbc paquetes](assets/jdbc_clases2.png){width=600}
 
 ### Funciones del JDBC
 
@@ -108,7 +115,7 @@ Los drivers nos permiten conectarnos con una base de datos determinada. Existen 
 
 - **JDBC-ODBC bridge plus ODBC driver** (tipo 1): permite al programador acceder a fuentes de datos ODBC existentes mediante JDBC. El JDBC-ODBC Bridge (puente JDBC-ODBC) implementa operaciones JDBC traduciéndolas a operaciones ODBC, se encuentra dentro del paquete `sun.jdbc.odbc` y contiene librerías nativas para acceder a ODBC.
 
-​	Al ser usuario de ODBC depende de las dll de ODBC y eso limita la cantidad de plataformas en donde se puede ejecutar la aplicación.
+    Al ser usuario de ODBC depende de las dll de ODBC y eso limita la cantidad de plataformas en donde se puede ejecutar la aplicación.
 
 - **Native-API partly-Java driver** (tipo 2): son similares a los drivers de tipo1, en tanto en cuanto también necesitan una configuración en la máquina cliente. Este tipo de driver convierte llamadas JDBC a llamadas de Oracle, Sybase, Informix, DB2 u otros SGBD. Tampoco se pueden utilizar dentro de applets al poseer código nativo.
 - **JDBC-Net pure Java driver** (tipo 3): Estos controladores están escritos en Java y se encargan de convertir las llamadas JDBC a un protocolo independiente de la base de datos y en la aplicación servidora utilizan las funciones nativas del sistema de gestión de base de datos mediante el uso de una biblioteca JDBC en el servidor. La ventaja de esta opción es la portabilidad.
@@ -116,15 +123,15 @@ Los drivers nos permiten conectarnos con una base de datos determinada. Existen 
 
 ### Instalación controlador
 
-Consulta en el taller [UD10_T1_Conectores_ES](UD10_T1_Conectores_ES.pdf) indicaciones sobre como instalar el controlador que necesites según tu IDE, sistema operativo y gestor de BBDD.
+Consulta en el taller [UD10_T02_Conectores_ES](UD10_T02_Conectores_ES.md) indicaciones sobre como instalar el controlador que necesites según tu IDE, sistema operativo y gestor de BBDD.
 
-> ### **Base de datos de pruebas "starwars" y ""**
->
-> Todo el código fuente que veras a continuación se basa en el taller [UD10_T2_AWS_IntelliJ_ES](UD10_T2_AWS_IntelliJ_ES.pdf), que crea la BBDD ["*StarWars*"](https://github.com/miguelmarti/FreakDataBases/blob/main/StarWars.sql) en un servidor `MariaDB` alojado en la nube de `Amazon`. Para replicar las pruebas necesitaras la dirección de tu instáncia de BBDD (algo parecido a *databasedmp.cipxbdkxiaqy.us-east-1.rds.amazonaws.com*), el puerto (por defecto *3306*), el usuario (*admin*) y la contraseña (*123456Ab$*). Asegurate de haber completado primero el taller para poder probar el código.
->
-> Aquí te dejo el diagrama de la BD. Deberías familiarizarte con él antes de seguir.
->
-> ![Diagrama de la BBDD](/assets/Diagram1.png)
+!!! info "Base de datos de pruebas `starwars`"
+
+    Todo el código fuente que veras a continuación se basa en el taller [UD10_T03_AWS_IntelliJ_ES](UD10_T03_AWS_IntelliJ_ES.md), que crea la BBDD ["*StarWars*"](https://github.com/miguelmarti/FreakDataBases/blob/main/StarWars.sql) en un servidor `MariaDB` alojado en la nube de `Amazon`. Para replicar las pruebas necesitaras la dirección de tu instáncia de BBDD (algo parecido a *databasedmp.cipxbdkxiaqy.us-east-1.rds.amazonaws.com*), el puerto (por defecto *3306*), el usuario (*admin*) y la contraseña (*123456Ab$*). Asegurate de haber completado primero el taller para poder probar el código.
+    
+    Aquí te dejo el diagrama de la BD. Deberías familiarizarte con él antes de seguir.
+    
+    ![Diagrama de la BBDD](assets/Diagram1.png){width=1000}
 
 ### Carga del controlador JDBC y conexión con la BD
 
@@ -422,7 +429,8 @@ public class HikariCPSingletonTest {
 }
 ```
 
-> ### Este último Patrón `Pool Object` será el que usaremos para el resto de ejemplos de la unidad, y el que te recomiendo que uses. Si no te convence mi opinión, puedes ver el vídeo de [makigas](https://www.youtube.com/@makigas) que tienes más abajo.
+!!! info "Recomendación"
+    Este último Patrón `Pool Object` será el que usaremos para el resto de ejemplos de la unidad, y el que te recomiendo que uses. Si no te convence mi opinión, puedes ver el vídeo de [makigas](https://www.youtube.com/@makigas) que tienes más abajo.
 
 ### Patrón `DAO`
 
@@ -430,139 +438,140 @@ Proporciona una abstracción para las operaciones CRUD (Create, Read, Update, De
 
 El patrón DAO se utiliza para encapsular todo el acceso a la base de datos en una clase separada. Esto permite que la lógica de negocio interactúe con la base de datos a través de métodos definidos en el DAO, sin preocuparse por los detalles de la implementación de la base de datos.
 
-> #### para una clase `Film` sencilla
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._03_Patrones._03_DAO;
-> 
-> public class Film {
->     private int id;
->     private String episode;
->     private String title;
-> 
->     // Getters y setters
->     public int getId() {
->         return id;
->     }
-> 
->     public void setId(int id) {
->         this.id = id;
->     }
-> 
->     public String getEpisode() {
->         return episode;
->     }
-> 
->     public void setEpisode(String episode) {
->         this.episode = episode;
->     }
-> 
->     public String getTitle() {
->         return title;
->     }
-> 
->     public void setTitle(String title) {
->         this.title = title;
->     }
-> }
-> ```
->
-> La interfaz de `FilmDAO`:
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._03_Patrones._02_DAO;
-> 
-> public interface FilmDAO {
->     void agregarFilm(Film film);         // Crear una nueva película
->  	Film obtenerFilm(int id);            // Obtener una película por su ID
->     void actualizarFilm(Film film);      // Actualizar una película existente
->  	void eliminarFilm(int id);           // Eliminar una película por su ID
-> }
-> ```
->
-> > ## Dejo aquí una cuestión en el aire para que reflexiones, si todas las entidades van a usar una Interfaz similar... que solución propones para definir una única Interfaz DAO que sirva para todas las entidades? (pista: Genéricos)
->
-> Y por último la implementación de la interfaz en `FilmDAOImplementado`:
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._03_Patrones._03_DAO;
-> 
-> import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
-> 
-> import java.sql.Connection;
-> import java.sql.PreparedStatement;
-> import java.sql.ResultSet;
-> import java.sql.SQLException;
-> 
-> public class FilmDAOImplementado implements FilmDAO {
-> 
->     private Connection connection;
-> 
->     public FilmDAOImplementado() {
->         try {
->             connection = HikariCPSingleton.getConnection();
->         } catch (SQLException e) {
->             System.out.println("ERROR al conectar: " + e.getMessage());
->         }
->     }
-> 
->     @Override
->     public void agregarFilm(Film film) {
->         try {
->             PreparedStatement ps = connection.prepareStatement("INSERT INTO films (id, episode, title) VALUES (?,?,?)");
->             ps.setInt(1, film.getId());
->             ps.setString(2, film.getEpisode());
->             ps.setString(3, film.getTitle());
->             ps.executeUpdate();
->         } catch (SQLException e) {
->             e.printStackTrace();
->         }
->     }
-> 
->     @Override
->     public Film obtenerFilm(int id) {
->         Film film = null;
->         try {
->             PreparedStatement ps = connection.prepareStatement("SELECT * FROM films WHERE id = ?");
->             ps.setInt(1, id);
->             ResultSet rs = ps.executeQuery();
->             if (rs.next()) {
->                 film = new Film();
->                 film.setId(rs.getInt("id"));
->                 film.setEpisode(rs.getString("episode"));
->                 film.setTitle(rs.getString("title"));
->             }
->         } catch (SQLException e) {
->             e.printStackTrace();
->         }
->         return film;
->     }
-> 
->     @Override
->     public void actualizarFilm(Film film) {
->         try {
->             PreparedStatement ps = connection.prepareStatement("UPDATE films SET episode = ?, title = ? WHERE id = ?");
->             ps.setString(1, film.getEpisode());
->             ps.setString(2, film.getTitle());
->             ps.setInt(3, film.getId());
->             ps.executeUpdate();
->         } catch (SQLException e) {
->             e.printStackTrace();
->         }
->     }
-> 
->     @Override
->     public void eliminarFilm(int id) {
->         try {
->             PreparedStatement ps = connection.prepareStatement("DELETE FROM films WHERE id = ?");
->             ps.setInt(1, id);
->             ps.executeUpdate();
->         } catch (SQLException e) {
->             e.printStackTrace();
->         }
->     }
-> }
-> ```
+!!! example "Ejemplo para una clase `Film` sencilla"
+
+    ```java
+    package es.martinezpenya.ejemplos.UD10._03_Patrones._03_DAO;
+    
+    public class Film {
+     private int id;
+     private String episode;
+     private String title;
+    
+     // Getters y setters
+     public int getId() {
+         return id;
+     }
+    
+     public void setId(int id) {
+         this.id = id;
+     }
+    
+     public String getEpisode() {
+         return episode;
+     }
+    
+     public void setEpisode(String episode) {
+         this.episode = episode;
+     }
+    
+     public String getTitle() {
+         return title;
+     }
+    
+     public void setTitle(String title) {
+         this.title = title;
+     }
+    }
+    ```
+    
+    La interfaz de `FilmDAO`:
+    
+    ```java
+    package es.martinezpenya.ejemplos.UD10._03_Patrones._02_DAO;
+    
+    public interface FilmDAO {
+     void agregarFilm(Film film);         // Crear una nueva película
+        Film obtenerFilm(int id);            // Obtener una película por su ID
+     void actualizarFilm(Film film);      // Actualizar una película existente
+        void eliminarFilm(int id);           // Eliminar una película por su ID
+    }
+    ```
+    
+    !!! question "Reflexiona"
+        Dejo aquí una cuestión en el aire para que reflexiones, si todas las entidades van a usar una Interfaz similar... que solución propones para definir una única Interfaz DAO que sirva para todas las entidades? (pista: Genéricos)
+    
+    Y por último la implementación de la interfaz en `FilmDAOImplementado`:
+    
+    ```java
+    package es.martinezpenya.ejemplos.UD10._03_Patrones._03_DAO;
+    
+    import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+    
+    import java.sql.Connection;
+    import java.sql.PreparedStatement;
+    import java.sql.ResultSet;
+    import java.sql.SQLException;
+    
+    public class FilmDAOImplementado implements FilmDAO {
+    
+        private Connection connection;
+    
+        public FilmDAOImplementado() {
+            try {
+                connection = HikariCPSingleton.getConnection();
+            } catch (SQLException e) {
+                System.out.println("ERROR al conectar: " + e.getMessage());
+            }
+        }
+    
+        @Override
+        public void agregarFilm(Film film) {
+            try {
+                PreparedStatement ps = connection.prepareStatement("INSERT INTO films (id, episode, title) VALUES (?,?,?)");
+                ps.setInt(1, film.getId());
+                ps.setString(2, film.getEpisode());
+                ps.setString(3, film.getTitle());
+                ps.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    
+        @Override
+        public Film obtenerFilm(int id) {
+            Film film = null;
+            try {
+                PreparedStatement ps = connection.prepareStatement("SELECT * FROM films WHERE id = ?");
+                ps.setInt(1, id);
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    film = new Film();
+                    film.setId(rs.getInt("id"));
+                    film.setEpisode(rs.getString("episode"));
+                    film.setTitle(rs.getString("title"));
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return film;
+        }
+    
+        @Override
+        public void actualizarFilm(Film film) {
+            try {
+                PreparedStatement ps = connection.prepareStatement("UPDATE films SET episode = ?, title = ? WHERE id = ?");
+                ps.setString(1, film.getEpisode());
+                ps.setString(2, film.getTitle());
+                ps.setInt(3, film.getId());
+                ps.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    
+        @Override
+        public void eliminarFilm(int id) {
+            try {
+                PreparedStatement ps = connection.prepareStatement("DELETE FROM films WHERE id = ?");
+                ps.setInt(1, id);
+                ps.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    ```
 
 Entre las ventajas de usar el patrón encontramos:
 
@@ -682,7 +691,7 @@ Este nivel de asbtracción facilita el desarrollo de proyectos ya que si necesit
 
 Las cuatro clases fundamentales que toda aplicación Java necesita para conectarse a una base de datos y ejecutar sentencias son: **`DriverManager`**, **`Connection`**, **`Statement`** y **`ResultSet`**. 
 
-<img src="assets/clases_conexiones.png" alt="img" style="zoom:67%;" />
+![img](assets/clases_conexiones.png){width=600}
 
 <img src="assets/jdbc_proceso.png" alt="jdbc proceso" style="zoom: 33%;" />
 
@@ -747,10 +756,10 @@ Este método puede lanzar dos tipos de excepciones (que habrá que manejar con u
 - `SQLException`: la conexión no ha podido producirse. Puede ser por multitud de motivos como una URL mal formada, un error en la red, host o puerto incorrecto, base de datos no existente, usuario y contraseña no válidos, etc.
 - `SQLTimeOutException`: se ha superado el `LoginTimeout` sin recibir respuesta del servidor.
 
-> ## Aquí podemos ver un vídeo en el que Makigas explica porqué en el mundo real no se usa `DriverManager.GetConnection()`:
->
->[![porqué en el mundo real no se usa `DriverManager.GetConnection()`](https://img.youtube.com/vi/71zLCxNuAq0/0.jpg)](https://youtu.be/71zLCxNuAq0?si=rfS44HEFaF3yxn0N)
+!!! info "Recomendación"
+    Aquí podemos ver un vídeo en el que Makigas explica porqué en el mundo real no se usa `DriverManager.GetConnection()`:
 
+    [![porqué en el mundo real no se usa `DriverManager.GetConnection()`](https://img.youtube.com/vi/71zLCxNuAq0/0.jpg)](https://youtu.be/71zLCxNuAq0?si=rfS44HEFaF3yxn0N)
 
 ###  Clase `Connection`
 
@@ -796,7 +805,8 @@ Cuando ya no lo necesitemos es aconsejable **cerrar el *`Statement`* con `close(
    st.close();
    ```
 
-> ### Podríamos decir que este *`ResultSet`* es una especie de *tabla virtual* que se almacena en memoria con la información en su interior.
+!!! info "Definición"
+    Podríamos decir que este *`ResultSet`* es una especie de *tabla virtual* que se almacena en memoria con la información en su interior.
 
 ###  Clase `ResultSet`
 
@@ -823,43 +833,44 @@ Algunos de los métodos para obtener los datos del registro actual son:
 
 - **`String getString(int columnIndex)`**: devuelve un dato `String` de la columna indicada por su indice
 
-  > ### La primera columna es la 1, no la cero 🤷🏾‍♂️
+!!! danger "Ojo!"
+    La primera columna es la 1, no la cero 🤷🏾‍♂️
 
   Por ejemplo: 
-  
+
   ```java
   rs.getString(2);
   ```
-  
+
   Existen métodos análogos a los anteriores para obtener valores de tipo `int`, `long`, `float`, `double`, `boolean`, `Date`, `Time`, `Array`, etc. Pueden consultarse todos en la [documentación oficial de Java](https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/ResultSet.html).
-  
-  
+
+
   - **`int getInt(String columnLabel)`**
-  
-  
+
+
   - **`int getInt(int columnIndex)`**
-  
-  
+
+
   - **`double getDouble(String columnLabel)`**
-  
-  
+
+
   - **`double getDouble(int columnIndex)`**
-  
-  
+
+
   - **`boolean getBoolean(String columnLabel)`**
-  
-  
+
+
   - **`boolean getBoolean(int columnIndex)`**
-  
-  
+
+
   - **`Date getDate(String columnLabel)`**
-  
-  
+
+
   - **`Date getDate(int columnIndex)`**
-  
-  
+
+
   - etc.
-  
+
 
 
 Más adelante veremos cómo se realiza la modificación e inserción de datos.
@@ -897,7 +908,6 @@ Valores válidos para el **argumento `resultSetType`** indica el tipo de `Result
   - Sus datos NO se actualizan. Es decir, no reflejará cambios producidos en la base de datos. Contiene una instantánea del momento en el que se realizó la consulta.
 
 - **`ResultSet.TYPE_SCROLL_INSENSITIVE`**: `ResultSet` desplazable y no actualizable.
-
   - Permite libertad de movimiento del cursor con otros métodos como `first()`, `previous()`, `last()`, etc. además de `next()`.
   - Sus datos NO se actualizan, como en el caso anterior.
 - **`ResultSet.TYPE_SCROLL_SENSITIVE`**: `ResultSet` desplazable y actualizable.
@@ -905,61 +915,60 @@ Valores válidos para el **argumento `resultSetType`** indica el tipo de `Result
   - Permite libertad de movimientos del cursor, como en el caso anterior.
   - Sus datos SÍ se actualizan. Es decir, mientras el `ResultSet` esté abierto se actualizará automáticamente con los cambios producidos en la base de datos. Esto puede suceder incluso mientras se está recorriendo el `ResultSet`, lo cual puede ser conveniente o contraproducente según el caso.
 
-  > Diferencia entre `TYPE_SCROLL_INSENSITIVE` y `TYPE_SCROLL_SENSITIVE`
-  >
-  > ```java
-  > package es.martinezpenya.ejemplos.UD10._05_NavegabilidadConcurrencia;
-  > 
-  > import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
-  > 
-  > import java.sql.*;
-  > 
-  > public class EjemploScrollInsensitive {
-  > 
-  >     public static void main(String[] args) {
-  >         try (Connection con = HikariCPSingleton.getConnection();
-  >              Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-  >              ResultSet rs = stmt.executeQuery("SELECT id, name FROM characters")) {
-  > 
-  >             // Mover a la primera fila
-  >             if (rs.first()) {
-  >                 System.out.println("primera fila: " + rs.getInt("id") + ", " + rs.getString("name"));
-  >             }
-  > 
-  >             // Mover a la última fila
-  >             if (rs.last()) {
-  >                 System.out.println("última fila: " + rs.getInt("id") + ", " + rs.getString("name"));
-  >             }
-  > 
-  >             // Simulamos un retraso y actualizamos la base de datos (en otra sesión)
-  >             System.out.println("Esperando las actualizaciones...");
-  >             Thread.sleep(10000); // Esperar 10 segundos
-  > 
-  >             // Mover a la primera fila otra vez
-  >             if (rs.first()) {
-  >                 System.out.println("primera fila después de esperar: " + rs.getInt("id") + ", " + rs.getString("name"));
-  >             }
-  > 
-  >         } catch (SQLException | InterruptedException ex) {
-  >             ex.printStackTrace();
-  >         }
-  >     }
-  > }
-  > ```
-  >
-  > En este ejemplo, incluso si la base de datos cambia mientras el programa está esperando (durante el `Thread.sleep(10000)`), el ResultSet no reflejará esos cambios cuando se vuelva a consultar la primera fila.
-  >
-  > En caso de cambiar el valor `TYPE_SCROLL_INSENSITIVE` por `TYPE_SCROLL_SENSITIVE`, si hay cambios en la base de datos durante el tiempo de espera, el  ResultSet reflejará esos cambios cuando se vuelva a consultar la primera fila. Por ejemplo, si se actualiza el nombre del primer registro en la  base de datos mientras el programa espera, el nuevo nombre aparecerá en  la salida.
-  >
-  > Estos ejemplos demuestran cómo `TYPE_SCROLL_INSENSITIVE` no  refleja cambios en la base de datos después de su creación, mientras que `TYPE_SCROLL_SENSITIVE` sí lo hace.
+!!! info "Diferencia entre `TYPE_SCROLL_INSENSITIVE` y `TYPE_SCROLL_SENSITIVE`"
 
+    ```java
+    package es.martinezpenya.ejemplos.UD10._05_NavegabilidadConcurrencia;
+    import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+    
+    import java.sql.*;
+    
+    public class EjemploScrollInsensitive {
+    
+        public static void main(String[] args) {
+            try (Connection con = HikariCPSingleton.getConnection();
+                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                 ResultSet rs = stmt.executeQuery("SELECT id, name FROM characters")) {
+    
+                // Mover a la primera fila
+                if (rs.first()) {
+                    System.out.println("primera fila: " + rs.getInt("id") + ", " + rs.getString("name"));
+                }
+    
+                // Mover a la última fila
+                if (rs.last()) {
+                    System.out.println("última fila: " + rs.getInt("id") + ", " + rs.getString("name"));
+                }
+    
+                // Simulamos un retraso y actualizamos la base de datos (en otra sesión)
+                System.out.println("Esperando las actualizaciones...");
+                Thread.sleep(10000); // Esperar 10 segundos
+    
+                // Mover a la primera fila otra vez
+                if (rs.first()) {
+                    System.out.println("primera fila después de esperar: " + rs.getInt("id") + ", " + rs.getString("name"));
+                }
+    
+            } catch (SQLException | InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+    ```
+    
+    En este ejemplo, incluso si la base de datos cambia mientras el programa está esperando (durante el `Thread.sleep(10000)`), el ResultSet no reflejará esos cambios cuando se vuelva a consultar la primera fila.
+    
+    En caso de cambiar el valor `TYPE_SCROLL_INSENSITIVE` por `TYPE_SCROLL_SENSITIVE`, si hay cambios en la base de datos durante el tiempo de espera, el  ResultSet reflejará esos cambios cuando se vuelva a consultar la primera fila. Por ejemplo, si se actualiza el nombre del primer registro en la  base de datos mientras el programa espera, el nuevo nombre aparecerá en  la salida.
+    
+    Estos ejemplos demuestran cómo `TYPE_SCROLL_INSENSITIVE` no  refleja cambios en la base de datos después de su creación, mientras que `TYPE_SCROLL_SENSITIVE` sí lo hace.
 
 El **argumento** **`ResultSet.Concurrency`** indica la concurrencia del `ResultSet`:
 
 - **`ResultSet.CONCUR_READ_ONLY`**: solo lectura. Es el valor por defecto.
 - **`ResultSet.CONCUR_UPDATABLE`**: permite modificar los datos almacenados en el `ResultSet` para luego aplicar los cambios sobre la base de datos (más adelante se verá cómo).
 
-> ### El `ResultSet` por defecto que se obtiene con `createStatement()` sin argumentos es el mismo que con `createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)`. 
+!!! info "Importante"
+    El `ResultSet` por defecto que se obtiene con `createStatement()` sin argumentos es el mismo que con `createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)`. 
 
 
 ## Consultas (`Query`)
@@ -986,15 +995,13 @@ Algunos de estos métodos son:
 
 - **`boolean absolute(int row)`**: posiciona el cursor en el número de registro indicado. Hay que tener en cuenta que el primer registro es el 1, no el cero. 
 
-  > ####  **`absolute(n)`**
-  >
-  > `absolute(7)` desplazará el cursor al séptimo registro. Si valor es negativo se posiciona en el número de registro indicado pero empezando a contar desde el final (el último es el -1). Por ejemplo si tiene 10 registros y llamamos `absolute(-2)` se desplazará al registro número 9.
+    !!! info "`absolute(n)`"
+        `absolute(7)` desplazará el cursor al séptimo registro. Si valor es negativo se posiciona en el número de registro indicado pero empezando a contar desde el final (el último es el -1). Por ejemplo si tiene 10 registros y llamamos `absolute(-2)` se desplazará al registro número 9.
 
 - **`boolean relative(int registros)`**: desplaza el cursor un número relativo de registros, que puede ser positivo o negativo. 
 
-  > #### **`relative(n)`**
-  >
-  > Si el cursor está en el registro 5 y llamamos a `relative(10)` se desplazará al registro número 15. Si luego llamamos a `relative(-4)` se desplazará al registro 11.
+    !!! info "`relative(n)`"
+        Si el cursor está en el registro 5 y llamamos a `relative(10)` se desplazará al registro número 15. Si luego llamamos a `relative(-4)` se desplazará al registro 11.
 
 Los métodos que devuelven un tipo `boolean` devolverán `true` si ha sido posible mover el cursor a un registro válido, y `false` en caso contrario, por ejemplo si no tiene ningún registro o hemos saltado a un número de registro que no existe.
 
@@ -1022,87 +1029,87 @@ String valor = rs.getString(2);
 String valor = rs.getString("titulo");
 ```
 
-> ### Es importante tener en cuenta que las columnas se numeran de izquierda a derecha y que la primera es la número 1, no la cero. También que las columnas no son case sensitive, es decir, no distinguen entre mayúsculas y minúsculas.
+!!! warning "Importante"
+    Es importante tener en cuenta que las columnas se numeran de izquierda a derecha y que la primera es la número 1, no la cero. También que las columnas no son case sensitive, es decir, no distinguen entre mayúsculas y minúsculas.
 
-> #### La información referente a las columnas de un `ResultSet` se puede obtener llamando al **método `getMetaData()`** que devolverá un objeto `ResultSetMetaData` que contendrá el número, tipo y propiedades de las columnas del `ResultSet`.
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._06_Consultas;
-> 
-> import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
-> 
-> import java.sql.*;
-> 
-> public class EjemploResultSetMetaData {
->     public static void main(String[] args) {
->         try (Connection con = HikariCPSingleton.getConnection();
->              Statement stmt = con.createStatement();
->              ResultSet rs = stmt.executeQuery("SELECT id, episode, title FROM films")) {
-> 
->             // Obtener metadata del ResulSet
->             ResultSetMetaData rsmd = rs.getMetaData();
-> 
->             // Obtener el número de columnas
->             int columnCount = rsmd.getColumnCount();
->             System.out.println("Número de columnas: " + columnCount);
-> 
->             // Listar las columnas de detalles
->             for (int i = 1; i <= columnCount; i++) {
->                 String columnName = rsmd.getColumnName(i);
->                 String columnType = rsmd.getColumnTypeName(i);
->                 int columnDisplaySize = rsmd.getColumnDisplaySize(i);
->                 boolean isNullable = rsmd.isNullable(i) == ResultSetMetaData.columnNullable;
-> 
->                 System.out.println("Columna " + i + ":");
->                 System.out.println("  Nombre: " + columnName);
->                 System.out.println("  Tipo: " + columnType);
->                 System.out.println("  Tamaño display: " + columnDisplaySize);
->                 System.out.println("  Nullable: " + isNullable);
->             }
-> 
->             // Iterar sobre el conjunto de resultados
->             while (rs.next()) {
->                 for (int i = 1; i <= columnCount; i++) {
->                     System.out.print(rs.getString(i) + " ");
->                 }
->                 System.out.println();
->             }
-> 
->         } catch (SQLException ex) {
->             System.out.println("Error de SQL: " + ex.getMessage());
->         }
->     }
-> }
-> ```
->
-> Esto provocará la siguiente salida por pantalla:
->
-> ```
-> Número de columnas: 3
-> Columna 1:
-> Nombre: id
-> Tipo: INT
-> Tamaño display: 10
-> Nullable: false
-> Columna 2:
-> Nombre: episode
-> Tipo: VARCHAR
-> Tamaño display: 12
-> Nullable: true
-> Columna 3:
-> Nombre: title
-> Tipo: VARCHAR
-> Tamaño display: 30
-> Nullable: true
-> 1 Episode I The Phantom Menace 
-> 2 Episode II Attack of the Clones 
-> 3 Episode III Revenge of the Sith 
-> 4 Episode IV A New Hope 
-> 5 Episode V The Empire Strikes Back 
-> 6 Episode VI Return of the Jedi 
-> ```
->
-> 
+!!! example "Ejemplo"
+    La información referente a las columnas de un `ResultSet` se puede obtener llamando al **método `getMetaData()`** que devolverá un objeto `ResultSetMetaData` que contendrá el número, tipo y propiedades de las columnas del `ResultSet`.
+
+    ```java
+    package es.martinezpenya.ejemplos.UD10._06_Consultas;
+    
+    import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+    
+    import java.sql.*;
+    
+    public class EjemploResultSetMetaData {
+     public static void main(String[] args) {
+         try (Connection con = HikariCPSingleton.getConnection();
+              Statement stmt = con.createStatement();
+              ResultSet rs = stmt.executeQuery("SELECT id, episode, title FROM films")) {
+    
+             // Obtener metadata del ResulSet
+             ResultSetMetaData rsmd = rs.getMetaData();
+    
+             // Obtener el número de columnas
+             int columnCount = rsmd.getColumnCount();
+             System.out.println("Número de columnas: " + columnCount);
+    
+             // Listar las columnas de detalles
+             for (int i = 1; i <= columnCount; i++) {
+                 String columnName = rsmd.getColumnName(i);
+                 String columnType = rsmd.getColumnTypeName(i);
+                 int columnDisplaySize = rsmd.getColumnDisplaySize(i);
+                 boolean isNullable = rsmd.isNullable(i) == ResultSetMetaData.columnNullable;
+    
+                 System.out.println("Columna " + i + ":");
+                 System.out.println("  Nombre: " + columnName);
+                 System.out.println("  Tipo: " + columnType);
+                 System.out.println("  Tamaño display: " + columnDisplaySize);
+                 System.out.println("  Nullable: " + isNullable);
+             }
+    
+             // Iterar sobre el conjunto de resultados
+             while (rs.next()) {
+                 for (int i = 1; i <= columnCount; i++) {
+                     System.out.print(rs.getString(i) + " ");
+                 }
+                 System.out.println();
+             }
+    
+         } catch (SQLException ex) {
+             System.out.println("Error de SQL: " + ex.getMessage());
+         }
+     }
+    }
+    ```
+    
+    Esto provocará la siguiente salida por pantalla:
+    
+    ```
+    Número de columnas: 3
+    Columna 1:
+    Nombre: id
+    Tipo: INT
+    Tamaño display: 10
+    Nullable: false
+    Columna 2:
+    Nombre: episode
+    Tipo: VARCHAR
+    Tamaño display: 12
+    Nullable: true
+    Columna 3:
+    Nombre: title
+    Tipo: VARCHAR
+    Tamaño display: 30
+    Nullable: true
+    1 Episode I The Phantom Menace 
+    2 Episode II Attack of the Clones 
+    3 Episode III Revenge of the Sith 
+    4 Episode IV A New Hope 
+    5 Episode V The Empire Strikes Back 
+    6 Episode VI Return of the Jedi 
+    ```
 
 Si conocemos el nombre de una columna, pero no su índice, el método `findColumn()` puede ser utilizado para obtener el número de columna, pasándole como argumento un objeto `String` que sea el nombre de la columna correspondiente, este método nos devolverá un entero que será el índice correspondiente a la columna.
 
@@ -1131,17 +1138,16 @@ Aunque se trata de sentencias muy dispares, desde el punto de vista de la comuni
 
 Miremos este ejemplo, en el que 
 
-> #### Vamos a crear una tabla muy sencilla en la Base de Datos MySql
->
-> ```java
-> [...]
->   public void createTable() throws SQLException{ 
->       Statement st = con.createStatement(); 
->       st.executeUpdate("CREATE TABLE T1 (c1 varchar(50))"); 
->       st.close(); 
->   }
-> [...]
-> ```
+!!! example "Vamos a crear una tabla muy sencilla en la Base de Datos MySql"
+    ```java
+    [...]
+    public void createTable() throws SQLException{ 
+       Statement st = con.createStatement(); 
+       st.executeUpdate("CREATE TABLE T1 (c1 varchar(50))"); 
+       st.close(); 
+    }
+    [...]
+    ```
 
 ### Asegurar la liberación de recursos
 
@@ -1155,93 +1161,92 @@ Hay que tener en cuenta todavía un detalle más cuando sea necesario realizar e
 
 La solución de este problema pasa por evitar el lanzamiento de cualquier excepción durante el proceso de cierre. Una posible forma es encapsular cada cierre entre sentencias `try-catch` dentro del `finally`.
 
-> #### Aquí tenéis un ejemplo completo:
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._06_Consultas;
-> 
-> import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
-> 
-> import java.sql.Connection;
-> import java.sql.ResultSet;
-> import java.sql.SQLException;
-> import java.sql.Statement;
-> 
-> public class LiberacionRecursos {
->        static Statement stmt = null;
->        static ResultSet rs = null;
->        static Connection con;
-> 
->        public static void main(String[] args) {
->            try {
->                con = HikariCPSingleton.getConnection();
->                stmt = con.createStatement();
->                rs = stmt.executeQuery("SELECT id, name, hair_color FROM characters");
-> 
->                while (rs.next()) {
->                    System.out.print(rs.getInt(1) + "\t");
->                    System.out.print(rs.getString(2) + "\t");
->                    System.out.println(rs.getString(3));
->                }
->            } catch (SQLException ex) {
->                System.out.println("Error de SQL: " + ex.getMessage());
->            } finally {
->                try {
->                    //Siempre se debe cerrar todo lo abierto
->                    if (rs != null) {
->                        rs.close();
->                    }
->                } catch (java.sql.SQLException ex) {
->                    System.out.println("ERROR: " + ex.getMessage());
->                }
->                try {
->                    //Siempre se debe cerrar todo lo abierto
->                    if (stmt != null) {
->                        stmt.close();
->                    }
->                } catch (java.sql.SQLException ex) {
->                    System.out.println("ERROR: " + ex.getMessage());
->                }
->            }
->        }
-> }
-> ```
->
-> De todos modos recuerda que lo más fácil es usar `try-with-resources` y que se encarge Java de cerrar los recursos que hemos usado dentro del `try`.
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._06_Consultas;
-> 
-> import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
-> 
-> import java.sql.Connection;
-> import java.sql.ResultSet;
-> import java.sql.SQLException;
-> import java.sql.Statement;
-> 
-> public class LiberacionRecursosTryWithResources {
->        public static void main(String[] args) {
->            try (Connection con = HikariCPSingleton.getConnection();
->                 Statement stmt = con.createStatement();
->                 ResultSet rs = stmt.executeQuery("SELECT id, name, hair_color FROM characters");) {
-> 
->                while (rs.next()) {
->                    System.out.print(rs.getInt(1) + "\t");
->                    System.out.print(rs.getString(2) + "\t");
->                    System.out.println(rs.getString(3));
->                }
->            } catch (SQLException ex) {
->                System.out.println("Error de SQL: " + ex.getMessage());
->            }
->        }
-> }
-> ```
->
-> **Comparación y Recomendación**
->
-> - **Claridad y Simplicidad**: `try-with-resources` es más claro y conciso, reduciendo la cantidad de código y evitando errores comunes al cerrar recursos manualmente.
-> - **Seguridad**: `try-with-resources` garantiza que los recursos se cierren en el orden correcto y automáticamente, incluso si ocurre una excepción.
-> - **Compatibilidad**: `try-with-resources` requiere Java 7 o superior, pero dado que las versiones anteriores de  Java ya no son compatibles en la mayoría de los entornos, esto no suele  ser un problema.
+!!! example "Aquí tenéis un ejemplo completo:"
+    ```java
+    package es.martinezpenya.ejemplos.UD10._06_Consultas;
+
+    import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+    
+    import java.sql.Connection;
+    import java.sql.ResultSet;
+    import java.sql.SQLException;
+    import java.sql.Statement;
+    
+    public class LiberacionRecursos {
+        static Statement stmt = null;
+        static ResultSet rs = null;
+        static Connection con;
+    
+        public static void main(String[] args) {
+            try {
+                con = HikariCPSingleton.getConnection();
+                stmt = con.createStatement();
+                rs = stmt.executeQuery("SELECT id, name, hair_color FROM characters");
+    
+                while (rs.next()) {
+                    System.out.print(rs.getInt(1) + "\t");
+                    System.out.print(rs.getString(2) + "\t");
+                    System.out.println(rs.getString(3));
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error de SQL: " + ex.getMessage());
+            } finally {
+                try {
+                    //Siempre se debe cerrar todo lo abierto
+                    if (rs != null) {
+                        rs.close();
+                    }
+                } catch (java.sql.SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+                try {
+                    //Siempre se debe cerrar todo lo abierto
+                    if (stmt != null) {
+                        stmt.close();
+                    }
+                } catch (java.sql.SQLException ex) {
+                    System.out.println("ERROR: " + ex.getMessage());
+                }
+            }
+        }
+    }
+    ```
+    
+    De todos modos recuerda que lo más fácil es usar `try-with-resources` y que se encarge Java de cerrar los recursos que hemos usado dentro del `try`.
+    
+    ```java
+    package es.martinezpenya.ejemplos.UD10._06_Consultas;
+    
+    import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+    
+    import java.sql.Connection;
+    import java.sql.ResultSet;
+    import java.sql.SQLException;
+    import java.sql.Statement;
+    
+    public class LiberacionRecursosTryWithResources {
+        public static void main(String[] args) {
+            try (Connection con = HikariCPSingleton.getConnection();
+                 Statement stmt = con.createStatement();
+                 ResultSet rs = stmt.executeQuery("SELECT id, name, hair_color FROM characters");) {
+    
+                while (rs.next()) {
+                    System.out.print(rs.getInt(1) + "\t");
+                    System.out.print(rs.getString(2) + "\t");
+                    System.out.println(rs.getString(3));
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error de SQL: " + ex.getMessage());
+            }
+        }
+    }
+    ```
+    
+    **Comparación y Recomendación**
+    
+    - **Claridad y Simplicidad**: `try-with-resources` es más claro y conciso, reduciendo la cantidad de código y evitando errores comunes al cerrar recursos manualmente.
+    - **Seguridad**: `try-with-resources` garantiza que los recursos se cierren en el orden correcto y automáticamente, incluso si ocurre una excepción.
+    - **Compatibilidad**: `try-with-resources` requiere Java 7 o superior, pero dado que las versiones anteriores de  Java ya no son compatibles en la mayoría de los entornos, esto no suele  ser un problema.
 
 ## Modificación (`update`)
 
@@ -1279,41 +1284,40 @@ En resumen, el proceso para realizar la modificación de una fila de un `ResultS
 2. Llamamos a todos los métodos **`updateXXX(...)`** que necesitemos.
 3. Llamamos a **`updateRow()`** para que los cambios se apliquen a la base de datos.
 
-> ### **hay que llamar a `updateRow()` antes de desplazar el cursor**. Si desplazamos el cursor antes de llamar a `updateRow()`, se perderán los cambios.
+!!! warning "Importante"
+    Hay que llamar a `updateRow()` antes de desplazar el cursor**. Si desplazamos el cursor antes de llamar a `updateRow()`, se perderán los cambios.
 
-> #### Si queremos **cancelar las modificaciones** **de un registro del `ResultSet`** podemos llamar a **`cancelRowUpdates()`**, que cancela todas las modificaciones realizadas sobre el registro actual.
->
-> Si ya hemos llamado a `updateRow()` el método `cancelRowUpdates()` no tendrá ningún efecto.
-
-> #### El siguiente código de ejemplo muestra cómo modificar el campo `title` del último registro de un `ResultSet` que contiene el resultado de una *SELECT* sobre la tabla de `films`:
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._07_Modificacion;
-> 
-> import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
-> 
-> import java.sql.*;
-> 
-> public class EjemploUpdateRow {
-> 
->        public static void main(String[] args) {
->            String sql = "SELECT * FROM films";
->            try (Connection con = HikariCPSingleton.getConnection();
->                 // Creamos un Statement scrollable y modificable
->                 Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
->                 // Ejecutamos un SELECT y obtenemos la tabla films en un ResultSet
->                 ResultSet rs = st.executeQuery(sql);) {
->                // Nos movemos al último registro y lo actualizamos
->                rs.last();
->                rs.updateString(3, "Return Of The Jedi"); // Ponemos todas las palabras en mayúsculas
->                rs.updateRow();
->            } catch (SQLException ex) {
->                System.out.println("Error de SQL: " + ex.getMessage());
->            }
->        }
-> }
-> ```
-
+    Si queremos **cancelar las modificaciones** **de un registro del `ResultSet`** podemos llamar a **`cancelRowUpdates()`**, que cancela todas las modificaciones realizadas sobre el registro actual.
+    
+    Si ya hemos llamado a `updateRow()` el método `cancelRowUpdates()` no tendrá ningún efecto.
+    
+    El siguiente código de ejemplo muestra cómo modificar el campo `title` del último registro de un `ResultSet` que contiene el resultado de una *SELECT* sobre la tabla de `films`:
+    ```java
+    package es.martinezpenya.ejemplos.UD10._07_Modificacion;
+    
+    import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+    
+    import java.sql.*;
+    
+    public class EjemploUpdateRow {
+    
+        public static void main(String[] args) {
+            String sql = "SELECT * FROM films";
+            try (Connection con = HikariCPSingleton.getConnection();
+                 // Creamos un Statement scrollable y modificable
+                 Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                 // Ejecutamos un SELECT y obtenemos la tabla films en un ResultSet
+                 ResultSet rs = st.executeQuery(sql);) {
+                // Nos movemos al último registro y lo actualizamos
+                rs.last();
+                rs.updateString(3, "Return Of The Jedi"); // Ponemos todas las palabras en mayúsculas
+                rs.updateRow();
+            } catch (SQLException ex) {
+                System.out.println("Error de SQL: " + ex.getMessage());
+            }
+        }
+    }
+    ```
 
 ## Inserción (`insert`)
 
@@ -1322,84 +1326,83 @@ Para insertar nuevos registros necesitaremos utilizar, al menos, estos dos méto
 - **`void moveToInsertRow()`**: desplaza el cursor al *registro de inserción*. Es un registro especial utilizado para insertar nuevos registros en el `ResultSet`. Posteriormente tendremos que llamar a los métodos `updateXXX()` ya conocidos para establecer los valores del registro de inserción. Para finalizar hay que llamar a `insertRow()`.
 - **`void insertRow()`**: inserta el *registro de inserción* en el `ResultSet`, pasando a ser un registro normal más, y también lo inserta en la base de datos.
 
-> #### El siguiente código inserta un nuevo registro en la tabla `films`:
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._08_Insercion;
-> 
-> import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
-> 
-> import java.sql.Connection;
-> import java.sql.ResultSet;
-> import java.sql.SQLException;
-> import java.sql.Statement;
-> 
-> public class EjemploMoveToInsertRow {
->        public static void main(String[] args) {
->            String sql = "SELECT * FROM films";
->            try (Connection con = HikariCPSingleton.getConnection();
->                 Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
->                 ResultSet rs = st.executeQuery(sql);) {
->                // Creamos un nuevo registro y lo insertamos
->                rs.moveToInsertRow();
->                rs.updateInt(1, 7);
->                rs.updateString(2, "Episode VII");
->                rs.updateString(3, "The force awakens");
->                rs.insertRow();
->            } catch (SQLException ex) {
->                System.out.println("Error de SQL: " + ex.getMessage());
->            }
->        }
-> }
-> ```
+    !!! example "El siguiente código inserta un nuevo registro en la tabla `films`:"
+        ```java
+        package es.martinezpenya.ejemplos.UD10._08_Insercion;
 
+        import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+        
+        import java.sql.Connection;
+        import java.sql.ResultSet;
+        import java.sql.SQLException;
+        import java.sql.Statement;
+        
+        public class EjemploMoveToInsertRow {
+            public static void main(String[] args) {
+                String sql = "SELECT * FROM films";
+                try (Connection con = HikariCPSingleton.getConnection();
+                     Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                     ResultSet rs = st.executeQuery(sql);) {
+                    // Creamos un nuevo registro y lo insertamos
+                    rs.moveToInsertRow();
+                    rs.updateInt(1, 7);
+                    rs.updateString(2, "Episode VII");
+                    rs.updateString(3, "The force awakens");
+                    rs.insertRow();
+                } catch (SQLException ex) {
+                    System.out.println("Error de SQL: " + ex.getMessage());
+                }
+            }
+        }
+        ```
 
 Los campos cuyo valor no se haya establecido con `updateXXX()` tendrán un valor `NULL`. Si en la base de datos dicho campo no está configurado para admitir nulos se producirá una `SQLException`.
 
 Tras insertar nuestro nuevo registro en el objeto `ResultSet` podremos volver a la anterior posición en la que se encontraba el cursor (antes de invocar `moveToInsertRow()` ) llamando al método `moveToCurrentRow()`. Este método sólo se puede utilizar en combinación con `moveToInsertRow()`.
 
-> El siguiente ejemplo muestra como usar sentencias SQL para realizar la inserción de nuevos registros, ya veremos que esta no es la forma más aconsejable por seguridad.
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._08_Insercion;
-> 
-> import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
-> 
-> import java.sql.*;
-> 
-> public class EjemploInsercionConSQL {
-> 
->        public static void insertFilmFijo(){
->            String sql = "INSERT INTO films (id, episode, title) VALUES (7, 'Episode VII', 'The force awakens')";
->            try (Connection con = HikariCPSingleton.getConnection();
->                 // Creamos un Statement scrollable y modificable
->                 Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
->                 // Ejecutamos un SELECT y obtenemos la tabla films en un ResultSet
->                 ResultSet rs = st.executeQuery(sql);) {
->            } catch (SQLException ex) {
->                System.out.println("ERROR al insertar el film: " + ex.getMessage());
->            }
->        }
-> 
->        public static void insertFilmParametros(int id, String episode, String title){
->            // OJO!! Forma no recomendada por problemas de seguridad (SQL Injection)
->            String sql = "INSERT INTO films (id, episode, title) VALUES (" + id + ", '" + episode + "', '" + title + "')";
->            try (Connection con = HikariCPSingleton.getConnection();
->                 // Creamos un Statement scrollable y modificable
->                 Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
->                 // Ejecutamos un SELECT y obtenemos la tabla films en un ResultSet
->                 ResultSet rs = st.executeQuery(sql);) {
->            } catch (SQLException e) {
->                System.out.println("Se ha producido un error al insertar el film. Mensaje: " + e.getMessage());
->            }
->        }
-> 
->        public static void main(String[] args) {
->            insertFilmFijo();
->            insertFilmParametros(8, "Episode VIII", "The last Jedi");
->        }
-> }
-> ```
+!!! example "Ejemplo"
+    El siguiente ejemplo muestra como usar sentencias SQL para realizar la inserción de nuevos registros, ya veremos que esta no es la forma más aconsejable por seguridad.
+
+    ```java
+    package es.martinezpenya.ejemplos.UD10._08_Insercion;
+    
+    import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+    
+    import java.sql.*;
+    
+    public class EjemploInsercionConSQL {
+    
+        public static void insertFilmFijo(){
+            String sql = "INSERT INTO films (id, episode, title) VALUES (7, 'Episode VII', 'The force awakens')";
+            try (Connection con = HikariCPSingleton.getConnection();
+                 // Creamos un Statement scrollable y modificable
+                 Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                 // Ejecutamos un SELECT y obtenemos la tabla films en un ResultSet
+                 ResultSet rs = st.executeQuery(sql);) {
+            } catch (SQLException ex) {
+                System.out.println("ERROR al insertar el film: " + ex.getMessage());
+            }
+        }
+    
+        public static void insertFilmParametros(int id, String episode, String title){
+            // OJO!! Forma no recomendada por problemas de seguridad (SQL Injection)
+            String sql = "INSERT INTO films (id, episode, title) VALUES (" + id + ", '" + episode + "', '" + title + "')";
+            try (Connection con = HikariCPSingleton.getConnection();
+                 // Creamos un Statement scrollable y modificable
+                 Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                 // Ejecutamos un SELECT y obtenemos la tabla films en un ResultSet
+                 ResultSet rs = st.executeQuery(sql);) {
+            } catch (SQLException e) {
+                System.out.println("Se ha producido un error al insertar el film. Mensaje: " + e.getMessage());
+            }
+        }
+    
+        public static void main(String[] args) {
+            insertFilmFijo();
+            insertFilmParametros(8, "Episode VIII", "The last Jedi");
+        }
+    }
+    ```
 
 ## Borrado (`delete`)
 
@@ -1407,31 +1410,30 @@ Para eliminar un registro solo hay que desplazar el cursor al registro deseado y
 
 - **`void deleteRow()`**: elimina el registro actual del `ResultSet` y también de la base de datos.
 
-> #### El siguiente código borra el tercer registro de la tabla `films`:
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._09_Borrado;
-> 
-> import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
-> 
-> import java.sql.*;
-> 
-> public class EjemploDeleteRow {
-> 
->        public static void main(String[] args) {
->            String sql = "SELECT * FROM films";
->            try (Connection con = HikariCPSingleton.getConnection();
->                 Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
->                 ResultSet rs = st.executeQuery(sql);) {
->                // Desplazamos el cursor al tercer registro
->                rs.absolute(3);
->                rs.deleteRow();
->            } catch (SQLException ex) {
->                System.out.println("Error de SQL: " + ex.getMessage());
->            }
->        }
-> }
-> ```
+    !!! example "El siguiente código borra el tercer registro de la tabla `films`:"
+        ```java
+        package es.martinezpenya.ejemplos.UD10._09_Borrado;
+
+        import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+        
+        import java.sql.*;
+        
+        public class EjemploDeleteRow {
+        
+            public static void main(String[] args) {
+                String sql = "SELECT * FROM films";
+                try (Connection con = HikariCPSingleton.getConnection();
+                     Statement st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                     ResultSet rs = st.executeQuery(sql);) {
+                    // Desplazamos el cursor al tercer registro
+                    rs.absolute(3);
+                    rs.deleteRow();
+                } catch (SQLException ex) {
+                    System.out.println("Error de SQL: " + ex.getMessage());
+                }
+            }
+        }
+        ```
 
 ## Sentencias predefinidas
 
@@ -1454,57 +1456,58 @@ Los parámetros de la sentencia se marcarán con el símbolo de interrogación (
 setXXXX(<posiciónEnLaSentenciaSQL>, <valor>);
 ```
 
-> #### Este es el mismo método para insertar y eliminar un `film` pero usando `PreparedStatement`:
->
-> ```java
-> package es.martinezpenya.ejemplos.UD10._10_Predefinidas;
-> 
-> import java.sql.Connection;
-> import java.sql.PreparedStatement;
-> import java.sql.SQLException;
-> import java.util.Scanner;
-> 
-> import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
-> 
->    public class EjemploInsercionBorradoConPreparedStatement {
-> 
->        public static void insertFilmPrepared(int id, String episode, String title) {
->            String sql = "INSERT INTO films (id, episode, title) VALUES (?,?,?)";
->            try (Connection con = HikariCPSingleton.getConnection(); // Obtener conexión del pool
->                 PreparedStatement pst = con.prepareStatement(sql)) {
->             // Asignamos los valores a los parámetros
->                pst.setInt(1, id);
->                pst.setString(2, episode);
->                pst.setString(3, title);
->             // Ejecutamos la sentencia preparada sin peligro de SQL Injection
->                pst.executeUpdate();
->            } catch (SQLException e) {
->                System.out.println("Se ha producido un error al insertar el film. Mensaje: " + e.getMessage());
->            }
->        }
-> 
->        public static void deleteFilmPrepared(int id) {
->            String sql = "DELETE FROM films WHERE id = ?";
->            try (Connection con = HikariCPSingleton.getConnection(); // Obtener conexión del pool
->                 PreparedStatement pst = con.prepareStatement(sql)) {
->                // Asignamos el valor al parámetro
->                pst.setInt(1, id);
->                // Ejecutamos la sentencia preparada sin peligro de SQL Injection
->                pst.executeUpdate();
->            } catch (SQLException e) {
->                System.out.println("Se ha producido un error al borrar el film. Mensaje: " + e.getMessage());
->            }
->        }
->    
->     public static void main(String[] args) {
->            insertFilmPrepared(8, "Episode VIII", "The last Jedi");
->            Scanner sc = new Scanner(System.in);
->            System.out.println("Pausa, pulsa ENTER para borrar el film introducido....");
->         sc.nextLine();
->            deleteFilmPrepared(8);
->        }
-> }
->    ```
+!!! example "con PreparedStatement"
+    Este es el mismo método para insertar y eliminar un `film` pero usando `PreparedStatement`:
+
+    ```java
+    package es.martinezpenya.ejemplos.UD10._10_Predefinidas;
+    
+    import java.sql.Connection;
+    import java.sql.PreparedStatement;
+    import java.sql.SQLException;
+    import java.util.Scanner;
+    
+    import es.martinezpenya.ejemplos.UD10._03_Patrones._02_PoolObject.HikariCPSingleton;
+    
+    public class EjemploInsercionBorradoConPreparedStatement {
+    
+        public static void insertFilmPrepared(int id, String episode, String title) {
+            String sql = "INSERT INTO films (id, episode, title) VALUES (?,?,?)";
+            try (Connection con = HikariCPSingleton.getConnection(); // Obtener conexión del pool
+                 PreparedStatement pst = con.prepareStatement(sql)) {
+             // Asignamos los valores a los parámetros
+                pst.setInt(1, id);
+                pst.setString(2, episode);
+                pst.setString(3, title);
+             // Ejecutamos la sentencia preparada sin peligro de SQL Injection
+                pst.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println("Se ha producido un error al insertar el film. Mensaje: " + e.getMessage());
+            }
+        }
+    
+        public static void deleteFilmPrepared(int id) {
+            String sql = "DELETE FROM films WHERE id = ?";
+            try (Connection con = HikariCPSingleton.getConnection(); // Obtener conexión del pool
+                 PreparedStatement pst = con.prepareStatement(sql)) {
+                // Asignamos el valor al parámetro
+                pst.setInt(1, id);
+                // Ejecutamos la sentencia preparada sin peligro de SQL Injection
+                pst.executeUpdate();
+            } catch (SQLException e) {
+                System.out.println("Se ha producido un error al borrar el film. Mensaje: " + e.getMessage());
+            }
+        }
+    
+     public static void main(String[] args) {
+            insertFilmPrepared(8, "Episode VIII", "The last Jedi");
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Pausa, pulsa ENTER para borrar el film introducido....");
+         sc.nextLine();
+            deleteFilmPrepared(8);
+        }
+    }
+    ```
 
 ### Ventajas de `PreparedStatement` desde el Punto de Vista de Seguridad
 
@@ -1512,7 +1515,8 @@ setXXXX(<posiciónEnLaSentenciaSQL>, <valor>);
 
 **Prevención de Inyección SQL:**
 
-> # La **inyección SQL** es un tipo de ataque en el que un atacante inserta o "inyecta" código SQL malicioso en una consulta a través de entradas de usuario. Esto puede permitir a un atacante ejecutar comandos SQL no autorizados, acceder a datos sensibles o manipular la base de datos de formas inesperadas.
+!!! info "Definición"
+    La **inyección SQL** es un tipo de ataque en el que un atacante inserta o "inyecta" código SQL malicioso en una consulta a través de entradas de usuario. Esto puede permitir a un atacante ejecutar comandos SQL no autorizados, acceder a datos sensibles o manipular la base de datos de formas inesperadas.
 
 **Ejemplo de Inyección SQL:**
 

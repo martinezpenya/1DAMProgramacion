@@ -2,6 +2,8 @@
 
 ![type:video](assets/UD09_Interfaz_grafica.mp4)
 
+![Diagrama](assets/UD09_Diagrama.png)
+
 ## Introducción
 
 [JavaFX](https://openjfx.io/) fue desarrollado por Chris Oliver. Inicialmente, el proyecto se denominó Form Follows Functions (F3). Está destinado a proporcionar las funcionalidades más ricas para el desarrollo de aplicaciones GUI. Posteriormente, Sun Micro-systems adquirió el proyecto F3 como JavaFX en junio de 2005.

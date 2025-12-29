@@ -1,32 +1,19 @@
-﻿---
-title: Taller UD10_3: Patron DAO (CRUD completo)
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2025, Programacion, Java]
-IES: IES Eduardo Primo Marqués (Carlet) [www.ieseduardoprimo.es]
-header: ${title} - ${subject} (ver. ${today}) 
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url:${filename}/../
-typora-copy-images-to:${filename}/../assets
----
+﻿# Taller UD10_04: Patron DAO (CRUD completo)
 
-
-[toc]
-
-# Introducción
+## Introducción
 
 En el apartado correspondiente de teoria, ya estudiamos los patrones `Singleton` y `DAO`.
 
-> ### Para realizar el ejemplo que seguiremos en este apartado usaremos la BBDD starwars. Pero tu deberás replicar este ejemplo para la BBDD que creaste en el anterior taller [UD10_T2_AWS_IntelliJ_ES](UD10_T2_AWS_IntelliJ_ES.pdf).
+!!! info "Importante"
+    Para realizar el ejemplo que seguiremos en este apartado usaremos la BBDD starwars. Pero tu deberás replicar este ejemplo para la BBDD que creaste en el anterior taller [UD10_T03_AWS_IntelliJ_ES](UD10_T03_AWS_IntelliJ_ES.md).
 
 En programación existen una serie de estándares denominados [Patrones de Diseño](https://refactoring.guru/es/design-patterns) que debes conocer para poder programar según estos patrones y no reinventar la rueda.
 
-# Esquema de la BBDD
+## Esquema de la BBDD
 
-![Diagrama de la BBDD](/assets/Diagram1.png)
+![Diagrama de la BBDD](assets/Diagram1.png)
 
-# Implementación paso a paso
+## Implementación paso a paso
 
 **Paso 0: Definir la clase `DbConnect`** (`Singleton`), usando [HikariCP](https://github.com/brettwooldridge/HikariCP?tab=readme-ov-file)
 
@@ -216,7 +203,8 @@ public class Planet {
     public String getClimate() {
         return climate;
     }
-
+```
+```java
     public void setClimate(String climate) {
         this.climate = climate;
     }
@@ -382,7 +370,8 @@ public class Character {
     public String getSkin_color() {
         return skin_color;
     }
-
+```
+```java
     public void setSkin_color(String skin_color) {
         this.skin_color = skin_color;
     }
@@ -620,7 +609,8 @@ public class FilmDAO implements DAO<Film> {
             pst.executeUpdate();
         }
     }
-
+```
+```java
     @Override
     public void eliminar(int id) throws SQLException {
         try (PreparedStatement pst = con.prepareStatement(DELETE_QUERY)) {
@@ -702,7 +692,8 @@ public class PlanetDAO implements DAO<Planet> {
         }
         return planet;
     }
-
+```
+```java
     @Override
     public ArrayList<Planet> obtenerTodos() throws SQLException {
         ArrayList<Planet> planets = new ArrayList<>();
@@ -827,7 +818,8 @@ public class CharacterDAO implements DAO<Character> {
         }
         return character;
     }
-
+```
+```java
     @Override
     public ArrayList<Character> obtenerTodos() throws SQLException {
         ArrayList<Character> characters = new ArrayList<>();
@@ -948,7 +940,8 @@ public class CharacterFilmDAO implements DAO<CharacterFilm> {
         }
         return characterFilms;
     }
-
+```
+```java
     public ArrayList<CharacterFilm> obtenerTodosPorFilm(int id_film) throws SQLException {
         ArrayList<CharacterFilm> characterFilms = new ArrayList<>();
         try (PreparedStatement pst = con.prepareStatement(SELECT_ALL_QUERY_BY_FILM)) {
@@ -1086,6 +1079,8 @@ public class Main {
                         }
                     }
                     break;
+```
+```java
                 case 2:
                     System.out.print("Introduce el ID del Character para ver todos los Films en los que aparece: ");
                     int idCharacter = entrada.nextInt();
@@ -1160,7 +1155,8 @@ public class Main {
             }
         }
     }
-
+```
+```java
     private static void gestionarFilms() {
         Scanner entrada = new Scanner(System.in);
         FilmDAO filmDAO = new FilmDAO();
@@ -1242,6 +1238,8 @@ public class Main {
                         System.out.println("Error al actualizar Film: " + e.getMessage());
                     }
                     break;
+```
+```java
                 case 5:
                     System.out.print("Introduce el ID del film a eliminar: ");
                     int idEliminar = entrada.nextInt();
@@ -1323,6 +1321,8 @@ public class Main {
                         System.out.println("Error al obtener el planeta: " + e.getMessage());
                     }
                     break;
+```
+```java
                 case 3:
                     try {
                         ArrayList<Planet> planets = planetDAO.obtenerTodos();
@@ -1399,6 +1399,8 @@ public class Main {
                         System.out.println("Error al actualizar Planeta: " + e.getMessage());
                     }
                     break;
+```
+```java
                 case 5:
                     System.out.print("Introduce el ID del planeta a eliminar: ");
                     int idEliminar = entrada.nextInt();
@@ -1484,6 +1486,8 @@ public class Main {
                         System.out.println("Error al obtener el character: " + e.getMessage());
                     }
                     break;
+```
+```java
                 case 3:
                     try {
                         ArrayList<Character> characters = characterDAO.obtenerTodos();
@@ -1563,6 +1567,8 @@ public class Main {
                         System.out.println("Error al actualizar Character: " + e.getMessage());
                     }
                     break;
+```
+```java
                 case 5:
                     System.out.print("Introduce el ID del character a eliminar: ");
                     int idEliminar = entrada.nextInt();
@@ -1662,7 +1668,7 @@ public class Main {
 - **Localización de la BBDD**. En este caso he apostado por alojar la BBDD en un servidor AWS, pero si lo prefieres puedes hacerlo localmente. Eso si, asegurate que le das toda la información necesaria al docente para que pueda reproducir tu entorno y poder evaluar que tu proyecto funciona como se espera.
 - **Rendimiento**: En según que casos, si las tablas tienen muchísima información pueden provocar salidas muy lentas, o incluso errores de *timeout*.
 
-# Actividades
+## Entrega
 
 Teniendo todo lo anterior en cuenta debes...
 
@@ -1679,14 +1685,3 @@ Envía a la tarea de Aules:
 
 1. Una memoria en fichero **pdf** explicando los pasos seguidos (con capturas), explicando la estructura de la BBDD, las tablas que vas a implementar, y toda la información que creas relevante, así como tu opinión personal sobre el proyecto (dificultades, futuras ampliaciones, limitaciones conocidas, etc.)
 2. Un fichero **zip** con el proyecto gestionado con `maven` en **IntelliJ**. Asegurate de incluir todo lo necesario para que el profesor pueda reproducir y poner en funcionamiento el proyecto. No olvides el fichero **`.sql`** (o similar) para poder generar la BBDD de nuevo. Este archivo generalmente lo puedes obtener exportando la BBDD o generando una copia de seguridad en SQL.
-
-# Fuentes de información
-
-- [Wikipedia](https://es.wikipedia.org)
-- [Programación (Grado Superior) - Juan Carlos Moreno Pérez (Ed. Ra-ma)](https://www.ra-ma.es/libro/programacion-grado-superior_48302/)
-- Apuntes IES Henri Matisse (Javi García Jimenez?)
-- Apuntes AulaCampus
-- [Apuntes José Luis Comesaña](https://www.sitiolibre.com/)
-- [Apuntes IOC Programació bàsica (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_asx_m03_/web/fp_asx_m03_htmlindex/index.html)
-- [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)
-- https://arturoblasco.github.io/prg

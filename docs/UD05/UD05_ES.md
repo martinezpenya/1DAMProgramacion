@@ -2,6 +2,8 @@
 
 ![type:video](assets/UD05_Desarrollo_de_Clases.mp4)
 
+![Diagrama](assets/UD05_Diagrama.png)
+
 !!! Warning ""¿Cómo estudiar esta unidad?"
     Si lees esta unidad de principio a fin, veras que es como la [Unidad 2: Utilización de Objetos y Clases](../UD02/UD02_ES.md), pero con algunos conceptos más desarrollados y otros nuevos.
 
