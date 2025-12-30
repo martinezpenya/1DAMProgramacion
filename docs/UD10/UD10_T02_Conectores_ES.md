@@ -1,4 +1,4 @@
-﻿# Taller UD10_T02: Conectores
+﻿# Taller UD10_02: Conectores
 
 
 ## Controlador MySql (Manualmente - Jar)

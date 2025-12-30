@@ -1,24 +1,11 @@
-﻿---
-title: Taller UD11_2: CRUD con ObjectDB
-language: ES
-author: David Martínez Peña [www.martinezpenya.es]
-subject: Programación
-keywords: [PRG, 2025, Programacion, Java]
-IES: IES Eduardo Primo Marqués (Carlet)
-header: ${title} - ${subject} (ver. ${today}) 
-footer:${currentFileName}.pdf - ${author} - ${IES} - ${pageNo}/${pageCount}
-typora-root-url:${filename}/../
-typora-copy-images-to:${filename}/../assets
----
+﻿# Taller UD11_03: CRUD con ObjectDB
 
 
-[toc]
-
-# Introducción
+## Introducción
 
 Siguiendo con la misma base de datos que usaste el último taller de la unidad 10, vamos a realizar un mini-proyecto en el que puedas comprobar todo lo aprendido en la unidad 11. La idea básica es adaptar el proyecto del taller 3 de la unidad 10 a ObjectDB, pero solo para dos tablas (las que tienen alguna relación).
 
-## Pasos a seguir
+### Pasos a seguir
 
 Los pasos a seguir para realizar el proyecto serán los siguientes:
 
@@ -33,7 +20,7 @@ Consideraciones adicionales:
 2. Para simplificar el proyecto no será necesario seguir los patrones vistos en la unidad anterior.
 3. Recuerda que en el proyecto no solo es necesario programar, sino también comentar lo que vas haciendo.
 
-# Ejemplo con dos tablas
+## Ejemplo con dos tablas
 
 Para clarificar las tareas a realizar, seguiremos con la BD de starwars del tema anterior.
 
@@ -47,19 +34,6 @@ Más consideraciones:
 1. El fichero de la `BD` se llamará `starwars.odb` y se guardará en la carpeta `BD` de mi proyecto.
 2. Aunque no es necesario, aplicar el patrón Singleton para acceder a la BD es relativamente sencillo e igual al de las BDR, así que unificaremos la conexión en una única clase.
 
-# Actividades
+## Entrega
 
 Genera un proyecto en `IntelliJ`  con las características descritas, exporta el proyecto como `zip` y sube el proyecto a la tarea de AULES.
-
-# Fuentes de información
-
-- [Wikipedia](https://es.wikipedia.org)
-- [Programación (Grado Superior) - Juan Carlos Moreno Pérez (Ed. Ra-ma)](https://www.ra-ma.es/libro/programacion-grado-superior_48302/)
-- Apuntes IES Henri Matisse (Javi García Jimenez?)
-- Apuntes AulaCampus
-- [Apuntes José Luis Comesaña](https://www.sitiolibre.com/)
-- [Apuntes IOC Programació bàsica (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_asx_m03_/web/fp_asx_m03_htmlindex/index.html)
-- [Apuntes IOC Programació Orientada a Objectes (Joan Arnedo Moreno)](https://ioc.xtec.cat/materials/FP/Recursos/fp_dam_m03_/web/fp_dam_m03_htmlindex/index.html)
-- [FXDocs](https://github.com/FXDocs/docs)
-- https://openjfx.io/openjfx-docs/
-- https://arturoblasco.github.io/pr

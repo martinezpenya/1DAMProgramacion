@@ -1,5 +1,5 @@
 ﻿
-# Taller UD11_T02: Añadir ObjectDB a un proyecto IntelliJ (Maven)
+# Taller UD11_02: Añadir ObjectDB a un proyecto IntelliJ (Maven)
 
 
 ## Que es ObjectDB

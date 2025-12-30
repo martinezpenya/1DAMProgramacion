@@ -1,4 +1,4 @@
-# Taller UD10_3: BBDD en la nube (AWS) con IntelliJ
+# Taller UD10_03: BBDD en la nube (AWS) con IntelliJ
 
 ## Introducción
 
