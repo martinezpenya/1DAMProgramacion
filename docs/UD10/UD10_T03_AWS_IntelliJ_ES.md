@@ -304,7 +304,7 @@ Elige un número de película y te mostraré los personajes que aparecen en ella
 > </dependency>
 > ```
 
-## Entrega
+## Tarea
 
 Ahora que has visto como crear una BBDD en AWS:
 

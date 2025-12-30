@@ -70,7 +70,7 @@
 
 <img src="assets/LoadMavenChanges.png" alt="Cargar cambios de Maven" style="zoom:50%;" />
 
-## Entrega
+## Tarea
 
 Ahora que conoces las diferencias entre agregar una libreria manualmente o mediante Maven, genera un documento pdf con el siguiente contenido:
 

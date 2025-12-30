@@ -34,6 +34,6 @@ Más consideraciones:
 1. El fichero de la `BD` se llamará `starwars.odb` y se guardará en la carpeta `BD` de mi proyecto.
 2. Aunque no es necesario, aplicar el patrón Singleton para acceder a la BD es relativamente sencillo e igual al de las BDR, así que unificaremos la conexión en una única clase.
 
-## Entrega
+## Tarea
 
 Genera un proyecto en `IntelliJ`  con las características descritas, exporta el proyecto como `zip` y sube el proyecto a la tarea de AULES.

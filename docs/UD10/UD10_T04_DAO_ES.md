@@ -1668,7 +1668,7 @@ public class Main {
 - **Localización de la BBDD**. En este caso he apostado por alojar la BBDD en un servidor AWS, pero si lo prefieres puedes hacerlo localmente. Eso si, asegurate que le das toda la información necesaria al docente para que pueda reproducir tu entorno y poder evaluar que tu proyecto funciona como se espera.
 - **Rendimiento**: En según que casos, si las tablas tienen muchísima información pueden provocar salidas muy lentas, o incluso errores de *timeout*.
 
-## Entrega
+## Tarea
 
 Teniendo todo lo anterior en cuenta debes...
 

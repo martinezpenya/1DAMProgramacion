@@ -216,7 +216,7 @@ Ten en cuenta que cada vez que ejecutas el código se añaden 1000 puntos más a
 
 Si quieres volver a empezar solo debes borrar el fichero `*.odb` y al volver a ejecutar el código se generará de nuevo el fichero con 1000 puntos.
 
-## Entrega
+## Tarea
 
 Ahora genera un documento `pdf` con el siguiente contenido:
 
