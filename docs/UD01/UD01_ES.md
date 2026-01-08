@@ -4,6 +4,8 @@
 
 ![type:video](assets/UD01_Elementos_de_un_Programa.mp4)
 
+![Diagrama](assets/UD01_Diagrama.png)
+
 ## Piensa como un programador
 
 Una de las acepciones que trae el Diccionario de Real Academia de la Lengua Española (RAE) respecto a la palabra Problema es **“Planteamiento de una situación cuya respuesta desconocida debe obtenerse a través de métodos científicos”**. Con miras a lograr esa respuesta, un problema se puede definir como una situación en la cual se trata de alcanzar una meta y para lograrlo se deben hallar y utilizar unos medios y unas estrategias.

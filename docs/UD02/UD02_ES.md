@@ -4,6 +4,8 @@
 
 ![type:video](assets/UD02_Utilizacion_Objetos_Clases.mp4)
 
+![Diagrama](assets/UD02_Diagrama.png)
+
 ## Introducción a la POO
 
 **Orientado a objetos** hace referencia a una forma diferente de acometer la tarea del desarrollo de software, frente a otros modelos como el de la programación imperativa, la programación funcional o la programación lógica. Supone una reconsideración de los métodos de programación, de la forma de estructurar la información y, ante todo, de la forma de pensar en la resolución de problemas.
