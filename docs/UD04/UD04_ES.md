@@ -6,7 +6,8 @@
     src="https://www.youtube.com/embed/s7Lv6Zdr63I" width="100%" height="315"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen="allowfullscreen"></iframe></p>
+    allowfullscreen="allowfullscreen"></iframe></p
+![Diagrama](assets/UD04_Diagrama.png)
 
 ## Introducción
 
