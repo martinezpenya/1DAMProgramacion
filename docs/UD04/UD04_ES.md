@@ -8,6 +8,7 @@
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen="allowfullscreen"></iframe></p
 ![Diagrama](assets/UD04_Diagrama.png)
+![Diagrama](assets/UD04_Diagrama.png)
 
 ## Introducción
 
