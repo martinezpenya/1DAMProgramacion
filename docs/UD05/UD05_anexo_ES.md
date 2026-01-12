@@ -76,7 +76,7 @@ Float f3 = Float.valueOf("3.14f");
 System.out.println(f3);
 ```
 
-Métodos `xxxValue()`.
+### Métodos `xxxValue()`.
 
 Los métodos `xxxValue()` permiten convertir un wrapper en un dato de tipo primitivo y no necesitan argumentos.
 
