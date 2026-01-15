@@ -1,0 +1,146 @@
+<svg viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definiciones -->
+  <defs>
+    <!-- Gradiente para flujo superior (Cliente -> Servidor) -->
+    <linearGradient id="streamGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente para flujo inferior (Servidor -> Cliente) -->
+    <linearGradient id="streamGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Sombra -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+    
+    <!-- Sombra suave para cajas -->
+    <filter id="boxShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Socket Cliente -->
+  <g>
+    <rect x="50" y="120" width="180" height="120" rx="12" 
+          fill="#667eea" filter="url(#boxShadow)"/>
+    <text x="140" y="170" font-family="Arial, sans-serif" font-size="20" 
+          font-weight="600" fill="white" text-anchor="middle">Socket</text>
+    <text x="140" y="195" font-family="Arial, sans-serif" font-size="20" 
+          font-weight="600" fill="white" text-anchor="middle">Cliente</text>
+  </g>
+  
+  <!-- Socket Servidor -->
+  <g>
+    <rect x="770" y="120" width="180" height="120" rx="12" 
+          fill="#f5576c" filter="url(#boxShadow)"/>
+    <text x="860" y="170" font-family="Arial, sans-serif" font-size="20" 
+          font-weight="600" fill="white" text-anchor="middle">Socket</text>
+    <text x="860" y="195" font-family="Arial, sans-serif" font-size="20" 
+          font-weight="600" fill="white" text-anchor="middle">Servidor</text>
+  </g>
+  
+  <!-- Flujo superior: Cliente -> Servidor -->
+  <g>
+    <!-- Fondo del flujo (visible y claro) -->
+    <path d="M 230 155 L 770 155" 
+          stroke="#e0e7ff" stroke-width="35" 
+          fill="none" stroke-linecap="round"/>
+    <!-- Flujo animado -->
+    <path d="M 230 155 L 770 155" 
+          stroke="url(#streamGradient1)" stroke-width="30" 
+          fill="none" opacity="0.3" stroke-linecap="round"/>
+    <path d="M 230 155 L 770 155" 
+          stroke="url(#streamGradient1)" stroke-width="20" 
+          fill="none" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 230 155 L 770 155" 
+          stroke="url(#streamGradient1)" stroke-width="12" 
+          fill="none" filter="url(#shadow)" stroke-linecap="round"/>
+    
+    <!-- Flecha -->
+    <path d="M 760 155 L 780 155 L 770 145 M 780 155 L 770 165" 
+          stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Partículas animadas -->
+    <circle cx="350" cy="155" r="4" fill="#667eea" opacity="0.6">
+      <animate attributeName="cx" from="230" to="770" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="155" r="3" fill="#764ba2" opacity="0.5">
+      <animate attributeName="cx" from="230" to="770" dur="2.5s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="155" r="3.5" fill="#667eea" opacity="0.6">
+      <animate attributeName="cx" from="230" to="770" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Etiquetas del flujo superior -->
+  <g>
+    <!-- Etiqueta izquierda -->
+    <line x1="290" y1="120" x2="330" y2="155" stroke="#333" stroke-width="2"/>
+    <text x="290" y="90" font-family="Arial, sans-serif" font-size="15" 
+          fill="#333" font-weight="500" text-anchor="middle">Flujo de salida</text>
+    <text x="290" y="110" font-family="Arial, sans-serif" font-size="15" 
+          fill="#333" font-weight="500" text-anchor="middle">del cliente</text>
+    
+    <!-- Etiqueta derecha -->
+    <line x1="710" y1="120" x2="670" y2="155" stroke="#333" stroke-width="2"/>
+    <text x="710" y="90" font-family="Arial, sans-serif" font-size="15" 
+          fill="#333" font-weight="500" text-anchor="middle">Flujo de entrada</text>
+    <text x="710" y="110" font-family="Arial, sans-serif" font-size="15" 
+          fill="#333" font-weight="500" text-anchor="middle">del servidor</text>
+  </g>
+  
+  <!-- Flujo inferior: Servidor -> Cliente -->
+  <g>
+    <!-- Fondo del flujo (visible y claro) -->
+    <path d="M 770 205 L 230 205" 
+          stroke="#fce7f3" stroke-width="35" 
+          fill="none" stroke-linecap="round"/>
+    <!-- Flujo animado -->
+    <path d="M 770 205 L 230 205" 
+          stroke="url(#streamGradient2)" stroke-width="30" 
+          fill="none" opacity="0.3" stroke-linecap="round"/>
+    <path d="M 770 205 L 230 205" 
+          stroke="url(#streamGradient2)" stroke-width="20" 
+          fill="none" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 770 205 L 230 205" 
+          stroke="url(#streamGradient2)" stroke-width="12" 
+          fill="none" filter="url(#shadow)" stroke-linecap="round"/>
+    
+    <!-- Flecha -->
+    <path d="M 240 205 L 220 205 L 230 195 M 220 205 L 230 215" 
+          stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Partículas animadas -->
+    <circle cx="650" cy="205" r="4" fill="#f093fb" opacity="0.6">
+      <animate attributeName="cx" from="770" to="230" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="205" r="3" fill="#f5576c" opacity="0.5">
+      <animate attributeName="cx" from="770" to="230" dur="2.5s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="205" r="3.5" fill="#f093fb" opacity="0.6">
+      <animate attributeName="cx" from="770" to="230" dur="2.5s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Etiquetas del flujo inferior -->
+  <g>
+    <!-- Etiqueta izquierda -->
+    <line x1="290" y1="240" x2="330" y2="205" stroke="#333" stroke-width="2"/>
+    <text x="290" y="260" font-family="Arial, sans-serif" font-size="15" 
+          fill="#333" font-weight="500" text-anchor="middle">Flujo de entrada</text>
+    <text x="290" y="280" font-family="Arial, sans-serif" font-size="15" 
+          fill="#333" font-weight="500" text-anchor="middle">del cliente</text>
+    
+    <!-- Etiqueta derecha -->
+    <line x1="710" y1="240" x2="670" y2="205" stroke="#333" stroke-width="2"/>
+    <text x="710" y="260" font-family="Arial, sans-serif" font-size="15" 
+          fill="#333" font-weight="500" text-anchor="middle">Flujo de salida</text>
+    <text x="710" y="280" font-family="Arial, sans-serif" font-size="15" 
+          fill="#333" font-weight="500" text-anchor="middle">del servidor</text>
+  </g>
+</svg>

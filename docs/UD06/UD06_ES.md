@@ -10,7 +10,7 @@ En Java, la interacción de nuestro programa con el mundo exterior—desde leer 
 
 Los programas Java realizan las operaciones de entrada y salida a través de lo que se denominan Streams (traducido, flujos). 
 
-![image-20210828174745591](assets/stream.svg)
+![image-20210828174745591](assets/stream.svg){width=800px}
 
 Un stream es una abstracción de todo aquello que produzca o consuma información. Podemos ver a este stream como una entidad lógica que, por otra parte, se encontrará vinculado con un dispositivo físico. La eficacia de esta forma de implementación radica en que las operaciones de entrada y salida que el programador necesita manejar son las mismas independientemente del dispositivo con el que estemos actuando. Será Java quien se encargue de manejar el dispositivo concreto, ya se trate del teclado, el monitor, un sistema de ficheros o un socket de red, etc., liberando a nuestro código de tener que saber con quién está interactuando.
 
@@ -76,21 +76,21 @@ Existen una serie de streams de uso común a los cuales se denomina streams est�
 Para utilizar un stream hay que seguir una serie de pasos:
 
 - Lectura
-  - Abrir el stream asociado a una fuente de datos (creación del objeto stream)
-    - Teclado
-    - Fichero
-    - Socket remoto
-  - Mientras existan datos disponibles
-    - Leer datos
-  - Cerrar el stream (método close)
+    - Abrir el stream asociado a una fuente de datos (creación del objeto stream)
+        - Teclado
+        - Fichero
+        - Socket remoto
+    - Mientras existan datos disponibles
+        - Leer datos
+    - Cerrar el stream (método close)
 - Escritura
-  - Abrir el stream asociado a una fuente de datos (creación del objeto stream)
-    - Pantalla
-    - Fichero
-    - Socket local
-  - Mientras existan datos disponibles
-    - Escribir datos
-  - Cerrar el stream (método close)
+    - Abrir el stream asociado a una fuente de datos (creación del objeto stream)
+        - Pantalla
+        - Fichero
+        - Socket local
+    - Mientras existan datos disponibles
+        - Escribir datos
+    - Cerrar el stream (método close)
 
 !!! warning "Importante:" 
     - Los Stream estándar ya se encarga el sistema de abrirlos y cerrarlos
@@ -365,7 +365,7 @@ Los sockets son un mecanismo que nos permite establecer un enlace  entre dos pro
 
 Cabe resaltar que tanto el cliente como el servidor no necesariamente deben estar implementados en Java, solo  deben conocer sus direcciones IP y el puerto por el cual se comunicarán.
 
-![](assets/ClientSocket.png)
+![](assets/ClientSocket.svg){width=800px}
 
 Observa el package de ejemplo [UD06.P4_Sockets](#ejemplo-de-sockets)
 
