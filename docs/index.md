@@ -8,6 +8,11 @@
 
 ☕ Programación (PRG)
 
+| **B5** | UD05: Desarrollo de clases               | 25   |
+| ------ | ---------------------------------------- | ---- |
+| **B6** | UD06: Lectura y escritura de información | 25   |
+| **B4** | UD07: Colecciones y Funciones Lambda     |      |
+
 ## 📋 Contenidos
 
 |            |                                                            | **Horas** |
@@ -158,8 +163,6 @@
 
 - ❗**NUEVO SISTEMA DUAL!!** → Busca tu empresa! 120H (aproximadamente en el mes de mayo, también a partir del 2º trimestre por las mañanas)
 
-
-> ⚠️ **IMPORTANTE:**
->
-> - ❗ Aprobar las distintas evaluaciones no garantiza aprobar el curso.
-> - 📌 Puedes aprobar (y con muy buena nota) las dos evaluaciones, tener un `RA` suspendido y por tanto suspender el módulo.
+!!! danger "⚠️ **IMPORTANTE:**"
+    - ❗ Aprobar las distintas evaluaciones no garantiza aprobar el curso.
+    - 📌 Puedes aprobar (y con muy buena nota) las dos evaluaciones, tener un `RA` suspendido y por tanto suspender el módulo.
