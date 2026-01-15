@@ -1,0 +1,125 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definiciones -->
+  <defs>
+    <!-- Gradiente para el flujo superior -->
+    <linearGradient id="streamGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente para el flujo inferior -->
+    <linearGradient id="streamGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Sombra -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+    
+    <!-- Sombra suave para cajas -->
+    <filter id="boxShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Flujo superior: Fuente -> Programa -->
+  <g>
+    <!-- Caja Fuente -->
+    <rect x="50" y="60" width="120" height="80" rx="8" 
+          fill="#667eea" filter="url(#boxShadow)"/>
+    <text x="110" y="105" font-family="Arial, sans-serif" font-size="18" 
+          font-weight="600" fill="white" text-anchor="middle">Fuente</text>
+    
+    <!-- Flujo animado -->
+    <path d="M 170 100 Q 350 80, 530 100" 
+          stroke="url(#streamGradient1)" stroke-width="40" 
+          fill="none" opacity="0.3" stroke-linecap="round"/>
+    <path d="M 170 100 Q 350 80, 530 100" 
+          stroke="url(#streamGradient1)" stroke-width="30" 
+          fill="none" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 170 100 Q 350 80, 530 100" 
+          stroke="url(#streamGradient1)" stroke-width="20" 
+          fill="none" filter="url(#shadow)" stroke-linecap="round"/>
+    
+    <!-- Etiqueta "Un flujo" -->
+    <text x="350" y="50" font-family="Arial, sans-serif" font-size="14" 
+          fill="#666" text-anchor="middle" font-style="italic">Un flujo</text>
+    
+    <!-- Flecha y texto "lee" -->
+    <path d="M 510 100 L 530 100 L 525 95 M 530 100 L 525 105" 
+          stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <rect x="475" y="72" width="35" height="22" rx="4" fill="white" opacity="0.95"/>
+    <text x="492" y="88" font-family="Arial, sans-serif" font-size="14" 
+          fill="#333" font-weight="600" text-anchor="middle">lee</text>
+    
+    <!-- Caja Programa -->
+    <rect x="550" y="60" width="140" height="80" rx="8" 
+          fill="#764ba2" filter="url(#boxShadow)"/>
+    <text x="620" y="105" font-family="Arial, sans-serif" font-size="18" 
+          font-weight="600" fill="white" text-anchor="middle">Programa</text>
+  </g>
+  
+  <!-- Flujo inferior: Programa -> Destino -->
+  <g>
+    <!-- Caja Programa -->
+    <rect x="50" y="300" width="140" height="80" rx="8" 
+          fill="#f093fb" filter="url(#boxShadow)"/>
+    <text x="120" y="345" font-family="Arial, sans-serif" font-size="18" 
+          font-weight="600" fill="white" text-anchor="middle">Programa</text>
+    
+    <!-- Flujo animado -->
+    <path d="M 190 340 Q 370 320, 550 340" 
+          stroke="url(#streamGradient2)" stroke-width="40" 
+          fill="none" opacity="0.3" stroke-linecap="round"/>
+    <path d="M 190 340 Q 370 320, 550 340" 
+          stroke="url(#streamGradient2)" stroke-width="30" 
+          fill="none" opacity="0.6" stroke-linecap="round"/>
+    <path d="M 190 340 Q 370 320, 550 340" 
+          stroke="url(#streamGradient2)" stroke-width="20" 
+          fill="none" filter="url(#shadow)" stroke-linecap="round"/>
+    
+    <!-- Etiqueta "Un flujo" -->
+    <text x="370" y="290" font-family="Arial, sans-serif" font-size="14" 
+          fill="#666" text-anchor="middle" font-style="italic">Un flujo</text>
+    
+    <!-- Caja Destino -->
+    <rect x="570" y="300" width="120" height="80" rx="8" 
+          fill="#f5576c" filter="url(#boxShadow)"/>
+    <text x="630" y="345" font-family="Arial, sans-serif" font-size="18" 
+          font-weight="600" fill="white" text-anchor="middle">Destino</text>
+  </g>
+  
+  <!-- Flecha y texto "escribe" - AHORA ENCIMA DE TODO -->
+  <g>
+    <path d="M 190 340 L 210 340 L 205 335 M 210 340 L 205 345" 
+          stroke="#f5576c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <rect x="185" y="305" width="70" height="24" rx="4" fill="white" opacity="0.95"/>
+    <text x="220" y="322" font-family="Arial, sans-serif" font-size="14" 
+          fill="#333" font-weight="600" text-anchor="middle">escribe</text>
+  </g>
+  
+  <!-- Partículas de movimiento en los flujos (efecto visual) -->
+  <g opacity="0.4">
+    <circle cx="250" cy="100" r="3" fill="#667eea">
+      <animate attributeName="cx" from="170" to="530" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="98" r="2" fill="#764ba2">
+      <animate attributeName="cx" from="170" to="530" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="102" r="2.5" fill="#667eea">
+      <animate attributeName="cx" from="170" to="530" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="300" cy="340" r="3" fill="#f093fb">
+      <animate attributeName="cx" from="190" to="550" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="338" r="2" fill="#f5576c">
+      <animate attributeName="cx" from="190" to="550" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="342" r="2.5" fill="#f093fb">
+      <animate attributeName="cx" from="190" to="550" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

@@ -10,7 +10,7 @@ En Java, la interacción de nuestro programa con el mundo exterior—desde leer 
 
 Los programas Java realizan las operaciones de entrada y salida a través de lo que se denominan Streams (traducido, flujos). 
 
-<img src="assets/stream.png" alt="image-20210828174745591" style="zoom:67%;" />
+![image-20210828174745591](assets/stream.svg)
 
 Un stream es una abstracción de todo aquello que produzca o consuma información. Podemos ver a este stream como una entidad lógica que, por otra parte, se encontrará vinculado con un dispositivo físico. La eficacia de esta forma de implementación radica en que las operaciones de entrada y salida que el programador necesita manejar son las mismas independientemente del dispositivo con el que estemos actuando. Será Java quien se encargue de manejar el dispositivo concreto, ya se trate del teclado, el monitor, un sistema de ficheros o un socket de red, etc., liberando a nuestro código de tener que saber con quién está interactuando.
 
