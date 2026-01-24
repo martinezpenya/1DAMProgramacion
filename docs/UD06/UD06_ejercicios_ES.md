@@ -253,6 +253,7 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 !!! warning "Recomendación para Test"
     La pregunta debería ser del estilo de "¿Deseas añadir más datos? si eliges NO borraras el contenido anterior. ('S' para si o 'N' para no)"
+    
     El test usará los carácteres S o N para probar en ese sentido.
 
 16. (MostrarPersonas) Realizar un programa que lea la información del fichero `personas.dat` y la muestre por pantalla. Para determinar que no quedan más datos en el fichero podemos capturar la excepción `EOFException` 
@@ -282,6 +283,7 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 !!! danger "Muy Importante"
     Para probar algunos de estos ejercicios debes utilizar el archivo [`Documentos.zip`](Documentos.zip). Descárgalo del aula virtual y descomprímelo en la carpeta de cada proyecto que crees.
+
     Para superar los tests, además, se debe mantener la rutra de la carpeta Documentos en `files/_10_MasEjercicios/Documentos` dentro del proyecto de IntelliJ, como algunos ejercicios borraran y moveran contenido, podrás descomprimir la carpeta `Documentos` a partir del archivo Documentos.zip que se incluye con el proyecto.
 
 21. **Mostrar información de ficheros**
