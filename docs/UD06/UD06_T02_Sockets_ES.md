@@ -20,17 +20,17 @@ Lo primero que necesitamos es arrancar el laboratorio, para ello Accedemos al LM
 
 Inicialmente el laboratorio está en rojo:
 
-![Estado inicial del laboratorio](assets/LAB01-1765023670525-1.png){width=800}
+![Estado inicial del laboratorio](assets/LAB01.png){width=800}
 
 Elegimos la opción `Start Lab` y esperamos a que aparezca el laboratorio en verde:
 
-![Laboratorio iniciado correctamente](assets/LAB02-1765023670525-2.png){width=800}
+![Laboratorio iniciado correctamente](assets/LAB02.png){width=800}
 
 Por defecto el Learner Lab nos proporciona 100 dolares de saldo, y un tiempo de 4 horas, tras el cual se detendrán la mayoría de servicios que tengamos en marcha. Pero mientras quede saldo podemos volver a iniciar el Laboratorio y dispondremos de 4 horas más.
 
 Una vez aparece en verde podemos hacer click sobre las letras AWS y aparecerá el Dashboard de AWS (debemos permitir las ventanas emergentes):
 
-![Dashboard AWS](assets/LAB03-1765023670525-3.png){width=800}
+![Dashboard AWS](assets/LAB03.png){width=800}
 
 #### Crear un entorno Cloud9
 
@@ -38,11 +38,11 @@ Cloud9 es un entorno de desarrollo en la nube que proporciona AWS asociado a una
 
 El primer paso es crear este entorno, para ello buscamos cloud9 en la parte superior del Dashboard:
 
-![Buscar cloud9 en el dashboard](assets/LAB04-1765023670526-4.png){width=800}
+![Buscar cloud9 en el dashboard](assets/LAB04.png){width=800}
 
 A continuación seleccionamos `Create environment`:
 
-![Crear el entorno](assets/LAB05-1765023670526-5.png){width=800}
+![Crear el entorno](assets/LAB05.png){width=800}
 
 En la siguiente ventana debemos especificar el **nombre** (`Name`), cambiaremos la **plataforma** a `Ubuntu Server 18.04 LTS`, también podemos ampliar el tiempo de Timeout para no tener problemas a `4 horas` i por último dentro de los **Network settings** elegiremos la conexión por `SSH`, el resto de opciones se quedan por defecto y pulsamos el botón naranja del final `Create`.
 
@@ -52,11 +52,11 @@ En la siguiente ventana debemos especificar el **nombre** (`Name`), cambiaremos 
 
 Si todo ha ido bien podemos seleccionar el botón `Open`:
 
-![Abrir el entorno creado](assets/LAB07-1765023670526-6.png){width=800}
+![Abrir el entorno creado](assets/LAB07.png){width=800}
 
 Y deberíamos ver algo parecido a esto:
 
-![Entorno cloud9 en ejecución](assets/LAB08-1765023670526-7.png){width=800}
+![Entorno cloud9 en ejecución](assets/LAB08.png){width=800}
 
 #### Creación del servidor de Sockets
 
@@ -100,33 +100,33 @@ public class ServidorSocket {
 
 Debería quedar algo así:
 
-![Código fuente en cloud9](assets/LAB09-1765023670526-8.png){width=800}
+![Código fuente en cloud9](assets/LAB09.png){width=800}
 
 Y si iniciamos el servidor:
 
-![Servidor en la nube en marcha](assets/LAB10-1765023670526-9.png){width=400}
+![Servidor en la nube en marcha](assets/LAB10.png){width=400}
 
 #### Abrir el puerto en la instancia EC2 del cloud9
 
 Ahora debemos volver a la pestaña donde tenemos el Dashboard de AWS y buscar EC2 (donde antes buscamos cloud9):
 
-![Buscar EC2 en el dashboard](assets/LAB11-1765023670526-10.png)
+![Buscar EC2 en el dashboard](assets/LAB11.png)
 
 Una vez abierto elegimos la opción `Instancias (en ejecución)`:
 
-![Elegir instancias en ejecución](assets/LAB12-1765023670526-11.png){width=800}
+![Elegir instancias en ejecución](assets/LAB12.png){width=800}
 
 Deberíamos tener al menos una Instancia, si tenemos más de una debemos buscar la que contenga el nombre de nuestra instancia cloud9, debemos marcar el check que tiene justo delante del nombre y a continuación elegir la pestaña `Seguridad`:
 
-![Seleccionar la instancia y la pestaña seguridad](assets/LAB13-1765023670526-12.png){width=800}
+![Seleccionar la instancia y la pestaña seguridad](assets/LAB13.png){width=800}
 
 Si nos fijamos en las reglas de entrada del grupo de seguridad, solo tiene habilitada la entrada para el puerto 22 (SSH), a continuación hacemos click sobre el enlace del Grupo de seguridad:
 
-![Reglas de entrada](assets/LAB14-1765023670526-13.png){width=600}
+![Reglas de entrada](assets/LAB14.png){width=600}
 
 Y añadiremos el puerto 11000 (o el que hayamos elegido para nuestro servidor) a las reglas de entrada, elegimos el botón `Editar reglas de entrada`, a continuación `Agregar regla` Elegimos `TCP Personalizado`, puerto 11000 y `AnywhereIpv4` y añadimos una descripción si lo deseamos:
 
-![Editar reglas](assets/LAB15-1765023670526-14.png){width=800}
+![Editar reglas](assets/LAB15.png){width=800}
 
 Una vez hecho esto si volvemos a la pestaña Seguridad de nuestra instancia EC2 veremos la regla añadida.
 
@@ -134,7 +134,7 @@ Una vez hecho esto si volvemos a la pestaña Seguridad de nuestra instancia EC2 
 
 Necesitamos saber la DNS de IPv4 pública de nuestra instancia EC2 para acceder desde el cliente, marcamos el check de nuestra instancia y accedemos a la primera pestaña `Detalles`, y nos fijamos en la parte derecha y pulsaremos el botón de copiar y guardaremos esta información para más adelante:
 
-![Dirección pública de la EC2](assets/LAB16-1765023670526-15.png){width=800}
+![Dirección pública de la EC2](assets/LAB16.png){width=800}
 
 ### Tarea 2: Preparar el cliente local
 

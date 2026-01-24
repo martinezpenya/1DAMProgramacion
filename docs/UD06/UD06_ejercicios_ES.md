@@ -74,9 +74,9 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
 
     - la creación de la compañía aérea `Iberia`. Se dispone de un fichero de texto "`Iberia.txt`", con la información de los vuelos que ofrece.
     - Reserva de un asiento de ventanilla en un vuelo de Valencia a París por parte de Manuel Soler Roca. Para ello:
-    - Mostraremos vuelos con origen Valencia y destino París, que no estén completos.
-    - Pediremos al usuario el identificador del vuelo en que quiere hacer la reserva.
-    - Buscaremos el vuelo que tiene el identificador indicado. Si existe realizaremos la reserva y mostraremos un mensaje por pantalla. En caso contrario mostraremos un mensaje de error por pantalla.
+        - Mostraremos vuelos con origen Valencia y destino París, que no estén completos.
+        - Pediremos al usuario el identificador del vuelo en que quiere hacer la reserva.
+        - Buscaremos el vuelo que tiene el identificador indicado. Si existe realizaremos la reserva y mostraremos un mensaje por pantalla. En caso contrario mostraremos un mensaje de error por pantalla.
 
 ### Paquete: `UD06._2.maquinaExpendedora`
 
@@ -178,7 +178,16 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
 5. Crea una copia de la clase `Expendedora` y llámala `ExpendedoraSurtido`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos usando la nueva clase `Surtido`. Por ejemplo ya no tienen sentido los atributos stock y precio ya que pertenecen al `Surtido`. Añade también el método `public String toStringSurtido()`, que muestre por pantalla el listado de productos con su nombre, precio y stock para mostrar al cliente que productos puede elegir. El código del producto coincidirá con su posición al leer el surtido.
 
-6. Crea una copia de la clase `TestExpendedora` y nómbrala `TestExpendedora2` para adaptarla a los cambios hechos en la clase `Expendedora` y usando la nueva posibilidad de comprar diferentes productos y usando solamente un único objeto `Expendedora`. Al final en lugar de mostrar la recaudación de las 3 máquinas expendedoras, muestra solo la de la única que hay y muestra el surtido.
+6. Crea una copia de la clase `TestExpendedora` y nómbrala `TestExpendedora2` para adaptarla a los cambios hechos en la clase `Expendedora` y usando la nueva posibilidad de comprar diferentes productos y usando solamente un único objeto `Expendedora`. Al final en lugar de mostrar la recaudación de las 3 máquinas expendedoras, muestra solo la de la única que hay, que muestra el surtido de esta manera:
+
+   ```sh
+   Prod.	Stock	Precio
+   CocaCola	18	1.5
+   Snickers	15	1.2
+   PotatoChips	25	1.0
+   Water	30	0.8
+   HamSandwich	10	2.5
+   ```
 
 ## **Los flujos estándar**
 
@@ -213,7 +222,7 @@ En los ejercicios anteriores, las limitaciones de la clase utilizada (`InputStre
     - lea el fichero creado y lo muestre por pantalla.
     - Si abrimos el fichero creado con un editor de textos, ¿su contenido es legible?
 
-10. (EscribirFichero2) Repetir el ejercicio anterior utilizando las clases `FileReader` y `FileWriter`. 
+10. (EscribirFichero2) Repetir el ejercicio anterior utilizando las clases `FileReader` y `FileWriter` para generar el fichero `nombre2.txt`.
 
 ## **Uso de buffers**
 
@@ -242,9 +251,13 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 15. (AñadirPersonas) Modifica el programa anterior para que el usuario, al comienzo del programa, pueda elegir si quiere añadir datos al fichero o sobre escribir la información que contiene.
 
+!!! warning "Recomendación para Test"
+    La pregunta debería ser del estilo de "¿Deseas añadir más datos? si eliges NO borraras el contenido anterior. ('S' para si o 'N' para no)"
+    El test usará los carácteres S o N para probar en ese sentido.
+
 16. (MostrarPersonas) Realizar un programa que lea la información del fichero `personas.dat` y la muestre por pantalla. Para determinar que no quedan más datos en el fichero podemos capturar la excepción `EOFException` 
 
-17. (CalculosPersonas) Realizar un programa, similar al anterior,  que lea la información del fichero `personas.dat` y muestre por pantalla la estatura que tienen de media las personas cuya edad está entre 20 y 30 años.
+17. (CalculosPersonas) Realizar un programa, similar al anterior, que lea la información del fichero `personas.dat` y muestre por pantalla la estatura que tienen de media las personas cuya edad está entre 20 y 30 años.
 
 ## **Streams de objetos. Serialización.**
 
@@ -262,10 +275,14 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 20. Programar un Servidor que reciba una fecha (previamente validada por el cliente) y nos diga cual es nuestro signo del zodíaco occidental y el animal que corresponde en el zodíaco oriental (animales).
 
+!!! info "Test"
+    Para poder pasar los tests correctamente la IP del servidor será localhost(127.0.0.1) y el PUERTO el 6000.
+
 ## Más ejercicios (Lionel)
 
 !!! danger "Muy Importante"
-    Para probar algunos de estos ejercicios debes utilizar el archivo  [`Documentos.zip`](Documentos.zip). Descárgalo del aula virtual y descomprímelo en la carpeta de cada proyecto que crees.
+    Para probar algunos de estos ejercicios debes utilizar el archivo [`Documentos.zip`](Documentos.zip). Descárgalo del aula virtual y descomprímelo en la carpeta de cada proyecto que crees.
+    Para superar los tests, además, se debe mantener la rutra de la carpeta Documentos en `files/_10_MasEjercicios/Documentos` dentro del proyecto de IntelliJ, como algunos ejercicios borraran y moveran contenido, podrás descomprimir la carpeta `Documentos` a partir del archivo Documentos.zip que se incluye con el proyecto.
 
 21. **Mostrar información de ficheros**
 
@@ -298,7 +315,7 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 24. **Creando (y moviendo) carpetas**
 
-    Implementa un programa que cree, dentro de `Documentos`, dos nuevas carpetas: `Mis Cosas` y `Alfabeto`. Mueve las carpetas `Fotografias` y `Libros` dentro de `Mis Cosas`. Luego crea dentro de `Alfabeto` una carpeta por cada letra del alfabeto (en mayúsculas): `A`, `B`, `C`... `Z`. Te serán de ayuda los códigos numéricos ASCII: [https://elcodigoascii.com.ar](https://elcodigoascii.com.ar/)
+    Implementa un programa que cree, dentro de `Documentos`, dos nuevas carpetas: `MisCosas` y `Alfabeto`. Mueve las carpetas `Fotografias` y `Libros` dentro de `MisCosas`. Luego crea dentro de `Alfabeto` una carpeta por cada letra del alfabeto (en mayúsculas): `A`, `B`, `C`... `Z`. Te serán de ayuda los códigos numéricos ASCII: [https://elcodigoascii.com.ar](https://elcodigoascii.com.ar/)
 
 25. **Borrando archivos**
 
@@ -315,6 +332,21 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 27. **Notas de alumnos**
 
     El archivo `alumnos_notas.txt` contiene una lista de 10 alumnos y las notas que han obtenido en cada asignatura. El número de asignaturas de cada alumno es variable. Implementa un programa que muestre por pantalla la nota media de cada alumno junto a su nombre y apellido, ordenado por nota media de mayor a menor.
+
+    ```
+    LISTADO DE NOTAS MEDIAS DE LOS ALUMNOS
+    --------------------------------------
+    7,40 Toni Harper
+    6,50 Patrick Santos
+    6,25 Michele Poole
+    6,00 Troy Walters
+    5,83 Joanna Rogers
+    5,75 Ron Garza
+    5,43 Malcolm Lindsey
+    5,00 Gilbert Santiago
+    4,50 Gabriel Moreno
+    4,00 Vivian Chambers
+    ```
 
 28. **Ordenando archivos**
 
@@ -334,9 +366,63 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 32. **Estadísticas**
 
-    Implementa un programa que lea un documento de texto y muestre por pantalla algunos datos estadísticos: nº de líneas, nº de palabras, nº de caracteres y cuáles son las 10 palabras más comunes (y cuántas veces aparecen). Prueba el programa con los archivos de la carpeta `Libros`.
+    Implementa un programa que lea un documento de texto y muestre por pantalla algunos datos estadísticos: nº de líneas, nº de palabras, nº de caracteres y cuáles son las 10 palabras más comunes (y cuántas veces aparecen) `public static void muestraPalabrasMasComunes(Hashtable<String, Integer> t)`. Prueba el programa con los archivos de la carpeta `Libros`.
 
     **NOTA:** *Para llevar la cuenta de cuántas veces aparece cada palabra puedes utilizar una* [*HashTable*](https://docs.oracle.com/javase/10/docs/api/java/util/Hashtable.html)*. Una tabla hash es una estructura de datos tipo colección (como el ArrayList), que* [*permite almacenar pares clave-valor*](https://juanjosecanbus.wordpress.com/2014/10/20/utilizacion-de-hashtables-en-java/)*. Por ejemplo {“elefante”, 5} o {“casa”, 10} son pares <String,Integer> que asocian una palabra (clave) con un nº entero (valor).*
+    
+    ```
+    ESTADÍSTICAS DE LIBROS
+    ----------------------
+    
+    Libro: quijote_cervantes.txt
+    Lineas totales: 37861
+    Número de palabras: 393764
+    Número de carácteres: 1723734
+    Las 10 palabras más comunes son: 
+    que=19429
+    de=17988
+    y=15894
+    la=10200
+    a=9575
+    =9504
+    el=7957
+    en=7898
+    no=5611
+    se=4690
+    
+    Libro: vida_unamuno.txt
+    Lineas totales: 10309
+    Número de palabras: 106585
+    Número de carácteres: 482163
+    Las 10 palabras más comunes son: 
+    de=5355
+    la=4151
+    que=4056
+    y=3197
+    =2951
+    el=2679
+    en=2380
+    a=2096
+    es=1857
+    no=1671
+    
+    Libro: lazarillo.txt
+    Lineas totales: 2504
+    Número de palabras: 23860
+    Número de carácteres: 102364
+    Las 10 palabras más comunes son: 
+    y=1020
+    que=875
+    de=754
+    =695
+    a=525
+    la=524
+    el=449
+    en=410
+    no=325
+    con=270
+    ....
+    ```
 
 ## Aún más ejercicios
 
