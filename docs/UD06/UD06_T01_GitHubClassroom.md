@@ -2,7 +2,7 @@
 
 ## Unirnos a GitHub Classroom
 
-Aceptamos el *Assignement* (la tarea/ejercicio) a partir del link del profesor, en este caso: 
+Aceptamos el *Assignement* (la tarea/ejercicio) a partir del link del profesor, en este caso: https://classroom.github.com/a/sbfeTX2U
 
 ## Tarea
 
