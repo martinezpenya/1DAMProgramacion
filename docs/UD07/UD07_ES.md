@@ -388,47 +388,48 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
 
 - **Unión**. Añadir todos los elementos del conjunto B en el conjunto A.
 
-  ```java
-   A.addAll(B)
-  ```
+    ```java
+    A.addAll(B)
+    ```
 
-  ![image-20220415121303990](assets/union.png)
+    ![image-20220415121303990](assets/union.png)
 
-  Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están: 
+    Todos los del conjunto A, añadiendo los del B, pero sin repetir los que ya están: 
 
-  ```sh
-  5, 7, 9, 10, 19 y 20.
-  ```
+    ```sh
+    5, 7, 9, 10, 19 y 20.
+    ```
 
 - **Diferencia**. Eliminar los elementos del conjunto B que puedan estar en el conjunto A.
 
-  ```java
-   A.removeAll(B)
-  ```
+    ```java
+    A.removeAll(B)
+    ```
 
-  ![image-20220415121500468](assets/diferencia.png)
+    ![image-20220415121500468](assets/diferencia.png)
 
-  Todos los elementos del conjunto A, que no estén en el conjunto B: 
+    Todos los elementos del conjunto A, que no estén en el conjunto B: 
 
-  ```sh
-  9, 19.
-  ```
+    ```sh
+    9, 19.
+    ```
 
 - **Intersección**. Retiene los elementos comunes a ambos conjuntos.
 
-  ```java
-   A.retainAll(B)
-  ```
+    ```java
+    A.retainAll(B)
+    ```
 
-  ![image-20220415121631282](assets/interseccion.png)
+    ![image-20220415121631282](assets/interseccion.png)
 
-  Todos los elementos del conjunto A, que también están en el conjunto B:
-  
-  ```sh
-  5 y 7.
-  ```
+    Todos los elementos del conjunto A, que también están en el conjunto B:
 
-> ### Recuerda, estas operaciones son comunes a todas las colecciones.
+    ```sh
+    5 y 7.
+    ```
+
+!!! danger "Recuerda"
+    Estas operaciones son comunes a todas las colecciones.
 
 Consulta el [Ejemplo03](#ejemplo03)
 
