@@ -85,149 +85,149 @@ Todavía hay un montón de cosas más sobre los métodos y las clases genéricas
 
 - Dos o más parámetros de tipo (I):
 
-  ```java
-  public class Util<T,M>{
-      public static <T,M> int sumaDeLongitudes (T[] a, M[] b){
-          return a.length+b.length;
-      }
-  }
-  ```
+    ```java
+    public class Util<T,M>{
+        public static <T,M> int sumaDeLongitudes (T[] a, M[] b){
+            return a.length+b.length;
+        }
+    }
+    ```
 
-!!! info "Información"
-    Si el método genérico necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas. En el ejemplo anterior se suman las longitudes de dos arrays que no tienen que ser del mismo tipo.
+    !!! info "Información"
+        Si el método genérico necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas. En el ejemplo anterior se suman las longitudes de dos arrays que no tienen que ser del mismo tipo.
 
 - Dos o más parámetros de tipo (II):
 
-  ```java
-  Integer[] a1={0,1,2,3,4};
-  Double[] a2={0d,1d,2d,3d,4d};
-  int resultado=Util.<Integer,Double>sumaDeLongitudes(a1,a2);
-  System.out.println(resultado);
-  ```
+    ```java
+    Integer[] a1={0,1,2,3,4};
+    Double[] a2={0d,1d,2d,3d,4d};
+    int resultado=Util.<Integer,Double>sumaDeLongitudes(a1,a2);
+    System.out.println(resultado);
+    ```
 
-!!! info "Información"
-    Usar un método o una clase con dos o más parámetros genéricos es sencillo, a la hora de invocar al método o crear la clase, se indican los tipos base separados por coma.
+    !!! info "Información"
+        Usar un método o una clase con dos o más parámetros genéricos es sencillo, a la hora de invocar al método o crear la clase, se indican los tipos base separados por coma.
 
 - Dos o más parámetros de tipo (III):
 
-  ```java
-  public class Terna <A,B,C>{
-      A a;
-      B b;
-      C c;
-      public terna(A a, B b, C c){
-          this.a=a;
-          this.b=b;
-          this.c=c;
-      }
-      public A getA(){return a;}
-      public B getB(){return b;}
-      public C getC(){return c;}
-  }
-  ```
+    ```java
+    public class Terna <A,B,C>{
+        A a;
+        B b;
+        C c;
+        public terna(A a, B b, C c){
+            this.a=a;
+            this.b=b;
+            this.c=c;
+        }
+        public A getA(){return a;}
+        public B getB(){return b;}
+        public C getC(){return c;}
+    }
+    ```
 
-!!! info "Información"
-    Si una clase genérica necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas. En el ejemplo anterior se muestra una clase que almacena una terna de elementos de diferente tipo base que están relacionados entre sí.
+    !!! info "Información"
+        Si una clase genérica necesita tener dos o más parámetros genéricos, podemos indicarlo separándolos por comas. En el ejemplo anterior se muestra una clase que almacena una terna de elementos de diferente tipo base que están relacionados entre sí.
 
 - Métodos con tipos adicionales:
 
-  ```java
-  class Util<A,B>{
-      A a;
-      Util (A a){
-          this.a=a;
-      }
-      public <B> void Salida(B b){
-          System.out.println(a.toString() + b.toString());
-      }
-  }
-  ```
+    ```java
+    class Util<A,B>{
+        A a;
+        Util (A a){
+            this.a=a;
+        }
+        public <B> void Salida(B b){
+            System.out.println(a.toString() + b.toString());
+        }
+    }
+    ```
 
-!!! info "Información"
-    Una clase genérica puede tener unos parámetros genéricos, pero si en uno de sus métodos necesitamos otros parámetros genéricos distintos, no hay problema, podemos combinarlos.
+    !!! info "Información"
+        Una clase genérica puede tener unos parámetros genéricos, pero si en uno de sus métodos necesitamos otros parámetros genéricos distintos, no hay problema, podemos combinarlos.
 
 - Inferencia de tipos (I):
 
-  ```java
-  Integer[] a1={0,1,2,3,4};
-  Double[] a2={0d,1d,2d,3d,4d};
-  util.<Integer,Double>sumaDeLongitudes(a1,a2);
-  util.sumaDeLongitudes(a1,a2);
-  ```
+    ```java
+    Integer[] a1={0,1,2,3,4};
+    Double[] a2={0d,1d,2d,3d,4d};
+    util.<Integer,Double>sumaDeLongitudes(a1,a2);
+    util.sumaDeLongitudes(a1,a2);
+    ```
 
-!!! info "Información"
-    No siempre es necesario indicar los tipos a la hora de instanciar un método genérico. A partir de Java 7, es capaz de determinar los tipos a partir de los parámetros. Las dos expresiones de arriba serian válidas y funcionarían. Si no es capa de inferirlos, nos dará un error a la hora de compilar.
+    !!! info "Información"
+        No siempre es necesario indicar los tipos a la hora de instanciar un método genérico. A partir de Java 7, es capaz de determinar los tipos a partir de los parámetros. Las dos expresiones de arriba serian válidas y funcionarían. Si no es capa de inferirlos, nos dará un error a la hora de compilar.
 
 - Inferencia de tipos (II):
 
-  ```java
-  Integer a1=0;
-  Double d1=1.3d;
-  Float f1=1.4f;
-  Terna <Integer,Double,Float> t=new Terna<>(a1,d1,f1);
-  ```
+    ```java
+    Integer a1=0;
+    Double d1=1.3d;
+    Float f1=1.4f;
+    Terna <Integer,Double,Float> t=new Terna<>(a1,d1,f1);
+    ```
 
-!!! info "Información"
-    A partir de Java 7 es posible usar el operador diamante <> para simplificar la instanciación o creación de nuevos objetos a partir de clases genéricas. **Cuidado, esto solo es posible a partir de Java 7**.
+    !!! info "Información"
+        A partir de Java 7 es posible usar el operador diamante <> para simplificar la instanciación o creación de nuevos objetos a partir de clases genéricas. **Cuidado, esto solo es posible a partir de Java 7**.
 
 - Limitación de tipos
 
-  ```java
-  public class Util {
-      public static <T extends Number> Double sumar (T t1, T t2){
-          return new Double(t1.doubleValue() + t2.doubleValue());
-      }
-  }
-  ```
+    ```java
+    public class Util {
+        public static <T extends Number> Double sumar (T t1, T t2){
+            return new Double(t1.doubleValue() + t2.doubleValue());
+        }
+    }
+    ```
 
-!!! info "Información"
-    Se pueden limitar el conjunto de tipos que se pueden usar con una clase o método genérico usando el operador `extends`. El operador `extends` permite indicar que la clase que se pasa como parámetro genérico tiene que derivar de una clase específica.
-    En el ejemplo, no se admitirá ninguna clase que no derive de `Number`, pudiendo así realizar operaciones matemáticas.
+    !!! info "Información"
+        Se pueden limitar el conjunto de tipos que se pueden usar con una clase o método genérico usando el operador `extends`. El operador `extends` permite indicar que la clase que se pasa como parámetro genérico tiene que derivar de una clase específica.
+        En el ejemplo, no se admitirá ninguna clase que no derive de `Number`, pudiendo así realizar operaciones matemáticas.
 
 - Paso de clases genéricas por parámetro
 
-  ```java
-  public class Ejemplo <A> {
-      public A a;
-  }
-  ...
-  void test (Ejemplo<Integer> e) {
-      ...
-  }
-  ```
+    ```java
+    public class Ejemplo <A> {
+        public A a;
+    }
+    ...
+    void test (Ejemplo<Integer> e) {
+        ...
+    }
+    ```
 
-!!! info "Información"
-    Cuando un método tiene como parámetro una clase genérica (como en el caso del método test del ejemplo), se puede especificar cual debe ser el tipo base usado en la instancia de la clase genérica que se le pasa como argumento. Esto permite, entre otras cosas, crear diferentes versiones de un mismo método (sobrecarga), dependiendo del tipo base usado en la instancia de la clase genérica se ejecutará una versión u otra.
+    !!! info "Información"
+        Cuando un método tiene como parámetro una clase genérica (como en el caso del método test del ejemplo), se puede especificar cual debe ser el tipo base usado en la instancia de la clase genérica que se le pasa como argumento. Esto permite, entre otras cosas, crear diferentes versiones de un mismo método (sobrecarga), dependiendo del tipo base usado en la instancia de la clase genérica se ejecutará una versión u otra.
 
 - Paso de clases genéricas por parámetro. Wildcards. (I)
 
-  ```java
-  public class Ejemplo <A> {
-      public A a;
-  }
-  ...
-  void test (Ejemplo<?> e) {
-      ...
-  }
-  ```
+    ```java
+    public class Ejemplo <A> {
+        public A a;
+    }
+    ...
+    void test (Ejemplo<?> e) {
+        ...
+    }
+    ```
 
-!!! info "Información"
-    Cuando un método admite como parámetro una clase genérica en la que no importa el tipo de objeto sobre la que se ha creado, podemos usar el interrogante para indicar "*cualquier tipo*".
+    !!! info "Información"
+        Cuando un método admite como parámetro una clase genérica en la que no importa el tipo de objeto sobre la que se ha creado, podemos usar el interrogante para indicar "*cualquier tipo*".
 
 - Paso de clases genéricas por parámetro. Wildcards. (II)
 
-  ```java
-  public class Ejemplo <A> {
-      public A a;
-  }
-  ...
-  void test (Ejemplo<? extends Number> e) {
-      ...
-  }
-  ```
+    ```java
+    public class Ejemplo <A> {
+        public A a;
+    }
+    ...
+    void test (Ejemplo<? extends Number> e) {
+        ...
+    }
+    ```
 
-!!! info "Información"
-    También es posible limitar el conjunto de tipos que una clase genérica puede usar, a través del operador `extends`. El ejemplo anterior es como decir "*cualquier tipo que derive de Number*"
+    !!! info "Información"
+        También es posible limitar el conjunto de tipos que una clase genérica puede usar, a través del operador `extends`. El ejemplo anterior es como decir "*cualquier tipo que derive de Number*"
 
 ## Colecciones
 
