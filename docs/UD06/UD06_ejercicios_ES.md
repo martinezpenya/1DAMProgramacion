@@ -254,12 +254,31 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 !!! warning "Recomendación para Test"
     La pregunta debería ser del estilo de "¿Deseas añadir más datos? si eliges NO borraras el contenido anterior. ('S' para si o 'N' para no)"
     
+
     El test usará los carácteres S o N para probar en ese sentido.
 
 16. (MostrarPersonas) Realizar un programa que lea la información del fichero `personas.dat` y la muestre por pantalla. Para determinar que no quedan más datos en el fichero podemos capturar la excepción `EOFException` 
 
+!!! warning "Recomendación para Test"
+    La salida esperada debe ser similar a:
+    
+    ```sh
+    Registro 1: David 35 85,00 1,87
+    Registro 2: Maria 23 52,00 1,67
+    Registro 3: Pepe 46 67,00 1,80
+    Fichero leido completamente
+    ```
+
 17. (CalculosPersonas) Realizar un programa, similar al anterior, que lea la información del fichero `personas.dat` y muestre por pantalla la estatura que tienen de media las personas cuya edad está entre 20 y 30 años.
 
+!!! warning "Recomendación para Test"
+    La salida esperada debe ser similar a:
+    
+    ```sh
+    Información sobre las personas de entre 20 y 30 años:
+    La media de estatura es: 1,67
+    ```
+    
 ## **Streams de objetos. Serialización.**
 
 18. Paquete `GuardaLeeLibros`
