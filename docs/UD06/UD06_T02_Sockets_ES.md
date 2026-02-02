@@ -26,7 +26,7 @@ Elegimos la opción `Start Lab` y esperamos a que aparezca el laboratorio en ver
 
 ![Laboratorio iniciado correctamente](assets/LAB02.png){width=800}
 
-Por defecto el Learner Lab nos proporciona 100 dolares de saldo, y un tiempo de 4 horas, tras el cual se detendrán la mayoría de servicios que tengamos en marcha. Pero mientras quede saldo podemos volver a iniciar el Laboratorio y dispondremos de 4 horas más.
+Por defecto el Learner Lab nos proporciona ~100~ 50 dolares de saldo, y un tiempo de 4 horas, tras el cual se detendrán la mayoría de servicios que tengamos en marcha. Pero mientras quede saldo podemos volver a iniciar el Laboratorio y dispondremos de 4 horas más.
 
 Una vez aparece en verde podemos hacer click sobre las letras AWS y aparecerá el Dashboard de AWS (debemos permitir las ventanas emergentes):
 
@@ -210,3 +210,4 @@ Server esperando una nueva conexión...
 Genera un pequeño documento con explicaciones donde muestres una captura de pantalla donde se vea el servidor después de haber esperado la conexión, haber recibido los datos del cliente y devuelto la información procesada. Adjunta también explicaciones y la captura del mismo ejemplo desde el punto de vista del cliente. El ejemplo debe incluir tu nombre y apellidos en la información enviada y recibida.
 
 Convierte el documento en pdf y adjúntalo a la tarea de Aules de la UD06.
+
