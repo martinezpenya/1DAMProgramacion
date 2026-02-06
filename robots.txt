@@ -1,0 +1,7 @@
+# Robots.txt para 1DAMProgramacion
+# https://martinezpenya.es/1DAMProgramacion/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://martinezpenya.es/1DAMProgramacion/sitemap.xml
