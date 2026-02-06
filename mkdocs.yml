@@ -102,7 +102,6 @@ theme:
     #- navigation.indexes
   icon:
     logo: material/language-java
-  favicon: assets/favicon.ico
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
