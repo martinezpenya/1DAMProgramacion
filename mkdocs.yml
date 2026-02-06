@@ -1,5 +1,7 @@
 site_name: '1º Programacion (CFGS Desarrollo de Aplicaciones Multiplataforma)'
 site_url: https://martinezpenya.es/1DAMProgramacion/
+site_description: 'Apuntes de Programación para 1º del CFGS Desarrollo de Aplicaciones Multiplataforma (DAM). Incluye Java, POO, bases de datos, JavaFX y más.'
+site_author: 'David Martínez Peña'
 repo_url: https://github.com/martinezpenya/1DAMProgramacion
 edit_uri: edit/main/docs
 
@@ -212,7 +214,7 @@ copyright: "© 2025 David Martínez licensed under CC BY-NC-SA 4.0"
 
 plugins:
     - mkdocs-video
-    - offline
+    # - offline  # Comentado para permitir la generación del sitemap para SEO
     - search
     - git-revision-date-localized:
         fallback_to_build_date: true
