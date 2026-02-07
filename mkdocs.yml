@@ -4,6 +4,7 @@ site_description: 'Apuntes de Programación para 1º del CFGS Desarrollo de Apli
 site_author: 'David Martínez Peña'
 repo_url: https://github.com/martinezpenya/1DAMProgramacion
 edit_uri: edit/main/docs
+use_directory_urls: false
 
 nav:
   - UD00:
