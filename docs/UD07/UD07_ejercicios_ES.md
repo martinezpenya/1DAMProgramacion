@@ -18,7 +18,7 @@
         - `Autor` (String): Autor del libro.
         - `Estantería` (String): Estantería de la biblioteca en la que se encuentra el libro.
 
-    - Diseña la clase `CatalogoLibros` como una colección de libros. Utiliza el tipo de colección que crees que más se ajusta a los requisitos de la aplicación justificando la elección. Implementa los siguients métodos:
+    - Diseña la clase `CatalogoLibros` como una colección de libros (llamada `catalogo`). Utiliza el tipo de colección que crees que más se ajusta a los requisitos de la aplicación justificando la elección. Implementa los siguientes métodos:
 
     - `public CatalogoLibros(Libro v[])`: Constructor. Para simplificar, inicializa el catálogo y lo rellena con los libros del `array v`, en lugar de obtenerlos de un fichero.
 
@@ -133,13 +133,41 @@
     [18, 36, 50, 35, 28, 55]
     ```
 
-3. **Actividad 3**. Un supermercado nos pide que hagamos una aplicación que almacene los productos comprados. La aplicación debe almacenar `Productos` (clase) y cada producto al crearse contiene una cantidad, un precio (generados aleatoriamente). El nombre del producto será básico (producto1, producto2, producto3, etc.). Calcular el precio total de una lista de entre 1 y 10 productos (aleatorio). Mostrar un ticket con todo lo vendido y el precio final.
+3. **Actividad 3**. Un supermercado nos pide que hagamos una aplicación que almacene los productos comprados. La aplicación debe almacenar `Productos` (clase `Actividad3Producto`) y cada producto al crearse contiene una `cantidad`, un `precio` (generados aleatoriamente). El nombre del producto será básico (producto1, producto2, producto3, etc.). Calcular el precio total de una lista de entre 1 y 10 productos (aleatorio). Mostrar un ticket con todo lo vendido y el precio final.
 
-4. **Actividad 4**. Desarrollar un sistema de gestión de pacientes. Tendremos un archivador dónde iremos guardando todas las fichas de los pacientes. Las fichas contienen la siguiente información: nombre, apellidos y edad.
+    ```bash
+    Producto1	3	47,95	143,84
+    Producto2	7	84,37	590,62
+    Producto3	7	33,43	234,04
+    Producto4	2	95,42	190,84
+    Producto5	10	53,50	534,96
+    Producto6	3	26,21	78,62
+    El precio final del ticket es de 1772,92 euros
+    ```
+
+4. **Actividad 4**. Desarrollar un sistema de gestión de pacientes. Tendremos un archivador dónde iremos guardando todas las fichas de los pacientes. Las fichas (`Actividad4Paciente`) contienen la siguiente información: `nombre`, `apellidos` y `edad`.
 
     Todas las fichas que vayamos creando, se podrán guardar o eliminar del archivador. Al archivador también le podremos pedir un listado. Este listado consistirá en visualizar por pantalla el número de fichas guardadas, así como el contenido de las fichas.
 
-    La clase `GestionPacientes` tiene un método `main` en el que se crea un archivador, dos o tres fichas que se guardarán en el archivador, se listará el contenido, se eliminará alguna ficha y se volverá a listar su contenido. Todas las clases se guardarán en el paquete `gestionpacientes`.
+    La clase `Actividad4` tiene un método `main` en el que se crea un archivador, dos o tres fichas que se guardarán en el archivador, se listará el contenido, se eliminará alguna ficha y se volverá a listar su contenido.
+
+    ```bash
+    LISTADO DE PACIENTES
+    ====================
+    {nombre=David, apellidos=Martinez Peña, edad=35}
+    {nombre=Elena, apellidos=Garcia Perez, edad=15}
+    {nombre=Marc, apellidos=Redondo Perez, edad=5}
+    {nombre=Pepe, apellidos=Perez Peña, edad=16}
+    
+    LISTADO DE PACIENTES
+    ====================
+    {nombre=Elena, apellidos=Garcia Perez, edad=15}
+    {nombre=Pepe, apellidos=Perez Peña, edad=16}
+    
+    LISTADO DE PACIENTES
+    ====================
+    {nombre=Elena, apellidos=Garcia Perez, edad=15}
+    ```
 
 5. **Actividad 5**. Crear una estructura `Map` llamada divisas, que almacene pares de moneda y valor al cambio en euros. Por ejemplo Dólar: 0,81€
 
@@ -176,6 +204,30 @@
     - Borra todos los componentes del Map divisas.
 
     - Volver a indicar si el Map divisas está vacío.
+
+    ```bash
+    1.14
+    Franco Suizo --> 0,85
+    Corona Danesa --> 0,13
+    Peso Mexicano --> 0,04
+    Dólar Americano --> 0,81
+    Libra Esterlina --> 1,14
+    Real Brasil --> 0,24
+    Dólar Singapur --> 0,62
+    7
+    Franco Suizo --> 0,85
+    Corona Danesa --> 0,13
+    Peso Mexicano --> 0,04
+    Dólar Americano --> 0,81
+    Libra Esterlina --> 1,14
+    Dólar Singapur --> 0,62
+    SI existe Peso Mexicano
+    NO existe Euro €
+    SI existe el valor 0.85
+    NO existe el valor 0.33
+    NO está vacio
+    Está vacio
+    ```
 
 ## Ejercicios Genericidad
 
