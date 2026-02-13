@@ -166,6 +166,7 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
         ```
 
     Como vemos, la primera línea del fichero indica el número de productos que contiene el surtido. Este dato lo usaremos para dar al array de productos el tamaño adecuado.
+    Ten en cuenta que la excepción `FileNotFoundException` hereda de `IOException`.
 
 
     - `public int numProductos()` Devuelve el número de productos que componen el surtido
@@ -176,9 +177,9 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
     - `public String[] getNombresProductos()` Devuelve un array con los nombres de los productos. La posición `0` del array no se utilizará (será `null`)
 
-5. Crea una copia de la clase `Expendedora` y llámala `ExpendedoraSurtido`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos usando la nueva clase `Surtido`. Por ejemplo ya no tienen sentido los atributos stock y precio ya que pertenecen al `Surtido`. Añade también el método `public String toStringSurtido()`, que muestre por pantalla el listado de productos con su nombre, precio y stock para mostrar al cliente que productos puede elegir. El código del producto coincidirá con su posición al leer el surtido.
+6. Crea una copia de la clase `Expendedora` y llámala `ExpendedoraSurtido`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos usando la nueva clase `Surtido`. Por ejemplo ya no tienen sentido los atributos stock y precio ya que pertenecen al `Surtido`. Modifica también el método `public String toString()`, para que muestre por pantalla el listado de productos con su nombre, precio y stock para mostrar al cliente que productos puede elegir. El código del producto coincidirá con su posición al leer el surtido.
 
-6. Crea una copia de la clase `TestExpendedora` y nómbrala `TestExpendedora2` para adaptarla a los cambios hechos en la clase `Expendedora` y usando la nueva posibilidad de comprar diferentes productos y usando solamente un único objeto `Expendedora`. Al final en lugar de mostrar la recaudación de las 3 máquinas expendedoras, muestra solo la de la única que hay, que muestra el surtido de esta manera:
+7. Crea una copia de la clase `TestExpendedora` y nómbrala `TestExpendedora2` para adaptarla a los cambios hechos en la clase `Expendedora` y usando la nueva posibilidad de comprar diferentes productos y usando solamente un único objeto `Expendedora`. Al final en lugar de mostrar la recaudación de las 3 máquinas expendedoras, muestra solo la de la única que hay, que muestra el surtido de esta manera:
 
    ```sh
    Prod.	Stock	Precio
@@ -495,4 +496,5 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
     - En el fichero se guardarán como máximo 20 notas, pero se pueden guardar menos. El proceso de introducción de notas (y en consecuencia, el programa) finalizará cuando el usuario introduzca una nota no válida (menor que cero o mayor que 10).
     - Si, al comenzar la ejecución, el fichero ya contiene notas, se indicará al usuario cuántas faltan por añadir y las notas que introduzca el usuario se añadirán a continuación de las que hay.
+
     - Si, al comenzar la ejecución, el fichero ya contiene 20 notas, se le preguntará al usuario si desea sobrescribirlas. En caso afirmativo las notas que introduzca sustituirán a las que hay y en caso negativo el fichero no se modificará.
