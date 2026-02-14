@@ -279,7 +279,7 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
     Información sobre las personas de entre 20 y 30 años:
     La media de estatura es: 1,67
     ```
-    
+
 ## **Streams de objetos. Serialización.**
 
 18. Paquete `GuardaLeeLibros`
@@ -480,9 +480,9 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
     !!! warning "Consejo"
         Valora la posibilidad de cargar el fichero de censura en un mapa o par clave, valor.
 
-4. (`Concatenar1`) Escribe un programa que dados dos ficheros de texto `f1` y `f2` confeccione un tercer fichero `f3` cuyo contenido sea el de `f1` y a continuación el de `f2`.
+4. (`Concatenar1`) Escribe un programa que dados dos ficheros de texto `f1` y `f2`  (introducidos por el usuario por teclado) confeccione un tercer fichero `f3` cuyo contenido sea el de `f1` y a continuación el de `f2`.
 
-5. (`Concatenar2`) Escribe un programa que dados dos ficheros de texto `f1` y `f2`, añada al final de `f1` el contenido de `f2`. Es decir, como el ejercicio anterior, pero sin producir un nuevo fichero.
+5. (`Concatenar2`) Escribe un programa que dados dos ficheros de texto `f1` y `f2` (introducidos por el usuario por teclado) , añada al final de `f1` el contenido de `f2`. Es decir, como el ejercicio anterior, pero sin producir un nuevo fichero.
 
 6. (`Iguales`) Escribir un programa que compruebe si el contenido de dos ficheros es idéntico. Puesto que no sabemos de qué tipo de ficheros se trata, (de texto, binarios, …) habrá que hacer una comparación byte por byte.
 
