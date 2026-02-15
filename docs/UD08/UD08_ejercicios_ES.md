@@ -205,8 +205,8 @@
      public void clavar() {...}
    }
    
-   public class Albañil extends Obrero {
-   	public Albañil() {
+   public class Albanyil extends Obrero {
+   	public Albanyil() {
    		super();
    		System.out.println("Se crea Albañil");
    	}
@@ -221,15 +221,15 @@
    ```java
    public static void main(String[] args){
    	Montador m1 = new Carpintero();
-   	Montador m2 = new Albañil();
+   	Montador m2 = new Albanyil();
    	Obrero o1 = new Carpintero();
-   	Obrero o2 = new Albañil();
+   	Obrero o2 = new Albanyil();
    	o1.montar("Mesa");
     	o2.levantarMuro();
    	m1.saludar();
    	m1.montar("Silla");
-   	((Albañil)o2).levantarMuro();
-   	((Albañil)o1).levantarMuro();
+   	((Albanyil)o2).levantarMuro();
+   	((Albanyil)o1).levantarMuro();
    }
    ```
 
