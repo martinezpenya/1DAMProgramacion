@@ -30,7 +30,6 @@ Para trabajar con **`JSON`** y **`YAML`** en Java, utilizaremos las bibliotecas 
 Para trabajar con **`JSON`** y **`YAML`** en Java usando **Jackson**, asegúrate de agregar las dependencias correctas en tu `pom.xml`. Jackson es una biblioteca poderosa y flexible que te permite manejar ambos formatos de manera eficiente.
 
 **Dependencias Maven:**
-
     ```XML
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
@@ -104,7 +103,6 @@ Clase `Libro`:
         }
     }
     ```
-
     ```java
     import com.fasterxml.jackson.databind.ObjectMapper;
     import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
@@ -177,7 +175,6 @@ Clase `Libro`:
 **Resultado Esperado:**
 
 **Archivo `libros.json`:**
-
     ```json
     [
       {
@@ -199,7 +196,6 @@ Clase `Libro`:
     ```
 
 **Archivo `libros.yaml`:**
-
     ```yaml
     ---
     - titulo: "El Principito"
@@ -214,7 +210,6 @@ Clase `Libro`:
     ```
 
 **Salida en Consola:**
-
     ```
     Archivo JSON generado con éxito.
     Libros cargados desde JSON:
@@ -242,4 +237,5 @@ Genera un nuevo proyecto, **crea una clase `Producto`** con los siguientes atrib
 **Carga y muestra** los datos desde ambos archivos.
 
 Genera un zip con el proyecto de IntelliJ. Envía el archivo zip a la tarea de Aules.
+
 
