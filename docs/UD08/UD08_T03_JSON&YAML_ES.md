@@ -226,6 +226,7 @@ Clase `Libro`:
 ## Tarea
 
 Genera un nuevo proyecto, **crea una clase `Producto`** con los siguientes atributos:
+
     - `nombre` (String)
     - `precio` (double)
     - `stock` (int)
@@ -237,5 +238,6 @@ Genera un nuevo proyecto, **crea una clase `Producto`** con los siguientes atrib
 **Carga y muestra** los datos desde ambos archivos.
 
 Genera un zip con el proyecto de IntelliJ. Envía el archivo zip a la tarea de Aules.
+
 
 
