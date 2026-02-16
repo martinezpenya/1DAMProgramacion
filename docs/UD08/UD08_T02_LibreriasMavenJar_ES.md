@@ -1,6 +1,5 @@
 ﻿# Taller UD08_02: Librerias Maven vs Jar
 
-
 ## Introducción
 
 En el desarrollo de software, es común que nuestros proyectos requieran  funcionalidades específicas que no están incluidas en el lenguaje de  programación o en las bibliotecas estándar. Por ejemplo, podríamos  necesitar trabajar con archivos JSON, conectarnos a una base de datos, o realizar operaciones matemáticas complejas. En lugar de reinventar la  rueda y escribir todo el código desde cero, podemos aprovechar  bibliotecas externas que ya han sido desarrolladas y probadas por la  comunidad. 
@@ -64,35 +63,34 @@ Maven es una herramienta de gestión y comprensión de proyectos, principalmente
 Debes descargar el JAR de una biblioteca común, como `Gson` (para manejo de JSON), y añadirlo manualmente a un proyecto en IntelliJ.
 
 1. **Pasos a seguir:**
-
-   - Descargar el JAR de Gson desde [aquí](https://repo1.maven.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar).
-   - Crear un nuevo proyecto en IntelliJ.
-   - Añadir el JAR de Gson al proyecto como se describió anteriormente.
-   - Escribir un programa simple que convierta un objeto Java a JSON usando Gson.
+    - Descargar el JAR de Gson desde [aquí](https://repo1.maven.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar).
+    - Crear un nuevo proyecto en IntelliJ.
+    - Añadir el JAR de Gson al proyecto como se describió anteriormente.
+    - Escribir un programa simple que convierta un objeto Java a JSON usando Gson.
 
 2. **Código de Ejemplo:**
 
-   ```java
-   import com.google.gson.Gson;
-   
-   class Persona {
-       String nombre;
-       int edad;
-   
-       public Persona(String nombre, int edad) {
-           this.nombre = nombre;
-           this.edad = edad;
-       }
-   }
-   
-   public class Main {
-       public static void main(String[] args) {
-           Gson gson = new Gson();
-           String json = gson.toJson(new Persona("David", 35));
-           System.out.println(json);
-       }
-   }
-   ```
+    ```java
+    import com.google.gson.Gson;
+    
+    class Persona {
+        String nombre;
+        int edad;
+    
+        public Persona(String nombre, int edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+         }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Gson gson = new Gson();
+            String json = gson.toJson(new Persona("David", 35));
+            System.out.println(json);
+        }
+    }
+    ```
 
 ### Ejercicio 2: Usar Maven
 
@@ -100,47 +98,45 @@ Ahora debes crear un proyecto `Maven` en IntelliJ y añadir la dependencia de `G
 
 1. **Pasos:**
 
-   - Crear un nuevo proyecto Maven en IntelliJ.
-   - Añadir la dependencia de Gson en el `pom.xml`.
-   - Escribir el mismo programa que convierte un objeto Java a JSON usando Gson.
+    - Crear un nuevo proyecto Maven en IntelliJ.
+    - Añadir la dependencia de Gson en el `pom.xml`.
+    - Escribir el mismo programa que convierte un objeto Java a JSON usando Gson.
 
 2. **Código de Ejemplo en `pom.xml`:**
 
-   ```xml
-   <dependencies>
-       <dependency>
-           <groupId>com.google.code.gson</groupId>
-           <artifactId>gson</artifactId>
-           <version>2.10.1</version>
-       </dependency>
-   </dependencies>
-   ```
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+    </dependencies>
+    ```
 
 1. **Código de Ejemplo en Java:**
 
-   ```java
-   import com.google.gson.Gson;
-   
-   class Persona {
-       String nombre;
-       int edad;
-   
-       public Persona(String nombre, int edad) {
-           this.nombre = nombre;
-           this.edad = edad;
-       }
-   }
-   
-   public class Main {
-       public static void main(String[] args) {
-           Gson gson = new Gson();
-           String json = gson.toJson(new Persona("David", 35));
-           System.out.println(json);
-       }
-   }
-   ```
+    ```java
+    import com.google.gson.Gson;
+    
+    class Persona {
+        String nombre;
+        int edad;
+    
+        public Persona(String nombre, int edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Gson gson = new Gson();
+            String json = gson.toJson(new Persona("David", 35));
+            System.out.println(json);
+        }
+    }
+    ```
 
 ## Tarea
-
-
 Genera dos proyectos, uno con JAR y otro con MAVEN (Ejercicio1 y Ejercicio2), cambia el nombre de la persona y pon el tuyo, y también tu edad. Genera un zip con los dos proyectos de IntelliJ. Envía el archivo zip a la tarea de Aules.
