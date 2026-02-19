@@ -642,6 +642,22 @@ El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada 
 
 Revisa el [Ejemplo07](#ejemplo07)
 
+#### Recorrido con `keySet` o `entrySet`
+
+```java
+	// Recorrido por claves
+	for (String clave:divisas.keySet()){
+		System.out.format("%s --> %.02f\n", clave, divisas.get(clave));
+	}
+	// Recomendado cuando solo necesito las claves (aunque a partir de la clave puedes recuperar el valor)
+
+	// Recorrido por entries (pares clave/valor)
+	for (Map.Entry<String, Double> entry : divisas.entrySet()){
+		System.out.format("%s --> %.02f\n", entry.getKey(), entry.getValue());
+	}
+	// Recomendado cuando necesito la clave y el valor
+```
+
 ## Iteradores
 
 ¿Qué son los iteradores realmente? Son un mecanismo que nos permite recorrer todos los elementos de una colección de forma sencilla, de forma secuencial, y de forma segura. Los mapas, como no derivan de la interfaz `Collection` realmente, no tienen iteradores, pero como veremos, existe un truco interesante.
@@ -1873,4 +1889,5 @@ public class P6_4_ColeccionesStreams {
 ## Píldoras informáticas relacionadas
 
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
 
