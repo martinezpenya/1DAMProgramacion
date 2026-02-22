@@ -390,7 +390,7 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
     Implementa un programa que lea un documento de texto y muestre por pantalla algunos datos estadísticos: nº de líneas, nº de palabras, nº de caracteres y cuáles son las 10 palabras más comunes (y cuántas veces aparecen) `public static void muestraPalabrasMasComunes(Hashtable<String, Integer> t)`. Prueba el programa con los archivos de la carpeta `Libros`.
 
-    **NOTA:** *Para llevar la cuenta de cuántas veces aparece cada palabra puedes utilizar una* [*HashTable*](https://docs.oracle.com/javase/10/docs/api/java/util/Hashtable.html)*. Una tabla hash es una estructura de datos tipo colección (como el ArrayList), que* [*permite almacenar pares clave-valor*](https://juanjosecanbus.wordpress.com/2014/10/20/utilizacion-de-hashtables-en-java/)*. Por ejemplo {“elefante”, 5} o {“casa”, 10} son pares <String,Integer> que asocian una palabra (clave) con un nº entero (valor).*
+    **NOTA:** *Para llevar la cuenta de cuántas veces aparece cada palabra puedes utilizar una Colección que almacene pares de clave/valor. Por ejemplo {“elefante”, 5} o {“casa”, 10} son pares <String,Integer> que asocian una palabra (clave) con un nº entero (valor).*
     
     ```
     ESTADÍSTICAS DE LIBROS
