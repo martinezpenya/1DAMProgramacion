@@ -160,7 +160,7 @@ Para entender estas situaciones un poco mejor, podemos volver a la clase `Rectan
 
 Revisa con cuidado el [Ejemplo 2.2](#ejemplo-22)
 
-#### Uso de la composición (II). Llamadas a constructores.
+### Uso de la composición (II). Llamadas a constructores.
 
 Otro factor que debes considerar, a la hora de escribir clases que contengan como atributos objetos de otras clases, es su comportamiento a la hora de instanciarse. Durante el proceso de creación de un objeto (constructor) de la clase contenedora habrá que tener en cuenta también la creación (llamadas a constructores) de aquellos objetos que son contenidos.
 
@@ -336,7 +336,7 @@ En el ejemplo anterior la clase `Persona` disponía de tres atributos y la clase
 
 Revisa con cuidado el [Ejemplo 3.3](#ejemplo-33)
 
-#### Utilización de miembros heredados (II). Métodos.
+### Utilización de miembros heredados (II). Métodos.
 
 Del mismo modo que se heredan los atributos, también se heredan los métodos, convirtiéndose a partir de ese momento en otros métodos más de la clase derivada, junto a los que hayan sido definidos específicamente.
 
