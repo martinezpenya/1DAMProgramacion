@@ -79,46 +79,57 @@
 5. De cada pareja de afirmaciones **indica cual es la verdadera**:
 
     a. Pareja 1
+    
     - Se dice que instanciamos una clase cuando creamos objetos de dicha clase.
     - Se dice que instanciamos una clase cuando creamos una subclase de dicha clase.
-
+    
     b. Pareja 2
+
     - Si una clase es abstracta no se puede instanciar.
     - Si una clase es abstracta no se puede heredar de ella.
-
+    
     c. Pareja 3
+
     - Una clase abstracta tiene que tener métodos abstractos.
     - Una clase puede ser abstracta y no tener métodos abstractos.
-
+    
     d. Pareja 4
+
     - Si una clase tiene métodos abstractos tiene que ser abstracta.
     - Una clase puede tener métodos abstractos y no ser abstracta.
-
+    
     e. Pareja 5
+
     - Si una clase es abstracta sus subclases no pueden ser abstractas.
     - Una clase abstracta puede tener subclases que también sean abstractas.
-
+    
     f. Pareja 6
+
     - Si un método es abstracto en una clase, tiene que ser no abstracto en la subclase, o bien, la subclase tiene que ser también abstracta.
     - Si un método es abstracto en una clase, no puede ser abstracto en las subclases.
-
+    
     g. Pareja 7
+
     - Si un método se define final se tiene que reescribir en las subclases.
     - Si un método se define final no se puede reescribir en las subclases.
-
+    
     h. Pareja 8
+
     - Una clase puede tener un método final y no ser una clase final.
     - Si una clase tiene un método final tiene que ser una clase final.
-
+    
     i. Pareja 9
+
     - Si una clase se define final no se pueden definir subclases de ella.
     - Si una clase se define final no se puede instanciar.
-
+    
     j. Pareja 10
+
     - Un método definido final y abstract resultaría inútil, puesto que nunca se podría implementar en las subclases.
     - Un método definido final y abstract podría resultar útil.
-
+    
     k. Pareja 11
+
     - Una clase definida final y abstract resultaría inútil, puesto que no se podría instanciar ni heredar de ella.
     - Una clase definida final y abstract podría resultar útil.
    
@@ -188,7 +199,6 @@
     ```
 
     **Responde** a las siguientes cuestiones justificando las respuestas. 
-
     a. ¿Es necesario el uso de `this` en el contructor de la clase `Estudiante`?
     b. ¿Es necesario el uso de `super` en el método `toString` de la clase `Estudiante`?
     c. Si quitásemos el constructor de la clase `Estudiante` ¿daría un error de compilación la clase `Estudiante`?
@@ -309,7 +319,7 @@
     }
     ```
 
-    **Señalar los errores ** existentes.
+    **Señalar los errores** existentes.
 
     **Una vez corregido** el programa, **escribir la salida** por pantalla resultado de su ejecución.
 
@@ -317,7 +327,6 @@
 
 1. Realizar una aplicación para la gestión de la información de las personas vinculadas a una `Facultad`, que se pueden clasificar en tres tipos: estudiantes, profesores y personal de servicio.
     A continuación, se detalla qué tipo de información debe gestionar esta aplicación:
-
     - Por cada `Personas`, se debe conocer, al menos, su `nombre` y `apellidos`, su número de identificación (`id`) y su `estadoCivil`.
     - Con respecto a los `Empleados`, sean del tipo que sean, hay que saber su año de incorporación (`anyoIncorporacion`) a la facultad y qué número de `despacho` tienen asignado.
     - En cuanto a los `Alumnos`, se requiere almacenar el `curso` en el que están matriculados.
@@ -350,6 +359,7 @@
 Define una jerarquía de clases que permita almacenar datos sobre los planetas y satélites (lunas) que forman parte del sistema solar.
 
 Algunos atributos que necesitaremos almacenar son: 
+
 - Masa del cuerpo.
 - Diámetro medio.
 - Período de rotación sobre su propio eje.
@@ -358,6 +368,7 @@ Algunos atributos que necesitaremos almacenar son:
 - etc.
 
 Define las clases necesarias conteniendo: 
+
 - Constructores. 
 - Métodos para recuperar y almacenas atributos.
 - Método para mostrar la información del objeto. 
@@ -471,6 +482,7 @@ El diagrama UML sería:
 Vamos a hacer una aplicación que simule el funcionamiento de un banco.
 
 Crea una clase **CuentaBancaria** con los atributos: **iban** y **saldo**. Implementa métodos para:
+
 - Consultar los atributos. 
 - Ingresar dinero.
 - Retirar dinero.
@@ -485,6 +497,7 @@ La clase tiene que ser ***abstracta*** y debe tener un método **calcularInteres
 También puede ser útil implementar un método para mostrar los datos de la cuenta.
 
 De esta clase heredarán dos subclases: **CuentaCorriente** y **CuentaAhorro**. La diferencia entre ambas será la manera de calcular los intereses:
+
 - A la primera se le incrementará el saldo teniendo en cuenta el interés anual básico.
 - La segunda tendrá una constante de clase llamada **saldoMinimo**. Si no se llega a este saldo el interés será la mitad del interés básico. Si se supera el saldo mínimo el interés aplicado será el doble del interés anual básico.
 
@@ -523,6 +536,7 @@ classDiagram
 Vamos a implementar dos clases que permitan gestionar datos de empresas y sus empleados.
 
 Los **empleados** tienen las siguientes características:
+
 - Un empleado tiene nombre, DNI, sueldo bruto (mensual), edad, teléfono y dirección.
 - El nombre y DNI de un empleado no pueden variar.
 - Es obligatorio que todos los empleados tengan al menos definido su nombre, DNI y el sueldo bruto. Los demás datos no son obligatorios.
@@ -538,6 +552,7 @@ Los **empleados** tienen las siguientes características:
 Por ejemplo, un empleado con un sueldo bruto anual de 17.000 € tendrá un 30% de IRPF. Para calcular su sueldo neto mensual se descontará un 30% a su sueldo bruto mensual.
 
 Las **empresas** tienen las siguientes características:
+
 - Una empresa tiene nombre y CIF (datos que no pueden variar), además de teléfono, dirección y empleados. Cuando se crea una nueva empresa esta carece de empleados.
 - Serán necesarios métodos para:
     - Añadir y eliminar empleados a la empresa.
@@ -558,6 +573,7 @@ Las **empresas** tienen las siguientes características:
 **Es muy aconsejable hacer el diseño UML antes de empezar a programar.**
 
 Debes crear varias clases para un software de una empresa de transporte. Implementa la jerarquía de clases necesaria para cumplir los siguientes criterios:
+
 - Los vehículos de la empresa de transporte pueden ser terrestres, acuáticos y aéreos. Los vehículos terrestres pueden ser coches y motos. Los vehículos acuáticos pueden ser barcos y submarinos. Los vehículos aéreos pueden ser aviones y helicópteros.
 - Todos los vehículos tienen matrícula y modelo (datos que no pueden cambiar). La matrícula de los coches terrestres deben estar formadas por 4 números y 3 letras. La de los vehículos acuáticos por entre 3 y 10 letras. La de los vehículos aéreos por 4 letras y 6 números.
 - Los vehículos terrestres tienen un número de ruedas (dato que no puede cambiar).
@@ -579,6 +595,7 @@ Implementa también una clase Programa para hacer algunas pruebas: Instancia var
 ### Figuras
 
 Implementa una **interface** llamada **iFigura2D** que declare los métodos:
+
 - `double perimetro()`: Para devolver el perímetro de la figura
 - `double area()`: Para devolver el área de la figura
 - `void escalar(double escala)`: Para escalar la figura (aumentar o disminuir su tamaño). Solo hay que multiplicar los atributos de la figura por la escala (> 0).
