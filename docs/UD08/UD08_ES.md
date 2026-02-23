@@ -443,7 +443,7 @@ Ya has visto cómo crear una clase derivada, cómo acceder a los miembros hereda
 !!! info "Herencia = menos código"
     La idea de la herencia no es complicar los programas, sino todo lo contrario: simplificarlos al máximo. Procurar que haya que escribir la menor cantidad posible de código repetitivo e intentar facilitar en lo posible la realización de cambios (bien para corregir errores bien para incrementar la funcionalidad).
 
-## La clase `Object` en Java.
+### La clase `Object` en Java.
 
 Todas las clases en Java son descendentes (directos o indirectos) de la clase Object. Esta clase define los estados y comportamientos básicos que deben tener todos los objetos. Entre estos comportamientos, se encuentran:
 
