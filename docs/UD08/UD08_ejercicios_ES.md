@@ -198,13 +198,13 @@
     }
     ```
 
-    **Responde** a las siguientes cuestiones justificando las respuestas. 
-    a. ¿Es necesario el uso de `this` en el contructor de la clase `Estudiante`?
-    b. ¿Es necesario el uso de `super` en el método `toString` de la clase `Estudiante`?
-    c. Si quitásemos el constructor de la clase `Estudiante` ¿daría un error de compilación la clase `Estudiante`?
-    d. En el método `toString` de la clase `Empleado` ¿por qué es incorrecto el acceso que se hace al atributo `nombre`? ¿Cómo se tendría que definir `nombre` en la clase `Persona` para evitar el error?
-    e. ¿Qué consecuencia tiene que algunos métodos de la clase `Persona` se hayan definido `final`?
-    f. Si el método `toString` no se hubiera definido en ninguna de las tres clases ¿daría error el `sout` del método `main`?
+    **Responde** a las siguientes cuestiones justificando las respuestas.
+    1. ¿Es necesario el uso de `this` en el contructor de la clase `Estudiante`?
+    2. ¿Es necesario el uso de `super` en el método `toString` de la clase `Estudiante`?
+    3. Si quitásemos el constructor de la clase `Estudiante` ¿daría un error de compilación la clase `Estudiante`?
+    4. En el método `toString` de la clase `Empleado` ¿por qué es incorrecto el acceso que se hace al atributo `nombre`? ¿Cómo se tendría que definir `nombre` en la clase `Persona` para evitar el error?
+    5. ¿Qué consecuencia tiene que algunos métodos de la clase `Persona` se hayan definido `final`?
+    6. Si el método `toString` no se hubiera definido en ninguna de las tres clases ¿daría error el `sout` del método `main`?
 
 ## Ejercicios Polimorfismo
 
@@ -602,6 +602,7 @@ Implementa una **interface** llamada **iFigura2D** que declare los métodos:
 - `void imprimir()`: Para mostrar la información de la figura (atributos, perímetro y área) en una sola línea.
 
 Existen 4 tipos de figuras.
+
 - **Cuadrado**: Sus cuatro lados son iguales.
 - **Rectángulo**: Tiene ancho y alto.
 - **Triángulo**: Tiene ancho y alto.
@@ -610,10 +611,11 @@ Existen 4 tipos de figuras.
 Crea las 4 clases de figuras de modo que implementen la interface iFigura2D. Define sus métodos.
 
 Crea una clase ProgramaFiguras con un main en el que realizar las siguientes pruebas:
-a. Crea un ArrayList figuras.
-b. Añade figuras de varios tipos.
-c. Muestra la información de todas las figuras.
-d. Escala todas las figuras con escala = 2.
-e. Muestra de nuevo la información de todas las figuras.
-f. Escala todas las figuras con escala = 0.1.
-g. Muestra de nuevo la información de todas las figuras.
+
+1. Crea un ArrayList figuras.
+2. Añade figuras de varios tipos.
+3. Muestra la información de todas las figuras.
+4. Escala todas las figuras con escala = 2.
+5. Muestra de nuevo la información de todas las figuras.
+6. Escala todas las figuras con escala = 0.1.
+7. Muestra de nuevo la información de todas las figuras.
