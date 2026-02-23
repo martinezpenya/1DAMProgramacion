@@ -79,48 +79,48 @@
 5. De cada pareja de afirmaciones **indica cual es la verdadera**:
 
     a. Pareja 1
-        - Se dice que instanciamos una clase cuando creamos objetos de dicha clase.
-        - Se dice que instanciamos una clase cuando creamos una subclase de dicha clase.
+    - Se dice que instanciamos una clase cuando creamos objetos de dicha clase.
+    - Se dice que instanciamos una clase cuando creamos una subclase de dicha clase.
 
     b. Pareja 2
-        - Si una clase es abstracta no se puede instanciar.
-        - Si una clase es abstracta no se puede heredar de ella.
+    - Si una clase es abstracta no se puede instanciar.
+    - Si una clase es abstracta no se puede heredar de ella.
 
     c. Pareja 3
-        - Una clase abstracta tiene que tener métodos abstractos.
-        - Una clase puede ser abstracta y no tener métodos abstractos.
+    - Una clase abstracta tiene que tener métodos abstractos.
+    - Una clase puede ser abstracta y no tener métodos abstractos.
 
     d. Pareja 4
-        - Si una clase tiene métodos abstractos tiene que ser abstracta.
-        - Una clase puede tener métodos abstractos y no ser abstracta.
+    - Si una clase tiene métodos abstractos tiene que ser abstracta.
+    - Una clase puede tener métodos abstractos y no ser abstracta.
 
     e. Pareja 5
-        - Si una clase es abstracta sus subclases no pueden ser abstractas.
-        - Una clase abstracta puede tener subclases que también sean abstractas.
+    - Si una clase es abstracta sus subclases no pueden ser abstractas.
+    - Una clase abstracta puede tener subclases que también sean abstractas.
 
     f. Pareja 6
-        - Si un método es abstracto en una clase, tiene que ser no abstracto en la subclase, o bien, la subclase tiene que ser también abstracta.
-        - Si un método es abstracto en una clase, no puede ser abstracto en las subclases.
+    - Si un método es abstracto en una clase, tiene que ser no abstracto en la subclase, o bien, la subclase tiene que ser también abstracta.
+    - Si un método es abstracto en una clase, no puede ser abstracto en las subclases.
 
     g. Pareja 7
-        - Si un método se define final se tiene que reescribir en las subclases.
-        - Si un método se define final no se puede reescribir en las subclases.
+    - Si un método se define final se tiene que reescribir en las subclases.
+    - Si un método se define final no se puede reescribir en las subclases.
 
     h. Pareja 8
-        - Una clase puede tener un método final y no ser una clase final.
-        - Si una clase tiene un método final tiene que ser una clase final.
+    - Una clase puede tener un método final y no ser una clase final.
+    - Si una clase tiene un método final tiene que ser una clase final.
 
     i. Pareja 9
-        - Si una clase se define final no se pueden definir subclases de ella.
-        - Si una clase se define final no se puede instanciar.
+    - Si una clase se define final no se pueden definir subclases de ella.
+    - Si una clase se define final no se puede instanciar.
 
     j. Pareja 10
-        - Un método definido final y abstract resultaría inútil, puesto que nunca se podría implementar en las subclases.
-        - Un método definido final y abstract podría resultar útil.
+    - Un método definido final y abstract resultaría inútil, puesto que nunca se podría implementar en las subclases.
+    - Un método definido final y abstract podría resultar útil.
 
     k. Pareja 11
-        - Una clase definida final y abstract resultaría inútil, puesto que no se podría instanciar ni heredar de ella.
-        - Una clase definida final y abstract podría resultar útil.
+    - Una clase definida final y abstract resultaría inútil, puesto que no se podría instanciar ni heredar de ella.
+    - Una clase definida final y abstract podría resultar útil.
    
 6. Dada las siguientes **definiciónes de clases**:
 
@@ -187,7 +187,7 @@
     }
     ```
 
-   **Responde** a las siguientes cuestiones justificando las respuestas. 
+    **Responde** a las siguientes cuestiones justificando las respuestas. 
 
     a. ¿Es necesario el uso de `this` en el contructor de la clase `Estudiante`?
     b. ¿Es necesario el uso de `super` en el método `toString` de la clase `Estudiante`?
@@ -230,7 +230,7 @@
     }
     ```
 
-   Indicar **qué líneas** del siguiente fragmento de programa **producirán errores de compilación**,
+    Indicar **qué líneas** del siguiente fragmento de programa **producirán errores de compilación**,
 
     ```java
     public static void main(String[] args){
@@ -281,7 +281,7 @@
     }
     ```
 
-   Sea la clase `CuestionHerencia` que usa las anteriores:
+    Sea la clase `CuestionHerencia` que usa las anteriores:
 
     ```java
     public class CuestionHerencia{
@@ -309,9 +309,9 @@
     }
     ```
 
-   **Señalar los errores **existentes.
+    **Señalar los errores ** existentes.
 
-   **Una vez corregido** el programa, **escribir la salida** por pantalla resultado de su ejecución.
+    **Una vez corregido** el programa, **escribir la salida** por pantalla resultado de su ejecución.
 
 ## Actividades
 
@@ -325,7 +325,6 @@
     - Sobre el `PersonalServicio`, hay que conocer a qué `sección` están asignados ("biblioteca", "decanato", "secretaría", ...).
 
     El ejercicio consiste, en primer lugar, en definir la jerarquía de clases de esta aplicación. A continuación, debe programar las clases definidas en las que, además de los constructores, hay que desarrollar los métodos correspondientes a las siguientes acciones:
-
     - Cambio del estado civil de una persona.
     - Reasignación de despacho a un empleado.
     - Matriculación de un estudiante en un nuevo curso.
@@ -339,8 +338,8 @@
 
 3. Crear la clase `Dado`, la cual desciende de la clase `Sorteo`. La clase `Dado`, en la llamada `lanzar()` mostrará un número aleatorio del 1 al 6. Crear la clase `Moneda`, la cual desciende de la clase `Sorteo`. Esta clase en la llamada al método `lanzar()` mostrará las palabras cara o cruz. Realizar una clase con un método `main` que compruebe todo lo realizado.
 
-!!! warning "Extra: Ejemplo de Sorteo como clase abstracta Genérica"
-    Intenta convertir la clase Sorteo en una clase con genéricos `public abstract class Sorteo<E, T>` porque debería ser abstracta?, como sería el método `lanzar`?
+    !!! warning "Extra: Ejemplo de Sorteo como clase abstracta Genérica"
+        Intenta convertir la clase Sorteo en una clase con genéricos `public abstract class Sorteo<E, T>` porque debería ser abstracta?, como sería el método `lanzar`?
 
 4. Realiza una clase `Huevo` con un atributo `tamaño` (`S`, `M`, `L`, `XL`) con el método `toString`. La clase `Huevo` está compuesta por dos clases internas, una `Clara` y otra `Yema`. Ambas clases tiene un atributo `color` y el método `toString`. Realiza un método `main` en el que se cree un objeto de tipo `Huevo`, `Clara` y `Yema`. Se le asigne valor a sus atributos y se muestren dichos valores.
 
@@ -351,19 +350,17 @@
 Define una jerarquía de clases que permita almacenar datos sobre los planetas y satélites (lunas) que forman parte del sistema solar.
 
 Algunos atributos que necesitaremos almacenar son: 
-
-    - Masa del cuerpo.
-    - Diámetro medio.
-    - Período de rotación sobre su propio eje.
-    - Período de traslación alrededor del cuerpo que orbitan.
-    - Distancia media a ese cuerpo.
-    - etc.
+- Masa del cuerpo.
+- Diámetro medio.
+- Período de rotación sobre su propio eje.
+- Período de traslación alrededor del cuerpo que orbitan.
+- Distancia media a ese cuerpo.
+- etc.
 
 Define las clases necesarias conteniendo: 
-
-    - Constructores. 
-    - Métodos para recuperar y almacenas atributos.
-    - Método para mostrar la información del objeto. 
+- Constructores. 
+- Métodos para recuperar y almacenas atributos.
+- Método para mostrar la información del objeto. 
 
 Define un método, que dado un objeto del sistema solar (planeta o satélite), imprima toda la información que se dispone sobre el mismo (además de su lista de satélites si los tuviera).
 
@@ -474,11 +471,10 @@ El diagrama UML sería:
 Vamos a hacer una aplicación que simule el funcionamiento de un banco.
 
 Crea una clase **CuentaBancaria** con los atributos: **iban** y **saldo**. Implementa métodos para:
-
-    - Consultar los atributos. 
-    - Ingresar dinero.
-    - Retirar dinero.
-    - Traspasar dinero de una cuenta a otra.
+- Consultar los atributos. 
+- Ingresar dinero.
+- Retirar dinero.
+- Traspasar dinero de una cuenta a otra.
 
 Para los tres últimos métodos puede utilizarse internamente un método privado más general llamado **añadir(...)** que añada una cantidad (positiva o negativa) al saldo.
 
@@ -489,9 +485,8 @@ La clase tiene que ser ***abstracta*** y debe tener un método **calcularInteres
 También puede ser útil implementar un método para mostrar los datos de la cuenta.
 
 De esta clase heredarán dos subclases: **CuentaCorriente** y **CuentaAhorro**. La diferencia entre ambas será la manera de calcular los intereses:
-
-    - A la primera se le incrementará el saldo teniendo en cuenta el interés anual básico.
-    - La segunda tendrá una constante de clase llamada **saldoMinimo**. Si no se llega a este saldo el interés será la mitad del interés básico. Si se supera el saldo mínimo el interés aplicado será el doble del interés anual básico.
+- A la primera se le incrementará el saldo teniendo en cuenta el interés anual básico.
+- La segunda tendrá una constante de clase llamada **saldoMinimo**. Si no se llega a este saldo el interés será la mitad del interés básico. Si se supera el saldo mínimo el interés aplicado será el doble del interés anual básico.
 
 Implementa una clase principal con función main para probar el funcionamiento de las tres clases: Crea varias cuentas bancarias de distintos tipos, pueden estar en un ArrayList si lo deseas; prueba a realizar ingresos, retiradas y transferencias; calcula los intereses y muéstralos por pantalla; etc.
 
@@ -528,12 +523,11 @@ classDiagram
 Vamos a implementar dos clases que permitan gestionar datos de empresas y sus empleados.
 
 Los **empleados** tienen las siguientes características:
-
-    - Un empleado tiene nombre, DNI, sueldo bruto (mensual), edad, teléfono y dirección.
-    - El nombre y DNI de un empleado no pueden variar.
-    - Es obligatorio que todos los empleados tengan al menos definido su nombre, DNI y el sueldo bruto. Los demás datos no son obligatorios.
-    - Será necesario un método para imprimir por pantalla la información de un empleado.
-    - Será necesario un método para calcular el sueldo neto de un empleado. El sueldo neto se calcula descontando del sueldo bruto un porcentaje que depende del IRPF. El porcentaje del IRPF depende del sueldo bruto anual del empleado (sueldo bruto x 12 pagas).**(\*)**
+- Un empleado tiene nombre, DNI, sueldo bruto (mensual), edad, teléfono y dirección.
+- El nombre y DNI de un empleado no pueden variar.
+- Es obligatorio que todos los empleados tengan al menos definido su nombre, DNI y el sueldo bruto. Los demás datos no son obligatorios.
+- Será necesario un método para imprimir por pantalla la información de un empleado.
+- Será necesario un método para calcular el sueldo neto de un empleado. El sueldo neto se calcula descontando del sueldo bruto un porcentaje que depende del IRPF. El porcentaje del IRPF depende del sueldo bruto anual del empleado (sueldo bruto x 12 pagas).
 
 | **Sueldo bruto anual** | **IRPF** |
 | ---------------------- | -------- |
@@ -544,14 +538,13 @@ Los **empleados** tienen las siguientes características:
 Por ejemplo, un empleado con un sueldo bruto anual de 17.000 € tendrá un 30% de IRPF. Para calcular su sueldo neto mensual se descontará un 30% a su sueldo bruto mensual.
 
 Las **empresas** tienen las siguientes características:
-
-    - Una empresa tiene nombre y CIF (datos que no pueden variar), además de teléfono, dirección y empleados. Cuando se crea una nueva empresa esta carece de empleados.
-    - Serán necesarios métodos para:
-        - Añadir y eliminar empleados a la empresa.
-        - Mostrar por pantalla la información de todos los empleados.
-        - Mostrar por pantalla el DNI, sueldo bruto y neto de todos los empleados.
-        - Calcular la suma total de sueldos brutos de todos los empleados.
-        - Calcular la suma total de sueldos netos de todos los empleados.
+- Una empresa tiene nombre y CIF (datos que no pueden variar), además de teléfono, dirección y empleados. Cuando se crea una nueva empresa esta carece de empleados.
+- Serán necesarios métodos para:
+    - Añadir y eliminar empleados a la empresa.
+    - Mostrar por pantalla la información de todos los empleados.
+    - Mostrar por pantalla el DNI, sueldo bruto y neto de todos los empleados.
+    - Calcular la suma total de sueldos brutos de todos los empleados.
+    - Calcular la suma total de sueldos netos de todos los empleados.
 
 **Implementa las clases** **Empleado** **y Empresa** con los atributos oportunos, un constructor, los getters/setters oportunos y los métodos indicados. Puedes añadir más métodos si lo ves necesario. Estas clases no deben realizar ningún tipo de entrada por teclado.
 
@@ -565,20 +558,19 @@ Las **empresas** tienen las siguientes características:
 **Es muy aconsejable hacer el diseño UML antes de empezar a programar.**
 
 Debes crear varias clases para un software de una empresa de transporte. Implementa la jerarquía de clases necesaria para cumplir los siguientes criterios:
-
-    - Los vehículos de la empresa de transporte pueden ser terrestres, acuáticos y aéreos. Los vehículos terrestres pueden ser coches y motos. Los vehículos acuáticos pueden ser barcos y submarinos. Los vehículos aéreos pueden ser aviones y helicópteros.
-    - Todos los vehículos tienen matrícula y modelo (datos que no pueden cambiar). La matrícula de los coches terrestres deben estar formadas por 4 números y 3 letras. La de los vehículos acuáticos por entre 3 y 10 letras. La de los vehículos aéreos por 4 letras y 6 números.
-    - Los vehículos terrestres tienen un número de ruedas (dato que no puede cambiar).
-    - Los vehículos acuáticos tienen eslora (dato que no puede cambiar).
-    - Los vehículos aéreos tienen un número de asientos (dato que no puede cambiar).
-    - Los coches pueden tener aire acondicionado o no tenerlo.
-    - Las motos tienen un color.
-    - Los barcos pueden tener motor o no tenerlo.
-    - Los submarinos tienen una profundidad máxima.
-    - Los aviones tienen un tiempo máximo de vuelo.
-    - Los helicópteros tienen un número de hélices.
-    - No se permiten vehículos genéricos, es decir, no se deben poder instanciar objetos que sean vehículos sin más. Pero debe ser posible instanciar vehículos terrestres, acuáticos o aéreos genéricos (es decir, que no sean coches, motos, barcos, submarinos, aviones o helicópteros).
-    - El diseño debe obligar a que todas las clases de vehículos tengan un método imprimir() que imprima por pantalla la información del vehículo en una sola línea.
+- Los vehículos de la empresa de transporte pueden ser terrestres, acuáticos y aéreos. Los vehículos terrestres pueden ser coches y motos. Los vehículos acuáticos pueden ser barcos y submarinos. Los vehículos aéreos pueden ser aviones y helicópteros.
+- Todos los vehículos tienen matrícula y modelo (datos que no pueden cambiar). La matrícula de los coches terrestres deben estar formadas por 4 números y 3 letras. La de los vehículos acuáticos por entre 3 y 10 letras. La de los vehículos aéreos por 4 letras y 6 números.
+- Los vehículos terrestres tienen un número de ruedas (dato que no puede cambiar).
+- Los vehículos acuáticos tienen eslora (dato que no puede cambiar).
+- Los vehículos aéreos tienen un número de asientos (dato que no puede cambiar).
+- Los coches pueden tener aire acondicionado o no tenerlo.
+- Las motos tienen un color.
+- Los barcos pueden tener motor o no tenerlo.
+- Los submarinos tienen una profundidad máxima.
+- Los aviones tienen un tiempo máximo de vuelo.
+- Los helicópteros tienen un número de hélices.
+- No se permiten vehículos genéricos, es decir, no se deben poder instanciar objetos que sean vehículos sin más. Pero debe ser posible instanciar vehículos terrestres, acuáticos o aéreos genéricos (es decir, que no sean coches, motos, barcos, submarinos, aviones o helicópteros).
+- El diseño debe obligar a que todas las clases de vehículos tengan un método imprimir() que imprima por pantalla la información del vehículo en una sola línea.
 
 Implementa todas las clases necesarias con: atributos, constructor con parámetros, getters/setters y el método imprimir. Utiliza **abstracción** y **herencia** de la forma más apropiada.
 
@@ -587,26 +579,24 @@ Implementa también una clase Programa para hacer algunas pruebas: Instancia var
 ### Figuras
 
 Implementa una **interface** llamada **iFigura2D** que declare los métodos:
-    - `double perimetro()`: Para devolver el perímetro de la figura
-    - `double area()`: Para devolver el área de la figura
-    - `void escalar(double escala)`: Para escalar la figura (aumentar o disminuir su tamaño). Solo hay que multiplicar los atributos de la figura por la escala (> 0).
-    - `void imprimir()`: Para mostrar la información de la figura (atributos, perímetro y área) en una sola línea.
+- `double perimetro()`: Para devolver el perímetro de la figura
+- `double area()`: Para devolver el área de la figura
+- `void escalar(double escala)`: Para escalar la figura (aumentar o disminuir su tamaño). Solo hay que multiplicar los atributos de la figura por la escala (> 0).
+- `void imprimir()`: Para mostrar la información de la figura (atributos, perímetro y área) en una sola línea.
 
 Existen 4 tipos de figuras.
-
-    - **Cuadrado**: Sus cuatro lados son iguales.
-    - **Rectángulo**: Tiene ancho y alto.
-    - **Triángulo**: Tiene ancho y alto.
-    - **Círculo**: Tiene radio.
+- **Cuadrado**: Sus cuatro lados son iguales.
+- **Rectángulo**: Tiene ancho y alto.
+- **Triángulo**: Tiene ancho y alto.
+- **Círculo**: Tiene radio.
 
 Crea las 4 clases de figuras de modo que implementen la interface iFigura2D. Define sus métodos.
 
 Crea una clase ProgramaFiguras con un main en el que realizar las siguientes pruebas:
-
-    a. Crea un ArrayList figuras.
-    b. Añade figuras de varios tipos.
-    c. Muestra la información de todas las figuras.
-    d. Escala todas las figuras con escala = 2.
-    e. Muestra de nuevo la información de todas las figuras.
-    f. Escala todas las figuras con escala = 0.1.
-    g. Muestra de nuevo la información de todas las figuras.
+a. Crea un ArrayList figuras.
+b. Añade figuras de varios tipos.
+c. Muestra la información de todas las figuras.
+d. Escala todas las figuras con escala = 2.
+e. Muestra de nuevo la información de todas las figuras.
+f. Escala todas las figuras con escala = 0.1.
+g. Muestra de nuevo la información de todas las figuras.
