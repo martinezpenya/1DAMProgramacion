@@ -4,100 +4,102 @@
 
 1. Diseñar una jerarquía de clases para modelizar las **aulas de un centro de estudios**.
 
-   De un `Aula` se conoce el `código` (numérico), la `longitud` y la `anchura`. Se desea un método que devuelva la capacidad del aula sabiendo que esta se calcula a partir de la superficie a razón de 1 alumnos por cada 1.4 metros cuadrados de superficie.
+    De un `Aula` se conoce el `código` (numérico), la `longitud` y la `anchura`. Se desea un método que devuelva la capacidad del aula sabiendo que esta se calcula a partir de la superficie a razón de 1 alumnos por cada 1.4 metros cuadrados de superficie.
 
-   Además de las aulas, digamos normales, existen aulas de informática y aulas de música. En las aulas de música se necesita conocer si tienen o no piano. De las aulas de informática se conoce el número de ordenadores y su capacidad no se calcula en función de la superficie, sino a razón de dos alumnos por ordenador.
+    Además de las aulas, digamos normales, existen aulas de informática y aulas de música. En las aulas de música se necesita conocer si tienen o no piano. De las aulas de informática se conoce el número de ordenadores y su capacidad no se calcula en función de la superficie, sino a razón de dos alumnos por ordenador.
 
-   Implementar el método `toString` de cada una de las clases diseñadas para que devuelva:
+    Implementar el método `toString` de cada una de las clases diseñadas para que devuelva:
 
-   - En las aulas normales, el `código` y la `superficie` y la `capacidad`.
-   - En las aulas de música e informática el texto irá precedido por "Aula de música" o "Aula de informática", según corresponda.
+    - En las aulas normales, el `código` y la `superficie` y la `capacidad`.
+    - En las aulas de música e informática el texto irá precedido por "Aula de música" o "Aula de informática", según corresponda.
 
 2. Un salón de **VideoJuegos** dispone de ordenadores en los que los clientes pueden jugar. Además de jugar en el establecimiento, la empresa alquila y vende juegos.
 
-   1. Diseñar la clase `Juego` siguiendo las siguientes especificaciones: 
-      - Atributos protected: `titulo` (String), `fabricante` (String), `año` (int).
-      - Constructor `public Juego(String t, String f, int a)`
-      - Consultores de todos los atributos
-      - `public String toString()`, que devuelve un String con los datos del Juego 
-      - `public boolean equals(Object o)`: Dos juegos son iguales si tienen el mismo título, fabricante y año.
-      - `public int compareTo(Object o)`: Un juego es menor que otro si su título es menor. A igual título, si su fabricante es menor. A igual título y fabricante, si su año es menor.
-   2. Diseñar las clases `JuegoEnAlquiler` y `JuegoEnVenta` (y otras si se considera oportuno), sabiendo que, además de los atributos descritos anteriormente, tienen.
-      - `precio`
-      - `nº de copias disponibles`
-      - `JuegoEnAlquiler`
-        - tiene un atributo que indica el número de días que se alquila. (Por el precio indicado, hay juegos que se alquilan por un dia, otros por 2, etc...)
-        - Constructor que recibe todos sus datos
-        - tiene un método `alquilar` que decrementa el número de copias disponibles.
-        - tiene un método `devolver` que incrementa el número de copias disponibles.
-        - `toString()` devuelve todos los datos del `JuegoEnAlquiler`
-      - `JuegoEnVenta`
-        - `Constructor` que recibe todos sus datos 
-        - tiene un método `vender`, que decrementa el número de copias disponibles.
-        - `toString()` devuelve todos los datos del `JuegoEnVenta`
+    1. Diseñar la clase `Juego` siguiendo las siguientes especificaciones: 
+        - Atributos protected: `titulo` (String), `fabricante` (String), `año` (int).
+        - Constructor `public Juego(String t, String f, int a)`
+        - Consultores de todos los atributos
+        - `public String toString()`, que devuelve un String con los datos del Juego 
+        - `public boolean equals(Object o)`: Dos juegos son iguales si tienen el mismo título, fabricante y año.
+        - `public int compareTo(Object o)`: Un juego es menor que otro si su título es menor. A igual título, si su fabricante es menor. A igual título y fabricante, si su año es menor.
+    2. Diseñar las clases `JuegoEnAlquiler` y `JuegoEnVenta` (y otras si se considera oportuno), sabiendo que, además de los atributos descritos anteriormente, tienen.
+        - `precio`
+        - `nº de copias disponibles`
+        - `JuegoEnAlquiler`
+            - tiene un atributo que indica el número de días que se alquila. (Por el precio indicado, hay juegos que se alquilan por un dia, otros por 2, etc...)
+            - Constructor que recibe todos sus datos
+            - tiene un método `alquilar` que decrementa el número de copias disponibles.
+            - tiene un método `devolver` que incrementa el número de copias disponibles.
+            - `toString()` devuelve todos los datos del `JuegoEnAlquiler`
+        - `JuegoEnVenta`
+            - `Constructor` que recibe todos sus datos 
+            - tiene un método `vender`, que decrementa el número de copias disponibles.
+            - `toString()` devuelve todos los datos del `JuegoEnVenta`
    
 3. La **Fabrica Nacional de Moneda y Timbre** quiere almacenar cierta información técnica del dinero (billetes y monedas) que emite. En concreto, le interesa:
 
-   - `Valor`: Valor de la moneda o billete, en euros. (`double`)
-   - `Año de emisión`: Año en que fué emitida la moneda o billete. (`int`)
-   - De las monedas, 
-     - `Diámetro`: Diámetro de la moneda, en milímetros. (`double`)
-     - `Peso`: Peso de la moneda, en gramos (`double`)
-   - De los billetes.
-     - `Altura del billete`, en mm (`double`)
-     - `Anchura del billete`, en mm (`double`).
+    - `Valor`: Valor de la moneda o billete, en euros. (`double`)
+    - `Año de emisión`: Año en que fué emitida la moneda o billete. (`int`)
+    - De las monedas, 
+        - `Diámetro`: Diámetro de la moneda, en milímetros. (`double`)
+        - `Peso`: Peso de la moneda, en gramos (`double`)
+    - De los billetes.
+        - `Altura del billete`, en mm (`double`)
+        - `Anchura del billete`, en mm (`double`).
 
-   a) Diseñar la clase abstracta `Dinero` y sus subclases `Moneda` y `Billete`, desarrollando:
+    a) Diseñar la clase abstracta `Dinero` y sus subclases `Moneda` y `Billete`, desarrollando:
 
-   - Constructores que reciban los datos necesarios para inicializar los atributos de la clase correspondiente
-   - `equals`: Dos monedas o billetes son iguales si tienen el mismo año de emisión y valor.
-   - `compareTo`: Es menor (mayor) el de menor (mayor) año, a igual año es menor (mayor) el de menor (mayor) valor.
-   - `toString`: Que muestre todos los datos del billete o moneda. Los billetes irán precedidos por el texto "BILLETE" y las monedas por el texto "MONEDA" 
+    - Constructores que reciban los datos necesarios para inicializar los atributos de la clase correspondiente
+    - `equals`: Dos monedas o billetes son iguales si tienen el mismo año de emisión y valor.
+    - `compareTo`: Es menor (mayor) el de menor (mayor) año, a igual año es menor (mayor) el de menor (mayor) valor.
+    - `toString`: Que muestre todos los datos del billete o moneda. Los billetes irán precedidos por el texto "BILLETE" y las monedas por el texto "MONEDA" 
 
-   b) Diseñar la clase `TestDinero` para probar las clases desarrolladas: Crear objetos de las clases `Moneda` y `Billete` y mostrarlos por pantalla.
+    b) Diseñar la clase `TestDinero` para probar las clases desarrolladas: Crear objetos de las clases `Moneda` y `Billete` y mostrarlos por pantalla.
 
 4. Un **centro comercial** quiere mostrar cierta información sobre los televisores que vende. Los televisores pueden ser de dos tipos: de tubo o LCD. En concreto, de cada televisor le interesa mostrar
 
-   - Marca (`String`)
-   - Modelo (`String`)
-   - Precio en euros
-   - Pulgadas de la pantalla (`double`).
-   - Resolución: La resolución se mide de forma distinta en los televisores de tubo que en los televisores LCD.
-     - En los TV de tubo se mide en lineas.
-     - En los TV LCD se mide pixels horizontales x pixels verticales.
+    - Marca (`String`)
+    - Modelo (`String`)
+    - Precio en euros
+    - Pulgadas de la pantalla (`double`).
+    - Resolución: La resolución se mide de forma distinta en los televisores de tubo que en los televisores LCD.
+        - En los TV de tubo se mide en lineas.
+        - En los TV LCD se mide pixels horizontales x pixels verticales.
 
-   a) Diseñar la clase `Televisor` con los atributos y métodos comunes a los dos tipos de televisores y sus subclases `TVTubo` y `TVLCD` con los atributos y métodos que sea necesario:
+    a) Diseñar la clase `Televisor` con los atributos y métodos comunes a los dos tipos de televisores y sus subclases `TVTubo` y `TVLCD` con los atributos y métodos que sea necesario:
 
-   - Constructor de cada clase que permita inicializar todos los datos de la clase.
-   - `equals`: Dos televisiones son iguales si son de la misma marca y modelo.
-   - `compareTo`: Se considera menor (mayor) la de menor (mayor) marca. A igual marca, menor (mayor) la de menor (mayor) modelo.
-   - `public String resulucion()`: Devuelve un texto con la resolución del televisor, como por ejemplo "420 lineas" o "800 x 600 pixels" dependiendo del tipo de televisor.
-   - `public String toString()`: Devuelve un texto con la marca, modelo, precio, pulgadas y resolución.
+    - Constructor de cada clase que permita inicializar todos los datos de la clase.
+    - `equals`: Dos televisiones son iguales si son de la misma marca y modelo.
+    - `compareTo`: Se considera menor (mayor) la de menor (mayor) marca. A igual marca, menor (mayor) la de menor (mayor) modelo.
+    - `public String resulucion()`: Devuelve un texto con la resolución del televisor, como por ejemplo "420 lineas" o "800 x 600 pixels" dependiendo del tipo de televisor.
+    - `public String toString()`: Devuelve un texto con la marca, modelo, precio, pulgadas y resolución.
 
-   b) Diseñar la clase `TestTV` para probar las clases diseñadas. Crear algunos objetos de las clases `TVTubo` y `TVLCD` y mostrarlos por pantalla.
+    b) Diseñar la clase `TestTV` para probar las clases diseñadas. Crear algunos objetos de las clases `TVTubo` y `TVLCD` y mostrarlos por pantalla.
 
 5. De cada pareja de afirmaciones **indica cual es la verdaderas**:
 
-   1. - Se dice que instanciamos una clase cuando creamos objetos de dicha clase.
-      - Se dice que instanciamos una clase cuando creamos una subclase de dicha clase.
+    1.
+        - Se dice que instanciamos una clase cuando creamos objetos de dicha clase.
+        - Se dice que instanciamos una clase cuando creamos una subclase de dicha clase.
 
-   2. - Si una clase es abstracta no se puede instanciar.
-      - Si una clase es abstracta no se puede heredar de ella.
+    2.
+        - Si una clase es abstracta no se puede instanciar.
+        - Si una clase es abstracta no se puede heredar de ella.
 
-   3. - Una clase abstracta tiene que tener métodos abstractos.
-      - Una clase puede ser abstracta y no tener métodos abstractos.
+    3. - Una clase abstracta tiene que tener métodos abstractos.
+       - Una clase puede ser abstracta y no tener métodos abstractos.
 
-   4. - Si una clase tiene métodos abstractos tiene que ser abstracta.
-      - Una clase puede tener métodos abstractos y no ser abstracta.
+    4. - Si una clase tiene métodos abstractos tiene que ser abstracta.
+       - Una clase puede tener métodos abstractos y no ser abstracta.
 
-   5. - Si una clase es abstracta sus subclases no pueden ser abstractas.
-      - Una clase abstracta puede tener subclases que también sean abstractas.
+    5. - Si una clase es abstracta sus subclases no pueden ser abstractas.
+       - Una clase abstracta puede tener subclases que también sean abstractas.
 
-   6. - Si un método es abstracto en una clase, tiene que ser no abstracto en la subclase, o bien, la subclase tiene que ser también abstracta.
+    6. - Si un método es abstracto en una clase, tiene que ser no abstracto en la subclase, o bien, la subclase tiene que ser también abstracta.
       - Si un método es abstracto en una clase, no puede ser abstracto en las subclases.
 
-   7. - Si un método se define final se tiene que reescribir en las subclases.
-      - Si un método se define final no se puede reescribir en las subclases.
+    7. - Si un método se define final se tiene que reescribir en las subclases.
+        - Si un método se define final no se puede reescribir en las subclases.
 
    8. - Una clase puede tener un método final y no ser una clase final.
       - Si una clase tiene un método final tiene que ser una clase final.
