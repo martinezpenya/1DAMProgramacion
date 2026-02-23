@@ -47,14 +47,14 @@
         - `Altura del billete`, en mm (`double`)
         - `Anchura del billete`, en mm (`double`).
 
-    a) Diseñar la clase abstracta `Dinero` y sus subclases `Moneda` y `Billete`, desarrollando:
+    a. Diseñar la clase abstracta `Dinero` y sus subclases `Moneda` y `Billete`, desarrollando:
 
     - Constructores que reciban los datos necesarios para inicializar los atributos de la clase correspondiente
     - `equals`: Dos monedas o billetes son iguales si tienen el mismo año de emisión y valor.
     - `compareTo`: Es menor (mayor) el de menor (mayor) año, a igual año es menor (mayor) el de menor (mayor) valor.
     - `toString`: Que muestre todos los datos del billete o moneda. Los billetes irán precedidos por el texto "BILLETE" y las monedas por el texto "MONEDA" 
 
-    b) Diseñar la clase `TestDinero` para probar las clases desarrolladas: Crear objetos de las clases `Moneda` y `Billete` y mostrarlos por pantalla.
+    b. Diseñar la clase `TestDinero` para probar las clases desarrolladas: Crear objetos de las clases `Moneda` y `Billete` y mostrarlos por pantalla.
 
 4. Un **centro comercial** quiere mostrar cierta información sobre los televisores que vende. Los televisores pueden ser de dos tipos: de tubo o LCD. En concreto, de cada televisor le interesa mostrar
 
@@ -66,7 +66,7 @@
         - En los TV de tubo se mide en lineas.
         - En los TV LCD se mide pixels horizontales x pixels verticales.
 
-    a) Diseñar la clase `Televisor` con los atributos y métodos comunes a los dos tipos de televisores y sus subclases `TVTubo` y `TVLCD` con los atributos y métodos que sea necesario:
+    a. Diseñar la clase `Televisor` con los atributos y métodos comunes a los dos tipos de televisores y sus subclases `TVTubo` y `TVLCD` con los atributos y métodos que sea necesario:
 
     - Constructor de cada clase que permita inicializar todos los datos de la clase.
     - `equals`: Dos televisiones son iguales si son de la misma marca y modelo.
@@ -74,9 +74,9 @@
     - `public String resulucion()`: Devuelve un texto con la resolución del televisor, como por ejemplo "420 lineas" o "800 x 600 pixels" dependiendo del tipo de televisor.
     - `public String toString()`: Devuelve un texto con la marca, modelo, precio, pulgadas y resolución.
 
-    b) Diseñar la clase `TestTV` para probar las clases diseñadas. Crear algunos objetos de las clases `TVTubo` y `TVLCD` y mostrarlos por pantalla.
+    b. Diseñar la clase `TestTV` para probar las clases diseñadas. Crear algunos objetos de las clases `TVTubo` y `TVLCD` y mostrarlos por pantalla.
 
-5. De cada pareja de afirmaciones **indica cual es la verdaderas**:
+5. De cada pareja de afirmaciones **indica cual es la verdadera**:
 
     1.
         - Se dice que instanciamos una clase cuando creamos objetos de dicha clase.
