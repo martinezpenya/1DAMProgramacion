@@ -294,6 +294,7 @@
         recetas.add(new Receta("Cochinillo asado", "carne", 870));
         recetas.add(new Receta("Ensalada de pasta", "pasta", 325));
         ```
+   
 3. Usando los streams de Java, que están muy relacionados con las expresiones lambda, debes crear una lista de 1000 números enteros aleatorios entre -5000 y 5000 y a partir de dicha lista vamos a imprimir por pantalla:
 
     - El máximo de los números pares.
@@ -305,13 +306,13 @@
     !!! warning "Importante"
         Para pasar los tests debes generar una salida similar a esta:
         ```bash
-           listaNumeros: [-579, -2887, 1443, -4055, 2871, -1416, 4804, 2668, -4048, 1834, -3107, 4901, 4716, -1410, ...
-            Máximo de los números pares: 4934
-            Mínimo de los múltiplos de tres:-4992
-            Total de números negativos: 513
-            Listado de números primos: [3989, 2797, 4271, 1627, 131, 3517, 2609, 971, 4283, 643, 2789, 337, 191, 3301, 2383, ...
-            Total de números primos: 69
-            Máximo número primo: 4999
+        listaNumeros: [-579, -2887, 1443, -4055, 2871, -1416, 4804, 2668, -4048, 1834, -3107, 4901, 4716, -1410, ...
+        Máximo de los números pares: 4934
+        Mínimo de los múltiplos de tres:-4992
+        Total de números negativos: 513
+        Listado de números primos: [3989, 2797, 4271, 1627, 131, 3517, 2609, 971, 4283, 643, 2789, 337, 191, 3301, 2383, ...
+        Total de números primos: 69
+        Máximo número primo: 4999
         ``` 
 
 5. Paquete `GranjaDAM`, crea una clase `Animal` con los siguientes atributos, constructor con todos los atributos, getters y setters:
@@ -373,6 +374,7 @@
     - Obtener una lista de todas las disciplinas que no tengan participantes.
     - Calcular la edad media de todos los participantes agrupada por disciplinas.
     - Obtener las disciplinas con los participantes más joven y más viejo.
+
 
 
 
