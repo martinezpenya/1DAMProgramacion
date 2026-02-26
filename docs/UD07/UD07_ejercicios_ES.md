@@ -284,6 +284,16 @@
     - Media de calorías de las recetas de "verduras"
     - Cuántas recetas hay de más de 800 calorías
 
+!!! warning "Importante"
+    Para pasar satisfactoriamente los tests necesitaras que la colección de recetas contenga estas recetas:
+    ```java
+    recetas.add(new Receta("Ensalada de aguacate", "verduras", 250));
+    recetas.add(new Receta("Guisado de pollo", "carne", 530));
+    recetas.add(new Receta("Espaguetis boloñesa", "pasta", 480));
+    recetas.add(new Receta("Ratatouille", "verduras", 280));
+    recetas.add(new Receta("Cochinillo asado", "carne", 870));
+    recetas.add(new Receta("Ensalada de pasta", "pasta", 325));
+    ```
 3. Usando los streams de Java, que están muy relacionados con las expresiones lambda, debes crear una lista de 1000 números enteros aleatorios entre -5000 y 5000 y a partir de dicha lista vamos a imprimir por pantalla:
 
     - El máximo de los números pares.
@@ -351,4 +361,5 @@
     - Obtener una lista de todas las disciplinas que no tengan participantes.
     - Calcular la edad media de todos los participantes agrupada por disciplinas.
     - Obtener las disciplinas con los participantes más joven y más viejo.
+
 
