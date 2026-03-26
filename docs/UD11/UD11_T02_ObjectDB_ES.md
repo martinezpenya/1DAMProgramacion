@@ -204,13 +204,14 @@ En la web del proyecto ObjectDB puedes descargar un tutorial con un proyecto ya 
    ...
    ```
 
-> ### Puede que hayas observado que la palabra Punto dentro de las consultas SQL aparece subrayado en rojo. Eso es porque IntelliJ no detecta la clase Punto como una entidad JPA:
->
-> ![image-20250501114711764](assets/T1_Punto_not_JPA.png)
->
-> La solución es tan simple como hacer clic en la bombilla roja que aparece, y elegir la opción de que IntelliJ nos añada el complemento necesario de JPA para "entender" la persistencia de datos.
->
-> ![image-20250501114846651](assets/T1_add_JPA_facet.png)
+!!! info "Fíjate"
+    Puede que hayas observado que la palabra `Punto` dentro de las consultas SQL aparece subrayado en rojo. Eso es porque IntelliJ no detecta la clase Punto como una entidad JPA:
+
+    ![image-20250501114711764](assets/T1_Punto_not_JPA.png)
+    
+    La solución es tan simple como hacer clic en la bombilla roja que aparece, y elegir la opción de que IntelliJ nos añada el complemento necesario de JPA para "entender" la persistencia de datos.
+    
+    ![image-20250501114846651](assets/T1_add_JPA_facet.png)
 
 Ten en cuenta que cada vez que ejecutas el código se añaden 1000 puntos más a la BDOO, así que si lo ejecutas un par de veces más tendras 3000 puntos en la base de datos.
 

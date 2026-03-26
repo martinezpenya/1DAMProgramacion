@@ -62,7 +62,8 @@ A continuación, en `Configuración`:
 
 Elegimos el `Identificador de instancias de bases de datos`, podemos poner el que más nos guste, en mi caso `databaseDMP`, también debemos indicar el `username`, en mi caso `admin`, y por último la `Contraseña maestra` y su confirmación, que deberá tener más de 8 carácteres ASCII imprimibles, en mi caso `123456Ab$`. 
 
-> ### Anota todos estos datos en un lugar seguro, los necesitarás más adelante.
+!!! warning "Atención!"
+    Anota todos estos datos en un lugar seguro, los necesitarás más adelante.
 
 ![Apartado Configuración](assets/RDS04.png)
 
@@ -86,7 +87,8 @@ En la parte baja elegiremos crear un nuevo `Grupo de seguridad de VPC` y el puer
 
 ![Grupo de seguridad](assets/RDS08b.png)
 
-> ### OJo! aunque el puerto 3306 debería estar abierto el la red del instituto, he encontrado ocasiones en las que no ha funcionado correctamente, si te sucede esto, puedes cambiar al puerto 6000 o alguno de los que te sugiera tu profesor.
+!!! Warning "OJo!"
+    Aunque el puerto 3306 debería estar abierto el la red del instituto, he encontrado ocasiones en las que no ha funcionado correctamente, si te sucede esto, puedes cambiar al puerto 6000 o alguno de los que te sugiera tu profesor.
 
 En el apartado `Configuración adicional` indicamos `starwars` como nombre de la base de datos inicial y cambiamos el periodo de retención de copias a `1 dia`:
 
@@ -239,7 +241,8 @@ public class AWSTest {
 }
 ```
 
-> ### Recuerda cambiar la constante `AWSDNS`, `DBNAME`, `PUERTO`, `USERNAME` y `PASSWORD` por el `String` o `int` que corresponda con tu configuración.
+!!! warning "Recuerda"
+    Recuerda cambiar la constante `AWSDNS`, `DBNAME`, `PUERTO`, `USERNAME` y `PASSWORD` por el `String` o `int` que corresponda con tu configuración.
 
 ### Ejecución de prueba
 
@@ -283,26 +286,25 @@ Elige un número de película y te mostraré los personajes que aparecen en ella
 90  Ponda Baba  0  0.0  null  null
 ```
 
-> ## **Warning SLF4J**
->
-> Si te aparece el mensaje siguiente:
->
-> ```
-> SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-> SLF4J: Defaulting to no-operation (NOP) logger implementation
-> SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-> ```
->
-> Aunque es un **warning** y no debe afectar al funcionamiento de tus programas, resolver el error es tan sencillo como añadir una dependencia más:
->
-> ```xml
-> <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-> <dependency>
->     <groupId>org.slf4j</groupId>
->     <artifactId>slf4j-simple</artifactId>
->     <version>2.0.17</version>
-> </dependency>
-> ```
+!!! warning "Warning SLF4J"
+    Si te aparece el mensaje siguiente:
+
+    ```
+    SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+    SLF4J: Defaulting to no-operation (NOP) logger implementation
+    SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+    ```
+
+    Aunque es un **warning** y no debe afectar al funcionamiento de tus programas, resolver el error es tan sencillo como añadir una dependencia más:
+
+    ```xml
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+    <dependency>
+     <groupId>org.slf4j</groupId>
+     <artifactId>slf4j-simple</artifactId>
+     <version>2.0.17</version>
+    </dependency>
+    ```
 
 ## Tarea
 

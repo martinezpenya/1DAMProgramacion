@@ -63,7 +63,6 @@ nav:
     - Interfaz gráfica: UD09/UD09_ES.md
     - Ejercicios: UD09/UD09_ejercicios_ES.md
     - Talleres:
-      - T01 GitHub Classroom: UD09/UD09_T01_GitHubClassroom.md
       - T02 SceneBuilder & IntelliJ: UD09/UD09_T02_SceneBuilder_IntelliJ_ES.md
       - T03 Proyecto JavaFX Maven: UD09/UD09_T03_ProyectoJavaFXMaven_ES.md
       - T04 Calculadora JavaFX: UD09/UD09_T04_Calculadora_en_JavaFX_IntelliJ_ES.md
@@ -71,17 +70,15 @@ nav:
     - BB.DD. relacionales: UD10/UD10_ES.md
     - Ejercicios: UD10/UD10_ejercicios_ES.md
     - Talleres:
-      - T01 GitHub Classroom: UD10/UD10_T01_GitHubClassroom.md
-      - T02 SceneBuilder & IntelliJ: UD10/UD10_T02_Conectores_ES.md
-      - T03 Proyecto JavaFX Maven: UD10/UD10_T03_AWS_IntelliJ_ES.md
-      - T04 Calculadora JavaFX: UD10/UD10_T04_DAO_ES.md
+      - T02 Conectores: UD10/UD10_T02_Conectores_ES.md
+      - T03 BB.DD en AWS y IntelliJ: UD10/UD10_T03_AWS_IntelliJ_ES.md
+      - T04 DAO Completo (CRUD): UD10/UD10_T04_DAO_ES.md
   - UD11:
     - BB.DD. OO: UD11/UD11_ES.md
     - Ejercicios: UD11/UD11_ejercicios_ES.md
     - Talleres:
-      - T01 GitHub Classroom: UD11/UD11_T01_GitHubClassroom.md
-      - T02 SceneBuilder & IntelliJ: UD11/UD11_T02_ObjectDB_ES.md
-      - T03 Proyecto JavaFX Maven: UD11/UD11_T03_CRUD_ObjectDB_ES.md
+      - T02 Object DB: UD11/UD11_T02_ObjectDB_ES.md
+      - T03 CRUD ObjectDB: UD11/UD11_T03_CRUD_ObjectDB_ES.md
   - Sobre mi: sobremi.md
   - Fuentes de información: fuentes.md
 
