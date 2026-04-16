@@ -361,11 +361,12 @@ Define una jerarquía de clases que permita almacenar datos sobre los planetas y
 
 Algunos atributos que necesitaremos almacenar son: 
 
-- Masa del cuerpo.
-- Diámetro medio.
-- Período de rotación sobre su propio eje.
-- Período de traslación alrededor del cuerpo que orbitan.
-- Distancia media a ese cuerpo.
+- nombre
+- radioEcuatorial
+- rotacionEje
+- masa
+- temperaturaMedia
+- gravedad
 - etc.
 
 Define las clases necesarias conteniendo: 
@@ -383,6 +384,7 @@ classDiagram
     Astro <|-- Planeta
     Astro <|-- Satelite
    
+    Astro : #String nombre
     Astro : #double radioEcuatorial
     Astro : #double rotacionEje
     Astro : #double masa
@@ -393,13 +395,13 @@ classDiagram
     class Planeta{
         #double distanciaSol
         #double orbitaSol
-        #ArrayList<Satelite> satelites
+        #boolean tieneSatelites
         +muestra()
     }
     class Satelite{
         #double distanciaPlaneta
         #double orbitaPlanetaria
-        #planeta dependeDe
+        #Planeta dependeDe
         +muestra()
     }
 ```
