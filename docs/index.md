@@ -8,11 +8,6 @@
 
 ☕ Programación (PRG)
 
-| **B5** | UD05: Desarrollo de clases               | 25   |
-| ------ | ---------------------------------------- | ---- |
-| **B6** | UD06: Lectura y escritura de información | 25   |
-| **B4** | UD07: Colecciones y Funciones Lambda     |      |
-
 ## 📋 Contenidos
 
 |            |                                                            | **Horas** |
