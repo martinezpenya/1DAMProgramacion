@@ -35,7 +35,7 @@
             - `Constructor` que recibe todos sus datos 
             - tiene un método `vender`, que decrementa el número de copias disponibles.
             - `toString()` devuelve todos los datos del `JuegoEnVenta`
-   
+
 3. La **Fabrica Nacional de Moneda y Timbre** quiere almacenar cierta información técnica del dinero (billetes y monedas) que emite. En concreto, le interesa:
 
     - `Valor`: Valor de la moneda o billete, en euros. (`double`)
@@ -132,7 +132,7 @@
 
     - Una clase definida final y abstract resultaría inútil, puesto que no se podría instanciar ni heredar de ella.
     - Una clase definida final y abstract podría resultar útil.
-   
+
 6. Dada las siguientes **definiciónes de clases**:
 
     ```java
@@ -301,27 +301,38 @@
             Derivada derivada;
             Derivada2 derivada2;
             Base base;
-            derivada2 = new Derivada2();base = derivada2;
-            tmp = derivada2.metodo1(); System.out.println("1.-"+tmp);
-            tmp = derivada2.metodoIn2("EDA!!"); System.out.println("2.-"+tmp);
-            tmp = base.metodo1();System.out.println("3.-"+tmp);
-            tmp = base.metodo2("EDA!!"); System.out.println("4.-"+tmp);
-            tmp = derivada2.metodoIn3();System.out.println("5.-"+tmp);
-            tmp = derivada2.metodo4();System.out.println("6.-"+tmp);
-            tmp = base.metodo3();System.out.println("7.-"+tmp);
+            derivada2 = new Derivada2();
+            base = derivada2;
+            tmp = derivada2.metodo1(); 
+            System.out.println("1.-"+tmp);
+            tmp = derivada2.metodoIn2("EDA!!"); 
+            System.out.println("2.-"+tmp);
+            tmp = base.metodo1();
+            System.out.println("3.-"+tmp);
+            tmp = base.metodo2("EDA!!"); 
+            System.out.println("4.-"+tmp);
+            tmp = derivada2.metodoIn3();
+            System.out.println("5.-"+tmp);
+            tmp = derivada2.metodo4();
+            System.out.println("6.-"+tmp);
+            tmp = base.metodo3();
+            System.out.println("7.-"+tmp);
             derivada = new Derivada();
             derivada2 = new Derivada2();
             base = new Base();
             Distinta ref = new Distinta();
-            tmp = ref.prueba(derivada2); System.out.println("8.-"+tmp);
-            tmp = ref.prueba(derivada); System.out.println("9.-"+tmp);
-            tmp = ref.prueba(base); System.out.println("10.-"+tmp); 
+            tmp = ref.prueba(derivada2); 
+            System.out.println("8.-"+tmp);
+            tmp = ref.prueba(derivada); 
+            System.out.println("9.-"+tmp);
+            tmp = ref.prueba(base); 
+            System.out.println("10.-"+tmp); 
         }
     }
     ```
-
+    
     **Señalar los errores** existentes.
-
+    
     **Una vez corregido** el programa, **escribir la salida** por pantalla resultado de su ejecución.
 
 ## Actividades
