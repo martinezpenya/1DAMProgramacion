@@ -1802,6 +1802,33 @@ public class GridPaneAppv2 extends Application {
 }
 ```
 
+## Gestión de excepciones y ventanas modales`Alert`
+
+En JavaFX, las ventanas modales de tipo `Alert` son útiles para mostrar mensajes al usuario (errores, advertencias,  información o confirmaciones). Se combinan frecuentemente con la gestión de excepciones para informar de forma amigable cuando ocurre un error  en tiempo de ejecución.
+
+**Ejemplo práctico:**
+
+```java
+try {
+    int resultado = 10 / 0;  // Simula una excepción
+} catch (ArithmeticException e) {
+    Alert alerta = new Alert(Alert.AlertType.ERROR);
+    alerta.setTitle("Error matemático");
+    alerta.setHeaderText("No se pudo realizar la operación");
+    alerta.setContentText("División entre cero: " + e.getMessage());
+    alerta.showAndWait();  // Ventana modal (bloquea hasta que se cierre)
+}
+```
+
+**Tipos de alerta más comunes:**
+
+- `ERROR` → Para fallos graves.
+- `WARNING` → Para situaciones peligrosas o dudosas.
+- `INFORMATION` → Para notificar acciones completadas.
+- `CONFIRMATION` → Para preguntar sí/no antes de continuar.
+
+**Ventaja:** La combinación de `try-catch` con `Alert` mejora la experiencia de usuario, evitando que la aplicación falle  silenciosamente o muestre mensajes de consola poco intuitivos.
+
 ## Estructura de la aplicación
 
 ### El patrón MVC
