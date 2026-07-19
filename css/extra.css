@@ -28,13 +28,13 @@ img {
 /* ******************************************************** */
 /* Table 100% Width fix */
 /* ******************************************************** */
-/*.md-typeset__table {
+.md-typeset__table {
     min-width: 100%;
 }
 
 .md-typeset table:not([class]) {
     display: table;
-}*/
+}
 
 
 /*
@@ -87,7 +87,4 @@ article h6:before {
     counter-increment : h6;
 }
 
-h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.nocount:before {
-    content : "";
-    counter-increment : none;
-}
+
