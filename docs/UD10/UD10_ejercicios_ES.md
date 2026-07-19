@@ -42,32 +42,31 @@ Es escribir un programa `UD10_01_GestionEmpleados` que realice las siguientes op
 - `actualizarSalarios`: Incrementar el salario de todos los empleados en un 10%.
 - `eliminarEmpleados`: Eliminar todos los empleados cuyo salario sea menor que 3000€.
 
-> ### Consejo: En el `main` ejecuta por este orden:
->
-> 1. `listarEmpleados`
-> 2. `actualizarEmpleados`
-> 3. `listarEmpleados`
-> 4. `eliminarEmpleados`
-> 5. `listarEmpleados`
+!!! tip "Consejo"
+    En el `main` ejecuta por este orden:
 
-> ## Para probar...
->
-> Puedes implementar cada operación utilizando un tipo de resultado y opción de concurrencia diferente para familiarizarte con su uso.
->
-> No olvides manejar las excepciones `SQLException` adecuadamente.
->
-> Por ejemplo, podrías probar las siguientes operaciones:
->
-> - Lista todos los empleados junto con sus salarios utilizando un `ResultSet` de tipo `TYPE_SCROLL_SENSITIVE` y opción de concurrencia `CONCUR_READ_ONLY`.
-> - Actualiza los salarios de todos los empleados incrementándolos en un 10% utilizando un ResultSet de tipo `TYPE_FORWARD_ONLY` y opción de concurrencia `CONCUR_UPDATABLE`.
-> - Elimina todos los empleados cuyo salario sea menor a 3000€ utilizando un `Statement` estándar sin necesidad de un `ResultSet`.
+    1. `listarEmpleados`
+    2. `actualizarEmpleados`
+    3. `listarEmpleados`
+    4. `eliminarEmpleados`
+    5. `listarEmpleados`
 
-> ### No olvides:
->
-> 1. Manejar las excepciones `SQLException` adecuadamente. 
->
-> 2. Ajustar la cadena de conexión a tu base de datos y reemplazar "usuario" y "contraseña" con las credenciales adecuadas.
->    
+!!! tip "Para probar"
+    Puedes implementar cada operación utilizando un tipo de resultado y opción de concurrencia diferente para familiarizarte con su uso.
+
+    No olvides manejar las excepciones `SQLException` adecuadamente.
+
+    Por ejemplo, podrías probar las siguientes operaciones:
+
+    - Lista todos los empleados junto con sus salarios utilizando un `ResultSet` de tipo `TYPE_SCROLL_SENSITIVE` y opción de concurrencia `CONCUR_READ_ONLY`.
+    - Actualiza los salarios de todos los empleados incrementándolos en un 10% utilizando un ResultSet de tipo `TYPE_FORWARD_ONLY` y opción de concurrencia `CONCUR_UPDATABLE`.
+    - Elimina todos los empleados cuyo salario sea menor a 3000€ utilizando un `Statement` estándar sin necesidad de un `ResultSet`.
+
+!!! warning "No olvides"
+    1. Manejar las excepciones `SQLException` adecuadamente. 
+
+    2. Ajustar la cadena de conexión a tu base de datos y reemplazar "usuario" y "contraseña" con las credenciales adecuadas.
+    
 
 ### UD10_02_GestionProductos
 
@@ -108,22 +107,20 @@ Tu tarea es escribir un programa `UD10_04_GestionLibros` que realice las siguien
 
 - `mostrarLibrosPorDecada(int decada)`: Permite al usuario ingresar una década y mostrar todos los libros publicados en esa década.
 
-> ### Sugerencia en este método:
->
-> Puedes realizar el método `mostrarLibrosPorDecada()` de dos formas:
->
-> 1. Utiliza el método `createStatement()` para crear el `Resultset` con el atributo `ResultSet.TYPE_SCROLL_INSENSITIVE`. Utiliza dentro los métodos `afterLast()` y `previous()` para mover el cursor al final y luego retroceder, así puedes comenzar desde la última fila.
-> 2. Utiliza el método `preparedStatement(sql)` con una consulta en la que se listen los libros comprendidos en una década y ordenados de forma descendente por el `anio_publiacion`.
+!!! tip "Sugerencia"
+    Puedes realizar el método `mostrarLibrosPorDecada()` de dos formas:
+
+    1. Utiliza el método `createStatement()` para crear el `Resultset` con el atributo `ResultSet.TYPE_SCROLL_INSENSITIVE`. Utiliza dentro los métodos `afterLast()` y `previous()` para mover el cursor al final y luego retroceder, así puedes comenzar desde la última fila.
+    2. Utiliza el método `preparedStatement(sql)` con una consulta en la que se listen los libros comprendidos en una década y ordenados de forma descendente por el `anio_publiacion`.
 
 `buscarLibroPorAutor(String autor)`: Permite al usuario ingresar el nombre de un autor y muestra todos los libros escritos por ese autor.
 
-> ### Sugerencia en este método:
->
-> Puedes realizar el método `buscarLibroPorAutor()` de dos formas:
->
-> 1. Utiliza el método `createStatement()` para crear el `Resultset` con el atributo `ResultSet.TYPE_SCROLL_INSENSITIVE`. Utiliza dentro el método `relative(int registros)` para desplazarte a través de los registros según las coincidencias del autor.
->
-> 2. Utiliza el método `preparedStatement(sql)` con una consulta en la que se listen los libros que contengan la cadena autor dentro del campo autor.
+!!! tip "Sugerencia"
+    Puedes realizar el método `buscarLibroPorAutor()` de dos formas:
+
+    1. Utiliza el método `createStatement()` para crear el `Resultset` con el atributo `ResultSet.TYPE_SCROLL_INSENSITIVE`. Utiliza dentro el método `relative(int registros)` para desplazarte a través de los registros según las coincidencias del autor.
+
+    2. Utiliza el método `preparedStatement(sql)` con una consulta en la que se listen los libros que contengan la cadena autor dentro del campo autor.
 
 ### UD10_05_GestionVentas
 

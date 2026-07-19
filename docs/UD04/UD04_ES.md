@@ -10,6 +10,15 @@
 
 ![Diagrama](assets/UD04_Diagrama.png)
 
+!!! info "Al finalizar esta unidad serás capaz de..."
+    - [ ] Declarar y utilizar arrays unidimensionales
+    - [ ] Recorrer arrays con bucles y for-each
+    - [ ] Trabajar con arrays multidimensionales (matrices)
+    - [ ] Conocer la clase Arrays y sus métodos útiles
+    - [ ] Comprender el concepto de recursividad
+    - [ ] Identificar el caso base y el caso recursivo
+    - [ ] Implementar funciones recursivas simples
+
 ## Introducción
 
 A menudo, para resolver problemas de programación, no basta con disponer de sentencias condicionales o iterativas como las que hemos visto (`if`, `switch`, `while`, `for`, ...).
@@ -1312,7 +1321,24 @@ public class Recursividad {
 }
 ```
 
+!!! info "Resumen — Conceptos clave"
+    | Concepto | Definición |
+    |---|---|
+    | Array | Estructura de datos que almacena múltiples valores del mismo tipo |
+    | Índice | Posición numérica que permite acceder a un elemento del array |
+    | Matriz | Array bidimensional (filas × columnas) |
+    | Recursividad | Técnica donde un método se llama a sí mismo para resolver un problema |
+    | Caso base | Condición que detiene la recursión |
+
 ## Píldoras informáticas relacionadas
 
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+### Autoevaluación
+- [ ] Sé declarar e inicializar arrays
+- [ ] Puedo recorrer arrays con bucles
+- [ ] Trabajo con matrices de varias dimensiones
+- [ ] Entiendo el concepto de recursividad
+- [ ] Soy capaz de escribir funciones recursivas
+- [ ] Distingo entre caso base y caso recursivo
 

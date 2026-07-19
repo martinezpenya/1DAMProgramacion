@@ -4,6 +4,16 @@
 
 ![Diagrama](assets/UD08_Diagrama.png)
 
+!!! info "Al finalizar esta unidad serás capaz de..."
+    - [ ] Distinguir entre composición y herencia
+    - [ ] Crear jerarquías de clases mediante herencia
+    - [ ] Sobrescribir métodos de la superclase
+    - [ ] Aplicar el polimorfismo en el diseño de clases
+    - [ ] Utilizar clases abstractas y métodos abstractos
+    - [ ] Definir e implementar interfaces
+    - [ ] Diferenciar entre interfaz y clase abstracta
+    - [ ] Realizar conversiones entre objetos (casting)
+
 ## Relaciones entre clases.
 
 Cuando estudiaste el concepto de clase, ésta fue descrita como una especie de mecanismo de definición (plantillas), en el que se basaría el entorno de ejecución a la hora de construir un objeto: un mecanismo de definición de objetos.
@@ -84,6 +94,16 @@ Recuperando algunos ejemplos de clases que ya has utilizado en otras unidades:
 En Java, la clase `Object` (dentro del paquete `java.lang`) define e implementa el comportamiento común a todas las clases (incluidas aquellas que tú escribas). Como recordarás, ya se dijo que en Java cualquier clase deriva en última instancia de la clase `Object`.
 
 Todas las clases tienen una clase padre, que a su vez también posee una superclase, y así sucesivamente hasta llegar a la clase `Object` . De esta manera, se construye lo que habitualmente se conoce como una jerarquía de clases, que en el caso de Java tendría a la clase `Object` en la raíz.
+
+```mermaid
+graph TD
+    A[Vehículo] --> B[Coche]
+    A --> C[Moto]
+    A --> D[Camion]
+    B --> E[CocheDeportivo]
+    B --> F[CocheFamiliar]
+    C --> G[MotoDeportiva]
+```
 
 !!! warning  "Atención"
     Cuando escribas una clase en Java, puedes hacer que herede de una determinada clase padre (mediante el uso de `extends`) o bien no indicar ninguna herencia. En tal caso, aunque no indiques explícitamente ningún tipo de herencia, el compilador asumirá entonces de manera implícita que tu clase hereda de la clase `Object`, que define e implementa el comportamiento común a todas las clases.
@@ -660,6 +680,18 @@ Es cierto que en ese sentido existe un gran parecido formal entre una clase abst
 - Una interfaz permite establecer un comportamiento de clase sin apenas dar detalles, pues esos detalles aún no son conocidos (dependerán del modo en que cada clase decida implementar la interfaz).
 - Las interfaces tienen su propia jerarquía, diferente e independiente de la jerarquía de clases.
 
+```mermaid
+graph TD
+    A[Clase Abstracta] --> B[Puede tener atributos]
+    A --> C[Puede tener métodos concretos]
+    A --> D[Puede tener métodos abstractos]
+    A --> E[Se hereda con extends]
+    F[Interfaz] --> G[No tiene atributos de instancia]
+    F --> H[Métodos abstractos por defecto]
+    F --> I[Métodos default y static desde Java 8]
+    F --> J[Se implementa con implements]
+```
+
 De todo esto puede deducirse que una clase abstracta proporciona una interfaz disponible sólo a través de la herencia. Sólo quien herede de esa clase abstracta dispondrá de esa interfaz. Si una clase no pertenece a esa misma jerarquía (no hereda de ella) no podrá tener esa interfaz. Eso significa que para poder disponer de la interfaz podrías:
 
 1. Volver a escribirla para esa jerarquía de clases. Lo cual no parece una buena solución.
@@ -1089,6 +1121,15 @@ obj.m()
 ...
 ```
 
+```mermaid
+graph TD
+    A[Animal] --> B[Perro: ladrar()]
+    A --> C[Gato: maullar()]
+    A --> D[Vaca: mugir()]
+    E[Referencia Animal] --> F[apunta a Perro -> ladra]
+    E --> G[apunta a Gato -> maúlla]
+    E --> H[apunta a Vaca -> muge]
+```
 
 Imagina que estás trabajando con las clases `Alumno` y `Profesor` y que en determinada zona del código podrías tener objetos, tanto de un tipo como de otro, pero eso sólo se sabrá según vaya discurriendo la ejecución del programa. En algunos casos, es posible que un determinado objeto pudiera ser de la clase `Alumno` y en otros de la clase `Profesor`, pero en cualquier caso serán objetos de la clase `Persona`. Eso significa que la llamada a un método de la clase `Persona` (por ejemplo `devolverContenidoString`) en realidad será en unos casos a un método (con el mismo nombre) de la clase `Alumno` y, en otros, a un método (con el mismo nombre también) de la clase `Profesor`. Esto será posible hacerlo gracias a la ligadura dinámica.
 
@@ -2569,6 +2610,26 @@ public class EjemploUso {
 }
 ```
 
+!!! info "Resumen — Conceptos clave"
+    | Concepto | Definición |
+    |---|---|
+    | Composición | Relación «tiene un» entre clases (un todo contiene partes) |
+    | Herencia | Relación «es un» que permite reutilizar código de una superclase |
+    | Superclase | Clase de la que se heredan atributos y métodos |
+    | Subclase | Clase que hereda de otra |
+    | Polimorfismo | Capacidad de un objeto de comportarse de múltiples formas |
+    | Clase abstracta | Clase que no puede instanciarse, solo ser heredada |
+    | Interfaz | Contrato que define métodos que deben implementarse |
+
 ## Píldoras informáticas relacionadas
 
 <iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+### Autoevaluación
+- [ ] Diferencio entre composición y herencia
+- [ ] Creo jerarquías de herencia correctamente
+- [ ] Aplico la sobrescritura de métodos (@Override)
+- [ ] Utilizo el polimorfismo en mis programas
+- [ ] Diseño clases abstractas y métodos abstractos
+- [ ] Implemento interfaces
+- [ ] Sé cuándo usar una interfaz y cuándo una clase abstracta

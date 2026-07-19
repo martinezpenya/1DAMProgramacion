@@ -4,6 +4,15 @@
 
 ![Diagrama](assets/UD06_Diagrama.png)
 
+!!! info "Al finalizar esta unidad serás capaz de..."
+    - [ ] Diferenciar entre flujos de bytes y de caracteres
+    - [ ] Leer y escribir ficheros de texto
+    - [ ] Leer y escribir ficheros binarios
+    - [ ] Serializar y deserializar objetos
+    - [ ] Utilizar las clases File, FileReader, FileWriter, BufferedReader
+    - [ ] Comprender el funcionamiento básico de los sockets
+    - [ ] Conocer el patrón CRUD y su aplicación
+
 En Java, la interacción de nuestro programa con el mundo exterior—desde leer una pulsación de tecla hasta comunicarse a través de una red—se maneja de manera elegante y simplificada a través del concepto de **Streams (flujos)**. Imagina un *stream* como un conducto lógico universal: Java se encarga de la compleja tarea de vincular este conducto a cualquier dispositivo físico (teclado, monitor, ficheros, *sockets*), **liberándote** de tener que codificar para cada dispositivo individualmente. Estos canales se clasifican en flujos orientados a **bytes** (`InputStream` y `OutputStream`), perfectos para datos binarios, y flujos orientados a **caracteres** (`Reader` y `Writer`), esenciales para manejar la codificación Unicode y garantizar que tu aplicación sea internacionalizable. Más allá de la memoria volátil, veremos cómo asegurar que los datos persistan mediante el uso de **ficheros** (de texto o binarios). Finalmente, exploraremos potentes mecanismos como la **serialización**, que permite guardar y transmitir el estado completo de un objeto, y el uso de **sockets** para establecer la comunicación fundamental entre programas cliente y servidor.
 
 ## Streams (Flujos)
@@ -1097,7 +1106,24 @@ public class P5_1_Manejo {
 }
 ```
 
+!!! info "Resumen — Conceptos clave"
+    | Concepto | Definición |
+    |---|---|
+    | Stream | Flujo de datos que conecta el programa con una fuente o destino |
+    | Byte stream | Flujo que maneja datos binarios (InputStream, OutputStream) |
+    | Char stream | Flujo que maneja texto (Reader, Writer) |
+    | Serialización | Proceso de convertir un objeto en una secuencia de bytes |
+    | Fichero | Almacenamiento persistente de datos en disco |
+    | Socket | Punto final de una conexión de red entre dos programas |
+
 ## Píldoras informáticas relacionadas
 
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+### Autoevaluación
+- [ ] Diferencio entre flujos de bytes y de caracteres
+- [ ] Leo y escribo ficheros de texto
+- [ ] Serializo y deserializo objetos
+- [ ] Utilizzo BufferedReader para entrada eficiente
+- [ ] Comprendo el concepto de socket a nivel básico
 

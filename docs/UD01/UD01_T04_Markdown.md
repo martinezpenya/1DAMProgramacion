@@ -4,7 +4,8 @@
 
 <img src="assets/markdown_logo.png" style="zoom:25%;" />
 
-**Markdown** nace como herramienta de **conversión de texto plano a HTML**. Fue creada en 2004 por John Gruber, y se distribuye de manera gratuita bajo una [licencia BSD](https://es.wikipedia.org/wiki/Licencia_BSD).
+!!! info "Definición"
+    **Markdown** es un lenguaje de marcado ligero que permite escribir texto con formato (negritas, cursivas, enlaces, imágenes, código, tablas, etc.) usando texto plano, que luego puede convertirse a HTML, PDF y otros formatos.
 
 Markdown es un maravilloso **lenguaje** para escribir documentos de una manera **sencilla de escribir, y que en todo momento mantenga un diseño legible** que contengan elementos como *secciones*, *párrafos*, *listas*, *vínculos* e *imágenes*, *etc*. Pandoc [http://pandoc.org](http://pandoc.org/) ha extendido enormemente la [sintaxis original de Markdown](http://daringfireball.net/projects/markdown/) y ha añadido unas pequeñas nuevas características tales como notas al pie de página, citas y tablas. Lo más importante que hace Pandoc es hacer posible la generación de documentos en una amplia variedad de formatos desde Markdown, HTML, LaTeX/PDF, MSWord y Slides.
 
@@ -62,7 +63,8 @@ Gracias a la simplicidad de su sintaxis podrás utilizarlo siempre que necesites
 
 Si queremos generar un nuevo párrafo en Markdown simplemente separa el texto mediante una línea en blanco (**pulsando dos veces intro**).
 
-Al igual que sucede con HTML, **Markdown no soporta dobles líneas en blanco**, así que si intentas generarlas estas se convertirán en una sola al procesarse.
+!!! warning "Importante"
+    Markdown ignora las líneas en blanco múltiples: dos o más líneas en blanco consecutivas se reducen a una sola al procesarse.
 
 Para realizar un salto de línea y empezar **una frase en una línea siguiente dentro del mismo párrafo**, tendrás que pulsar **dos veces la barra espaciadora antes de pulsar una vez intro**.
 
@@ -122,13 +124,8 @@ Se corresponde a:
 
 ​	Este texto es en ambos \*\*\****negrita e itàlica***\*\*\*.
 
-> En Markdown no podemos subrayar el texto. Sin embargo, podremos añadir la etiqueta de html underline \<u>\</u>.
->
-> ```MARK
-> Este texto está <u>subrayado</u>
-> ```
->
-> Este texto está <u>subrayado</u>
+!!! warning "Atención"
+    Markdown no soporta subrayado de forma nativa. Para subrayar texto debes usar HTML: `<u>texto subrayado</u>`.
 
 Para **ignorar los caracteres** de formato de Markdown, ponga <code>\\</code> antes del carácter:
 
@@ -150,7 +147,8 @@ Si la cita en cuestión se compone de **varios párrafos**, deberás añadir el 
 
 Para crear **listas** **numeradas**, empieza una línea con `1.` or `1)`.
 
-No debes mezclar los formatos dentro de la misma lista. No es necesario especificar los números. GitHub lo hace por tí.
+!!! tip "Truco"
+    En listas ordenadas, puedes poner `1.` en todos los elementos y Markdown los numerará automáticamente de forma correcta. Esto facilita reordenar elementos sin tener que renumerar.
 
 ```
 1. Ítem 1 de la lista.
@@ -346,7 +344,8 @@ Visualización:
 
 ![](assets/flow.png)
 
-> Intenta realizar un diagrama para "programar" un almuerzo. En él, deberás dar los ***buenos días***, indicar que ***es hora del descanso***, y preguntar si ***alguién quiere almorzar***. Si no hay nadie que quiera almorzar contigo, debes **ir a otro grupo de amigos** y volver a indicar que *es hora del descanso.* Si alguien sí quiere almorzar **escribe en la pizarra que os vais a almorzar** y **sal al patio**.
+!!! question "Actividad"
+    Intenta realizar un diagrama para "programar" un almuerzo. En él, deberás dar los ***buenos días***, indicar que ***es hora del descanso***, y preguntar si ***alguién quiere almorzar***. Si no hay nadie que quiera almorzar contigo, debes **ir a otro grupo de amigos** y volver a indicar que *es hora del descanso.* Si alguien sí quiere almorzar **escribe en la pizarra que os vais a almorzar** y **sal al patio**.
 
 ## Crear secuencias
 
@@ -368,6 +367,11 @@ Visualización:
 ## Crear índice
 
 Para crear el índice a partir de los encabezados creados debemos insertar ``[TOC]`` .
+
+## Resumen
+
+!!! info "Resumen"
+    Markdown te permite escribir documentos con formato usando texto plano. Sus elementos principales son: encabezados (`#`), énfasis (`**negrita**`, `*cursiva*`), listas, enlaces, imágenes, bloques de código, tablas, citas (`>`) y diagramas. Es ideal para documentación técnica, apuntes y páginas web estáticas.
 
 ## Tarea
 

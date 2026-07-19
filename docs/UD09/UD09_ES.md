@@ -4,6 +4,15 @@
 
 ![Diagrama](assets/UD09_Diagrama.png)
 
+!!! info "Al finalizar esta unidad serás capaz de..."
+    - [ ] Conocer la arquitectura de JavaFX (Stage, Scene, Node)
+    - [ ] Crear interfaces gráficas básicas con JavaFX
+    - [ ] Utilizar contenedores de layout (StackPane, VBox, HBox, etc.)
+    - [ ] Manejar eventos de usuario (botones, teclado, ratón)
+    - [ ] Diseñar interfaces con Scene Builder y FXML
+    - [ ] Separar la lógica de negocio de la interfaz
+    - [ ] Crear proyectos JavaFX con Maven
+
 ## Introducción
 
 [JavaFX](https://openjfx.io/) fue desarrollado por Chris Oliver. Inicialmente, el proyecto se denominó Form Follows Functions (F3). Está destinado a proporcionar las funcionalidades más ricas para el desarrollo de aplicaciones GUI. Posteriormente, Sun Micro-systems adquirió el proyecto F3 como JavaFX en junio de 2005.
@@ -1843,6 +1852,25 @@ De manera genérica, los componentes de MVC se podrían definir como sigue:
 
 ![](assets/MVC-Process.png){width=400}
 
+!!! info "Resumen — Conceptos clave"
+    | Concepto | Definición |
+    |---|---|
+    | Stage | Ventana principal de la aplicación JavaFX |
+    | Scene | Contenedor del grafo de escena |
+    | Node | Elemento del grafo de escena (botón, texto, imagen...) |
+    | Layout | Contenedor que organiza los nodos hijos |
+    | FXML | Lenguaje de marcado para definir interfaces JavaFX |
+    | SceneBuilder | Herramienta visual para diseñar interfaces FXML |
+    | Evento | Acción del usuario que desencadena una respuesta |
+
 ## Píldoras informáticas relacionadas
 
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+### Autoevaluación
+- [ ] Comprendo la arquitectura Stage-Scene-Node
+- [ ] Creo interfaces con diferentes layouts
+- [ ] Manejo eventos de botones y teclado
+- [ ] Diseño interfaces con Scene Builder
+- [ ] Separo la interfaz (FXML) de la lógica (Java)
+- [ ] Creo proyectos JavaFX con Maven

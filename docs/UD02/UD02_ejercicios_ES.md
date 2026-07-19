@@ -285,9 +285,10 @@
 
 ## Ejercicios
 
-> Estos ejercicios utilizan la interfaz gráfica a la que dedicaremos más tiempo hacia finales de curso. De momento con entender algunos conceptos muy básicos de como dibujar elementos gráficos en una ventana podemos intentar resolverlos usando los conceptos de objetos, clases, herencia, métodos, etcétera que hemos visto en teoría.
->
-> El primero está resuelto y comentado para que te ayude a resolver el resto por tu cuenta o con la ayuda del docente.
+!!! info "Nota"
+    Estos ejercicios utilizan la interfaz gráfica a la que dedicaremos más tiempo hacia finales de curso. De momento con entender algunos conceptos muy básicos de como dibujar elementos gráficos en una ventana podemos intentar resolverlos usando los conceptos de objetos, clases, herencia, métodos, etcétera que hemos visto en teoría.
+
+    El primero está resuelto y comentado para que te ayude a resolver el resto por tu cuenta o con la ayuda del docente.
 
 1. (LlenarConCirculo) Crear una pizarra cuadrada y dibujar en ella un círculo que la ocupe por completo.
 

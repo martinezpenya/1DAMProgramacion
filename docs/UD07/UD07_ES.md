@@ -4,6 +4,15 @@
 
 ![Diagrama](assets/UD07_Diagrama.png)
 
+!!! info "Al finalizar esta unidad serás capaz de..."
+    - [ ] Conocer el framework de colecciones de Java
+    - [ ] Utilizar las interfaces List, Set y Map
+    - [ ] Elegir la implementación adecuada (ArrayList, HashSet, HashMap, etc.)
+    - [ ] Recorrer colecciones con iteradores y for-each
+    - [ ] Aplicar expresiones lambda para operaciones funcionales
+    - [ ] Utilizar Streams para procesar datos
+    - [ ] Implementar la interfaz Comparable y Comparator
+
 ## Introducción
 
 Cuando el volumen de datos a manejar por una aplicación es elevado, no basta con utilizar variables. Manejar los datos de un único pedido en una aplicación puede ser relativamente sencillo, pues un pedido está compuesto por una serie de datos y eso simplemente se traduce en varias variables. 
@@ -257,6 +266,23 @@ Las colecciones en Java parten de una serie de interfaces básicas. Cada interfa
 - **Método `void clear()`**: vaciar la colección.
 
 Más adelante veremos cómo se usan estos métodos, será cuando veamos las implementaciones (clases genéricas que implementan alguna de las interfaces derivadas de la interfaz `Collection`).
+
+```mermaid
+graph TD
+    A[Collection] --> B[List]
+    A --> C[Set]
+    A --> D[Queue]
+    B --> E[ArrayList]
+    B --> F[LinkedList]
+    B --> G[Vector]
+    C --> H[HashSet]
+    C --> I[TreeSet]
+    C --> J[LinkedHashSet]
+    D --> K[PriorityQueue]
+    L[Map] --> M[HashMap]
+    L --> N[TreeMap]
+    L --> O[LinkedHashMap]
+```
 
 ### Conjuntos (sets)
 
@@ -642,6 +668,19 @@ El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada 
 
 Revisa el [Ejemplo07](#ejemplo07)
 
+```mermaid
+graph LR
+    A[Clave: \"Juan\"] --> B{Función hash}
+    C[Clave: \"María\"] --> B
+    D[Clave: \"Pedro\"] --> B
+    B --> E[Índice 0]
+    B --> F[Índice 1]
+    B --> G[Índice 2]
+    E --> H[Valor: 25]
+    F --> I[Valor: 30]
+    G --> J[Valor: 22]
+```
+
 #### Recorrido con `keySet` o `entrySet`
 
 ```java
@@ -1001,6 +1040,14 @@ Dos tipos de operaciones
 - **Finales**: cierran el stream devolviendo algún resultado (colección resultante, cálculo numérico, etc). 
 
 Muchas de estas operaciones tienen como parámetro una interfaz, que puede implementarse muy brevemente empleando expresiones lambda
+
+```mermaid
+graph LR
+    A[Origen: Lista] --> B[filter: edad > 18]
+    B --> C[map: getNombre]
+    C --> D[collect: toList]
+    D --> E[Resultado: Lista<String>]
+```
 
 #### Filtrado
 
@@ -1886,9 +1933,28 @@ public class P6_4_ColeccionesStreams {
 }
 ```
 
+!!! info "Resumen — Conceptos clave"
+    | Concepto | Definición |
+    |---|---|
+    | Colección | Estructura de datos que almacena y organiza objetos |
+    | List | Colección ordenada que permite elementos duplicados |
+    | Set | Colección que NO permite elementos duplicados |
+    | Map | Estructura que asocia claves únicas a valores |
+    | Iterador | Objeto que permite recorrer una colección |
+    | Lambda | Función anónima que permite programación funcional |
+    | Stream | Secuencia de elementos sobre la que se aplican operaciones |
+
 ## Píldoras informáticas relacionadas
 
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+### Autoevaluación
+- [ ] Sé elegir entre List, Set y Map según la necesidad
+- [ ] Utilizo ArrayList, HashSet y HashMap correctamente
+- [ ] Recorro colecciones con iteradores y for-each
+- [ ] Entiendo y aplico expresiones lambda
+- [ ] Utilizo Streams para filtrar, mapear y reducir
+- [ ] Implemento Comparable y Comparator
 
 
 

@@ -3,13 +3,23 @@
 
 ![Diagrama](assets/UD11_Diagrama.png)
 
+!!! info "Al finalizar esta unidad serás capaz de..."
+    - [ ] Conocer las características de las bases de datos orientadas a objetos
+    - [ ] Instalar y configurar ObjectDB
+    - [ ] Crear bases de datos y almacenar objetos
+    - [ ] Realizar consultas con OQL
+    - [ ] Actualizar y eliminar objetos persistentes
+    - [ ] Conocer JDO y JPA como estándares de persistencia
+    - [ ] Comparar BDOO con BDR (relacionales)
+
 ## Introducción
 
 Si bien las BD relacionales son las más populares y las que más aceptan, su utilización dentro de una aplicación orientada a objetos implica un proceso de traducción del diagrama UML original a un modelo relacional, totalmente basado en tablas. En esta traducción se pierden muchas de las funcionalidades básicas de la orientación a objetos, que deben simularse de algún modo: referencias a objetos, clases asociativas, listas de objetos, herencia, etc. Cuando el diagrama es de cierta complejidad, la traducción puede resultar muy complicada.
 
 Para resolver este problema se encuentran las BD orientadas a objetos (BDOO). Éstas, en lugar de organizar los datos en tablas, los organizan exactamente tal y como lo hace un diagrama UML, mediante la definición del conjunto de clases y relaciones entre ellas. Por tanto, no es necesario hacer ninguna traducción.
 
-> ### Para evitar confusiones, utilizamos el término `BDR` para referirnos explícitamente a una BD relacional y el término `BDOO` para referirnos a una BD orientada a objetos, de forma que ambos queden diferenciados.
+!!! info "Aclaración"
+    Para evitar confusiones, utilizamos el término `BDR` para referirnos explícitamente a una BD relacional y el término `BDOO` para referirnos a una BD orientada a objetos, de forma que ambos queden diferenciados.
 
 Actualmente, la aplicación de `BDOO` se limita a ámbitos muy concretos, especialmente a los vinculados a áreas científicas. Su implantación en aplicaciones comerciales a nivel general es muy baja. Uno de los principales problemas de las BDOO es que los fabricantes tienden a crear soluciones incompatibles, que no obedecen a ninguna especificación concreta. Al contrario que en el caso de las BDR, es muy posible que una aplicación cliente hecha por el producto de un fabricante concreto no funcione sobre una BDOO de otro fabricante. De hecho, a las BDOO que soportan Java no se accede mediante JDBC, puesto que este mecanismo es específico para BDR, sino que normalmente se accede usando bibliotecas específicas para cada fabricante. Java tiene una especificación para BDOO llamada JDO (Java Data Objects).
 
@@ -149,29 +159,30 @@ Esta consulta devuelve la fecha de todos los encargos del cliente con dirección
 
 A pesar de los esfuerzos por estandarizar el uso de las `BDOO`, no se puede decir que actualmente haya ningún equivalente al lenguaje `SQL`. Aunque sobre el papel están `ODL` y `OQL`, en la práctica ahora mismo no hay ninguna lengua franca que se pueda garantizar que está soportada, al menos en sus aspectos fundamentales, por todas las bases de datos, todo y que después cada fabricante pueda añadir igualmente sus propias extensiones propietarias. Por tanto, cada tipo de `BDOO` ofrece su propio sistema para acceder a los objetos almacenados. Afortunadamente, como verá, esto no es muy problemático, ya que la ventaja de usar una `BDOO` es poder crear código donde operar con objetos persistentes; es casi igual que trabajar con objetos en memoria, y, por tanto, los mecanismos que ofrecen las diferentes `BDOO` a menudo son muy parecidos a trabajar con objetos directamente en memoria. Lo que varía son las librerías de clases a utilizar, pero no la idea general. En este apartado se verá un caso concreto de acceso a una `BDOO` llamada **[ObjectDB](https://www.objectdb.com/)**
 
-> # **ObjectDB** es un potente sistema de gestión de bases de datos orientado a objetos (`ODBMS`). Es compacto, fiable, fácil de usar y extremadamente rápido. **ObjectDB** proporciona todos los servicios estándar de administración de bases de datos (almacenamiento y recuperación, transacciones, administración de bloqueos, procesamiento de consultas, etc.), pero de una manera que facilita el desarrollo y acelera las aplicaciones.
+!!! info "ObjectDB"
+    **ObjectDB** es un potente sistema de gestión de bases de datos orientado a objetos (`ODBMS`). Es compacto, fiable, fácil de usar y extremadamente rápido. **ObjectDB** proporciona todos los servicios estándar de administración de bases de datos (almacenamiento y recuperación, transacciones, administración de bloqueos, procesamiento de consultas, etc.), pero de una manera que facilita el desarrollo y acelera las aplicaciones.
 
-> ## Características clave de la base de datos **ObjectDB**
->
-> - Sistema de gestión de bases de datos orientado a objetos (ODBMS) 100% puro Java.
-> - Sin API propietaria - administrado únicamente por API de Java estándar (JPA 2 / JDO 2).
-> - Extremadamente rápido: más rápido que cualquier otro producto JPA/JDO.
-> - Adecuado para archivos de bases de datos que van desde kilobytes hasta terabytes.
-> - Admite tanto el modo Cliente-Servidor como el modo Integrado.
-> - JAR único sin dependencias externas.
-> - La base de datos se almacena como un único archivo.
-> - Capacidades avanzadas de consulta e indexación.
-> - Efectivo en entornos multiusuario con mucha carga.
-> - Puede integrarse fácilmente en aplicaciones de cualquier tipo y tamaño.
-> - Probado con Tomcat, Jetty, GlassFish, JBoss y Spring.
+    **Características clave de la base de datos ObjectDB**
 
-> ## **ObjectDB**, que es la `BDOO` elegida permite tanto `JDO` como `JPA` (Java Persistence API). Aunque parece que el mercado evoluciona del lado de JPA y es la modalidad más usada para dotar de persistencia a los datos. Por tanto en este tema usaremos **ObjectDB** con **JPA**.
+    - Sistema de gestión de bases de datos orientado a objetos (ODBMS) 100% puro Java.
+    - Sin API propietaria - administrado únicamente por API de Java estándar (JPA 2 / JDO 2).
+    - Extremadamente rápido: más rápido que cualquier otro producto JPA/JDO.
+    - Adecuado para archivos de bases de datos que van desde kilobytes hasta terabytes.
+    - Admite tanto el modo Cliente-Servidor como el modo Integrado.
+    - JAR único sin dependencias externas.
+    - La base de datos se almacena como un único archivo.
+    - Capacidades avanzadas de consulta e indexación.
+    - Efectivo en entornos multiusuario con mucha carga.
+    - Puede integrarse fácilmente en aplicaciones de cualquier tipo y tamaño.
+    - Probado con Tomcat, Jetty, GlassFish, JBoss y Spring.
 
-> ### **ObjectDB** se puede descargar y utilizar **sin coste (incluso comercialmente)** con la restricción de un máximo de **10 clases de entidad** y **un millón de objetos de entidad** por archivo de base de datos. Esto podría ser útil para proyectos pequeños, tareas académicas, evaluación y aprendizaje. **ObjectDB** es un software comercial y su uso sin estas restricciones [requiere la compra de una licencia](https://www.objectdb.com/database/license).
->
-> Se recomienda probar **ObjectDB** antes de comprar una licencia.
->
-> Más información sobre tipos de licencias: https://www.objectdb.com/database/purchase
+    **ObjectDB**, que es la `BDOO` elegida permite tanto `JDO` como `JPA` (Java Persistence API). Aunque parece que el mercado evoluciona del lado de JPA y es la modalidad más usada para dotar de persistencia a los datos. Por tanto en este tema usaremos **ObjectDB** con **JPA**.
+
+    **ObjectDB** se puede descargar y utilizar **sin coste (incluso comercialmente)** con la restricción de un máximo de **10 clases de entidad** y **un millón de objetos de entidad** por archivo de base de datos. Esto podría ser útil para proyectos pequeños, tareas académicas, evaluación y aprendizaje. **ObjectDB** es un software comercial y su uso sin estas restricciones [requiere la compra de una licencia](https://www.objectdb.com/database/license).
+
+    Se recomienda probar **ObjectDB** antes de comprar una licencia.
+
+    Más información sobre tipos de licencias: https://www.objectdb.com/database/purchase
 
 ### Usar `ObjectDB` con `Maven`
 
@@ -203,15 +214,17 @@ Consulta el Taller 1 de esta unidad para realizar una introducción rápida al u
 
 Como hemos explicado anteriormente, cada BDOO utilitza su propio lenguaje ODL y OQL, a continuación presentaremos el modo de definir la estructura de la BDOO que tiene `ObjectDB`, insertando anotaciones (palabras reservadas que comienza por `@`), para definir la estructura y la persistencia de los objetos en la BDOO.
 
->## Aquí, por su extensión, solo veremos una parte de todo lo que se puede hacer con ObjectDB y JPA, si te interesa profundiza más, te recomiendo que acudas al manual online que tienen publicado en su web, y en el que se basan estos apuntes: https://house.objectdb.com/java/jpa
+!!! tip "Ampliación"
+    Aquí, por su extensión, solo veremos una parte de todo lo que se puede hacer con ObjectDB y JPA, si te interesa profundiza más, te recomiendo que acudas al manual online que tienen publicado en su web, y en el que se basan estos apuntes: https://house.objectdb.com/java/jpa
 
-> **Porqué usamos DBOO y en concreto `ObjectDB` si requiere la compra de una licencia y además no se usa mucho en el mercado?**
->
-> La ventaja de usar `ObjectDB` es que es plenamente compatible con `JPA`, y sus anotaciones son muy similares a las que deberias usar con otros [`ORM`](https://stackoverflow.com/questions/1279613/what-is-an-orm-how-does-it-work-and-how-should-i-use-one), como por ejemplo [`Hibernate`](https://es.wikipedia.org/wiki/Hibernate).
->
-> `Hibernate` es un `ORM` que si se usa mucho a nivel comercial, pero no cumple con los requisitos que marca el Real Decreto que regula el ciclo superior de Desarrollo de Aplicaciones Multiplataforma. 
->
-> De esta manera al estudiar `ObjectDB` nos sirve para cuando necesites usar `Hibernate` y cubrimos los requisitos del RD.
+!!! question "¿Por qué ObjectDB?"
+    ¿Porqué usamos DBOO y en concreto `ObjectDB` si requiere la compra de una licencia y además no se usa mucho en el mercado?
+
+    La ventaja de usar `ObjectDB` es que es plenamente compatible con `JPA`, y sus anotaciones son muy similares a las que deberias usar con otros [`ORM`](https://stackoverflow.com/questions/1279613/what-is-an-orm-how-does-it-work-and-how-should-i-use-one), como por ejemplo [`Hibernate`](https://es.wikipedia.org/wiki/Hibernate).
+
+    `Hibernate` es un `ORM` que si se usa mucho a nivel comercial, pero no cumple con los requisitos que marca el Real Decreto que regula el ciclo superior de Desarrollo de Aplicaciones Multiplataforma. 
+
+    De esta manera al estudiar `ObjectDB` nos sirve para cuando necesites usar `Hibernate` y cubrimos los requisitos del RD.
 
 ### Usando JPA
 
@@ -520,7 +533,8 @@ Sin embargo, las clases integrables no tienen una identidad (clave principal) pr
 
 Los campos inversos (o mapeados por) contienen datos que no se almacenan como parte de la entidad en la base de datos, pero que aún están disponibles después de su recuperación mediante una consulta automática especial.
 
-> ### La navegación a través de campos inversos es **mucho menos eficiente** que la navegación a través de campos persistentes ordinarios, ya que requiere la ejecución de consultas. Los campos inversos son esenciales para los campos de colección cuando se usan implementaciones ORM JPA, **pero no cuando se usa `ObjectDB`**. 
+!!! warning "Rendimiento"
+    La navegación a través de campos inversos es **mucho menos eficiente** que la navegación a través de campos persistentes ordinarios, ya que requiere la ejecución de consultas. Los campos inversos son esenciales para los campos de colección cuando se usan implementaciones ORM JPA, **pero no cuando se usa `ObjectDB`**.
 
 #### Campo de versión
 
@@ -942,8 +956,26 @@ Aquí tienes una tabla comparativa con las **características, ventajas e inconv
 | **Inconvenientes**  | - Menos flexible para datos complejos - Joins costosos | - Menos adopción - Limitado para informes         | - Consultas ineficientes - Curva de aprendizaje |
 | **Mejor uso**       | Datos estructurados, transacciones                     | Apps con dominio OO complejo                      | Proyectos OO con BD relacional                  |
 
+!!! info "Resumen — Conceptos clave"
+    | Concepto | Definición |
+    |---|---|
+    | BDOO | Base de datos que almacena objetos directamente, sin necesidad de mapeo |
+    | ObjectDB | Sistema gestor de bases de datos orientadas a objetos para Java |
+    | OQL | Lenguaje de consulta para BDOO similar a SQL |
+    | Persistencia | Capacidad de un objeto de mantener su estado más allá de la ejecución |
+    | JDO | Java Data Objects — estándar para persistencia de objetos |
+    | Entity | Objeto que puede ser persistido en una base de datos |
+
 ## Píldoras informáticas relacionadas
 - [Curso Spring. Hibernate, acceso a datos. Vídeo 46](https://www.youtube.com/watch?v=sk0YuQPaPWA)
 - [Curso Java. Acceso a BBDD. JDBC I. Vídeo 201](https://www.youtube.com/watch?v=cFLsynl91B0)
 - [JPA + Hibernate](https://youtube.com/playlist?list=PLTd5ehIj0goPcnQs34i0F-Kgp5JHX8UUv&si=wjWSZ7tnYadwONFy)
 <iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+### Autoevaluación
+- [ ] Entiendo qué es una BDOO y en qué se diferencia de una BDR
+- [ ] He instalado ObjectDB correctamente
+- [ ] Persisto objetos en ObjectDB
+- [ ] Realizo consultas con OQL
+- [ ] Actualizo y elimino objetos de la base de datos
+- [ ] Conozco los estándares JDO y JPA

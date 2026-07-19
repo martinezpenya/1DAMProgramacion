@@ -40,7 +40,9 @@
 
 ## Ejercicios
 
- Solo se puede usar en esta actividad ya que no se ha explicado en profundidad en este tema y lo pueden confundir con el  `System.console().readLine()`; 
+!!! warning "Importante"
+    `Scanner` solo se puede usar en esta actividad porque no se ha explicado en profundidad en este tema. No lo confundas con `System.console().readLine()`, que no funciona en la mayoría de IDEs.
+
 
 1. (Ejs1) Probar la E/S elemental: Escribe el pequeño programa que aparece a continuación.
 

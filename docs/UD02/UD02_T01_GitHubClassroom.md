@@ -256,11 +256,12 @@ Una vez comprobado que pasamos los tests lo que queda es subir nuestra solución
 3. Indicamos el mensaje del commit (recomiendo que los puedas identificar de alguna manera, indicando lo que has cambiado, un número de versión, etc.)
 4. Finalmente pulsamos el botón `Commit adn Push`
 
-> Si aparece este error:
->
-> ![commit and push to github classroom error](assets/commit_push_github_classroom_2.png)
->
-> Podemos elegir la opción `Commit anyway and push` si hemos pasado alguno de los test correctamente, o bien `Review code analysis` para ver porque IntelliJ ha detectado algun problema.
+!!! warning "Error común"
+    Si aparece este error:
+
+    ![commit and push to github classroom error](assets/commit_push_github_classroom_2.png)
+
+    Podemos elegir la opción `Commit anyway and push` si hemos pasado alguno de los test correctamente, o bien `Review code analysis` para ver porque IntelliJ ha detectado algun problema.
 
 Por último aparece esta pantalla, y pulsamos directamente el botón `Push`:
 

@@ -6,6 +6,15 @@
 
 ![Diagrama](assets/UD02_Diagrama.png)
 
+!!! info "Al finalizar esta unidad serás capaz de..."
+    - [ ] Comprender los fundamentos de la Programación Orientada a Objetos
+    - [ ] Identificar las características de los objetos: identidad, estado y comportamiento
+    - [ ] Definir clases con atributos y métodos
+    - [ ] Instanciar objetos a partir de clases predefinidas
+    - [ ] Utilizar métodos y propiedades de los objetos
+    - [ ] Diferenciar entre parámetros y argumentos
+    - [ ] Conocer el uso de constructores
+
 ## Introducción a la POO
 
 **Orientado a objetos** hace referencia a una forma diferente de acometer la tarea del desarrollo de software, frente a otros modelos como el de la programación imperativa, la programación funcional o la programación lógica. Supone una reconsideración de los métodos de programación, de la forma de estructurar la información y, ante todo, de la forma de pensar en la resolución de problemas.
@@ -956,6 +965,25 @@ El desplazamiento de Piolín ha sido 42.42640687119285
 
 [Pajaro.java]( code/Pajaro.java){: download="Pajaro.java" }
 
+!!! info "Resumen — Conceptos clave"
+    | Concepto | Definición |
+    |---|---|
+    | POO | Paradigma de programación basado en objetos que representan entidades del mundo real |
+    | Clase | Plantilla o modelo que define atributos y métodos comunes a un conjunto de objetos |
+    | Objeto | Instancia concreta de una clase, con identidad, estado y comportamiento propios |
+    | Atributo | Dato que almacena el estado de un objeto |
+    | Método | Operación que define el comportamiento de un objeto |
+    | Encapsulación | Mecanismo que oculta los detalles internos de un objeto |
+    | Constructor | Método especial que inicializa un objeto al crearlo |
+
 ## Píldoras informáticas relacionadas
 
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+### Autoevaluación
+- [ ] Entiendo los conceptos básicos de la POO
+- [ ] Sé crear una clase con atributos y métodos
+- [ ] Puedo instanciar objetos y llamar a sus métodos
+- [ ] Comprendo la diferencia entre parámetros y argumentos
+- [ ] Sé utilizar constructores
+- [ ] Reconozco la importancia de la encapsulación

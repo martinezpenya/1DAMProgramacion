@@ -6,6 +6,15 @@
 
 ![Diagrama](assets/UD03_Diagrama.png)
 
+!!! info "Al finalizar esta unidad serás capaz de..."
+    - [ ] Utilizar estructuras de selección (if, switch) para tomar decisiones
+    - [ ] Emplear estructuras de iteración (for, while, do-while) para repetir acciones
+    - [ ] Conocer las sentencias de salto (break, continue)
+    - [ ] Manejar excepciones con try-catch-finally
+    - [ ] Lanzar excepciones personalizadas con throw
+    - [ ] Depurar programas para encontrar errores
+    - [ ] Documentar el código correctamente
+
 ## Introducción
 
 En unidades anteriores has podido aprender cuestiones básicas sobre el lenguaje JAVA: definición de variables, tipos de datos, asignación de valores, uso de literales, diferentes operadores que se pueden aplicar, conversiones de tipos, inserción de comentarios, etc. Posteriormente, nos sumergimos de lleno en el mundo de los objetos. Primero hemos conocido su filosofía, para más tarde ir recorriendo los conceptos y técnicas más importantes relacionadas con ellos: Propiedades, métodos, clases, declaración y uso de objetos, librerías, etc.
@@ -173,6 +182,14 @@ La estructura `if` puede presentarse de las siguientes formas:
 
 Si la evaluación de la expresión‐lógica ofrece un resultado verdadero, se ejecuta la sentencia1 o bien el bloque de sentencias asociado. Si el resultado de dicha evaluación es falso, no se ejecutará ninguna instrucción asociada a la estructura condicional.
 
+```mermaid
+flowchart TD
+    A[Condición] -->|true| B[Código si se cumple]
+    A -->|false| C[Código si NO se cumple]
+    B --> D[Siguiente instrucción]
+    C --> D
+```
+
 !!! example "**Estructura `if` de doble alternativa.**"
     ```java
     if (expresión-lógica)
@@ -326,6 +343,22 @@ System.out.println(numericString); //calculaPar()
 
 En resumen, se ha de comparar el valor de una expresión con un conjunto de constantes, si el valor de la expresión coincide con algún valor de dichas constantes, se ejecutarán los bloques de instrucciones asociados a cada una de ellas. Si no existiese coincidencia, se ejecutarían una serie de instrucciones por defecto.
 
+```mermaid
+flowchart TD
+    A[Expresión] --> B{Valor 1}
+    A --> C{Valor 2}
+    A --> D{Valor 3}
+    A --> E{default}
+    B --> F[Código caso 1]
+    C --> G[Código caso 2]
+    D --> H[Código caso 3]
+    E --> I[Código por defecto]
+    F --> J[Siguiente instrucción]
+    G --> J
+    H --> J
+    I --> J
+```
+
 ## Estructuras de repetición
 
 Nuestros programas ya son capaces de controlar su ejecución teniendo en cuenta determinadas condiciones, pero aún hemos de aprender un conjunto de estructuras que nos permita repetir una secuencia de instrucciones determinada. La función de estas estructuras es repetir la ejecución de una serie de instrucciones teniendo en cuenta una condición.
@@ -391,6 +424,15 @@ Donde...:
 - `condición` es una expresión que evaluará la variable de control. Mientras la  condición sea falsa, el cuerpo del bucle estará repitiéndose. Cuando la condición se  cumpla, terminará la ejecución del bucle.
 - `iteración` indica la manera en la que la variable de control va cambiando en cada iteración del bucle.  Podrá ser mediante incremento o decremento, y no solo de uno en uno.
 
+```mermaid
+flowchart TD
+    A[Inicialización: i = valor inicial] --> B{Condición: i < límite?}
+    B -->|true| C[Cuerpo del bucle]
+    C --> D[Incremento: i++]
+    D --> B
+    B -->|false| E[Siguiente instrucción]
+```
+
 ### Estructura `for`/`in`
 
 Junto a la estructura `for`, `for`/`in` también se considera un bucle controlado por contador. Este bucle es una mejora incorporada en la versión 5.0 de Java. 
@@ -452,6 +494,13 @@ Mientras la condición sea cierta, el bucle se repetirá, ejecutando la/s instru
 En el momento en el que la condición no se cumpla, el control del flujo del programa pasará a la siguiente instrucción que exista justo detrás del bucle `while`.
 
 La condición se evaluará siempre al principio, y podrá darse el caso de que las instrucciones contenidas en él no lleguen a ejecutarse nunca si no se satisface la condición de partida.
+
+```mermaid
+flowchart TD
+    A{Condición} -->|true| B[Cuerpo del bucle]
+    B --> A
+    A -->|false| C[Siguiente instrucción]
+```
 
 ### Estructura `do while`
 
@@ -731,6 +780,16 @@ En esta estructura, la parte `catch` puede repetirse tantas veces como excepcion
 Cada `catch` maneja un tipo de excepción. Cuando se produce una excepción, se busca el `catch` que posea el manejador de excepción adecuado, será el que utilice el mismo tipo de excepción que se ha producido. Esto puede causar problemas si no se tiene cuidado, ya que la clase `Exception` es la superclase de todas las demás. Por lo que si se produjo, por ejemplo, una excepción de tipo `Aritmethic Exception` y el primer `catch` captura el tipo genérico `Exception`, será ese `catch` el que se ejecute y no los demás.
 
 Por eso el último `catch` debe ser el que capture excepciones genéricas y los primeros deben ser los más específicos. Lógicamente si vamos a tratar a todas las excepciones (sean del tipo que sean) igual, entonces basta con un solo `catch` que capture objetos `Exception`.
+
+```mermaid
+flowchart TD
+    A[Código dentro de try] --> B{¿Ocurre excepción?}
+    B -->|No| C[Siguiente instrucción después del bloque]
+    B -->|Sí| D[Catch captura la excepción]
+    D --> E[Código de manejo de error]
+    E --> F[finally bloque opcional]
+    F --> C
+```
 
 !!! info "Recuerda"
     En Java, cuando un bloque de código puede provocar una excepción pero no se maneja adecuadamente, se produce lo que se conoce como una "excepción no controlada" o "excepción no capturada". Cuando ocurre una excepción no controlada,  Java sigue un conjunto de reglas específicas para manejarla:
@@ -1502,6 +1561,16 @@ public class ValidadorEdad {
 
 
 
+!!! info "Resumen — Conceptos clave"
+    | Concepto | Definición |
+    |---|---|
+    | Estructura secuencial | Sentencias ejecutadas en orden, una tras otra |
+    | Estructura de selección | Permite elegir entre distintos caminos según una condición |
+    | Estructura de iteración | Repite un bloque de código mientras se cumpla una condición |
+    | Excepción | Evento anómalo que interrumpe el flujo normal del programa |
+    | try-catch | Bloque que permite capturar y manejar excepciones |
+    | Depuración | Proceso de identificar y corregir errores en el código |
+
 ## Píldoras informáticas relacionadas
 
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
@@ -1511,4 +1580,12 @@ Videos de Makigas al respecto:
 - [Java: introducción a las excepciones](https://www.youtube.com/watch?v=kGzwPunAOxk)
 
 - [Java: throw y throws, usos y diferencias ](https://www.youtube.com/watch?v=-xC0o6JQaoE)
+
+### Autoevaluación
+- [ ] Sé utilizar if/else y switch correctamente
+- [ ] Controlo los bucles for, while y do-while
+- [ ] Comprendo cuándo usar break y continue
+- [ ] Puedo capturar y manejar excepciones
+- [ ] Sé lanzar excepciones con throw
+- [ ] Utilizo el depurador del IDE para encontrar errores
 

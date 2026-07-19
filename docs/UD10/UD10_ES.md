@@ -4,6 +4,15 @@
 
 ![Diagrama](assets/UD10_Diagrama.png)
 
+!!! info "Al finalizar esta unidad serás capaz de..."
+    - [ ] Conocer los fundamentos de JDBC
+    - [ ] Establecer conexiones con bases de datos
+    - [ ] Ejecutar consultas SQL con Statement y PreparedStatement
+    - [ ] Recuperar y mostrar resultados con ResultSet
+    - [ ] Realizar operaciones CRUD (insert, select, update, delete)
+    - [ ] Utilizar el patrón DAO para separar la lógica de acceso a datos
+    - [ ] Conectar con bases de datos en la nube (AWS)
+
 ## Introducción
 
 Hoy en día, la mayoría de aplicaciones informáticas necesitan almacenar y gestionar gran cantidad de datos. Esos datos, se suelen guardar en **bases de datos relacionales**, ya que éstas son las más extendidas actualmente.
@@ -91,6 +100,17 @@ JDBC es una especificación formada por una colección de interfaces y clases ab
 
 !!! warning "Importante"
     No será necesario escribir un programa para cada tipo de base de datos, una misma aplicación escrita utilizando JDBC podrá manejar bases de datos Oracle, Sybase, SQL Server, etc.
+
+```mermaid
+flowchart TD
+    A[Aplicación Java] --> B[DriverManager.getConnection]
+    B --> C[Connection]
+    C --> D[Statement / PreparedStatement]
+    D --> E[Ejecutar SQL]
+    E --> F[ResultSet]
+    F --> G[Procesar resultados]
+    G --> H[Cerrar conexión]
+```
 
 ![jdbc_rdbms](assets/jdbc2.png){width=400}
 
@@ -438,6 +458,14 @@ Proporciona una abstracción para las operaciones CRUD (Create, Read, Update, De
 
 El patrón DAO se utiliza para encapsular todo el acceso a la base de datos en una clase separada. Esto permite que la lógica de negocio interactúe con la base de datos a través de métodos definidos en el DAO, sin preocuparse por los detalles de la implementación de la base de datos.
 
+```mermaid
+graph LR
+    A[CREATE: INSERT] --> B[(Base de Datos)]
+    C[READ: SELECT] --> B
+    D[UPDATE: UPDATE] --> B
+    E[DELETE: DELETE] --> B
+```
+
 !!! example "Ejemplo para una clase `Film` sencilla"
 
     ```java
@@ -666,6 +694,17 @@ Film eliminado.
 
 Intentando recuperar el film eliminado...
 El film fue eliminado correctamente.
+```
+
+```mermaid
+graph TD
+    A[Aplicación] --> B[DAO Interface]
+    B --> C[DAOImpl]
+    C --> D[(Base de Datos)]
+    B --> E[DAOImpl - MySQL]
+    B --> F[DAOImpl - Oracle]
+    E --> G[(MySQL)]
+    F --> H[(Oracle)]
 ```
 
 ## Acceso a BBDD
@@ -1534,6 +1573,25 @@ SELECT * FROM usuarios WHERE username = '' OR '1'='1' AND password = '' OR '1'='
 
 Esta consulta siempre devolvería todos los registros de la tabla `usuarios`, lo que podría permitir al atacante acceder a datos que no deberían estar disponibles.
 
+!!! info "Resumen — Conceptos clave"
+    | Concepto | Definición |
+    |---|---|
+    | JDBC | API de Java para conectar y operar con bases de datos relacionales |
+    | Connection | Objeto que representa la conexión a la base de datos |
+    | Statement | Objeto para ejecutar sentencias SQL |
+    | PreparedStatement | Statement precompilado que evita inyección SQL |
+    | ResultSet | Conjunto de resultados devueltos por una consulta |
+    | DAO | Patrón de diseño para abstraer el acceso a datos |
+    | CRUD | Create, Read, Update, Delete — operaciones básicas sobre datos |
+
 ## Píldoras informáticas relacionadas
 
 <iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+### Autoevaluación
+- [ ] Establezco conexiones JDBC con bases de datos
+- [ ] Ejecuto consultas SQL con Statement y PreparedStatement
+- [ ] Recorro ResultSets y extraigo información
+- [ ] Realizo operaciones CRUD completas
+- [ ] Implemento el patrón DAO
+- [ ] Comprendo la importancia de PreparedStatement frente a Statement

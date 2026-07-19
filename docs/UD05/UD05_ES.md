@@ -4,6 +4,16 @@
 
 ![Diagrama](assets/UD05_Diagrama.png)
 
+!!! info "Al finalizar esta unidad serás capaz de..."
+    - [ ] Diseñar clases completas con atributos y métodos
+    - [ ] Aplicar modificadores de acceso (public, private, protected)
+    - [ ] Sobrecargar métodos y constructores
+    - [ ] Implementar la ocultación de atributos (getters/setters)
+    - [ ] Crear constructores de copia
+    - [ ] Definir clases anidadas e internas
+    - [ ] Comprender los fundamentos de la herencia
+    - [ ] Utilizar el empaquetado de clases (paquetes)
+
 !!! Warning ""¿Cómo estudiar esta unidad?"
     Si lees esta unidad de principio a fin, veras que es como la [Unidad 2: Utilización de Objetos y Clases](../UD02/UD02_ES.md), pero con algunos conceptos más desarrollados y otros nuevos.
 
@@ -602,7 +612,8 @@ Un típico ejemplo podría ser el de la sobrecarga de operadores aritméticos co
 
 En algunos lenguajes de programación como por ejemplo C++ o C# se permite la sobrecarga, pero no es algo soportado en todos los lenguajes. ¿Qué sucede en el caso concreto de Java?
 
-> El lenguaje Java **NO** soporta la sobrecarga de operadores.
+!!! warning "Importante"
+    El lenguaje Java **NO** soporta la sobrecarga de operadores.
 
 En el ejemplo anterior de los objetos de tipo Fracción, habrá que declarar métodos en la clase `Fraccion` que se encarguen de realizar esas operaciones, pero no lo podremos hacer sobrecargando los operadores del lenguaje (los símbolos de la suma, resta, producto, etc.). Por ejemplo:
 
@@ -2406,7 +2417,25 @@ public class ClasesAnidadas {
 }
 ```
 
+!!! info "Resumen — Conceptos clave"
+    | Concepto | Definición |
+    |---|---|
+    | Modificador de acceso | Palabra clave que controla la visibilidad (public, private, protected) |
+    | Sobrecarga | Varios métodos con el mismo nombre pero diferentes parámetros |
+    | Getter/Setter | Métodos que permiten acceder y modificar atributos privados |
+    | Constructor de copia | Constructor que crea un objeto copiando los valores de otro |
+    | Clase interna | Clase definida dentro de otra clase |
+    | Paquete | Agrupación de clases relacionadas |
+
 ## Píldoras informáticas relacionadas
 
 <p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+### Autoevaluación
+- [ ] Diseño clases con atributos privados y métodos públicos
+- [ ] Aplico correctamente los modificadores de acceso
+- [ ] Sobrecargo métodos y constructores
+- [ ] Implemento getters y setters
+- [ ] Comprendo el concepto de clase interna
+- [ ] Organizo mis clases en paquetes
 

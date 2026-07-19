@@ -6,9 +6,11 @@ Cada software y cada entorno de desarrollo tiene unas características y funcion
 A continuación se muestra cómo instalar una herramienta de desarrollo de software integrada, como Eclipse. Pero también podrás observar los procedimientos para instalar otras herramientas necesarias o recomendadas para trabajar con el lenguaje de programación JAVA, como Tomcat o la Máquina Virtual de Java.
 Debes tener en cuenta los siguientes conceptos:
 
-- La JVM (Java Virtual Machine, máquina virtual de Java) es la encargada de interpretar el bytecode y generar el código máquina del ordenador (o dispositivo) en el que se ejecuta la aplicación. Esto quiere decir que necesitamos una JVM distinta para cada entorno.
-- JRE (Java Runtime Environment) es un conjunto de utilidades Java que incluye la JVM, las bibliotecas y el conjunto de software necesario para ejecutar aplicaciones cliente Java, así como el conector para que los navegadores de Internet ejecuten applets.
-- JDK (Java Development Kit) es el conjunto de herramientas para desarrolladores; contiene, entre otras cosas, el JRE y el conjunto de herramientas necesarias para compilar el código, empaquetarlo, generar documentación...
+!!! info "Definición"
+    - **JVM**: Máquina Virtual Java — ejecuta el bytecode.
+    - **JRE**: Java Runtime Environment — incluye la JVM + bibliotecas para ejecutar aplicaciones.
+    - **JDK**: Java Development Kit — incluye el JRE + herramientas de desarrollo (compilador `javac`, etc.).
+
 
 
 ```mermaid
@@ -49,21 +51,18 @@ El archivo es diferente según el sistema operativo donde se tenga que instalar.
 En los dos primeros casos, simplemente hay que seguir el procedimiento de instalación habitual del sistema operativo con el que estamos trabajando.
 En este último caso, sin embargo, hay que descomprimir el archivo y copiarlo en la carpeta donde se desea instalar. Normalmente, todos los usuarios tendrán permisos de lectura y ejecución en esta carpeta.
 
-> A partir de la versión 11 de JDK, Oracle distribuye el software con una licencia significativamente más restrictiva que las versiones anteriores. En particular, solo se puede utilizar para "desarrollar, probar, crear prototipos y demostrar sus aplicaciones". Cualquier uso "para fines comerciales, de producción o empresariales internos" distinto del mencionado anteriormente queda explícitamente excluido.
->
-> Si lo necesitas para alguno de estos usos no permitidos en la nueva licencia, además de las versiones anteriores del JDK, existen versiones de referencia de estas versiones licenciadas "GNU General Public License version 2, with the Classpath Exception", que permiten la mayoría de los usos habituales. Estas versiones están enlazadas a la misma página de descarga y también a la dirección jdk.java.net.
+!!! danger "Atención"
+    Desde JDK 11, Oracle cambió la licencia. Para evitar restricciones, usa **OpenJDK** (descargable desde https://adoptium.net/), que es gratuito y de código abierto.
 
 Una alternativa es utilizar https://adoptium.net/ antes conocido como adoptOpenJDK, que ahora se ha integrado en la fundación Eclipse. Desde allí podemos descargar los binarios de la versión openJDK para nuestra plataforma sin restricciones. [Noticia completa] (https://es.wikipedia.org/wiki/OpenJDK).
 
 
-> En GNU/Linux podemos utilizar los comandos:
+!!! tip "GNU/Linux"
+    En GNU/Linux podemos utilizar los comandos:
 
->
-> - `sudo apt install default-jdk` para instalar el jdk predeterminado.
-
-> - `java --version` para ver las versiones disponibles en nuestro sistema.
-
-> - `sudo update-alternatives --config java` para elegir cuál de las versiones instaladas queremos usar por defecto o incluso ver la ruta de las diferentes versiones que tenemos instaladas.
+    - `sudo apt install default-jdk` para instalar el jdk predeterminado.
+    - `java --version` para ver las versiones disponibles en nuestro sistema.
+    - `sudo update-alternatives --config java` para elegir cuál de las versiones instaladas queremos usar por defecto o incluso ver la ruta de las diferentes versiones que tenemos instaladas.
 
 ### Configurar las variables de entorno "JAVA_HOME" y "PATH"
 
@@ -136,7 +135,8 @@ Una vez cerrada esta pestaña, el entorno de trabajo será similar a esto:
 
 <img src="assets/ECL_INST_09.png" alt="Paso 9" style="zoom:50%;" />
 
-> Por defecto Eclipse nos ofrece la descarga del instalador más ligero que descargará de Internet los paquetes necesarios para completar la instalación según nuestras elecciones. Si esta instalación nos da problemas, podemos descargar la versión "package" en la que previamente deberemos elegir el paquete de instalación que queramos, ocupará bastante más, pero descargará todos los paquetes necesarios. Después solo tendremos que descomprimir el archivo descargado en una carpeta de nuestra elección y ya tendremos eclipse instalado. Tendremos que crear nuestro propio menú de inicio e iconos del escritorio (podéis seguir esta [guía] (https://www.donovanbrown.com/post/Añadir-Eclipse-al-Launcher-en-Ubuntu-1604) cambiando la ruta donde habéis descomprimido vuestra versión de eclipse).
+!!! info "Nota"
+    Por defecto Eclipse nos ofrece la descarga del instalador más ligero que descargará de Internet los paquetes necesarios para completar la instalación según nuestras elecciones. Si esta instalación nos da problemas, podemos descargar la versión "package" en la que previamente deberemos elegir el paquete de instalación que queramos, ocupará bastante más, pero descargará todos los paquetes necesarios. Después solo tendremos que descomprimir el archivo descargado en una carpeta de nuestra elección y ya tendremos eclipse instalado. Tendremos que crear nuestro propio menú de inicio e iconos del escritorio (podéis seguir esta [guía] (https://www.donovanbrown.com/post/Añadir-Eclipse-al-Launcher-en-Ubuntu-1604) cambiando la ruta donde habéis descomprimido vuestra versión de eclipse).
 
 ### Configuración
 
@@ -297,7 +297,8 @@ Debes ejecutar el script de instalación
 ```sh
 $  sudo sh ./Apache-NetBeans-12.4-bin-linux-x64.sh
 ```
-> Si ejecuta el script como `root` (`sudo`) Netbeans estará disponible para todos los usuarios. Por el contrario, si ejecuta el usuario sin `sudo`, solo estará disponible para su usuario.
+!!! tip "Instalación"
+    Si ejecuta el script como `root` (`sudo`) Netbeans estará disponible para todos los usuarios. Por el contrario, si ejecuta el usuario sin `sudo`, solo estará disponible para su usuario.
 
 Aparecerá una barra de progreso como esta:
 
