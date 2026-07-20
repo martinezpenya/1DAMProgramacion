@@ -97,16 +97,8 @@ Los métodos realizan algún tipo de acción o tarea y, en ocasiones, devuelven 
 Para realizar su trabajo puede ser necesario que pasemos al método cierta información. Por ejemplo, cuando llamamos al método `round` de la clase `Math`, para redondear un número real, debemos indicar al método cual es el número que queremos redondear. A esa información que pasamos a los métodos se le llama **parámetros** o **argumentos**.
 
 !!! example "Ejemplo"
-    ```java
-    //Al llamar a Math.round, pasamos al método un parámetro 
-    int redondeado1 = Math.round(numero);
-    int redondeado2 = Math.round(125.687);
-    ...
-    //Al llamar a Math.pow, pasamos al método dos parámetros
-    int pot1 = Math.pow(a,b);
-    int pot2 = Math.pow(a,6);
-    ...
-    ```
+    Consulta el [Ejemplo01](#ejemplo01) para ver la sintaxis de declaración de métodos.
+    {: #teoria-ejemplo01 }
 
 En la definición de un método se distinguen dos partes
 
@@ -116,15 +108,7 @@ En la definición de un método se distinguen dos partes
 Para definirlos, se sigue la siguiente sintaxis (los corchetes indican opcionalidad):
 
 !!! example "Ejemplo"
-    ```java
-    public static void main (String[] args)
-    [ámbito] [static] tipoDevuelto nombreDelMetodo ([parámetros]){
-        //Cuerpo del método (instrucciones)
-        ...
-        ...
-        ...
-    }
-    ```
+    Consulta el [Ejemplo01](#ejemplo01) para ver la sintaxis de declaración de métodos.
     donde...
 
     - ***ámbito*** permite indicar desde qué clases es accesible el método.
@@ -173,26 +157,8 @@ Para declarar una clase en Java se utiliza la palabra reservada `class`. La decl
 - **Cuerpo de la clase**. En él se especifican encerrados entre llaves los atributos y los métodos que va a tener la clase.
 
 !!! example "Ejemplo"
-    ```java
-    //Paquete al que pertenece la clase
-    package NombreDePaquete;
-
-    //Paquetes que importa la clase
-    import ...
-    
-    ...
-    
-    public class NombreDeLaClase {
-        // Atributos de la clase
-        ...
-        ...
-        ...
-        // Métodos de la clase
-        ...
-        ...
-        ...
-    }
-    ```
+    Consulta el [Ejemplo02](#ejemplo02) para ver la estructura básica de una clase Java.
+    {: #teoria-ejemplo02 }
 
 !!! example "Ejemplo"
     En la unidad anterior ya hemos utilizado clases, aunque aún no sabíamos su significado exacto. Por ejemplo, en los ejemplos de la unidad o en la tarea, estábamos utilizando clases, todas ellas eran clases principales, no tenían ningún atributo y el único método del que disponían era el método `main()`.
@@ -380,36 +346,9 @@ O bien podemos utilizar un método para hacer lo anterior:
 rect.setSize(200, 200);
 ```
 
-A continuación puedes acceder al código del ejemplo:
-
 !!! example "Ejemplo"
-    ```java
-    /*
-     * Muestra como se manipulan objetos en Java
-     */
-    import java.awt.Rectangle;
-    public class Manipular {
-        public static void main(String[] args) {
-            // Instanciamos el objeto rect indicando posicion y dimensiones
-            Rectangle rect = new Rectangle( 50, 50, 150, 150 );
-            //Consultamos las coordenadas x e y del rectangulo
-            System.out.println( "------- Coordenadas esquina superior izqda. -------");
-            System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
-            // Consultamos las dimensiones (altura y anchura) del rectangulo
-            System.out.println( "\n----------------- Dimensiones -------------------");
-            System.out.println("\tAlto = " + rect.height );
-            System.out.println( "\tAncho = " + rect.width);
-            //Cambiar coordenadas del rectangulo
-            rect.height=100;
-            rect.width=100;
-            rect.setSize(200, 200);
-            System.out.println( "\n-- Nuevos valores de los atributos --");
-            System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
-            System.out.println("\tAlto = " + rect.height );
-            System.out.println( "\tAncho = " + rect.width);
-        }
-    }
-    ```
+    Consulta el [Ejemplo03](#ejemplo03) para ver el código completo de manipulación de objetos `Rectangle`.
+    {: #teoria-ejemplo03 }
 
 ### Destrucción de objetos y liberación de memoria
 
@@ -561,6 +500,10 @@ En el primer ejemplo, `.setRadio(200)` va precedido por un objeto. La variable `
 
 En el segundo ejemplo, en cambio, a la izquierda de `.sqrt(4)` no se ha puesto el nombre de un objeto, sino el de una clase, la clase `Math`. El método `sqrt` no está actuando sobre un objeto concreto: no tiene sentido hacerlo, solo pretendemos calcular la raíz cuadrada de `4`. `Sqrt` es un método estático. Los métodos estáticos se usan poniendo delante del punto el nombre de la clase en que se encuentran definidos.
 
+!!! example "Ejemplo completo: clase Pajaro"
+    Consulta el [Ejemplo05](#ejemplo05) para ver un ejemplo completo de clase con constructores, métodos y el uso de `this`.
+    {: #teoria-ejemplo05 }
+
 ## **Librerías de Objetos (Paquetes)**
 
 Conforme nuestros programas se van haciendo más grandes, el número de clases va creciendo. Meter todas las clases en único directorio no ayuda a que estén bien organizadas, lo mejor es hacer grupos de clases, de forma que todas las clases que estén relacionadas o traten sobre un mismo tema estén en el mismo grupo.
@@ -702,41 +645,9 @@ String nombreCompleto = tec.nextLine();
 
 #### Ejemplos de la UD01 pero utilizando `Scanner` (compatible con los IDE's)
 
-A continuación vamos a ver los mismos ejemplos de la UD01, pero utilizando la clase `Scanner` que si es compatible con los IDE's. Para poder usar la clase `Scanner` necesitamos importar el paquete:  `java.util.Scanner`.
-
-```java
-import java.util.Scanner;
-
-public class EjemploUD02 {
-
-    public static void main(String[] args) {
-
-        Scanner teclado = new Scanner(System.in);
-        
-        //Introducir texto desde teclado
-        String texto;
-        System.out.print("Introduce un texto: ");
-        texto = teclado.nextLine(); 
-        System.out.println("El texto introducido es: "+ texto);
-        
-        //Introducir un número entero desde teclado
-        String texto2;
-        int entero2;
-        System.out.print("Introduce un número: ");
-        texto2 = teclado.nextLine(); 
-        entero2 = Integer.parseInt(texto2);
-        System.out.println("El número introducido es:"+entero2);
-
-        //Introducir un número decimal desde teclado
-        String texto3;
-        double doble3;
-        System.out.print("Introduce un número decimal: ");
-        texto3 = teclado.nextLine(); 
-        doble3 = Double.parseDouble(texto3); // convertimos texto a doble
-        System.out.println("Número decimal introducido es: "+doble3);
-    }
-}
-```
+!!! example "Scanner"
+    Consulta el [Ejemplo04](#ejemplo04) para ver el código completo de lectura por teclado con `Scanner`.
+    {: #teoria-ejemplo04 }
 
 ### La clase `String`
 
@@ -796,45 +707,134 @@ System.err.println("Salida de error por pantalla");
 
 Tanto NetBeans, Eclipse como IntelliJ Idea mostraran el mensaje `err` en color rojo.
 
-## Ejemplo UD02
+!!! example "Ejemplo completo: String, printf y System.err"
+    Consulta el [Ejemplo06](#ejemplo06) para ver un ejemplo completo con métodos de `String`, `printf`/`format` y `System.err`.
+    {: #teoria-ejemplo06 }
 
-### Clase `Pajaro`
+## Ejemplos UD02
 
-Vamos a ilustrar mediante un ejemplo la utilización de objetos y métodos, así como el uso de parámetros y el operador `this`. Aunque la creación de clases la veremos en las siguientes unidades, en este ejercicio creamos una pequeña clase para que podamos instanciar el objeto con el que vamos a trabajar.
+[Descarga el código fuente completo de los ejemplos](code/EjemploUD02.java){: download="EjemploUD02.java"}
 
-Las clases se suelen representar como un rectángulo, y dentro de él se sitúan los atributos y los métodos de dicha clase.
+### Ejemplo01
 
-En la imagen, la clase `Pajaro` está compuesta por tres atributos, uno de ellos el `nombre` y otros dos que indican la posición del ave, `posX` y `posY`. Tiene tres métodos constructores y un método `volar()`. Como sabemos, los métodos constructores reciben el mismo nombre de la clase, y puede haber varios para una misma clase, dentro de ella se diferencian unos de otros por los parámetros que utilizan.
+Sintaxis de declaración de un método en Java.
 
-!!! example "Enunciado:"
-    Dada una clase principal llamada `Pajaro`, se definen los atributos y métodos que aparecen en la imagen. Los métodos realizan las siguientes acciones:
+```java
+public static void main (String[] args)
+[ámbito] [static] tipoDevuelto nombreDelMetodo ([parámetros]){
+    //Cuerpo del método (instrucciones)
+    ...
+}
+```
 
-    ```mermaid
-    classDiagram
-        Pajaro
-        class Pajaro{
-            -String nombre
-            -int posX
-            -int posY
-            +Pajaro()
-            +Pajaro(String nombre)
-            +Pajaro(String nombre, int posX, int posY)
-            +double volar(int posX, int posY)
-        }
-    ```
-    
-    - `Pajaro()`. Constructor por defecto. En este caso, el constructor por defecto no contiene ninguna instrucción, ya que Java inicializa de forma automática las variables miembro, si no le damos ningún valor.
-    - `Pajaro(String nombre)`. Constructor que recibe como argumentos una cadena de texto (el nombre del pájaro).
-    - `Pajaro(String nombre, int posX, int posY)`. Constructor que recibe como argumentos una cadena de texto y dos enteros para inicializar el valor de los atributos.
-    - `double volar(int posX, int posY)`. Método que recibe como argumentos dos enteros: `posX` y `posY`, y devuelve un valor de tipo `double` como resultado, usando la palabra clave `return`. El valor devuelto es el resultado de aplicar un desplazamiento de acuerdo con la siguiente fórmula:
-    
-    $$
-    desplazamiento = \sqrt{posX · posX + posY · posY}
-    $$
-    
-    Diseña un programa que utilice la clase `Pajaro`, cree una instancia de dicha clase y ejecute sus métodos.
+[⬆ Volver a teoría](#teoria-ejemplo01)
+ 
+---
 
-Lo primero que debemos hacer es crear la clase `Pajaro`, con sus métodos y atributos. De acuerdo con los datos que tenemos, el código de la clase sería el siguiente:
+### Ejemplo02
+
+Estructura básica de una clase Java.
+
+```java
+//Paquete al que pertenece la clase
+package NombreDePaquete;
+
+//Paquetes que importa la clase
+import ...
+
+public class NombreDeLaClase {
+    // Atributos de la clase
+    ...
+    // Métodos de la clase
+    ...
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo02)
+ 
+---
+
+### Ejemplo03
+
+Manipulación de objetos `Rectangle` de la biblioteca `java.awt`.
+
+```java
+/*
+ * Muestra como se manipulan objetos en Java
+ */
+import java.awt.Rectangle;
+public class Manipular {
+    public static void main(String[] args) {
+        // Instanciamos el objeto rect indicando posicion y dimensiones
+        Rectangle rect = new Rectangle( 50, 50, 150, 150 );
+        //Consultamos las coordenadas x e y del rectangulo
+        System.out.println( "------- Coordenadas esquina superior izqda. -------");
+        System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
+        // Consultamos las dimensiones (altura y anchura) del rectangulo
+        System.out.println( "\n----------------- Dimensiones -------------------");
+        System.out.println("\tAlto = " + rect.height );
+        System.out.println( "\tAncho = " + rect.width);
+        //Cambiar coordenadas del rectangulo
+        rect.height=100;
+        rect.width=100;
+        rect.setSize(200, 200);
+        System.out.println( "\n-- Nuevos valores de los atributos --");
+        System.out.println("\tx = " + rect.x + "\n\ty = " + rect.y);
+        System.out.println("\tAlto = " + rect.height );
+        System.out.println( "\tAncho = " + rect.width);
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo03)
+ 
+---
+
+### Ejemplo04
+
+Lectura de datos desde teclado con `Scanner` (compatible con IDEs).
+
+```java
+import java.util.Scanner;
+
+public class EjemploUD02 {
+
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+        
+        //Introducir texto desde teclado
+        String texto;
+        System.out.print("Introduce un texto: ");
+        texto = teclado.nextLine(); 
+        System.out.println("El texto introducido es: "+ texto);
+        
+        //Introducir un número entero desde teclado
+        String texto2;
+        int entero2;
+        System.out.print("Introduce un número: ");
+        texto2 = teclado.nextLine(); 
+        entero2 = Integer.parseInt(texto2);
+        System.out.println("El número introducido es:"+entero2);
+
+        //Introducir un número decimal desde teclado
+        String texto3;
+        double doble3;
+        System.out.print("Introduce un número decimal: ");
+        texto3 = teclado.nextLine(); 
+        doble3 = Double.parseDouble(texto3); // convertimos texto a doble
+        System.out.println("Número decimal introducido es: "+doble3);
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo04)
+ 
+---
+
+### Ejemplo05
+
+Clase `Pajaro` completa con constructores y método `volar()`.
 
 ```java
 public class Pajaro {
@@ -857,133 +857,123 @@ public class Pajaro {
     //metodos
     public double volar(int posX, int posY) {
         double desplazamiento = Math.sqrt((posX * posX) + (posY * posY));
-        //desplazamiento=Math.sqrt(Math.pow(posX,2)+Math.pow(posY,2));
         this.posX = posX;
         this.posY = posY;
         return desplazamiento;
     }
-    //método main()
-    [...] 
+    
+    public static void main(String[] args) {
+        //creamos el objeto con parámetros
+        Pajaro pajaro1 = new Pajaro("WoodPecker", 50, 50);
+        double d1 = pajaro1.volar(50, 50);
+        System.out.println("El desplazamiento de " + pajaro1.nombre + " ha sido " + d1);
+
+        Pajaro pajaro2 = new Pajaro();
+        //damos nombre y cambiamos la posición de "Piolin" a mano
+        pajaro2.nombre="Piolín";
+        pajaro2.posX=30;
+        pajaro2.posY=30;
+        double d2 = pajaro2.volar(pajaro2.posX, pajaro2.posY);
+        System.out.println("El desplazamiento de " + pajaro2.nombre + " ha sido " + d2);
+    }
 }
 ```
 
-Debemos tener en cuenta que se trata de una clase principal, lo cual quiere decir que debe contener un
-método `main()` dentro de ella. En el método `main()` vamos a situar el código de nuestro programa. El ejercicio dice que tenemos que crear una instancia de la clase y ejecutar sus métodos, entre los que están el constructor y el método `volar()`.
-
-También es conveniente imprimir el resultado de ejecutar el método `volar()`. Por tanto, lo que haría el programa sería:
-
-- Crear un objeto de la clase e inicializarlo.
-- Invocar al método volar.
-- Imprimir por pantalla la distancia recorrida.
-
-Para inicializar el objeto utilizaremos el constructor con parámetros, después ejecutaremos el método `volar()` del objeto creado y finalmente imprimiremos el valor que nos devuelve el método.
-
-Luego crearemos otro `pajaro2` usando el constructor por defecto (sin parámetros). Le asignaremos el nombre y la posición manualmente, y calcularemos su desplazamiento llamando al método, pero usando los atributos del objeto (`pajaro2.posX` y `pajaro2.posY`) en lugar de constantes. El código del método `main()` quedaría como sigue:
-
-```java
-public static void main(String[] args) {
-    //creamos el objeto con parámetros
-    Pajaro pajaro1 = new Pajaro("WoodPecker", 50, 50);
-    double d1 = pajaro1.volar(50, 50);
-    System.out.println("El desplazamiento de " + pajaro1.nombre + " ha sido " + d1);
-
-    Pajaro pajaro2 = new Pajaro();
-    //damos nombre y cambiamos la posición de "Piolin" a mano
-    pajaro2.nombre="Piolín";
-    pajaro2.posX=30;
-    pajaro2.posY=30;
-    double d2 = pajaro2.volar(pajaro2.posX, pajaro2.posY);
-    System.out.println("El desplazamiento de " + pajaro2.nombre + " ha sido " + d2);
-}
-```
-
-Si ejecutamos nuestro programa el resultado sería el siguiente:
-
+**Salida:**
 ```sh
 El desplazamiento de WoodPecker ha sido 70.71067811865476
 El desplazamiento de Piolín ha sido 42.42640687119285
 ```
 
-### Clase `String`
+[⬆ Volver a teoría](#teoria-ejemplo05)
+ 
+---
 
-!!! example "Ejemplo:"
-    ```java
-    package UD02;
+### Ejemplo06
 
-    import java.util.Scanner;
-    
-    public class EjemploUD02 {
-    
-        public static void main(String[] args) {
-    
-            Scanner teclado = new Scanner(System.in);
-    
-            //Introducir texto desde teclado
-            String texto;
-            System.out.print("Introduce un texto: ");
-            texto = teclado.nextLine();
-            System.out.println("El texto introducido es: " + texto);
-    
-            //Introducir un número entero desde teclado
-            String texto2;
-            int entero2;
-            System.out.print("Introduce un número: ");
-            texto2 = teclado.nextLine();
-            entero2 = Integer.parseInt(texto2);
-            System.out.println("El número introducido es:" + entero2);
-    
-            //Introducir un número decimal desde teclado
-            String texto3;
-            double doble3;
-            System.out.print("Introduce un número decimal: ");
-            texto3 = teclado.nextLine();
-            doble3 = Double.parseDouble(texto3); // convertimos texto a doble
-            System.out.println("Número decimal introducido es: " + doble3);
-    
-            System.out.println("La clase String");
-            String nombre = "Javier "; //Observa que hay un espacio final
-            System.out.println(nombre.toUpperCase()); //JAVIER 
-            System.out.println(nombre.charAt(4)); //e
-            System.out.println(nombre.indexOf("i"));//3
-            System.out.println(nombre.substring(0, 3));//Javi
-            System.out.println(nombre.toLowerCase());//javier
-            System.out.println(nombre.trim());//Javier sin espacios finales
-            System.out.printf("%,.2f\n", 12345.1684);
-            nombre.toUpperCase().substring(0,3).indexOf("I"); //3
-            System.out.format("El valor de la variable float es %f"
-                    + ", mientras que el valor del entero es %d"
-                    + " y el string contiene %s", doble3, entero2, texto);
-            
-            System.err.println("Salida de error por pantalla");
-        }
+Métodos de la clase `String`, `printf`/`format` y `System.err`.
+
+```java
+package UD02;
+
+import java.util.Scanner;
+
+public class EjemploUD02 {
+
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+
+        //Introducir texto desde teclado
+        String texto;
+        System.out.print("Introduce un texto: ");
+        texto = teclado.nextLine();
+        System.out.println("El texto introducido es: " + texto);
+
+        //Introducir un número entero desde teclado
+        String texto2;
+        int entero2;
+        System.out.print("Introduce un número: ");
+        texto2 = teclado.nextLine();
+        entero2 = Integer.parseInt(texto2);
+        System.out.println("El número introducido es:" + entero2);
+
+        //Introducir un número decimal desde teclado
+        String texto3;
+        double doble3;
+        System.out.print("Introduce un número decimal: ");
+        texto3 = teclado.nextLine();
+        doble3 = Double.parseDouble(texto3);
+        System.out.println("Número decimal introducido es: " + doble3);
+
+        System.out.println("La clase String");
+        String nombre = "Javier "; //Observa que hay un espacio final
+        System.out.println(nombre.toUpperCase()); //JAVIER 
+        System.out.println(nombre.charAt(4)); //e
+        System.out.println(nombre.indexOf("i"));//3
+        System.out.println(nombre.substring(0, 3));//Javi
+        System.out.println(nombre.toLowerCase());//javier
+        System.out.println(nombre.trim());//Javier sin espacios finales
+        System.out.printf("%,.2f\n", 12345.1684);
+        nombre.toUpperCase().substring(0,3).indexOf("I"); //3
+        System.out.format("El valor de la variable float es %f"
+                + ", mientras que el valor del entero es %d"
+                + " y el string contiene %s", doble3, entero2, texto);
+        
+        System.err.println("Salida de error por pantalla");
     }
-    ```
+}
+```
 
-## Ejemplos UD02
+[⬆ Volver a teoría](#teoria-ejemplo06)
+ 
+## Resumen — Conceptos clave
 
-[EjemploUD02.java]( code/EjemploUD02.java){: download ="EjemploUD02.java"}
+| Concepto | Definición |
+|---|---|
+| POO | Paradigma de programación basado en objetos que representan entidades del mundo real |
+| Clase | Plantilla o modelo que define atributos y métodos comunes a un conjunto de objetos |
+| Objeto | Instancia concreta de una clase, con identidad, estado y comportamiento propios |
+| Atributo | Dato que almacena el estado de un objeto |
+| Método | Operación que define el comportamiento de un objeto |
+| Encapsulación | Mecanismo que oculta los detalles internos de un objeto |
+| Constructor | Método especial que inicializa un objeto al crearlo |
 
-[Pajaro.java]( code/Pajaro.java){: download="Pajaro.java" }
-
-!!! info "Resumen — Conceptos clave"
-    | Concepto | Definición |
-    |---|---|
-    | POO | Paradigma de programación basado en objetos que representan entidades del mundo real |
-    | Clase | Plantilla o modelo que define atributos y métodos comunes a un conjunto de objetos |
-    | Objeto | Instancia concreta de una clase, con identidad, estado y comportamiento propios |
-    | Atributo | Dato que almacena el estado de un objeto |
-    | Método | Operación que define el comportamiento de un objeto |
-    | Encapsulación | Mecanismo que oculta los detalles internos de un objeto |
-    | Constructor | Método especial que inicializa un objeto al crearlo |
-
-## Píldoras informáticas relacionadas
-
-<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-
-### Autoevaluación
+## Autoevaluación
 - [ ] Entiendo los conceptos básicos de la POO
 - [ ] Sé crear una clase con atributos y métodos
 - [ ] Puedo instanciar objetos y llamar a sus métodos
 - [ ] Comprendo la diferencia entre parámetros y argumentos
 - [ ] Sé utilizar constructores
 - [ ] Reconozco la importancia de la encapsulación
+
+## Vídeos recomendados
+
+| Canal | Vídeo | Contenido |
+|-------|-------|-----------|
+| **Programación ATS** | [Playlist completa del curso Java](https://youtube.com/playlist?list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K) | Vídeos 1–9: introducción, objetos, clases, Scanner |
+| **Píldoras Informáticas** | [Curso Java 2026 — Estructuras principales](https://www.youtube.com/@pildorasinformaticas) | Vídeos 2–22: tipos, variables, Scanner, operadores |
+| **MoureDev** | [Curso Completo de Java desde Cero](https://youtu.be/JOAqpdM36wI) | Sección de objetos, clases y Strings |
+| **DiscoDurodeRoer** | [Variables y tipos](https://youtu.be/5EhR-6oW8-U) | Variables en Java |
+| **DiscoDurodeRoer** | [Scanner — entrada de datos](https://youtu.be/pnenmGmSLaQ) | Lectura por teclado con Scanner |
+

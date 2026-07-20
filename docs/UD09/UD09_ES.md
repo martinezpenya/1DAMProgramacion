@@ -45,33 +45,9 @@ En la siguiente figura se puede ver un ejemplo de un gráfico de escena "Hola Mu
 
 Una posible implementación que producirá un gráfico de escena que coincida con la figura anterior es la siguiente.
 
-**`E01_HolaMundo.java`**
+Consulta el código completo de [E01_HolaMundo](#ejemplo01).
+{: #teoria-ejemplo01 }
 
-```java
-import javafx.application.Application;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-
-public class HolaMundo extends Application {
-
-    private Parent createContent() {
-        return new StackPane(new Text("Hola Mundo"));
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(createContent(), 400, 400));
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
-```
 
 El resultado de ejecutar el código se ve en la siguiente figura.
 
@@ -86,60 +62,9 @@ Notas importantes:
 
 Usaremos la siguiente aplicación como ejemplo para demostrar las 3 transformaciones más comunes.
 
-**`E02_TransformApp.java`**
+Consulta el código completo de [E02_TransformApp](#ejemplo02).
+{: #teoria-ejemplo02 }
 
-```java
-package UD09;
-
-import javafx.application.Application;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
-
-/**
- *
- * @author David Martínez (wwww.martinezpenya.es|ieseduardoprimo.es)
- */
-public class E02_TransformApp extends Application {
-
-    private Parent createContent() {
-        Rectangle box = new Rectangle(100, 50, Color.BLUE);
-
-        transform(box);
-
-        return new Pane(box);
-    }
-
-    private void transform(Rectangle box) {
-        //Aplicaremos las transformaciones aquí
-
-        //Descomentar para traslación
-        //box.setTranslateX(100);
-        //box.setTranslateY(200);
-
-        //Descomentar para escalado
-        //box.setScaleX(1.5);
-        //box.setScaleY(1.5);
-
-        //Descomentar para rotación
-        //box.setRotate(30);
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(createContent(), 300, 300, Color.GRAY));
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
-
-```
 
 Ejecutar la aplicación dará como resultado la primera imagen (y si descomentamos por grupos, las siguientes).
 
@@ -187,26 +112,9 @@ El mecanismo de notificación de eventos lo realiza la plataforma JavaFX automá
 
 Primero, vamos a crear un evento personalizado.
 
-**`E03_EventoUsuario.java`**
+Consulta el código completo de [E03_EventoUsuario](#ejemplo03).
+{: #teoria-ejemplo03 }
 
-```java
-import javafx.event.Event;
-import javafx.event.EventType;
-
-public class E03_EventoUsuario extends Event {
-
-    public static final EventType<E03_EventoUsuario> ANY = new EventType<>(Event.ANY, "ANY");
-
-    public static final EventType<E03_EventoUsuario> LOGIN_SUCCEEDED = new EventType<>(ANY, "LOGIN_SUCCEEDED");
-
-    public static final EventType<E03_EventoUsuario> LOGIN_FAILED = new EventType<>(ANY, "LOGIN_FAILED");
-
-    public E03_EventoUsuario(EventType<? extends Event> eventType) {
-        super(eventType);
-    }
-    // cualquier otro atributo importante como la fecha, la hora...
-}
-```
 
 Dado que los tipos de eventos son fijos, generalmente se crean dentro del mismo archivo de origen que el evento. Podemos ver que hay 2 tipos específicos de eventos: `LOGIN_SUCCEEDED`y `LOGIN_FAILED`. Podemos escuchar estos tipos específicos de eventos:
 
@@ -319,84 +227,9 @@ label3.setOnMouseExited((MouseEvent event) -> {
 });
 ```
 
-**`E05_Label.java`**
+Consulta el código completo de [E05_Label](#ejemplo04).
+{: #teoria-ejemplo04 }
 
-```java
-package UD09;
-
-import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.stage.Stage;
-
-public class E05_Label extends Application {
-
-    private Parent createContent() {
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER);
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(25, 25, 25, 25));
-
-        //Creamos la etiqueta vacia
-        Label label1 = new Label();
-        //añadimos texto una vez creada
-        label1.setText("Texto añadido después de la creación, autoajustable");
-        //cambiamos la fuente y tamaño
-        label1.setFont(new Font("Ubuntu", 12));
-        //establecemos su color
-        label1.setTextFill(Color.web("#0076a3"));
-        //activamos la propiedad de autoajustable a true
-        label1.setWrapText(true);
-        //añadimos la etiqueta a la columna 0 fila 0
-        grid.add(label1, 0, 0);
-
-        //Creamos la etiqueta con texto
-        Label label2 = new Label("Etiqueta2");
-        grid.add(label2, 1, 0);
-        label2.setFont(Font.font("FreeMono", 32));
-        label2.setRotate(270);
-
-        //Creamos la etiqueta con imágen
-        Image image = new Image("UD09/label.png");
-        Label label3 = new Label("Search", new ImageView(image));
-        label3.setGraphicTextGap(20);
-        grid.add(label3, 2, 0);
-
-        label3.setOnMouseEntered((MouseEvent event) -> {
-            label3.setScaleX(1.5);
-            label3.setScaleY(1.5);
-        });
-
-        label3.setOnMouseExited((MouseEvent event) -> {
-            label3.setScaleX(1);
-            label3.setScaleY(1);
-        });
-
-        return grid;
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(createContent(), 500, 200));
-        stage.setTitle("Ejemplo con Label");
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
-```
 
 ### `Button`
 
@@ -479,97 +312,9 @@ button1.getStyleClass().add("button1");
 
  Como resultado, el button1 es de color verde claro con un tamaño de texto mayor.
 
-**`E06_Button.java`**
+Consulta el código completo de [E06_Button](#ejemplo05).
+{: #teoria-ejemplo05 }
 
-```java
-package UD09;
-
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-
-public class E06_Button extends Application {
-
-    private Parent createContent() {
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER_LEFT);
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(25, 25, 25, 25));
-
-        //Creamos el botón vacio
-        Button button1 = new Button();
-        //añadimos texto una vez creado
-        button1.setText("Botón CSS");
-        //establecemos la clase correspondiente del css
-        button1.getStyleClass().add("button1");
-        //añadimos el botón a la columna 0 fila 0 con colspan 3 y rowspan 1
-        grid.add(button1, 0, 0, 3, 1);
-
-        //Creamos el botón con texto
-        Button button2 = new Button("Sí");
-        grid.add(button2, 0, 1);
-        Button button3 = new Button("No");
-        grid.add(button3, 1, 1);
-        //Añadimos el label que cambiará segun el botón presionado
-        Label label = new Label("Aceptado");
-        grid.add(label, 2, 1);
-
-        //Creamos el botón con texto e imágen
-        Image image = new Image("UD09/ok.png");
-        Button button4 = new Button("Aceptar", new ImageView(image));
-        grid.add(button4, 0, 2, 2, 1);
-
-        //métodos para cambiar el label segun el botón pulsado
-        button2.setOnAction((ActionEvent e) -> {
-            label.setText("Aceptado");
-        });
-
-        button3.setOnAction((ActionEvent e) -> {
-            label.setText("Denegado");
-        });
-
-        //Creamos el estilo de sombra
-        DropShadow shadow = new DropShadow();
-        //Añadimos la sombra cuando pasamos sobre el botón
-        button4.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-            button4.setEffect(shadow);
-        });
-
-        //Eliminamos la sombra al salir del botón
-        button4.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-            button4.setEffect(null);
-        });
-
-        return grid;
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        Scene scene = new Scene(createContent(), 300, 200);
-        scene.getStylesheets().add("UD09/style.css");
-        stage.setScene(scene);
-
-        stage.setTitle("Ejemplo con Button");
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
-```
 
 ### `RadioButton`
 
@@ -637,92 +382,9 @@ Los datos de usuario se asignaron para cada botón de opción. El objeto `Change
 
 Por ejemplo, cuando se selecciona `rButton3`, el método `getSelectedToggle` devuelve "rButton3" y el método `getUserData` devuelve "coche" Por lo tanto, la imágen será "UD09/coche.png".
 
-**`E07_RadioButton.java`**
+Consulta el código completo de [E07_RadioButton](#ejemplo06).
+{: #teoria-ejemplo06 }
 
-```java
-package UD09;
-
-import javafx.application.Application;
-import javafx.beans.value.ObservableValue;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-
-public class E07_RadioButton extends Application {
-
-    private Parent createContent() {
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER_LEFT);
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(25, 25, 25, 25));
-
-        //Creamos el botón vacio
-        RadioButton rButton1 = new RadioButton();
-        //añadimos texto una vez creado
-        rButton1.setText("Coche");
-        //añadimos el RadioButton a la columna 0 fila 0 con colspan 3 y rowspan 1
-        grid.add(rButton1, 0, 0);
-
-        //Creamos los RadioButton con texto
-        RadioButton rButton2 = new RadioButton("Moto");
-        grid.add(rButton2, 0, 1);
-        //Creamos un RadioButton con imágen
-        RadioButton rButton3 = new RadioButton("A pie");
-        grid.add(rButton3, 0, 2);
-
-        //Añadimos las imágenes a los Radio Button
-        //ImageView imageCoche = new ImageView("UD09/coche.png");
-        //rButton1.setGraphic(imageCoche);
-        //Creamos el grupo de alternancia
-        final ToggleGroup grupo = new ToggleGroup();
-        rButton1.setToggleGroup(grupo);
-        //rButton1.setSelected(true); //si queremos que la primera opción este marcada por defecto
-        rButton2.setToggleGroup(grupo);
-        rButton3.setToggleGroup(grupo);
-
-        //Añadimos un valor personalizado a cada control con el nombre de la imágen correspondiente
-        rButton1.setUserData("coche");
-        rButton2.setUserData("moto");
-        rButton3.setUserData("pie");
-
-        //Añadimos una imágen que cambiara al cambiar la selección
-        ImageView image = new ImageView();
-        grid.add(image, 1, 0, 1, 3);
-
-        //añadimos el listener al grupo para que capture el evento cuando se cambie la selección
-        grupo.selectedToggleProperty().addListener(
-                (ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) -> {
-                    if (grupo.getSelectedToggle() != null) {
-                        image.setImage(new Image("UD09/" + grupo.getSelectedToggle().getUserData().toString() + ".png"));
-                    }
-                });
-                      
-        return grid;
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        Scene scene = new Scene(createContent(), 300, 200);
-        stage.setScene(scene);
-
-        stage.setTitle("Ejemplo RadioButton");
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
-```
 
 ### `CheckBox`
 
@@ -776,71 +438,9 @@ En la siguiente imagen se puede observar como la columna derecha de checkbox per
 
 ![CheckBox con tres estados](assets/checkbox.png){width=400}
 
-**`E08_CheckBox.java`**
+Consulta el código completo de [E08_CheckBox](#ejemplo07).
+{: #teoria-ejemplo07 }
 
-```java
-package UD09;
-
-import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-
-public class E08_CheckBox extends Application {
-
-    private Parent createContent() {
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER_LEFT);
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(25, 25, 25, 25));
-
-        //Creamos el CheckBox vacio
-        CheckBox check1 = new CheckBox();
-        //Añadimos texto una vez creado
-        check1.setText("Coche");
-        //Añadimos el CheckBox a la columna 0 fila 0
-        grid.add(check1, 0, 0);
-
-        //Creamos los CheckBox con texto
-        CheckBox check2 = new CheckBox("Moto");
-        grid.add(check2, 0, 1);
-        //Hademos aparezca marcado por defecto
-        CheckBox check3 = new CheckBox("A pie");
-        check3.setSelected(true);
-        grid.add(check3, 0, 2);
-
-        //Ahora crearemos los 3 checkboxes en un bucle y tendran 3 estados
-        final String[] nombres = new String[]{"Coche3", "Moto3", "Pie3"};
-        final CheckBox[] checkBox = new CheckBox[nombres.length];
-        
-        for (int i = 0; i < nombres.length; i++) {
-            final CheckBox cb = checkBox[i] = new CheckBox(nombres[i]);
-            cb.setAllowIndeterminate(true);
-            grid.add(cb, 1, i);
-        }
-
-        return grid;
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        Scene scene = new Scene(createContent(), 300, 200);
-        stage.setScene(scene);
-
-        stage.setTitle("Ejemplo CheckBox");
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
-```
 
 ### `TextField` y `PasswordField`
 
@@ -892,84 +492,9 @@ Revise algunos métodos útiles que puede usar con los campos de texto.
 - `selectAll()` - selecciona todo el texto en la entrada de texto.
 - `pegar()`– transfiere el contenido del portapapeles a este texto, reemplazando la selección actual.
 
-**`E09_TextBox.java`**
+Consulta el código completo de [E09_TextBox](#ejemplo08).
+{: #teoria-ejemplo08 }
 
-```java
-package UD09;
-
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-
-public class E09_TextBox extends Application {
-
-    private Parent createContent() {
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER_LEFT);
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(25, 25, 25, 25));
-
-        //Creamos el TextkField vacio
-        TextField tFNombre = new TextField();
-        //Establecemos el número de caracteres que mostrará por defecto
-        tFNombre.setPrefColumnCount(10);
-        //definimos setPromptText para que indique la información que espera el campo
-        tFNombre.setPromptText("Nombre");
-        grid.add(tFNombre, 0, 0);
-
-        //Creamos el campo PasswordField que no mostrará por pantalla la información
-        PasswordField tFApellidos = new PasswordField();
-        tFApellidos.setPrefColumnCount(10);
-        tFApellidos.setPromptText("Apellidos");
-        grid.add(tFApellidos, 0, 1);
-
-        TextField tFComentario = new TextField();
-        //Establecemos el contenido por defecto del campo de texto
-        tFComentario.setText("Comentario por defecto");
-        //Seria lo mismo que haber creado el TextField de esta manera:
-        //TextField tFComentario = new TextField("Comentario por defecto");
-        tFComentario.setPrefColumnCount(10);
-        tFComentario.setPromptText("Comentario");
-        grid.add(tFComentario, 0, 2);
-
-        Button btnMostraTexto = new Button("Mostrar apellidos");
-        Label label = new Label();
-        btnMostraTexto.setOnAction((ActionEvent e) -> {
-            label.setText(tFApellidos.getText());
-        });
-
-        grid.add(label, 1, 0);
-        grid.add(btnMostraTexto, 1, 1);
-
-        return grid;
-
-    }
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        Scene scene = new Scene(createContent(), 500, 200);
-        stage.setScene(scene);
-
-        stage.setTitle("Ejemplo TextField y PasswordField");
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
-```
 
 ### Mucho más
 
@@ -1121,133 +646,15 @@ La filosofía del diseño de JavaFX es la misma que la filosofía de Swing. Sele
 
 El código se puede probar con un par de archivos .java. Hay un POJO para la clase `Cliente` utilizado por el `TableView`
 
-**`Cliente.java`**
+Consulta el código completo de [Cliente](#ejemplo09).
+{: #teoria-ejemplo09 }
 
-```java
-package UD09._02_VBoxHBox;
-
-public class Cliente {
-    private String nombre;
-    private String apellidos;
-
-    public Cliente(String nombre, String apellidos) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-}
-
-```
 
 y la subclase JavaFX completa y principal:
 
-**`VBoxAndHBoxApp.java`**
+Consulta el código completo de [VBoxAndHBoxApp](#ejemplo10).
+{: #teoria-ejemplo10 }
 
-```java
-package UD09._02_VBoxHBox;
-
-import javafx.application.Application;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Separator;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-
-public class VBoxAndHBoxApp extends Application {
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-
-        VBox vbox = new VBox();
-
-        HBox controlesArriba = new HBox();
-        VBox.setMargin( controlesArriba, new Insets(10.0d) );
-        controlesArriba.setAlignment( Pos.BOTTOM_LEFT );
-
-        Button btnActualizar = new Button("Actualizar");
-
-        HBox topRightControls = new HBox();
-        HBox.setHgrow(topRightControls, Priority.ALWAYS );
-        topRightControls.setAlignment( Pos.BOTTOM_RIGHT );
-        Hyperlink lnkCerrarSesion = new Hyperlink("Cerrar sesión");
-        topRightControls.getChildren().add( lnkCerrarSesion );
-
-        controlesArriba.getChildren().addAll( btnActualizar, topRightControls );
-
-        TableView<Cliente> tblClientes = new TableView<>();
-        tblClientes.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        VBox.setMargin( tblClientes, new Insets(0.0d, 10.0d, 10.0d, 10.0d) );
-        VBox.setVgrow( tblClientes, Priority.ALWAYS );
-
-        TableColumn<Cliente, String> columnaApellidos = new TableColumn<>("Apellidos");
-        columnaApellidos.setCellValueFactory(new PropertyValueFactory<>("apellidos"));
-
-        TableColumn<Cliente, String> columnaNombre = new TableColumn<>("Nombre");
-        columnaNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-
-        tblClientes.getColumns().addAll( columnaApellidos, columnaNombre );
-
-        Separator sep = new Separator();
-
-        HBox controlesAbajo = new HBox();
-        controlesAbajo.setAlignment(Pos.BOTTOM_RIGHT );
-        VBox.setMargin( controlesAbajo, new Insets(10.0d) );
-
-        Button btnCerrar = new Button("Cerrar");
-
-        controlesAbajo.getChildren().add( btnCerrar );
-
-        vbox.getChildren().addAll(
-                controlesArriba,
-                tblClientes,
-                sep,
-                controlesAbajo
-        );
-
-        Scene scene = new Scene(vbox );
-
-        primaryStage.setScene( scene );
-        primaryStage.setWidth( 800 );
-        primaryStage.setHeight( 600 );
-        primaryStage.setTitle("Aplicación con VBox y HBox");
-        primaryStage.setOnShown( (evt) -> loadTable(tblClientes) );
-        primaryStage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    private void loadTable(TableView<Cliente> tblCustomers) {
-        tblCustomers.getItems().add(new Cliente("David", "Martinez"));
-        tblCustomers.getItems().add(new Cliente("Ada", "Lovelace"));
-        tblCustomers.getItems().add(new Cliente("Alan", "Turing"));
-    }
-}
-```
 
 ### StackPane
 
@@ -1257,41 +664,9 @@ El layout `StackPane` coloca a sus hijos uno encima de otro. El último `Node` a
 
 Esta imagen fue producida por el siguiente fragmento:
 
-**`StackPaneApp.java`**
+Consulta el código completo de [StackPaneApp](#ejemplo11).
+{: #teoria-ejemplo11 }
 
-```java
-package UD09._03_StackPane;
-
-import javafx.application.Application;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
-
-public class StackPaneApp extends Application {
-    @Override
-    public void start(Stage stage) throws Exception {
-        StackPane pane = new StackPane(
-                new Rectangle(200, 100, Color.BLACK),
-                new Circle(40, Color.RED),
-                new Button("Hello StackPane")
-        );
-
-        //pane.setAlignment(Pos.CENTER_LEFT);
-        
-        stage.setScene(new Scene(pane, 300, 300));
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
-```
 
 Podemos cambiar la alineación predeterminada descomentando la linea `pane.setAlignment(Pos.CENTER_LEFT);`para producir el siguiente efecto:
 
@@ -1395,7 +770,921 @@ vbox.getChildren().add( p );
 
 Esta es la aplicación JavaFX completa y principal.
 
-**`PaneApp.java`**
+Consulta el código completo de [PaneApp](#ejemplo12).
+{: #teoria-ejemplo12 }
+
+
+### GridPane
+
+Los formularios en las aplicaciones comerciales a menudo usan un diseño que imita un registro de base de datos. Para cada columna de una tabla, se agrega un encabezado en el lado izquierdo que coincide con un valor de fila en el lado derecho. JavaFX tiene un control de propósito especial llamado `GridPane` para este tipo de diseño que mantiene los contenidos alineados por fila y columna. `GridPane` también admite expansión para diseños más complejos.
+
+La siguiente captura de pantalla muestra un diseño básico de `GridPane`. En el lado izquierdo del formulario, hay una columna de nombres de campo: Correo-e, Prioridad, Problema, Descripción. En el lado derecho del formulario, hay una columna de controles que mostrará el valor del campo correspondiente. Los nombres de campo son de tipo `Label` y los controles de valor son una mezcla que incluye `TextField`, `TextArea` y `ComboBox`.
+
+![Ejemplo de GridPane](assets/GridPane01.png){width=800}
+
+El siguiente código muestra los objetos creados para el formulario. "vbox" es la raíz del `Scene`y también contendrá el `ButtonBar` en la base del formulario.
+
+```java
+VBox vbox = new VBox();
+GridPane gp = new GridPane();
+
+Label lblTitle = new Label("Tiquet de soporte");
+
+Label lblEmail = new Label("Correo-e");
+TextField tfEmail = new TextField();
+
+Label lblPriority = new Label("Prioridad");
+ObservableList<String> priorities = FXCollections.observableArrayList("Media", "Alta", "Baja");
+ComboBox<String> cbPriority = new ComboBox<>(priorities);
+
+Label lblProblem = new Label("Problema");
+TextField tfProblem = new TextField();
+
+Label lblDescription = new Label("Descripción");
+TextArea taDescription = new TextArea();
+```
+
+GridPane tiene un método útil `setGridLinesVisible()` que muestra la estructura de la cuadrícula y los espacios. Es especialmente útil en diseños más complejos donde se involucra la expansión porque los espacios en las asignaciones de filas/columnas pueden causar cambios en el diseño.
+
+![Lineas de estructura](assets/GridPane02.png){width=800}
+
+#### Espaciado
+
+Como contenedor, `GridPane` tiene una propiedad de relleno que se puede configurar para rodear el contenedor `GridPane` con espacios en blanco. `setPadding()` tomará un objeto `Inset` como parámetro. En este ejemplo, se aplican 10 píxeles de espacio en blanco a todos los lados, por lo que se usa un constructor de formato corto para `Inset`.
+
+Dentro de `GridPane`, `vgap` y `hgap` controlan los espacios. El `hgap` se establece en 4 para mantener los campos cerca de sus valores. `vgap` es un poco más grande para ayudar con la navegación del mouse.
+
+```java
+gp.setPadding( new Insets(10) );
+gp.setHgap( 4 );
+gp.setVgap( 8 );
+```
+
+Para mantener consistente la parte inferior del formulario, `Priority.ALWAYS` se establece a en la clase VBox sobre el `GridPane` (recuerda que es estático). Sin embargo, esto no cambiará el tamaño de las filas individuales. Para especificaciones de cambio de tamaño individuales, debes usar `ColumnConstraints` y `RowConstraints`.
+
+```java
+VBox.setVgrow(gp, Priority.ALWAYS );
+```
+
+#### Adición de elementos
+
+A diferencia de los contenedores como `BorderPane` o `HBox`, los nodos deben especificar su posición dentro del contenedor `GridPane`. Esto se hace con el método `add()` en `GridPane` y no con el método `add()` en una propiedad secundaria del contenedor. El método `add()` de `GridPane` recibe una posición de columna de base cero y una posición de fila de base cero. En este código ponemos dos declaraciones en la misma línea para facilitar la lectura.
+
+```java
+gp.add( lblTitle,       1, 1);  // empty item at 0,0
+gp.add( lblEmail,       0, 2); gp.add(tfEmail,        1, 2);
+gp.add( lblPriority,    0, 3); gp.add( cbPriority,    1, 3);
+gp.add( lblProblem,     0, 4); gp.add( tfProblem,     1, 4);
+gp.add( lblDescription, 0, 5); gp.add( taDescription, 1, 5);
+```
+
+`lblTitle` se coloca en la segunda columna de la primera fila. No hay ninguna entrada en la primera columna de la primera fila.
+
+Las adiciones posteriores se presentan por parejas. Los objetos de nombre de campo `Label` se colocan en la primera columna (índice de columna=0) y los controles de valor se colocan en la segunda columna (índice de columna=1). Las filas se agregan por el segundo valor incrementado. Por ejemplo, `lblPriority` se coloca en la cuarta fila junto con su `ComboBox`.
+
+`GridPane` es un contenedor importante en el diseño de aplicaciones empresariales JavaFX. Cuando tenga un requisito de pares de nombre/valor, `GridPane `será una manera más fácil de organizar la estructura del formulario.
+
+#### Código completo
+
+La siguiente clase es el código completo del ejemplo. Esto incluye la definición de la `ButtonBar`que no se presentó en las secciones anteriores enfocadas en `GridPane`.
+
+Consulta el código completo de [GridPaneApp](#ejemplo13).
+{: #teoria-ejemplo13 }
+
+
+### GridPane Spanning (expansión)
+
+Para formularios más complejos implementados con `GridPane`, se admite la expansión. La expansión permite que un control reclame el espacio de columnas vecinas (`colspan`) y filas vecinas (`rowspan`). Esta captura de pantalla muestra un formulario que amplía el ejemplo de la sección anterior. El diseño de dos columnas de la versión anterior se reemplazó por un diseño de varias columnas. Los campos como Problema y Descripción conservan la estructura original. Pero se agregaron controles a las filas que anteriormente contenían solo Correo electrónico y Prioridad.
+
+![Aplicación GridaPanev2](assets/GridPane03.png){width=800}
+
+Al activar las líneas de la cuadrícula, observe que la cuadrícula anterior de dos columnas se reemplaza con una cuadrícula de seis columnas. La tercera fila que contiene seis elementos (3 pares de nombre de campo/valor) dicta la estructura. El resto del formulario utilizará la expansión para completar el espacio en blanco.
+
+![Lineas de estructura para GridPanev2](assets/GridPane04.png){width=800}
+
+Hay un poco más de Vgap para ayudar al usuario a seleccionar los controles `ComboBox`. Como en la versión anterior, los controles se agregan al `GridPane` con el método `add()`. Se especifica una columna y una fila. Repasa los índices ya que no es evidente, ya que se espera que se llenen los vacíos mediante el contenido expandido.
+
+Las definiciones de expansión se establecen mediante un método estático en `GridPane`. Hay un método similar para hacer la expansión de filas. El título ocupará 5 columnas, al igual que el problema y la descripción. El correo electrónico comparte una fila con el contrato, pero ocupará más columnas. La tercera fila de ComboBoxes es un conjunto de tres pares de campo/valor, cada uno de los cuales ocupa una columna.
+
+```java
+GridPane.setColumnSpan( lblTitle, 5 );
+GridPane.setColumnSpan( tfEmail, 3 );
+GridPane.setColumnSpan( tfProblem, 5 );
+GridPane.setColumnSpan( taDescription, 5 );
+```
+
+Alternativamente, una variación del método add() tendrá argumentos columnSpan y rowSpan para evitar la subsiguiente llamada al método estático.
+
+Este ejemplo ampliado `GridPane`demostró la expansión de columnas. La misma capacidad está disponible para la expansión de filas, lo que permitiría que un control reclame espacio vertical adicional. La expansión mantiene los controles alineados incluso en los casos en que varía el número de elementos en una fila (o columna) determinada. 
+
+#### Código completo
+
+El siguiente es el código completo para el ejemplo de GridPane de expansión.
+
+Consulta el código completo de [GridPaneAppv2](#ejemplo14).
+{: #teoria-ejemplo14 }
+
+```java
+        //Expansiones
+        GridPane.setColumnSpan(lblTitle, 5);
+        GridPane.setColumnSpan(tfEmail, 3);
+        GridPane.setColumnSpan(tfProblem, 5);
+        GridPane.setColumnSpan(taDescription, 5);
+
+        Separator sep = new Separator(); // hr
+
+        ButtonBar buttonBar = new ButtonBar();
+        buttonBar.setPadding(new Insets(10));
+
+        Button saveButton = new Button("Guardar");
+        Button cancelButton = new Button("Cancelar");
+
+        buttonBar.setButtonData(saveButton, ButtonBar.ButtonData.OK_DONE);
+        buttonBar.setButtonData(cancelButton, ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        buttonBar.getButtons().addAll(saveButton, cancelButton);
+
+        vbox.getChildren().addAll(gp, sep, buttonBar);
+
+        //para mostrar las lineas de estructura descomenta la siguiente linea
+        gp.setGridLinesVisible(true);
+        
+        Scene scene = new Scene(vbox);
+
+        primaryStage.setTitle("Grid Pane App");
+        primaryStage.setScene(scene);
+        primaryStage.setWidth(736);
+        primaryStage.setHeight(414);
+        primaryStage.show();
+
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+## Gestión de excepciones y ventanas modales`Alert`
+
+En JavaFX, las ventanas modales de tipo `Alert` son útiles para mostrar mensajes al usuario (errores, advertencias,  información o confirmaciones). Se combinan frecuentemente con la gestión de excepciones para informar de forma amigable cuando ocurre un error  en tiempo de ejecución.
+
+**Ejemplo práctico:**
+
+```java
+try {
+    int resultado = 10 / 0;  // Simula una excepción
+} catch (ArithmeticException e) {
+    Alert alerta = new Alert(Alert.AlertType.ERROR);
+    alerta.setTitle("Error matemático");
+    alerta.setHeaderText("No se pudo realizar la operación");
+    alerta.setContentText("División entre cero: " + e.getMessage());
+    alerta.showAndWait();  // Ventana modal (bloquea hasta que se cierre)
+}
+```
+
+**Tipos de alerta más comunes:**
+
+- `ERROR` → Para fallos graves.
+- `WARNING` → Para situaciones peligrosas o dudosas.
+- `INFORMATION` → Para notificar acciones completadas.
+- `CONFIRMATION` → Para preguntar sí/no antes de continuar.
+
+**Ventaja:** La combinación de `try-catch` con `Alert` mejora la experiencia de usuario, evitando que la aplicación falle  silenciosamente o muestre mensajes de consola poco intuitivos.
+
+## Estructura de la aplicación
+
+### El patrón MVC
+
+**Modelo-vista-controlador** (**MVC**) es un patrón de arquitectura de software, que separa los datos y principalmente lo que es la lógica de negocio de una aplicación de su representación y el módulo encargado de  gestionar los eventos y las comunicaciones. Para ello MVC propone la  construcción de tres componentes distintos que son el **modelo**, la **vista** y el **controlador**, es decir, por un lado define componentes para la representación de la  información, y por otro lado para la interacción del usuario. Este patrón de arquitectura de software se basa en las ideas de reutilización de código y la separación de conceptos, características que buscan facilitar la tarea de desarrollo de aplicaciones y su posterior mantenimiento.
+
+De manera genérica, los componentes de MVC se podrían definir como sigue:
+
+- El **Modelo**: Es la representación de la información con la  cual el sistema opera, por lo tanto gestiona todos los accesos a dicha  información, tanto consultas como actualizaciones, implementando también los privilegios de acceso que se hayan descrito en las especificaciones de la aplicación (lógica de negocio). Envía a la &apos;vista&apos; aquella parte de la información que en cada momento  se le solicita para que sea mostrada (típicamente a un usuario). Las  peticiones de acceso o manipulación de información llegan al &apos;modelo&apos; a  través del &apos;controlador&apos;.
+- El **Controlador**: Responde a eventos (usualmente acciones del  usuario) e invoca peticiones al &apos;modelo&apos; cuando se hace alguna solicitud sobre la información (por ejemplo, editar un documento o un registro en una base de datos). También puede enviar comandos a su &apos;vista&apos; asociada si se solicita un cambio en la forma en que se presenta el &apos;modelo&apos;  (por ejemplo, desplazamiento o scroll por un documento o por los  diferentes registros de una base de datos), por tanto se podría decir  que el &apos;controlador&apos; hace de intermediario entre la &apos;vista&apos; y el  &apos;modelo&apos; (véase ***[Middleware](https://es.wikipedia.org/wiki/Middleware)***).
+- La **Vista**: Presenta el &apos;modelo&apos; (información y *lógica de negocio*) en un formato adecuado para interactuar (usualmente la interfaz de usuario), por tanto requiere de dicho &apos;modelo&apos; la información que debe representar como salida.
+
+![](assets/MVC-Process.png){width=400}
+
+
+## Ejemplos UD09
+
+### Ejemplo01
+
+Programa mínimo "Hola Mundo" en JavaFX.
+
+```java
+import javafx.application.Application;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+public class HolaMundo extends Application {
+
+    private Parent createContent() {
+        return new StackPane(new Text("Hola Mundo"));
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setScene(new Scene(createContent(), 400, 400));
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo01)
+
+### Ejemplo02
+
+Transformaciones básicas en JavaFX: traslación, rotación y escalado.
+
+```java
+package UD09;
+
+import javafx.application.Application;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
+/**
+ *
+ * @author David Martínez (wwww.martinezpenya.es|ieseduardoprimo.es)
+ */
+public class E02_TransformApp extends Application {
+
+    private Parent createContent() {
+        Rectangle box = new Rectangle(100, 50, Color.BLUE);
+
+        transform(box);
+
+        return new Pane(box);
+    }
+
+    private void transform(Rectangle box) {
+        //Aplicaremos las transformaciones aquí
+
+        //Descomentar para traslación
+        //box.setTranslateX(100);
+        //box.setTranslateY(200);
+
+        //Descomentar para escalado
+        //box.setScaleX(1.5);
+        //box.setScaleY(1.5);
+
+        //Descomentar para rotación
+        //box.setRotate(30);
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setScene(new Scene(createContent(), 300, 300, Color.GRAY));
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo02)
+
+### Ejemplo03
+
+Creación de un evento personalizado con `Event` y `EventType`.
+
+```java
+import javafx.event.Event;
+import javafx.event.EventType;
+
+public class E03_EventoUsuario extends Event {
+
+    public static final EventType<E03_EventoUsuario> ANY = new EventType<>(Event.ANY, "ANY");
+
+    public static final EventType<E03_EventoUsuario> LOGIN_SUCCEEDED = new EventType<>(ANY, "LOGIN_SUCCEEDED");
+
+    public static final EventType<E03_EventoUsuario> LOGIN_FAILED = new EventType<>(ANY, "LOGIN_FAILED");
+
+    public E03_EventoUsuario(EventType<? extends Event> eventType) {
+        super(eventType);
+    }
+    // cualquier otro atributo importante como la fecha, la hora...
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo03)
+
+### Ejemplo04
+
+Uso del control `Label`: texto, estilo CSS, rotación e imagen.
+
+```java
+package UD09;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.stage.Stage;
+
+public class E05_Label extends Application {
+
+    private Parent createContent() {
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        //Creamos la etiqueta vacia
+        Label label1 = new Label();
+        //añadimos texto una vez creada
+        label1.setText("Texto añadido después de la creación, autoajustable");
+        //cambiamos la fuente y tamaño
+        label1.setFont(new Font("Ubuntu", 12));
+        //establecemos su color
+        label1.setTextFill(Color.web("#0076a3"));
+        //activamos la propiedad de autoajustable a true
+        label1.setWrapText(true);
+        //añadimos la etiqueta a la columna 0 fila 0
+        grid.add(label1, 0, 0);
+
+        //Creamos la etiqueta con texto
+        Label label2 = new Label("Etiqueta2");
+        grid.add(label2, 1, 0);
+        label2.setFont(Font.font("FreeMono", 32));
+        label2.setRotate(270);
+
+        //Creamos la etiqueta con imágen
+        Image image = new Image("UD09/label.png");
+        Label label3 = new Label("Search", new ImageView(image));
+        label3.setGraphicTextGap(20);
+        grid.add(label3, 2, 0);
+
+        label3.setOnMouseEntered((MouseEvent event) -> {
+            label3.setScaleX(1.5);
+            label3.setScaleY(1.5);
+        });
+
+        label3.setOnMouseExited((MouseEvent event) -> {
+            label3.setScaleX(1);
+            label3.setScaleY(1);
+        });
+
+        return grid;
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setScene(new Scene(createContent(), 500, 200));
+        stage.setTitle("Ejemplo con Label");
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo04)
+
+### Ejemplo05
+
+Manejo de eventos con `Button`: `setOnAction`, `setOnMouseEntered` y `setOnMouseExited`.
+
+```java
+package UD09;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class E06_Button extends Application {
+
+    private Parent createContent() {
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER_LEFT);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        //Creamos el botón vacio
+        Button button1 = new Button();
+        //añadimos texto una vez creado
+        button1.setText("Botón CSS");
+        //establecemos la clase correspondiente del css
+        button1.getStyleClass().add("button1");
+        //añadimos el botón a la columna 0 fila 0 con colspan 3 y rowspan 1
+        grid.add(button1, 0, 0, 3, 1);
+
+        //Creamos el botón con texto
+        Button button2 = new Button("Sí");
+        grid.add(button2, 0, 1);
+        Button button3 = new Button("No");
+        grid.add(button3, 1, 1);
+        //Añadimos el label que cambiará segun el botón presionado
+        Label label = new Label("Aceptado");
+        grid.add(label, 2, 1);
+
+        //Creamos el botón con texto e imágen
+        Image image = new Image("UD09/ok.png");
+        Button button4 = new Button("Aceptar", new ImageView(image));
+        grid.add(button4, 0, 2, 2, 1);
+
+        //métodos para cambiar el label segun el botón pulsado
+        button2.setOnAction((ActionEvent e) -> {
+            label.setText("Aceptado");
+        });
+
+        button3.setOnAction((ActionEvent e) -> {
+            label.setText("Denegado");
+        });
+
+        //Creamos el estilo de sombra
+        DropShadow shadow = new DropShadow();
+        //Añadimos la sombra cuando pasamos sobre el botón
+        button4.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+            button4.setEffect(shadow);
+        });
+
+        //Eliminamos la sombra al salir del botón
+        button4.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+            button4.setEffect(null);
+        });
+
+        return grid;
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        Scene scene = new Scene(createContent(), 300, 200);
+        scene.getStylesheets().add("UD09/style.css");
+        stage.setScene(scene);
+
+        stage.setTitle("Ejemplo con Button");
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo05)
+
+### Ejemplo06
+
+Uso de `RadioButton` con agrupación y selección única.
+
+```java
+package UD09;
+
+import javafx.application.Application;
+import javafx.beans.value.ObservableValue;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class E07_RadioButton extends Application {
+
+    private Parent createContent() {
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER_LEFT);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        //Creamos el botón vacio
+        RadioButton rButton1 = new RadioButton();
+        //añadimos texto una vez creado
+        rButton1.setText("Coche");
+        //añadimos el RadioButton a la columna 0 fila 0 con colspan 3 y rowspan 1
+        grid.add(rButton1, 0, 0);
+
+        //Creamos los RadioButton con texto
+        RadioButton rButton2 = new RadioButton("Moto");
+        grid.add(rButton2, 0, 1);
+        //Creamos un RadioButton con imágen
+        RadioButton rButton3 = new RadioButton("A pie");
+        grid.add(rButton3, 0, 2);
+
+        //Añadimos las imágenes a los Radio Button
+        //ImageView imageCoche = new ImageView("UD09/coche.png");
+        //rButton1.setGraphic(imageCoche);
+        //Creamos el grupo de alternancia
+        final ToggleGroup grupo = new ToggleGroup();
+        rButton1.setToggleGroup(grupo);
+        //rButton1.setSelected(true); //si queremos que la primera opción este marcada por defecto
+        rButton2.setToggleGroup(grupo);
+        rButton3.setToggleGroup(grupo);
+
+        //Añadimos un valor personalizado a cada control con el nombre de la imágen correspondiente
+        rButton1.setUserData("coche");
+        rButton2.setUserData("moto");
+        rButton3.setUserData("pie");
+
+        //Añadimos una imágen que cambiara al cambiar la selección
+        ImageView image = new ImageView();
+        grid.add(image, 1, 0, 1, 3);
+
+        //añadimos el listener al grupo para que capture el evento cuando se cambie la selección
+        grupo.selectedToggleProperty().addListener(
+                (ObservableValue<? extends Toggle> ov, Toggle old_toggle, Toggle new_toggle) -> {
+                    if (grupo.getSelectedToggle() != null) {
+                        image.setImage(new Image("UD09/" + grupo.getSelectedToggle().getUserData().toString() + ".png"));
+                    }
+                });
+                      
+        return grid;
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        Scene scene = new Scene(createContent(), 300, 200);
+        stage.setScene(scene);
+
+        stage.setTitle("Ejemplo RadioButton");
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo06)
+
+### Ejemplo07
+
+Uso de `CheckBox` con selección múltiple y evento de cambio.
+
+```java
+package UD09;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class E08_CheckBox extends Application {
+
+    private Parent createContent() {
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER_LEFT);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        //Creamos el CheckBox vacio
+        CheckBox check1 = new CheckBox();
+        //Añadimos texto una vez creado
+        check1.setText("Coche");
+        //Añadimos el CheckBox a la columna 0 fila 0
+        grid.add(check1, 0, 0);
+
+        //Creamos los CheckBox con texto
+        CheckBox check2 = new CheckBox("Moto");
+        grid.add(check2, 0, 1);
+        //Hademos aparezca marcado por defecto
+        CheckBox check3 = new CheckBox("A pie");
+        check3.setSelected(true);
+        grid.add(check3, 0, 2);
+
+        //Ahora crearemos los 3 checkboxes en un bucle y tendran 3 estados
+        final String[] nombres = new String[]{"Coche3", "Moto3", "Pie3"};
+        final CheckBox[] checkBox = new CheckBox[nombres.length];
+        
+        for (int i = 0; i < nombres.length; i++) {
+            final CheckBox cb = checkBox[i] = new CheckBox(nombres[i]);
+            cb.setAllowIndeterminate(true);
+            grid.add(cb, 1, i);
+        }
+
+        return grid;
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        Scene scene = new Scene(createContent(), 300, 200);
+        stage.setScene(scene);
+
+        stage.setTitle("Ejemplo CheckBox");
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo07)
+
+### Ejemplo08
+
+Uso de `TextField` para entrada de texto y manejo de eventos.
+
+```java
+package UD09;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class E09_TextBox extends Application {
+
+    private Parent createContent() {
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER_LEFT);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25, 25, 25, 25));
+
+        //Creamos el TextkField vacio
+        TextField tFNombre = new TextField();
+        //Establecemos el número de caracteres que mostrará por defecto
+        tFNombre.setPrefColumnCount(10);
+        //definimos setPromptText para que indique la información que espera el campo
+        tFNombre.setPromptText("Nombre");
+        grid.add(tFNombre, 0, 0);
+
+        //Creamos el campo PasswordField que no mostrará por pantalla la información
+        PasswordField tFApellidos = new PasswordField();
+        tFApellidos.setPrefColumnCount(10);
+        tFApellidos.setPromptText("Apellidos");
+        grid.add(tFApellidos, 0, 1);
+
+        TextField tFComentario = new TextField();
+        //Establecemos el contenido por defecto del campo de texto
+        tFComentario.setText("Comentario por defecto");
+        //Seria lo mismo que haber creado el TextField de esta manera:
+        //TextField tFComentario = new TextField("Comentario por defecto");
+        tFComentario.setPrefColumnCount(10);
+        tFComentario.setPromptText("Comentario");
+        grid.add(tFComentario, 0, 2);
+
+        Button btnMostraTexto = new Button("Mostrar apellidos");
+        Label label = new Label();
+        btnMostraTexto.setOnAction((ActionEvent e) -> {
+            label.setText(tFApellidos.getText());
+        });
+
+        grid.add(label, 1, 0);
+        grid.add(btnMostraTexto, 1, 1);
+
+        return grid;
+
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        Scene scene = new Scene(createContent(), 500, 200);
+        stage.setScene(scene);
+
+        stage.setTitle("Ejemplo TextField y PasswordField");
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo08)
+
+### Ejemplo09
+
+Clase `Cliente` para el manejo de datos de cliente en una aplicación JavaFX.
+
+```java
+package UD09._02_VBoxHBox;
+
+public class Cliente {
+    private String nombre;
+    private String apellidos;
+
+    public Cliente(String nombre, String apellidos) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+}
+
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo09)
+
+### Ejemplo10
+
+Layout con `VBox` y `HBox`: disposición vertical y horizontal de nodos.
+
+```java
+package UD09._02_VBoxHBox;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Separator;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class VBoxAndHBoxApp extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        VBox vbox = new VBox();
+
+        HBox controlesArriba = new HBox();
+        VBox.setMargin( controlesArriba, new Insets(10.0d) );
+        controlesArriba.setAlignment( Pos.BOTTOM_LEFT );
+
+        Button btnActualizar = new Button("Actualizar");
+
+        HBox topRightControls = new HBox();
+        HBox.setHgrow(topRightControls, Priority.ALWAYS );
+        topRightControls.setAlignment( Pos.BOTTOM_RIGHT );
+        Hyperlink lnkCerrarSesion = new Hyperlink("Cerrar sesión");
+        topRightControls.getChildren().add( lnkCerrarSesion );
+
+        controlesArriba.getChildren().addAll( btnActualizar, topRightControls );
+
+        TableView<Cliente> tblClientes = new TableView<>();
+        tblClientes.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        VBox.setMargin( tblClientes, new Insets(0.0d, 10.0d, 10.0d, 10.0d) );
+        VBox.setVgrow( tblClientes, Priority.ALWAYS );
+
+        TableColumn<Cliente, String> columnaApellidos = new TableColumn<>("Apellidos");
+        columnaApellidos.setCellValueFactory(new PropertyValueFactory<>("apellidos"));
+
+        TableColumn<Cliente, String> columnaNombre = new TableColumn<>("Nombre");
+        columnaNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+
+        tblClientes.getColumns().addAll( columnaApellidos, columnaNombre );
+
+        Separator sep = new Separator();
+
+        HBox controlesAbajo = new HBox();
+        controlesAbajo.setAlignment(Pos.BOTTOM_RIGHT );
+        VBox.setMargin( controlesAbajo, new Insets(10.0d) );
+
+        Button btnCerrar = new Button("Cerrar");
+
+        controlesAbajo.getChildren().add( btnCerrar );
+
+        vbox.getChildren().addAll(
+                controlesArriba,
+                tblClientes,
+                sep,
+                controlesAbajo
+        );
+
+        Scene scene = new Scene(vbox );
+
+        primaryStage.setScene( scene );
+        primaryStage.setWidth( 800 );
+        primaryStage.setHeight( 600 );
+        primaryStage.setTitle("Aplicación con VBox y HBox");
+        primaryStage.setOnShown( (evt) -> loadTable(tblClientes) );
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    private void loadTable(TableView<Cliente> tblCustomers) {
+        tblCustomers.getItems().add(new Cliente("David", "Martinez"));
+        tblCustomers.getItems().add(new Cliente("Ada", "Lovelace"));
+        tblCustomers.getItems().add(new Cliente("Alan", "Turing"));
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo10)
+
+### Ejemplo11
+
+Layout con `StackPane`: apilamiento de nodos superpuestos.
+
+```java
+package UD09._03_StackPane;
+
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+
+public class StackPaneApp extends Application {
+    @Override
+    public void start(Stage stage) throws Exception {
+        StackPane pane = new StackPane(
+                new Rectangle(200, 100, Color.BLACK),
+                new Circle(40, Color.RED),
+                new Button("Hello StackPane")
+        );
+
+        //pane.setAlignment(Pos.CENTER_LEFT);
+        
+        stage.setScene(new Scene(pane, 300, 300));
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo11)
+
+### Ejemplo12
+
+Layout con `Pane`: posicionamiento absoluto de nodos.
 
 ```java
 package UD09._04_Pane;
@@ -1485,81 +1774,11 @@ public class PaneApp extends Application {
 }
 ```
 
-### GridPane
+[⬆ Volver a teoría](#teoria-ejemplo12)
 
-Los formularios en las aplicaciones comerciales a menudo usan un diseño que imita un registro de base de datos. Para cada columna de una tabla, se agrega un encabezado en el lado izquierdo que coincide con un valor de fila en el lado derecho. JavaFX tiene un control de propósito especial llamado `GridPane` para este tipo de diseño que mantiene los contenidos alineados por fila y columna. `GridPane` también admite expansión para diseños más complejos.
+### Ejemplo13
 
-La siguiente captura de pantalla muestra un diseño básico de `GridPane`. En el lado izquierdo del formulario, hay una columna de nombres de campo: Correo-e, Prioridad, Problema, Descripción. En el lado derecho del formulario, hay una columna de controles que mostrará el valor del campo correspondiente. Los nombres de campo son de tipo `Label` y los controles de valor son una mezcla que incluye `TextField`, `TextArea` y `ComboBox`.
-
-![Ejemplo de GridPane](assets/GridPane01.png){width=800}
-
-El siguiente código muestra los objetos creados para el formulario. "vbox" es la raíz del `Scene`y también contendrá el `ButtonBar` en la base del formulario.
-
-```java
-VBox vbox = new VBox();
-GridPane gp = new GridPane();
-
-Label lblTitle = new Label("Tiquet de soporte");
-
-Label lblEmail = new Label("Correo-e");
-TextField tfEmail = new TextField();
-
-Label lblPriority = new Label("Prioridad");
-ObservableList<String> priorities = FXCollections.observableArrayList("Media", "Alta", "Baja");
-ComboBox<String> cbPriority = new ComboBox<>(priorities);
-
-Label lblProblem = new Label("Problema");
-TextField tfProblem = new TextField();
-
-Label lblDescription = new Label("Descripción");
-TextArea taDescription = new TextArea();
-```
-
-GridPane tiene un método útil `setGridLinesVisible()` que muestra la estructura de la cuadrícula y los espacios. Es especialmente útil en diseños más complejos donde se involucra la expansión porque los espacios en las asignaciones de filas/columnas pueden causar cambios en el diseño.
-
-![Lineas de estructura](assets/GridPane02.png){width=800}
-
-#### Espaciado
-
-Como contenedor, `GridPane` tiene una propiedad de relleno que se puede configurar para rodear el contenedor `GridPane` con espacios en blanco. `setPadding()` tomará un objeto `Inset` como parámetro. En este ejemplo, se aplican 10 píxeles de espacio en blanco a todos los lados, por lo que se usa un constructor de formato corto para `Inset`.
-
-Dentro de `GridPane`, `vgap` y `hgap` controlan los espacios. El `hgap` se establece en 4 para mantener los campos cerca de sus valores. `vgap` es un poco más grande para ayudar con la navegación del mouse.
-
-```java
-gp.setPadding( new Insets(10) );
-gp.setHgap( 4 );
-gp.setVgap( 8 );
-```
-
-Para mantener consistente la parte inferior del formulario, `Priority.ALWAYS` se establece a en la clase VBox sobre el `GridPane` (recuerda que es estático). Sin embargo, esto no cambiará el tamaño de las filas individuales. Para especificaciones de cambio de tamaño individuales, debes usar `ColumnConstraints` y `RowConstraints`.
-
-```java
-VBox.setVgrow(gp, Priority.ALWAYS );
-```
-
-#### Adición de elementos
-
-A diferencia de los contenedores como `BorderPane` o `HBox`, los nodos deben especificar su posición dentro del contenedor `GridPane`. Esto se hace con el método `add()` en `GridPane` y no con el método `add()` en una propiedad secundaria del contenedor. El método `add()` de `GridPane` recibe una posición de columna de base cero y una posición de fila de base cero. En este código ponemos dos declaraciones en la misma línea para facilitar la lectura.
-
-```java
-gp.add( lblTitle,       1, 1);  // empty item at 0,0
-gp.add( lblEmail,       0, 2); gp.add(tfEmail,        1, 2);
-gp.add( lblPriority,    0, 3); gp.add( cbPriority,    1, 3);
-gp.add( lblProblem,     0, 4); gp.add( tfProblem,     1, 4);
-gp.add( lblDescription, 0, 5); gp.add( taDescription, 1, 5);
-```
-
-`lblTitle` se coloca en la segunda columna de la primera fila. No hay ninguna entrada en la primera columna de la primera fila.
-
-Las adiciones posteriores se presentan por parejas. Los objetos de nombre de campo `Label` se colocan en la primera columna (índice de columna=0) y los controles de valor se colocan en la segunda columna (índice de columna=1). Las filas se agregan por el segundo valor incrementado. Por ejemplo, `lblPriority` se coloca en la cuarta fila junto con su `ComboBox`.
-
-`GridPane` es un contenedor importante en el diseño de aplicaciones empresariales JavaFX. Cuando tenga un requisito de pares de nombre/valor, `GridPane `será una manera más fácil de organizar la estructura del formulario.
-
-#### Código completo
-
-La siguiente clase es el código completo del ejemplo. Esto incluye la definición de la `ButtonBar`que no se presentó en las secciones anteriores enfocadas en `GridPane`.
-
-**`GridPaneApp.java`**
+Layout con `GridPane`: disposición en cuadrícula de nodos.
 
 ```java
 package UD09._05_GridPane;
@@ -1656,36 +1875,11 @@ public class GridPaneApp extends Application {
 }
 ```
 
-### GridPane Spanning (expansión)
+[⬆ Volver a teoría](#teoria-ejemplo13)
 
-Para formularios más complejos implementados con `GridPane`, se admite la expansión. La expansión permite que un control reclame el espacio de columnas vecinas (`colspan`) y filas vecinas (`rowspan`). Esta captura de pantalla muestra un formulario que amplía el ejemplo de la sección anterior. El diseño de dos columnas de la versión anterior se reemplazó por un diseño de varias columnas. Los campos como Problema y Descripción conservan la estructura original. Pero se agregaron controles a las filas que anteriormente contenían solo Correo electrónico y Prioridad.
+### Ejemplo14
 
-![Aplicación GridaPanev2](assets/GridPane03.png){width=800}
-
-Al activar las líneas de la cuadrícula, observe que la cuadrícula anterior de dos columnas se reemplaza con una cuadrícula de seis columnas. La tercera fila que contiene seis elementos (3 pares de nombre de campo/valor) dicta la estructura. El resto del formulario utilizará la expansión para completar el espacio en blanco.
-
-![Lineas de estructura para GridPanev2](assets/GridPane04.png){width=800}
-
-Hay un poco más de Vgap para ayudar al usuario a seleccionar los controles `ComboBox`. Como en la versión anterior, los controles se agregan al `GridPane` con el método `add()`. Se especifica una columna y una fila. Repasa los índices ya que no es evidente, ya que se espera que se llenen los vacíos mediante el contenido expandido.
-
-Las definiciones de expansión se establecen mediante un método estático en `GridPane`. Hay un método similar para hacer la expansión de filas. El título ocupará 5 columnas, al igual que el problema y la descripción. El correo electrónico comparte una fila con el contrato, pero ocupará más columnas. La tercera fila de ComboBoxes es un conjunto de tres pares de campo/valor, cada uno de los cuales ocupa una columna.
-
-```java
-GridPane.setColumnSpan( lblTitle, 5 );
-GridPane.setColumnSpan( tfEmail, 3 );
-GridPane.setColumnSpan( tfProblem, 5 );
-GridPane.setColumnSpan( taDescription, 5 );
-```
-
-Alternativamente, una variación del método add() tendrá argumentos columnSpan y rowSpan para evitar la subsiguiente llamada al método estático.
-
-Este ejemplo ampliado `GridPane`demostró la expansión de columnas. La misma capacidad está disponible para la expansión de filas, lo que permitiría que un control reclame espacio vertical adicional. La expansión mantiene los controles alineados incluso en los casos en que varía el número de elementos en una fila (o columna) determinada. 
-
-#### Código completo
-
-El siguiente es el código completo para el ejemplo de GridPane de expansión.
-
-**`GridPaneAppv2.java`**
+Layout con `GridPane` avanzado: celdas combinadas y `setColumnSpan`.
 
 ```java
 Package UD09._05_GridPane;
@@ -1770,107 +1964,36 @@ public class GridPaneAppv2 extends Application {
         gp.add(lblDescription, 0, 4);
         gp.add(taDescription, 1, 4);
 ```
-```java
-        //Expansiones
-        GridPane.setColumnSpan(lblTitle, 5);
-        GridPane.setColumnSpan(tfEmail, 3);
-        GridPane.setColumnSpan(tfProblem, 5);
-        GridPane.setColumnSpan(taDescription, 5);
 
-        Separator sep = new Separator(); // hr
+[⬆ Volver a teoría](#teoria-ejemplo14)
 
-        ButtonBar buttonBar = new ButtonBar();
-        buttonBar.setPadding(new Insets(10));
+## Resumen — Conceptos clave
 
-        Button saveButton = new Button("Guardar");
-        Button cancelButton = new Button("Cancelar");
+| Concepto | Definición |
+|---|---|
+| Stage | Ventana principal de la aplicación JavaFX |
+| Scene | Contenedor del grafo de escena |
+| Node | Elemento del grafo de escena (botón, texto, imagen...) |
+| Layout | Contenedor que organiza los nodos hijos |
+| FXML | Lenguaje de marcado para definir interfaces JavaFX |
+| SceneBuilder | Herramienta visual para diseñar interfaces FXML |
+| Evento | Acción del usuario que desencadena una respuesta |
 
-        buttonBar.setButtonData(saveButton, ButtonBar.ButtonData.OK_DONE);
-        buttonBar.setButtonData(cancelButton, ButtonBar.ButtonData.CANCEL_CLOSE);
-
-        buttonBar.getButtons().addAll(saveButton, cancelButton);
-
-        vbox.getChildren().addAll(gp, sep, buttonBar);
-
-        //para mostrar las lineas de estructura descomenta la siguiente linea
-        gp.setGridLinesVisible(true);
-        
-        Scene scene = new Scene(vbox);
-
-        primaryStage.setTitle("Grid Pane App");
-        primaryStage.setScene(scene);
-        primaryStage.setWidth(736);
-        primaryStage.setHeight(414);
-        primaryStage.show();
-
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
-```
-
-## Gestión de excepciones y ventanas modales`Alert`
-
-En JavaFX, las ventanas modales de tipo `Alert` son útiles para mostrar mensajes al usuario (errores, advertencias,  información o confirmaciones). Se combinan frecuentemente con la gestión de excepciones para informar de forma amigable cuando ocurre un error  en tiempo de ejecución.
-
-**Ejemplo práctico:**
-
-```java
-try {
-    int resultado = 10 / 0;  // Simula una excepción
-} catch (ArithmeticException e) {
-    Alert alerta = new Alert(Alert.AlertType.ERROR);
-    alerta.setTitle("Error matemático");
-    alerta.setHeaderText("No se pudo realizar la operación");
-    alerta.setContentText("División entre cero: " + e.getMessage());
-    alerta.showAndWait();  // Ventana modal (bloquea hasta que se cierre)
-}
-```
-
-**Tipos de alerta más comunes:**
-
-- `ERROR` → Para fallos graves.
-- `WARNING` → Para situaciones peligrosas o dudosas.
-- `INFORMATION` → Para notificar acciones completadas.
-- `CONFIRMATION` → Para preguntar sí/no antes de continuar.
-
-**Ventaja:** La combinación de `try-catch` con `Alert` mejora la experiencia de usuario, evitando que la aplicación falle  silenciosamente o muestre mensajes de consola poco intuitivos.
-
-## Estructura de la aplicación
-
-### El patrón MVC
-
-**Modelo-vista-controlador** (**MVC**) es un patrón de arquitectura de software, que separa los datos y principalmente lo que es la lógica de negocio de una aplicación de su representación y el módulo encargado de  gestionar los eventos y las comunicaciones. Para ello MVC propone la  construcción de tres componentes distintos que son el **modelo**, la **vista** y el **controlador**, es decir, por un lado define componentes para la representación de la  información, y por otro lado para la interacción del usuario. Este patrón de arquitectura de software se basa en las ideas de reutilización de código y la separación de conceptos, características que buscan facilitar la tarea de desarrollo de aplicaciones y su posterior mantenimiento.
-
-De manera genérica, los componentes de MVC se podrían definir como sigue:
-
-- El **Modelo**: Es la representación de la información con la  cual el sistema opera, por lo tanto gestiona todos los accesos a dicha  información, tanto consultas como actualizaciones, implementando también los privilegios de acceso que se hayan descrito en las especificaciones de la aplicación (lógica de negocio). Envía a la &apos;vista&apos; aquella parte de la información que en cada momento  se le solicita para que sea mostrada (típicamente a un usuario). Las  peticiones de acceso o manipulación de información llegan al &apos;modelo&apos; a  través del &apos;controlador&apos;.
-- El **Controlador**: Responde a eventos (usualmente acciones del  usuario) e invoca peticiones al &apos;modelo&apos; cuando se hace alguna solicitud sobre la información (por ejemplo, editar un documento o un registro en una base de datos). También puede enviar comandos a su &apos;vista&apos; asociada si se solicita un cambio en la forma en que se presenta el &apos;modelo&apos;  (por ejemplo, desplazamiento o scroll por un documento o por los  diferentes registros de una base de datos), por tanto se podría decir  que el &apos;controlador&apos; hace de intermediario entre la &apos;vista&apos; y el  &apos;modelo&apos; (véase ***[Middleware](https://es.wikipedia.org/wiki/Middleware)***).
-- La **Vista**: Presenta el &apos;modelo&apos; (información y *lógica de negocio*) en un formato adecuado para interactuar (usualmente la interfaz de usuario), por tanto requiere de dicho &apos;modelo&apos; la información que debe representar como salida.
-
-![](assets/MVC-Process.png){width=400}
-
-!!! info "Resumen — Conceptos clave"
-    | Concepto | Definición |
-    |---|---|
-    | Stage | Ventana principal de la aplicación JavaFX |
-    | Scene | Contenedor del grafo de escena |
-    | Node | Elemento del grafo de escena (botón, texto, imagen...) |
-    | Layout | Contenedor que organiza los nodos hijos |
-    | FXML | Lenguaje de marcado para definir interfaces JavaFX |
-    | SceneBuilder | Herramienta visual para diseñar interfaces FXML |
-    | Evento | Acción del usuario que desencadena una respuesta |
-
-## Píldoras informáticas relacionadas
-
-<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-
-### Autoevaluación
+## Autoevaluación
 - [ ] Comprendo la arquitectura Stage-Scene-Node
 - [ ] Creo interfaces con diferentes layouts
 - [ ] Manejo eventos de botones y teclado
 - [ ] Diseño interfaces con Scene Builder
 - [ ] Separo la interfaz (FXML) de la lógica (Java)
 - [ ] Creo proyectos JavaFX con Maven
+
+## Vídeos recomendados
+
+| Canal | Vídeo | Contenido |
+|-------|-------|-----------|
+| **EducaMadrid** | [JavaFX (introducción)](https://mediateca.educa.madrid.org/video/ep5g2214gawc5gpv) | Introducción a JavaFX |
+| **Píldoras Informáticas** | [Curso Java — Swing / Interfaces gráficas](https://www.youtube.com/@pildorasinformaticas) | Vídeos 100–150: creación de interfaces gráficas (conceptos transferibles a JavaFX) |
+| **Píldoras Informáticas** | [Curso Java 2026 — Interfaces gráficas](https://www.youtube.com/@pildorasinformaticas) | Nueva edición: componentes Swing, eventos, layouts |
+
+
+

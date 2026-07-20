@@ -14,84 +14,42 @@
     - [ ] Comprender los fundamentos de la herencia
     - [ ] Utilizar el empaquetado de clases (paquetes)
 
-!!! Warning ""¿Cómo estudiar esta unidad?"
-    Si lees esta unidad de principio a fin, veras que es como la [Unidad 2: Utilización de Objetos y Clases](../UD02/UD02_ES.md), pero con algunos conceptos más desarrollados y otros nuevos.
+!!! Warning "¿Cómo estudiar esta unidad?"
+    Esta unidad retoma los conceptos de la [Unidad 2: Utilización de Objetos y Clases](../UD02/UD02_ES.md) y los amplía. Las secciones de repaso incluyen enlaces directos a UD02 para que puedas consultarlos si lo necesitas.
 
-    Si tienes absolutamente clara la Unidad 2, puedes leer solamente los siguientes puntos, que contienen las principales novedades. Si por el contrario tienes dudas, lagunas o algunos conceptos no quedaron claros, este es la última oportunidad de estudiarlos, preguntar al docente, entender los ejemplos y hacer los ejercicios. Desde esta unidad en adelante, los Objetos y Clases formaran parte del dia a dia, si te pierdes ahora será difícil seguir el ritmo.
-    
-    Novedades respecto a la Unidad 2:
+    **Si tienes claros los conceptos de la Unidad 2**, ve directamente a las secciones marcadas como **[NUEVO]**, que contienen los contenidos que no se vieron en UD02:
         
-    - 4.2. [Modificadores de acceso](#modificadores-de-acceso-nuevo)
-    - 5.3. [Modificadores en la declaración de un método](#modificadores-en-la-declaracion-de-un-metodo-nuevo)
-    - 5.7. [Sobrecarga de operadores](#sobrecarga-de-operadores-nuevo)
-    - 6.1 [Ocultación de atributos. Métodos de acceso](#ocultacion-de-atributos-metodos-de-acceso-nuevo)
-    - 6.2 [Ocultación de métodos](#ocultacion-de-metodos-nuevo)
-    - 8.4 [Constructores de copia](#constructores-de-copia-nuevo)
-    - 9 [Clases Anidadas, Clases Internas (*Inner Class*)](#clases-anidadas-clases-internas-inner-class-nuevo)
-    - 10 [Introducción a la herencia](#introduccion-a-la-herencia-nuevo)
-    - 11 [Conversión entre objetos (Casting)](#conversion-entre-objetos-casting-nuevo)
-    - 12 [Acceso a métodos de la superclase](#acceso-a-metodos-de-la-superclase-nuevo)
-    - 13 [Empaquetado de clases](#empaquetado-de-clases-nuevo)
+    - [Modificadores de acceso](#modificadores-de-acceso-nuevo)
+    - [Modificadores en la declaración de un método](#modificadores-en-la-declaracion-de-un-metodo-nuevo)
+    - [Sobrecarga de operadores](#sobrecarga-de-operadores-nuevo)
+    - [Ocultación de atributos. Métodos de acceso](#ocultacion-de-atributos-metodos-de-acceso-nuevo)
+    - [Ocultación de métodos](#ocultacion-de-metodos-nuevo)
+    - [Constructores de copia](#constructores-de-copia-nuevo)
+    - [Clases Anidadas, Clases Internas](#clases-anidadas-clases-internas-inner-class-nuevo)
+    - [Introducción a la herencia](#introduccion-a-la-herencia-nuevo)
+    - [Conversión entre objetos (Casting)](#conversion-entre-objetos-casting-nuevo)
+    - [Acceso a métodos de la superclase](#acceso-a-metodos-de-la-superclase-nuevo)
+    - [Empaquetado de clases](#empaquetado-de-clases-nuevo)
+    
+    **Si por el contrario tienes dudas o lagunas**, esta es la última oportunidad de afianzar estos conceptos: a partir de aquí, objetos y clases serán parte del día a día. Los enlaces te llevarán directamente al contenido de UD02 que necesitas repasar.
 
 ## Introducción
 
-Como ya has visto en anteriores unidades, las clases están compuestas por atributos y métodos. Una clase especifica las características comunes de un conjunto de objetos. 
-
-De esta forma los programas que escribas estarán formados por un conjunto de clases a partir de las cuales irás creando objetos que se interrelacionarán unos con otros.
-
-!!! info "Información"
-    En esta unidad se va a utilizar el concepto de objeto así como algunas de las diversas estructuras de control básicas que ofrece cualquier lenguaje de programación. Todos esos conceptos han sido explicados y utilizados en las unidades anteriores. Si consideras que es necesario hacer un repaso del concepto de objeto o del uso de las estructuras de control elementales, éste es el momento de hacerlo.
+Esta unidad retoma los conceptos de POO vistos en la Unidad 2 y los desarrolla en profundidad. A continuación se resumen los conceptos fundamentales; si necesitas repasarlos con más detalle, sigue los enlaces a UD02.
 
 ### Repaso del concepto de objeto
 
-Desde el comienzo del módulo llevas utilizando el concepto de objeto para desarrollar tus programas de ejemplo. En las unidades anteriores se ha descrito un objeto como una entidad que contiene información y que es capaz de realizar ciertas operaciones con esa información. Según los valores que tenga esa información el objeto tendrá un estado determinado y según las operaciones que pueda llevar a cabo con esos datos serán responsables de un comportamiento concreto.
+Un objeto es una entidad con **identidad** (único y distinguible), **estado** (valores de sus atributos) y **comportamiento** (métodos que puede ejecutar). Los objetos son instancias concretas de una clase.
 
-!!! info "Recuerda"
-    Recuerda que entre las características fundamentales de un objeto se encontraban la **identidad** (los objetos son únicos y por tanto distinguibles entre sí, aunque pueda haber objetos exactamente iguales), un **estado** (los atributos que describen al objeto y los valores que tienen en cada momento ) y un determinado **comportamiento** (acciones que se pueden realizar sobre el objeto).
-
-Algunos ejemplos de objetos que podríamos imaginar podrían ser:
-    - Un coche de color rojo, marca SEAT, modelo Toledo, del año 2003. En este ejemplo tenemos una serie de atributos, como el color (en este caso rojo), la marca, el modelo, el año, etc. Así mismo también podríamos imaginar determinadas características como la cantidad de combustible que le queda, o el número de kilómetros recorridos hasta el momento.
-    - Un coche de color amarillo, marca Opel, modelo Astra, del año 2002.
-    - Otro coche de color amarillo, marca Opel, modelo Astra y también del año 2002. Se trataría de otro objeto con las mismas propiedades que el anterior, pero sería un segundo objeto.
-    - Un cocodrilo de cuatro metros de longitud y de veinte años de edad. 
-    - Un círculo de radio 2 centímetros, con centro en las coordenadas (0,0) y relleno de color amarillo.
-    - Un círculo de radio 3 centímetros, con centro en las coordenadas (1,2) y relleno de color verde.
-
-Si observas los ejemplos anteriores podrás distinguir sin demasiada dificultad al menos tres familias de objetos diferentes, que no tienen nada que ver una con otra:
-
-- Los coches.
-- Los círculos.
-- Los cocodrilos.
-
-Es de suponer entonces que cada objeto tendrá determinadas posibilidades de comportamiento (acciones) dependiendo de la familia a la que pertenezcan. Por ejemplo, en el caso de los coches podríamos imaginar acciones como: arrancar, frenar, acelerar, cambiar de marcha, etc. En el caso de los cocodrilos podrías imaginar otras acciones como: desplazarse, comer, dormir, cazar, etc. Para el caso del círculo se podrían plantear acciones como: cálculo de la superficie del círculo, cálculo de la longitud de la circunferencia que lo rodea, etc.
-
-Por otro lado, también podrías imaginar algunos atributos cuyos valores podrían ir cambiando en función de las acciones que se realizaran sobre el objeto: ubicación del coche (coordenadas), velocidad instantánea, kilómetros recorridos, velocidad media, cantidad de combustible en el depósito, etc. En el caso de los cocodrilos podrías imaginar otros atributos como: peso actual, el número de dientes actuales (irá perdiendo algunos a lo largo de su vida), el número de presas que ha cazado hasta el momento, etc.
-
-Como puedes ver, un objeto puede ser cualquier cosa que puedas describir en términos de atributos y acciones. 
-
-!!! info "Definición"
-    Un objeto no es más que la representación de cualquier entidad concreta o abstracta que puedas percibir o imaginar y que pueda resultar de utilidad para modelar los elementos el entorno del problema que deseas resolver.
+!!! tip "Repaso"
+    Si necesitas refrescar estos conceptos, revisa [Objetos y Clases en UD02](../UD02/UD02_ES.md#objetos-y-clases) y las [características de la POO](../UD02/UD02_ES.md#caracteristicas-de-la-poo).
 
 ### El concepto de clase
 
-Está claro que dentro de un mismo programa tendrás la oportunidad de encontrar decenas, cientos o incluso miles de objetos. En algunos casos no se parecerán en nada unos a otros, pero también podrás observar que habrá muchos que tengan un gran parecido, compartiendo un mismo comportamiento y unos mismos atributos. Habrá muchos objetos que sólo se diferenciaran por los valores que toman algunos de esos atributos.
+Una **clase** es una plantilla que define los atributos y métodos comunes a un conjunto de objetos. A partir de una clase se crean objetos (instancias). 
 
-Es aquí donde entra en escena el concepto de clase. Está claro que no podemos definir la estructura y el comportamiento de cada objeto cada vez que va a ser utilizado dentro de un programa, pues la escritura del código sería una tarea interminable y redundante. La idea es poder disponer de una plantilla o modelo para cada conjunto de objetos que sean del mismo tipo, es decir, que tengan los mismos atributos y un comportamiento similar.
-
-!!! info "Definición"
-    Una clase consiste en la definición de un tipo de objeto. Se trata de una descripción detallada de cómo van a ser los objetos que pertenezcan a esa clase indicando qué tipo de información contendrán (atributos) y cómo se podrá interactuar con ellos (comportamiento).
-
-Como ya has visto en unidades anteriores, una clase consiste en un plantilla en la que se especifican:
-
-- Los atributos que van a ser comunes a todos los objetos que pertenezcan a esa clase (información).
-- Los métodos que permiten interactuar con esos objetos (comportamiento).
-
-A partir de este momento podrás hablar ya sin confusión de objetos y de clases,sabiendo que los primeros son instancias concretas de las segundas, que no son más que una abstracción o definición.
-
-Si nos volvemos a fijar en los ejemplos de objetos del apartado anterior podríamos observar que las clases serían lo que clasificamos como "familias" de objetos (coches, cocodrilos y círculos). 
-
-!!! warning "Atención"
-    En el lenguaje cotidiano de muchos programadores puede ser habitual la confusión entre los términos clase y objeto. Aunque normalmente el contexto nos permite distinguir si nos estamos refiriendo realmente a una clase (definición abstracta) o a un objeto (instancia concreta), hay que tener cuidado con su uso para no dar lugar a interpretaciones erróneas, especialmente durante el proceso de aprendizaje.
+!!! tip "Repaso"
+    Revisa el concepto de [clase en UD02](../UD02/UD02_ES.md#clases) si tienes dudas.
 
 ## Estructura y miembros de una clase
 
@@ -113,55 +71,8 @@ En unidades anteriores ya se indicó que para declarar una clase en Java se usa 
     }
     ```
 
-Como puedes observar, el cuerpo de la clase es donde se declaran los atributos que caracterizan a los objetos de la clase y donde se define e implementa el comportamiento de dichos objetos; es decir, donde se declaran e implementan los métodos.
-
-### Declaración de una clase.
-
-La declaración de una clase en Java tiene la siguiente estructura general:
-
-```java
-// Cabecera de la clase
-[modificadores] class <NombreClase> [herencia] [interfaces] {
-	// Cuerpo de la clase
-	Declaración de los atributos
-	Declaración de los métodos
-}
-```
-
-Un ejemplo básico pero completo podría ser:
-
-```java
-class Punto{
-    // Atributos
-    private int x,y;
-    
-    // Métodos
-    int obtenerX () {
-        return x;
-    }
-    int obtenerY() {
-        return y;
-    }
-    void establecerX (int nuevoX) {
-        x = nuevoX;
-    }
-    void establecerY (int nuevoY) {
-        y= nuevoY;
-    }
-}
-```
-
-En este caso se trata de una clase muy sencilla en la que el cuerpo de la clase (el área entre las llaves) contiene el código y las declaraciones necesarias para que los objetos que se construyan (basándose en esta clase) puedan funcionar apropiadamente en un programa (declaraciones de atributos para contener el estado del objeto y métodos que implementen el comportamiento de la clase y los objetos creados a partir de ella).
-
-Si te fijas en los distintos programas que se han desarrollado en los ejemplos de las unidades anteriores, podrás observar que cada uno de esos programas era en sí mismo una clase Java: se declaraban con la palabra reservada `class` y contenían algunos atributos (variables) así como algunos métodos (como mínimo el método `main`).
-
-En el ejemplo anterior hemos visto lo mínimo que se tiene que indicar en la cabecera de una clase (el nombre de la clase y la palabra reservada `class`). Se puede proporcionar bastante más información mediante modificadores y otros indicadores como por ejemplo el nombre de su superclase (si es que esa clase hereda de otra), si implementa algún interfaz y algunas cosas más que irás aprendiendo poco a poco.
-
-A la hora de implementar una clase Java (escribirla en un archivo con un editor de textos o con alguna herramienta integrada como por ejemplo Netbeans o Eclipse) debes tener en cuenta: 
-
-- Por convenio, se ha decidido que en lenguaje Java los nombres de las clases deben de empezar por una letra mayúscula. Así, cada vez que observes en el código una palabra con la primera letra en mayúscula sabrás que se trata de una clase sin necesidad de tener que buscar su declaración. Además, si el nombre de la clase está formado por varias palabras, cada una de ellas también tendrá su primera letra en mayúscula. Siguiendo esta recomendación, algunos ejemplos de nombres de clases podrían ser: `Recta`, `Circulo`, `Coche`, `CocheDeportivo`, `Jugador`, `JugadorFutbol`, `AnimalMarino`, `AnimalAcuatico`, etc.
-- El archivo en el que se encuentra una clase Java debe tener el mismo nombre que esa clase si queremos poder utilizarla desde otras clases que se encuentren fuera de ese archivo (clase principal del archivo).
-- Tanto la definición como la implementación de una clase se incluye en el mismo archivo (archivo `.java`). En otros lenguajes como por ejemplo C++, definición e implementación podrían ir en archivos separados (por ejemplo en C++, serían sendos archivos con extensiones `.h` y `.cpp`).
+!!! tip "Repaso"
+    La sintaxis básica de declaración de una clase se explicó en [Clases en UD02](../UD02/UD02_ES.md#clases). Aquí nos centramos en los elementos avanzados de la cabecera y los modificadores.
 
 ### Cabecera de una clase.
 
@@ -211,109 +122,30 @@ public class Punto{
 
 ### Cuerpo de una clase.
 
-Como ya has visto anteriormente, el cuerpo de una clase se encuentra encerrado entre llaves y contiene la declaración e implementación de sus miembros. Los miembros de una clase pueden ser:
+El cuerpo de una clase contiene la declaración de sus miembros:
 
-- **Atributos**, que especifican los datos que podrá contener un objeto de la clase.
-- **Métodos**, que implementan las acciones que se podrán realizar con un objeto de la clase.
+- **Atributos**: datos que almacena cada objeto.
+- **Métodos**: operaciones que se pueden realizar sobre el objeto.
 
-Una clase puede no contener en su declaración atributos o métodos, pero debe de contener al menos uno de los dos (**la clase no puede ser vacía**).
+Una clase no puede estar vacía: debe contener al menos un atributo o un método.
 
-En el ejemplo anterior donde se definía una clase `Punto`, tendríamos los siguientes atributos:
+!!! tip "Repaso"
+    Para más detalle sobre la estructura de una clase, consulta la [Unidad 2](../UD02/UD02_ES.md#clases).
 
-- Atributo `x`, de tipo `int`.
-- Atributo `y`, de tipo `int`.
+### Miembros estáticos o de clase
 
-Es decir, dos valores de tipo entero. Cualquier objeto de la clase `Punto` que sea creado almacenará en su interior dos números enteros (`x` e `y`). Cada objeto diferente de la clase `Punto` contendrá sendos valores `x` e `y`, que podráncoincidir o no con el contenido de otros objetos de esa misma clase `Punto`.
-
-Por ejemplo, si se han declarado varios objetos de tipo `Punto`:
-
-```java
-Punto p1, p2, p3;
-```
-
-Sabremos que cada uno de esos objetos `p1`, `p2` y `p3` contendrán un par de coordenadas (`x`, `y`) que definen el estado de ese objeto. Puede que esos valores coincidan con los de otros objetos de tipo `Punto`, o puede que no, pero en cualquier caso serán objetos diferentes creados a partir del mismo molde (de la misma clase).
-
-Por otro lado, la clase `Punto` también definía una serie de métodos:
-
-- ```java
-  int obtenerX () {
-      return x;
-  }
-  ```
-  
-- ```java
-  int a;int obtenerY() {
-      return y;
-  }
-  ```
-  
-- ```java
-  void establecerX (int nuevoX) {
-      x= nuevoX; 
-  }
-  ```
-  
-- ```java
-  void establecerY (int nuevoY) {
-      y= nuevoY; 
-  }
-  ```
-
-Cada uno de esos métodos puede ser llamado desde cualquier objeto que sea una instancia de la clase `Punto`. Se trata de operaciones que permiten manipular los datos (atributos) contenidos en el objeto bien para calcular otros datos o bien para modificar los propios atributos.
-
-### Miembros estáticos o de clase.
-
-Cada vez que se produce una instancia de una clase (es decir, se crea un objeto de esa clase), se desencadenan una serie de procesos (construcción del objeto) que dan lugar a la creación en memoria de un espacio físico que constituirá el objeto creado. De esta manera cada objeto tendrá sus propios miembros a imagen y semejanza de la plantilla propuesta por la clase.
-
-Por otro lado, podrás encontrarte con ocasiones en las que determinados miembros de la clase (atributos o métodos) no tienen demasiado sentido como partes del objeto,sino más bien como partes de la clase en sí (partes de la plantilla, pero no de cada instancia de esa plantilla). Por ejemplo, si creamos una clase `Coche` y quisiéramos disponer de un atributo con el nombre de la clase (un atributo de tipo `String` con la cadena "Coche"), no tiene mucho sentido replicar ese atributo para todos los objetos de la clase `Coche`, pues para todos va a tener siempre el mismo valor (la cadena "Coche"). Es más, ese atributo puede tener sentido y existencia al margen de la existencia de cualquier objeto de tipo `Coche`. Podría no haberse creado ningún objeto de la clase `Coche` y sin embargo seguiría teniendo sentido poder acceder a ese atributo de nombre de la clase, pues se trata en efecto de un atributo de la propia clase más que de un atributo de cada objeto instancia de la clase.
-
-Para poder definir miembros estáticos en Java se utiliza el modificador `static`. Los miembros (tanto atributos como métodos) declarados utilizando este modificador son conocidos como **miembros estáticos** o **miembros de clase**. A continuación vas a estudiar la creación y utilización de atributos y métodos. En cada caso verás cómo declarar y usar **atributos estáticos** y **métodos estáticos**.
+Los miembros declarados con `static` pertenecen a la clase, no a cada instancia. Se conocen como **miembros estáticos** o **miembros de clase**. Un atributo `static` es compartido por todos los objetos; un método `static` puede invocarse sin crear un objeto. Se estudiarán en detalle en las secciones de atributos estáticos y métodos estáticos.
 
 ## Atributos
 
-Los **atributos** constituyen la estructura interna de los objetos de una clase. Se trata del conjunto de datos que los objetos de una determinada clase almacenan cuando son creados. Es decir es como si fueran variables cuyo ámbito de existencia es el objeto dentro del cual han sido creadas. Fuera del objeto esas variables no tienen sentido y si el objeto deja de existir, esas variables también deberían hacerlo (proceso de destrucción del objeto). Los atributos a veces también son conocidos con el nombre de **variables miembro** o **variables de objeto**.
-
-Los atributos pueden ser de cualquier tipo de los que pueda ser cualquier otra variable en un programa en
-Java: desde tipos elementales como `int`, `boolean` o `float` hasta tipos referenciados como `arrays`, `Strings` u `objetos`.
-
-Además del tipo y del nombre, la declaración de un atributo puede contener también algunos modificadores (como por ejemplo `public`, `private`, `protected` o `static`). Por ejemplo, en el caso de la clase `Punto` que habíamos definido en el aparado anterior podrías haber declarado sus atributos como:
-
-```java
-public int x;
-public int y;
-```
-
-De esta manera estarías indicando que ambos atributos son públicos, es decir, accesibles por cualquier parte del código programa que tenga acceso a un objeto de esa clase.
-
-!!! danger "Atención"
-    Como ya verás más adelante al estudiar el concepto de encapsulación, lo normal es declarar todos los atributos (o al menos la mayoría) como privados (`private`) de manera que si se desea acceder o manipular algún atributo se tenga que hacer a través de los métodos proporcionados por la clase.
-
-### Declaración de atributos.
-
-La sintaxis general para la declaración de un atributo en el interior de una clase es:
+Los **atributos** (o variables miembro) son los datos que almacenan los objetos de una clase. Se declaran dentro de la clase y pueden ser de cualquier tipo (`int`, `double`, `String`, objetos, etc.).
 
 ```java
 [modificadores] <tipo> <nombreAtributo>;
 ```
 
-Ejemplos:
-
-```java
-int x;
-public int elementoX, elementoY;
-private int x1, y1, z1;
-static double descuentoGeneral;
-final boolean CASADO;
-private Punto p1;
-```
-
-Te suena bastante, ¿verdad? La declaración de los atributos en una clase es exactamente igual a la declaración de cualquier variable tal y como has estudiado en las unidades anteriores y similar a como se hace en cualquier lenguaje de programación. Es decir mediante la indicación del tipo y a continuación el nombre del atributo, pudiéndose declarar varios atributos del mismo tipo mediante una lista de nombres de atributos separada por comas (exactamente como ya has estudiado al declarar variables).
-
-La declaración de un atributo (o variable miembro o variable de objeto) consiste en la declaración de una variable que únicamente existe en el interior del objeto y por tanto su vida comenzará cuando el objeto comience a existir (el objeto sea creado). Esto significa que cada vez que se cree un objeto se crearán tantas variables como atributos contenga ese objeto en su interior (definidas en la clase, que es la plantilla o "molde" del objeto). Todas esas variables estarán encapsuladas dentro del objeto y sólo tendrán sentido dentro de él.
-
-En el ejemplo que estamos utilizando de objetos de tipo `Punto` (instancias de la clase `Punto`), cada vez que se cree un nuevo `Punto` `p1`, se crearán sendos atributos `x`, `y` de tipo int que estarán en el interior de ese punto `p1`.
-
-Si a continuación se crea un nuevo objeto `Punto` `p2`, se crearán otros dos nuevos atributos `x`, `y` de tipo `int` que estarán esta vez alojados en el interior de `p2`. Y así sucesivamente...
+!!! tip "Repaso"
+    La declaración básica de atributos se explicó en [Atributos en UD02](../UD02/UD02_ES.md#atributos). A continuación nos centramos en los modificadores que pueden acompañar a un atributo.
 
 Dentro de la declaración de un atributo puedes encontrar tres partes:
 
@@ -399,50 +231,10 @@ Obviamente, para que esto funcione como estás pensando, también habrá que esc
 
 ## Métodos
 
-Como ya has visto anteriormente, los métodos son las herramientas que nos sirven para definir el comportamiento de un objeto en sus interacciones con otros objetos. Forman parte de la estructura interna del objeto junto con los atributos.
+Los métodos definen el comportamiento de los objetos y constituyen su interfaz. A continuación se detallan los elementos avanzados de su declaración.
 
-En el proceso de declaración de una clase que estás estudiando ya has visto cómo escribir la cabecera de la clase y cómo especificar sus atributos dentro del cuerpo de la clase. Tan solo falta ya declarar los métodos, que estarán también en el interior del cuerpo de la clase junto con los atributos.
-
-!!! warning "Importante"
-    Los métodos suelen declararse después de los atributos. Aunque atributos y métodos pueden aparecer mezclados por todo el interior del cuerpo de la clase es aconsejable no hacerlo para mejorar la claridad y la legibilidad del código. De ese modo, cuando echemos un vistazo rápido al contenido de una clase, podremos ver rápidamente los atributos al principio (normalmente ocuparán menos líneas de código y serán fáciles de reconocer) y cada uno de los métodos inmediatamente después.
-
-Cada método puede ocupar un número de líneas de código más o menos grande en función de la complejidad del proceso que pretenda implementar.
-
-Los métodos representan la interfaz de una clase. Son la forma que tienen otros objetos de comunicarse con un objeto determinado solicitándole cierta información o pidiéndole que lleve a cabo una determinada acción. Este modo de programar, como ya has visto en unidades anteriores, facilita mucho la tarea al desarrollador de aplicaciones, pues le permite abstraerse del contenido de las clases haciendo uso únicamente del interfaz (métodos).
-
-### Declaración de un método.
-
-La definición de un método se compone de dos partes:
-
-- **Cabecera** del método, que contiene el nombre del método junto con el tipo devuelto, un conjunto de posibles modificadores y una lista de parámetros.
-- **Cuerpo** del método, que contiene las sentencias que implementan el comportamiento del método (incluidas posibles sentencias de declaración de variables locales).
-
-Los elementos mínimos que deben aparecer en la declaración de un método son:
-
-- El **tipo** devuelto por el método.
-- El **nombre** del método.
-- Los **paréntesis**.
-- El **cuerpo** del método entre llaves: `{ }`.
-
-Por ejemplo, en la clase `Punto` que se ha estado utilizando en los apartados anteriores podrías encontrar el siguiente método:
-
-```java
-int obtenerX(){
-    // Cuerpo del método
-    ...
-}
-```
-
-Donde:
-
-- El **tipo** devuelto por el método es `int`.
-- El **nombre** del método es `obtenerX`.
-- **No recibe ningún parámetro**: aparece una lista vacía entre paréntesis: `( )`.
-- El **cuerpo** del método es todo el código que habría encerado entre llaves: `{ }`.
-
-Dentro del cuerpo del método podrás encontrar declaraciones de variables, sentencias y todo tipo de estructuras de control (bucles, condiciones, etc.) que has estudiado en los apartados anteriores.
-
-Ahora bien, la declaración de un método puede incluir algunos elementos más. Vamos a estudiar con detalle cada uno de ellos.
+!!! tip "Repaso"
+    La sintaxis básica de declaración de métodos se explicó en [Métodos en UD02](../UD02/UD02_ES.md#metodos).
 
 ### Cabecera de método.
 
@@ -541,35 +333,12 @@ Es posible utilizar una construcción especial llamada `varargs` (argumentos var
 Es posible además mezclar el uso de `varargs` con parámetros fijos. En tal caso, la lista de parámetros variables debe aparecer al final (y sólo puede aparecer una).
 En realidad se trata una manera transparente de pasar un `array` con un número variable de elementos para no tener que hacerlo manualmente. Dentro del método habrá que ir recorriendo el `array` para ir obteniendo cada uno de los elementos de la lista de argumentos variables.
 
-### Cuerpo de un método.
+### Cuerpo de un método
 
-El interior de un método (cuerpo) está compuesto por una serie de sentencias en lenguaje Java:
+El cuerpo de un método contiene las sentencias que implementan su lógica: declaración de variables locales, estructuras de control, y la sentencia `return` (si el método no es `void`).
 
-- Sentencias de declaración de variables locales al método.
-- Sentencias que implementan la lógica del método (estructuras de control como bucles o condiciones; utilización de métodos de otros objetos; cálculo de expresiones matemáticas, lógicas o de cadenas; creación de nuevos objetos, etc.). Es decir, todo lo que has visto en las unidades anteriores. 
-- Sentencia de devolución del valor de retorno (`return`). Aparecerá al final del método y es la que permite devolver la información que se le ha pedido al método. Es la última parte del proceso y la forma de comunicarse con la parte de código que llamó al método (paso de mensaje de vuelta). Esta sentencia de devolución siempre tiene que aparecer al final del método. Tan solo si el tipo devuelto por el método es `void` (vacío) no debe aparecer (pues no hay que devolver nada al código llamante).
-
-En el ejemplo de la clase `Punto`, tenías los métodos `obtenerX` y `obtenerY`. Veamos uno de ellos:
-
-```java
-int obtenerX(){
-	return x;
-}
-```
-
-En ambos casos lo único que hace el método es precisamente devolver un valor (utilización de la sentencia `return`). No recibe parámetros (mensajes o información de entrada) ni hace cálculos, ni obtiene resultados intermedios o finales. Tan solo devuelve el contenido de un atributo. Se trata de uno de los métodos más sencillos que se pueden implementar: un método que devuelve el valor de un atributo. En inglés se les suele llamar métodos de tipo `get`, que en inglés significa `obtener`.
-
-Además de esos dos métodos, la clase también disponía de otros dos que sirven para la función opuesta (`establecerX` y `establecerX`). Veamos uno de ellos:
-
-```java
-void establecerX (int nuevoX){
-	x= nuevoX;
-}
-```
-
-En este caso se trata de pasar un valor al método (parámetro `vx` de tipo `int`) el cual será utilizado para modificar el contenido del atributo `x` del objeto. Como habrás podido comprobar, ahora no se devuelve ningún valor (el tipo devuelto es `void` y no hay sentencia `return`). En inglés se suele hablar de métodos de tipo `set`, que en inglés significa poner o fijar (establecer un valor). El método `establecerY` es prácticamente igual pero para establecer el valor del atributo `y`.
-
-Normalmente el código en el interior de un método será algo más complejo y estará formado un conjunto de sentencias en las que se realizarán cálculos, se tomarán decisiones, se repetirán acciones, etc. Puedes ver un ejemplo más completo en el siguiente ejercicio.
+!!! tip "Repaso"
+    Para más detalle, consulta [Parámetros y valores devueltos en UD02](../UD02/UD02_ES.md#parametros-y-valores-devueltos).
 
 ### Sobrecarga de métodos
 
@@ -661,7 +430,8 @@ Los métodos estáticos no pueden manipular atributos de instancias (objetos) si
 Algunos ejemplos de operaciones que suelen realizarse desde métodos estáticos:
 
 - **Acceso a atributos específicos de clase**: incremento o decremento de contadores internos de la clase (`node instancias`), acceso a un posible atributo de nombre de la clase, etc.
-- **Operaciones genéricas relacionadas con la clase pero que no utilizan atributos de instancia**. Por ejemplo una clase `NIF` (o `DNI`) que permite trabajar con el `DNI` y la letra del `NIF` y que proporciona funciones adicionales para calcular la letra `NIF` de un número de `DNI` que se le pase como parámetro. Ese método puede ser interesante para ser usado desde fuera de la clase de manera independiente a la existencia de objetos de tipo `NIF`.
+- **Operaciones genéricas relacionadas con la clase pero que no utilizan atributos de instancia**. Por ejemplo una clase `NIF` (o `DNI`) que permite trabajar con el `DNI` y la letra del `NIF` y que proporciona funciones adicionales para calcular la letra `NIF` de un número de `DNI` que se le pase como parámetro. Ese método puede ser interesante para ser usado desde fuera de la clase de manera independiente a la existencia de objetos de tipo `NIF`. Consulta el [Ejemplo03](#ejemplo03) para una implementación completa.
+{: #teoria-ejemplo03 }
 
 En la biblioteca de Java es muy habitual encontrarse con clases que proporcionan métodos estáticos que pueden resultar muy útiles para cálculos auxiliares, conversiones de tipos, etc. Por ejemplo, la mayoría de las clases del paquete `java.lang` que representan tipos (`Integer`, `String`, `Float`, `Double`, `Boolean`, etc.) ofrecen métodos estáticos para hacer conversiones. Aquí tienes algunos ejemplos:
 
@@ -777,143 +547,63 @@ public static boolean validarDNI(String dni){
 }
 ```
 
-## Utilización de los métodos y atributos de una clase.
+## Utilización de los métodos y atributos de una clase
 
-Una vez que ya tienes implementada una clase con todos sus atributos y métodos, ha llegado el momento de utilizarla, es decir, de instanciar objetos de esa clase e interaccionar con ellos. En unidades anteriores ya has visto cómo declarar un objeto de una clase determinada, instanciarlo con el operador `new` y utilizar sus métodos y atributos.
+Una vez implementada una clase, se pueden crear objetos e interactuar con ellos. El ciclo de vida completo (declaración, instanciación, manipulación) se explicó en detalle en UD02.
 
-### Declaración de un objeto.
+!!! tip "Repaso"
+    Consulta los siguientes apartados de la Unidad 2 según necesites:
+    - [Declaración de objetos](../UD02/UD02_ES.md#declaracion)
+    - [Instanciación (operador new)](../UD02/UD02_ES.md#instanciacion)
+    - [Manipulación de objetos](../UD02/UD02_ES.md#manipulacion)
+    - [Destrucción y recolector de basura](../UD02/UD02_ES.md#destruccion-de-objetos-y-liberacion-de-memoria)
 
-Como ya has visto en unidades anteriores, la declaración de un objeto se realiza exactamente igual que la declaración de una variable de cualquier tipo:
 
-```java
-<tipo> nombreVariable;
-```
 
-En este caso el tipo será alguna clase que ya hayas implementado o bien alguna de las proporcionadas por la biblioteca de Java o por alguna otra biblioteca escrita por terceros.
+## Constructores
 
-Por ejemplo:
+Un **constructor** es un método especial con el mismo nombre de la clase que se ejecuta al crear un objeto. No devuelve ningún valor. Los constructores soportan sobrecarga.
 
-```java
-Punto p1;
-Rectangulo r1, r2;
-Coche cocheAntonio;
-String palabra;
-```
+!!! tip "Repaso"
+    El concepto básico de constructor se explicó en [Constructores en UD02](../UD02/UD02_ES.md#constructores).
 
-Esas variables (`p1`, `r1`, `r2`, `cocheAntonio`, `palabra`) en realidad son referencias (también conocidas como punteros o direcciones de memoria) que apuntan (hacen "referencia") a un objeto (una zona de memoria) de la clase indicada en la declaración.
+### Creación de constructores
 
-Como ya estudiaste en la unidad dedicada a los objetos, un objeto recién declarado (referencia recién creada) no apunta a nada. Se dice que la referencia está vacía o que es una referencia nula (la variable objeto contiene el valor `null`). Es decir, la variable existe y está preparada para guardar una dirección de memoria que será la zona donde se encuentre el objeto al que hará referencia, pero el objeto aún no existe (no ha sido creado o instanciado). Por tanto se dice que apunta a un objeto nulo o inexistente.
+Cuando se escribe una clase, se pueden definir uno o más constructores. En la definición se indica:
 
-Para que esa variable (referencia) apunte realmente a un objeto (contenga una referencia o dirección de memoria que apunte a una zona de memoria en la que se ha reservado espacio para un objeto) es necesario crear o instanciar el objeto. Para ello se utiliza el operador `new`.
-
-### Creación de un objeto.
-
-Para poder crear un objeto (instancia de una clase) es necesario utilizar el operador `new`, el cual tiene la siguiente sintaxis:
+- El tipo de acceso (`public`, `private`, etc.).
+- El nombre de la clase (obligatorio).
+- La lista de parámetros.
+- El cuerpo del constructor.
 
 ```java
-nombreObjeto= new <ConstructorClase> ([listaParametros]);
+public Punto(int x, int y) {
+    this.x = x;
+    this.y = y;
+}
 ```
 
-El constructor de una clase (`<ConstructorClase>`) es un método especial que tiene toda clase y cuyo nombre coincide con el de la clase. Es quien se encarga de crear o construir el objeto, solicitando la reserva de memoria necesaria para los atributos e inicializándolos a algún valor si fuera necesario.
+!!! danger "Recuerda"
+    Si defines constructores personalizados, el constructor por defecto (sin parámetros) deja de ser generado por el compilador. Debes crearlo tú si lo necesitas.
 
-Dado que el constructor es un método más de la clase, podrá tener también su lista de parámetros como tienen todos los métodos.
-
-De la tarea de reservar memoria para la estructura del objeto (sus atributos más alguna otra información de carácter interno para el entorno de ejecución) se encarga el propio entorno de ejecución de Java. Es decir, que por el hecho de ejecutar un método constructor, el entorno sabrá que tiene que realizar una serie de tareas (solicitud de una zona de memoria disponible, reserva de memoria para los atributos, enlace de la variable objeto a esa zona, etc.) y se pondrá rápidamente a desempeñarlas.
-
-Cuando escribas el código de una clase no es necesario que implementes el método constructor si no quieres hacerlo. Java se encarga de dotar de un constructor por omisión (también conocido como constructor por defecto) a toda clase. Ese constructor por omisión se ocupará exclusivamente de las tareas de reserva de memoria. Si deseas que el constructor realice otras tareas adicionales, tendrás que escribirlo tú. El constructor por omisión no tiene parámetros.
-
-!!! warning "Recuerda"
-    El constructor por defecto no se ve en el código de una clase. Lo incluirá el compilador de Java al compilar la clase si descubre que no se ha creado ningún método constructor para esa clase. 
-
-Algunos ejemplos de instanciación o creación de objetos podrían ser:
+Los constructores soportan la sobrecarga, igual que los métodos. Consulta los [Ejemplo01](#ejemplo01) y [Ejemplo02](#ejemplo02) para ver implementaciones completas:
 
 ```java
-p1 = new Punto();
-r1 = new Rectangulo();
-r2 = new Rectangulo;
-cocheAntonio = new Coche();
-palabra = new String; //palabra = new String("");
+public Rectangulo() { ... }
+public Rectangulo(double x1, double y1, double x2, double y2) { ... }
+public Rectangulo(double base, double altura) { ... }
 ```
+{: #teoria-ejemplo01 }
 
-!!! warning "Importante"
-    En el caso de los constructores, si éstos no tienen parámetros, pueden omitirse los paréntesis vacíos.
+Consulta el [Ejemplo02](#ejemplo02) para ver una implementación con constructores sobrecargados y constructor de copia.
+{: #teoria-ejemplo02 }
 
-Un objeto puede ser declarado e instanciado en la misma línea. Por ejemplo:
+### Utilización de constructores
 
 ```java
-Punto p1 = new Punto();
+Punto p1 = new Punto(10, 7);
+Punto p2 = new Punto(); // constructor por defecto (si existe)
 ```
-
-### Manipulación de un objeto: utilización de métodos y atributos.
-
-Una vez que un objeto ha sido declarado y creado (clase instanciada) ya sí se puede decir que el objeto existe en el entorno de ejecución, y por tanto que puede ser manipulado como un objeto más en el programa, haciéndose uso de sus atributos y sus métodos.
-
-Para acceder a un miembro de un objeto se utiliza el operador punto (`.`) del siguiente modo:
-
-```java
-<nombreObjeto>.<nombreMiembro>
-```
-
-Donde `<nombreMiembro>` será el nombre de algún miembro del objeto (atributo o método) al cual se tenga acceso.
-
-Por ejemplo, en el caso de los objetos de tipo `Punto` que has declarado e instanciado en los apartados anteriores, podrías acceder a sus miembros de la siguiente manera:
-
-```java
-Punto p1, p2, p3;
-
-p1= new Punto();
-p1.x= 5;
-p1.y= 6;
-
-System.out.printf ("p1.x: %d\np1.y: %d\n", p1.x, p1.y);
-System.out.printf ("p1.x: %d\np1.y: %d\n", p1.obtenerX(), p1.obtenerY());
-p1.establecerX(25);
-p1.establecerX(30);
-System.out.printf ("p1.x: %d\np1.y: %d\n", p1.obtenerX(), p1.obtenerY());
-```
-
-Es decir, colocando el operador punto (`.`) a continuación del nombre del objeto y seguido del nombre del miembro al que se desea acceder.
-
-## Constructores.
-
-Como ya has estudiado en unidades anteriores, en el ciclo de vida de un objeto se pueden distinguir las fases de:
-
-- Construcción del objeto.
-- Manipulación y utilización del objeto accediendo a sus miembros.
-- Destrucción del objeto.
-
-Como has visto en el apartado anterior, durante la fase de construcción o instanciación de un objeto es cuando se reserva espacio en memoria para sus atributos y se inicializan algunos de ellos. Un constructor es un método especial con el mismo nombre de la clase y que se encarga de realizar este proceso.
-
-El proceso de declaración y creación de un objeto mediante el operador `new` ya ha sido estudiado en apartados anteriores. Sin embargo las clases que hasta ahora has creado no tenían constructor. Has estado utilizando los constructores por defecto que proporciona Java al compilar la clase. Ha llegado el momento de que empieces a implementar tus propios constructores.
-
-!!! info "Información"
-    Los métodos constructores se encargan de llevar a cabo el proceso de creación o construcción de un objeto.
-
-### Concepto de constructor.
-
-Un constructor es un método que tiene el mismo nombre que la clase a la que pertenece y que no devuelve ningún valor tras su ejecución. Su función es la de proporcionar el mecanismo de creación de instancias (objetos) de la clase.
-
-Cuando un objeto es declarado, en realidad aún no existe. Tan solo se trata de un nombre simbólico (una variable) que en el futuro hará referencia a una zona de memoria que contendrá la información que representa realmente a un objeto. Para que esa variable de objeto aún "vacía" (se suele decir que es una referencia nula o vacía) apunte, o haga referencia a una zona de memoria que represente a una instancia de clase (objeto) existente, es necesario "construir" el objeto. Ese proceso se realizará a través del método constructor de la clase. Por tanto para crear un nuevo objeto es necesario realizar una llamada a un método constructor de la clase a la que pertenece ese objeto.
-
-Ese proceso se realiza mediante la utilización del operador `new`.
-
-Hasta el momento ya has utilizado en numerosas ocasiones el operador `new` para instanciar o crear objetos. En realidad lo que estabas haciendo era una llamada al constructor de la clase para que reservara memoria para ese objeto y por tanto "crear" físicamente el objeto en la memoria (dotarlo de existencia física dentro de la memoria del ordenador). Dado que en esta unidad estás ya definiendo tus propias clases, parece que ha llegado el momento de que empieces a escribir también los constructores de tus clases.
-
-Por otro lado, si un constructor es al fin y al cabo una especie de método (aunque algo especial) y Java soporta la sobrecarga de métodos, podrías plantearte la siguiente pregunta: ¿podrá una clase disponer de más de constructor? En otras palabras, ¿será posible la sobrecarga de constructores? La respuesta es afirmativa.
-
-!!! warning "Importante"
-    Una misma clase puede disponer de varios constructores. **Los constructores soportan la sobrecarga.**
-
-Es necesario que toda clase tenga al menos un constructor. Si no se define ningún constructor en una clase, el compilador creará por nosotros un constructor por defecto vacío que se encarga de inicializar todos los atributos a sus valores por defecto (0 para los numéricos, null para las referencias, false para los boolean, etc.).
-
-Algunas analogías que podrías imaginar para representar el constructor de una clase podrían ser:
-
-- Los moldes de cocina para flanes, galletas, pastas, etc.
-- Un cubo de playa para crear castillos de arena.
-- Un molde de un lingote de oro.
-- Una bolsa para hacer cubitos de hielo.
-
-Una vez que incluyas un constructor personalizado a una clase, el compilador ya no incluirá el constructor por defecto (sin parámetros) y por tanto si intentas usarlo se produciría un error de compilación. Si quieres que tu clase tenga también un constructor sin parámetros tendrás que escribir su código (ya no lo hará por ti el compilador)
 
 ### Creación de constructores.
 
@@ -985,32 +675,18 @@ p2 = new Punto (p1);
 
 En este caso el objeto `p2` se crea a partir de los valores del objeto `p1`.
 
-### Destrucción de objetos.
+### Destrucción de objetos
 
-Como ya has estudiado en unidades anteriores, cuando un objeto deja de ser utilizado, los recursos usados por él (memoria, acceso a archivos, conexiones con bases de datos, etc.) deberían de ser liberados para que puedan volver a ser utilizados por otros procesos (mecanismo de destrucción del objeto).
+Java gestiona la destrucción de objetos automáticamente mediante el **recolector de basura** (garbage collector). Los objetos que ya no tienen referencias son marcados para su eliminación.
 
-Mientras que de la construcción de los objetos se encargan los métodos constructores, de la destrucción se encarga un proceso del entorno de ejecución conocido como **recolector de basura** (**garbage collector**). Este proceso va buscando periódicamente objetos que ya no son referenciados (no hay ninguna variable que haga referencia a ellos) y los marca para ser eliminados. Posteriormente los irá eliminando de la memoria cuando lo considere oportuno (en función de la carga del sistema, los recursos disponibles, etc.).
-
-Normalmente se suele decir que en Java no hay método destructor y que en otros lenguajes orientados a objetos como C++, sí se implementa explícitamente el destructor de una clase de la misma manera que se define el constructor. En realidad en Java también es posible implementar el método destructor de una clase, se trata del método `finalize()`.
-
-Este método `finalize` es llamado por el recolector de basura cuando va a destruir el objeto (lo cual nunca se sabe cuándo va a suceder exactamente, pues una cosa es que el objeto sea marcado para ser borrado y otra que sea borrado efectivamente). Si ese método no existe, se ejecutará un destructor por defecto (el método `finalize` que contiene la clase `Object`, de la cual heredan todas las clases en Java) que liberará la memoria ocupada por el objeto. Se recomienda por tanto que si un objeto utiliza determinados recursos de los cuales no tienes garantía que el entorno de ejecución los vaya a liberar (cerrar archivos, cerrar conexiones de red, cerrar conexiones con bases de datos, etc.), implementes explícitamente un método `finalize` en tus clases. Si el único recurso que utiliza tu clase es la memoria necesaria para albergar sus atributos, eso sí será liberado sin problemas. Pero si se trata de algo más complejo, será mejor que te encargues tú mismo de hacerlo implementando tu destructor personalizado (`finalize`).
-
-Por otro lado, esta forma de funcionar del entorno de ejecución de Java (destrucción de objetos no referenciados mediante el recolector de basura) implica que no puedas saber exactamente cuándo un objeto va a ser definitivamente destruido, pues si una variable deja de ser referenciada (se cierra el ámbito de ejecución donde fue creada) no implica necesariamente que sea inmediatamente borrada, sino que simplemente es marcada para que el recolector la borre cuando pueda hacerlo.
-
-Si en un momento dado fuera necesario garantizar que el proceso de finalización (método `finalize`) sea invocado, puedes recurrir al método `runFinalization()` de la clase `System` para forzarlo:
+Es posible implementar el método `finalize()` para liberar recursos antes de la destrucción:
 
 ```java
-System.runFinalization ();
+protected void finalize() { ... }
 ```
 
-Este método se encarga de llamar a todos los métodos `finalize` de todos los objetos marcados por el recolector de basura para ser destruidos.
-
-Si necesitas implementar un destructor (normalmente no será necesario), debes tener en cuenta que:
-
-- El nombre del método destructor debe ser `finalize()`.
-- No puede recibir parámetros.
-- Sólo puede haber un destructor en una clase. No es posible la sobrecarga dado que no tiene parámetros.
-- No puede devolver ningún valor. Debe ser de tipo `void`.
+!!! tip "Repaso"
+    El ciclo de vida y la destrucción de objetos se explican en [Destrucción en UD02](../UD02/UD02_ES.md#destruccion-de-objetos-y-liberacion-de-memoria).
 
 ## Clases Anidadas, Clases Internas (*Inner Class*) [NUEVO]
 
@@ -1079,51 +755,8 @@ Uso común:
 
 - Se utiliza cuando la clase interna necesita interactuar con los miembros de instancia de la clase externa.
 
-**Ejemplo:**
-
-   ```java
-   class Pc {
-   
-       double precio;
-   
-       public String toString() {
-           return "El precio del PC es " + this.precio;
-       }
-   
-       class Monitor {
-   
-           String marca;
-   
-           public String toString() {
-               return "El monitor es de la marca " + this.marca;
-           }
-       }
-   
-       class Cpu {
-   
-           String marca;
-   
-           public String toString() {
-               return "La CPU es de la marca " + this.marca;
-           }
-       }
-   }
-   
-   public class ClaseInternaHardware {
-   
-       public static void main(String[] args) {
-           Pc miPc = new Pc();
-           Pc.Monitor miMonitor = miPc.new Monitor();
-           Pc.Cpu miCpu = miPc.new Cpu();
-           miPc.precio = 1250.75;
-           miMonitor.marca = "Asus";
-           miCpu.marca = "AMD";
-           System.out.println(miPc); //El precio del PC es 1250.75
-           System.out.println(miMonitor); //El monitor es de la marca Asus
-           System.out.println(miCpu); //La CPU es de la marca AMD
-       }
-   }
-   ```
+Puedes ver la implementación completa con una clase `main` de prueba en el [Ejemplo08](#ejemplo08).
+{: #teoria-ejemplo08 }
 
 ### **Comparación Resumida:**
 
@@ -1274,90 +907,17 @@ Si creamos una instancia de tipo persona y le asignamos un objeto de tipo emplea
 
 Por otro lado, si intentamos asignar valores a los atributos específicos de empleado o encargado nos encontramos con una pérdida de precisión puesto que no se pueden ejecutar todos los métodos de los que dispone un objeto de tipo empleado o encargado, ya que persona contiene menos métodos que la clase empleado o encargado. En este caso es necesario hacer un casting, sino el compilador dará error.
 
-Ejemplo:
+Ejemplo ([Casting](#ejemplo04)):
+{: #teoria-ejemplo04 }
 
-```java
-package UD05;
+Si quieres ver la definición completa de la clase `Persona` dentro de su propio archivo, consulta el [Ejemplo05](#ejemplo05).
+{: #teoria-ejemplo05 }
 
-// Clase Persona que solo dispone de nombre
-public class Persona {
+La clase `Empleado` completa se muestra en el [Ejemplo06](#ejemplo06).
+{: #teoria-ejemplo06 }
 
-    String nombre;
-
-    public Persona(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setNombre(String nom) {
-        nombre = nom;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    @Override
-    public String toString() {
-        return "Nombre: " + nombre;
-    }
-}
-```
-
-```java
-package UD05;
-
-// Clase Empleado que hereda de Persona y añade atributo sueldoBase
-public class Empleado extends Persona {
-
-    double sueldoBase;
-
-    public Empleado(String nombre, double sueldoBase) {
-        super(nombre);
-        this.sueldoBase = sueldoBase;
-    }
-
-    public double getSueldo() {
-        return sueldoBase;
-    }
-
-    public void setSueldoBase(double sueldoBase) {
-        this.sueldoBase = sueldoBase;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + "\nSueldo Base: " + sueldoBase;
-    }
-}
-```
-
-```java
-package UD05;
-
-// Clase Encargado que hereda de Empleado y añade atributo seccion
-public class Encargado extends Empleado {
-
-    String seccion;
-
-    public Encargado(String nombre, double sueldoBase, String seccion) {
-        super(nombre, sueldoBase);
-        this.seccion = seccion;
-    }
-
-    public String getSeccion() {
-        return seccion;
-    }
-
-    public void setSeccion(String seccion) {
-        this.seccion = seccion;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + "\nSección:" + seccion ;
-    }
-}
-```
+Puedes ver la clase `Encargado` completa en el [Ejemplo07](#ejemplo07).
+{: #teoria-ejemplo07 }
 
 ```java
 package UD05;
@@ -1465,9 +1025,10 @@ public class Anexo4SuperClase {
 
 ## Empaquetado de clases  [NUEVO]
 
-La encapsulación de la información dentro de las clases ha permitido llevar a cabo el proceso de ocultación, que es fundamental para el trabajo con clases y objetos. Es posible que conforme vaya aumentando la complejidad de tus aplicaciones necesites que algunas de tus clases puedan tener acceso a parte de la implementación de otras debido a las relaciones que se establezcan entre ellas a la hora de diseñar tu modelo de datos. En estos casos se puede hablar de un nivel superior de encapsulamiento y ocultación conocido como empaquetado.
+Un **paquete** es un conjunto de clases relacionadas agrupadas bajo un mismo nombre, formando un nivel superior de encapsulación.
 
-Un paquete consiste en un conjunto de clases relacionadas entre sí y agrupadas bajo un mismo nombre. Normalmente se encuentran en un mismo paquete todas aquellas clases que forman una biblioteca o que reúnen algún tipo de característica en común. Esto la organización de las clases para luego localizar fácilmente aquellas que vayas necesitando.
+!!! tip "Repaso"
+    Las sentencias `package` e `import` se introdujeron en [Librerías de Objetos en UD02](../UD02/UD02_ES.md#librerias-de-objetos-paquetes). Aquí se amplía la organización jerárquica de paquetes.
 
 ### Jerarquía de paquetes.
 
@@ -1486,61 +1047,12 @@ Las clases que forman parte de la jerarquía de clases de Java se encuentran org
 
 Todas las clases proporcionadas por Java en sus bibliotecas son miembros de distintos paquetes y se encuentran organizadas jerárquicamente. Dentro de cada paquete habrá un conjunto de clases con algún tipo de relación entre ellas. Se dice que todo ese conjunto de paquetes forman la API de Java. Por ejemplo las clases básicas del lenguaje se encuentran en el paquete `java.lang`, las clases de entrada/salida las podrás encontrar en el paquete `java.io` y en el paquete `java.math` podrás observar algunas clases para trabajar con números grandes y de gran precisión.
 
-### Utilización de los paquetes.
+### Utilización de los paquetes
 
-Es posible acceder a cualquier clase de cualquier paquete (siempre que ese paquete esté disponible en nuestro sistema, obviamente) mediante la calificación completa de la clase dentro de la estructura jerárquica de paquete. Es decir indicando la trayectoria completa de paquetes desde el paquete raíz hasta la propia clase. Eso se puede hacer utilizando el operador punto (`.`) para especificar cada subpaquete:
+Se accede a una clase mediante su nombre completo (ruta del paquete + nombre de clase) o mediante `import`. 
 
-```java
-paquete_raiz.subpaquete1.subpaquete2. ... .subpaquete_n.NombreClase
-```
-
-Por ejemplo: 
-
-```java
-java.lang.String
-```
-
-En este caso se está haciendo referencia a la clase `String` que se encuentra dentro del paquete `java.lang`. Este paquete contiene las clases elementales para poder desarrollar una aplicación Java.
-
-Otro ejemplo podría ser: 
-
-```java
-java.util.regex.Patern
-```
-
-En este otro caso se hace referencia a la clase `Patern` ubicada en el paquete `java.util.regex`, que contiene clases para trabajar con expresiones regulares.
-
-Dado que puede resultar bastante tedioso tener que escribir la trayectoria completa de una clase cada vez que se quiera utilizar, existe la posibilidad de indicar que se desea trabajar con las clases de uno o varios paquetes. De esa manera cuando se vaya a utilizar una clase que pertenezca a uno de esos paquetes no será necesario indicar toda su trayectoria. Para ello se utiliza la sentencia `import` (importar):
-
-```java
-import paquete_raiz.subpaquete1.subpaquete2. ... .subpaquete_n.NombreClase;
-```
-
-De esta manera a partir de ese momento podrá utilizarse directamente `NombreClase` en lugar de toda su trayectoria completa.
-
-Los ejemplos anteriores quedarían entonces:
-
-```java
-import java.lang.String;
-import java.util.regex.Patern;
-```
-
-Si suponemos que vamos a utilizar varias clases de un mismo paquete, en lugar de hacer un `import` de cada una de ellas, podemos utilizar el comodín (símbolo asterisco: `*`) para indicar que queremos importar todas las clases de ese paquete y no sólo una determinada:
-
-```java
-import java.lang.*;
-import java.util.regex.*;
-```
-
-Si un paquete contiene subpaquetes, el comodín no importará las clases de los subpaquetes, tan solo las que haya en el paquete. La importación de las clases contenidas en los subpaquetes habrá que indicarla explícitamente. Por ejemplo:
-
-```java
-import java.util.*;
-import java.util.regex.*;
-```
-
-En este caso se importarán todas las clases del paquete `java.util` (clases `Date`, `Calendar`, `Timer`, etc.) y de su subpaquete `java.util.regex` (`Matcher` y `Pattern`), pero no las de otros subpaquetes como `java.util.concurrent` o `java.util.jar`.
-Por último tan solo indicar que en el caso del paquete `java.lang`, no es necesario realizar importación. El compilador, dada la importancia de este paquete, permite el uso de sus clases sin necesidad de indicar su trayectoria (es como si todo archivo Java incluyera en su primera línea la sentencia `import java.lang.*`).
+!!! tip "Repaso"
+    El uso de la sentencia `import` se explica en [Sentencia import en UD02](../UD02/UD02_ES.md#sentencia-import).
 
 ### Inclusión de una clase en un paquete.
 
@@ -1923,11 +1435,13 @@ Para calcular la letra `NIF` correspondiente a un número de `DNI` puedes consul
 
 **Respuesta**:
 
-Inténtalo por tu cuenta y cuando te quedes atascado tienes la solución en el apartado [Clase DNI](#clase-dni)
+Inténtalo por tu cuenta y cuando te quedes atascado tienes la solución en el [Ejemplo03](#ejemplo03)
 
 ## Ejemplos UD05
 
-### Clase `Rectangulo`
+### Ejemplo01
+
+Clase `Rectangulo` con miembros estáticos, de instancia y método `main` de prueba.
 
 ```java
 package UD05;
@@ -2018,7 +1532,11 @@ class Rectangulo {
 }
 ```
 
-### Clase `Rectangulov2`
+[⬆ Volver a teoría](#teoria-ejemplo01)
+
+### Ejemplo02
+
+Clase `Rectangulov2` con constructores sobrecargados, constructor de copia y uso de `this`.
 
 ```java
 package UD05;
@@ -2155,7 +1673,11 @@ class Rectangulov2 {
 }
 ```
 
-### Clase `DNI`
+[⬆ Volver a teoría](#teoria-ejemplo02)
+
+### Ejemplo03
+
+Clase `DNI` con métodos estáticos de validación, cálculo de letra NIF y encapsulación.
 
 ```java
 public class DNI {
@@ -2251,7 +1773,11 @@ public class DNI {
 }
 ```
 
-### `Casting`
+[⬆ Volver a teoría](#teoria-ejemplo03)
+
+### Ejemplo04
+
+Clase `Casting` que demuestra el casting implícito y explícito entre objetos de una jerarquía de herencia.
 
 ```java
 package UD05;
@@ -2280,7 +1806,11 @@ public class Casting {
 }
 ```
 
-#### `Persona`
+[⬆ Volver a teoría](#teoria-ejemplo04)
+
+### Ejemplo05
+
+Clase base `Persona` con atributo `nombre`, getter, setter y método `toString`.
 
 ```java
 package UD05;
@@ -2309,7 +1839,11 @@ public class Persona {
 }
 ```
 
-#### `Empleado`
+[⬆ Volver a teoría](#teoria-ejemplo05)
+
+### Ejemplo06
+
+Clase derivada `Empleado` que hereda de `Persona` y añade el atributo `sueldoBase`.
 
 ```java
 package UD05;
@@ -2339,7 +1873,11 @@ public class Empleado extends Persona {
 }
 ```
 
-### `Encargado`
+[⬆ Volver a teoría](#teoria-ejemplo06)
+
+### Ejemplo07
+
+Clase derivada `Encargado` que hereda de `Empleado` y añade el atributo `seccion`.
 
 ```java
 package UD05;
@@ -2369,7 +1907,11 @@ public class Encargado extends Empleado {
 }
 ```
 
-### `ClasesAnidadas`
+[⬆ Volver a teoría](#teoria-ejemplo07)
+
+### Ejemplo08
+
+Clase `ClasesAnidadas` con clases internas `Monitor` y `Cpu` dentro de la clase `Pc`.
 
 ```java
 package UD05;
@@ -2417,25 +1959,38 @@ public class ClasesAnidadas {
 }
 ```
 
-!!! info "Resumen — Conceptos clave"
-    | Concepto | Definición |
-    |---|---|
-    | Modificador de acceso | Palabra clave que controla la visibilidad (public, private, protected) |
-    | Sobrecarga | Varios métodos con el mismo nombre pero diferentes parámetros |
-    | Getter/Setter | Métodos que permiten acceder y modificar atributos privados |
-    | Constructor de copia | Constructor que crea un objeto copiando los valores de otro |
-    | Clase interna | Clase definida dentro de otra clase |
-    | Paquete | Agrupación de clases relacionadas |
+[⬆ Volver a teoría](#teoria-ejemplo08)
 
-## Píldoras informáticas relacionadas
+## Resumen — Conceptos clave
 
-<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+| Concepto | Definición |
+|---|---|
+| Modificador de acceso | Palabra clave que controla la visibilidad (public, private, protected) |
+| Sobrecarga | Varios métodos con el mismo nombre pero diferentes parámetros |
+| Getter/Setter | Métodos que permiten acceder y modificar atributos privados |
+| Constructor de copia | Constructor que crea un objeto copiando los valores de otro |
+| Clase interna | Clase definida dentro de otra clase |
+| Paquete | Agrupación de clases relacionadas |
 
-### Autoevaluación
+## Autoevaluación
 - [ ] Diseño clases con atributos privados y métodos públicos
 - [ ] Aplico correctamente los modificadores de acceso
 - [ ] Sobrecargo métodos y constructores
 - [ ] Implemento getters y setters
 - [ ] Comprendo el concepto de clase interna
 - [ ] Organizo mis clases en paquetes
+
+## Vídeos recomendados
+
+| Canal | Vídeo | Contenido |
+|-------|-------|-----------|
+| **Programación ATS** | [Herencia en POO (vídeo 74)](https://youtu.be/LZPafq9Ve_Q) | Herencia entre clases |
+| **Programación ATS** | [Polimorfismo en POO (vídeo 77)](https://youtu.be/RXcUTWczbag) | Polimorfismo y enlace dinámico |
+| **Programación ATS** | [Playlist POO Java](https://youtube.com/playlist?list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K) | Vídeos 73–82: clases abstractas (76), interfaces, modificadores de acceso |
+| **Píldoras Informáticas** | [Herencia I (vídeo 40)](https://www.pildorasinformaticas.es/unit/java-herencia-i-video-40/) | Introducción a la herencia |
+| **Píldoras Informáticas** | [Interfaces I–IV (vídeos 49–52)](https://www.youtube.com/@pildorasinformaticas) | Interfaces y clases internas |
+| **BitBoss** | [Los 4 pilares de POO](https://youtu.be/SI7O81GMG2A) | Abstracción, encapsulación, herencia, polimorfismo (10 min) |
+| **MoureDev** | [Curso Completo de Java desde Cero](https://youtu.be/JOAqpdM36wI) | Sección POO (herencia, interfaces, polimorfismo) |
+
+
 

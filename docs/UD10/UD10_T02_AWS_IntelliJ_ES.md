@@ -186,7 +186,7 @@ Cuando comprobemos que tenemos la 7 tablas, podemos seguir.
 
 #### Descargar MySQL connector
 
-Tal y como vimos en el taller [UD10_T02_Conectores_ES](UD10_T02_Conectores_ES.md), añade el conector a tu proyecto (mediante jar o maven, como prefieras.)
+Tal y como vimos en el taller [UD10_T01_Conectores_ES](UD10_T01_Conectores_ES.md), añade el conector a tu proyecto (mediante jar o maven, como prefieras.)
 
 
 #### Código del cliente
@@ -314,6 +314,6 @@ Ahora que has visto como crear una BBDD en AWS:
 2. Carga una Base de Datos que puedas conseguir por tu cuenta, que crees desde cero, o a partir de las que te proporciona el profesor. La condición es que debe tener al menos 3 tablas, al menos dos de ellas deben estar relacionadas, y debes tener al menos 10 registros (información) en cada una de las tablas.
 
    Comenta con el profesor  (por correo electrónico) la BBDD que usaras para evitar que dos alumnos usen la misma (en caso que uses una que encuentres por Internet).
-3. Esta nueva Base de Datos será la que usaras para completar la [siguiente tarea](UD10_T04_DAO_ES.md), así que quizá deberías echarle un ojo antes de tomar la decisión.
+3. Esta nueva Base de Datos será la que usaras para completar la [siguiente tarea](UD10_T03_DAO_ES.md), así que quizá deberías echarle un ojo antes de tomar la decisión.
 
 Envía una memoria en fichero **pdf** explicando los pasos seguidos (con capturas) a la tarea de **Aules** correspondiente.

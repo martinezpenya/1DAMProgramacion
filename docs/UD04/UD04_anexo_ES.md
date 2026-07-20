@@ -551,3 +551,107 @@ String s = "1, " + "2, " + "3, " + "4, " ...;
 ```
 
 Entonces puedes usar el operador `+` sin problemas, porque el compilador usará `StringBuilder` automáticamente.
+
+## Formato de salida: `printf` y `String.format`
+
+Java proporciona dos mecanismos equivalentes para formatear cadenas con valores insertados: `System.out.printf()` y `String.format()`. Ambos usan los mismos especificadores de formato.
+
+### `System.out.printf()`
+
+Imprime directamente una cadena formateada por consola. El primer argumento es la cadena con los especificadores, y los siguientes son los valores a insertar:
+
+```java
+System.out.printf("Hola %s, tienes %d años.%n", "Juan", 25);
+// Salida: Hola Juan, tienes 25 años.
+```
+
+### `String.format()`
+
+Funciona igual que `printf` pero **devuelve** la cadena formateada en lugar de imprimirla:
+
+```java
+String mensaje = String.format("Hola %s, tienes %d años.%n", "Juan", 25);
+System.out.print(mensaje);
+```
+
+### Especificadores de formato
+
+| Especificador | Tipo | Ejemplo |
+|---------------|------|---------|
+| `%d` | Entero (int, long) | `%d` → `42` |
+| `%f` | Decimal (float, double) | `%f` → `3,141593` |
+| `%s` | Cadena (String, cualquier objeto) | `%s` → `Hola` |
+| `%c` | Carácter (char) | `%c` → `A` |
+| `%b` | Booleano (boolean) | `%b` → `true` |
+| `%n` | Salto de línea | `%n` |
+| `%%` | Literal % | `%%` → `%` |
+
+### Ancho de campo y alineación
+
+Se puede especificar un ancho mínimo para cada valor. El valor se alinea a la derecha por defecto:
+
+```java
+System.out.printf("%10s %10s %10s%n", "Nombre", "Edad", "Peso");
+System.out.printf("%10s %10d %10.2f%n", "Ana", 25, 55.5);
+System.out.printf("%10s %10d %10.2f%n", "Juan", 30, 72.3);
+```
+
+Salida:
+```
+     Nombre       Edad       Peso
+        Ana         25      55,50
+       Juan         30      72,30
+```
+
+Para alinear a la izquierda, se usa el guion (`-`):
+
+```java
+System.out.printf("%-10s %-10s %-10s%n", "Nombre", "Edad", "Peso");
+System.out.printf("%-10s %-10d %-10.2f%n", "Ana", 25, 55.5);
+```
+
+Salida:
+```
+Nombre     Edad       Peso
+Ana        25         55,50
+```
+
+### Precisión en decimales
+
+Para controlar el número de decimales en un `double` o `float`:
+
+```java
+double pi = Math.PI;
+System.out.printf("Pi con 2 decimales: %.2f%n", pi);       // 3,14
+System.out.printf("Pi con 4 decimales: %.4f%n", pi);       // 3,1416
+System.out.printf("Pi con ancho 10 y 2 decimales: %10.2f%n", pi); // "      3,14"
+```
+
+### Cero-padding en enteros
+
+Para rellenar con ceros a la izquierda:
+
+```java
+System.out.printf("%04d%n", 42);   // 0042
+System.out.printf("%02d:%02d%n", 9, 5);  // 09:05
+```
+
+### Ejemplo completo: tabla de cuadrados
+
+```java
+System.out.printf("%-8s %-8s %-8s%n", "Número", "Cuadrado", "Cubo");
+for (int i = 1; i <= 5; i++) {
+    System.out.printf("%-8d %-8d %-8d%n", i, i * i, i * i * i);
+}
+```
+
+Salida:
+```
+Número   Cuadrado Cubo    
+1        1        1       
+2        4        8       
+3        9        27      
+4        16       64      
+5        25       125
+```
+

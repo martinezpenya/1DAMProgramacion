@@ -82,7 +82,10 @@ Las dos instrucciones anteriores se pueden unir en una sola:
 double[] lluvia2 = new double[31];
 ```
 
-El valor mediante el cual se define el número de elementos del array tiene que ser una expresión entera, pero no tiene por qué ser un literal como en el ejemplo anterior. El tamaño de un array se puede establecer durante la ejecución, como en el siguiente ejemplo:
+El valor mediante el cual se define el número de elementos del array tiene que ser una expresión entera, pero no tiene por qué ser un literal como en el ejemplo anterior. El tamaño de un array se puede establecer durante la ejecución, como en el [Ejemplo01](#ejemplo01).
+
+En el [Ejemplo01](#ejemplo01) encontrarás el código completo con todos los ejemplos de esta unidad sobre arrays, matrices, búsqueda y ordenación.
+{: #teoria-ejemplo01 }
 
 ```java
 // usamos un array para almacenar las edades de un grupo de personas
@@ -773,7 +776,8 @@ Así pues, tened en cuenta que el caso recursivo realiza un cálculo que depende
 4 * 3 * 2 * 1 * 0! = 4 * 3 * 2 * 1 * (1) = 24
 ```
 
-Su implementación en Java sería la que ves más abajo. Ahora bien, en este código se han añadido algunas sentencias para escribir información por pantalla, de forma que se vea con más detalle cómo funciona un método recursivo. Veréis que, inicialmente, se llevan a cabo una serie de invocaciones del caso recursivo, uno tras otro, hasta que se llega a una llamada que ejecuta el caso base. Es a partir de entonces cuando, a medida que se van ejecutando las sentencias `return` del caso recursivo, realmente se va acumulando el cálculo. Otra forma de verlo es depurando el programa.
+Su implementación en Java sería la que ves más abajo y también en el [Ejemplo02](#ejemplo02). Ahora bien, en este código se han añadido algunas sentencias para escribir información por pantalla, de forma que se vea con más detalle cómo funciona un método recursivo. Veréis que, inicialmente, se llevan a cabo una serie de invocaciones del caso recursivo, uno tras otro, hasta que se llega a una llamada que ejecuta el caso base. Es a partir de entonces cuando, a medida que se van ejecutando las sentencias `return` del caso recursivo, realmente se va acumulando el cálculo. Otra forma de verlo es depurando el programa.
+{: #teoria-ejemplo02 }
 
 ``` java
 package UD04;
@@ -919,7 +923,9 @@ En el ejemplo anterior si se llama a `desbordamientoPila(10)`, llamará a `desbo
 
 ## Ejemplos UD04
 
-### EjemploUD04
+### Ejemplo01
+
+Ejemplo completo con declaración, inicialización, recorrido, búsqueda y ordenación de arrays y matrices.
 
 ```java
 package UD04;
@@ -1245,7 +1251,13 @@ public class EjemploUD04 {
 }
 ```
 
-### Recursividad
+[⬆ Volver a teoría](#teoria-ejemplo01)
+
+---
+
+### Ejemplo02
+
+Ejemplo completo de recursividad: factorial, búsqueda binaria y desbordamiento de pila.
 
 ```java
 package UD04;
@@ -1321,24 +1333,38 @@ public class Recursividad {
 }
 ```
 
-!!! info "Resumen — Conceptos clave"
-    | Concepto | Definición |
-    |---|---|
-    | Array | Estructura de datos que almacena múltiples valores del mismo tipo |
-    | Índice | Posición numérica que permite acceder a un elemento del array |
-    | Matriz | Array bidimensional (filas × columnas) |
-    | Recursividad | Técnica donde un método se llama a sí mismo para resolver un problema |
-    | Caso base | Condición que detiene la recursión |
+[⬆ Volver a teoría](#teoria-ejemplo02)
 
-## Píldoras informáticas relacionadas
+---
 
-<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+## Resumen — Conceptos clave
 
-### Autoevaluación
+| Concepto | Definición |
+|---|---|
+| Array | Estructura de datos que almacena múltiples valores del mismo tipo |
+| Índice | Posición numérica que permite acceder a un elemento del array |
+| Matriz | Array bidimensional (filas × columnas) |
+| Recursividad | Técnica donde un método se llama a sí mismo para resolver un problema |
+| Caso base | Condición que detiene la recursión |
+
+## Autoevaluación
 - [ ] Sé declarar e inicializar arrays
 - [ ] Puedo recorrer arrays con bucles
 - [ ] Trabajo con matrices de varias dimensiones
 - [ ] Entiendo el concepto de recursividad
 - [ ] Soy capaz de escribir funciones recursivas
 - [ ] Distingo entre caso base y caso recursivo
+
+## Vídeos recomendados
+
+| Canal | Vídeo | Contenido |
+|-------|-------|-----------|
+| **Píldoras Informáticas** | [Arrays I (vídeo 23)](https://www.pildorasinformaticas.es/unit/java-arrays-i-video-23/) | Declaración y uso de arrays unidimensionales |
+| **Píldoras Informáticas** | [Arrays II (vídeo 24)](https://www.youtube.com/@pildorasinformaticas) | Recorrido y manipulación de arrays |
+| **Píldoras Informáticas** | [Arrays III — bidimensionales (vídeo 25)](https://www.youtube.com/@pildorasinformaticas) | Arrays de dos dimensiones |
+| **EducaMadrid** | [Arrays 1](https://mediateca.educa.madrid.org/video/giqs2iypyh8drm4r) | Introducción a arrays |
+| **EducaMadrid** | [Arrays en Java — Parte 2](https://mediateca.educa.madrid.org/video/v47oz9wllnqud9wk) | Ejercicio práctico con arrays |
+| **Programación ATS** | [Playlist completa POO Java](https://youtube.com/playlist?list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K) | Vídeos 40–44: arrays y matrices |
+
+
 

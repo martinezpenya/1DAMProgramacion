@@ -31,3 +31,14 @@
 - [ChatGPT](https://chatgpt.com/)
 - [DeepSeek](https://www.deepseek.com/)
 
+## Canales de vídeo
+
+| Canal | Enlace | Descripción |
+|-------|--------|-------------|
+| **Píldoras Informáticas** | https://www.youtube.com/@pildorasinformaticas | Curso Java completo (edición 2026 en publicación semanal + curso clásico de 280 vídeos) |
+| **Programación ATS** | https://youtube.com/playlist?list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K | Curso Java estructurado: desde introducción hasta colecciones y ficheros |
+| **MoureDev** | https://youtu.be/JOAqpdM36wI | Curso completo Java 8h — ideal como visión global |
+| **makigas** | https://www.makigas.es/series | Series Java IO y JDBC Moderno |
+| **EducaMadrid Mediateca** | https://mediateca.educa.madrid.org/ | Vídeos educativos de profesores (POO, arrays, ficheros, colecciones) |
+| **DiscoDurodeRoer** | https://www.youtube.com/@DiscoDurodeRoer | Listas de reproducción Java: ficheros, JDBC, etc. |
+

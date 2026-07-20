@@ -105,7 +105,9 @@ Para utilizar un stream hay que seguir una serie de pasos:
     - Los Stream estándar ya se encarga el sistema de abrirlos y cerrarlos
     - Un fallo en cualquier punto del proceso produce una `IOException`
 
-Consulta los ejemplos [Ejemplo Streams](#ejemplo-streams)
+
+Consulta los ejemplos [Ejemplo01](#ejemplo01)
+{: #teoria-ejemplo01 }
 
 ## Ficheros
 
@@ -216,7 +218,12 @@ Para trabajar con ficheros disponemos de las siguientes clases:
 !!! info "Información"
     Consulta en la documentación los distintos constructores disponibles para estas clases.
 
-Observa los ejemplos [P2_1_CrearFichero](#crear-un-fichero) y [P2_2_SobrescribirFichero](#sobrescribir-un-fichero) 
+
+Observa el [Ejemplo02](#ejemplo02) para ver la creación de un fichero de texto.
+{: #teoria-ejemplo02 }
+
+Observa el [Ejemplo03](#ejemplo03) para ver cómo sobrescribir un fichero añadiendo contenido.
+{: #teoria-ejemplo03 }
 
 #### Lectura y escritura de información estructurada.
 
@@ -226,7 +233,15 @@ Podríamos, por ejemplo, asociar un `DataInputStream` a un `FileInputStream` par
 
 En ejemplos posteriores se ilustrará cómo asociar un stream a un `File…Stream`.
 
-Observa los ejemplos [P2_3_LecturaSecuencialTexto](#lectura-de-un-fichero-secuencial-de-texto), [P2_4_EscrituraSecuencialTexto](#escritura-de-un-fichero-secuencial-de-texto), [P2_6_escritura-de-un-fichero-secuencial-binario](#lectura-de-un-fichero-secuencial-de-texto) y [P2_7_LecturaSecuencialBinario](#lectura-de-un-fichero-secuencial-binario), 
+
+Observa el [Ejemplo04](#ejemplo04) para lectura secuencial de un fichero de texto.
+{: #teoria-ejemplo04 }
+
+Observa el [Ejemplo05](#ejemplo05) para escritura secuencial en un fichero de texto.
+{: #teoria-ejemplo05 }
+
+Observa el [Ejemplo07](#ejemplo07) para lectura y escritura de ficheros binarios.
+{: #teoria-ejemplo07 }
 
 ### Ficheros con buffering.
 
@@ -240,7 +255,9 @@ Las clases `BufferedReader`, `BufferedWriter`, `BufferedInputStream` y `Buffered
 !!! warning "Atención"
     Recuerda la importancia de cerrar los flujos para asegurarte que se vacía el buffer.
 
-Observa el ejemplo [P2_5_Buffers](#usando-buffers-para-leer-y-escribir-deen-fichero)
+
+Observa el [Ejemplo06](#ejemplo06) para el uso de buffers en la lectura y escritura de ficheros.
+{: #teoria-ejemplo06 }
 
 ### Combinación de Streams
 
@@ -366,7 +383,9 @@ Cuando queremos evitar que cualquier campo persista en un archivo, lo marcamos c
 !!! warning "Importante"
     El fichero con los objetos serializados almacena los datos en un formato propio de Java, por lo que no se puede leer fácilmente con un simple editor de texto (ni editar).
 
-Observa el package de ejemplo [UD06.P3_Serializacion](#ejemplo-de-serializacion)
+
+Observa el [Ejemplo08](#ejemplo08) sobre serialización de objetos.
+{: #teoria-ejemplo08 }
 
 ## Sockets
 
@@ -376,7 +395,9 @@ Cabe resaltar que tanto el cliente como el servidor no necesariamente deben esta
 
 ![](assets/ClientSocket.svg){width=800px}
 
-Observa el package de ejemplo [UD06.P4_Sockets](#ejemplo-de-sockets)
+
+Observa el [Ejemplo09](#ejemplo09) sobre comunicación mediante sockets.
+{: #teoria-ejemplo09 }
 
 ## Manejo de ficheros y carpetas (`File`)
 
@@ -430,13 +451,15 @@ Aquí exponemos algunos métodos interesantes. Hay otros que puedes consultar en
 | `boolean createNewFile()`                            | Crea un archivo vacío. Devuelve true si la operación se realiza con éxito. |
 | `File createTempFile(String prefijo, String sufijo)` | Crea un archivo vacío en la carpeta de archivos temporales. El nombre llevará el prefijo y sufijo indicados. Devuelve el objeto File que representa al nuevo archivo. |
 
-Observa el ejemplo [UD06.P5_1_Manejo](#ejemplo-de-manejo-de-ficheros-y-carpetas)
+
+Observa el [Ejemplo10](#ejemplo10) sobre manejo de ficheros y carpetas con la clase File.
+{: #teoria-ejemplo10 }
 
 ## Ejemplos UD06
 
-### Ejemplo Streams
+### Ejemplo01
 
-#### Estándar de entrada
+Flujo de entrada y salida estándar
 
 Veamos un ejemplo en el que se lee por teclado hasta pulsar la tecla de retorno, en ese momento el programa acabará imprimiendo por la salida estándar la cadena leída.
 
@@ -471,8 +494,6 @@ public class P1_1_FlujoEstandarEntrada {
 }
 ```
 
-#### Estándar de salida
-
 ```java
 package UD06.P1_Flujos;
 
@@ -503,9 +524,11 @@ public class P1_2_FlujoEstandarSalida {
 }
 ```
 
-### Ficheros
+[⬆ Volver a teoría](#teoria-ejemplo01)
 
-#### Crear un fichero
+### Ejemplo02
+
+Creación de un fichero de texto
 
 En el siguiente ejemplo vemos como crear un fichero de texto y escribir una frase en el.
 
@@ -540,7 +563,11 @@ La creación del `FileWriter` puede provocar `IOException`, lo mismo que el mét
 
 Al finalizar su uso, y tan pronto como sea posible, hay que cerrar los streams (`close`) .
 
-#### Sobrescribir un fichero
+[⬆ Volver a teoría](#teoria-ejemplo02)
+
+### Ejemplo03
+
+Sobrescritura de un fichero añadiendo contenido
 
 Es muy importante tener en cuenta que cuando se crea un `FileWriter` o un `FileOutputStream` y se escribe en él …
 
@@ -571,13 +598,15 @@ public class P2_2_SobrescribirFichero {
 
 En este ejemplo se ha utilizado la nueva sintaxis disponible para los bloques `try-catch`: lo que se denomina "try with resources". Esta sintaxis permite crear un objeto en la cabecera del bloque `try`. El objeto creado se cerrará automáticamente al finalizar. El objeto debe pertenecer al interface `Closeable`, es decir, debe tener método `close()`.
 
-#### Operaciones con ficheros de acceso secuencial
+[⬆ Volver a teoría](#teoria-ejemplo03)
+
+### Ejemplo04
+
+Lectura secuencial de un fichero de texto
 
 Como hemos comentado anteriormente el acceso secuencial a un fichero supone que para acceder a un byte es necesario leer previamente los anteriores. Suele utilizarse este tipo de acceso cuando es necesario leer un archivo de principio a fin. 
 
 Vamos a ver una serie de ejemplos que muestren cómo leer y escribir secuencialmente un fichero.
-
-##### Lectura de un fichero secuencial de texto
 
 Leer un fichero de texto y mostrar el número de vocales que contiene.
 
@@ -619,7 +648,11 @@ Observa que:
 - La guarda del bucle `while` combina una asignación con una comparación. En primer lugar se realiza la asignación y luego se compara carácter con -1.
 - `FileNotFoundException` sucede cuando el fichero no se puede abrir (no existe, permiso denegado, etc), mientras que `IOException` se lanzará si falla la operación `read()`
 
-##### Escritura de un fichero secuencial de texto
+[⬆ Volver a teoría](#teoria-ejemplo04)
+
+### Ejemplo05
+
+Escritura secuencial en un fichero de texto
 
 Dada una cadena escribirla en un fichero en orden inverso:
 
@@ -654,7 +687,11 @@ Observa que:
 - Tal y como se ha creado el stream, el fichero (si ya existe) se sobreescribirá.
 - El manejo de excepciones es como el del caso previo.
 
-#### Usando Buffers para leer y escribir de/en fichero
+[⬆ Volver a teoría](#teoria-ejemplo05)
+
+### Ejemplo06
+
+Uso de buffers para leer y escribir ficheros
 
 En el siguiente codigo se usan buffers para leer líneas de un fichero y escribirlas en otro convertidas a mayúsculas
 
@@ -694,9 +731,11 @@ Observa que:
 - `BufferedReader` dispone de un método para leer líneas completas (`readLine()`). Cuando se llega al final del fichero este método devuelve `null`.
 - Fíjate como el bloque `try with resources` creamos varios objetos. Si la creación de cualquiera de ellos falla, se cerrarán todos los stream que se han abierto.
 
-#### Ficheros binarios
+[⬆ Volver a teoría](#teoria-ejemplo06)
 
-##### Escritura de un fichero secuencial binario
+### Ejemplo07
+
+Lectura y escritura de ficheros binarios
 
 Ya hemos visto que con `FileInputStream` y `FileOutputStream` se puede leer y escribir bytes de información de/a un archivo.
 
@@ -751,8 +790,6 @@ Observa que:
 - Además, como hemos hecho en ejemplos previos, usamos un buffer. Fíjate como en el constructor se enlazan unas clases con otras.
 - A pesar de que en Java los ficheros son secuencias de bytes, estamos dotando al fichero de cierta estructura: primero aparece el nombre, luego el año y finalmente la estatura. Cada uno de estos tres datos constituirían un registro de formado por tres campos. Para poder recuperar información de un fichero binario es necesario conocer cómo se estructura ésta dentro del fichero.
 
-##### Lectura de un fichero secuencial binario
-
 ```java
 package UD06.P2_Ficheros;
 
@@ -788,11 +825,13 @@ Observa que:
 - A pesar de que necesitamos solamente el nombre de cada jugador, es necesario leer también el año y la estatura. No es posible acceder al nombre del segundo jugador sin leer previamente todos los datos del primer jugador. 
 - La lectura se hace a través de un bucle infinito (`while (true)`), que finalizará cuando se llegue el final del fichero y al leer de nuevo se produzca la excepción `EOFException`
 
-### Ejemplo de Serialización
+[⬆ Volver a teoría](#teoria-ejemplo07)
+
+### Ejemplo08
+
+Serialización de objetos
 
 En el siguiente ejemplo usaremos una clase persona que definiremos de la siguiente manera
-
-#### Persona
 
 ```java
 package UD06.P3_Serializacion;
@@ -907,7 +946,11 @@ public class Leer {
 }
 ```
 
-### Ejemplo de Sockets
+[⬆ Volver a teoría](#teoria-ejemplo08)
+
+### Ejemplo09
+
+Comunicación mediante sockets
 
 Para nuestro ejemplo de sockets implementaremos ambos (cliente y servidor) usando Java y se comunicarán usando el puerto 11000 (es bueno elegir los puertos en el rango de 1024 hasta 65535).
 
@@ -920,8 +963,6 @@ La secuencia de eventos en nuestro ejemplo será:
   - Cuando en un envio reciba la palabra EXIT (no importa las mayúsculas) devolverá frase en mayúsculas y cerrará la conexión.
   - Si la palabra recibida no es EXIT, el servidor quedará a la espera de una nueva conexión de otro cliente.
 
-
-#### ServidorSocket
 
 ```java
 import java.io.*;
@@ -988,8 +1029,6 @@ public class ServidorSocket {
 }
 ```
 
-#### ClienteSocket
-
 ```java
 import java.io.*;
 import java.net.*;
@@ -1049,7 +1088,11 @@ public class ClienteSocket{
 }
 ```
 
-### Ejemplo de manejo de ficheros y carpetas
+[⬆ Volver a teoría](#teoria-ejemplo09)
+
+### Ejemplo10
+
+Manejo de ficheros y carpetas con la clase File
 
 Veamos ahora un ejemplo para mostrar información y contenido de una carpeta:
 
@@ -1106,24 +1149,42 @@ public class P5_1_Manejo {
 }
 ```
 
-!!! info "Resumen — Conceptos clave"
-    | Concepto | Definición |
-    |---|---|
-    | Stream | Flujo de datos que conecta el programa con una fuente o destino |
-    | Byte stream | Flujo que maneja datos binarios (InputStream, OutputStream) |
-    | Char stream | Flujo que maneja texto (Reader, Writer) |
-    | Serialización | Proceso de convertir un objeto en una secuencia de bytes |
-    | Fichero | Almacenamiento persistente de datos en disco |
-    | Socket | Punto final de una conexión de red entre dos programas |
+[⬆ Volver a teoría](#teoria-ejemplo10)
 
-## Píldoras informáticas relacionadas
+## Resumen — Conceptos clave
 
-<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+| Concepto | Definición |
+|---|---|
+| Stream | Flujo de datos que conecta el programa con una fuente o destino |
+| Byte stream | Flujo que maneja datos binarios (InputStream, OutputStream) |
+| Char stream | Flujo que maneja texto (Reader, Writer) |
+| Serialización | Proceso de convertir un objeto en una secuencia de bytes |
+| Fichero | Almacenamiento persistente de datos en disco |
+| Socket | Punto final de una conexión de red entre dos programas |
 
-### Autoevaluación
+## Autoevaluación
 - [ ] Diferencio entre flujos de bytes y de caracteres
 - [ ] Leo y escribo ficheros de texto
 - [ ] Serializo y deserializo objetos
 - [ ] Utilizzo BufferedReader para entrada eficiente
 - [ ] Comprendo el concepto de socket a nivel básico
+
+## Vídeos recomendados
+
+| Canal | Vídeo | Contenido |
+|-------|-------|-----------|
+| **Píldoras Informáticas** | [Streams I — Accediendo a ficheros (vídeo 152)](https://www.youtube.com/@pildorasinformaticas) | Lectura de ficheros con streams |
+| **Píldoras Informáticas** | [Clase File I (vídeo 159)](https://www.youtube.com/@pildorasinformaticas) | Manipulación de archivos y directorios |
+| **DiscoDurodeRoer** | [Clase File](https://youtu.be/qvVYJRx8lic) | La clase File en Java |
+| **DiscoDurodeRoer** | [Path, Paths y Files (NIO)](https://youtu.be/1iH-lPloEeY) | java.nio — nueva API de ficheros |
+| **DiscoDurodeRoer** | [FileWriter](https://youtu.be/f0o5Un4FP1s) | Escritura de ficheros de texto |
+| **DiscoDurodeRoer** | [FileReader](https://youtu.be/Cj2bc-MqCJc) | Lectura de ficheros de texto |
+| **DiscoDurodeRoer** | [Try-with-resources](https://youtu.be/gGSUdfdVOX8) | Gestión automática de recursos |
+| **DiscoDurodeRoer** | [ObjectOutputStream](https://youtu.be/M-Ie_yW7prQ) / [ObjectInputStream](https://youtu.be/Bu47Rin_F9k) | Serialización de objetos |
+| **makigas** | [Serie Java IO](https://www.makigas.es/series/java-io) | 8 vídeos: streams, FileOutputStream, FileInputStream, try-with-resources, Object streams |
+| **EducaMadrid** | [La clase File de Java](https://mediateca.educa.madrid.org/video/22yoyxgdsr27twgq) | Clase File: crear, listar, borrar archivos |
+| **EducaMadrid** | [Ficheros_1 — Introducción](https://mediateca.educa.madrid.org/video/xuhxr26pi8goh1gr) | Acceso a ficheros de texto: FileReader, FileWriter |
+| **Programación ATS** | [Playlist POO Java](https://youtube.com/playlist?list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K) | Vídeos 95+: ficheros y streams |
+
+
 

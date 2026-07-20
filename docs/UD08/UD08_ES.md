@@ -152,7 +152,8 @@ class Rectangulo {
 
 Ahora los métodos de esta clase deberán tener en cuenta que ya no hay cuatro atributos de tipo `double`, sino dos atributos de tipo `Punto` (cada uno de los cuales contendrá en su interior dos atributos de tipo `double`).
 
-Revisa con cuidado el [Ejemplo 2.1](#ejemplo-21)
+Revisa el [Ejemplo01](#ejemplo01) para ver composición de clases en `Rectangulo`.
+{: #teoria-ejemplo01 }
 
 ###  Uso de la composición (I). Preservación de la ocultación.
 
@@ -178,7 +179,8 @@ Por último, debes tener en cuenta que es posible que en algunos casos sí se ne
 
 Para entender estas situaciones un poco mejor, podemos volver a la clase `Rectangulo` y observar sus nuevos métodos de tipo get.
 
-Revisa con cuidado el [Ejemplo 2.2](#ejemplo-22)
+Revisa el [Ejemplo02](#ejemplo02) para ver métodos get con composición.
+{: #teoria-ejemplo02 }
 
 ### Uso de la composición (II). Llamadas a constructores.
 
@@ -200,7 +202,8 @@ Se trata de un efecto similar al que sucedía en los métodos de tipo get, pero 
 
 Para entender mejor estos posibles efectos podemos continuar con el ejemplo de la clase `Rectangulo` que contiene en su interior dos objetos de la clase `Punto`. En los constructores del rectángulo habrá que incluir todo lo necesario para crear dos instancias de la clase `Punto` evitando las referencias a parámetros (haciendo copias).
 
-Revisa con cuidado el [Ejemplo 2.2.1](#ejemplo-221)
+Revisa el [Ejemplo03](#ejemplo03) para ver constructores con composición.
+{: #teoria-ejemplo03 }
 
 ### Clases anidadas o internas.
 
@@ -303,7 +306,8 @@ public class Alumno extends Persona {
 
 A partir de ahora, un objeto de la clase `Alumno` contendrá los atributos `grupo` y `notaMedia` (propios de la clase `Alumno`), pero también `nombre`, `apellidos` y `fechaNacim` (propios de su clase base `Persona` y que por tanto ha heredado).
 
-Revisa con cuidado el [Ejemplo 3.1](#ejemplo-31)
+Revisa el [Ejemplo04](#ejemplo04) para ver herencia con la clase `Profesor`.
+{: #teoria-ejemplo04 }
 
 ### Acceso a miembros heredados.
 
@@ -346,7 +350,8 @@ public class Persona {
 !!! info "private vs protected"
     Sólo en aquellos casos en los que se desea explícitamente que un miembro de una clase no pueda ser accesible desde una clase derivada debería utilizarse el modificador `private`. En el resto de casos es recomendable utilizar `protected`, o bien no indicar modificador (acceso a nivel de `paquete`).
 
-Revisa con cuidado el [Ejemplo 3.2](#ejemplo-32)
+Revisa el [Ejemplo05](#ejemplo05) para ver el modificador `protected`.
+{: #teoria-ejemplo05 }
 
 ### Utilización de miembros heredados (I). Atributos.
 
@@ -354,7 +359,8 @@ Los atributos heredados por una clase son, a efectos prácticos, iguales que aqu
 
 En el ejemplo anterior la clase `Persona` disponía de tres atributos y la clase `Alumno`, que heredaba de ella, añadía dos atributos más. Desde un punto de vista funcional podrías considerar que la clase `Alumno` tiene cinco atributos: tres por ser `Persona` (nombre, apellidos, fecha de nacimiento) y otros dos más por ser `Alumno` (grupo y nota media).
 
-Revisa con cuidado el [Ejemplo 3.3](#ejemplo-33)
+Revisa el [Ejemplo06](#ejemplo06) para ver getters y setters en herencia.
+{: #teoria-ejemplo06 }
 
 ### Utilización de miembros heredados (II). Métodos.
 
@@ -367,7 +373,8 @@ En el ejemplo de la clase `Persona`, si dispusiéramos de métodos get y set par
 
 Sin embargo, sólo tendrías que definir esos cuatro últimos (los específicos) pues los genéricos ya los has heredado de la superclase.
 
-Revisa con cuidado el [Ejemplo 3.3.1](#ejemplo-331)
+Revisa el [Ejemplo07](#ejemplo07) para ver getters y setters heredados.
+{: #teoria-ejemplo07 }
 
 ### Redefinición de métodos heredados.
 
@@ -392,7 +399,8 @@ Cuando sobrescribas un método heredado en Java puedes incluir la anotación `@O
 public String getApellidos ()
 ```
 
-Revisa con cuidado el [Ejemplo 3.4](#ejemplo-34)
+Revisa el [Ejemplo08](#ejemplo08) para ver redefinición de métodos.
+{: #teoria-ejemplo08 }
 
 ### Ampliación de métodos heredados.
 
@@ -406,19 +414,10 @@ Por ejemplo, imagina que la clase Persona dispone de un método que permite most
 
 Podría hacerse de una manera tan sencilla como la siguiente:
 
-```java
-public void mostrar () {
-    super.mostrar ();
-    // Llamada al método "mostrar" de la superclase
-    // A continuación mostramos la información "especializada" de esta subclase
-    System.out.printf ("Grupo: %s\n", this.grupo);
-    System.out.printf ("Nota media: %5.2f\n", this.notaMedia);
-}
-```
-
 Este tipo de ampliaciones de métodos resultan especialmente útiles por ejemplo en el caso de los constructores, donde se podría ir llamando a los constructores de cada superclase encadenadamente hasta el constructor de la clase en la cúspide de la jerarquía (el constructor de la clase `Object`).
 
-Revisa con cuidado el [Ejemplo 3.5](#ejemplo-35)
+Revisa el [Ejemplo09](#ejemplo09) para ver ampliación de métodos con `super`.
+{: #teoria-ejemplo09 }
 
 ### Constructores y herencia.
 
@@ -454,7 +453,8 @@ public Alumno (String nombre, String apellidos, LocalDate fechaNacim, String gru
 
 En realidad se trata de otro recurso más para optimizar la reutilización de código, en este caso el del constructor, que aunque no es heredado, sí puedes invocarlo para no tener que reescribirlo.
 
-Revisa con cuidado el [Ejemplo 3.6](#ejemplo-36)
+Revisa el [Ejemplo10](#ejemplo10) para ver constructores y llamada a `super`.
+{: #teoria-ejemplo10 }
 
 ### Creación y utilización de clases derivadas.
 
@@ -532,7 +532,8 @@ Cuando trabajes con clases abstractas debes tener en cuenta:
 - Una clase abstracta sólo puede usarse para crear nuevas clases derivadas. No se puede hacer un new de una clase abstracta. Se produciría un error de compilación.
 - Una clase abstracta puede contener métodos totalmente definidos (no abstractos) y métodos sin definir (métodos abstractos).
 
-Revisa con cuidado el [Ejemplo 4.1](#ejemplo-41)
+Revisa el [Ejemplo11](#ejemplo11) para ver clases abstractas.
+{: #teoria-ejemplo11 }
 
 ### Métodos abstractos.
 
@@ -557,7 +558,8 @@ Debes tener en cuenta al trabajar con métodos abstractos:
 - Un método abstracto no puede ser privado (no se podría implementar, dado que las clases derivadas no tendrían acceso a él).
 - Los métodos abstractos no pueden ser estáticos, pues los métodos estáticos no pueden ser redefinidos (y los métodos abstractos necesitan ser redefinidos).
 
-Revisa con cuidado el [Ejemplo 4.2](#ejemplo-42)
+Revisa el [Ejemplo12](#ejemplo12) para ver métodos abstractos.
+{: #teoria-ejemplo12 }
 
 ### Clases y métodos finales.
 
@@ -741,7 +743,8 @@ public interface Depredador {
 
 Serán las clases que implementen esta interfaz (`León`, `Leopardo`, `Cocodrilo`, `Rana`, `Lagarto`, `Hombre`, etc.) las que definan cada uno de los métodos por dentro.
 
-Revisa con cuidado el [Ejemplo 5.2](#ejemplo-52)
+Revisa el [Ejemplo13](#ejemplo13) para ver la creación de una interfaz.
+{: #teoria-ejemplo13 }
 
 ### Implementación de interfaces.
 
@@ -803,7 +806,11 @@ class Rana extends Anfibio implements Depredador, Presa {
 
 Y en su interior habría que implementar aquellos métodos que contengan ambas interfaces, tanto las de Depredador (localizar, cazar, etc.) como las de Presa (observar, huir, etc.).
 
-Revisa con cuidado el [Ejemplo 5.3](#ejemplo-53)
+Revisa el [Ejemplo14](#ejemplo14) para ver implementación de interfaces.
+{: #teoria-ejemplo14 }
+
+Revisa el [Ejemplo15](#ejemplo15) para ver una clase que implementa varias interfaces.
+{: #teoria-ejemplo15 }
 
 #### Un ejemplo de implementación de interfaces: la interfaz Series.
 
@@ -817,150 +824,14 @@ En la forma tradicional de una interfaz, los métodos se declaran utilizando sol
 
 Aquí hay un ejemplo de una definición de interfaz. Especifica la interfaz a una clase que genera una serie de números.
 
-```java
-public interface Series {
-    int getSiguiente(); //Retorna el siguiente número de la serie
-    void reiniciar(); //Reinicia
-    void setComenzar(int x); //Establece un valor inicial
-}
-```
+Consulta el [Ejemplo19](#ejemplo19) para ver el código completo de la interfaz `Series` y sus implementaciones `DeDos`, `SeriesDemo` y `DeTres`.
+{: #teoria-ejemplo19 }
 
 Esta interfaz se declara pública para que pueda ser implementada por código en cualquier paquete.
 
 **Los métodos que implementan una interfaz deben declararse públicos.** Además, el tipo del método de implementación debe coincidir exactamente con el tipo especificado en la definición de la interfaz.
 
-Aquí hay un ejemplo que implementa la interfaz de `Series` mostrada anteriormente. Crea una clase llamada `DeDos`, que genera una serie de números, cada uno mayor que el anterior.
-
-```java
-class DeDos implements Series {
-    int iniciar;
-    int valor;
-
-    DeDos(){
-        iniciar=0;
-        valor=0;
-    }
-
-    public int getSiguiente() {
-        valor+=2;
-        return valor;
-    }
-
-    public void reiniciar() {
-        valor=iniciar;
-    }
-
-    public void setComenzar(int x) {
-        iniciar=x;
-        valor=x;
-    }
-}
-```
-
-Observe que los métodos `getSiguiente()`, `reiniciar()` y `setComenzar()` se declaran utilizando el especificador de acceso público (`public`). Esto es necesario. Siempre que implemente un método definido por una interfaz, debe implementarse como público porque todos los miembros de una interfaz son implícitamente públicos.
-
-Aquí hay una clase que demuestra `DeDos`:
-
-```java
-class SeriesDemo {
-    public static void main(String[] args) {
-        DeDos ob=new DeDos();
-        for (int i=0;i<5;i++){
-            System.out.println("Siguiente valor es: "+ob.getSiguiente());
-        }
-        System.out.println("\nReiniciando");
-        ob.reiniciar();
-        for (int i=0;i<5;i++){
-            System.out.println("Siguiente valor es: "+ob.getSiguiente());
-        }
-        System.out.println("\nIniciando en 100");
-        ob.setComenzar(100);
-        for (int i=0;i<5;i++){
-            System.out.println("Siguiente valor es: "+ob.getSiguiente());
-        }
-    }
-}
-```
-
-Salida:
-
-```sh
-Siguiente valor es: 2
-Siguiente valor es: 4
-Siguiente valor es: 6
-Siguiente valor es: 8
-Siguiente valor es: 10
-Reiniciando
-Siguiente valor es: 2
-Siguiente valor es: 4
-Siguiente valor es: 6
-Siguiente valor es: 8
-Siguiente valor es: 10
-Iniciando en 100
-Siguiente valor es: 102
-Siguiente valor es: 104
-Siguiente valor es: 106
-Siguiente valor es: 108
-Siguiente valor es: 110
-```
-
-Está permitido y es común para las clases que implementan interfaces definir miembros adicionales propios. Por ejemplo, la siguiente versión de `DeDos` agrega el método `getAnterior()`, que devuelve el valor anterior:
-
-```java
-class DeDos implements Series {
-    int iniciar;
-    int valor;
-    int anterior;
-    DeDos(){
-        iniciar=0;
-        valor=0;
-    }
-    public int getSiguiente() {
-        anterior=valor;
-        valor+=2;
-        return valor;
-    }
-    public void reiniciar() {
-        valor=iniciar;
-        anterior=valor-2;
-    }
-    public void setComenzar(int x) {
-        iniciar=x;
-        valor=x;
-        anterior=x-2;
-    }
-    //Añadiendo un método que no está definido en Series
-    int getAnterior(){
-        return anterior;
-    }
-}
-```
-
-Observe que la adición de `getAnterior()` requirió un cambio en las implementaciones de los métodos definidos por `Series`. Sin embargo, dado que la interfaz con esos métodos permanece igual, el cambio es continuo y no rompe el código preexistente. Esta es una de las ventajas de las interfaces.
-
-Como se explicó, cualquier cantidad de clases puede implementar una interfaz. Por ejemplo, aquí hay una clase llamada `DeTres` que genera una serie que consta de múltiplos de tres:
-
-```java
-public class DeTres implements Series{
-    int iniciar;
-    int valor;
-    DeTres(){
-        iniciar=0;
-        valor=0;
-    }
-    public int getSiguiente() {
-        valor+=3;
-        return valor;
-    }
-    public void reiniciar() {
-        valor=iniciar;
-    }
-    public void setComenzar(int x) {
-        iniciar=x;
-        valor=x;
-    }
-}
-```
+Como se explicó, cualquier cantidad de clases puede implementar una interfaz.
 
 ### Simulación de la herencia múltiple mediante el uso de interfaces.
 
@@ -1015,7 +886,14 @@ public interface InterfazCompleja extends InterfazUno, InterfazDos {
 } 
 ```
 
-Revisa con cuidado el [Ejemplo 5.5](#ejemplo-55) y también el [Ejemplo 5.6](#ejemplo-56)
+Revisa el [Ejemplo16](#ejemplo16) para ver herencia de interfaces.
+{: #teoria-ejemplo16 }
+
+Revisa el [Ejemplo17](#ejemplo17) para ver diseño de interfaz e implementación.
+{: #teoria-ejemplo17 }
+
+Revisa el [Ejemplo18](#ejemplo18) para ver un ejemplo completo de herencia de interfaces con constantes.
+{: #teoria-ejemplo18 }
 
 ### Funciones Lambda
 
@@ -1146,7 +1024,8 @@ En el ejemplo anterior de la clase X y sus subclases A y B, la llamada al métod
 obj.m() // Esta llamada será resuelta en tiempo de ejecución (ligadura dinámica)
 ```
 
-Revisa con cuidado el [Ejemplo 6.2](#ejemplo-62)
+Revisa el [Ejemplo20](#ejemplo20) para ver polimorfismo con instrumentos.
+{: #teoria-ejemplo20 }
 
 ### Limitaciones de la ligadura dinámica.
 
@@ -1159,7 +1038,8 @@ Veamos un ejemplo: si dispones de una clase `Profesor` que es subclase de `Perso
 
 En el ejemplo de las clases `Persona`, `Profesor` y `Alumno`, el polimorfismo nos permitiría declarar variables de tipo `Persona` y más tarde hacer con ellas referencia a objetos de tipo `Profesor` o `Alumno`, pero no deberíamos intentar acceder con esa variable a métodos que sean específicos de la clase `Profesor` o de la clase `Alumno`, tan solo a métodos que sabemos que van a existir seguro en ambos tipos de objetos (métodos de la superclase `Persona`).
 
-Revisa con cuidado el [Ejemplo 6.3](#ejemplo-63)
+Revisa el [Ejemplo21](#ejemplo21) para ver polimorfismo con `Persona`, `Alumno` y `Profesor`.
+{: #teoria-ejemplo21 }
 
 ### Interfaces y polimorfismo.
 
@@ -1247,7 +1127,9 @@ System.out.printf ("obj.peso=%f\n", ((Besugo) obj).peso);
 
 ## Ejemplos UD08
 
-### Ejemplo 2.1
+### Ejemplo01
+
+Composición de clases: refactorización de `Rectangulo` con `Punto`
 
 Intenta rescribir los siguientes los métodos de la clase `Rectangulo` teniendo en cuenta ahora su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
 
@@ -1335,7 +1217,11 @@ En la siguiente presentación puedes observar detalladamente el proceso completo
 
    ![image-20220419185641090](assets/image-20220419185641090.png){width=600}
 
-### Ejemplo 2.2
+[⬆ Volver a teoría](#teoria-ejemplo01)
+
+### Ejemplo02
+
+Composición de clases: métodos de obtención de vértices
 
 Dada la clase `Rectangulo`, escribe sus nuevos métodos `obtenerVertice1` y `obtenerVertice2` para que devuelvan los vértices inferior izquierdo y superior derecho del rectángulo (objetos de tipo `Punto`), teniendo en cuenta su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
 
@@ -1441,7 +1327,11 @@ class Rectangulo {
 
 De esta manera, se devuelve un punto totalmente nuevo que podrá ser manipulado sin ningún temor por parte del código cliente de la clase pues es una copia para él.
 
-### Ejemplo 2.2.1
+[⬆ Volver a teoría](#teoria-ejemplo02)
+
+### Ejemplo03
+
+Constructores de `Rectangulo` con composición de `Punto`
 
 Intenta rescribir los constructores de la clase `Rectangulo` teniendo en cuenta ahora su nueva estructura de atributos (dos objetos de la clase `Punto`, en lugar de cuatro elementos de tipo `double`):
 1. Un constructor sin parámetros (para sustituir al constructor por defecto) que haga que los valores iniciales de las esquinas del rectángulo sean (0,0) y (1,1).
@@ -1548,7 +1438,11 @@ public static void main(String[] args) {
 }
 ```
 
-### Ejemplo 3.1
+[⬆ Volver a teoría](#teoria-ejemplo03)
+
+### Ejemplo04
+
+Herencia: creación de la clase `Profesor` a partir de `Persona`
 
 Imagina que también necesitas una clase Profesor, que contará con atributos como nombre, apellidos, fecha de nacimiento, salario y especialidad. ¿Cómo crearías esa nueva clase y qué atributos le añadirías?
 
@@ -1562,7 +1456,11 @@ public class Profesor extends Persona {
 }
 ```
 
-### Ejemplo 3.2
+[⬆ Volver a teoría](#teoria-ejemplo04)
+
+### Ejemplo05
+
+Herencia: uso de `protected` en atributos
 
 Reescribe las clases `Alumno` y `Profesor` utilizando el modificador protected para sus atributos del mismo modo que se ha hecho para su superclase `Persona`
 1. Clase `Alumno`. Se trata simplemente de añadir el modificador de acceso protected a los nuevos atributos que añade la clase.
@@ -1585,7 +1483,11 @@ Reescribe las clases `Alumno` y `Profesor` utilizando el modificador protected p
    }
    ```
 
-### Ejemplo 3.3
+[⬆ Volver a teoría](#teoria-ejemplo05)
+
+### Ejemplo06
+
+Getters y setters en herencia
 
 Dadas las clases Alumno y Profesor que has utilizado anteriormente, implementa métodos get y set en las clases Alumno y Profesor para trabajar con sus cinco atributos (tres heredados más dos específicos).
 
@@ -1768,7 +1670,11 @@ public class Persona {
 }
 ```
 
-### Ejemplo 3.3.1
+[⬆ Volver a teoría](#teoria-ejemplo06)
+
+### Ejemplo07
+
+Getters y setters heredados
 
 Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriormente, implementa métodos `get` y `set` en la clase `Persona` para trabajar con sus tres atributos y en las clases `Alumno` y `Profesor` para manipular sus cinco atributos (tres heredados más dos específicos), teniendo en cuenta que los métodos que ya hayas definido para `Persona` van a ser heredados en `Alumno` y en `Profesor`.
 
@@ -1879,7 +1785,11 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
    }
    ```
 
-### Ejemplo 3.4
+[⬆ Volver a teoría](#teoria-ejemplo07)
+
+### Ejemplo08
+
+Redefinición del método `getNombre`
 
 Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriormente, redefine el método `getNombre` para que devuelva la cadena "Alumno: ", junto con el nombre del alumno, si se trata de un objeto de la clase Alumno o bien "Profesor ", junto con el nombre del profesor, si se trata de un objeto de la clase Profesor.
 
@@ -1907,7 +1817,11 @@ Dadas las clases `Persona`, `Alumno` y `Profesor` que has utilizado anteriorment
    }
    ```
 
-### Ejemplo 3.5
+[⬆ Volver a teoría](#teoria-ejemplo08)
+
+### Ejemplo09
+
+Método `mostrar` con llamada a `super`
 
 Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar para la clase Persona, que muestre el contenido de los atributos (datos personales) de un objeto de la clase Persona. A continuación, define sendos métodos mostrar especializados para las clases Alumno y Profesor que "amplíen" la funcionalidad del método mostrar original de la clase Persona.
 1. Método mostrar de la clase `Persona`.
@@ -1944,7 +1858,11 @@ Dadas las clases `Persona`, `Alumno` y `Profesor`, define un método mostrar par
    }
    ```
 
-### Ejemplo 3.6
+[⬆ Volver a teoría](#teoria-ejemplo09)
+
+### Ejemplo10
+
+Constructor con llamada a `super`
 
 Escribe un constructor para la clase `Profesor` que realice una llamada al constructor de su clase base para inicializar sus atributos heredados. Los atributos específicos (no heredados) sí deberán ser inicializados en el propio constructor de la clase `Profesor`.
 
@@ -1966,7 +1884,11 @@ public Alumno(String nombre, String apellidos, LocalDate fechaNacim, String grup
 }
 ```
 
-### Ejemplo 4.1
+[⬆ Volver a teoría](#teoria-ejemplo10)
+
+### Ejemplo11
+
+Clase abstracta `Persona`
 
 Basándote en la jerarquía de clases de ejemplo (`Persona`, `Alumno`, `Profesor`), que ya has utilizado en otras ocasiones, modifica lo que consideres oportuno para que `Persona` sea, a partir de ahora, una clase abstracta (no instanciable) y las otras dos clases sigan siendo clases derivadas de ella, pero sí instanciables.
 
@@ -2002,7 +1924,11 @@ Existen una gran cantidad de clases abstractas en la API de Java. Aquí tienes u
 
    Que hereda de `AbstractList` y de la que hereda la clase `LinkedList`
 
-### Ejemplo 4.2
+[⬆ Volver a teoría](#teoria-ejemplo11)
+
+### Ejemplo12
+
+Método abstracto `mostrar` en `Persona`
 
 Basándote en la jerarquía de clases `Persona`, `Alumno`, `Profesor`, crea un método abstracto llamado `mostrar` para la clase `Persona`. Dependiendo del tipo de persona (`alumno` o `profesor`) el método mostrar tendrá que mostrar unos u otros datos personales (habrá que hacer implementaciones específicas en cada clase derivada).
 
@@ -2093,7 +2019,11 @@ lo mismo para el caso de la clase `Profesor`.
    Salario: 2000,00 euros
    ```
 
-### Ejemplo 5.2
+[⬆ Volver a teoría](#teoria-ejemplo12)
+
+### Ejemplo13
+
+Creación de la interfaz `Imprimible`
 
 Crea una interfaz en Java cuyo nombre sea `Imprimible` y que contenga algunos métodos útiles para mostrar el contenido de una clase:
 
@@ -2117,7 +2047,11 @@ Crea una interfaz en Java cuyo nombre sea `Imprimible` y que contenga algunos m�
    ```
    El cómo se implementarán cada uno de esos métodos dependerá exclusivamente de cada clase que decida implementar esta interfaz.
 
-### Ejemplo 5.3
+[⬆ Volver a teoría](#teoria-ejemplo13)
+
+### Ejemplo14
+
+Implementación de `Imprimible` en `Alumno` y `Profesor`
 
 Haz que las clases `Alumno` y `Profesor` implementen la interfaz `Imprimible` que se ha escrito en el ejercicio anterior.
 
@@ -2243,7 +2177,11 @@ Una vez que los métodos de la interfaz estén implementados en la clase `Person
     }
     ```
 
-### Ejemplo 5.4
+[⬆ Volver a teoría](#teoria-ejemplo14)
+
+### Ejemplo15
+
+Una clase que implementa varias interfaces
 
 ¿Puede una clase implementar varias interfaces diferentes a la vez?
 
@@ -2256,7 +2194,11 @@ Las clases `Kangaroo` y `Lion` implementan varias clases:
 - `Kangaroo`: `Herbivore`, `TwoLeggedMammal` y `Animal`
 - `Lion`: `Animal`, `FourLeggedMammal`, `Hunter` y `Carnivore`
 
-### Ejemplo 5.5
+[⬆ Volver a teoría](#teoria-ejemplo15)
+
+### Ejemplo16
+
+Herencia de interfaces
 
 ¿Puede una interfaz heredar de varias interfaces diferentes a la vez?
 
@@ -2269,7 +2211,11 @@ Las interfaces `Human` y `Omnivore` heredan de varias interfaces:
 - `Human`: de `TwoLeggedMammal`, `Omnivore`, `Mammal` y `Hunter`
 - `Omnivore`: `Herbivore` y `Carnivore`
 
-### Ejemplo 5.6
+[⬆ Volver a teoría](#teoria-ejemplo16)
+
+### Ejemplo17
+
+Diseño de interfaz e implementación en una clase
 
 Supongamos una situación en la que nos interesa dejar constancia de que ciertas clases deben implementar una funcionalidad teórica determinada, diferente en cada clase afectada. Estamos hablando, pues, de la definición de un método teórico que algunas clases deberán implementar.
 
@@ -2365,7 +2311,11 @@ Esta definición nos permite utilizar las constantes declaradas en cualquier cla
 System.out.println (DiasSemana.NOMBRES_DIAS[LUNES]);
 ```
 
-#### Ejemplo de diseño de interfaz e implementación en una clase
+[⬆ Volver a teoría](#teoria-ejemplo17)
+
+### Ejemplo18
+
+Diseño de interfaz e implementación con herencia de interfaces.
 
 Se presentan un par de interfaces que incorporan datos (de tipo primitivo y de referencia en clase) y métodos y una clase que las implementa. En la declaración de la clase se ve que sólo implementa la interfaz `B`, pero como esta interfaz deriva de la interfaz `A` resulta que la clase está implementando las dos interfaces.
 
@@ -2415,8 +2365,6 @@ public class Anexo5Interfaces implements B {
 }
 ```
 
-Si lo ejecutamos obtendremos:
-
 ```sh
 Inicialmente, ULTIMA_CREACION = Mon Jan 01 00:00:00 CET 1900
 En metodoA, ULTIMA_CREACION = Thu Aug 26 16:09:47 CEST 2021
@@ -2429,7 +2377,130 @@ El ejemplo sirve para ilustrar algunos puntos:
 - Si hubiéramos intentado modificar los datos `VALOR_B` o `ULTIMA_CREACION` no habríamos podido porque es final, pero en cambio sí podemos modificar el contenido del objeto `Date` apuntado por `ULTIMA_CREACION`, que corresponde al momento temporal de la última creación de un objeto ya cada nueva creación se actualiza su contenido.
 - En las dos últimas instrucciones del método `main()` vemos que podemos declarar variables `pa` y `pb` de las interfaces y utilizarlas para hacer referencia a objetos de la clase `EjemploInterfaz()`.
 
-### Ejemplo 6.2
+[⬆ Volver a teoría](#teoria-ejemplo18)
+
+### Ejemplo19
+
+Interfaz `Series` con implementaciones `DeDos` y `DeTres`.
+
+Consulta el código completo de la [interfaz Series](#ejemplo19) y sus implementaciones [`DeDos`](#ejemplo19), [`SeriesDemo`](#ejemplo19) y [`DeTres`](#ejemplo19).
+
+```java
+public interface Series {
+    int getSiguiente(); //Retorna el siguiente número de la serie
+    void reiniciar(); //Reinicia
+    void setComenzar(int x); //Establece un valor inicial
+}
+```
+
+```java
+class DeDos implements Series {
+    int iniciar;
+    int valor;
+
+    DeDos(){
+        iniciar=0;
+        valor=0;
+    }
+
+    public int getSiguiente() {
+        valor+=2;
+        return valor;
+    }
+
+    public void reiniciar() {
+        valor=iniciar;
+    }
+
+    public void setComenzar(int x) {
+        iniciar=x;
+        valor=x;
+    }
+}
+```
+
+```java
+class SeriesDemo {
+    public static void main(String[] args) {
+        DeDos ob=new DeDos();
+        for (int i=0;i<5;i++){
+            System.out.println("Siguiente valor es: "+ob.getSiguiente());
+        }
+        System.out.println("\nReiniciando");
+        ob.reiniciar();
+        for (int i=0;i<5;i++){
+            System.out.println("Siguiente valor es: "+ob.getSiguiente());
+        }
+        System.out.println("\nIniciando en 100");
+        ob.setComenzar(100);
+        for (int i=0;i<5;i++){
+            System.out.println("Siguiente valor es: "+ob.getSiguiente());
+        }
+    }
+}
+```
+
+Las clases que implementan interfaces pueden definir miembros adicionales propios. Por ejemplo, la siguiente versión de `DeDos` agrega el método `getAnterior()`:
+
+```java
+class DeDos implements Series {
+    int iniciar;
+    int valor;
+    int anterior;
+    DeDos(){
+        iniciar=0;
+        valor=0;
+    }
+    public int getSiguiente() {
+        anterior=valor;
+        valor+=2;
+        return valor;
+    }
+    public void reiniciar() {
+        valor=iniciar;
+        anterior=valor-2;
+    }
+    public void setComenzar(int x) {
+        iniciar=x;
+        valor=x;
+        anterior=x-2;
+    }
+    //Añadiendo un método que no está definido en Series
+    int getAnterior(){
+        return anterior;
+    }
+}
+```
+
+Cualquier cantidad de clases puede implementar una interfaz. Por ejemplo, `DeTres` genera una serie de múltiplos de tres:
+
+```java
+public class DeTres implements Series{
+    int iniciar;
+    int valor;
+    DeTres(){
+        iniciar=0;
+        valor=0;
+    }
+    public int getSiguiente() {
+        valor+=3;
+        return valor;
+    }
+    public void reiniciar() {
+        valor=iniciar;
+    }
+    public void setComenzar(int x) {
+        iniciar=x;
+        valor=x;
+    }
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo19)
+
+### Ejemplo20
+
+Polimorfismo: `Instrumento`, `Piano` y `Flauta`
 
 Imagínate una clase que represente a instrumento musical genérico (`Instrumento`) y dos subclases que representen tipos de instrumentos específicos (por ejemplo `Flauta` y `Piano`). Todas las clases tendrán un método `tocarNota`, que será específico para cada subclase.
 
@@ -2529,7 +2600,11 @@ Finalmente, a la hora de invocar el método `tocarNota`, no sabremos a qué vers
 instrumento1.tocarNota("do"); // Ejemplo de ligadura dinámica (tiempo de ejecución)
 ```
 
-### Ejemplo 6.3
+[⬆ Volver a teoría](#teoria-ejemplo20)
+
+### Ejemplo21
+
+Polimorfismo con `Persona`, `Alumno` y `Profesor`
 
 Haz un pequeño programa en Java en el que se declare una variable de tipo `Persona`, se pidan algunos datos sobre esa persona (nombre, apellidos y si es alumno o si es profesor), y se muestren nuevamente esos datos en pantalla, teniendo en cuenta que esa variable no puede ser instanciada como un objeto de tipo `Persona` (es una clase abstracta) y que tendrás que instanciarla como `Alumno` o como `Profesor`. Recuerda que para poder recuperar sus datos necesitarás hacer uso de la ligadura dinámica y que tan solo deberías acceder a métodos que sean de la superclase.
 
@@ -2610,22 +2685,21 @@ public class EjemploUso {
 }
 ```
 
-!!! info "Resumen — Conceptos clave"
-    | Concepto | Definición |
-    |---|---|
-    | Composición | Relación «tiene un» entre clases (un todo contiene partes) |
-    | Herencia | Relación «es un» que permite reutilizar código de una superclase |
-    | Superclase | Clase de la que se heredan atributos y métodos |
-    | Subclase | Clase que hereda de otra |
-    | Polimorfismo | Capacidad de un objeto de comportarse de múltiples formas |
-    | Clase abstracta | Clase que no puede instanciarse, solo ser heredada |
-    | Interfaz | Contrato que define métodos que deben implementarse |
+[⬆ Volver a teoría](#teoria-ejemplo21)
 
-## Píldoras informáticas relacionadas
+## Resumen — Conceptos clave
 
-<iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+| Concepto | Definición |
+|---|---|
+| Composición | Relación «tiene un» entre clases (un todo contiene partes) |
+| Herencia | Relación «es un» que permite reutilizar código de una superclase |
+| Superclase | Clase de la que se heredan atributos y métodos |
+| Subclase | Clase que hereda de otra |
+| Polimorfismo | Capacidad de un objeto de comportarse de múltiples formas |
+| Clase abstracta | Clase que no puede instanciarse, solo ser heredada |
+| Interfaz | Contrato que define métodos que deben implementarse |
 
-### Autoevaluación
+## Autoevaluación
 - [ ] Diferencio entre composición y herencia
 - [ ] Creo jerarquías de herencia correctamente
 - [ ] Aplico la sobrescritura de métodos (@Override)
@@ -2633,3 +2707,15 @@ public class EjemploUso {
 - [ ] Diseño clases abstractas y métodos abstractos
 - [ ] Implemento interfaces
 - [ ] Sé cuándo usar una interfaz y cuándo una clase abstracta
+
+## Vídeos recomendados
+
+| Canal | Vídeo | Contenido |
+|-------|-------|-----------|
+| **Programación ATS** | [Playlist POO Java](https://youtube.com/playlist?list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K) | Vídeos 50–55: excepciones, try-catch, throws |
+| **Píldoras Informáticas** | [Curso Java — Excepciones](https://www.youtube.com/@pildorasinformaticas) | Vídeos 58–62: try-catch, finally, throw vs throws |
+| **MoureDev** | [Curso Completo de Java desde Cero](https://youtu.be/JOAqpdM36wI) | Sección de excepciones |
+| **makigas** | [Java: introducción a las excepciones](https://www.youtube.com/watch?v=kGzwPunAOxk) | Conceptos básicos de excepciones |
+| **makigas** | [Java: throw y throws, usos y diferencias](https://www.youtube.com/watch?v=-xC0o6JQaoE) | Lanzar y delegar excepciones |
+
+

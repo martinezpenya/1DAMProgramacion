@@ -119,11 +119,11 @@ Como se puede apreciar, hay una similitud entre las metodologías propuestas par
     **Problema de la Jirafa**
 
     **Primera pregunta:** ¿Cómo podríamos meter una jirafa dentro de una nevera? Piensa que es un problema para niños y a ellos no se les pasaría por la cabeza trocear al bello animal para resolver un problema.
-
+    
     **Segunda pregunta:** Repetimos la jugada con distinto protagonista. ¿Cómo metemos un elefante dentro de la nevera?
-
+    
     **Tercera pregunta:** Imaginemos que el Rey León está celebrando su cumpleaños y ha invitado a todos los animales del reino. Acuden todos excepto uno. ¿Quién falta?
-
+    
     **Cuarta pregunta:** Estamos frente a un río que debemos cruzar como sea para continuar nuestro camino. El único problema es que esa zona es el hogar de unos cocodrilos muy agresivos y no disponemos de ningún tipo de embarcación para ir al otro lado. ¿Cómo harías para cruzar el río sin morir en el intento?
 
 ## Problemas, algoritmos y programas
@@ -322,16 +322,8 @@ Veamos los pasos para compilar e interpretar nuestro primer programa escrito en 
 #### Estructura y bloques fundamentales de un programa.
 
 !!! example "Ejemplo Holamundo.java"
-    ```java
-    public class Holamundo {
-        // programa Hola Mundo
-        public static void main(String[] args) {
-            /* lo único que hace este programa es mostrar
-        		la cadena "Hola Mundo!" por pantalla */
-            System.out.println("Hola Mundo!");
-        }
-    }
-    ```
+    Consulta el [Ejemplo01 — Hola Mundo](#ejemplo01) para ver el código completo.
+    {: #teoria-ejemplo01 }
 
 !!! danger "Atención"
     En Java, el nombre del archivo `.java` debe coincidir **exactamente** con el nombre de la clase pública que contiene (respetando mayúsculas y minúsculas). Por ejemplo: la clase `public class Ejemplo` debe guardarse en `Ejemplo.java`.
@@ -404,16 +396,8 @@ Siempre hay excepciones. Puede resultar que al aplicar estas reglas, en operacio
 
 Abrimos un editor de texto (da igual cual sea, siempre que sea capaz de almacenar "texto sin formato" en código ASCII). Una vez abierto escribiremos nuestro primer programa, que mostrará un texto "Hola Mundo" en la consola. De momento no te preocupes si no entiendes lo que escribes, más adelante le daremos sentido. Ahora solo queremos ver si podemos ejecutar java en nuestro equipo.
 
-El código de nuestro programa en Java será el siguiente:
-
-```java
-/* Ejemplo Hola Mundo */
-public class Ejemplo {
-    public static void main(String[ ] args) {
-        System.out.println("Hola Mundo");
-    }
-}
-```
+El código de nuestro programa en Java será el siguiente (consulta el [Ejemplo02 — Compilación y ejecución](#ejemplo02) para ver el ciclo completo):
+{: #teoria-ejemplo02 }
 
 A continuación guardamos nuestro archivo y le ponemos como nombre `Ejemplo.java`. Debemos seguir una norma dictada por Java, hemos de hacer coincidir nombre del archivo y nombre del programa, tanto en mayúsculas como en minúsculas, y la extensión del archivo habrá de ser siempre `.java`.
 
@@ -430,20 +414,11 @@ A continuación daremos la instrucción para que se realice **el proceso de comp
 !!! info "Recuerda"
     El proceso de compilación (`javac`) transforma código fuente `.java` en bytecode `.class`. El proceso de ejecución (`java`) interpreta el bytecode en la JVM. Dos pasos separados: primero compilar, luego ejecutar.
 
-```sh
-$ javac Ejemplo.java
-```
-
 #### PASO 3: Ejecución del programa
 
 Finalmente, vamos a pedirle al intérprete (JVM) que ejecute el programa, es decir, que transforme el código de la máquina virtual Java en código máquina interpretable por nuestro ordenador y lo ejecute. Para ello escribiremos en la ventana consola: `java Ejemplo`.
 
 El resultado será que se nos muestra la cadena `Hola Mundo`. Si logramos visualizar este texto en pantalla, ya hemos desarrollado nuestro primer programa en Java.
-
-```sh
-$ java Ejemplo
-Hola Mundo
-```
 
 !!! question "Pregunta frecuente"
     ¿Por qué no necesito compilar mi archivo `.java` antes de ejecutarlo y funciona directamente si me salto ese paso?
@@ -590,31 +565,9 @@ Los tipos de datos enumerados son una forma de declarar una variable con un conj
 
 Al considerar Java este tipo de datos como si de una clase se tratara, no sólo podemos definir los valores de un tipo enumerado, sino que también podemos definir operaciones a realizar con él y otro tipo de elementos, lo que hace que este tipo de dato sea más versátil y potente que en otros lenguajes de programación.
 
-En el siguiente ejemplo puedes comprobar el uso que se hace de los tipos de datos enumerados.
-
-```java
-public class tiposEnumerados {
-    public enum dias {Lunes, Martes, Miercoles, Jueves, Viernes, Sábado, Domingo};
-    
-    public static void main(String[] args) {
-        dias diaActual = dias.Martes;
-        dias diaSiguiente = dias.Miercoles;
-        
-        System.out.print("Hoy es: ");
-        System.out.println(diaActual);
-        System.out.println("Mañana\nes\n"+diaSiguiente);
-    }
-}
-```
-
-El resultado después de la ejecución será:
-
-```sh
-Hoy es: Martes
-Mañana
-es
-Miercoles
-```
+!!! example "Tipos enumerados"
+    Consulta el [Ejemplo03 — Tipos enumerados](#ejemplo03) para ver el código completo y su salida.
+    {: #teoria-ejemplo03 }
 
 Tenemos una variable `Dias` que almacena los días de la semana. Para acceder a cada elemento del tipo enumerado se utiliza el nombre de la variable seguido de un punto y el valor en la lista. Más tarde veremos que podemos añadir métodos y campos o variables en la declaración del tipo enumerado, ya que como hemos comentado un tipo enumerado en Java tiene el mismo tratamiento que las clases.
 
@@ -656,18 +609,9 @@ Los **Operadores Aritméticos** permiten realizar operaciones matemáticas:
 | /        | A / B | División                              |
 | %        | A % B | Módulo o resto de una división entera |
 
-Ejemplo:
-
-```java
-double num1, num2, suma, resta, producto, division, resto;
-num1 =8;
-num2 =5;
-suma = num1 + num2;      // 13
-resta = num1 - num2;     // 3
-producto = num1 * num2;  // 40
-division = num1 / num2;  // 1.6
-resto = num1 % num2;     // 3
-```
+!!! example "Operadores aritméticos"
+    Consulta el [Ejemplo04 — Operadores aritméticos](#ejemplo04) para ver ejemplos de cada operación.
+    {: #teoria-ejemplo04 }
 
 #### Operadores Relacionales
 
@@ -682,19 +626,9 @@ Los **Operadores Relacionales** permiten evaluar (la respuesta es un booleano: s
 | `!=`     | `a != b` | a distinto de b       |
 | `==`     | `a == b` | a igual a b           |
 
-Por ejemplo:
-
-```java
-int valor1 = 10;
-int valor2 = 3;
-boolean compara;
-compara = valor1 > valor2;  // true
-compara = valor1 < valor2;  // false
-compara = valor1 >= valor2; // true
-compara = valor1 <= valor2; // false
-compara = valor1 == valor2; // false
-compara = valor1 != valor2; // true
-```
+!!! example "Operadores relacionales"
+    Consulta el [Ejemplo05 — Operadores relacionales](#ejemplo05) para ver ejemplos de cada operador.
+    {: #teoria-ejemplo05 }
 
 #### Operadores Lógicos
 
@@ -707,20 +641,9 @@ Los **Operadores Lógicos** permiten realizar operaciones lógicas:
 | `!`        | `!a`                | **NOT** a. Si el operando es *true* el resultado es *false* y si el operando es *false* el resultado es *true*. |
 | `^`        | `a^b`               | a **XOR** b. El resultado será *true* si un operando es *true* y el otro *false*, y *false* en caso contrario. |
 
-Ejemplo:
-
-```java
-double sueldo = 1400;
-int edad = 34;
-boolean logica;
-logica = (sueldo>1000 & edad<40);   //true
-logica = (sueldo>1000 && edad >40); //false
-logica = (sueldo>1000 | edad>40);   //true
-logica = (sueldo<1000 || edad >40); //false
-logica = !(edad <40);               //false
-logica = (sueldo>1000 ^ edad>40);   //true
-logica = (sueldo<1000 ^ edad>40);   //false
-```
+!!! example "Operadores lógicos"
+    Consulta el [Ejemplo06 — Operadores lógicos](#ejemplo06) para ver ejemplos con AND, OR, NOT y XOR.
+    {: #teoria-ejemplo06 }
 
 Para representar resultados de operadores Lógicos también se pueden usar tablas de verdad a las que conviene acostumbrarse:
 
@@ -740,21 +663,9 @@ Los **Operadores Unarios** o **Unitarios** permiten realizar incrementos y decre
 | `++`     | `a++` o `++a` | Incremento de a |
 | `--`     | `a--` o `--a` | Decremento de a |
 
-Ejemplo:
-
-```java
-int m = 5, n = 3;
-m++; // 6
-n--; // 2
-```
-
-En el caso de utilizarlo como prefijo el valor de asignación será el valor del operando más el incremento de la unidad. Y si lo utilizamos como sufijo se asignará el valor del operador y luego se incrementará la unidad sobre el operando.
-
-```java
-int a = 1, b;
-b = ++a; // a vale 2 y b vale 2 //coge lo que vale a, le suma 1 y lo guarda en b
-b = a++; // a vale 3 y b vale 2 //coge lo que vale a, lo guarda en b, y suma 1 a lo que vale a
-```
+!!! example "Operadores unarios"
+    Consulta el [Ejemplo07 — Operadores unarios](#ejemplo07) para ver la diferencia entre prefijo y sufijo.
+    {: #teoria-ejemplo07 }
 
 #### Operadores de Asignación
 
@@ -767,19 +678,11 @@ Los **Operadores de Asignación** permiten asignar valores:
 | `/=`     | `a /= b` | División y asignación. La operación `a/=b` equivale a `a=a/b` |
 | `%=`     | `a %= b` | Módulo y asignación. La operación `a%=b` equivale a `a=a%b`  |
 | `+=`     | `a += b` | Suma y asignación. La operación `a+=b` equivale a `a=a+b`    |
-| `-=`     | `a -= b` | Resta y asignación. La operación `a-=b` equivale a `a=a-b`   |
+| `-=`     | `a -= b` | Resta y asignación. La operación `a-=b` equivale a `a=a-b` |
 
-Ejemplo:
-
-```java
-int dato1 = 10, dato2 = 2, dato;
-dato=dato1;   // dato vale 10
-dato2*=dato1; // dato2 vale 20
-dato2/=dato1; // datos2 vale 2
-dato2+=dato1; // dato2 vale 12
-dato2-=dato1; // dato2 vale 2
-dato1%=dato2; // dato1 vale0
-```
+!!! example "Operadores de asignación"
+    Consulta el [Ejemplo08 — Operadores de asignación](#ejemplo08) para ver ejemplos.
+    {: #teoria-ejemplo08 }
 
 #### Operadores de desplazamiento
 
@@ -795,66 +698,22 @@ Los **Operadores de desplazamiento** permiten desplazar los bits de los valores:
 | `^`      | `a^b`       | Operación XOR a nivel de bits                                |
 | `~`      | `~a`        | Complemento de A a nivel de bits                             |
 
-Por ejemplo:
+!!! example "Operadores de desplazamiento"
+    Consulta el [Ejemplo09 — Operadores de desplazamiento](#ejemplo09) para ver ejemplos detallados con bits.
+    {: #teoria-ejemplo09 }
 
-```java
-int j = 33;
-int k = j << 2;
-// 00000000000000000000000000100001 : j = 33
-// 00000000000000000000000010000100 : k = 33 << 2 ; k = 132
-
-int o = 132;
-int p = o >> 2;
-// 00000000000000000000000010000100 : o = 132    
-// 00000000000000000000000000100001 : p = 132 >> 2 ; p = 33
-
-int x = -1;
-int y = x >>> 2;
-// 11111111111111111111111111111111 : x = -1
-// 00111111111111111111111111111111 : y = x >>> 2; y = 1073741823
-
-int q = 132;   // q: 00000000000000000000000010000100
-int r = 144;   // r: 00000000000000000000000010010000
-
-int s = q & r; // s: 00000000000000000000000010000000 
-// El resultado da 128 
-
-int t = q | r; // t: 00000000000000000000000010010100 
-// El resultado da 148
-
-int u = q ^ r; // u: 00000000000000000000000000010100 
-// El resultado da 20 
-
-int v = ~q;    // v: 11111111111111111111111101111011 
-// El resultado da -133 
-```
 #### Operador condicional o ternario `?:`
 
 El **operador condicional** `?:` sirve para evaluar una condición y devolver un resultado en función de si es verdadera o falsa dicha condición. Es el único operador ternario de Java, y como tal, necesita tres operandos para formar una expresión.
 
 El primer operando se sitúa a la izquierda del símbolo de interrogación, y siempre será una expresión booleana, también llamada **condición**. El siguiente operando se sitúa a la derecha del símbolo de interrogación y antes de los dos puntos, y es el **valor** que devolverá el operador condicional **si la condición es verdadera**. El último operando, que aparece después de los dos puntos, es la expresión cuyo **resultado se devolverá si la condición evaluada es falsa**.
 
-```java
-condición ? exp1 : exp2
-```
-
-Por ejemplo, en la expresión:
-
-```java
-(x>y)?x:y;
-```
-
-Se evalúa la condición de si **x es mayor que y**, en caso **afirmativo** se devuelve el valor de la variable **x**, y **en caso contrario** se devuelve el valor de **y**.
-
-Ejemplo para calcular qué número es mayor:
-
-```java
-int mayor, exp1 = 15, exp2 = 25;
-mayor=(exp1>exp2)?exp1:exp2;
-// mayor valdrá 25
-```
+!!! example "Operador ternario"
+    Consulta el [Ejemplo10 — Operador ternario](#ejemplo10) para ver cómo funciona el operador `?:`.
+    {: #teoria-ejemplo10 }
 
 El operador condicional se puede sustituir por la sentencia `if...then...else` que veremos más adelante.
+
 
 #### Prevalencia de operadores
 
@@ -879,13 +738,9 @@ Prevalencia de operadores, ordenados de arriba a abajo de más a menos prioridad
 | condicional               | `?:`                                      |
 | operadores de asignación  | `= += -= *= /= %= &= ^= \|= <<= >>= >>>=` |
 
-Por ejemplo:
-
-```java
-int x, y1 = 6, y2 = 2, y3 =8;
-x = y1 + y2 * y3;   // 22
-x = (y1 + y2) * y3; // 64
-```
+!!! example "Prevalencia de operadores"
+    Consulta el [Ejemplo11 — Prevalencia de operadores](#ejemplo11) para ver la diferencia con y sin paréntesis.
+    {: #teoria-ejemplo11 }
 
 !!! tip "Recuerda"
     "Los paréntesis son como las patatas fritas, cuantas más, mejor!" — Usa paréntesis para controlar explícitamente el orden de las operaciones y evitar depender de la tabla de precedencia, que es fácil de olvidar.
@@ -899,25 +754,9 @@ x = (y1 + y2) * y3; // 64
 
 Las **Conversiones Implícitas** se realizan de forma automática y requiere que la variable destino tenga más precisión que la variable origen para poder almacenar el valor.
 
-Ejemplo:
-```java
-// Conversión Implícita
-byte origen = 5;
-short destino;
-destino=origen;  // 5
-```
-
-#### Conversión Explícita
-
-En la **Conversión Explícita** el programador fuerza la conversión con la operación llamada "**cast**":
-
-Ejemplo:
-```java
-// Conversión Explícita
-short origen2 = 3;
-byte destino2;
-destino2=(byte)origen2; // 3
-```
+!!! example "Conversiones de tipo"
+    Consulta el [Ejemplo12 — Conversiones de tipo](#ejemplo12) para ver ejemplos de conversión implícita y explícita.
+    {: #teoria-ejemplo12 }
 
 ### Comentarios.
 
@@ -929,28 +768,9 @@ Los comentarios son muy importantes a la hora de describir qué hace un determin
 Todos los lenguajes de programación disponen de alguna forma de introducir comentarios en el código. En el caso de Java, nos podemos encontrar los siguientes tipos de comentarios:
 
 - Comentarios de **una sola línea**. Utilizaremos el delimitador // para introducir comentarios de sólo una línea.
+{: #teoria-ejemplo13 }
 
-    ```java
-    // comentario de una sola línea 
-    byte estoEsUnByte=1; 
-    ```
-
-- Comentarios de **múltiples líneas**. Para introducir este tipo de comentarios, utilizaremos una barra inclinada y un asterisco (`/*`), al principio del párrafo y un asterisco seguido de una barra inclinada (`*/`) al final del mismo.
-
-    ```java
-    /* Esto es un
-    comentario
-    de varias líneas */
-    ```
-
-- Comentarios **Javadoc**. Utilizaremos los delimitadores `/**` y `*/`. Al igual que con los comentarios tradicionales, el texto entre estos delimitadores será ignorado por el compilador. Este tipo de comentarios se emplean para generar documentación automática del programa. A través del programa javadoc, incluido en JavaSE, se recogen todos estos comentarios y se llevan a un documento en formato .html.
-
-    ```java
-    /** Comentario de documentación.
-    Javadoc extrae los comentarios del código y
-    genera un archivo html a partir de este tipo de comentarios
-    */
-    ```
+    Consulta el [Ejemplo13 — Comentarios](#ejemplo13) para ver ejemplos de cada tipo.
 
 ## Herramientas útiles para empezar
 
@@ -958,26 +778,9 @@ Todos los lenguajes de programación disponen de alguna forma de introducir come
 
 Podemos generar números aleatorios entre 0 y 1 utilizando el método random de la clase `Math`.
 
-```java
-Math.random()
-```
-
-Ejemplo:
-
-```java
-double numero;
-int entero;
-numero = Math.random();
-System.out.println("El número es: "+numero); //entre 0 y 0.99999999999999999999999999999999999999...
-numero = Math.random()*100;
-System.out.println("El número es: "+numero); //entre 0 y 99.9999999999999999999999999999999999999...
-entero = (int)(Math.random()*100);
-System.out.println("El número sin decimales es: "+entero); //entre 0 y 99
-
-int lado = ((int)(Math.random()*6))+1;
-char letra = (char)((Math.random()*26)+65); //65..90
-System.out.println(letra); //A..Z
-```
+!!! example "Generación de números aleatorios"
+    Consulta el [Ejemplo14 — Números aleatorios](#ejemplo14) para ver el código completo.
+    {: #teoria-ejemplo14 }
 
 ### Introducir un texto desde el teclado.
 
@@ -986,62 +789,380 @@ System.out.println(letra); //A..Z
 
 Podemos introducir texto desde el teclado utilizando `System.console().readLine();` 
 
-Ejemplo 1: Introducción de texto.
+!!! example "Introducción de datos por teclado"
+    Consulta el [Ejemplo15 — Entrada por teclado](#ejemplo15) para ver el código completo.
+    {: #teoria-ejemplo15 }
 
-```java 
+## Ejemplos UD01
+
+[Descarga el código fuente completo de los ejemplos](code/EjemploUD01.java){: download="EjemploUD01.java" }
+
+### Ejemplo01
+
+Programa mínimo en Java que muestra un mensaje por consola (Hola Mundo).
+
+```java
+public class Holamundo {
+    // programa Hola Mundo
+    public static void main(String[] args) {
+        /* lo único que hace este programa es mostrar
+            la cadena "Hola Mundo!" por pantalla */
+        System.out.println("Hola Mundo!");
+    }
+}
+```
+
+**Compilación y ejecución:**
+```sh
+$ javac Holamundo.java
+$ java Holamundo
+Hola Mundo!
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo01)
+ 
+---
+
+### Ejemplo02
+
+Ciclo completo de creación, compilación y ejecución de un programa Java.
+
+```java
+/* Ejemplo Hola Mundo */
+public class Ejemplo {
+    public static void main(String[] args) {
+        System.out.println("Hola Mundo");
+    }
+}
+```
+
+Compilación:
+```sh
+$ javac Ejemplo.java
+```
+
+Ejecución:
+```sh
+$ java Ejemplo
+Hola Mundo
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo02)
+ 
+---
+
+### Ejemplo03
+
+Declaración y uso de un tipo `enum`.
+
+```java
+public class tiposEnumerados {
+    public enum dias {Lunes, Martes, Miercoles, Jueves, Viernes, Sábado, Domingo};
+    
+    public static void main(String[] args) {
+        dias diaActual = dias.Martes;
+        dias diaSiguiente = dias.Miercoles;
+        
+        System.out.print("Hoy es: ");
+        System.out.println(diaActual);
+        System.out.println("Mañana\nes\n"+diaSiguiente);
+    }
+}
+```
+
+**Salida:**
+```sh
+Hoy es: Martes
+Mañana
+es
+Miercoles
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo03)
+ 
+---
+
+### Ejemplo04
+
+Operaciones aritméticas básicas con `double`.
+
+```java
+double num1, num2, suma, resta, producto, division, resto;
+num1 = 8;
+num2 = 5;
+suma = num1 + num2;      // 13
+resta = num1 - num2;     // 3
+producto = num1 * num2;  // 40
+division = num1 / num2;  // 1.6
+resto = num1 % num2;     // 3
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo04)
+ 
+---
+
+### Ejemplo05
+
+Comparaciones entre valores enteros.
+
+```java
+int valor1 = 10;
+int valor2 = 3;
+boolean compara;
+compara = valor1 > valor2;  // true
+compara = valor1 < valor2;  // false
+compara = valor1 >= valor2; // true
+compara = valor1 <= valor2; // false
+compara = valor1 == valor2; // false
+compara = valor1 != valor2; // true
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo05)
+ 
+---
+
+### Ejemplo06
+
+Operaciones lógicas con `&&`, `||`, `!` y `^`.
+
+```java
+double sueldo = 1400;
+int edad = 34;
+boolean logica;
+logica = (sueldo>1000 & edad<40);   //true
+logica = (sueldo>1000 && edad >40); //false
+logica = (sueldo>1000 | edad>40);   //true
+logica = (sueldo<1000 || edad >40); //false
+logica = !(edad <40);               //false
+logica = (sueldo>1000 ^ edad>40);   //true
+logica = (sueldo<1000 ^ edad>40);   //false
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo06)
+ 
+---
+
+### Ejemplo07
+
+Incremento y decremento con prefijo y sufijo.
+
+```java
+int m = 5, n = 3;
+m++; // 6
+n--; // 2
+
+int a = 1, b;
+b = ++a; // a vale 2 y b vale 2
+b = a++; // a vale 3 y b vale 2
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo07)
+ 
+---
+
+### Ejemplo08
+
+Operadores compuestos de asignación.
+
+```java
+int dato1 = 10, dato2 = 2, dato;
+dato = dato1;   // dato vale 10
+dato2 *= dato1; // dato2 vale 20
+dato2 /= dato1; // dato2 vale 2
+dato2 += dato1; // dato2 vale 12
+dato2 -= dato1; // dato2 vale 2
+dato1 %= dato2; // dato1 vale 0
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo08)
+ 
+---
+
+### Ejemplo09
+
+Desplazamiento de bits a nivel binario.
+
+```java
+int j = 33;
+int k = j << 2;
+// 00000000000000000000000000100001 : j = 33
+// 00000000000000000000000010000100 : k = 33 << 2 ; k = 132
+
+int o = 132;
+int p = o >> 2;
+// 00000000000000000000000010000100 : o = 132    
+// 00000000000000000000000000100001 : p = 132 >> 2 ; p = 33
+
+int x = -1;
+int y = x >>> 2;
+// 11111111111111111111111111111111 : x = -1
+// 00111111111111111111111111111111 : y = x >>> 2; y = 1073741823
+
+int q = 132;   // q: 00000000000000000000000010000100
+int r = 144;   // r: 00000000000000000000000010010000
+
+int s = q & r; // s: 00000000000000000000000010000000 = 128
+int t = q | r; // t: 00000000000000000000000010010100 = 148
+int u = q ^ r; // u: 00000000000000000000000000010100 = 20
+int v = ~q;    // v: 11111111111111111111111101111011 = -133
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo09)
+ 
+---
+
+### Ejemplo10
+
+Uso del operador condicional `?:` para elegir entre dos valores.
+
+```java
+int mayor, exp1 = 15, exp2 = 25;
+mayor = (exp1 > exp2) ? exp1 : exp2;
+// mayor valdrá 25
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo10)
+ 
+---
+
+### Ejemplo11
+
+Diferencia en el resultado según el uso de paréntesis.
+
+```java
+int x, y1 = 6, y2 = 2, y3 = 8;
+x = y1 + y2 * y3;   // 22 (por prevalencia de *)
+x = (y1 + y2) * y3; // 64
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo11)
+ 
+---
+
+### Ejemplo12
+
+Conversión implícita (automática) y explícita (cast).
+
+```java
+// Conversión Implícita
+byte origen = 5;
+short destino;
+destino = origen;  // 5
+
+// Conversión Explícita
+short origen2 = 3;
+byte destino2;
+destino2 = (byte) origen2; // 3
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo12)
+ 
+---
+
+### Ejemplo13
+
+Los tres tipos de comentarios en Java.
+
+```java
+// comentario de una sola línea 
+byte estoEsUnByte = 1;
+
+/* Esto es un
+comentario
+de varias líneas */
+
+/** Comentario de documentación.
+ * Javadoc extrae los comentarios del código y
+ * genera un archivo html a partir de este tipo de comentarios
+ */
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo13)
+ 
+---
+
+### Ejemplo14
+
+Generación de números aleatorios con `Math.random()`.
+
+```java
+double numero;
+int entero;
+numero = Math.random();
+System.out.println("El número es: " + numero); //entre 0 y 0.999...
+
+numero = Math.random() * 100;
+System.out.println("El número es: " + numero); //entre 0 y 99.999...
+
+entero = (int)(Math.random() * 100);
+System.out.println("El número sin decimales es: " + entero); //entre 0 y 99
+
+int lado = ((int)(Math.random() * 6)) + 1;
+char letra = (char)((Math.random() * 26) + 65); //65..90
+System.out.println(letra); //A..Z
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo14)
+ 
+---
+
+### Ejemplo15
+
+Lectura de datos desde la consola con `System.console().readLine()`.
+
+```java
+// Ejemplo 1: Introducción de texto
 String texto;
 System.out.print("Introduce un texto: ");
 texto = System.console().readLine();
-System.out.println("El texto introducido es: "+ texto);
-```
+System.out.println("El texto introducido es: " + texto);
 
-Ejemplo 2: Introducción de un número entero.
-
-```java
+// Ejemplo 2: Introducción de un número entero
 String texto2;
 int entero2;
 System.out.print("Introduce un número: ");
 texto2 = System.console().readLine();
-entero2 = Integer.parseInt(texto2); //convertimos texto a Integer
-System.out.println("El número introducido es:"+entero2);
-```
+entero2 = Integer.parseInt(texto2);
+System.out.println("El número introducido es: " + entero2);
 
-Ejemplo 3: Introducción de un número decimal.
-
-```java
+// Ejemplo 3: Introducción de un número decimal
 String texto3;
 double doble3;
 System.out.print("Introduce un número decimal: ");
 texto3 = System.console().readLine();
-doble3 = Double.parseDouble(texto3); // convertimos texto a Double
-System.out.println("Número decimal introducido es: "+doble3);
+doble3 = Double.parseDouble(texto3);
+System.out.println("Número decimal introducido es: " + doble3);
 ```
 
-## Ejemplo UD01
+[⬆ Volver a teoría](#teoria-ejemplo15)
 
-[EjemploUD01.java]( code/EjemploUD01.java){: download ="EjemploUD01.java" }
+## Resumen — Conceptos clave
 
-!!! info "Resumen — Conceptos clave"
-    | Concepto | Definición |
-    |---|---|
-    | Problema | Situación que requiere una solución mediante métodos y estrategias |
-    | Algoritmo | Conjunto de pasos finitos y ordenados para resolver un problema |
-    | Programa | Algoritmo codificado en un lenguaje de programación |
-    | JVM | Máquina Virtual Java que ejecuta el bytecode |
-    | Variable | Zona de memoria con nombre que almacena un valor |
-    | Tipo de dato | Categoría de valor que puede tomar una variable |
-    | Operador | Símbolo que realiza una operación sobre uno o más operandos |
+| Concepto | Definición |
+|---|---|
+| Problema | Situación que requiere una solución mediante métodos y estrategias |
+| Algoritmo | Conjunto de pasos finitos y ordenados para resolver un problema |
+| Programa | Algoritmo codificado en un lenguaje de programación |
+| JVM | Máquina Virtual Java que ejecuta el bytecode |
+| Variable | Zona de memoria con nombre que almacena un valor |
+| Tipo de dato | Categoría de valor que puede tomar una variable |
+| Operador | Símbolo que realiza una operación sobre uno o más operandos |
 
-## Píldoras informáticas relacionadas
-
-
-<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-
-### Autoevaluación
+## Autoevaluación
 - [ ] Comprendo qué es un problema, un algoritmo y un programa
 - [ ] Sé compilar y ejecutar un programa Java
 - [ ] Conozco los tipos de datos primitivos de Java
 - [ ] Puedo declarar variables y constantes
 - [ ] Utilizo correctamente los operadores aritméticos, relacionales y lógicos
 - [ ] Entiendo la diferencia entre conversión implícita y explícita
-- [ ] Aplico las convenciones de nombres en Java
+
+## Vídeos recomendados
+
+| Canal | Vídeo | Contenido |
+|-------|-------|-----------|
+| **Píldoras Informáticas** | [Curso Java 2026 — Presentación (vídeo 1)](https://youtu.be/jHAxBPdjGx4) | Presentación del curso completo |
+| **Píldoras Informáticas** | [Curso Java — Estructuras principales VII — Clase Math II (vídeo 10)](https://youtu.be/R5dUblZ-nk4) | Clase Math y operaciones matemáticas |
+| **Programación ATS** | [Playlist completa del curso Java](https://youtube.com/playlist?list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K) | Vídeos 1–9: introducción, Hola Mundo, tipos de datos, entrada/salida |
+| **MoureDev** | [Curso Completo de Java desde Cero](https://youtu.be/JOAqpdM36wI) | 8 horas — cubre todos los temas del curso |
+| **DiscoDurodeRoer** | [Curso Java SE — playlist](https://youtube.com/playlist?list=PLaxZkGlLWHGX3nqyjMv0wjFHkhCpNxaf4&si=kPTczpOlS3CgMzhs) | Instalación, Hola Mundo, variables, tipos |
+

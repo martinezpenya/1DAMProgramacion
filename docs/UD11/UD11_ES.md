@@ -64,29 +64,8 @@ La única diferencia es la declaración explícita de las relaciones en forma de
 
 Su significado es el mismo que el de las clases homónimas de Java (capacidad de haber repeticiones de elementos, ordenadas o no por índice, etc.). Normalmente, la más usada es `Set<nombreClaseDestino>`.
 
-A continuación se muestra cómo podría representarse dos clases interdependientes llamadas `Cliente` y `Encargo`, que almacenan datos en una aplicación de gestión de clientes, mediante `ODL`.
-
-
-```java
-class Cliente (key id) {
-     attribute int id;
-     attribute String nombre;
-     attribute String direccionPostal;
-     attribute String eMail;
-     attribute String telefono;
-     
-     relationship Set<Encargo> encargos;
-     
-     String getId();
-     ...
-}
-     
-class Encargo (key id)  {
-     attribute int id;
-     attribute LocalDate fecha;
-     ...
-}
-```
+A continuación se muestra cómo podría representarse dos clases interdependientes llamadas `Cliente` y `Encargo`, que almacenan datos en una aplicación de gestión de clientes, mediante `ODL`. Observa el [Ejemplo01](#ejemplo01) para ver la implementación completa.
+{: #teoria-ejemplo01 }
 
 La representación en UML seria algo parecido a esto:
 
@@ -135,25 +114,10 @@ Dado que ahora ya no hay tablas, es necesario tener en cuenta dos cosas. Por un 
 
 Por ejemplo, en una aplicación de gestión de clientes, si se quiere consultar a los clientes de la `BDOO` de acuerdo con la definición de sus clases, se puede hacer:
 
-
-```sql
-SELECT c.direccionPostal, c.telefono
-FROM Clientes c
-WHERE c.nombre = "Cliente1"
-```
-
-Esta consulta devuelve la dirección postal y el teléfono del cliente con nombre "Cliente1".
+Observa el [Ejemplo02](#ejemplo02) para más consultas de ejemplo con OQL.
+{: #teoria-ejemplo02 }
 
 También es posible acceder a los encargos por medio de los clientes, siguiendo su relación:
-
-
-```sql
-SELECT e.fecha
-FROM Clientes c, c.encargos e
-WHERE c.eMail = "email1@dominio.com"
-```
-
-Esta consulta devuelve la fecha de todos los encargos del cliente con dirección de correo "email1@dominio.com".
 
 ## La librería `ObjectDB`
 
@@ -255,16 +219,7 @@ Una instancia de [EntityManagerFactory](https://www.objectdb.com/api/java/jpa/En
 EntityManagerFactory emf = Persistence.createEntityManagerFactory("objectdb:myDbFile.odb");
 ```
 
-La instancia [EntityManagerFactory](https://www.objectdb.com/api/java/jpa/EntityManagerFactory), cuando se construye, abre la base de datos. Si la base de datos aún no existe, se crea un nuevo archivo de base de datos.
-
-Cuando la aplicación termine de usar `EntityManagerFactory`, debe cerrarse:
-
-
-```java
-emf.close();
-```
-
-Al cerrar `EntityManagerFactory`, se cierra el archivo de base de datos.
+La instancia [EntityManagerFactory](https://www.objectdb.com/api/java/jpa/EntityManagerFactory), cuando se construye, abre la base de datos. Si la base de datos aún no existe, se crea un nuevo archivo de base de datos. Cuando la aplicación termine de usar `EntityManagerFactory`, debe cerrarse. Al cerrar `EntityManagerFactory`, se cierra el archivo de base de datos.
 
 **URL de conexión**
 
@@ -276,41 +231,20 @@ Para utilizar el modo cliente-servidor, se debe especificar una URL con el forma
 
 **Administrador de entidades**
 
-Una instancia de [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) puede representar una conexión remota a un servidor de base de datos remoto (en modo cliente-servidor) o una conexión local a un archivo de base de datos local (en modo incrustado). La funcionalidad en ambos casos es la misma. Dada una [EntityManagerFactory](https://www.objectdb.com/api/java/jpa/EntityManagerFactory) `emf`, una conexión a corto plazo a la base de datos podría tener la siguiente forma:
+Una instancia de [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) puede representar una conexión remota a un servidor de base de datos remoto (en modo cliente-servidor) o una conexión local a un archivo de base de datos local (en modo incrustado). La funcionalidad en ambos casos es la misma.
 
-
-```java
-EntityManager em = emf.createEntityManager();
-try {
-    // TODO: Usar la EntityManager para acceder a la BDOO
-}
-finally {
-    em.close();
-}
-```
-
-La instancia `EntityManager` se obtiene de la instancia propietaria `EntityManagerFactory`. Llamar al método [close](https://www.objectdb.com/api/java/jpa/EntityManager/close) es esencial para liberar recursos (como un socket en modo cliente-servidor) a la `EntityManagerFactory` propietaria. .
+La instancia `EntityManager` se obtiene de la instancia propietaria `EntityManagerFactory`. Llamar al método [close](https://www.objectdb.com/api/java/jpa/EntityManager/close) es esencial para liberar recursos (como un socket en modo cliente-servidor) a la `EntityManagerFactory` propietaria.
 
 **Entidad de Transacción**
 
-Las operaciones que afectan el contenido de la base de datos (almacenar, actualizar, eliminar) deben realizarse dentro de una transacción activa. La interfaz [EntityTransaction](https://www.objectdb.com/api/java/jpa/EntityTransaction) representa y administra transacciones de bases de datos. Cada [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) contiene una única instancia adjunta `EntityTransaction` que está disponible a través de [getTransaction()](https://www.objectdb.com/ api/java/jpa/EntityManager/getTransaction):
+Las operaciones que afectan el contenido de la base de datos (almacenar, actualizar, eliminar) deben realizarse dentro de una transacción activa. La interfaz [EntityTransaction](https://www.objectdb.com/api/java/jpa/EntityTransaction) representa y administra transacciones de bases de datos. Cada [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) contiene una única instancia adjunta `EntityTransaction` que está disponible a través de [getTransaction()](https://www.objectdb.com/ api/java/jpa/EntityManager/getTransaction). Una transacción se inicia con una llamada a [begin](https://www.objectdb .com/api/java/jpa/EntityTransaction/begin) y finaliza con una llamada a [commit](https://www.objectdb .com/api/java/jpa/EntityTransaction/commit) o ​​[rollback](https://www.objectdb.com/api/java/jpa/EntityTransaction/rollback).
 
-
-```java
-try {
-    em.getTransaction().begin();
-    // Operaciones que modifican la base de datos se realizan aquí.
-    em.getTransaction().commit();
-}
-finally {
-    if (em.getTransaction().isActive())
-        em.getTransaction().rollback();
-}
-```
-
-Una transacción se inicia con una llamada a [begin](https://www.objectdb.com/api/java/jpa/EntityTransaction/begin) y finaliza con una llamada a [commit](https://www.objectdb .com/api/java/jpa/EntityTransaction/commit) o ​​[rollback](https://www.objectdb.com/api/java/jpa/EntityTransaction/rollback). Todas las operaciones en la base de datos dentro de estos límites están asociadas con esa transacción y se mantienen en la memoria hasta que finaliza la transacción. Si la transacción finaliza con una "reversión" (roll-back), todas las modificaciones a la base de datos se descartan. Sin embargo, de forma predeterminada, la instancia en memoria de la entidad gestionada no se ve afectada por la reversión y no vuelve a su estado modificado previamente.
+Todas las operaciones en la base de datos dentro de estos límites están asociadas con esa transacción y se mantienen en la memoria hasta que finaliza la transacción. Si la transacción finaliza con una "reversión" (roll-back), todas las modificaciones a la base de datos se descartan. Sin embargo, de forma predeterminada, la instancia en memoria de la entidad gestionada no se ve afectada por la reversión y no vuelve a su estado modificado previamente.
 
 Finalizar una transacción con un "commit" propaga todas las modificaciones físicamente a la base de datos. Si por algún motivo falla una "commit", la transacción se revierte automáticamente (incluidas las modificaciones que ya se han propagado a la base de datos antes del error) y se genera una [RollbackException](https://www.objectdb.com/ api/java/jpa/RollbackException).
+
+Consulta el [Ejemplo03](#ejemplo03) para ver el ciclo completo de conexión a ObjectDB.
+{: #teoria-ejemplo03 }
 
 #### Trabajar con objetos de entidad `JPA`
 
@@ -353,15 +287,7 @@ Cuando se borra el contexto de persistencia, todas sus entidades administradas s
 ### Clases de entidad `JPA`
 
 #### Clases de entidad
-
-Una clase de entidad es una clase Java ordinaria definida por el usuario cuyas instancias se pueden almacenar en la base de datos. La forma sencilla de declarar una clase como entidad es marcarla con la anotación [@Entity](https://www.objectdb.com/api/java/jpa/Entity):
-
-```java
-import javax.persistence.*;
-
-@Entity
-public class Entidad {
-```
+Una clase de entidad es una clase Java ordinaria definida por el usuario cuyas instancias se pueden almacenar en la base de datos. La forma sencilla de declarar una clase como entidad es marcarla con la anotación [@Entity](https://www.objectdb.com/api/java/jpa/Entity).
 
 **Requisitos de clase de entidad**
 
@@ -398,27 +324,7 @@ Las clases de fecha y hora `java.sql` representan diferentes partes de fechas y 
 - `java.sql.Date`: representa solo la fecha (por ejemplo, `2019-12-31`).
 - `java.sql.Time`: representa solo el tiempo (por ejemplo, `23:59:59`).
 - `java.sql.Timestamp`: representa la fecha y la hora (por ejemplo, `2019-12-31 23:59:59`).
-
-Los tipos `java.util.Date` y `java.util.Calendar`, por otro lado, son genéricos y pueden representar cualquiera de los anteriores, usando la anotación   [@Temporal](https://www.objectdb.com/ api/java/jpa/Temporal):
-
-```java
-// Fecha:
-java.sql.Date date1;
-@Temporal(TemporalType.DATE) java.util.Date date2;
-@Temporal(TemporalType.DATE) java.util.Calendar date3;
-
-// Hora:
-java.sql.Time time1;
-@Temporal(TemporalType.TIME) java.util.Date time2;
-@Temporal(TemporalType.TIME) java.util.Calendar time3;
-
-// Fecha y hora:
-java.sql.Timestamp dateAndTime1;
-@Temporal(TemporalType.TIMESTAMP) java.util.Date dateAndTime2;
-@Temporal(TemporalType.TIMESTAMP) java.util.Calendar dateAndTime3;
-java.util.Date dateAndTime4; // fecha y hora, no compatible con JPA
-java.util.Calendar dateAndTime5; // fecha y hora, no compatible con JPA
-```
+Los tipos `java.util.Date` y `java.util.Calendar`, por otro lado, son genéricos y pueden representar cualquiera de los anteriores, usando la anotación [@Temporal](https://www.objectdb.com/ api/java/jpa/Temporal).
 
 Fechas puras persistentes (sin la parte de tiempo), ya sea usando el tipo `java.sql.Date` o especificando [@Temporal](https://www.objectdb.com/api/java/jpa/Temporal) La anotación [TemporalType](https://www.objectdb.com/api/java/jpa/TemporalType).[DATE](https://www.objectdb.com/api/java/jpa/TemporalType/DATE) tiene varios beneficios:
 
@@ -427,6 +333,9 @@ Fechas puras persistentes (sin la parte de tiempo), ya sea usando el tipo `java.
 - Simplifica las consultas sobre fechas y rangos de fechas.
 
 Cuando se almacena una entidad, sus campos de fecha y hora se ajustan automáticamente al modo solicitado. Por ejemplo, los campos `fecha1`, `fecha2` y `fecha3` anteriores pueden inicializarse como `new Date()`, es decir, con fecha y hora. Su parte de tiempo se descarta cuando se almacenan en la base de datos.
+
+Puedes ver el uso completo de `@Temporal` en el [Ejemplo04](#ejemplo04).
+{: #teoria-ejemplo04 }
 
 #### Tipos de valores múltiples
 
@@ -461,15 +370,7 @@ Los campos de clases persistentes definidas por el usuario (clases de entidad) s
 - Campo de versión
 
 #### Campos *transient*
-
-Son campos que no participan en la persistencia y sus valores nunca se almacenan en la base de datos (similar a los campos *transient* en Java que no participan en la serialización). Los campos de entidad estática y final siempre se consideran *transient*. Otros campos se pueden declarar explícitamente como *transient* usando el modificador `transient` de Java (que también afecta la serialización) o la anotación JPA [@Transient](https://www.objectdb.com/api/java/jpa/Transient) (que sólo afecta la persistencia):
-
-```java
-static int transient1; // no persistente por ser estático
-final int transient2 = 0; // no persistente por ser final
-transient int transient3; // no persistente por ser transient
-@Transient int transient4; // no persistente por el uso de la etiqueta @Transient
-```
+Son campos que no participan en la persistencia y sus valores nunca se almacenan en la base de datos (similar a los campos *transient* en Java que no participan en la serialización). Los campos de entidad estática y final siempre se consideran *transient*. Otros campos se pueden declarar explícitamente como *transient* usando el modificador `transient` de Java (que también afecta la serialización) o la anotación JPA [@Transient](https://www.objectdb.com/api/java/jpa/Transient) (que sólo afecta la persistencia).
 
 El ejemplo anterior contiene solo campos de entidad *transient* (no persistentes) sin contenido real para almacenar en la base de datos.
 
@@ -486,17 +387,9 @@ Cada campo persistente se puede marcar con una de las siguientes anotaciones:
 - [OneToOne](https://www.objectdb.com/api/java/jpa/OneToOne), [ManyToOne](https://www.objectdb.com/api/java/jpa/ManyToOne) - para referencias de tipos de entidad.
 - [OneToMany](https://www.objectdb.com/api/java/jpa/OneToMany), [ManyToMany](https://www.objectdb.com/api/java/jpa/ManyToMany) - para colecciones y mapas de tipos de entidades.
 - [Básico](https://www.objectdb.com/api/java/jpa/Basic) para cualquier otro tipo persistente.
-
-En JPA solo [Básico](https://www.objectdb.com/api/java/jpa/Basic) es opcional, mientras que las otras anotaciones anteriores son obligatorias cuando corresponda. `ObjectDB`, sin embargo, no exige el uso de ninguna de estas anotaciones, por lo que son útiles sólo para clases que también se utilizan con un proveedor ORM JPA (como Hibernate) o para cambiar la configuración de campo predeterminada. Por ejemplo:
-
-```java
-@Basic(optional=false) Integer campo1;
-@OneToOne(cascade=CascadeType.ALL) Entidad campo2;
-@OneToMany(fetch=FetchType.EAGER) ArrayList<Entidad> campo3;
-```
+En JPA solo [Básico](https://www.objectdb.com/api/java/jpa/Basic) es opcional, mientras que las otras anotaciones anteriores son obligatorias cuando corresponda. `ObjectDB`, sin embargo, no exige el uso de ninguna de estas anotaciones, por lo que son útiles sólo para clases que también se utilizan con un proveedor ORM JPA (como Hibernate) o para cambiar la configuración de campo predeterminada.
 
 La declaración de clase de entidad anterior demuestra el uso de anotaciones de campos y relaciones para cambiar el comportamiento predeterminado. Los valores "nulo" están permitidos de forma predeterminada. Al especificar "`optional=false`" (como se ha visto para "campo1") se genera una excepción en cualquier intento de almacenar una entidad con un valor "nulo" en ese campo. Las configuraciones de cascada y recuperación se explican más adelante.
-
 #### Campos incrustables
 
 Especifica un campo o propiedad persistente de una entidad cuyo valor es una instancia de una clase integrable. La clase integrable debe estar anotada como Integrable.
@@ -507,27 +400,14 @@ Estan muy relacionados con las clases incrustables.
 
 Las clases incrustables son clases persistentes definidas por el usuario que funcionan como tipos. Al igual que con otros tipos que no son de entidad, las instancias de una clase **incrustable** solo pueden almacenarse en la base de datos como objetos **embedded**, es decir, como parte de un objeto de entidad.
 
-Una clase se declara como **incrustable** marcándola con la anotación [Embeddable](https://www.objectdb.com/api/java/jpa/Embeddable):
-
-```java
-@Embeddable
-public class Direccion {
-    protected String calle;
-    protected String ciudad;
-    protected String pais;
-    protected String codPostal;
-}
-```
-
-Y desde el punto de vista de la entidad que incluy este campo usaremos `@Embeddable`:
-
-```java
-@Embedded Direccion direccion;
-```
+Una clase se declara como **incrustable** marcándola con la anotación [Embeddable](https://www.objectdb.com/api/java/jpa/Embeddable). Y desde el punto de vista de la entidad que incluye este campo usaremos `@Embedded`.
 
 Las instancias de clases integrables siempre se integran en otros objetos de entidad y no requieren asignación de espacio ni operaciones de almacenamiento y recuperación independientes. Por lo tanto, el uso de clases integrables puede ahorrar espacio en la base de datos y mejorar la eficiencia.
 
 Sin embargo, las clases integrables no tienen una identidad (clave principal) propia, lo que conlleva algunas limitaciones (por ejemplo, sus instancias no pueden ser compartidas por diferentes objetos de entidad y no pueden consultarse directamente). Por lo tanto, la decisión de declarar una clase como entidad o integrable debe analizarse caso por caso.
+
+Observa el [Ejemplo05](#ejemplo05) para ver ejemplos de campos transient, embedded y embeddable.
+{: #teoria-ejemplo05 }
 
 #### Campos inversos
 
@@ -548,6 +428,9 @@ Puede exponer las versiones de los objetos de entidad y hacer que sus valores se
 ```
 
 Si existe un campo de versión, `ObjectDB` inyecta automáticamente el valor de la versión en ese campo. Los campos de versión deben ser tratados como de solo lectura por la aplicación y no se deben escribir métodos mutadores en ellos. Solo se permite un campo de versión por clase de entidad. De hecho, un único campo de versión por jerarquía de clases de entidad es suficiente porque las subclases heredan un campo de versión.
+
+Puedes ver un ejemplo completo de clave primaria y campo de versión en el [Ejemplo06](#ejemplo06).
+{: #teoria-ejemplo06 }
 
 
 #### Acceso a las propiedades (atributos)
@@ -596,37 +479,16 @@ Si una entidad tiene un campo de clave principal que no está marcado con [@Gene
 
 #### Almacenamiento de objetos de entidad `JPA`
 
-**Persistencia explícita**
+ **Persistencia explícita**
 
-El siguiente código almacena una instancia de la clase de entidad "Empleado" en la base de datos:
-
-
-```java
-//crear empleado
-Empleado empleado = new Empleado("David", "Martinez", "Peña");
-
-em.getTransaction().begin();
-em.persist(empleado);
-em.getTransaction().commit();
-```
+El siguiente código almacena una instancia de la clase de entidad "Empleado" en la base de datos. Observa el [Ejemplo07](#ejemplo07) para más detalles.
+{: #teoria-ejemplo07 }
 
 La instancia `Empleado` se construye como un objeto Java ordinario y su [estado](https://www.objectdb.com/java/jpa/persistence/managed#entity_object_life_cycle) inicial es Nuevo. Una llamada explícita a [persist](https://www.objectdb.com/api/java/jpa/EntityManager/persist_Object) asocia el objeto con un  [EntityManager](https://www.objectdb.com/api/ java/jpa/EntityManager) `em` y cambia su estado a **Administrado**. El nuevo objeto de entidad se almacena en la base de datos cuando se confirma la transacción.
 
 **Objetos incrustados referenciados**
 
-El siguiente código almacena una instancia de "`Empleado`" con una referencia a una instancia de "`Direccion`":
-
-
-```java
-//crear empleado con dirección
-Empleado empleado2 = new Empleado("David", "Martinez", "Peña");
-Direccion direccion = new Direccion("Carlet", "España");
-empleado2.setDireccion(direccion);
-
-em.getTransaction().begin();
-em.persist(empleado2);
-em.getTransaction().commit();
-```
+El siguiente código almacena una instancia de "`Empleado`" con una referencia a una instancia de "`Direccion`". Consulta de nuevo el [Ejemplo07](#ejemplo07) para ver ambos casos completos.
 
 Las instancias de [tipos persistentes](https://www.objectdb.com/java/jpa/entity/types) que no sean clases de entidad se almacenan automáticamente incrustadas en los objetos de entidad que las contienen. Por lo tanto, si `Dirección` se define como una [clase incrustable](https://www.objectdb.com/java/jpa/entity/types#embeddable_classes), el objeto de entidad `Empleado` se almacena automáticamente en la base de datos con su instancia de `Direccion` como un objeto incrustado.
 
@@ -638,12 +500,8 @@ La API de persistencia de Java (JPA) proporciona varias formas de recuperar obje
 
 **Recuperación por clase y clave principal**
 
-Cada objeto de entidad puede identificarse y recuperarse de forma única mediante la combinación de su clase y su clave principal. Dado un [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) `em`, el siguiente fragmento de código demuestra la recuperación de un objeto "`Empleado`" cuya clave principal es 3:
-
-
-```java
-Empleado empleado3 = em.find(Empleado.class, 3);
-```
+Cada objeto de entidad puede identificarse y recuperarse de forma única mediante la combinación de su clase y su clave principal. Dado un [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) `em`, el siguiente fragmento de código demuestra la recuperación de un objeto "`Empleado`" cuya clave principal es 3. Consulta el [Ejemplo08](#ejemplo08) para más detalles sobre recuperación y fetch types.
+{: #teoria-ejemplo08 }
 
 No es necesario convertir el objeto recuperado a `Empleado` porque [find](https://www.objectdb.com/api/java/jpa/EntityManager/find_Class__Object) se define como devolver una instancia de la misma clase que toma como primer argumento (usando genéricos).
 
@@ -651,56 +509,17 @@ No es necesario convertir el objeto recuperado a `Empleado` porque [find](https:
 
 La recuperación de un objeto de entidad de la base de datos puede provocar la recuperación automática de objetos de entidad adicionales. De forma predeterminada, una operación de recuperación se realiza automáticamente en cascada a través de todos los campos persistentes que no son de colección y de mapa (es decir, a través de relaciones uno a uno y muchos a uno). Por lo tanto, cuando se recupera un objeto de entidad, también se recuperan todos los objetos de entidad a los que se puede acceder desde él mediante la navegación a través de campos persistentes de mapa y no de colección. En teoría, en algunas situaciones extremas esto podría provocar la recuperación de toda la base de datos en la memoria, lo que suele ser inaceptable.
 
-Un campo de referencia persistente se puede excluir de esta recuperación automática en cascada mediante el uso de un tipo de recuperación diferida (**Lazy Fetch**):
-
-
-```java
-@Entity
-public class Empleado {
-    [...]
-    @ManyToOne(fetch=FetchType.LAZY)
-    private Empleado gerente;
-    [...]
-```
-
-El valor predeterminado para campos no mapeados y que no son de colección es [FetchType](https://www.objectdb.com/api/java/jpa/FetchType).[EAGER](https://www.objectdb.com/api/java/ jpa/FetchType/EAGER), lo que indica que la operación de recuperación se realiza en cascada a través del campo. Especificando explícitamente [FetchType](https://www.objectdb.com/api/java/jpa/FetchType).[LAZY](https://www.objectdb.com/api/java/jpa/FetchType/LAZY) en ya sea en las anotaciones [@OneToOne](https://www.objectdb.com/api/java/jpa/OneToOne) o [@ManyToOne](https://www.objectdb.com/api/java/jpa/ManyToOne) excluye el campo de participar en la recuperación en cascada.
+Un campo de referencia persistente se puede excluir de esta recuperación automática en cascada mediante el uso de un tipo de recuperación diferida (**Lazy Fetch**). El valor predeterminado para campos no mapeados y que no son de colección es [FetchType](https://www.objectdb.com/api/java/jpa/FetchType).[EAGER](https://www.objectdb.com/api/java/ jpa/FetchType/EAGER), lo que indica que la operación de recuperación se realiza en cascada a través del campo. Especificando explícitamente [FetchType](https://www.objectdb.com/api/java/jpa/FetchType).[LAZY](https://www.objectdb.com/api/java/jpa/FetchType/LAZY) en ya sea en las anotaciones [@OneToOne](https://www.objectdb.com/api/java/jpa/OneToOne) o [@ManyToOne](https://www.objectdb.com/api/java/jpa/ManyToOne) excluye el campo de participar en la recuperación en cascada.
 
 Por otro lado, la política de recuperación predeterminada de los campos mapeados y colecciones persistentes es `FetchType.LAZY`. Por lo tanto, de forma predeterminada, cuando se recupera un objeto de entidad, cualquier otro objeto de entidad a los que haga referencia a través de su colección y los campos de mapa no se recuperan con él.
 
-Esto se puede cambiar mediante una configuración explícita de `FetchType.EAGER`:
-
-
-```java
-@Entity
-public class Empleado {
-    [...]
-    @ManyToMany(fetch=FetchType.EAGER)
-    private ArrayList<Proyecto> proyectos;
-    [...]
-}
-```
+Esto se puede cambiar mediante una configuración explícita de `FetchType.EAGER`.
 
 **Recuperación por Navegación y Acceso**
 
 Se puede acceder libremente a todos los campos persistentes de un objeto de entidad, independientemente de la política de recuperación actual, siempre que el "EntityManager" esté abierto. Esto también incluye campos que hacen referencia a objetos de entidad que aún no se han cargado desde la base de datos y están representados por objetos vacios. Si el `EntityManager` está abierto cuando se accede por primera vez a un objeto vacio, su contenido se recupera automáticamente de la base de datos y todos sus campos persistentes se inicializan.
 
 Desde el punto de vista del desarrollador, parece que todo el esquema de objetos está presente en la memoria. Esta ilusión, que se basa en la activación y recuperación transparente y diferida de objetos por parte de `ObjectDB`, ayuda a ocultar parte de la interacción directa con la base de datos y facilita la programación de la base de datos.
-
-Por ejemplo, después de recuperar una instancia de "Empleado" de la base de datos, el campo "gerente" puede incluir un objeto de entidad "Empleado" vacio:
-
-
-```java
-//recuperación del nombre del Gerente
-Empleado empleado3 = em.find(Empleado.class, 3);
-Empleado gerente3 = empleado3.getGerente(); // puede estar vacio por el FetchType.LAZY
-```
-
-Si `gerente` esta vacío, la activación se produce cuando se accede por primera vez. Por ejemplo: 
-
-
-```java
-String nombreGerente = gerente3.getNombre();
-```
 
 Acceder a un campo persistente en un objeto vacio (por ejemplo, el nombre del "gerente" en el ejemplo anterior) provoca la recuperación del contenido faltante de la base de datos y la inicialización de todos los campos persistentes.
 
@@ -713,16 +532,8 @@ La modificación de objetos de entidad existentes que están almacenados en la b
 
 **Actualización transparente**
 
-Una vez que un objeto de entidad se recupera de la base de datos (sin importar de qué manera), simplemente se puede modificar en la memoria desde dentro de una transacción activa:
-
-
-```java
-//actualizar campo
-Empleado empleado4 = em.find(Empleado.class, 2);
-em.getTransaction().begin();
-empleado4.setApellido1("Otroapellido");
-em.getTransaction().commit();
-```
+Una vez que un objeto de entidad se recupera de la base de datos (sin importar de qué manera), simplemente se puede modificar en la memoria desde dentro de una transacción activa. Observa el [Ejemplo09](#ejemplo09) para un ejemplo completo.
+{: #teoria-ejemplo09 }
 
 El objeto de entidad se actualiza físicamente en la base de datos cuando se confirma la transacción. Si la transacción se revierte y no se confirma, la actualización se descarta.
 
@@ -740,16 +551,8 @@ Los objetos de entidad existentes se pueden eliminar de la base de datos ya sea 
 
 **Eliminación explícita**
 
-Para eliminar un objeto de la base de datos, primero debe recuperarse (sin importar de qué manera) y luego, en una transacción activa, se puede eliminar usando [eliminar](https://www.objectdb.com/api/ java/jpa/EntityManager/remove_Object):
-
-
-```java
-//eliminar empleado
-Empleado empleado5 = em.find(Empleado.class, 1);
-em.getTransaction().begin();
-em.remove(empleado5);
-em.getTransaction().commit();
-```
+Para eliminar un objeto de la base de datos, primero debe recuperarse (sin importar de qué manera) y luego, en una transacción activa, se puede eliminar usando [eliminar](https://www.objectdb.com/api/ java/jpa/EntityManager/remove_Object). Consulta el [Ejemplo10](#ejemplo10) para más detalles.
+{: #teoria-ejemplo10 }
 
 El objeto de entidad se elimina físicamente de la base de datos cuando se confirma la transacción. También se eliminan los objetos incrustados contenidos en el objeto de entidad. Si la transacción se revierte y no se confirma, el objeto no se elimina.
 
@@ -763,7 +566,8 @@ En JPA 2, la interfaz [Query](https://www.objectdb.com/api/java/jpa/Query) debe 
 
 **Creación de consultas con createQuery**
 
-Como ocurre con la mayoría de las otras operaciones en JPA, el uso de consultas comienza con un [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) (representado por `em` en los siguientes fragmentos de código), que sirve como fábrica tanto para [Query](https://www.objectdb.com/api/java/jpa/Query) como para [TypedQuery](https://www.objectdb.com/api/java/jpa/TypedQuery) :
+Como ocurre con la mayoría de las otras operaciones en JPA, el uso de consultas comienza con un [EntityManager](https://www.objectdb.com/api/java/jpa/EntityManager) (representado por `em` en los siguientes fragmentos de código), que sirve como fábrica tanto para [Query](https://www.objectdb.com/api/java/jpa/Query) como para [TypedQuery](https://www.objectdb.com/api/java/jpa/TypedQuery). Observa el [Ejemplo11](#ejemplo11) para consultas JPQL básicas.
+{: #teoria-ejemplo11 }
 
 
 ```java
@@ -802,35 +606,15 @@ De manera similar, la interfaz [TypedQuery](https://www.objectdb.com/api/java/jp
 Además, la interfaz de consulta define un método para ejecutar consultas DELETE y UPDATE:
 
 - [Query.executeUpdate](https://www.objectdb.com/api/java/jpa/Query/executeUpdate): para ejecutar solo consultas DELETE y UPDATE.
-
 **Ejecución de consulta ordinaria (con getResultList)**
 
-La siguiente consulta recupera todos los objetos Empleado en la base de datos. La consulta debe ejecutarse utilizando el método [getResultList](https://www.objectdb.com/api/java/jpa/TypedQuery/getResultList), ya que esperamos recibir múltiples objetos a cambio:
+La siguiente consulta recupera todos los objetos Empleado en la base de datos. La consulta debe ejecutarse utilizando el método [getResultList](https://www.objectdb.com/api/java/jpa/TypedQuery/getResultList), ya que esperamos recibir múltiples objetos a cambio.
 
-
-```java
-TypedQuery<Empleado> q2 = em.createQuery("SELECT e FROM Empleado e", Empleado.class);
-List<Empleado> results2 = q2.getResultList();
-```
-
-Tanto [Query](https://www.objectdb.com/api/java/jpa/Query) como [TypedQuery](https://www.objectdb.com/api/java/jpa/TypedQuery) definen un `getResultList ` método, pero la versión de [Query](https://www.objectdb.com/api/java/jpa/Query) devuelve una lista de resultados de un tipo sin formato (no genérico) en lugar de un tipo parametrizado (genérico):
-
-
-```java
-Query q1 = em.createQuery("SELECT e FROM Empleado e");
-List results1 = q1.getResultList();
-```
+Tanto [Query](https://www.objectdb.com/api/java/jpa/Query) como [TypedQuery](https://www.objectdb.com/api/java/jpa/TypedQuery) definen un `getResultList ` método, pero la versión de [Query](https://www.objectdb.com/api/java/jpa/Query) devuelve una lista de resultados de un tipo sin formato (no genérico) en lugar de un tipo parametrizado (genérico).
 
 Un intento de convertir los `resultados` anteriores a un tipo parametrizado (`List<Country>`) provocará una advertencia de compilación. Sin embargo, si se utiliza la nueva interfaz [TypedQuery](https://www.objectdb.com/api/java/jpa/TypedQuery), la conversión no es necesaria y se evita la advertencia.
 
-La colección de resultados de la consulta funciona como cualquier otra colección Java normal. Por ejemplo, una colección de resultados de un tipo parametrizado se puede iterar fácilmente utilizando un bucle for mejorado:
-
-
-```java
-for (Empleado e : results2) {
-    System.out.println(e.getNombre());
-}
-```
+La colección de resultados de la consulta funciona como cualquier otra colección Java normal. Por ejemplo, una colección de resultados de un tipo parametrizado se puede iterar fácilmente utilizando un bucle for mejorado.
 
 Tenga en cuenta que para imprimir solo los nombres de los Empleados, sería necesaria una consulta utilizando [projection](https://www.objectdb.com/java/jpa/query/jpql/select) y recuperando los nombres de los empleados directamente en lugar de recuperar las instancias completas del Empleado. más eficiente.
 
@@ -838,56 +622,24 @@ Tenga en cuenta que para imprimir solo los nombres de los Empleados, sería nece
 
 El método [getResultList](https://www.objectdb.com/api/java/jpa/TypedQuery/getResultList) (que se analizó anteriormente) también se puede utilizar para ejecutar consultas que devuelven un único objeto de resultado. En este caso, el objeto de resultado debe extraerse de la colección de resultados después de la ejecución de la consulta (por ejemplo, mediante `results.get(0)`). Para eliminar esta operación de rutina, JPA proporciona un método adicional, [getSingleResult](https://www.objectdb.com/api/java/jpa/TypedQuery/getSingleResult), como método más conveniente cuando se espera exactamente un objeto de resultado.
 
-La siguiente consulta agregada siempre devuelve un único objeto de resultado, que es un objeto "Long" que refleja el número de objetos "Empleado" en la base de datos:
+La siguiente consulta agregada siempre devuelve un único objeto de resultado, que es un objeto "Long" que refleja el número de objetos "Empleado" en la base de datos.
 
+Tenga en cuenta que cuando una consulta devuelve un único objeto, puede resultar tentador utilizar [Query](https://www.objectdb.com/api/java/jpa/Query) en lugar de [TypedQuery,](https://www.objectdb .com/api/java/jpa/TypedQuery) incluso cuando se conoce el tipo de resultado, porque la conversión de un solo objeto es fácil y el código es simple.
 
-```java
-TypedQuery<Long> query3 = em.createQuery("SELECT COUNT(e) FROM Empleado e", Long.class);
-long numeroEmpleados = query3.getSingleResult();
-```
+Una consulta `COUNT` agregada siempre devuelve un resultado, por definición. En otros casos, nuestra expectativa de obtener un resultado de objeto único podría fallar, dependiendo del contenido de la base de datos.
 
-Tenga en cuenta que cuando una consulta devuelve un único objeto, puede resultar tentador utilizar [Query](https://www.objectdb.com/api/java/jpa/Query) en lugar de [TypedQuery,](https://www.objectdb .com/api/java/jpa/TypedQuery) incluso cuando se conoce el tipo de resultado, porque la conversión de un solo objeto es fácil y el código es simple: 
-
-
-```java
-long numeroEmpleados = query3.getSingleResult();
-```
-
-Una consulta `COUNT` agregada siempre devuelve un resultado, por definición. En otros casos, nuestra expectativa de obtener un resultado de objeto único podría fallar, dependiendo del contenido de la base de datos. Por ejemplo, se espera que la siguiente consulta devuelva un único objeto Empleado: 
-
-
-```java
-Query query4 = em.createQuery("SELECT e FROM Empleado e WHERE e.nombre='David'");
-Empleado empleado6 = (Empleado) query4.getSingleResult(); //podria provocar una excepción si hay más de un empleado llamado David
-```
-
-Sin embargo, la exactitud de esta suposición depende del contenido de la base de datos. Si la base de datos contiene varios objetos "Empleado" con el nombre "David", se genera una [NonUniqueResultException](https://www.objectdb.com/api/java/jpa/NonUniqueResultException). Por otro lado, si no hay ningún resultado, se genera una [NoResultException](https://www.objectdb.com/api/java/jpa/NoResultException). Por lo tanto, el uso de [getSingleResult](https://www.objectdb.com/api/java/jpa/TypedQuery/getSingleResult) requiere cierta precaución y, si existe alguna posibilidad de que se produzcan estas excepciones, deben detectarse y manejarse. .
+Sin embargo, la exactitud de esta suposición depende del contenido de la base de datos. Si la base de datos contiene varios objetos "Empleado" con el nombre "David", se genera una [NonUniqueResultException](https://www.objectdb.com/api/java/jpa/NonUniqueResultException). Por otro lado, si no hay ningún resultado, se genera una [NoResultException](https://www.objectdb.com/api/java/jpa/NoResultException). Por lo tanto, el uso de [getSingleResult](https://www.objectdb.com/api/java/jpa/TypedQuery/getSingleResult) requiere cierta precaución y, si existe alguna posibilidad de que se produzcan estas excepciones, deben detectarse y manejarse.
 
 **ELIMINAR y ACTUALIZAR ejecución de consultas (con ejecutarActualización)**
 
 Consultas [ELIMINAR](https://www.objectdb.com/java/jpa/query/jpql/delete) y [ACTUALIZAR](https://www.objectdb.com/java/jpa/query/jpql/update) se ejecutan utilizando el método [executeUpdate](https://www.objectdb.com/api/java/jpa/Query/executeUpdate).
 
-Por ejemplo, la siguiente consulta elimina todas las instancias de "Empleado": 
-
-```java
-//Eliminar instancias de Empleado
-em.getTransaction().begin();
-int count = em.createQuery("DELETE FROM Empleado").executeUpdate();
-em.getTransaction().commit();
-```
-
-The following query resets the area field in all the Country instances to zero: 
-
-```java
-//Actualizar todos los Empleados
-em.getTransaction().begin();
-int count2 = em.createQuery("UPDATE Empleado SET apellido1 = 'Martinez'").executeUpdate();
-em.getTransaction().commit();
-```
-
 Se genera una [TransactionRequiredException](https://www.objectdb.com/api/java/jpa/TransactionRequiredException) si no hay ninguna transacción activa.
 
 En caso de éxito, el método `executeUpdate` devuelve la cantidad de objetos que la consulta actualizó o eliminó.
+
+Consulta el [Ejemplo13](#ejemplo13) para ver operaciones DELETE y UPDATE mediante `executeUpdate`.
+{: #teoria-ejemplo13 }
 
 La sección Estructura de consulta explica [ELIMINAR](https://www.objectdb.com/java/jpa/query/jpql/delete) y [ACTUALIZAR](https://www.objectdb.com/java/jpa/query/ jpql/update) consultas con más detalle.
 
@@ -897,15 +649,7 @@ Los parámetros de consulta permiten la definición de consultas reutilizables. 
 
 **Parámetros con nombre (:nombre)**
 
-El siguiente método recupera un objeto "Empleado" de la base de datos por su nombre:
-
-
-```java
-public Empleado getEmpleadoPorNombre(EntityManager em, String nombre) {
-    TypedQuery<Empleado> query = em.createQuery("SELECT e FROM Empleado e WHERE e.nombre = :nombre", Empleado.class);
-    return query.setParameter("nombre", nombre).getSingleResult();
-}
-```
+El siguiente método recupera un objeto "Empleado" de la base de datos por su nombre. Puedes verlo en el [Ejemplo12](#ejemplo12).
 
 La cláusula WHERE reduce los resultados de la consulta a objetos "Empleado" cuyo valor del campo de nombre es igual a ":nombre", que es un parámetro que sirve como marcador de posición para un valor real. Antes de que se pueda ejecutar la consulta, se debe establecer un valor de parámetro utilizando el método [setParameter](https://www.objectdb.com/api/java/jpa/TypedQuery/setParameter_String_Object). El método [setParameter](https://www.objectdb.com/api/java/jpa/TypedQuery/setParameter_String_Object) admite el encadenamiento de métodos (devolviendo el mismo [TypedQuery](https://www.objectdb.com/api/ java/jpa/TypedQuery) instancia en la que se invocó), por lo que la invocación de [getSingleResult](https://www.objectdb.com/api/java/jpa/TypedQuery/getSingleResult) se puede encadenar a la misma expresión.
 
@@ -915,19 +659,14 @@ Las consultas pueden incluir varios parámetros y cada parámetro puede aparecer
 
 **Parámetros ordinales (`?indice`)**
 
-Además de los parámetros con nombre, cuya forma es `:nombre`, JPQL también admite parámetros ordinales, cuya forma es `?index`. El siguiente método es equivalente al método anterior, excepto que un parámetro ordinal reemplaza al parámetro nombrado:
-
-
-```java
-public Empleado getEmpleadoPorNombreOrdinal(EntityManager em, String nombre) {
-    TypedQuery<Empleado> query = em.createQuery("SELECT e FROM Empleado e WHERE e.nombre = ?1", Empleado.class);
-    return query.setParameter(1, nombre).getSingleResult();
-}
-```
+Además de los parámetros con nombre, cuya forma es `:nombre`, JPQL también admite parámetros ordinales, cuya forma es `?index`. El [Ejemplo12](#ejemplo12) muestra ambos tipos.
 
 La forma de los parámetros ordinales es un signo de interrogación (?) seguido de un número int positivo. Aparte de la notación diferente, los parámetros con nombre y los parámetros ordinales son idénticos.
 
 Los parámetros con nombre pueden proporcionar un valor agregado a la claridad de la cadena de consulta (suponiendo que se seleccionen nombres significativos). Por lo tanto, se prefieren a los parámetros ordinales.
+
+Puedes ver ejemplos de ambos tipos de parámetros en el [Ejemplo12](#ejemplo12).
+{: #teoria-ejemplo12 }
 
 #### API de criterios JPA frente a JPQL
 
@@ -956,26 +695,384 @@ Aquí tienes una tabla comparativa con las **características, ventajas e inconv
 | **Inconvenientes**  | - Menos flexible para datos complejos - Joins costosos | - Menos adopción - Limitado para informes         | - Consultas ineficientes - Curva de aprendizaje |
 | **Mejor uso**       | Datos estructurados, transacciones                     | Apps con dominio OO complejo                      | Proyectos OO con BD relacional                  |
 
-!!! info "Resumen — Conceptos clave"
-    | Concepto | Definición |
-    |---|---|
-    | BDOO | Base de datos que almacena objetos directamente, sin necesidad de mapeo |
-    | ObjectDB | Sistema gestor de bases de datos orientadas a objetos para Java |
-    | OQL | Lenguaje de consulta para BDOO similar a SQL |
-    | Persistencia | Capacidad de un objeto de mantener su estado más allá de la ejecución |
-    | JDO | Java Data Objects — estándar para persistencia de objetos |
-    | Entity | Objeto que puede ser persistido en una base de datos |
+## Ejemplos
 
-## Píldoras informáticas relacionadas
-- [Curso Spring. Hibernate, acceso a datos. Vídeo 46](https://www.youtube.com/watch?v=sk0YuQPaPWA)
-- [Curso Java. Acceso a BBDD. JDBC I. Vídeo 201](https://www.youtube.com/watch?v=cFLsynl91B0)
-- [JPA + Hibernate](https://youtube.com/playlist?list=PLTd5ehIj0goPcnQs34i0F-Kgp5JHX8UUv&si=wjWSZ7tnYadwONFy)
-<iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+### Ejemplo01
 
-### Autoevaluación
+Definición de clases con ODL.
+
+```java
+class Cliente (key id) {
+     attribute int id;
+     attribute String nombre;
+     attribute String direccionPostal;
+     attribute String eMail;
+     attribute String telefono;
+     
+     relationship Set<Encargo> encargos;
+     
+     String getId();
+     ...
+}
+     
+class Encargo (key id)  {
+     attribute int id;
+     attribute LocalDate fecha;
+     ...
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo01)
+
+### Ejemplo02
+
+Consultas básicas con OQL.
+
+```sql
+SELECT c.direccionPostal, c.telefono
+FROM Clientes c
+WHERE c.nombre = "Cliente1"
+```
+
+```sql
+SELECT e.fecha
+FROM Clientes c, c.encargos e
+WHERE c.eMail = "email1@dominio.com"
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo02)
+
+### Ejemplo03
+
+Conexión a ObjectDB con JPA (EntityManagerFactory y EntityManager).
+
+```java
+EntityManagerFactory emf = Persistence.createEntityManagerFactory("objectdb:myDbFile.odb");
+```
+
+Apertura y cierre del gestor de entidades:
+
+```java
+EntityManager em = emf.createEntityManager();
+try {
+    // TODO: Usar la EntityManager para acceder a la BDOO
+}
+finally {
+    em.close();
+}
+emf.close();
+```
+
+Manejo de transacciones:
+
+```java
+try {
+    em.getTransaction().begin();
+    // Operaciones que modifican la base de datos se realizan aquí.
+    em.getTransaction().commit();
+}
+finally {
+    if (em.getTransaction().isActive())
+        em.getTransaction().rollback();
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo03)
+
+### Ejemplo04
+
+Tipos de fecha y hora con `@Temporal`.
+
+```java
+// Fecha:
+java.sql.Date date1;
+@Temporal(TemporalType.DATE) java.util.Date date2;
+@Temporal(TemporalType.DATE) java.util.Calendar date3;
+
+// Hora:
+java.sql.Time time1;
+@Temporal(TemporalType.TIME) java.util.Date time2;
+@Temporal(TemporalType.TIME) java.util.Calendar time3;
+
+// Fecha y hora:
+java.sql.Timestamp dateAndTime1;
+@Temporal(TemporalType.TIMESTAMP) java.util.Date dateAndTime2;
+@Temporal(TemporalType.TIMESTAMP) java.util.Calendar dateAndTime3;
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo04)
+
+### Ejemplo05
+
+Campos `@Transient`, `@Embedded` y clase `@Embeddable`.
+
+Campos no persistentes:
+
+```java
+static int transient1;               // no persistente por ser estático
+final int transient2 = 0;            // no persistente por ser final
+transient int transient3;            // no persistente por ser transient
+@Transient int transient4;           // no persistente por la etiqueta @Transient
+```
+
+Anotaciones de campo y relación:
+
+```java
+@Basic(optional=false) Integer campo1;
+@OneToOne(cascade=CascadeType.ALL) Entidad campo2;
+@OneToMany(fetch=FetchType.EAGER) ArrayList<Entidad> campo3;
+```
+
+Clase incrustable:
+
+```java
+@Embeddable
+public class Direccion {
+    protected String calle;
+    protected String ciudad;
+    protected String pais;
+    protected String codPostal;
+}
+```
+
+Campo incrustado:
+
+```java
+@Embedded Direccion direccion;
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo05)
+
+### Ejemplo06
+
+Clave primaria con `@Id`, `@GeneratedValue` y `@Version`.
+
+Clave primaria autogenerada:
+
+```java
+@Id @GeneratedValue long id;    // Generado por ObjectDB
+```
+
+Clave primaria asignada por la aplicación:
+
+```java
+@Id long id2;                    // Generado por la aplicación
+```
+
+Campo de versión:
+
+```java
+@Version long version;
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo06)
+
+### Ejemplo07
+
+Almacenamiento de objetos con `em.persist()`.
+
+Persistencia explícita:
+
+```java
+Empleado empleado = new Empleado("David", "Martinez", "Peña");
+
+em.getTransaction().begin();
+em.persist(empleado);
+em.getTransaction().commit();
+```
+
+Persistencia con objeto incrustado:
+
+```java
+Empleado empleado2 = new Empleado("David", "Martinez", "Peña");
+Direccion direccion = new Direccion("Carlet", "España");
+empleado2.setDireccion(direccion);
+
+em.getTransaction().begin();
+em.persist(empleado2);
+em.getTransaction().commit();
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo07)
+
+### Ejemplo08
+
+Recuperación de objetos con `em.find()` y tipos de fetch.
+
+Recuperación por clave primaria:
+
+```java
+Empleado empleado3 = em.find(Empleado.class, 3);
+```
+
+Fetch diferido (lazy):
+
+```java
+@Entity
+public class Empleado {
+    [...]
+    @ManyToOne(fetch=FetchType.LAZY)
+    private Empleado gerente;
+    [...]
+```
+
+Fetch eager (ansioso):
+
+```java
+@Entity
+public class Empleado {
+    [...]
+    @ManyToMany(fetch=FetchType.EAGER)
+    private ArrayList<Proyecto> proyectos;
+    [...]
+}
+```
+
+Navegación desde un objeto recuperado:
+
+```java
+Empleado empleado3 = em.find(Empleado.class, 3);
+Empleado gerente3 = empleado3.getGerente();
+String nombreGerente = gerente3.getNombre();
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo08)
+
+### Ejemplo09
+
+Actualización de objetos JPA.
+
+```java
+Empleado empleado4 = em.find(Empleado.class, 2);
+em.getTransaction().begin();
+empleado4.setApellido1("Otroapellido");
+em.getTransaction().commit();
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo09)
+
+### Ejemplo10
+
+Eliminación de objetos JPA.
+
+```java
+Empleado empleado5 = em.find(Empleado.class, 1);
+em.getTransaction().begin();
+em.remove(empleado5);
+em.getTransaction().commit();
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo10)
+
+### Ejemplo11
+
+Consultas JPQL básicas.
+
+Consulta con `TypedQuery` y `getResultList`:
+
+```java
+TypedQuery<Empleado> q2 = em.createQuery("SELECT e FROM Empleado e", Empleado.class);
+List<Empleado> results2 = q2.getResultList();
+```
+
+Consulta con `Query` sin tipo:
+
+```java
+Query q1 = em.createQuery("SELECT e FROM Empleado e");
+List results1 = q1.getResultList();
+```
+
+Iteración sobre resultados:
+
+```java
+for (Empleado e : results2) {
+    System.out.println(e.getNombre());
+}
+```
+
+Consulta con `getSingleResult`:
+
+```java
+TypedQuery<Long> query3 = em.createQuery("SELECT COUNT(e) FROM Empleado e", Long.class);
+long numeroEmpleados = query3.getSingleResult();
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo11)
+
+### Ejemplo12
+
+Consultas JPQL con parámetros.
+
+Parámetro con nombre (`:nombre`):
+
+```java
+public Empleado getEmpleadoPorNombre(EntityManager em, String nombre) {
+    TypedQuery<Empleado> query = em.createQuery(
+        "SELECT e FROM Empleado e WHERE e.nombre = :nombre", Empleado.class);
+    return query.setParameter("nombre", nombre).getSingleResult();
+}
+```
+
+Parámetro ordinal (`?1`):
+
+```java
+public Empleado getEmpleadoPorNombreOrdinal(EntityManager em, String nombre) {
+    TypedQuery<Empleado> query = em.createQuery(
+        "SELECT e FROM Empleado e WHERE e.nombre = ?1", Empleado.class);
+    return query.setParameter(1, nombre).getSingleResult();
+}
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo12)
+
+### Ejemplo13
+
+Consultas DELETE y UPDATE con `executeUpdate`.
+
+Eliminación masiva:
+
+```java
+em.getTransaction().begin();
+int count = em.createQuery("DELETE FROM Empleado").executeUpdate();
+em.getTransaction().commit();
+```
+
+Actualización masiva:
+
+```java
+em.getTransaction().begin();
+int count2 = em.createQuery(
+    "UPDATE Empleado SET apellido1 = 'Martinez'").executeUpdate();
+em.getTransaction().commit();
+```
+
+[⬆ Volver a teoría](#teoria-ejemplo13)
+
+## Resumen — Conceptos clave
+
+| Concepto | Definición |
+|---|---|
+| BDOO | Base de datos que almacena objetos directamente, sin necesidad de mapeo |
+| ObjectDB | Sistema gestor de bases de datos orientadas a objetos para Java |
+| OQL | Lenguaje de consulta para BDOO similar a SQL |
+| Persistencia | Capacidad de un objeto de mantener su estado más allá de la ejecución |
+| JDO | Java Data Objects — estándar para persistencia de objetos |
+| Entity | Objeto que puede ser persistido en una base de datos |
+
+## Autoevaluación
 - [ ] Entiendo qué es una BDOO y en qué se diferencia de una BDR
 - [ ] He instalado ObjectDB correctamente
 - [ ] Persisto objetos en ObjectDB
 - [ ] Realizo consultas con OQL
 - [ ] Actualizo y elimino objetos de la base de datos
 - [ ] Conozco los estándares JDO y JPA
+
+## Vídeos recomendados
+
+| Canal | Vídeo | Contenido |
+|-------|-------|-----------|
+| **makigas** | [Serie JDBC Moderno](https://www.makigas.es/series/jdbc-moderno) | 12 vídeos (2h): driver, conexión, PreparedStatement, transacciones, DataSource |
+| **Píldoras Informáticas** | [Curso Spring — Hibernate (vídeo 46)](https://www.youtube.com/watch?v=sk0YuQPaPWA) | Acceso a datos con Hibernate/JPA |
+| **YouTube — Varios** | [Playlist JPA + Hibernate](https://youtube.com/playlist?list=PLTd5ehIj0goPcnQs34i0F-Kgp5JHX8UUv) | Curso completo de JPA e Hibernate |
+| **ObjectDB** | [Documentación oficial](https://www.objectdb.com/) | Tutoriales y guías de ObjectDB JPA |
+

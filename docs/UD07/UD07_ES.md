@@ -358,17 +358,7 @@ Los árboles son estructuras complejas de manejar y que permiten operaciones muy
 Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en un árbol a nivel interno (inserción de nodos, eliminación de nodos, búsqueda de un valor, etc.). Nos aprovecharemos de las colecciones para hacer uso de su potencial. En la siguiente tabla tienes un uso comparado de `TreeSet` y `LinkedHashSet` . Su creación es similar a como se hace con `HashSet` , simplemente sustituyendo el nombre de la clase `HashSet` por una de las otras. Ni `TreeSet` , ni `LinkedHashSet` admiten duplicados, y se usan los mismos métodos ya vistos antes, los existentes en la interfaz `Set` (que es la interfaz que implementan).
 
 - Conjunto `TreeSet` ([Ejemplo01](#ejemplo01)):
-
-  ```java
-  TreeSet<Integer> t = new TreeSet<>();
-  t.add(4);
-  t.add(3);
-  t.add(1);
-  t.add(99);
-  for (Integer i : t) {
-      System.out.print(i + " ");
-  }
-  ```
+  {: #teoria-ejemplo01 }
 
   Resultado mostrado por pantalla (el resultado sale ordenado por valor):
 
@@ -377,20 +367,10 @@ Nuevamente, no se va a profundizar en las operaciones que se pueden realizar en 
   ```
 
 - Conjunto `LinkedHashSet` ([Ejemplo02](#ejemplo02)):
+  {: #teoria-ejemplo02 }
 
-  ```java
-  LinkedHashSet<Integer> t = new LinkedHashSet<>();
-  t.add(4);
-  t.add(3);
-  t.add(1);
-  t.add(99);
-  for (Integer i : t) {
-      System.out.print(i + " ");
-  }
-  ```
-  
   Resultado mostrado por pantalla (los valores salen ordenados según el momento de inserción en el conjunto):
-  
+
   ```java
   4 3 1 99
   ```
@@ -458,6 +438,7 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
     Estas operaciones son comunes a todas las colecciones.
 
 Consulta el [Ejemplo03](#ejemplo03)
+{: #teoria-ejemplo03 }
 
 #### Ordenación
 
@@ -493,6 +474,7 @@ TreeSet<Objeto> ts=new TreeSet<>(new ComparadorDeObjetos());
 Hay otra manera de definir esta ordenación, pero lo estudiaremos más a fondo en el punto [Comparadores](#comparadores)
 
 Para entender mejor los Sets revisa el [Ejemplo04](#ejemplo04)
+{: #teoria-ejemplo04 }
 
 ### Listas
 
@@ -572,6 +554,7 @@ al.subList(0, 2).clear();
 Lo mismo ocurre al añadir un elemento, se añade en la sublista y en la lista original.
 
 Puedes consultar el código en el [Ejemplo05](#ejemplo05)
+{: #teoria-ejemplo05 }
 
 #### `LinkedList` y `ArrayList`
 
@@ -640,6 +623,7 @@ El resultado de ejecutar el código anterior es que se muestran los números 44 
     "*Controlar la complejidad es la esencia de la programación*." **[Brian Kernighan](https://es.wikipedia.org/wiki/Brian_Kernighan)**
 
 Consulta el [Ejemplo06](#ejemplo06)
+{: #teoria-ejemplo06 }
 
 ### Conjuntos de pares [clave/valor] (Diccionario)
 
@@ -667,6 +651,7 @@ El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada 
 | `void clear();`                        | Vacía el mapa.                                               |
 
 Revisa el [Ejemplo07](#ejemplo07)
+{: #teoria-ejemplo07 }
 
 ```mermaid
 graph LR
@@ -793,7 +778,11 @@ Lo único que tienes que tener en cuenta es que el conjunto generado por `keySet
 
     *Los problemas son debidos a que el método `remove` del iterador elimina el elemento de dos sitios: de la colección y del iterador en sí (que mantiene interiormente información del orden de los elementos). Si usas el método `remove` de la colección, la información solo se elimina de un lugar, de la colección.*
 
-Consulta el [Ejemplo08](#ejemplo08) y el [Ejemplo09](#ejemplo09) (que es la versión del [Ejemplo06](#ejemplo06) con iteradores).
+Consulta el [Ejemplo08](#ejemplo08) para ver un ejemplo de iteradores.
+{: #teoria-ejemplo08 }
+
+Consulta el [Ejemplo09](#ejemplo09) para ver el mismo ejemplo resuelto con un iterador.
+{: #teoria-ejemplo09 }
 
 ## Comparadores
 
@@ -845,7 +834,11 @@ El funcionamiento del método `compareTo` es el mismo que el método `compare` d
 
 Ordenar ahora la lista de artículos es sencillo, fíjate que fácil: `Collections.sort(coleccionArticulos);`
 
-Consulta el código de [Ejemplo10](#ejemplo10) y [Ejemplo11](#ejemplo11)
+Consulta el [Ejemplo10](#ejemplo10) para ver el uso de Comparator.
+{: #teoria-ejemplo10 }
+
+Consulta el [Ejemplo11](#ejemplo11) para ver el uso de Comparable.
+{: #teoria-ejemplo11 }
 
 ## Extras
 
@@ -1127,9 +1120,20 @@ double mediaAdultos = personas.stream().filter(p -> p.getEdad() >= 18)
     .mapToInt(p -> p.getEdad()).average().getAsDouble();
 ```
 
+Observa el [Ejemplo12](#ejemplo12) para ver la diferencia entre programación imperativa y funcional con Stream.
+{: #teoria-ejemplo12 }
+
+Observa el [Ejemplo13](#ejemplo13) para ver ordenación con Comparator vs. expresión lambda.
+{: #teoria-ejemplo13 }
+
+Observa el [Ejemplo14](#ejemplo14) para ver operaciones funcionales con Stream: filtrado, mapeo, ordenación y combinación.
+{: #teoria-ejemplo14 }
+
 ## Ejemplos UD07
 
 ### Ejemplo01
+
+Uso básico de `TreeSet`: conjunto ordenado de enteros.
 
 ```java
 package UD07.P2_2_Sets;
@@ -1147,11 +1151,14 @@ public class Ejemplo01 {
         for (Integer i : t) {
             System.out.print(i + " ");
         }
-    }
 }
 ```
 
+[⬆ Volver a teoría](#teoria-ejemplo01)
+
 ### Ejemplo02
+
+Uso básico de `LinkedHashSet`: conjunto que mantiene el orden de inserción.
 
 ```java
 package UD07.P2_2_Sets;
@@ -1169,11 +1176,14 @@ public class Ejemplo02 {
         for (Integer i : t) {
             System.out.print(i + " ");
         }
-    }
 }
 ```
 
+[⬆ Volver a teoría](#teoria-ejemplo02)
+
 ### Ejemplo03
+
+Operaciones sobre conjuntos: `addAll`, `removeAll` y `retainAll`.
 
 ```java
 package UD07.P2_2_Sets;
@@ -1228,6 +1238,8 @@ public class Ejemplo03 {
 }
 ```
 
+[⬆ Volver a teoría](#teoria-ejemplo03)
+
 ### Ejemplo04
 
 Realiza un pequeño programa que pregunte al usuario 5 números diferentes (almacenándolos en un `HashSet`), y que después calcule la suma de los mismos (usando un bucle `for‐each`).
@@ -1269,7 +1281,11 @@ public class EjemploHashSet {
 }
 ```
 
+[⬆ Volver a teoría](#teoria-ejemplo04)
+
 ### Ejemplo05
+
+Operaciones con `LinkedList` y `ArrayList`: inserción, eliminación y uso de `subList`.
 
 ```java
 package UD07.P2_3_Listas;
@@ -1308,6 +1324,8 @@ public class Ejemplo05 {
     }
 }
 ```
+
+[⬆ Volver a teoría](#teoria-ejemplo05)
 
 ### Ejemplo06
 
@@ -1424,10 +1442,13 @@ public class Ejemplo06 {
         System.out.println(" - Lista final con " + lista.size() + " elementos");
     }
 }
-
 ```
 
+[⬆ Volver a teoría](#teoria-ejemplo06)
+
 ### Ejemplo07
+
+Uso básico de `HashMap`: inserción, búsqueda por clave y valor, eliminación y recorrido.
 
 ```java
 package UD07.P2_4_Maps;
@@ -1467,6 +1488,8 @@ public class Ejemplo07 {
     }
 }
 ```
+
+[⬆ Volver a teoría](#teoria-ejemplo07)
 
 ### Ejemplo08
 
@@ -1525,7 +1548,11 @@ public class Ejemplo08 {
 }
 ```
 
+[⬆ Volver a teoría](#teoria-ejemplo08)
+
 ### Ejemplo09
+
+Recorrido de una lista con `Iterator` y modificación de objetos mutables dentro de la colección.
 
 ```java
 package UD07.P3.Iterators;
@@ -1592,6 +1619,8 @@ public class Ejemplo09 {
     }
 }
 ```
+
+[⬆ Volver a teoría](#teoria-ejemplo09)
 
 ### Ejemplo10
 
@@ -1681,6 +1710,8 @@ Objeto{a=1, b=2}
 Objeto{a=0, b=1}
 ```
 
+[⬆ Volver a teoría](#teoria-ejemplo10)
+
 ### Ejemplo11
 
 Ejercicio resuelto `Comparator2`. Ahora convertiremos la clase `Objeto` para que directamente implemente la interfaz `Comparable`:
@@ -1752,7 +1783,11 @@ Objeto{a=1, b=2}
 Objeto{a=0, b=1}
 ```
 
-### Ejemplo 12
+[⬆ Volver a teoría](#teoria-ejemplo11)
+
+### Ejemplo12
+
+Programación imperativa vs. funcional con `Stream`: filtrado de personas mayores de edad.
 
 ```java
 package UD07.P6_Funcional;
@@ -1814,7 +1849,11 @@ public class P6_2_ImperativosFuncional {
 }
 ```
 
-### Ejemplo 13
+[⬆ Volver a teoría](#teoria-ejemplo12)
+
+### Ejemplo13
+
+Ordenación con `Comparator` vs. expresión lambda.
 
 ```java
 package UD07.P6_Funcional;
@@ -1854,7 +1893,11 @@ public class P6_3_Lambda {
 }
 ```
 
-### Ejemplo 14
+[⬆ Volver a teoría](#teoria-ejemplo13)
+
+### Ejemplo14
+
+Operaciones funcionales con `Stream`: filtrado, mapeo, ordenación y combinación.
 
 ```java
 package UD07.P6_Funcional;
@@ -1933,22 +1976,21 @@ public class P6_4_ColeccionesStreams {
 }
 ```
 
-!!! info "Resumen — Conceptos clave"
-    | Concepto | Definición |
-    |---|---|
-    | Colección | Estructura de datos que almacena y organiza objetos |
-    | List | Colección ordenada que permite elementos duplicados |
-    | Set | Colección que NO permite elementos duplicados |
-    | Map | Estructura que asocia claves únicas a valores |
-    | Iterador | Objeto que permite recorrer una colección |
-    | Lambda | Función anónima que permite programación funcional |
-    | Stream | Secuencia de elementos sobre la que se aplican operaciones |
+[⬆ Volver a teoría](#teoria-ejemplo14)
 
-## Píldoras informáticas relacionadas
+## Resumen — Conceptos clave
 
-<p><iframe  width="100%" height="315" src="https://www.youtube.com/embed/videoseries?si=AEnj5v1FyQu9y8-V&amp;list=PLU8oAlHdN5BktAXdEVCLUYzvDyqRQJ2lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+| Concepto | Definición |
+|---|---|
+| Colección | Estructura de datos que almacena y organiza objetos |
+| List | Colección ordenada que permite elementos duplicados |
+| Set | Colección que NO permite elementos duplicados |
+| Map | Estructura que asocia claves únicas a valores |
+| Iterador | Objeto que permite recorrer una colección |
+| Lambda | Función anónima que permite programación funcional |
+| Stream | Secuencia de elementos sobre la que se aplican operaciones |
 
-### Autoevaluación
+## Autoevaluación
 - [ ] Sé elegir entre List, Set y Map según la necesidad
 - [ ] Utilizo ArrayList, HashSet y HashMap correctamente
 - [ ] Recorro colecciones con iteradores y for-each
@@ -1956,5 +1998,13 @@ public class P6_4_ColeccionesStreams {
 - [ ] Utilizo Streams para filtrar, mapear y reducir
 - [ ] Implemento Comparable y Comparator
 
+## Vídeos recomendados
+
+| Canal | Vídeo | Contenido |
+|-------|-------|-----------|
+| **EducaMadrid** | [Colecciones_1](https://mediateca.educa.madrid.org/video/rfrj1dm3ywfnihnx) | ArrayList, List, LinkedList, diferencias con arrays |
+| **Programación ATS** | [Playlist POO Java](https://youtube.com/playlist?list=PLWtYZ2ejMVJkjOuTCzIk61j7XKfpIR74K) | Vídeos sobre colecciones, ArrayList, HashMap |
+| **Píldoras Informáticas** | [Curso Java — Colecciones](https://www.youtube.com/@pildorasinformaticas) | Vídeos 80–90: colecciones y programación genérica |
+| **MoureDev** | [Curso Completo de Java desde Cero](https://youtu.be/JOAqpdM36wI) | Sección de colecciones |
 
 
