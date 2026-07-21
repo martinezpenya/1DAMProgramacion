@@ -38,7 +38,7 @@ jobs:
           npm install -g @mermaid-js/mermaid-cli
         env:
           PUPPETEER_SKIP_DOWNLOAD: "true"
-      - name: Disable debug_html in CI (6MB print to stdout interferes with WeasyPrint)
+      - name: Disable debug_html in CI (avoids 6MB print to stdout)
         run: |
           sed -i 's/debug_html: true/debug_html: false/' mkdocs.yml
       - run: PRERENDER_MERMAID=1 mkdocs gh-deploy --force
