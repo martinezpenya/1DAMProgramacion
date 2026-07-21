@@ -38,4 +38,7 @@ jobs:
           npm install -g @mermaid-js/mermaid-cli
         env:
           PUPPETEER_SKIP_DOWNLOAD: "true"
+      - name: Disable JS rendering for CI (Python 3.14 Chrome headless compat)
+        run: |
+          sed -i 's/render_js: true/render_js: false/' mkdocs.yml
       - run: PRERENDER_MERMAID=1 mkdocs gh-deploy --force
