@@ -114,6 +114,44 @@ def patch_debug_sizes(pkg_path: Path) -> bool:
     else:
         print("  - per-page diagnostic anchor not found (already patched or line changed)")
 
+    old3 = (
+        "        self.logger.info(\"Rendering for PDF.\")\n"
+        "        html = HTML(string=html_string)\n"
+        "        render = html.render()\n"
+        "\n"
+        "        abs_pdf_path = os.path.join(config['site_dir'], output_path)\n"
+        "        os.makedirs(os.path.dirname(abs_pdf_path), exist_ok=True)\n"
+        "\n"
+        "        self.logger.info(f'Output a PDF to \"{abs_pdf_path}\".')\n"
+        "        render.write_pdf(abs_pdf_path)"
+    )
+    new3 = (
+        "        import resource, subprocess\n"
+        "        def _mem(label):\n"
+        "            rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024\n"
+        "            free = subprocess.run(['free', '-m'], capture_output=True, text=True).stdout\n"
+        "            print(f'[DIAG-MEM] {label}: peak_rss={rss:.0f}MB\\n{free}')\n"
+        "        _mem('before HTML.render()')\n"
+        "        self.logger.info(\"Rendering for PDF.\")\n"
+        "        html = HTML(string=html_string)\n"
+        "        render = html.render()\n"
+        "        print(f'[DIAG-PAGES] render.render() produced {len(render.pages)} pages')\n"
+        "        _mem('after HTML.render()')\n"
+        "\n"
+        "        abs_pdf_path = os.path.join(config['site_dir'], output_path)\n"
+        "        os.makedirs(os.path.dirname(abs_pdf_path), exist_ok=True)\n"
+        "\n"
+        "        self.logger.info(f'Output a PDF to \"{abs_pdf_path}\".')\n"
+        "        render.write_pdf(abs_pdf_path)\n"
+        "        _mem('after write_pdf()')"
+    )
+    if old3 in content:
+        content = content.replace(old3, new3)
+        changes += 1
+        print("  + Added memory/page-count diagnostic around HTML.render()/write_pdf()")
+    else:
+        print("  - render/write_pdf diagnostic anchor not found (already patched or line changed)")
+
     if changes:
         file.write_text(content, encoding='utf-8')
     return changes > 0
