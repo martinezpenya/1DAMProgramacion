@@ -4,7 +4,7 @@
 
 Los wrappers permiten "envolver" datos primitivos en objetos, también se llaman clases contenedoras. La diferencia entre un tipo primitivo y un wrapper es que este último es una clase y por tanto, cuando trabajamos con wrappers estamos trabajando con objetos. 
 
-!!! danger "Recuerda"
+!!! tip "Recuerda"
     Como son objetos debemos tener cuidado en el paso como parámetro en métodos ya que en el wrapper se realiza por referencia.
 
 Una de las principales ventajas del uso de wrappers son la facilidad de conversión entre tipos primitivos y cadenas.

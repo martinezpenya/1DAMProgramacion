@@ -5,6 +5,8 @@ site_author: 'David Martínez Peña'
 repo_url: https://github.com/martinezpenya/1DAMProgramacion
 edit_uri: edit/main/docs
 use_directory_urls: false
+hooks:
+  - hooks.py
 
 nav:
   - UD00:
@@ -250,12 +252,12 @@ plugins:
         #    - src: ...
         #two_columns_level: 3
         #
-        #render_js: true
-        #headless_chrome_path: headless-chromium
+        render_js: true
+        headless_chrome_path: /usr/bin/google-chrome
         #
         output_path: docs/Libro.pdf
-    #     #enabled_if_env: ENABLE_PDF_EXPORT
-    #     #
-    #     #debug_html: true
-    #     show_anchors: true
-    #     verbose: true
+        #     #enabled_if_env: ENABLE_PDF_EXPORT
+        #     #
+        #     #debug_html: true
+        #     show_anchors: true
+        #     verbose: true

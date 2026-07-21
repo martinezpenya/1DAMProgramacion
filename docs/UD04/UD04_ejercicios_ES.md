@@ -10,7 +10,7 @@
     Persona 10: 1.23 m.
     ```
     
-2. (Lluvias) Se dispone de un fichero, de nombre [*lluviasEnero.txt*](./lluviasEnero.txt), que contiene 31 datos correspondientes a las lluvias caídas en el mes de enero del pasado año. Se desea analizar los datos del fichero para averiguar:
+2. (Lluvias) Se dispone de un fichero, de nombre [*lluviasEnero.txt*]({{ site_url }}/UD04/downloads/lluviasEnero.txt), que contiene 31 datos correspondientes a las lluvias caídas en el mes de enero del pasado año. Se desea analizar los datos del fichero para averiguar:
 
     - La lluvia total caída en el mes.
     - La cantidad media de lluvias del mes.
@@ -37,7 +37,7 @@
     10. `public static double sumaParcial(double v[], int izq, int der)`, que devuelve la suma de los elementos del array v que están entre las posiciones *izq* y *der.*
     11. `public static int menoresQueElSiguiente(double v[])`, que devuelve el número de elementos de v que son menores que el elemento que tienen a continuación. 
    
-    Además dispones de un archivo [`Lluvias.java`](./Lluvias.java) (incompleto), que el alumnado deberá completar. El resultado deberia ser similar a este:
+    Además dispones de un archivo [`Lluvias.java`]({{ site_url }}/UD04/downloads/Lluvias.java) (incompleto), que el alumnado deberá completar. El resultado deberia ser similar a este:
    
     ```sh
     La suma de las lluvias es 93,30 litros

@@ -155,7 +155,7 @@ if (expresión-lógica){
 
 Si la evaluación de la expresión‐lógica ofrece un resultado  verdadero, se ejecutará la primera sentencia o el primer bloque de sentencias. Si, por el contrario, la evaluación de la expresión‐lógica ofrece un resultado falso, no se ejecutará la primera sentencia o el  primer bloque y sí se ejecutará la segunda sentencia o el segundo bloque.
 
-!!! info "Ejemplo"
+!!! example "Ejemplo"
     Haciendo una interpretación cercana al pseudocódigo tendríamos que si se cumple la condición (expresión lógica), se ejecutará un conjunto de instrucciones y si no se cumple, se ejecutará otro conjunto de instrucciones. 
 
 Hay que tener en cuenta que la cláusula `else` de la sentencia `if` no es obligatoria. En algunos casos no necesitaremos utilizarla, pero sí se recomienda cuando es necesario llevar a cabo alguna acción en el caso de que la expresión lógica no se cumpla.
@@ -311,7 +311,7 @@ En general, existen tres operaciones que se llevan a cabo en este tipo de bucles
 - Se evalúa el valor de la variable contador, por medio de una comparación de su valor con el número de iteraciones especificado.
 - Se modifica o actualiza el valor del contador a través de incrementos o decrementos de éste, en cada una de las iteraciones.
 
-!!! info "Ejemplo"
+!!! example "Ejemplo"
     La inicialización de la variable contadora debe realizase correctamente para garantizar que el bucle lleve a cabo, al menos, la primera repetición de su código interno.
     La condición de terminación del bucle debe variar en el interior del mismo, de no ser así, podemos caer en la creación de un bucle infinito. Cuestión que se debe evitar por todos los medios.
     Es necesario estudiar el número de veces que se repite el bucle, pues debe ajustarse al número de veces estipulado.
@@ -390,7 +390,7 @@ El bucle `while` es la primera de las estructuras de repetición controladas por
 
 La característica fundamental de este tipo de estructura repetitiva estriba en ser útil en aquellos casos en los que las instrucciones que forman el cuerpo del bucle podría ser necesario ejecutarlas o no. Es decir, en el bucle `while` siempre se evaluará la condición que lo controla, y si dicha condición es cierta, el cuerpo del bucle se ejecutará una vez, y se seguirá ejecutando mientras la condición sea cierta. Pero si en la evaluación inicial de la condición ésta no es verdadera, el cuerpo del bucle no se ejecutará.
 
-!!! danger "¡Atención!"
+!!! danger "Atención"
     Es imprescindible que en el interior del bucle `while` se realice alguna acción que modifique la condición que controla la ejecución del mismo, en caso contrario estaríamos ante un bucle infinito.
 
 **Sintaxis estructura `while` con una única sentencia:**
@@ -533,7 +533,7 @@ Es decir, la sentencia `continue` forzará a que se ejecute la siguiente iteraci
 
 ### Etiquetas de salto
 
-!!! danger "¡Atención!"
+!!! danger "Atención"
     Los saltos incondicionales y en especial, saltos a una etiqueta son totalmente **desaconsejables**.
 
 Java permite asociar etiquetas cuando se va a realizar un salto. De este modo puede conseguirse algo más de legibilidad en el código.
@@ -692,7 +692,7 @@ flowchart TD
     F --> C
 ```
 
-!!! info "Recuerda"
+!!! tip "Recuerda"
     En Java, cuando un bloque de código puede provocar una excepción pero no se maneja adecuadamente, se produce lo que se conoce como una "excepción no controlada" o "excepción no capturada". Cuando ocurre una excepción no controlada,  Java sigue un conjunto de reglas específicas para manejarla:
 	
     1. **Propagación de excepciones**: Java busca en la pila de llamadas (el seguimiento de la ejecución del programa) para ver si el método actual maneja la excepción. Si el método actual no maneja la excepción, la excepción se "propaga" hacia arriba en la pila de llamadas. (Piensa en una burbuja de aire en el fondo del mar intentando buscar una salida)

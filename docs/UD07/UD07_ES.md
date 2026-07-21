@@ -434,7 +434,7 @@ En el ejemplo anterior, el literal de número se convierte automáticamente a la
     5 y 7.
     ```
 
-!!! danger "Recuerda"
+!!! tip "Recuerda"
     Estas operaciones son comunes a todas las colecciones.
 
 Consulta el [Ejemplo03](#ejemplo03)

@@ -301,8 +301,8 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 ## Más ejercicios (Lionel)
 
-!!! danger "Muy Importante"
-    Para probar algunos de estos ejercicios debes utilizar el archivo [`Documentos.zip`](Documentos.zip). Descárgalo del aula virtual y descomprímelo en la carpeta de cada proyecto que crees.
+!!! warning "Importante"
+    Para probar algunos de estos ejercicios debes utilizar el archivo [`Documentos.zip`]({{ site_url }}/UD06/downloads/Documentos.zip). Descárgalo del aula virtual y descomprímelo en la carpeta de cada proyecto que crees.
 
     Para superar los tests, además, se debe mantener la rutra de la carpeta Documentos en `files/_10_MasEjercicios/Documentos` dentro del proyecto de IntelliJ, como algunos ejercicios borraran y moveran contenido, podrás descomprimir la carpeta `Documentos` a partir del archivo Documentos.zip que se incluye con el proyecto.
 

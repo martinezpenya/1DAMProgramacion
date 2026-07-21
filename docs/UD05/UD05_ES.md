@@ -14,7 +14,7 @@
     - [ ] Comprender los fundamentos de la herencia
     - [ ] Utilizar el empaquetado de clases (paquetes)
 
-!!! Warning "¿Cómo estudiar esta unidad?"
+!!! warning "Cómo estudiar esta unidad"
     Esta unidad retoma los conceptos de la [Unidad 2: Utilización de Objetos y Clases](../UD02/UD02_ES.md) y los amplía. Las secciones de repaso incluyen enlaces directos a UD02 para que puedas consultarlos si lo necesitas.
 
     **Si tienes claros los conceptos de la Unidad 2**, ve directamente a las secciones marcadas como **[NUEVO]**, que contienen los contenidos que no se vieron en UD02:
@@ -185,7 +185,7 @@ A continuación puedes observar un resumen de los distintos niveles accesibilida
 | Sin modificador (`package`) |      ✔      |       ✔       |    ❌     |      ❌       |
 |                   `private` |      ✔      |       ❌       |    ❌     |      ❌       |
 
-!!! danger "Recuerda"
+!!! tip "Recuerda"
     ¡Recuerda que **los modificadores de acceso son excluyentes**! Sólo se puede utilizar uno de ellos en la declaración de un atributo.
 
 ### Modificadores de contenido.
@@ -368,7 +368,7 @@ Lo que sí habría producido un error de compilación habría sido por ejemplo i
 
 También debes tener en cuenta que el tipo devuelto por el método no es considerado a la hora de identificar un método, así que un tipo devuelto diferente no es suficiente para distinguir un método de otro. Es decir, no podrías definir dos métodos exactamente iguales en nombre y lista de parámetros e intentar distinguirlos indicando un tipo devuelto diferente. El compilador producirá un error de duplicidad en el nombre del método y no te lo permitirá. 
 
-!!! danger "Recuerda"
+!!! tip "Recuerda"
     Es conveniente no abusar de sobrecarga de métodos y utilizarla con cierta moderación (cuando realmente puede beneficiar su uso), dado que podría hacer el código menos legible.
 
 ### Sobrecarga de operadores.  [NUEVO]
@@ -583,17 +583,17 @@ public Punto(int x, int y) {
 }
 ```
 
-!!! danger "Recuerda"
+!!! tip "Recuerda"
     Si defines constructores personalizados, el constructor por defecto (sin parámetros) deja de ser generado por el compilador. Debes crearlo tú si lo necesitas.
 
 Los constructores soportan la sobrecarga, igual que los métodos. Consulta los [Ejemplo01](#ejemplo01) y [Ejemplo02](#ejemplo02) para ver implementaciones completas:
+{: #teoria-ejemplo01 }
 
 ```java
 public Rectangulo() { ... }
 public Rectangulo(double x1, double y1, double x2, double y2) { ... }
 public Rectangulo(double base, double altura) { ... }
 ```
-{: #teoria-ejemplo01 }
 
 Consulta el [Ejemplo02](#ejemplo02) para ver una implementación con constructores sobrecargados y constructor de copia.
 {: #teoria-ejemplo02 }
@@ -617,7 +617,7 @@ Cuando se escribe el código de una clase normalmente se pretende que los objeto
 
 Como puedes observar, la estructura de los constructores es similar a la de cualquier método, con las excepciones de que no tiene tipo de dato devuelto (no devuelve ningún valor) y que el nombre del método constructor debe ser obligatoriamente el nombre de la clase.
 
-!!! danger "Recuerda"
+!!! tip "Recuerda"
     Si defines constructores personalizados para una clase, el constructor por defecto (sin parámetros) para esa clase deja de ser generado por el compilador, de manera que tendrás que crearlo tú si quieres poder utilizarlo.
 
     Si se ha creado un constructor con parámetros y no se ha implementado el constructor por defecto, el intento de utilización del constructor por defecto producirá un error de compilación (el compilador no lo hará por nosotros).
@@ -888,7 +888,7 @@ En el caso de Java, cualquier clase con la que trabajes tendrá un ascendiente. 
 
 También irás viendo al estudiar distintos componentes de las bibliotecas de Java (por ejemplo en el caso de las interfaces gráficas) que para poder crear objetos basados en las clases proporcionadas por esas bibliotecas tendrás que crear tus propias clases que hereden de algunas de esas clases. Para ellos tendrás que hacer uso de la palabra reservada `extends`.
 
-!!! danger "Recuerda"
+!!! tip "Recuerda"
     En Java todas las clases son descendientes (de manera explícita o implícita) de la clase `Object`.
 
 ## Conversión entre objetos (Casting)  [NUEVO]
@@ -950,7 +950,7 @@ Las reglas a la hora de realizar casting es que:
 - cuando se utiliza una clase más específicas (más abajo en la jerarquía) no hace falta casting. Es lo que llamamos **casting implícito**.
 - cuando se utiliza una clase menos específica (más arriba en la jerarquía) hay que hacer un **casting explícito**.
 
-!!! danger "¿Porqué a la hora de imprimir el casting implicito la clase más genérica se imprime con el método más especializado?"
+!!! question "¿Por qué se imprime con el método más especializado?"
     
     Debes entender que en realidad `encargadoCarniceria` es un `Encargado` que se *disfraza* de `Persona`, pero en realidad sus métodos son los especializados (el `toString()` más moderno sobrescribe al de sus padres. Recuerda que la anotación `@override` es opcional, y aunque no se indique el método sigue sobrescribiendo al de su padre)
     

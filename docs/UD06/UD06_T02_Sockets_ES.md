@@ -172,7 +172,7 @@ public class ClienteSocket {
 }
 ```
 
-!!! danger "Recuerda"
+!!! tip "Recuerda"
     Recuerda cambiar la constante `DNSAWS` por el `String` que corresponde con la dirección DNS IPv4 de tu instancia EC2 obtenida en el punto 3.1.5.
 
 ### Ejecución de prueba

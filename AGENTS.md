@@ -66,6 +66,15 @@ When creating a `## Ejemplos` section with numbered examples:
 
 - Añadir una sección sobre **impresión con formato y espacios reservados** (printf / String.format) para mostrar tablas alineadas sin que se corte la alineación. Ubicación por decidir.
 
+### PDF: heading_shift y números de capítulo
+
+Revisar la configuración de `with-pdf` en `mkdocs.yml`. Actualmente el plugin usa `heading_shift: true` (por defecto), lo que provoca que los archivos dentro de una sección del `nav` (Ejercicios, Talleres) vean sus encabezados rebajados un nivel. Para numerar correctamente en el PDF:
+1. Desactivar `heading_shift: false` en `mkdocs.yml`.
+2. En los Markdown de ejercicios/talleres, cambiar sus H1 (`# Título`) por H2 (`## Título`) para que queden al mismo nivel que `## Piensa como un programador`.
+3. El H1 del archivo principal de teoría (`UDXX_ES.md`) debe contener el título completo (ej. `# UD01: Elementos de un programa informático`).
+
+Pendiente de aplicar en todas las UDs.
+
 ### Propuestas de nuevos anexos
 
 Anexos que se podrían crear para las unidades que actualmente no tienen ninguno:
@@ -107,3 +116,12 @@ Anexos que se podrían crear para las unidades que actualmente no tienen ninguno
 - Do NOT add tests, linters, or CI — this is purely a documentation site
 - Do NOT rename/move `UD*/assets/` folders without updating references
 - Do NOT remove `use_directory_urls: false` from mkdocs.yml (URLs use `.html` extension)
+
+## Downloadable files
+
+- Place static files for students to download in `docs/UDXX/downloads/` (one folder per UD).
+- Reference them in Markdown using the `{{ site_url }}` placeholder:
+  ```markdown
+  [filename]({{ site_url }}/UDXX/downloads/filename.ext)
+  ```
+- The `hooks.py` plugin replaces `{{ site_url }}` with the actual `site_url` from `mkdocs.yml` at build time, so the link works both on the web and avoids WeasyPrint anchor errors in the PDF.

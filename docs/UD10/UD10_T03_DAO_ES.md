@@ -4,7 +4,7 @@
 
 En el apartado correspondiente de teoria, ya estudiamos los patrones `Singleton` y `DAO`.
 
-!!! info "Importante"
+!!! warning "Importante"
     Para realizar el ejemplo que seguiremos en este apartado usaremos la BBDD starwars. Pero tu deberás replicar este ejemplo para la BBDD que creaste en el anterior taller [UD10_T02_AWS_IntelliJ_ES](UD10_T02_AWS_IntelliJ_ES.md).
 
 En programación existen una serie de estándares denominados [Patrones de Diseño](https://refactoring.guru/es/design-patterns) que debes conocer para poder programar según estos patrones y no reinventar la rueda.

@@ -158,6 +158,6 @@
 
 - ❗**NUEVO SISTEMA DUAL!!** → Busca tu empresa! 120H (aproximadamente en el mes de mayo, también a partir del 2º trimestre por las mañanas)
 
-!!! danger "⚠️ **IMPORTANTE:**"
+!!! warning "Importante"
     - ❗ Aprobar las distintas evaluaciones no garantiza aprobar el curso.
     - 📌 Puedes aprobar (y con muy buena nota) las dos evaluaciones, tener un `RA` suspendido y por tanto suspender el módulo.

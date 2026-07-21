@@ -101,7 +101,7 @@ Para utilizar un stream hay que seguir una serie de pasos:
         - Escribir datos
     - Cerrar el stream (método close)
 
-!!! warning "Importante:" 
+!!! warning "Importante" 
     - Los Stream estándar ya se encarga el sistema de abrirlos y cerrarlos
     - Un fallo en cualquier punto del proceso produce una `IOException`
 

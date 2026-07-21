@@ -329,7 +329,7 @@ la salida seguirá siendo la misma:
 1 2 3 4 5 6 7 8
 ```
 
-!!! danger "Cuidado!"
+!!! danger "Cuidado"
     Con el segundo método no tenemos acceso a la posición o índice del array, este método no serviría para métodos en los que necesitamos conocer la posición o utilizarla de alguna manera.
     Traducimos el método de `pluviosidadMedia` con un bucle `loop`:
 

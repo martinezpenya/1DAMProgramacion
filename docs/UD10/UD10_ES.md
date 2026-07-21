@@ -602,7 +602,7 @@ El **argumento** **`ResultSet.Concurrency`** indica la concurrencia del `ResultS
 - **`ResultSet.CONCUR_READ_ONLY`**: solo lectura. Es el valor por defecto.
 - **`ResultSet.CONCUR_UPDATABLE`**: permite modificar los datos almacenados en el `ResultSet` para luego aplicar los cambios sobre la base de datos (más adelante se verá cómo).
 
-!!! info "Importante"
+!!! warning "Importante"
     El `ResultSet` por defecto que se obtiene con `createStatement()` sin argumentos es el mismo que con `createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)`. 
 
 

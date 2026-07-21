@@ -112,4 +112,10 @@
     left: 0;
     margin-left: 0 !important;
   }
+
+  /* FIX: List bullets/numbers hanging outside left margin in PDF */
+  .md-typeset ul,
+  .md-typeset ol {
+    padding-left: 1.5rem;
+  }
 }

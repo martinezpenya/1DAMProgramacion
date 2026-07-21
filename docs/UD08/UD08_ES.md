@@ -264,7 +264,7 @@ Una clase hija no tiene acceso a los miembros privados de su clase padre, tan so
 
 Todos los miembros de la superclase, tanto atributos como métodos, son heredados por la subclase. Algunos de estos miembros heredados podrán ser redefinidos o sobrescritos (overriden) y también podrán añadirse nuevos miembros. De alguna manera podría decirse que estás "ampliando" la clase base con características adicionales o modificando algunas de ellas (proceso de especialización).
 
-!!! info "Recuerda"
+!!! tip "Recuerda"
     Una clase derivada extiende la funcionalidad de la clase base sin tener que volver a escribir el código de la clase base.
 
 ### Sintaxis de la herencia.
@@ -324,7 +324,7 @@ Aquí tienes de nuevo el resumen:
 | Sin modificador (`package`) |      ✔      |       ✔       |    ❌     |      ❌       |
 |                   `private` |      ✔      |       ❌       |    ❌     |      ❌       |
 
-!!! warning "Recuerda"
+!!! tip "Recuerda"
     ¡Recuerda que **los modificadores de acceso son excluyentes**! Sólo se puede utilizar uno de ellos en la declaración de un atributo.
 
 Si en el ejemplo anterior de la clase `Persona` se hubieran definido sus atributos como private:
@@ -667,7 +667,7 @@ Imagínate por ejemplo la clase `Coche`, subclase de `Vehículo`. Los coches son
 
 Según esta concepción, podrías hacerte la siguiente pregunta: ¿podrá una clase implementar varias interfaces? La respuesta en este caso sí es afirmativa.
 
-!!! info "Importante"
+!!! warning "Importante"
     Una clase puede adoptar distintos modelos de comportamiento establecidos en diferentes interfaces. **Es decir una clase puede implementar varias interfaces.**
 
 #### ¿Clase abstracta o interfaz?
@@ -816,10 +816,10 @@ Revisa el [Ejemplo15](#ejemplo15) para ver una clase que implementa varias inter
 
 En la forma tradicional de una interfaz, los métodos se declaran utilizando solo su tipo de devolución y firma. Son, esencialmente, métodos abstractos. Por lo tanto, cada clase que incluye dicha interfaz debe implementar todos sus métodos.
 
-!!! info "Recuerda"
+!!! tip "Recuerda"
     En una interfaz, los métodos son implícitamente públicos.
 
-!!! info "Recuerda"
+!!! tip "Recuerda"
     **Las variables declaradas en una interfaz no son variables de instancia**. En cambio, son implícitamente *`public`*, *`final`*, y *`static`*, y deben inicializarse. Por lo tanto, son esencialmente **constantes**.
 
 Aquí hay un ejemplo de una definición de interfaz. Especifica la interfaz a una clase que genera una serie de números.
@@ -1047,7 +1047,7 @@ Es posible también llevar a cabo el polimorfismo mediante el uso de interfaces.
 
 Las referencias de tipo interfaz permiten unificar de una manera bastante estricta la forma de utilizarse de objetos que pertenezcan a clases muy diferentes (pero que todas ellas implementan la misma interfaz). De este modo podrías hacer referencia a diferentes objetos que no tienen ninguna relación jerárquica entre sí utilizando la misma variable (referencia a la interfaz). Lo único que los distintos objetos tendrían en común es que implementan la misma interfaz. 
 
-!!! danger "Recuerda"
+!!! tip "Recuerda"
     En este caso sólo podrás llamar a los métodos de la interfaz y no a los específicos de las clases.
 
 Por ejemplo, si tenías una variable de tipo referencia a la interfaz `Arrancable`, podrías instanciar objetos de tipo `Coche` o `Motosierra` y asignarlos a esa referencia (teniendo en cuenta que ambas clases no tienen una relación de herencia). Sin embargo, tan solo podrás usar en ambos casos los métodos y los atributos de la interfaz `Arrancable` (por ejemplo arrancar) y no los de `Coche` o los de `Motosierra` (sólo los genéricos, nunca los específicos).
@@ -1623,7 +1623,7 @@ POSIBLE SOLUCIÓN
 
 Una conclusión que puedes extraer de este código es que has tenido que escribir los métodos `get` y `set` para los tres atributos heredados, pero ¿no habría sido posible definir esos seis métodos en la clase base y así estas dos clases derivadas hubieran también heredado esos métodos? La respuesta es afirmativa y de hecho es como lo vas a hacer a partir de ahora. De esa manera te habrías evitado tener que escribir seis métodos en la clase `Alumno` y otros seis en la clase `Profesor`. 
 
-!!! warning "Recuerda"
+!!! tip "Recuerda"
     Así que recuerda: **se pueden heredar tanto los atributos como los métodos.**
 
 Aquí tienes un ejemplo de cómo podrías haber definido la clase Persona para que luego se hubieran podido heredar de ella sus métodos (y no sólo sus atributos):
@@ -2244,7 +2244,7 @@ Para entender en qué nos pueden ayudar las interface, necesitamos saber:
 
 - Una interfaz no se puede instanciar, pero sí se puede hacer referencia.
 
-!!! info "Importante"
+!!! warning "Importante"
     Así, si `I` es una interfaz y `C` es una clase que implementa la interfaz, se pueden declarar referencias al tipo `I` que apunten objetos de `C`:
     
 

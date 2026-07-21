@@ -97,13 +97,13 @@ Es importante notar que estas son flexibles y no una simple lista de pasos como 
 
 Es necesario hacer énfasis en la naturaleza dinámica y cíclica de la solución de problemas. En el intento de trazar un plan, los estudiantes pueden concluir que necesitan entender mejor el problema y deben regresar a la etapa anterior; O cuando han trazado un plan y tratan de ejecutarlo, no encuentran cómo hacerlo; entonces, la actividad siguiente puede ser intentar con un nuevo plan o regresar y desarrollar una nueva comprensión del problema (Wilson, Fernández & Hadaway, 1993; Guzdial, 2000).
 
-!!! info "Recuerda"
+!!! tip "Recuerda"
     Las cuatro fases de Polya (Entender, Planificar, Ejecutar, Revisar) son dinámicas y cíclicas, no una simple lista lineal de pasos. Su aplicación a la programación es directa: Analizar, Diseñar el algoritmo, Traducir a código, Depurar.
 
 !!! info "Referencia"
     La mayoría de los textos escolares de matemáticas abordan la Solución de Problemas bajo el enfoque planteado por Polya.
 
-!!! info "Importante"
+!!! warning "Importante"
     Las fases de la programación son una traducción directa del método de Polya:
 
     | Polya | Programación |
@@ -173,7 +173,7 @@ Ejemplo: Dividir.
 !!! info "Definición"
     Dado un problema P, un **algoritmo** es un conjunto de reglas o pasos que indican cómo resolver P en un tiempo finito. Es independiente del lenguaje de programación y del dispositivo donde se ejecute.
 
-!!! info "Ejemplo"
+!!! example "Ejemplo"
     Secuencias de reglas básicas que utilizamos para realizar operaciones aritméticas: sumas, restas, productos y divisiones.
 
 Algoritmo para desayunar
@@ -411,7 +411,7 @@ Vamos a proceder a compilar e interpretar este pequeño programa Java (no te pre
 
 A continuación daremos la instrucción para que se realice **el proceso de compilación del programa**, para lo que escribiremos `javac Ejemplo.java`, donde `javac` es el nombre del compilador (`java c`ompiler) que transformará el programa que hemos escrito nosotros en lenguaje Java al lenguaje de la máquina virtual Java (`bytecode`), dando como resultado un nuevo archivo `Ejemplo.class` que se creará en este mismo directorio. Comprueba que no aparezca ningún error y que `javac` esté instalado en tu sistema (desde la consola lo puedes comprobar con el comando `javac --version` y debería aparece el número de versión que tienes instalada). Si aparecen los dos archivos tanto `Ejemplo.java` (código fuente) como `Ejemplo.class` (bytecode creado por el compilador) puedes continuar.
 
-!!! info "Recuerda"
+!!! tip "Recuerda"
     El proceso de compilación (`javac`) transforma código fuente `.java` en bytecode `.class`. El proceso de ejecución (`java`) interpreta el bytecode en la JVM. Dos pasos separados: primero compilar, luego ejecutar.
 
 #### PASO 3: Ejecución del programa
@@ -451,10 +451,10 @@ Al nombre que le damos a la variable se le llama identificador. Los identificado
 !!! info "Definición"
     Un **identificador** es un nombre que damos a variables, clases, métodos, etc. Debe empezar por letra, `_` o `$`, y puede contener letras, dígitos, `_` y `$` (sin espacios). Java distingue mayúsculas de minúsculas. Por ejemplo, son válidos los siguientes identificadores:
 
-- x5
-- ατη
-- NUM_MAX
-- numCuenta
+    - x5
+    - ατη
+    - NUM_MAX
+    - numCuenta
 
 Unicode es un código de caracteres o sistema de codificación, un alfabeto que recoge los caracteres de prácticamente todos los idiomas importantes del mundo. Además, el código Unicode es “compatible” con el código ASCII, ya que para los caracteres del código ASCII, Unicode asigna como código los mismos 8 bits, a los que les añade a la izquierda otros 8 bits todos a cero. La conversión de un carácter ASCII a Unicode es inmediata.
 
@@ -542,7 +542,7 @@ Cualquier aplicación de hoy en día necesita no perder de vista una cierta cant
 
 Son datos estructurados los `arrays`, `listas`, `árboles`, etc. Pueden estar en la memoria del programa en ejecución, guardados en el disco como ficheros, o almacenados en una base de datos.
 
-!!! info "Importante"
+!!! warning "Importante"
     `String` en Java es un tipo referenciado (objeto), no un tipo primitivo. Sin embargo, Java le da un tratamiento especial que permite usarlo con una sintaxis simplificada, como si fuera un tipo básico. Lo estudiaremos en profundidad en la siguiente unidad.
 
 ```java
@@ -795,7 +795,7 @@ Podemos introducir texto desde el teclado utilizando `System.console().readLine(
 
 ## Ejemplos UD01
 
-[Descarga el código fuente completo de los ejemplos](code/EjemploUD01.java){: download="EjemploUD01.java" }
+[Descarga el código fuente completo de los ejemplos]({{ site_url }}/UD01/downloads/EjemploUD01.java){: download="EjemploUD01.java" }
 
 ### Ejemplo01
 

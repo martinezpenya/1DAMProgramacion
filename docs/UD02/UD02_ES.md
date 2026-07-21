@@ -135,14 +135,14 @@ El proceso de interacción entre objetos se suele resumir diciendo que se ha "en
 - **Comunicación** entre los objetos mediante el envío de mensajes unos a otros, o el usuario a los objetos.
 - **Eliminación** de los objetos cuando no son necesarios para dejar espacio libre en la memoria del computador.
 
-!!! info "Recuerda"
+!!! tip "Recuerda"
     Los objetos se pueden comunicar entre ellos invocando a los métodos de los otros objetos.
 
 ### Clases
 
 Hasta ahora hemos visto lo que son los objetos. Un programa informático se compone de muchos objetos, algunos de los cuales comparten la misma estructura y comportamiento. Si tuviéramos que definir su estructura y comportamiento del objeto cada vez que queremos crear un objeto, estaríamos utilizando mucho código redundante. Por ello lo que se hace es crear una clase, que es una descripción de un conjunto de objetos que comparten una estructura y un comportamiento común. Y a partir de la clase, se crean tantas "copias" o "instancias" como necesitemos. Esas copias son los objetos de la clase.
 
-!!! info "Recuerda"
+!!! tip "Recuerda"
     Las clases constan de datos y métodos que resumen las características comunes de un conjunto de objetos. Un programa informático está compuesto por un conjunto de clases, a partir de las cuales se crean objetos que interactúan entre sí.
 
 En otras palabras, una clase es una plantilla o prototipo donde se especifican:
@@ -713,7 +713,7 @@ Tanto NetBeans, Eclipse como IntelliJ Idea mostraran el mensaje `err` en color r
 
 ## Ejemplos UD02
 
-[Descarga el código fuente completo de los ejemplos](code/EjemploUD02.java){: download="EjemploUD02.java"}
+[Descarga el código fuente completo de los ejemplos]({{ site_url }}/UD02/downloads/EjemploUD02.java){: download="EjemploUD02.java"}
 
 ### Ejemplo01
 

@@ -13,13 +13,13 @@
     - `port`: puerto en el que escucha tu SGBD
     - `database_name`: nombre de la BBDD (un SGBD puede gestionar más de una Base de Datos, en mi caso `pr2425_DavidMartinez`)
 
-    Descarga el fichero sql [**tablas.sql**](assets/tablas.sql) e impórtalas en tu SGBD. Para ello, ve a la pestaña de phpMyAdmin `Importa`, selecciona el fichero descargado anteriormente y ejecútalo.
+    Descarga el fichero sql [**tablas.sql**]({{ site_url }}/UD10/downloads/tablas.sql) e impórtalas en tu SGBD. Para ello, ve a la pestaña de phpMyAdmin `Importa`, selecciona el fichero descargado anteriormente y ejecútalo.
 
 ## Actividades
 
 ### UD10_00_GestionProveedores
 
-Tenemos nuestra base de datos [**tablas.sql**](assets/tablas.sql) que almacena información sobre `proveedores`. La tabla `proveedores` tiene las siguientes columnas:
+Tenemos nuestra base de datos [**tablas.sql**]({{ site_url }}/UD10/downloads/tablas.sql) que almacena información sobre `proveedores`. La tabla `proveedores` tiene las siguientes columnas:
 
 - `id`: Identificador único del empleado (entero). (AUTOINCREMENTAL)
 - `nombre`: Nombre del empleado (cadena de texto).
@@ -30,7 +30,7 @@ Crea un ejercicio de nombre `UD10_00_GestionProveedores` en el que se liste todo
 
 ### UD10_01_GestionEmpleados
 
-Tenemos nuestra base de datos [**tablas.sql**](assets/tablas.sql) que almacena información sobre empleados. La tabla empleados tiene las siguientes columnas:
+Tenemos nuestra base de datos [**tablas.sql**]({{ site_url }}/UD10/downloads/tablas.sql) que almacena información sobre empleados. La tabla empleados tiene las siguientes columnas:
 
 - `id`: Identificador único del empleado (entero). (AUTOINCREMENTAL)
 - `nombre`: Nombre del empleado (cadena de texto).
@@ -70,7 +70,7 @@ Es escribir un programa `UD10_01_GestionEmpleados` que realice las siguientes op
 
 ### UD10_02_GestionProductos
 
-En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `productos`. La tabla `productos` tiene las siguientes columnas:
+En la base de datos [**tablas.sql**]({{ site_url }}/UD10/downloads/tablas.sql) se almacena información sobre `productos`. La tabla `productos` tiene las siguientes columnas:
 
 - `id`: Identificador único del producto (entero). (AUTOINCREMENTAL)
 - `nombre`: Nombre del producto (cadena de texto).
@@ -83,7 +83,7 @@ Tu tarea es escribir un programa `UD10_02_GestionProductos` que realice las sigu
 
 ### UD10_03_GestionAlumnos
 
-En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `alumnos`. La tabla `alumnos` tiene las siguientes columnas:
+En la base de datos [**tablas.sql**]({{ site_url }}/UD10/downloads/tablas.sql) se almacena información sobre `alumnos`. La tabla `alumnos` tiene las siguientes columnas:
 
 - `id`: Identificador único del alumno (entero). (AUTOINCREMENTAL)
 - `nombre`: Nombre del alumno (cadena de texto).
@@ -96,7 +96,7 @@ Tu tarea es escribir un programa `UD10_03_GestionAlumnos` que realice las siguie
 
 ### UD10_04_GestionLibros
 
-En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `libros`. La tabla `libros` tiene las siguientes columnas:
+En la base de datos [**tablas.sql**]({{ site_url }}/UD10/downloads/tablas.sql) se almacena información sobre `libros`. La tabla `libros` tiene las siguientes columnas:
 
 - `id`: Identificador único del libro (entero). (AUTOINCREMENTAL)
 - `titulo`: Título del libro (cadena de texto).
@@ -124,7 +124,7 @@ Tu tarea es escribir un programa `UD10_04_GestionLibros` que realice las siguien
 
 ### UD10_05_GestionVentas
 
-En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `ventas`. La tabla `ventas` tiene las siguientes columnas:
+En la base de datos [**tablas.sql**]({{ site_url }}/UD10/downloads/tablas.sql) se almacena información sobre `ventas`. La tabla `ventas` tiene las siguientes columnas:
 
 - `id`: Identificador único de la venta (entero). (AUTOINCREMENTAL)
 - `producto`: Nombre del producto vendido (cadena de texto).
@@ -138,7 +138,7 @@ Tu tarea es escribir un programa `UD10_05_GestionVentas` que realice las siguien
 
 ### UD10_06_GestionPedidos
 
-En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `pedidos`. La tabla `pedidos` tiene las siguientes columnas:
+En la base de datos [**tablas.sql**]({{ site_url }}/UD10/downloads/tablas.sql) se almacena información sobre `pedidos`. La tabla `pedidos` tiene las siguientes columnas:
 
 - `id`: Identificador único del pedido (entero). (AUTOINCREMENTAL)
 - `cliente`: Nombre del cliente que realizó el pedido (cadena de texto).
@@ -160,7 +160,7 @@ Continuando con el ejercicio de gestión de empleados, copia el programa `UD10_0
 
 ### UD10_08_GestionEstudiantes
 
-En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `estudiantes`. La tabla `estudiantes` tiene las siguientes columnas:
+En la base de datos [**tablas.sql**]({{ site_url }}/UD10/downloads/tablas.sql) se almacena información sobre `estudiantes`. La tabla `estudiantes` tiene las siguientes columnas:
 
 - `id`: Identificador único del estudiante (entero). (AUTOINCREMENTAL)
 - `nombre`: Nombre del estudiante (cadena de texto).
@@ -188,7 +188,7 @@ Continuando con el ejercicio de gestión de empleados `UD10_07_GestionEmpleados`
 
 ### UD10_11_GestionVendedores
 
-En la base de datos [**tablas.sql**](assets/tablas.sql) se almacena información sobre `vendedores`. La tabla `vendedores` tiene las siguientes columnas:
+En la base de datos [**tablas.sql**]({{ site_url }}/UD10/downloads/tablas.sql) se almacena información sobre `vendedores`. La tabla `vendedores` tiene las siguientes columnas:
 
 - `id`: Identificador único del cliente (entero). (AUTOINCREMENTAL)
 - `nombre`: Nombre del cliente (cadena de texto).
