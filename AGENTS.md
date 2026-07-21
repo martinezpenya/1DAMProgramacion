@@ -9,8 +9,7 @@ Deployed at: https://martinezpenya.es/1DAMProgramacion/
 |---|---|
 | Dev server (hot-reload) | `mkdocs serve` |
 | Build static site | `mkdocs build` |
-| Build PDF (with Mermaid) | `PRERENDER_MERMAID=1 mkdocs build` |
-| Install mermaid-cli | `PUPPETEER_SKIP_DOWNLOAD=true npm install -g @mermaid-js/mermaid-cli` |
+| Build PDF | `mkdocs build` (output: `docs/Libro.pdf`) |
 | Unused asset scan | `python find_unused_assets.py` |
 | Check anchors (serve output) | Run `mkdocs serve` and review `INFO` lines for `contains a link ... but there is no such anchor` |
 
@@ -22,36 +21,7 @@ source ~/virtual-envs/mkdocs/bin/activate
 pip install -r requirements.txt
 ```
 
-Node.js is required for Mermaid pre-rendering in PDF:
-```sh
-PUPPETEER_SKIP_DOWNLOAD=true npm install -g @mermaid-js/mermaid-cli
-```
-
-Or run `./serve.sh` (automates venv + install + mermaid-cli + serve).
-
-## Mermaid PDF rendering
-
-Problem: Mermaid diagrams (25 across 11 files) rendered as blank spaces in the PDF because:
-1. Chrome headless with `--virtual-time-budget` doesn't properly resolve dynamic `import()` used by Material for MkDocs' Mermaid loader
-2. WeasyPrint does not support `<foreignObject>` in SVGs — Mermaid SVGs use it for text, so even if Chrome rendered them, WeasyPrint couldn't convert them to PDF
-
-**Solution:** Pre-render Mermaid to **PNG** at build time via `hooks.py` + `mmdc` (mermaid-cli), gated by `PRERENDER_MERMAID=1` env var.
-
-| File | Function |
-|---|---|
-| `hooks.py:on_page_markdown()` | Replaces `{{ site_url }}` placeholder (always active) |
-| `hooks.py:on_page_content()` | When `PRERENDER_MERMAID=1`, replaces `<pre class="mermaid"><code>` with `<img>` containing a base64-embedded PNG |
-| `hooks.py:_mmdc_render()` | Calls `mmdc -i input.mmd -o output.png -b transparent -s 1` via subprocess |
-| `hooks.py:_quote_labels()` | Fallback: wraps `[label]` in `["label"]` to handle special chars (`"`, `->`, `()`) inside node labels |
-| `puppeteer-config.json` | Points Puppeteer to system Chrome at `/usr/bin/google-chrome` |
-
-Key details:
-- `mmdc` renders each diagram to a temp file, read as base64 data URI — no filesystem artifacts
-- Two strategies per diagram: (1) original code, (2) labels wrapped in quotes for mmdc parser compatibility
-- `-s 1` keeps PNG at 1x resolution; `style="max-width:70%;height:auto;max-height:350px"` constrains display in PDF
-- CDN-based Mermaid injection in `patch_pdf_plugin.py` was removed — no longer needed
-- `render_js: true` remains in `mkdocs.yml` for MathJax rendering in PDF
-- Web version (`mkdocs serve` without env var) uses Material's native Mermaid JS — unaffected
+Or run `./serve.sh` (automates venv + install + serve).
 
 ## Content structure
 

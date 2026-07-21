@@ -252,12 +252,11 @@ plugins:
         #    - src: ...
         #two_columns_level: 3
         #
-        render_js: true
-        headless_chrome_path: /usr/bin/google-chrome
+        #render_js: true
+        #headless_chrome_path: headless-chromium
         #
         output_path: docs/Libro.pdf
-        debug_html: true
-        #     #enabled_if_env: ENABLE_PDF_EXPORT
+    #     #enabled_if_env: ENABLE_PDF_EXPORT
         #     #
         #     show_anchors: true
         #     verbose: true
