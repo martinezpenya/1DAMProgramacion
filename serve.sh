@@ -13,6 +13,6 @@ fi
 #mkdocs build
 pip list | grep mkdocs
 read -p "Press enter to continue"
-# Use PRERENDER_MERMAID=1 for PDF builds: mkdocs build
-mkdocs serve
+# Pre-render Mermaid to PNG in dev mode too (Material JS import may fail locally)
+PRERENDER_MERMAID=1 mkdocs serve
 deactivate

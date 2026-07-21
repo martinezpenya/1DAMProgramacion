@@ -80,18 +80,36 @@ def patch_headless_chrome(pkg_path: Path) -> bool:
             return False
 
     content = file.read_text(encoding='utf-8')
+    changes = 0
+
+    # Increase virtual time budget
     for old_val in ("'--virtual-time-budget=10000'", "'--virtual-time-budget=30000'", "'--virtual-time-budget=60000'"):
         if old_val in content:
-            if old_val == "'--virtual-time-budget=60000'":
-                print("  - virtual-time-budget already at 60s")
-                return True
-            content = content.replace(old_val, "'--virtual-time-budget=60000'")
-            file.write_text(content, encoding='utf-8')
-            print(f"  + Increased virtual-time-budget: 10s/30s → 60s")
-            return True
+            new_val = "'--virtual-time-budget=120000'"
+            if old_val == new_val:
+                print("  - virtual-time-budget already at 120s")
+            else:
+                old_budget = old_val.split('=')[-1].rstrip("'")
+                content = content.replace(old_val, new_val)
+                print(f"  + Increased virtual-time-budget: {old_budget} → 120s")
+                changes += 1
+            break
 
-    print("  - virtual-time-budget value not found or already patched")
-    return False
+    # Force old headless mode for better virtual-time-budget support
+    headless_new = "'--headless',"
+    headless_old = "'--headless=old',"
+    if headless_new in content:
+        content = content.replace(headless_new, headless_old)
+        print("  + Switched --headless → --headless=old")
+        changes += 1
+    elif headless_old in content:
+        print("  - --headless=old already set")
+    else:
+        print("  - WARNING: --headless flag not found in expected form")
+
+    file.write_text(content, encoding='utf-8')
+    print(f"  → headless_chrome.py updated ({changes} change(s))")
+    return True
 
 
 def patch_en_dash(pkg_path: Path) -> bool:
