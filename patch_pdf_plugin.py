@@ -80,6 +80,8 @@ def patch_debug_sizes(pkg_path: Path) -> bool:
         return False
 
     content = file.read_text(encoding='utf-8')
+    changes = 0
+
     old = "        html_string = self._render_js(soup)"
     new = (
         "        _pre = str(soup)\n"
@@ -91,12 +93,28 @@ def patch_debug_sizes(pkg_path: Path) -> bool:
     )
     if old in content:
         content = content.replace(old, new)
-        file.write_text(content, encoding='utf-8')
+        changes += 1
         print("  + Added pre/post render_js diagnostic logging")
-        return True
     else:
-        print("  - diagnostic anchor not found (already patched or line changed)")
-        return False
+        print("  - render_js diagnostic anchor not found (already patched or line changed)")
+
+    old2 = "            setattr(page, 'pdf-article', article)\n            self._scrap_scripts(soup)"
+    new2 = (
+        "            setattr(page, 'pdf-article', article)\n"
+        "            self._scrap_scripts(soup)\n"
+        "            print(f'[DIAG-PAGE] {page.url}: output_content="
+        "{len(output_content)} chars, article={len(str(article))} chars')"
+    )
+    if old2 in content:
+        content = content.replace(old2, new2)
+        changes += 1
+        print("  + Added per-page article-capture diagnostic logging")
+    else:
+        print("  - per-page diagnostic anchor not found (already patched or line changed)")
+
+    if changes:
+        file.write_text(content, encoding='utf-8')
+    return changes > 0
 
 
 def patch_headless_chrome(pkg_path: Path) -> bool:
