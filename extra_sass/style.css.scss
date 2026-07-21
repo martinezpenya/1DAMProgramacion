@@ -95,4 +95,21 @@
     page-break-before: auto !important;
     page-break-inside: auto !important;
   }
+  /* FIX: Admonition icons in PDF overlapping with text */
+  .md-typeset .admonition-title::before,
+  .md-typeset details summary::before {
+    left: 0.4rem !important;
+  }
+
+  /* FIX: Task list checkboxes overlapping with text */
+  .md-typeset .task-list-item {
+    position: relative;
+    padding-left: 2rem !important;
+  }
+  
+  .md-typeset .task-list-control {
+    position: absolute;
+    left: 0;
+    margin-left: 0 !important;
+  }
 }

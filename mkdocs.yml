@@ -235,7 +235,7 @@ plugins:
         toc_title: Indice de contenidos
         #heading_shift: false
         toc_level: 3
-        ordered_chapter_level: 2
+        ordered_chapter_level: 3
         #excludes_children:
         #    - 'release-notes/:upgrading'
         #    - 'release-notes/:changelog'
