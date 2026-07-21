@@ -42,3 +42,10 @@ jobs:
         run: |
           sed -i 's/debug_html: true/debug_html: false/' mkdocs.yml
       - run: PRERENDER_MERMAID=1 mkdocs gh-deploy --force
+      - name: "DIAG: upload combined HTML fed to WeasyPrint"
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: combined-debug-html
+          path: /tmp/combined_debug.html
+          retention-days: 3

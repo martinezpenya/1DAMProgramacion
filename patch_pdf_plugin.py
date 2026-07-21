@@ -89,7 +89,9 @@ def patch_debug_sizes(pkg_path: Path) -> bool:
         "{_pre.count(chr(60) + \"article\")} <article> tags')\n"
         "        html_string = self._render_js(soup)\n"
         "        print(f'[DIAG] post-render: {len(html_string)} chars, "
-        "{html_string.count(chr(60) + \"article\")} <article> tags')"
+        "{html_string.count(chr(60) + \"article\")} <article> tags')\n"
+        "        import pathlib\n"
+        "        pathlib.Path('/tmp/combined_debug.html').write_text(html_string, encoding='utf-8')"
     )
     if old in content:
         content = content.replace(old, new)
