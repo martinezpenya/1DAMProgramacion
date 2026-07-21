@@ -82,16 +82,24 @@ def patch_headless_chrome(pkg_path: Path) -> bool:
     content = file.read_text(encoding='utf-8')
     changes = 0
 
-    # Increase virtual time budget
-    for old_val in ("'--virtual-time-budget=10000'", "'--virtual-time-budget=30000'", "'--virtual-time-budget=60000'"):
+    # Increase virtual time budget. CI runners are far slower/more constrained
+    # than a local dev machine, so headless Chrome needs much more real time
+    # to finish parsing/rendering the whole combined book before --dump-dom
+    # is forced to snapshot whatever it has (silently truncating the PDF).
+    for old_val in (
+        "'--virtual-time-budget=10000'",
+        "'--virtual-time-budget=30000'",
+        "'--virtual-time-budget=60000'",
+        "'--virtual-time-budget=120000'",
+    ):
         if old_val in content:
-            new_val = "'--virtual-time-budget=120000'"
+            new_val = "'--virtual-time-budget=1200000'"
             if old_val == new_val:
-                print("  - virtual-time-budget already at 120s")
+                print("  - virtual-time-budget already at 1200s")
             else:
                 old_budget = old_val.split('=')[-1].rstrip("'")
                 content = content.replace(old_val, new_val)
-                print(f"  + Increased virtual-time-budget: {old_budget} → 120s")
+                print(f"  + Increased virtual-time-budget: {old_budget} → 1200s")
                 changes += 1
             break
 
