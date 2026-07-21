@@ -71,6 +71,34 @@ def patch_generator(pkg_path: Path) -> bool:
     return True
 
 
+def patch_debug_sizes(pkg_path: Path) -> bool:
+    """TEMP DIAGNOSTIC: log combined-doc size before/after the headless-Chrome
+    JS-render step, to tell whether truncation happens during article
+    combination (BeautifulSoup) or during the Chrome dump-dom step."""
+    file = pkg_path / 'generator.py'
+    if not file.exists():
+        return False
+
+    content = file.read_text(encoding='utf-8')
+    old = "        html_string = self._render_js(soup)"
+    new = (
+        "        _pre = str(soup)\n"
+        "        print(f'[DIAG] pre-render: {len(_pre)} chars, "
+        "{_pre.count(chr(60) + \"article\")} <article> tags')\n"
+        "        html_string = self._render_js(soup)\n"
+        "        print(f'[DIAG] post-render: {len(html_string)} chars, "
+        "{html_string.count(chr(60) + \"article\")} <article> tags')"
+    )
+    if old in content:
+        content = content.replace(old, new)
+        file.write_text(content, encoding='utf-8')
+        print("  + Added pre/post render_js diagnostic logging")
+        return True
+    else:
+        print("  - diagnostic anchor not found (already patched or line changed)")
+        return False
+
+
 def patch_headless_chrome(pkg_path: Path) -> bool:
     file = pkg_path / 'drivers' / 'headless_chrome.py'
     if not file.exists():
@@ -167,6 +195,9 @@ def main():
 
     print("\nPatching generator.py ...")
     ok &= patch_generator(pkg_path)
+
+    print("\nAdding temporary diagnostic logging ...")
+    patch_debug_sizes(pkg_path)
 
     print("\nPatching headless Chrome driver ...")
     patch_headless_chrome(pkg_path)
