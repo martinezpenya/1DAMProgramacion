@@ -1,5 +1,6 @@
 import hashlib
 import os
+import posixpath
 import re
 import subprocess
 import tempfile
@@ -12,6 +13,22 @@ _cache = {}
 
 
 _current_page = ''
+_site_dir = ''
+
+
+def _mermaid_asset_dir() -> Path:
+    d = Path(_site_dir) / 'assets' / 'mermaid'
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _relative_asset_path(page_url: str, filename: str) -> str:
+    """Path to the shared mermaid asset dir, relative to the current page."""
+    page_dir = posixpath.dirname(page_url)
+    target = posixpath.join('assets', 'mermaid', filename)
+    if not page_dir:
+        return target
+    return posixpath.relpath(target, start=page_dir)
 
 
 def _mmdc_render(code: str, mmd_path: str, png_path: str) -> bool:
@@ -64,11 +81,13 @@ def _render_mermaid_png(code: str, index: int) -> str | None:
     for name, text in strategies:
         try:
             if _attempt(text):
-                import base64
-                b64 = base64.b64encode(result_png).decode()
-                data_uri = f'data:image/png;base64,{b64}'
-                _cache[key] = data_uri
-                return data_uri
+                filename = f'{key}.png'
+                out_path = _mermaid_asset_dir() / filename
+                if not out_path.exists():
+                    out_path.write_bytes(result_png)
+                rel_path = _relative_asset_path(_current_page, filename)
+                _cache[key] = rel_path
+                return rel_path
         except Exception as e:
             print(f'  [hooks] mmdc {name} exception ({_current_page}, idx {index}): {e}')
 
@@ -94,19 +113,20 @@ def on_page_content(html, page, config, files):
 
     _cache.clear()
     rendered = [0]
-    global _current_page
+    global _current_page, _site_dir
     _current_page = page.url
+    _site_dir = config['site_dir']
 
     def _replace(match):
         code = match.group(1)
         code = code.replace('&gt;', '>').replace('&lt;', '<').replace('&amp;', '&')
         code = code.replace('&quot;', '"').replace('&#39;', "'")
 
-        data_uri = _render_mermaid_png(code, rendered[0])
+        rel_path = _render_mermaid_png(code, rendered[0])
         rendered[0] += 1
 
-        if data_uri:
-            return f'<p><img class="mermaid-rendered" src="{data_uri}" alt="Mermaid diagram" style="max-width:70%;height:auto;max-height:350px;" /></p>'
+        if rel_path:
+            return f'<p><img class="mermaid-rendered" src="{rel_path}" alt="Mermaid diagram" style="max-width:70%;height:auto;max-height:350px;" /></p>'
         return match.group(0)
 
     result = MERMAID_RE.sub(_replace, html)
