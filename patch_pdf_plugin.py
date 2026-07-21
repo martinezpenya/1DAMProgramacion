@@ -40,26 +40,31 @@ def patch_generator(pkg_path: Path) -> bool:
     else:
         print("  - tag.text not found (already patched?)")
 
-    # 2. Inject Mermaid CDN script before theme scripts
+    # 2. Remove any previous Mermaid CDN injection (no longer needed - pre-rendered at build time)
     marker = "        scripts = self._theme.get_script_sources()"
-    mermaid_injection = """\
-        body = soup.find('body')
-        if body:
-            # Pre-load Mermaid for Chrome headless rendering (PDF)
-            mermaid_script = soup.new_tag(
-                'script', src='https://unpkg.com/mermaid@11/dist/mermaid.min.js')
-            body.insert(0, mermaid_script)
+    removal_patterns = [
+        ("        body = soup.find('body')", marker),
+    ]
+    for start_marker, end_marker in removal_patterns:
+        idx = content.find(start_marker)
+        end_idx = content.find(end_marker, idx)
+        if idx >= 0 and end_idx > idx and 'mermaid' in content[idx:end_idx]:
+            old_block = content[idx:end_idx]
+            content = content.replace(old_block, '')
+            changes += 1
+            print("  + Removed previous Mermaid CDN injection")
 
-        scripts = self._theme.get_script_sources()"""
-    if marker in content and 'mermaid_script' not in content:
-        content = content.replace(marker, mermaid_injection)
-        changes += 1
-        print("  + Injected Mermaid CDN script loader")
-    elif 'mermaid_script' in content:
-        print("  - Mermaid injection already present")
+    # 3. Also remove fallback renderer if present
+    fb_marker = '# Fallback Mermaid renderer'
+    if fb_marker in content:
+        fb_start = content.find(fb_marker)
+        fb_end = content.find('\n\n        return self._options.js_renderer.render(str(soup))', fb_start)
+        if fb_start >= 0 and fb_end > fb_start:
+            content = content[:fb_start] + content[fb_end:]
+            changes += 1
+            print("  + Removed previous Mermaid fallback renderer")
     else:
-        print(f"  WARNING: marker '{marker}' not found")
-        return False
+        print("  - No Mermaid fallback renderer found (first run)")
 
     file.write_text(content, encoding='utf-8')
     print(f"  → {file} updated ({changes} change(s))")
@@ -70,22 +75,43 @@ def patch_headless_chrome(pkg_path: Path) -> bool:
     file = pkg_path / 'drivers' / 'headless_chrome.py'
     if not file.exists():
         print(f"  NOT FOUND: {file}")
-        # Try alternative location (flat structure)
         file = pkg_path / 'headless_chrome.py'
         if not file.exists():
             return False
 
     content = file.read_text(encoding='utf-8')
-    old = "'--virtual-time-budget=10000'"
-    new = "'--virtual-time-budget=30000'"
-    if old in content:
-        content = content.replace(old, new)
-        file.write_text(content, encoding='utf-8')
-        print(f"  + Increased virtual-time-budget: 10s → 30s")
-        return True
-    else:
-        print("  - virtual-time-budget already patched or different")
-        return False
+    for old_val in ("'--virtual-time-budget=10000'", "'--virtual-time-budget=30000'", "'--virtual-time-budget=60000'"):
+        if old_val in content:
+            if old_val == "'--virtual-time-budget=60000'":
+                print("  - virtual-time-budget already at 60s")
+                return True
+            content = content.replace(old_val, "'--virtual-time-budget=60000'")
+            file.write_text(content, encoding='utf-8')
+            print(f"  + Increased virtual-time-budget: 10s/30s → 60s")
+            return True
+
+    print("  - virtual-time-budget value not found or already patched")
+    return False
+
+
+def patch_en_dash(pkg_path: Path) -> bool:
+    """Fix en-dash (U+2013) typo in Chrome flags."""
+    files_to_check = [
+        pkg_path / 'drivers' / 'headless_chrome.py',
+    ]
+    patched = False
+    for file in files_to_check:
+        if not file.exists():
+            continue
+        content = file.read_text(encoding='utf-8')
+        if '\u2013' in content:
+            content = content.replace('\u2013', '-')
+            file.write_text(content, encoding='utf-8')
+            print(f"  + Fixed en-dash (U+2013) → hyphen in {file.name}")
+            patched = True
+        else:
+            print(f"  - No en-dash found in {file.name}")
+    return patched
 
 
 def main():
@@ -102,6 +128,9 @@ def main():
 
     print("\nPatching headless Chrome driver ...")
     patch_headless_chrome(pkg_path)
+
+    print("\nFixing en-dash typo in Chrome flags ...")
+    patch_en_dash(pkg_path)
 
     if ok:
         print("\n✅ All patches applied successfully")

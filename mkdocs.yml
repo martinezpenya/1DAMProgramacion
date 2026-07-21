@@ -256,8 +256,8 @@ plugins:
         headless_chrome_path: /usr/bin/google-chrome
         #
         output_path: docs/Libro.pdf
+        debug_html: true
         #     #enabled_if_env: ENABLE_PDF_EXPORT
         #     #
-        #     #debug_html: true
         #     show_anchors: true
         #     verbose: true

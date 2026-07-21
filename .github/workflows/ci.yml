@@ -33,4 +33,9 @@ jobs:
           pip install -r requirements.txt
       - name: Patch mkdocs-with-pdf for headless Chrome
         run: python patch_pdf_plugin.py
-      - run: mkdocs gh-deploy --force
+      - name: Install mermaid-cli for PDF pre-rendering
+        run: |
+          npm install -g @mermaid-js/mermaid-cli
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+      - run: PRERENDER_MERMAID=1 mkdocs gh-deploy --force
