@@ -95,17 +95,33 @@ def patch_headless_chrome(pkg_path: Path) -> bool:
                 changes += 1
             break
 
-    # Force old headless mode for better virtual-time-budget support
-    headless_new = "'--headless',"
-    headless_old = "'--headless=old',"
-    if headless_new in content:
-        content = content.replace(headless_new, headless_old)
-        print("  + Switched --headless → --headless=old")
-        changes += 1
-    elif headless_old in content:
-        print("  - --headless=old already set")
+    # Add extra flags for CI compatibility (dev/shm, extensions, networking)
+    extra_flags = [
+        "'--disable-dev-shm-usage',",
+        "'--disable-extensions',",
+        "'--disable-background-networking',",
+    ]
+    insert_after = "'--disable-web-security',\n                        '--allow-file-access-from-files'"
+    replacement = "'--disable-web-security',\n                        '--disable-dev-shm-usage',\n                        '--disable-extensions',\n                        '--disable-background-networking',\n                        '--allow-file-access-from-files'"
+    if all(f not in content for f in extra_flags):
+        if insert_after in content:
+            content = content.replace(insert_after, replacement)
+            print("  + Added --disable-dev-shm-usage, --disable-extensions, --disable-background-networking")
+            changes += 1
+        else:
+            print("  - WARNING: insertion anchor not found for extra flags")
     else:
-        print("  - WARNING: --headless flag not found in expected form")
+        print("  - Extra flags already present")
+
+    # Revert --headless=old back to --headless if present
+    headless_old = "'--headless=old',"
+    headless_new = "'--headless',"
+    if headless_old in content:
+        content = content.replace(headless_old, headless_new)
+        print("  + Reverted --headless=old → --headless")
+        changes += 1
+    elif headless_new in content:
+        print("  - --headless already set (not old mode)")
 
     file.write_text(content, encoding='utf-8')
     print(f"  → headless_chrome.py updated ({changes} change(s))")
