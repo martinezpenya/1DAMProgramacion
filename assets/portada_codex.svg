@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" font-family="'Montserrat', 'Lato', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&amp;display=swap');
+
+    .steam {
+      opacity: 0;
+      transform-origin: center bottom;
+      animation: rise 3s ease-in infinite;
+    }
+    .s1 { animation-delay: 0s; }
+    .s2 { animation-delay: 1s; }
+    .s3 { animation-delay: 2s; }
+
+    @keyframes rise {
+      0%   { opacity: 0;   transform: translateY(0) scale(1) rotate(0deg); }
+      15%  { opacity: 0.9; }
+      50%  { transform: translateY(-30px) scale(1.05) rotate(3deg); }
+      100% { opacity: 0;   transform: translateY(-70px) scale(1.15) rotate(-3deg); }
+    }
+
+    .code-line {
+      clip-path: inset(0 100% 0 0);
+    }
+
+    @keyframes l1 {
+      0%   { clip-path: inset(0 100% 0 0); }
+      10.8% { clip-path: inset(0 0% 0 0); }
+      88%  { clip-path: inset(0 0% 0 0); }
+      96%  { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 100% 0 0); }
+    }
+    @keyframes l2 {
+      0%   { clip-path: inset(0 100% 0 0); }
+      12.8% { clip-path: inset(0 0% 0 0); }
+      77.2% { clip-path: inset(0 0% 0 0); }
+      85.2% { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 100% 0 0); }
+    }
+    @keyframes l3 {
+      0%   { clip-path: inset(0 100% 0 0); }
+      17.6% { clip-path: inset(0 0% 0 0); }
+      64.4% { clip-path: inset(0 0% 0 0); }
+      72.4% { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 100% 0 0); }
+    }
+    @keyframes l4 {
+      0%   { clip-path: inset(0 100% 0 0); }
+      16%  { clip-path: inset(0 0% 0 0); }
+      46.8% { clip-path: inset(0 0% 0 0); }
+      54.8% { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 100% 0 0); }
+    }
+    @keyframes l5 {
+      0%   { clip-path: inset(0 100% 0 0); }
+      1.6% { clip-path: inset(0 0% 0 0); }
+      30.8% { clip-path: inset(0 0% 0 0); }
+      38.8% { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 100% 0 0); }
+    }
+    @keyframes l6 {
+      0%   { clip-path: inset(0 100% 0 0); }
+      1.6% { clip-path: inset(0 0% 0 0); }
+      29.2% { clip-path: inset(0 0% 0 0); }
+      37.2% { clip-path: inset(0 100% 0 0); }
+      100% { clip-path: inset(0 100% 0 0); }
+    }
+
+    .l1 { animation: l1 25s steps(250) infinite; }
+    .l2 { animation: l2 25s steps(250) infinite 2.7s; }
+    .l3 { animation: l3 25s steps(250) infinite 5.9s; }
+    .l4 { animation: l4 25s steps(250) infinite 10.3s; }
+    .l5 { animation: l5 25s steps(250) infinite 14.3s; }
+    .l6 { animation: l6 25s steps(250) infinite 14.7s; }
+  </style>
+
+  <!-- ===================== LAPTOP ===================== -->
+  <g stroke="#000" stroke-width="6" stroke-linejoin="round">
+    <rect x="40" y="30" width="330" height="230" rx="14" fill="#d9d9d9"/>
+    <rect x="60" y="50" width="290" height="180" rx="4" fill="#12141c"/>
+    <path d="M10 270 L400 270 L370 320 L40 320 Z" fill="#bfbfbf"/>
+    <rect x="20" y="272" width="360" height="34" rx="4" fill="#8f8f8f" stroke="none"/>
+    <rect x="150" y="300" width="100" height="14" rx="4" fill="#9a9a9a" stroke="none"/>
+  </g>
+
+  <!-- ===================== CÓDIGO (animación en bucle) ===================== -->
+  <g font-family="'Courier New', monospace" font-size="10">
+    <g class="code-line l1">
+      <text x="70" y="72" fill="#6a9955">1</text>
+      <text x="82" y="72">
+        <tspan fill="#c586c0">public</tspan>
+        <tspan fill="#4ec9b0"> class </tspan>
+        <tspan fill="#dcdcaa">HelloWorld</tspan>
+        <tspan fill="#e0e0e0"> {</tspan>
+      </text>
+    </g>
+
+    <g class="code-line l2">
+      <text x="70" y="89" fill="#6a9955">2</text>
+      <text x="82" y="89" fill="#6a9955">/* Prints &quot;Hello, World!&quot; */</text>
+    </g>
+
+    <g class="code-line l3">
+      <text x="70" y="106" fill="#6a9955">3</text>
+      <text x="95" y="106">
+        <tspan fill="#c586c0">public</tspan>
+        <tspan fill="#569cd6"> static</tspan>
+        <tspan fill="#569cd6"> void</tspan>
+        <tspan fill="#dcdcaa"> main</tspan>
+        <tspan fill="#e0e0e0">(String[] args) {</tspan>
+      </text>
+    </g>
+
+    <g class="code-line l4">
+      <text x="70" y="123" fill="#6a9955">4</text>
+      <text x="108" y="123"><tspan fill="#9cdcfe">System</tspan><tspan fill="#e0e0e0">.</tspan><tspan fill="#dcdcaa">out</tspan><tspan fill="#e0e0e0">.</tspan><tspan fill="#dcdcaa">println</tspan><tspan fill="#ce9178">("Hello, World!");</tspan></text>
+    </g>
+
+    <g class="code-line l5">
+      <text x="70" y="140" fill="#6a9955">5</text>
+      <text x="95" y="140" fill="#e0e0e0">}</text>
+    </g>
+
+    <g class="code-line l6">
+      <text x="70" y="157" fill="#6a9955">6</text>
+      <text x="82" y="157" fill="#e0e0e0">}</text>
+    </g>
+  </g>
+
+  <!-- ===================== TAZA DE CAFÉ ===================== -->
+  <g stroke="#000" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M400 150 Q400 260 480 260 Q560 260 560 150 Z" fill="#f2ede1"/>
+    <path d="M560 175 Q615 175 615 210 Q615 245 560 240" fill="none"/>
+    <ellipse cx="480" cy="150" rx="80" ry="16" fill="#3b2a1a"/>
+  </g>
+  <path d="M455 195 Q470 210 455 225 Q440 238 458 250" stroke="#d97b29" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M475 195 Q490 210 475 225 Q460 238 478 250" stroke="#d97b29" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+  <g fill="none" stroke="#000" stroke-width="6" stroke-linecap="round">
+    <path class="steam s1" d="M450 120 Q440 100 452 85 Q464 70 452 55" />
+    <path class="steam s2" d="M480 118 Q470 98 482 83 Q494 68 482 50" />
+    <path class="steam s3" d="M465 125 Q457 105 468 90 Q479 75 468 58" />
+  </g>
+
+  <text x="650" y="98" font-size="98" font-weight="900" letter-spacing="1" fill="#000" stroke="#fff" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" paint-order="stroke fill" textLength="900" lengthAdjust="spacingAndGlyphs">PROGRAMACIÓN</text>
+
+  <a href="https://martinezpenya.es/1DAMProgramacion/" target="_top">
+    <text x="1520" y="260" text-anchor="end" font-size="26" fill="#000" stroke="#fff" stroke-width="2" stroke-linejoin="round" paint-order="stroke fill">https://martinezpenya.es/1DAMProgramacion/</text>
+  </a>
+  <text x="1520" y="286" text-anchor="end" font-size="26" fill="#000" stroke="#fff" stroke-width="2" stroke-linejoin="round" paint-order="stroke fill">© 2025 David Martínez licensed under CC BY-NC-SA 4.0</text>
+</svg>
