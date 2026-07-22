@@ -1,6 +1,6 @@
 # 🚀 Información importante
 
-![](assets/portada.png)
+![](assets/portada_codex.svg)
 
 ## 📛 Denominación del curso
 
