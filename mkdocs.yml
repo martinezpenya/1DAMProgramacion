@@ -23,43 +23,43 @@ nav:
     - Utilización de Objetos y Clases: UD02/UD02_ES.md
     - Ejercicios: UD02/UD02_ejercicios_ES.md
     - Talleres:
-      - T01 GitHub Classroom: UD02/UD02_T01_GitHubClassroom.md
+      - T01 Classroom 50: UD02/UD02_T01_Classroom50.md
   - UD03:
     - Estructuras de control y Excepciones: UD03/UD03_ES.md
     - Ejercicios: UD03/UD03_ejercicios_ES.md
     - Talleres:
-      - T01 GitHub Classroom: UD03/UD03_T01_GitHubClassroom.md
+      - T01 Classroom 50: UD03/UD03_T01_Classroom50.md
       - T02 Acepta el reto: UD03/UD03_T02_AceptaElReto.md
   - UD04:
     - Estructuras de datos Arrays y matrices. Recursividad: UD04/UD04_ES.md
     - Anexo Cheatsheet String: UD04/UD04_anexo_ES.md
     - Ejercicios: UD04/UD04_ejercicios_ES.md
     - Talleres:
-      - T01 GitHub Classroom: UD04/UD04_T01_GitHubClassroom.md
+      - T01 Classroom 50: UD04/UD04_T01_Classroom50.md
   - UD05:
     - Desarrollo de clases: UD05/UD05_ES.md
     - Anexo Wrappers: UD05/UD05_anexo_Wrappers_ES.md
     - Anexo Fechas: UD05/UD05_anexo_Fechas_ES.md
     - Ejercicios: UD05/UD05_ejercicios_ES.md
     - Talleres:
-      - T01 GitHub Classroom: UD05/UD05_T01_GitHubClassroom.md
+      - T01 Classroom 50: UD05/UD05_T01_Classroom50.md
   - UD06:
     - Lectura y escritura de información: UD06/UD06_ES.md
     - Comparativa CRUD: UD06/UD06_comparativa_CRUD.md
     - Ejercicios: UD06/UD06_ejercicios_ES.md
     - Talleres:
-      - T01 GitHub Classroom: UD06/UD06_T01_GitHubClassroom.md
+      - T01 Classroom 50: UD06/UD06_T01_Classroom50.md
       - T02 Sockets en AWS: UD06/UD06_T02_Sockets_ES.md
   - UD07:
     - Colecciones: UD07/UD07_ES.md
     - Ejercicios: UD07/UD07_ejercicios_ES.md
     - Talleres:
-      - T01 GitHub Classroom: UD07/UD07_T01_GitHubClassroom.md
+      - T01 Classroom 50: UD07/UD07_T01_Classroom50.md
   - UD08:
     - Composición, Herencia y Polimorfismo: UD08/UD08_ES.md
     - Ejercicios: UD08/UD08_ejercicios_ES.md
     - Talleres:
-      - T01 GitHub Classroom: UD08/UD08_T01_GitHubClassroom.md
+      - T01 Classroom 50: UD08/UD08_T01_Classroom50.md
       - T02 Librerias Jar vs Maven: UD08/UD08_T02_LibreriasMavenJar_ES.md
       - T03 Json vs YAML: UD08/UD08_T03_JSON&YAML_ES.md
   - UD09:
