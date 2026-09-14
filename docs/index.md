@@ -136,25 +136,23 @@
 
 ## 📜 Legislación vigente
 
-- 📄 [~~RD 450/2010, BOE 20-05-2010~~](https://ceice.gva.es/documents/161863064/162743975/BOE-A-2010-8067.pdf/d64463e2-9595-4200-8676-79146348d8b2) (Antigua ley)
-- 📄 [RD 405/2023 29-05-2023](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-13221)
-- 📄 [RD 500/2024, BOE 21-05-2024](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-10685)
-- 📄 [~~Currículum C.V.: ORDE 58/2012, de 5 de setembre (DOGV núm. 6868, 24.09.2012)~~](https://ceice.gva.es/documents/161863064/162743975/2012_8694.pdf/8683d3f9-3115-4375-97f8-2ee02573ec53) (Antiguo)
-- 📄 [Propuesta de Decreto del Consell](https://ceice.gva.es/documents/388109149/391641510/Propuesta_DecretoCurris_LFP_GMGS_.pdf)
-- 🕒 [~~Horario~~](https://ceice.gva.es/documents/388109149/390313601/infdamloe3h.pdf) (Antigua ley)
-- 🕒 [Horario](https://ceice.gva.es/documents/388109149/390333672/ANEXO+horaris+GS+Web+val.pdf/2c5b7e1f-4d64-3378-acd4-770b94a5b881?t=1751269600046)
+- 📄 [RD 405/2023, de 29 de mayo (BOE núm. 132, 03-06-2023)](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-13221) — título y enseñanzas mínimas vigentes
+- 📄 [DECRETO 114/2025, de 29 de julio, del Consell — currículo CV (DOGV núm. 10165, 04-08-2025)](https://dogv.gva.es/datos/2025/08/04/pdf/2025_29742_es.pdf) — deroga expresamente la ORDE 58/2012 e incluye el currículo de DAM (junto con SMR, ASIR y DAW)
+- 🕒 Secuenciación y horario: **incluidos como Anexo II** del mismo DECRETO 114/2025
 
 ## 📝 Evaluación
 
 - 🔍 La evaluación del módulo se realizará con base en los **Resultados de Aprendizaje (RA)** definidos en el currículo del ciclo formativo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma. Cada RA estará asociado a **criterios de evaluación** (**CE**) que serán los que determinen el grado de adquisición de las competencias previstas para el módulo.
 
-- 📊 La nota final del módulo se obtendrá a partir de la ponderación de los **RA**, como se mencionó anteriormente. Cada **RA** será evaluado de forma independiente, con calificaciones en una escala de 0 a 10.
+- 📊 La nota final del módulo sale de la ponderación de los RA. Cada RA se evalúa de forma independiente, con **calificación de 1 a 10, sin decimales** (Orden 8/2025, art. 5.1).
 
 - ✅ El alumno debe obtener al menos una nota de **5** en cada **RA** para aprobar el módulo.
 
 - 🔄 Si un alumno obtiene menos de un **5** en algún RA, tendrá que recuperarlo mediante las actividades/exámenes de recuperación diseñadas específicamente para esos resultados de aprendizaje.
 
 - 📊En programación los primeros RA’s se distribuyen entre las 3 evaluaciones, así que tener una buena nota en la primera evaluación no quiere decir que has aprobado los RA de esa evaluación.
+
+- ⏰ **Las entregas fuera de plazo tienen un máximo de 5.** El plazo de cada entrega se cierra en la fecha que indica Moodle. Si necesitas entregar después, **avísame** y te reabro esa tarea concreta un tiempo limitado; en ese caso la nota máxima del trabajo es **5 sobre 10**, y la rúbrica lo recoge de forma explícita. Vale para **todo el curso**, así que no se repite en cada unidad.
 
 - ❗**NUEVO SISTEMA DUAL!!** → Busca tu empresa! 120H (aproximadamente en el mes de mayo, también a partir del 2º trimestre por las mañanas)
 
