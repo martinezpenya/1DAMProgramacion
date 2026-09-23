@@ -90,3 +90,71 @@ img {
 }
 
 
+
+/* ******************************************************** */
+/* Botones para plegar/desplegar el nav izquierdo           */
+/* ******************************************************** */
+.boton-plegar-nav,
+.tira-desplegar-nav {
+    display: none;
+    padding: 0;
+    color: var(--md-default-fg-color--light);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.boton-plegar-nav:hover,
+.tira-desplegar-nav:hover {
+    color: var(--md-accent-fg-color);
+}
+
+.boton-plegar-nav svg,
+.tira-desplegar-nav svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+}
+
+@media screen and (min-width: 76.25em) {
+    /* Nav desplegado: botón a la derecha del título del sitio */
+    .md-nav--primary > .md-nav__title {
+        position: relative;
+        padding-right: 1.8rem;
+    }
+
+    .boton-plegar-nav {
+        display: block;
+        position: absolute;
+        top: 0.3rem;
+        right: 0;
+    }
+
+    /* Nav plegado: se oculta el nav y aparece una tira estrecha a la izquierda */
+    html.nav-oculto .md-sidebar--primary {
+        display: none;
+    }
+
+    html.nav-oculto .tira-desplegar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+        align-self: flex-start;
+        position: sticky;
+        top: 2.4rem;
+        width: 0.9rem;
+        height: calc(100vh - 2.4rem);
+        padding-top: 1.2rem;
+        border-right: 0.05rem solid var(--md-default-fg-color--lightest);
+    }
+
+    html.nav-oculto .tira-desplegar-nav svg {
+        width: 0.9rem;
+        height: 0.9rem;
+    }
+
+    html.nav-oculto .tira-desplegar-nav:hover {
+        background-color: var(--md-default-fg-color--lightest);
+    }
+}
