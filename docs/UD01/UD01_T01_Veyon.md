@@ -10,6 +10,7 @@ Veyon se compone de varias piezas que se instalan por separado:
 |---|---|---|
 | **Veyon Master** | Solo en el equipo del profesor | Consola gráfica desde la que se ve y controla el aula. **Tú no la necesitas.** |
 | **Veyon Service** | En tu portátil | Agente en segundo plano que permite que el profesor vea y controle tu equipo. |
+| **Interception Driver** | En tu portátil | Controlador de bajo nivel necesario para que el profesor pueda bloquear el teclado y ratón durante una explicación. |
 | **Veyon Configurator** | En tu portátil (se instala junto con Veyon Service) | Herramienta gráfica de configuración (claves, red, permisos). |
 
 ## ¿Por qué usamos `Veyon`?
