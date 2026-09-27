@@ -53,6 +53,7 @@ El instalador suele crear automáticamente la regla de Firewall de Windows neces
 1. Abre **"Firewall de Windows Defender"** → **"Permitir una aplicación a través del Firewall"**.
 2. Comprueba que **Veyon Service** aparece marcado, al menos para redes **privadas**.
 3. Si no aparece o la conexión no funciona desde la consola del profesor, añade manualmente una regla de entrada para el puerto **TCP 11100**.
+4. En caso que el puerto 11100 este abierto pero continúes sin tener la opción de conectarte puede que debas acceder al apartado de servicios, activar las opciones avanzadas, Ver(pate superior)- Avanzados y vigilar que en el apartado de Miscellanious settings no este seleccionada la opción de "Solo permitir conexiones desde equipo local"
 
 ## 5. Comprobación final
 
