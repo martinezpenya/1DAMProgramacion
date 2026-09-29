@@ -596,6 +596,7 @@ En la siguiente imagen te ofrecemos una aproximación a la jerarquía de las exc
 
 ```mermaid
 classDiagram
+    direction LR
     class Object
     class Throwable
     Object <|-- Throwable
@@ -683,7 +684,7 @@ Cada `catch` maneja un tipo de excepción. Cuando se produce una excepción, se 
 Por eso el último `catch` debe ser el que capture excepciones genéricas y los primeros deben ser los más específicos. Lógicamente si vamos a tratar a todas las excepciones (sean del tipo que sean) igual, entonces basta con un solo `catch` que capture objetos `Exception`.
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[Código dentro de try] --> B{¿Ocurre excepción?}
     B -->|No| C[Siguiente instrucción después del bloque]
     B -->|Sí| D[Catch captura la excepción]
