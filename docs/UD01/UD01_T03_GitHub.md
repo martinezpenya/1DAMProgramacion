@@ -68,11 +68,4 @@ En este caso concreto se ha aceptado la modificación:
 
 ## Tarea
 
-- Crea un documento `.pdf` donde debes adjuntar la captura de tu perfil de github.
-
-- Añade una **captura** de pantalla donde se vea que has solicitado el **pull request** y que estás esperando a que se integre en el repositorio original. 
-
-- Además, **explica** que significan cada uno de los **4 apartados** señalados en la captura.
-
-
-**Adjunta el documento `.pdf` con las capturas y las explicaciones a la tarea de AULES.**
+No hace falta entregar nada. Disfruta de la vida.
