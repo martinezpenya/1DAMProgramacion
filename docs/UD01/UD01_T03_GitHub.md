@@ -1,6 +1,6 @@
 # Taller UD01_03: Crear cuenta en GitHub
 
-## Qué es GitHub
+## ¿Qué es GitHub?
 
 Github es una plataforma en la nube basada en Git que permite a los desarrolladores almacenar, gestionar y colaborar en proyectos de código. Es el portafolio universal de los programadores.
 
@@ -38,7 +38,7 @@ Ahora debes explicar cual ha sido la modificación que hemos realizado y pulsar 
 
 ![propose changes](assets/GH_05.png)
 
-Todavía no hemos terminado! ahora hay que comunicar los cambios propuestos en nuestro Fork al propietario del repositorio, para que los visualice y valore si los quiere incluir en la página de documentación. Para ello debemos pulsar el botón [Create pull request]:
+¡Todavía no hemos terminado! ahora hay que comunicar los cambios propuestos en nuestro Fork al propietario del repositorio, para que los visualice y valore si los quiere incluir en la página de documentación. Para ello debemos pulsar el botón [Create pull request]:
 
 ![Create pull request](assets/GH_06.png)
 
