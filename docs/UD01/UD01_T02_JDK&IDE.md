@@ -24,6 +24,7 @@ end
 ```
 
 El proceso de instalación consta de los siguientes pasos:
+
 1. Descargue, instale y configure el JDK.
 2. Descargue e instale un servidor web o de aplicaciones.
 3. Descargue, instale y configure el IDE (Netbeans o Eclipse).
