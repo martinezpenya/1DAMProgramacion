@@ -56,6 +56,8 @@ Gracias a la simplicidad de su sintaxis podrás utilizarlo siempre que necesites
 
 - GitHub
 
+- StackEdit
+
 - ...
 
 
