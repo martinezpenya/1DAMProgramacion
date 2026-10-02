@@ -105,5 +105,4 @@ Como tarea, se propone:
 - Hacer una grabación corta de tu pantalla, de **al menos 10 segundos**.
 - En el vídeo se debe ver en todo momento **el reloj con los segundos avanzando** y **tu nombre y apellidos** (no el texto de ejemplo "NOMBRE APELLIDOS").
 - Comprobar que el vídeo se reproduce correctamente antes de entregarlo.
-
-**Subir a la plataforma *<u>AULES</u>* el archivo de vídeo (*.mp4) generado por OBS.**
+- **Subir a la plataforma *<u>AULES</u>* el archivo de vídeo (*.mp4) generado por OBS.**
