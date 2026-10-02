@@ -11,7 +11,7 @@ Markdown es un maravilloso **lenguaje** para escribir documentos de una manera *
 
 Este método te permitirá añadir formatos tales como **negritas**, *cursivas* o [enlaces](http://iesmre.com/), utilizando texto plano, lo que permitirá hacer de tu escritura algo más simple y eficiente al evitar distracciones.
 
-Con Markdown **no vas a reemplazar *todo***, sino cubrir las funcionalidades más comunes que se requieren para escribir un documento relativamente complicado.
+Con Markdown **no vas a reemplazar *todo***, sino cubrir las funcionalidades más comunes que se requieren para escribir un documento relativamente complicado
 
 ## Para qué sirve Markdown
 
