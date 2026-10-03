@@ -828,6 +828,17 @@ Caso base: n es igual a 0
 24
 ```
 
+<div class="solo-web" markdown>
+
+!!! tip "Pruébalo tú: visualizador de recursividad"
+    Elige el valor de `n`, avanza paso a paso y observa cómo cada llamada a `factorial` ocupa un marco en la pila y cómo se libera al devolver su resultado. Cambia entre `int` y `long` para ver el **desbordamiento aritmético**, y prueba un `n` grande para provocar un **`StackOverflowError`**. Con **`fibonacci()`** verás un caso recursivo con **dos llamadas** y su árbol de llamadas.
+
+<iframe src="https://martinezpenya.es/1DAMInteractivo/recursividad/?alg=factorial" title="Visualizador de recursividad paso a paso" width="100%" height="900" frameborder="0" loading="lazy"></iframe>
+
+[Abrir el visualizador a pantalla completa](https://martinezpenya.es/1DAMInteractivo/recursividad/?alg=factorial){ target=_blank }
+
+</div>
+
 #### Cálculo recursivo de la búsqueda dicotómica
 
 A continuación se muestra el código del algoritmo recursivo de búsqueda dicotómica o binaria sobre un array. Observad atentamente los comentarios, los cuales identifican los casos base y recursivos. En este caso, hay más de un caso base y recursivo.

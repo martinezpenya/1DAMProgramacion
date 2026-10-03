@@ -1,4 +1,9 @@
 @media print {
+  /* Contenido solo para la web (iframes interactivos, etc.): no sale en el PDF */
+  .solo-web {
+    display: none !important;
+  }
+
   .md-typeset {
     line-height: 1.4;
   }
