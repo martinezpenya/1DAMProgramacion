@@ -19,7 +19,7 @@ Markdown será perfecto para ti sobre todo **si publicas de manera constante en 
 
 Pero no estoy hablando solo de [blogs](http://www.amazon.es/Cómo-ganar-dinero-con-blog-ebook/dp/B010KC4NDW/?tag=markdown-21) o páginas web. **Servicios** como Trello o **foros** como Stackoverflow también soportan este lenguaje, y con el paso del tiempo encontrarás aún más lugares que lo utilicen.
 
-Además, Markdown está cada vez más extendido en el **mundo “offline”**. Nada te impedirá utilizar este lenguaje para **tomar notas y apuntes** de tus clases o reuniones en una determinada [aplicación](http://markdown.es/aplicaciones-markdown/) (incluso podrías **escribir un libro con él**, ya que puedes exportar fácilmente el resultado final a un formato ePub).
+Además, Markdown está cada vez más extendido en el **mundo “offline”**. Nada te impedirá utilizar este lenguaje para **tomar notas y apuntes** de tus clases o reuniones en una determinada [aplicación](http://markdown.es/aplicaciones-markdown/) (incluso podrías **escribir un libro con él**, ya que puedes exportar fácilmente el resultado final a un formato ePub). 
 
 Gracias a la simplicidad de su sintaxis podrás utilizarlo siempre que necesites escribir y dar formato rápidamente, sobre todo si quieres hacerlo desde dispositivos móviles.
 
@@ -140,6 +140,10 @@ Las citas se generar utilizando el carácter *mayor que* <code> > </code> al com
 ```
 
 > No hay que ir para atrás ni para darse impulso.  — Lao Tsé.
+
+## texto de Diego 
+> El conformismo a matado mas personas que las balas lo pero es...
+> **Que las deja vivas** 
 
 Si la cita en cuestión se compone de **varios párrafos**, deberás añadir el mismo símbolo `>` al comienzo de cada uno de ellos.
 
@@ -331,7 +335,7 @@ Cuando queremos crear documentos con elementos gráficos como diagramas de flujo
 Ejemplo:
 
 ~~~~
-```flow
+```flo
 st=>start: Usuario
 e=>end: Acceso
 op=>operation: Operacion de usuario
