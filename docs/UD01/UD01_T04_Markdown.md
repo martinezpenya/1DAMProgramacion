@@ -15,7 +15,7 @@ Con Markdown **no vas a reemplazar *todo***, sino cubrir las funcionalidades má
 
 ## Para qué sirve Markdown
 
-Markdown será perfecto para ti sobre todo **si publicas de manera constante en Internet**, donde el lenguaje HTML está más que presente: WordPress, Squarespace, Jekyll…
+Markdown será perfecto para ti sobre todo si publicas de manera constante en Internet, donde el lenguaje HTML está más que presente: WordPress, Squarespace, Jekyll…
 
 Pero no estoy hablando solo de [blogs](http://www.amazon.es/Cómo-ganar-dinero-con-blog-ebook/dp/B010KC4NDW/?tag=markdown-21) o páginas web. **Servicios** como Trello o **foros** como Stackoverflow también soportan este lenguaje, y con el paso del tiempo encontrarás aún más lugares que lo utilicen.
 
