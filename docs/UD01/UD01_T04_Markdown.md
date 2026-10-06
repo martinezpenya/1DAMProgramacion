@@ -25,7 +25,7 @@ Gracias a la simplicidad de su sintaxis podrás utilizarlo siempre que necesites
 
 ## Por qué utilizar Markdown
 
-### Ventajas
+### Ventajas "MUCHAS"
 
 - **Markdown para todo**. Para crear apuntes, documentos, notas, sitios web, libros, documentación técnica, etc. de forma off-line.
 
