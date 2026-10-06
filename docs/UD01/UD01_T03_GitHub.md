@@ -1,6 +1,6 @@
-# Taller UD01_03: Crear cuenta en GitHub
+# Taller UD01_04: Markdown.
 
-## ¿Qué es GitHub?
+## Introducción a Markdown.
 
 Github es una plataforma en la nube basada en Git que permite a los desarrolladores almacenar, gestionar y colaborar en proyectos de código. Es el portafolio universal de los programadores.
 
