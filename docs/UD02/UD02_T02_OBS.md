@@ -26,9 +26,24 @@ Necesitas:
 ## Paso 1: Instalar OBS e importar la plantilla
 
 1. Instala OBS Studio si no lo tienes.
-2. Abre OBS.
+2. Abre OBS. En **macOS**, los menús **Perfil** y **Colección de escenas** están en la barra de menús de arriba del todo de la pantalla, no dentro de la ventana de OBS.
 3. Importa el perfil: menú **Perfil → Importar** y selecciona la carpeta **`Perf_EXAMEN_EPM`**. Después, abre otra vez el menú **Perfil** y haz clic en **Perf_EXAMEN_EPM** para activarlo (importar no lo activa).
 4. Importa la colección de escenas: menú **Colección de escenas → Importar**, pulsa el botón **…** para buscar el archivo **`Escen_EXAMEN_EPM.json`** y acepta. Después, abre otra vez el menú **Colección de escenas** y haz clic en **Escen_EXAMEN_EPM** para activarla.
+
+!!! warning "Atención"
+    En el paso 3 tienes que elegir **exactamente** la carpeta `Perf_EXAMEN_EPM`: la que tiene dentro el archivo `basic.ini`. Si eliges la carpeta que la contiene (la que se creó al descomprimir el zip, por ejemplo `EXAMEN_OBS`), OBS no da ningún error pero no importa nada, y en el menú **Perfil** solo seguirá apareciendo el perfil que ya tenías (normalmente **Sin título**). Si te pasa, repite la importación entrando en la carpeta del zip y seleccionando `Perf_EXAMEN_EPM`.
+
+!!! tip "Si el perfil sigue sin aparecer"
+    Cópialo a mano en la carpeta de perfiles de OBS:
+
+    1. Cierra OBS.
+    2. Abre la carpeta de perfiles de OBS:
+        - **macOS**: en Finder, menú **Ir → Ir a la carpeta…**, pega `~/Library/Application Support/obs-studio/basic/profiles/` y pulsa Intro.
+        - **Windows**: pulsa **Windows + R**, escribe `%APPDATA%\obs-studio\basic\profiles` y pulsa **Aceptar**.
+        - **Linux**: abre `~/.config/obs-studio/basic/profiles/` (si instalaste OBS con Flatpak: `~/.var/app/com.obsproject.Studio/config/obs-studio/basic/profiles/`).
+    3. Si ya hay una carpeta `Perf_EXAMEN_EPM` (o con el nombre de la carpeta del zip, como `EXAMEN_OBS`) que dejaron los intentos fallidos, bórrala.
+    4. Copia ahí la carpeta **`Perf_EXAMEN_EPM`** del zip.
+    5. Abre OBS y actívalo desde el menú **Perfil → Perf_EXAMEN_EPM**.
 
 La plantilla trae una fuente llamada **"Pantalla"** preparada para Linux. Si usas **Windows o macOS** (o Linux sin Wayland), al activar la colección aparecerá un aviso de que falta esa fuente. Es normal: se soluciona así.
 
@@ -45,6 +60,15 @@ La plantilla trae una fuente llamada **"Pantalla"** preparada para Linux. Si usa
 
 4. Llámala **"Pantalla"** y acepta.
 5. Asegúrate de que queda **la última** de la lista de fuentes, debajo de "Nombre" y "Reloj". Si queda arriba, tapará el nombre y el reloj: arrástrala hacia abajo o usa la flecha ↓.
+
+!!! note "Solo en macOS: permiso de grabación de pantalla"
+    Al añadir la captura, macOS te pedirá permiso de **grabación de pantalla** para OBS. Sin ese permiso la captura sale en negro, así que dáselo:
+
+    1. Abre **Ajustes del Sistema → Privacidad y seguridad → Grabación de pantalla y audio del sistema** (en versiones antiguas de macOS se llama solo **Grabación de pantalla**).
+    2. Activa el interruptor de **OBS**.
+    3. macOS te pedirá **salir y volver a abrir** OBS: acepta. Al volver a abrirlo, comprueba que la fuente "Pantalla" ya muestra tu escritorio; si sigue en negro, haz doble clic sobre ella y elige tu pantalla en **Pantalla**.
+
+    Si OBS te pide también permiso de micrófono, cámara o accesibilidad, no hace falta que lo des: para el examen solo se graba la pantalla. Haz esta configuración **antes del día del examen**, porque hay que reiniciar OBS después de dar el permiso.
 
 ## Paso 2: Comprobar que el reloj aparece
 
