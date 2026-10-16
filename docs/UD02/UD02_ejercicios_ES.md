@@ -43,7 +43,7 @@
       - Un constructor `Finanzas()` por defecto el cual establece el cambio Dólar-Euro en 1.36.
       - Un constructor `Finanzas(double cambio)`, el cual permitirá configurar el cambio Dólar-euro a una cantidad personalizada.
 
-6. (MiNumero) Realiza una clase `MiNumero` que proporcione el doble, triple y cuádruple de un número proporcionado en su constructor (realiza un método para `doble`, otro para `triple` y otro para `cuadruple`). 
+6. (MiNumero) Realiza una clase `MiNumero` que proporcione el doble, triple y cuádruple de un número (que puede contener decimales) proporcionado en su constructor (realiza un método para `doble`, otro para `triple` y otro para `cuadruple`). 
 
     *(Opcional, no hay puntos)* Haz que la clase tenga un método `main` y comprueba los distintos métodos.
 
