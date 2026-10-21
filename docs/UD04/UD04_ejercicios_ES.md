@@ -117,7 +117,7 @@
         Rotación 4: 7 3 4 2
         ```
 
-    - Diseña también un método para rotar a la izquierda y pruébalo de la misma forma.
+    - Diseña también un método (`rotarIzquierda`) para rotar a la izquierda y pruébalo de la misma forma.
 
 7. (DosArrays) Desarrolla los siguientes métodos en los que intervienen dos arrays y pruébalos desde el método `main`
     - `public static double[] sumaArraysIguales (double[] a, double[] b)` que dados dos arrays de `double` `a` y `b`, del mismo tamaño devuelva un array con la suma de los elementos de `a` y `b`, es decir, devolverá el array `{a[0]+b[0], a[1]+b[1], ....}`
