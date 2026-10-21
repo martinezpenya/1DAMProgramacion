@@ -29,7 +29,7 @@
 2. (Adivina) modifique el programa para que, en lugar de un único valor secreto, haya dos. Para ganar, basta con acertar uno de los dos. La condición lógica que necesitará ya no se puede resolver con una expresión compuesta por una única comparación. Será más compleja.
 
     !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, la variable `VALOR_SECRETO` debe ser renombrada a `VALOR_SECRETO1`, y la nueva debe llamarse `VALOR_SECRETO2` (deberá generarse aleatoriamente) y aunque el nombre sea de constante, no puede ser final.
+        Para pasar satisfactoriamente los tests, la variable `VALOR_SECRETO` debe ser renombrada a `VALOR_SECRETO1`, y la nueva debe llamarse `VALOR_SECRETO2` (con un valor aleatorio entre 0 y 10). Las dos son constantes (`static final`).
 
     ```java
     import java.util.Scanner;
@@ -59,7 +59,7 @@
 4. (AdivinaControlErroresEntrada) aplique el mismo tipo de control sobre los datos de la entrada del ejemplo siguiente al ejercicio del reto 1.
 
     !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, el mensaje de error cuando no se introduzca un entero debe contener la palabra "ERROR"
+        Para pasar satisfactoriamente los tests, el mensaje de error cuando no se introduzca un entero debe contener la palabra "ERROR". El programa es el del reto 1 (Descuento): la penalización de 2 € se suma al precio
 
     ```java
     import java.util.Scanner;
@@ -175,7 +175,7 @@
 
 4. (NotasTexto) Escribir un método (`notas2Texto`) que recibe un valor numérico (se supone entre 1 y 10 y puede contener decimales) y devuelva el literal correspondiente a dicha nota según ("insuficiente", "suficiente", "bien", "notable", "sobresaliente" y "matricula de honor").
 
-5. (Division) Escribir un método (`division`) que reciba dos números enteros e imprima el resultado de la división. Tener en cuenta que si dividimos un número por cero se producirá un error de ejecución y debemos evitarlo. Ejemplos de ejecución:
+5. (Division) Escribir un método (`division`) que reciba dos números enteros y devuelva un `String` con el resultado de la división (o el mensaje de error). Tener en cuenta que si dividimos un número por cero se producirá un error de ejecución y debemos evitarlo. Ejemplos de ejecución:
     ```sh
     Vamos a dividir dos números.
     Introduce el valor del dividendo: 15
@@ -188,7 +188,7 @@
     No se puede realizar la división porque el divisor es 0
     ```
 
-6. (Raiz) Se desea calcular la raíz cuadrada real de un número real cualquiera pedido inicialmente al usuario. Como dicha operación no está definida para los números negativos es necesario tratar, de algún modo, dicho posible error sin que el programa detenga su ejecución. Debes escribir un método `raiz` que recibe un entero. Ejemplos de ejecución:
+6. (Raiz) Se desea calcular la raíz cuadrada real de un número real cualquiera pedido inicialmente al usuario. Como dicha operación no está definida para los números negativos es necesario tratar, de algún modo, dicho posible error sin que el programa detenga su ejecución. Debes escribir un método `raiz` que recibe un entero y devuelve un `String` con el resultado (o el mensaje de error). Ejemplos de ejecución:
 
     ```sh
     Vamos a calcular la raíz cuadrada de un número.
@@ -200,7 +200,7 @@
     No se puede realizar la raíz porque el número es negativo
     ```
 
-7. (Hora12) Escribir un método (`formatoDoce`) que recibe dos enteros (hora y minutos) en notación de 24 horas y la devuelve como `String` en notación de 12 horas. Por ejemplo, si la entrada es 13 horas 45 minutos, la salida será "`1:45 PM`". La hora y los minutos se leerán de teclado de forma separada, primero la hora y luego los minutos. Si la hora pasada al método no es correcta devolverá: "Error de conversión"
+7. (Hora12) Escribir un método (`formatoDoce`) que recibe dos enteros (hora y minutos) en notación de 24 horas y la devuelve como `String` en notación de 12 horas. Por ejemplo, si la entrada es 13 horas 45 minutos, la salida será "`01:45 PM`" (también vale "`1:45 PM`"). Las 12:00 son "`12:00 PM`" (mediodía). La hora y los minutos se leerán de teclado de forma separada, primero la hora y luego los minutos. Si la hora pasada al método no es correcta devolverá: "Error de conversión"
 
     ```sh
     Vamos a convertir una hora a formato 12H.
@@ -239,7 +239,7 @@
     03/05/1999
     ```
 
-10. (DiasDelMes) Escribir un método (`diasMes`) que recibe el número de un mes (1 a 12) y devuelve el número de días que tiene el mes. Hacerlo utilizando sentencias `if else`. Si el mes recibido no es correcto, debe devolver 0.
+10. (DiasDelMes) Escribir un método (`diasMes`) que recibe el número de un mes (1 a 12) y devuelve el número de días que tiene el mes. Hacerlo utilizando sentencias `if else` (sin el operador ternario `? :`). Si el mes recibido no es correcto, debe devolver 0.
 
     ```sh
     Vamos a ver cuantos días tiene un mes.
@@ -314,11 +314,11 @@
     - Sábados y domingos: 0.93 €/km.
     - Además, la tarifa mínima diurna es de 2.95€ y la mínima nocturna de 4€.
 
-    Escribir un método que recibe:
+    Escribir un método (`costeTrayecto`) que recibe, en este orden:
 
     - La hora (`hora` y `minutos`) en que se realizó el trayecto.
     - El `día de la semana` (se supone que el usuario introduce un valor entre 1 para lunes y 7 para domingo)
-    - Los `kilómetros` recorridos.
+    - Los `kilómetros` recorridos (pueden tener decimales).
 
     El método devuelve el coste del trayecto.
     Escribe un método `main` que solicite al usuario la introducción de los datos y llamando al método muestre el resultado:
@@ -354,9 +354,9 @@
     | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
     | y :  | 1    | 3    | 5    | 7    | 9    | 2    | 4    | 6    | 8    | 10   |
 
-    Se pide implementar un método (`esValido`) que recibe los dos valores (`x` e `y`), que devuelva si la combinación es válida o no. 
+    Se pide implementar un método (`esValido`) que recibe los dos valores (`char x`, `int y`), que devuelva si la combinación es válida o no. 
     
-    Escribe también un método `main` que lea de teclado el valor de `x` y el valor de `y`, e indique por pantalla "VALIDOS" o "NO VALIDOS". Se pide hacerlo de forma que no se utilice ninguna estructura condicional (if, switch,...), es decir, se calculará una expresión booleana que determine si `x` e `y` son válidos. Se procurará que la expresión booleana propuesta sea breve y concisa.
+    Escribe también un método `main` que lea de teclado el valor de `x` y el valor de `y`, e indique por pantalla "VALIDOS" o "NO VALIDOS". Se pide hacerlo de forma que no se utilice ninguna estructura condicional (if, switch, operador ternario...), es decir, se calculará una expresión booleana que determine si `x` e `y` son válidos. Se procurará que la expresión booleana propuesta sea breve y concisa.
 
 ### Bucles simples
 
@@ -407,7 +407,7 @@
 
     | Etapa        | Rango                   |
     | :----------- | ----------------------------------- |
-    | Infancia     | Hasta los 10 años|
+    | Infancia     | Hasta los 10 años (incluidos)|
     | Pubertad     | De 11 a 14 años         |
     | Adolescencia | De 15 a 21 años         |
     | Adultez      | De 22 a 54 años         |
@@ -471,7 +471,9 @@
      - Un número *n* no puede tener divisores mayores que n/2 (o mayores que Math.sqrt(n))
 
     !!! warning "Atención"
-        Para pasar satisfactoriamente los tests de rendimiento, debes tener el ejercicio 6 (Primos) y 7 (EsPrimoMejorada) y el rendimiento del 7 debe ser un 20% mejor (más rápido) que el del 6
+        Escribe el método `esPrimo` en esta clase. Para pasar el test de rendimiento tiene que ser, al menos, 1,5 veces más rápido que probar todos los divisores de 2 a n-1.
+
+        ¿Quieres ir mucho más allá? Compara cuánto tarda con `n/2` y con `Math.sqrt(n)` en un primo grande como 2147483647, y si tienes que listar muchos primos seguidos, investiga la *criba de Eratóstenes*.
 
 8. (Divisores) Escribir un programa que muestre los tres primeros divisores de un número n introducido por el usuario. Por ejemplo, si el usuario introduce el número 45, el programa mostrará los divisores 1, 3 y 5. Ten en cuenta que la posibilidad de que el número n tenga menos de 3 divisores. Prueba qué pasa si el usuario pide, por ejemplo, los tres primeros divisores de 7.  
 
@@ -661,9 +663,6 @@
     dd
     ```
 
-    !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, en lugar de usar `System.out.println`, debes usar `System.out.print` con un `\n` al final de la cadena a imprimir.
-
 8. (CombinarLetras3) Repite el ejercicio anterior mostrando palabras de tres letras
 
     ```sh
@@ -673,9 +672,6 @@
     ddc
     ddd
     ```
-
-    !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, en lugar de usar `System.out.println`, debes usar `System.out.print` con un `\n` al final de la cadena a imprimir.
 
 9. (LetraALetra) Escribe un programa en el que se solicite al usuario un texto de forma repetida hasta que el usuario introduzca la cadena vacía. Con cada texto que introduzca el usuario se le mostrará carácter a carácter, cada carácter en una línea
 
@@ -694,9 +690,6 @@
     Introduce texto: 
     Fin del programa
     ```
-
-    !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, en lugar de usar `System.out.println`, debes usar `System.out.print` con un `\n` al final de la cadena a imprimir.
 
 10. (DibujarFiguras1) Escribe una clase que contenga los métodos que se indican a continuación. En el método `main` solicita al usuario las dimensiones de las figuras necesarias en cada caso y llama al método correspondiente para que se muestre por pantalla
 
@@ -841,7 +834,7 @@
 
 1. (NotasTexto2) Escribir un método (`nota2TextoSwitch`) que reciba la nota de un examen (valor numérico entero entre 1 y 10) y muestre el literal correspondiente a dicha nota según (insuficiente, suficiente, bien, notable, sobresaliente, matrícula de honor). Hacerlo utilizando la sentencias switch.
 
-2. (DiasDelMes2) Escribir un método que recibe un número de mes (1 a 12) y devuelva el número de días que tiene el mes. Resolver utilizando la sentencias switch. Si el mes es erroneo, devolverá 0.
+2. (DiasDelMes2) Escribir un método (`numeroDias`) que recibe un número de mes (1 a 12) y devuelva el número de días que tiene el mes. Resolver utilizando la sentencias switch. Si el mes es erroneo, devolverá 0.
 
     ```sh
     Vamos a calcular el número de dias que tiene un mes.
@@ -858,7 +851,7 @@
     ```
 
 3. (NombreDelMes2) Escribir un método (`nombreMes`) que recibe el número de un mes (1 a 12) y devuelve el nombre del mes ("enero", "febrero", etc). Resolver utilizando la sentencias switch. Si el mes no es válido, devolverá la cadena vacía "".
-4. (Calculadora2) Escribir un método (`calculadora`) para simular una calculadora. Considera que los cálculos posibles son del tipo `num1, operador, num2`, donde `num1` y `num2` son dos números reales cualesquiera y operador es una de entre: `'+', '-', '*'` y `'/'`. El método recibirá los tres parámetros y devolverá el resultado de la operación. Resolver utilizando la sentencias switch. Si el `operador` no es ninguno de la lista, devuelve el `num1`.
+4. (Calculadora2) Escribir un método (`calculadora`) para simular una calculadora. Considera que los cálculos posibles son del tipo `num1, operador, num2`, donde `num1` y `num2` son dos números reales cualesquiera y `operador` es un `char`, uno de entre: `'+', '-', '*'` y `'/'`. El método recibirá los tres parámetros y devolverá el resultado de la operación. Resolver utilizando la sentencias switch. Si el `operador` no es ninguno de la lista, devuelve el `num1`.
 
 ### en papel...
 
@@ -1695,7 +1688,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
       Error: División por cero no permitida.
       ```
 
-14. (CalculadoraExcepcion) Crea una clase `CalculadoraExcepcion` con un método `dividir` que acepte dos números con decimales como argumentos, devuelva su resultado o lance una excepción  personalizada (`DivisionPorCeroException`) si el divisor es cero. Captura la excepción en el método  `main` y muestra un mensaje de error.
+14. (CalculadoraExcepcion) Crea una clase `CalculadoraExcepcion` con un método `dividir` que acepte dos números con decimales como argumentos, devuelva su resultado o lance una excepción  personalizada (`DivisionPorCeroException`, que extiende `Exception`) si el divisor es cero. Captura la excepción en el método  `main` y muestra un mensaje de error.
 
       ```sh
       Introduce el dividendo: 15,5
@@ -1709,7 +1702,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 15. (EntradaNoNumerica) Escribe un programa que lea un número entero desde el teclado. Si el  usuario ingresa algo que no es un número entero, maneja la excepción y  muestra un mensaje de error.
 
-16. (RangoNumerico) Escribe un programa que solicite al usuario ingresar un número entre 1 y 100. Si el número está fuera de ese rango, lanza una excepción  personalizada (`NumeroFueraDeRangoException`) y muestra un mensaje de error.
+16. (RangoNumerico) Escribe un programa que solicite al usuario ingresar un número entre 1 y 100. Si el número está fuera de ese rango, lanza una excepción  personalizada (`NumeroFueraDeRangoException`, que extiende `Exception`) y muestra un mensaje de error.
 
      ```sh
      Introduce un número entre 1 y 100: 5
@@ -1719,7 +1712,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
      Error: Número fuera de rango: 500
      ```
 
-17. (NumeroNegativo) Crea un método que reciba dos números como argumentos y lance una excepción personalizada si uno de los números es negativo. Captura esa excepción en el método principal y muestra un mensaje de error.
+17. (NumeroNegativo) Crea un método (`sonPositivos`) que reciba dos números como argumentos y lance una excepción personalizada (`NumeroNegativoException`, que extiende `Exception`) si uno de los números es negativo. Captura esa excepción en el método principal y muestra un mensaje de error.
 
      ```sh
      Introduce el primer número: 5
@@ -1811,7 +1804,7 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
 
 4. (TablasMultiplicar) Escribe un método (`tabla`) que recibe un número entero positivo y devuelve un String con la tabla de múltiplicar de dicho número con el siguiente formato:
     ```sh
-    Tabla del 2
+    Tabla del 2:
     2 x 1 = 2
     2 x 2 = 4
     ...
@@ -1838,9 +1831,6 @@ Indica cual será la salida producida por los siguientes programas, teniendo en 
     43
     ...
     ```
-
-    !!! warning "Atención"
-        Para pasar satisfactoriamente los tests, en lugar de usar `System.out.println`, debes usar `System.out.print` con un `\n` al final de la cadena a imprimir.
 
 6. (CuadradoHastaNegativo) Leer un número y mostrar su cuadrado, repetir el proceso hasta que se introduzca un número negativo.
 
