@@ -521,7 +521,7 @@ Ejemplo de declaración y asignación de valores a variables:
 |           int | `int d=-30;`<br />`int e=0xC125; //la 0x significa Hexadecimal` |
 |          long | `long b=46240;`<br />`long b=5L; // La L en este caso indica Long` |
 |          char | `char car1='c';`<br />`char car2=99; //car1 y car2 son iguales, la c equivale al ascii 99`<br />`char letra = '\u0061'; //código unicode del carácter "a"` |
-|         float | `float pi=3.1416;`<br />`float pi=3.1416F; //La F significa float`<br />`float medio=1/2; //0.5` |
+|         float | `float pi=3.1416F; //La F significa float. Sin ella no compila: un literal con decimales es double por defecto`<br />`float medio=1/2F; //0.5. Sin la F, 1/2 es una división entera y el resultado sería 0.0` |
 |        double | `double millon=1e6; // 1x10^6`<br />`double medio=1/2D; //0.5, la D significa double`<br />`double z=.123; //si la parte entera es 0 se puede omitir` |
 |       boolean | `boolean esPrimero;`<br />`boolean esPar=false;`             |
 !!! warning "Precaución"

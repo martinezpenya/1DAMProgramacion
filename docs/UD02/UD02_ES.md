@@ -664,7 +664,7 @@ Accede a la documentación en línea de Java y estudia los siguientes métodos d
 
 - `charAt`
 - `indexOf`
-- `subString`
+- `substring`
 - `toLowerCase`
 - `trim`
 

@@ -202,9 +202,9 @@ Imagina que estás diseñando un conjunto de clases para trabajar con expresione
 Así podría quedar la declaración del atributo:
 
 ```java
-class claseGeometria {
+class ClaseGeometria {
     // Declaración de constantes
-    public final float PI = 3.14159265;
+    public final double PI = 3.14159265;
 	...
 ```
 
