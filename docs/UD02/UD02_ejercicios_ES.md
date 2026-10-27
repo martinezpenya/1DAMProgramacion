@@ -108,6 +108,7 @@
     !!! info "Para pasar los tests"
         - Clase `_07_Peso`, con constructor `_07_Peso(double peso, String medida)`.
         - Métodos de instancia: `double getLibras()`, `double getLingotes()` y `double getPeso(String medida)`.
+        - Compara la medida con `equals` (`medida.equals("Lb")`), no con `==`: el test usa textos que no son literales y con `==` no los reconoce.
 
 9. (Millas) Crea una clase con un método `millasAMetros()` que toma como parámetro de entrada un valor en millas marinas y las convierte a metros. Una vez tengas este método escribe otro `millasAKilometros()` que realice la misma conversión, pero esta vez exprese el resultado en kilómetros.
 
