@@ -8,6 +8,16 @@ Para grabar usaremos [OBS Studio](https://obsproject.com/es), un programa **libr
 
 Este taller sirve para dejarlo todo listo **antes** del primer examen y comprobar que funciona en tu portátil.
 
+!!! danger "¿Configuraste OBS antes del 27/10/2026? Cambia el tamaño de división"
+    Aules no admite ficheros de más de **50 MB** por entrega, y la plantilla original cortaba la grabación cada 250 MB: el vídeo de un examen de más de 40 minutos **no se podría subir**. La plantilla ya está corregida, pero tu OBS sigue con el ajuste antiguo. No hace falta repetir el taller ni volver a entregarlo, solo cambiar esto en tu OBS antes del primer examen:
+
+    1. Comprueba que tienes activo el perfil **Perf_EXAMEN_EPM** (menú **Perfil**).
+    2. Abre **Ajustes → Salida** y ve a la pestaña **Grabación**.
+    3. En la división automática de la grabación (**Dividir automáticamente el archivo**), deja la división **por tamaño** y cambia el tamaño de **250** a **45 MB**.
+    4. Pulsa **Aplicar** y **Aceptar**. No toques ningún otro ajuste.
+
+    Si lo prefieres, también puedes descargar otra vez la plantilla y volver a importar el perfil `Perf_EXAMEN_EPM` (después tendrás que elegir de nuevo la carpeta de grabación del paso 4).
+
 ## Antes de empezar
 
 Necesitas:
@@ -117,7 +127,7 @@ Lo único que debes revisar es la carpeta donde se guardará la grabación:
 5. El vídeo queda en la carpeta que elegiste en el paso 4, con la fecha y la hora en el nombre del archivo.
 
 !!! info "Grabaciones largas"
-    Si la grabación es muy larga, OBS la divide automáticamente en varios archivos (cada uno de unos 250 MB, lo que equivale a más de 3 horas de grabación). En ese caso tendrás varios vídeos con la fecha y hora en el nombre: en un examen **hay que entregarlos todos**, no solo el último.
+    OBS divide automáticamente la grabación en varios archivos de unos 45 MB (unos 40 minutos de grabación cada uno), porque Aules no admite ficheros de más de 50 MB. En un examen de más de 40 minutos tendrás varios vídeos con la fecha y hora en el nombre: **hay que entregarlos todos**, no solo el último.
 
 ## Resumen
 
