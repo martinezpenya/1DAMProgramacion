@@ -8,16 +8,6 @@ Para grabar usaremos [OBS Studio](https://obsproject.com/es), un programa **libr
 
 Este taller sirve para dejarlo todo listo **antes** del primer examen y comprobar que funciona en tu portátil.
 
-!!! danger "¿Configuraste OBS antes del 27/10/2026? Cambia el tamaño de división"
-    Aules no admite ficheros de más de **50 MB** por entrega, y la plantilla original cortaba la grabación cada 250 MB: el vídeo de un examen de más de 40 minutos **no se podría subir**. La plantilla ya está corregida, pero tu OBS sigue con el ajuste antiguo. No hace falta repetir el taller ni volver a entregarlo, solo cambiar esto en tu OBS antes del primer examen:
-
-    1. Comprueba que tienes activo el perfil **Perf_EXAMEN_EPM** (menú **Perfil**).
-    2. Abre **Ajustes → Salida** y ve a la pestaña **Grabación**.
-    3. En la división automática de la grabación (**Dividir automáticamente el archivo**), deja la división **por tamaño** y cambia el tamaño de **250** a **45 MB**.
-    4. Pulsa **Aplicar** y **Aceptar**. No toques ningún otro ajuste.
-
-    Si lo prefieres, también puedes descargar otra vez la plantilla y volver a importar el perfil `Perf_EXAMEN_EPM` (después tendrás que elegir de nuevo la carpeta de grabación del paso 4).
-
 ## Antes de empezar
 
 Necesitas:
