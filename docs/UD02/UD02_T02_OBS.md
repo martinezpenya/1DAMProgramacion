@@ -61,6 +61,9 @@ La plantilla trae una fuente llamada **"Pantalla"** preparada para Linux. Si usa
 4. Llámala **"Pantalla"** y acepta.
 5. Asegúrate de que queda **la última** de la lista de fuentes, debajo de "Nombre" y "Reloj". Si queda arriba, tapará el nombre y el reloj: arrástrala hacia abajo o usa la flecha ↓.
 
+!!! warning "La captura debe ocupar toda la grabación"
+    Uses el sistema que uses (también en Linux con Wayland, si te quedas con la fuente "Pantalla" que trae la plantilla), tu escritorio tiene que llenar **toda** la vista previa de OBS, sin bordes negros alrededor. Si se ve reducido dentro de un recuadro, haz clic derecho sobre la fuente **"Pantalla"** → **Transformar** → **Ajustar a la pantalla** (o selecciónala y pulsa **Ctrl+F**; en macOS, **Cmd+F**). Si tu pantalla no es panorámica (16:9), pueden quedar franjas finas a los lados o arriba y abajo: eso es normal.
+
 !!! note "Solo en macOS: permiso de grabación de pantalla"
     Al añadir la captura, macOS te pedirá permiso de **grabación de pantalla** para OBS. Sin ese permiso la captura sale en negro, así que dáselo:
 
@@ -107,7 +110,7 @@ Lo único que debes revisar es la carpeta donde se guardará la grabación:
 
 ## Paso 5: Grabar
 
-1. Comprueba en la vista previa de OBS que se ven **tu nombre** y **el reloj con los segundos** en la esquina de la pantalla.
+1. Comprueba en la vista previa de OBS que se ven **tu nombre** y **el reloj con los segundos** en la esquina de la pantalla, y que tu escritorio ocupa toda la vista previa, sin bordes negros alrededor.
 2. Pulsa **Iniciar grabación**.
 3. Trabaja con normalidad.
 4. Al terminar, pulsa **Detener grabación**.
@@ -128,5 +131,6 @@ Como tarea, se propone:
 - Dejar OBS configurado en tu portátil siguiendo los pasos de este taller.
 - Hacer una grabación corta de tu pantalla, de **al menos 10 segundos**.
 - En el vídeo se debe ver en todo momento **el reloj con los segundos avanzando** y **tu nombre y apellidos** (no el texto de ejemplo "NOMBRE APELLIDOS").
+- Tu escritorio debe ocupar **toda** la grabación, sin bordes negros alrededor.
 - Comprobar que el vídeo se reproduce correctamente antes de entregarlo.
 - **Subir a la plataforma *<u>AULES</u>* el archivo de vídeo (*.mp4) generado por OBS.**
