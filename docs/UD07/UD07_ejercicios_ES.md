@@ -127,7 +127,7 @@
        | ------------------ | ------ |
        | Entre 5 y 10 años  | 5 €    |
        | Entre 11 y 17 años | 7.5 €  |
-       | Mayor de 18 años   | 9.5 €  |
+       | 18 años o más      | 9.5 €  |
 
     Como comprobación imprime el número de personas, el precio total y la lista de edades. Por ejemplo:
 
