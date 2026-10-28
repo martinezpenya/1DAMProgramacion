@@ -2,7 +2,11 @@
 
 ## Paquetes Completos
 
-### Paquete: `UD06._1.gestorVuelos`
+### Paquete: `UD06._01_1gestorVuelos`
+
+!!! info "Excepciones y ficheros"
+    Las excepciones propias se declaran dentro de la clase que las lanza, como clases anidadas: `static class VueloCompletoException extends Exception` dentro de `Vuelo` y `static class ElementoNoEncontradoException extends Exception` dentro de `Compania`.
+    El fichero de vuelos de una compañía está en la carpeta `files/_01_1gestorVuelos/` del proyecto (por ejemplo, `files/_01_1gestorVuelos/Iberia.txt`).
 
 Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y cancelación de vuelos en una agencia de viajes. Dicha agencia trabaja únicamente con la compañía aérea Iberia, que ofrece vuelos desde/hacia varias ciudades de Europa. Se deben definir las clases que siguen, teniendo en cuenta que sus atributos serán privados y sus métodos sólo los que se indican en cada clase.
 
@@ -18,7 +22,7 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
     En esta clase, se deben implementar los siguientes métodos:
 
     - `public Vuelo(String id, String orig, String dest, LocalTime hsal, LocalTime hlleg)`. **Constructor** que crea un vuelo con identificador, ciudad de origen, ciudad de destino, hora de salida y hora de llegada indicados en los respectivos parámetros, y sin pasajeros.
-    - `public String getIdenificador()`. Devuelve el `identificador`
+    - `public String getIdentificador()`. Devuelve el `identificador`
     - `public String getOrigen()`. Devuelve `origen`.
     - `public String getDestino()`. Devuelve `destino`.
     - `public boolean hayLibres()`. Devuelve `true` si quedan asientos libres y `false` si no quedan.
@@ -78,7 +82,11 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
         - Pediremos al usuario el identificador del vuelo en que quiere hacer la reserva.
         - Buscaremos el vuelo que tiene el identificador indicado. Si existe realizaremos la reserva y mostraremos un mensaje por pantalla. En caso contrario mostraremos un mensaje de error por pantalla.
 
-### Paquete: `UD06._2.maquinaExpendedora`
+### Paquete: `UD06._01_2maquinaExpendedora`
+
+!!! info "Excepciones y ficheros"
+    Las excepciones propias se declaran dentro de la clase que las lanza, como clases anidadas (`static class NoHayCambioException extends Exception`, y lo mismo para `NoHayProductoException` y `CreditoInsuficienteException`), tanto en `Expendedora` como en `ExpendedoraSurtido`.
+    El fichero `productos.txt` está en la carpeta `files/_01_2maquinaExpendedora/` del proyecto.
 
 Se desea simular el funcionamiento de una máquina expendedora. Se trata de una expendedora sencilla que, por el momento, será capaz de dispensar únicamente un producto.
 
@@ -177,9 +185,9 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
     - `public String[] getNombresProductos()` Devuelve un array con los nombres de los productos. La posición `0` del array no se utilizará (será `null`)
 
-6. Crea una copia de la clase `Expendedora` y llámala `ExpendedoraSurtido`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos usando la nueva clase `Surtido`. Por ejemplo ya no tienen sentido los atributos stock y precio ya que pertenecen al `Surtido`. Modifica también el método `public String toString()`, para que muestre por pantalla el listado de productos con su nombre, precio y stock para mostrar al cliente que productos puede elegir. El código del producto coincidirá con su posición al leer el surtido.
+6. Crea una copia de la clase `Expendedora` y llámala `ExpendedoraSurtido`, con el constructor `public ExpendedoraSurtido(double cambio)`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos usando la nueva clase `Surtido`. Por ejemplo ya no tienen sentido los atributos stock y precio ya que pertenecen al `Surtido`. Modifica también el método `public String toString()`, para que muestre por pantalla el listado de productos con su nombre, precio y stock para mostrar al cliente que productos puede elegir. El código del producto coincidirá con su posición al leer el surtido.
 
-7. Crea una copia de la clase `TestExpendedora` y nómbrala `TestExpendedora2` para adaptarla a los cambios hechos en la clase `Expendedora` y usando la nueva posibilidad de comprar diferentes productos y usando solamente un único objeto `Expendedora`. Al final en lugar de mostrar la recaudación de las 3 máquinas expendedoras, muestra solo la de la única que hay, que muestra el surtido de esta manera:
+7. Crea una copia de la clase `TestExpendedora` y nómbrala `TestExpendedoraSurtido` para adaptarla a los cambios hechos en la clase `Expendedora` y usando la nueva posibilidad de comprar diferentes productos y usando solamente un único objeto `Expendedora`. Al final en lugar de mostrar la recaudación de las 3 máquinas expendedoras, muestra solo la de la única que hay, que muestra el surtido de esta manera:
 
    ```sh
    Prod.	Stock	Precio
@@ -219,11 +227,11 @@ En los ejercicios anteriores, las limitaciones de la clase utilizada (`InputStre
 ## **Lectura/escritura en ficheros**
 
 9. (EscribirFichero1) Escribe un programa que, usando las clases `FileOutputStream` y `FileInputStream`, (puedes usar más a parte de estas dos) 
-    - escriba tu nombre y altura en un fichero (`nombre.txt`).
+    - escriba tu nombre y altura en un fichero (`files/_05_LE_Ficheros/nombre.txt`).
     - lea el fichero creado y lo muestre por pantalla.
     - Si abrimos el fichero creado con un editor de textos, ¿su contenido es legible?
 
-10. (EscribirFichero2) Repetir el ejercicio anterior utilizando las clases `FileReader` y `FileWriter` para generar el fichero `nombre2.txt`.
+10. (EscribirFichero2) Repetir el ejercicio anterior utilizando las clases `FileReader` y `FileWriter` para generar el fichero `files/_05_LE_Ficheros/nombre2.txt`.
 
 ## **Uso de buffers**
 
@@ -237,7 +245,7 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 ## **Streams para información binaria**
 
-14. (Personas) Escribe un programa que, utilizando entre otras la clase `DataOutputStream`, almacene en un fichero llamado `personas.dat` la información relativa a una serie de personas que va introduciendo el usuario desde teclado:
+14. (Personas) Escribe un programa que, utilizando entre otras la clase `DataOutputStream`, almacene en un fichero llamado `personas.dat` (en la carpeta `files/_07_StreamsParaInformacionBinaria/`) la información relativa a una serie de personas que va introduciendo el usuario desde teclado (se guardan en este orden):
 
     - `Nombre` (String)
     - `Edad` (entero)
@@ -284,10 +292,10 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 18. Paquete `GuardaLeeLibros`
 
-    - (`Autor`) Crea la clase `Autor`, con los atributos **nombre**, **año de nacimiento** y **nacionalidad**. Incorpora un **constructor** que reciba todos los datos y el método `toString()`.
-    - (`Libro`) Crea la clase `Libro`, con los atributos **titulo**, **año de edición** y **autor** (Objeto de la clase `Autor`). Incorpora un **constructor** que reciba todos los datos y el método `toString()`.
-    - Escribe un programa `GuardaLibros` que cree tres libros y los almacene en el fichero `biblioteca.obj`.
-    - Las clases deberán implementar el interfaz `Serializable`.
+    - (`Autor`) Crea la clase `Autor`, con los atributos **nombre**, **año de nacimiento** y **nacionalidad**. Incorpora un **constructor** `Autor(String nombre, int anyoNacimiento, String nacionalidad)` y el método `toString()`.
+    - (`Libro`) Crea la clase `Libro`, con los atributos **titulo**, **año de edición** y **autor** (Objeto de la clase `Autor`). Incorpora un **constructor** `Libro(String titulo, int anyoEdicion, Autor autor)` y el método `toString()`, que incluye los datos de su autor.
+    - Escribe un programa `GuardaLibros` que cree tres libros y los almacene en el fichero `files/_08_Serializacion/biblioteca.obj`, cada libro con su propio `writeObject`.
+    - Las clases (también `Autor`) deberán implementar el interfaz `Serializable`.
 
 19. Paquete `GuardaLeeLibros`
     - Escribe un programa (`LeeLibros`) que lea los objetos del fichero `biblioteca.obj` y los muestre por pantalla (Libros y Autores).
@@ -297,14 +305,15 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 20. Programar un Servidor que reciba una fecha (previamente validada por el cliente) y nos diga cual es nuestro signo del zodíaco occidental y el animal que corresponde en el zodíaco oriental (animales).
 
 !!! info "Test"
-    Para poder pasar los tests correctamente la IP del servidor será localhost(127.0.0.1) y el PUERTO el 6000.
+    Las clases son `TCPServidor` y `TCPClient`. El servidor está en `localhost` y el puerto se recibe como primer argumento del `main` (`args[0]`); si no hay argumentos, se usa el 6000.
+    El cliente pide la fecha con formato `dd/mm/yyyy` y la envía al servidor como un `LocalDate` (con `ObjectOutputStream`). El servidor responde con dos `String`: el signo del zodíaco occidental y el animal del zodíaco oriental, que se calcula con el resto de dividir el año entre 12 (0 mono, 1 gallo, 2 perro, 3 cerdo, 4 rata, 5 buey, 6 tigre, 7 conejo, 8 dragón, 9 serpiente, 10 caballo, 11 oveja).
 
 ## Más ejercicios (Lionel)
 
 !!! warning "Importante"
     Para probar algunos de estos ejercicios debes utilizar el archivo [`Documentos.zip`]({{ site_url }}/UD06/downloads/Documentos.zip). Descárgalo del aula virtual y descomprímelo en la carpeta de cada proyecto que crees.
 
-    Para superar los tests, además, se debe mantener la rutra de la carpeta Documentos en `files/_10_MasEjercicios/Documentos` dentro del proyecto de IntelliJ, como algunos ejercicios borraran y moveran contenido, podrás descomprimir la carpeta `Documentos` a partir del archivo Documentos.zip que se incluye con el proyecto.
+    Para superar los tests, además, se debe mantener la ruta de la carpeta Documentos en `files/_10_MasEjercicios/Documentos` dentro del proyecto de IntelliJ, como algunos ejercicios borraran y moveran contenido, podrás descomprimir la carpeta `Documentos` a partir del archivo Documentos.zip que se incluye con el proyecto.
 
 21. **Mostrar información de ficheros**
 
@@ -333,7 +342,7 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
     Implementa un programa que haga lo siguiente:
 
     - Cambiar el nombre de la carpeta `Documentos` a `DOCS`, el de la carpeta `Fotografias` a `FOTOS` y el de la carpeta `Libros` a `LECTURAS`
-    - Cambiar el nombre de todos los archivos de las carpetas `FOTOS` y `LECTURAS` quitándole la extensión. Por ejemplo, `astronauta.jpg` pasará a llamarse `astronauta`.
+    - Cambiar el nombre de todos los archivos de las carpetas `FOTOS` y `LECTURAS` quitándole la extensión, con un método `quitarExtensionArchivos(File carpeta)`. Por ejemplo, `astronauta.jpg` pasará a llamarse `astronauta`.
 
 24. **Creando (y moviendo) carpetas**
 
@@ -341,11 +350,11 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 25. **Borrando archivos**
 
-    Implementa un programa con una función `boolean borraTodo(File f)` que borre `f`: Si no existe lanzará una excepción. Si es un archivo lo borrará. Si es un directorio, borrará primero sus archivos y luego el propio directorio (recuerda que para poder borrar un directorio debe estar vacío). Devolverá `true` si pudo borrar el `File f` (`false` si no fué posible).
+    Implementa un programa con una función `boolean borrarTodo(File f)` que borre `f`: Si no existe lanzará una excepción. Si es un archivo lo borrará. Si es un directorio, borrará primero sus archivos y luego el propio directorio (recuerda que para poder borrar un directorio debe estar vacío). Devolverá `true` si pudo borrar el `File f` (`false` si no fué posible).
 
     Prueba la función borrando las carpetas: `Documentos/Fotografias`, `Documentos/Libros` y `Documentos` (es decir, tres llamadas a la función, en ese orden).
 
-    ***Super extra challenge***: Esta función, tal y como está definida, no borrará las subcarpetas que estén dentro de una carpeta (para ello habría que borrar primero el contenido de dichas subcarpetas). ¿Se te ocurre cómo podría hacerse?
+    ***Super extra challenge***: Esta función, tal y como está definida, no borrará las subcarpetas que estén dentro de una carpeta (para ello habría que borrar primero el contenido de dichas subcarpetas). ¿Se te ocurre cómo podría hacerse? Resuélvelo en la clase `Ejercicio_25_Extra`, con una función `borrarTodo(File f)` que también borre las subcarpetas y su contenido.
 
 26. **Máximo y mínimo**
 
