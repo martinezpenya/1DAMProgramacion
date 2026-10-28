@@ -100,6 +100,7 @@
     - `public boolean hayLibres()`. Devuelve true si en el hospital hay camas libres y devuelve false en caso contrario.
     - `public int primeraLibre()`. Devuelve el número de la primera cama libre del array `listaCamas` si hay camas libres o devuelve un 0 si no las hay.
     - `public void ingresarPaciente(String n, int e) throws HospitalLlenoException` Si hay camas libres, la primera de ellas (la de número menor) pasa a estar ocupada por el paciente de nombre `n` y edad `e`. Si no hay camas libres, lanza una excepción.
+    - La excepción se declara dentro de la clase `Hospital`, como clase anidada: `static class HospitalLlenoException extends Exception`. Fuera de `Hospital` se usa como `Hospital.HospitalLlenoException`.
     - `private void darAltaPaciente(int i)`. La cama `i` del hospital pasa a estar libre. (Afectará al número de camas libres)
     - `public void darAltas()`. Se mejora el estado (método `mejorar()` de `Paciente`) de cada uno de los pacientes del hospital y a aquellos pacientes sanos (cuyo estado es 6) se les da el alta médica (invocando al método `darAltaPaciente`).
     - `public String toString()`. Devuelve un `String` con la información de las camas del hospital. Por ejemplo,
@@ -154,6 +155,7 @@
     - `public void anyadir(Corredor c) throws ElementoDuplicadoException`. Añade un corredor al final de la lista de corredores (pero lo más al principio posible del array), siempre y cuando el corredor no esté ya en la lista, en cuyo caso se lanzará `ElementoDuplicadoException`
     - `public void insertarOrdenado(Corredor c)`. Inserta un corredor en la posición adecuada de la lista de manera que esta se mantenga ordenada crecientemente por el tiempo de llegada. Para poder realizar la inserción debe averiguarse la posición que debe ocupar el nuevo elemento y, antes de añadirlo al array, desplazar el elemento que ocupa esa posición y todos los posteriores, una posición a la derecha.
     - `public Corredor quitar(int dorsal) throws ElementoNoEncontradoException`. Quita de la lista al corredor cuyo dorsal se indica. El array debe mantenerse compacto, es decir, todos los elementos posteriores al eliminado deben desplazarse una posición a la izquierda. El método devuelve el Corredor quitado de la lista. Si no se encuentra se lanza `ElementoNoEncontradoException`. 
+    - Las excepciones se declaran dentro de la clase `ListaCorredores`, como clases anidadas: `static class ElementoDuplicadoException extends Exception` y `static class ElementoNoEncontradoException extends Exception`. Fuera de la lista se usan como `ListaCorredores.ElementoDuplicadoException`, etc.
     - `public String toString()` Devuelve un `String` con la información de la lista de corredores. Los minutos apareceran formateados con 2 decimales. Por ejemplo:
         ```sh
         Posición: 0
@@ -167,7 +169,7 @@
         Tiempo: 29.70 minutos
         ```
 
-4. (Clase `ContraReloj`, te la doy resuelta en Aules: no tiene puntos, sirve para que te centres en `Corredor` y `ListaCorredores`) Programa que simula una contrarreloj. Para llevar el control de una carrera contrarreloj se mantienen dos listas de corredores (dos objetos de tipo `ListaCorredores`):
+4. (Clase `ContraReloj`, te la doy resuelta y comentada en tu repositorio: descoméntala cuando tengas `Corredor` y `ListaCorredores`. No tiene puntos) Programa que simula una contrarreloj. Para llevar el control de una carrera contrarreloj se mantienen dos listas de corredores (dos objetos de tipo `ListaCorredores`):
 
     - (`hanSalido`) Una con los que han salido, que tiene a los corredores por orden de salida. El atributo tiempo de estos corredores será 0. Para que los corredores se mantengan por orden de salida, se añadiran a la lista utilizando el método añadir.
     - (`hanLlegado`) Otra con los corredores que hay llegado a la meta. A medida que los corredores llegan a la meta se les extrae de la primera lista, se les asigna un tiempo y se les inserta ordenadamente en esta segunda lista.
@@ -212,6 +214,7 @@
 
     - `public void reservar (String nif, String nombre, String telefono, int libro, int ejemplares) throws ListaLlenaException, ElementoDuplicadoException`: Crea una reserva y la añade a la lista. Lanza `ElementoDuplicadoException` si la reserva ya estaba en la lista. Lanza `ListaLlenaException` si la lista de reservas está llena.
     - `public void cancelar (String nif, int libro) throws ElementoNoEncontradoException`. Dado un nif de cliente y un código de libro, anular la reserva correspondiente. Lanzar `ElementoNoEncontradoException` si la reserva no existe.
+    - Las excepciones se declaran dentro de la clase `ListaReservas`, como clases anidadas: `static class ListaLlenaException extends Exception`, `static class ElementoDuplicadoException extends Exception` y `static class ElementoNoEncontradoException extends Exception`. Fuera de la lista se usan como `ListaReservas.ListaLlenaException`, etc.
     - `public String toString()`: Devuelve un `String` con los datos de todas las reservas de la lista.
     - `public int numEjemplaresReservadosLibro (int codigo)`: Devuelve el número de ejemplares que hay reservados en total de un libro determinado.
     - `public void reservasLibro (int codigo)`: Dado un código de libro, muestra el nombre y el teléfono de todos los clientes que han reservado el libro.
