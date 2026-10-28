@@ -10,7 +10,7 @@
 
 Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y cancelación de vuelos en una agencia de viajes. Dicha agencia trabaja únicamente con la compañía aérea Iberia, que ofrece vuelos desde/hacia varias ciudades de Europa. Se deben definir las clases que siguen, teniendo en cuenta que sus atributos serán privados y sus métodos sólo los que se indican en cada clase.
 
-1. Implementación de la clase `Vuelo`, que permite representar un vuelo mediante los atributos: 
+1. (Vuelo) Implementación de la clase `Vuelo`, que permite representar un vuelo mediante los atributos: 
 
     - `identificador` (`String`)
     - `origen` (`String`)
@@ -39,7 +39,7 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
     Asiento 23: Fernando Romero
     ```
 
-2. Diseñar e implementar una clase Java `TestVuelo` que permita probar la clase `Vuelo` y sus métodos. Para ello se desarrollará el método `main` en el que:
+2. (TestVuelo) Diseñar e implementar una clase Java `TestVuelo` que permita probar la clase `Vuelo` y sus métodos. Para ello se desarrollará el método `main` en el que:
 
     - Se cree el vuelo IB101 de Valencia a París, que sale a las 19:05 y llega a las 21:00
     - Reservar:
@@ -50,7 +50,7 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
     - Cancelar la reserva del asiento que indique el usuario.
     - Mostrar de nuevo el vuelo por pantalla
 
-3. Implementación de la clase `Compania` para representar todos los vuelos de una compañía aérea. Una Compañía tiene un nombre y puede ofrecer, como mucho, 10 vuelos distintos. Para representarlos se utilizará `listaVuelos`, un array de objetos `Vuelo` junto con un atributo `numVuelos` que indique el número de vuelos que la compañía ofrece en un momento dado. Las operaciones de esta clase son:
+3. (Compania) Implementación de la clase `Compania` para representar todos los vuelos de una compañía aérea. Una Compañía tiene un nombre y puede ofrecer, como mucho, 10 vuelos distintos. Para representarlos se utilizará `listaVuelos`, un array de objetos `Vuelo` junto con un atributo `numVuelos` que indique el número de vuelos que la compañía ofrece en un momento dado. Las operaciones de esta clase son:
 
     - `public Compania(String n) throws FileNotFoundException`. Constructor de una compañía de nombre `n`. Cuando se crea una compañía, se invoca al método privado `leeVuelos()` para cargar la información de vuelos desde un fichero. Si el fichero no existe, se propaga la excepción `FileNotFoundException`
     - `private void leeVuelos() throws FileNotFoundException`. Lee desde un fichero toda la información de los vuelos que ofrece la compañía y los va almacenando en el array de vuelos `listaVuelos`. El nombre del fichero coincide con el nombre de la compañía y tiene extensión `.txt`. La información de cada vuelo se estructura en el fichero como sigue:
@@ -74,7 +74,7 @@ Se desea realizar una aplicación `GestorVuelos` para gestionar la reserva y can
     Iberia IB202 Mílán Valencia 21:40:00 23:35:00
     ```
 
-4. En la clase `GestorVuelos` se probará el comportamiento de las clases anteriores. En esta clase se debe implementar el método `main` en el que, por simplificar, se pide únicamente:
+4. (GestorVuelos) En la clase `GestorVuelos` se probará el comportamiento de las clases anteriores. En esta clase se debe implementar el método `main` en el que, por simplificar, se pide únicamente:
 
     - la creación de la compañía aérea `Iberia`. Se dispone de un fichero de texto "`Iberia.txt`", con la información de los vuelos que ofrece.
     - Reserva de un asiento de ventanilla en un vuelo de Valencia a París por parte de Manuel Soler Roca. Para ello:
@@ -98,7 +98,7 @@ Su funcionamiento, a grandes rasgos, es el siguiente:
 
 Durante el proceso se pueden producir diversas incidencias, como por ejemplo, que el cliente no haya introducido suficiente crédito para comprar el producto, que no quede producto o que no haya cambio suficiente para la devolución. La máquina también da la posibilidad de solicitar la devolución del crédito sin realizar la compra.
 
-1. Diseñar la clase `Expendedora` (proyecto `Expendedora`) con los atributos y métodos que se describen a continuación.
+1. (Expendedora) Diseñar la clase `Expendedora` (proyecto `Expendedora`) con los atributos y métodos que se describen a continuación.
 
     - Atributos (privados)
 
@@ -142,13 +142,13 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
             Si la venta no es posible se lanzará la excepción correspondiente a la situación que impide completar la venta.
 
-2. La clase `Producto` permite representar uno de los artículos de los que vende una máquina expendedora. Para ello utilizaremos tres atributos privados `nombre` (`String`), `precio` (`double`) y `stock` (`int`), y los siguientes métodos:
+2. (Producto) La clase `Producto` permite representar uno de los artículos de los que vende una máquina expendedora. Para ello utilizaremos tres atributos privados `nombre` (`String`), `precio` (`double`) y `stock` (`int`), y los siguientes métodos:
 
     - `public Producto(String nombre, double precio, int stock)` Constructor que inicializa el producto con los parámetros indicados
     - Consultores de los tres atributos: `getNombre`, `getPrecio` y `getStock`
     - `public int decrementarStock()`: Decrementa en 1 el stock del producto y devuelve el stock resultante.
 
-3. La clase `TestExpendedora` sirve para provar los métodos desarrollados en las clases `Expendedora` y `Producto`.
+3. (TestExpendedora) La clase `TestExpendedora` sirve para provar los métodos desarrollados en las clases `Expendedora` y `Producto`.
 
     - Crea un Objeto de tipo `Expendedora` e inicializalo con: 12 unidades de stock, 5 euros de cambio y un precio de 3.75 euros. Muestra por pantalla su estado actual.
     - Simula la introducción por parte del cliente de un billete de 5 euros y muestra el estado de la máquina `Expendedora`.
@@ -159,7 +159,7 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
     - Crea un último objeto de tipo `Expendedora` que inicialmente tenga 0 euros de cambio (el resto de valores a tu gusto), simula la compra de un producto para el que la máquina tenga que devolver algún importe, gestiona la excepción.
     - Muestra las recaudaciones para las 3 máquinas expendedoras.
    
-4. La clase `Surtido` representa una colección de productos. Para ello se usará un atributo `listaProductos`, array de `Productos`. El array se rellenará con los datos de productos extraidos de un fichero de texto y, una vez creado el surtido no será posible añadir o quitar productos. Así, el array de productos estará siempre completo y no es necesario ningún atributo que indique cuantos productos hay en el array.
+4. (Surtido) La clase `Surtido` representa una colección de productos. Para ello se usará un atributo `listaProductos`, array de `Productos`. El array se rellenará con los datos de productos extraidos de un fichero de texto y, una vez creado el surtido no será posible añadir o quitar productos. Así, el array de productos estará siempre completo y no es necesario ningún atributo que indique cuantos productos hay en el array.
 
     Se implementarán los siguientes métodos:
 
@@ -185,9 +185,9 @@ Durante el proceso se pueden producir diversas incidencias, como por ejemplo, qu
 
     - `public String[] getNombresProductos()` Devuelve un array con los nombres de los productos. La posición `0` del array no se utilizará (será `null`)
 
-6. Crea una copia de la clase `Expendedora` y llámala `ExpendedoraSurtido`, con el constructor `public ExpendedoraSurtido(double cambio)`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos usando la nueva clase `Surtido`. Por ejemplo ya no tienen sentido los atributos stock y precio ya que pertenecen al `Surtido`. Modifica también el método `public String toString()`, para que muestre por pantalla el listado de productos con su nombre, precio y stock para mostrar al cliente que productos puede elegir. El código del producto coincidirá con su posición al leer el surtido.
+6. (ExpendedoraSurtido) Crea una copia de la clase `Expendedora` y llámala `ExpendedoraSurtido`, con el constructor `public ExpendedoraSurtido(double cambio)`. Añadir los atributos y hacer los cambios necesarios en la clase para que sea capaz de dispensar varios productos usando la nueva clase `Surtido`. Por ejemplo ya no tienen sentido los atributos stock y precio ya que pertenecen al `Surtido`. Modifica también el método `public String toString()`, para que muestre por pantalla el listado de productos con su nombre, precio y stock para mostrar al cliente que productos puede elegir. El código del producto coincidirá con su posición al leer el surtido.
 
-7. Crea una copia de la clase `TestExpendedora` y nómbrala `TestExpendedoraSurtido` para adaptarla a los cambios hechos en la clase `Expendedora` y usando la nueva posibilidad de comprar diferentes productos y usando solamente un único objeto `Expendedora`. Al final en lugar de mostrar la recaudación de las 3 máquinas expendedoras, muestra solo la de la única que hay, que muestra el surtido de esta manera:
+7. (TestExpendedoraSurtido) Crea una copia de la clase `TestExpendedora` y nómbrala `TestExpendedoraSurtido` para adaptarla a los cambios hechos en la clase `Expendedora` y usando la nueva posibilidad de comprar diferentes productos y usando solamente un único objeto `Expendedora`. Al final en lugar de mostrar la recaudación de las 3 máquinas expendedoras, muestra solo la de la única que hay, que muestra el surtido de esta manera:
 
    ```sh
    Prod.	Stock	Precio
@@ -290,19 +290,19 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 ## **Streams de objetos. Serialización.**
 
-18. Paquete `GuardaLeeLibros`
+18. (GuardaLibros) Paquete `GuardaLeeLibros`
 
     - (`Autor`) Crea la clase `Autor`, con los atributos **nombre**, **año de nacimiento** y **nacionalidad**. Incorpora un **constructor** `Autor(String nombre, int anyoNacimiento, String nacionalidad)` y el método `toString()`.
     - (`Libro`) Crea la clase `Libro`, con los atributos **titulo**, **año de edición** y **autor** (Objeto de la clase `Autor`). Incorpora un **constructor** `Libro(String titulo, int anyoEdicion, Autor autor)` y el método `toString()`, que incluye los datos de su autor.
     - Escribe un programa `GuardaLibros` que cree tres libros y los almacene en el fichero `files/_08_Serializacion/biblioteca.obj`, cada libro con su propio `writeObject`.
     - Las clases (también `Autor`) deberán implementar el interfaz `Serializable`.
 
-19. Paquete `GuardaLeeLibros`
+19. (LeeLibros) Paquete `GuardaLeeLibros`
     - Escribe un programa (`LeeLibros`) que lea los objetos del fichero `biblioteca.obj` y los muestre por pantalla (Libros y Autores).
 
 ## Sockets
 
-20. Programar un Servidor que reciba una fecha (previamente validada por el cliente) y nos diga cual es nuestro signo del zodíaco occidental y el animal que corresponde en el zodíaco oriental (animales).
+20. (Zodiaco) Programar un Servidor que reciba una fecha (previamente validada por el cliente) y nos diga cual es nuestro signo del zodíaco occidental y el animal que corresponde en el zodíaco oriental (animales).
 
 !!! info "Test"
     Las clases son `TCPServidor` y `TCPClient`. El servidor está en `localhost` y el puerto se recibe como primer argumento del `main` (`args[0]`); si no hay argumentos, se usa el 6000.
@@ -495,7 +495,7 @@ Los  buffers hacen que las operaciones de lectura-escritura  se realicen inicial
 
 6. (`Iguales`) Escribir un programa que compruebe si el contenido de dos ficheros es idéntico. Puesto que no sabemos de qué tipo de ficheros se trata, (de texto, binarios, …) habrá que hacer una comparación byte por byte.
 
-7. Escribe los siguientes métodos y programa:
+7. (GenerarMedia) Escribe los siguientes métodos y programa:
 
     - Método `void generar()` que genere 20 números aleatorios enteros entre 1 y 100 y los muestre por pantalla.
     - Método `void media()` que lea de teclado 20 números enteros y calcule su media.

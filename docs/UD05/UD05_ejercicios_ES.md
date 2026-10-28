@@ -11,7 +11,7 @@
     - Año de ingreso (número entero)
     - Sueldo bruto anual (número real)
 
-1. Diseñar una clase Java `Empleado`, que contenga los atributos (privados) que caracterizan a un empleado e implemente los métodos adecuados para:
+1. (Empleado) Diseñar una clase Java `Empleado`, que contenga los atributos (privados) que caracterizan a un empleado e implemente los métodos adecuados para:
 
     - Crear objetos de la clase: **Constructor** que reciba todos los datos del empleado a crear.
     - Consultar el valor de cada uno de sus atributos. (**Consultores** o **getters**)
@@ -39,21 +39,21 @@
         | 1500                   | 2100                      | 20   |
         | 2100                   | infinito | 30   |
 
-2. Diseñar una clase Java `TestEmpleado` que permita probar la clase `Empleado` y sus métodos. Para ello se desarrollará el método `main` en el que:
+2. (TestEmpleado) Diseñar una clase Java `TestEmpleado` que permita probar la clase `Empleado` y sus métodos. Para ello se desarrollará el método `main` en el que:
     - Se crearán dos empleados utilizando los datos que introduzca el usuario.
     - Se incrementará el sueldo un 20 % al empleado que menos cobre.
     - Se incrementará el sueldo un 10% al empleando más antiguo.
     - Muestra el IRPF que correspondería a cada empleado. 
     - Para comprobar que las operaciones se realizan correctamente, muestra los datos de los empleados tras cada operación.
 
-3. Diseñar una clase `Empresa`, que permita almacenar el nombre de la empresa y la información de los empleados de la misma (máximo 10 empleados) en un array. Para ello, se utilizarán tres atributos: `nombre`, `plantilla` (array de empleados) y `numEmpleados` (número de empleados que tiene la empresa). En esta clase, se deben implementar los métodos:
+3. (Empresa) Diseñar una clase `Empresa`, que permita almacenar el nombre de la empresa y la información de los empleados de la misma (máximo 10 empleados) en un array. Para ello, se utilizarán tres atributos: `nombre`, `plantilla` (array de empleados) y `numEmpleados` (número de empleados que tiene la empresa). En esta clase, se deben implementar los métodos:
     - `public Empresa (String nombre)`. Constructor de la clase. Crea la empresa con el nombre indicado y sin empleados.
     - `public void contratar(Empleado e) throws PlantillaCompletaException`. Añade el empleado indicado a la plantilla de la empresa, siempre que quepa en el array. Si no cabe, se lanzará la excepción `PlantillaCompletaException`.
     - `public void despedir(Empleado e) throws ElementoNoEncontradoException`. Elimina el empleado indicado de la plantilla. Si no existe en la empresa, se lanza `ElementoNoEncontradoException`.
     - `public void subirTrienio (double porcentaje)` Subir el sueldo, en el porcentaje indicado, a todos los empleados cuya antigüedad sea exactamente tres años.
     - `public String toString()`. Devuelve un `String` con el nombre de la empresa y la  información de todos los empleados. La información de los distintos empleados debe estar separada por saltos de línea.
 
-4. Diseñar una clase Java `TestEmpresa` que permita probar la clase `Empresa` y sus métodos. Para ello, desarrolla el método `main` y en él …:
+4. (TestEmpresa) Diseñar una clase Java `TestEmpresa` que permita probar la clase `Empresa` y sus métodos. Para ello, desarrolla el método `main` y en él …:
     - Crea una empresa, de nombre "DAMCarlet".
     - Contrata a varios empleados (con el nombre, DNI, etc. que quieras).
     - Usa el método `subirTrienio` para subir un 10% el salario de los empleados que cumplen un trienio en el año actual.
@@ -65,7 +65,7 @@
 
 0. Se desea realizar una aplicación para gestionar el ingreso y el alta de pacientes de un hospital. Una de las clases que participará en la aplicación será la clase `Paciente`, que se detalla a continuación :
 
-1. La clase `Paciente` permite representar un paciente mediante los atributos: `nombre` (cadena), `edad` (entero), `estado` (entero entre 1 -más grave- y 5 -menos grave-, 6 si está curado), y con las siguientes operaciones:
+1. (Paciente) La clase `Paciente` permite representar un paciente mediante los atributos: `nombre` (cadena), `edad` (entero), `estado` (entero entre 1 -más grave- y 5 -menos grave-, 6 si está curado), y con las siguientes operaciones:
 
     - `public Paciente (String n, int e)`. Constructor de un objeto `Paciente` de nombre `n`, de `e` años y cuyo estado es un valor aleatorio entre 1 y 5.
     - `public Paciente (String n, int e, int estado)`. Constructor de un objeto `Paciente` con el estado indicado (útil para probar la clase).
@@ -85,7 +85,7 @@
         David.compareTo(Pepe) = 15
         ```
 
-2. Diseñar una clase Java `TestPaciente` que permita probar la clase `Paciente` y sus métodos. Para ello se desarrollará el método `main` en el que:
+2. (TestPaciente) Diseñar una clase Java `TestPaciente` que permita probar la clase `Paciente` y sus métodos. Para ello se desarrollará el método `main` en el que:
 
     - Se crearán dos pacientes: "Antonio" de 20 años y "Miguel" de 30 años.
     - Imprimir el estado inicial de los dos pacientes.
@@ -93,7 +93,7 @@
     - Aplicar "mejoras" al paciente más grave hasta que los dos pacientes tengan el mismo estado.
     - Imprimir el estado final de los dos pacientes.
 
-3. La clase **Hospital** contiene la información de las camas de un hospital, así como de los pacientes que las ocupan. Un Hospital tiene un número máximo de camas `MAXC` = 200 y para representarlas se utilizará un array (llamado `listaCamas`) de objetos de tipo Paciente junto con un atributo (`numLibres`) que indique el número de camas libres del hospital en un momento dado. El número de cada cama coincide con su posición en el array de pacientes (la posición 0 no se utiliza), de manera que `listaCamas[i]` es el Paciente que ocupa la cama `i` o es `null` si la cama está libre. Las operaciones de esta clase son:
+3. (Hospital) La clase **Hospital** contiene la información de las camas de un hospital, así como de los pacientes que las ocupan. Un Hospital tiene un número máximo de camas `MAXC` = 200 y para representarlas se utilizará un array (llamado `listaCamas`) de objetos de tipo Paciente junto con un atributo (`numLibres`) que indique el número de camas libres del hospital en un momento dado. El número de cada cama coincide con su posición en el array de pacientes (la posición 0 no se utiliza), de manera que `listaCamas[i]` es el Paciente que ocupa la cama `i` o es `null` si la cama está libre. Las operaciones de esta clase son:
 
     - `public Hospital()`. Constructor de un hospital. Cuando se crea un hospital, todas las camas están libres.
     - `public int getNumLibres()`. Consultor del número de camas libres.
@@ -114,7 +114,7 @@
         199 Andrés Sánchez 29 3
         ```
 
-4. En la clase `GestorHospital` se probará el comportamiento de las clases anteriores. El programa deberá:
+4. (GestorHospital) En la clase `GestorHospital` se probará el comportamiento de las clases anteriores. El programa deberá:
 
     - Crear un hospital.
     - Ingresar a cinco pacientes con los datos simulados introducidos directamente en el programa.
@@ -125,7 +125,7 @@
 
 0. Se quiere realizar una aplicación para registrar las posiciones y tiempos de llegada en una carrera ciclista contrarreloj. 
 
-1. La clase `Corredor` representa a un participante en la carrera. Sus atributos son el dorsal (entero), el nombre (String) y el tiempo en segundos (double) que le ha costado completar el recorrido. Los métodos con los que cuenta son:
+1. (Corredor) La clase `Corredor` representa a un participante en la carrera. Sus atributos son el dorsal (entero), el nombre (String) y el tiempo en segundos (double) que le ha costado completar el recorrido. Los métodos con los que cuenta son:
 
     - `public Corredor(int d, String n)`. Constructor a partir del dorsal y el nombre. Por defecto el tiempo tardado es 0
     - `public double getTiempo()`. Devuelve el tiempo tardado por el corredor
@@ -143,13 +143,13 @@
     - `public int compareTo (Corredor o)`. Un corredor es menor que otro si tiene menor dorsal. 
     - `public static int generarDorsal()`. Devuelve un número de dorsal generado secuencialmente. Para ello la clase hará uso de un atributo `static int siguienteDorsal` que incrementará cada vez que se genere un nuevo dorsal.
 
-2. Diseñar una clase Java `TestCorredor` que permita probar la clase Corredor y sus métodos. Para ello se desarrollará el método `main` en el que:
+2. (TestCorredor) Diseñar una clase Java `TestCorredor` que permita probar la clase Corredor y sus métodos. Para ello se desarrollará el método `main` en el que:
 
     - Se crearán dos corredores: El nombre lo indicará el usuario mientras que el dorsal se generará utilizando el método `generarDorsal()` de la clase.
     - Se establecerá el tiempo de llegada del primer corredor a 300 segundos y el del segundo a 400. 
     - Se mostrarán los datos de ambos corredores (`toString`)
 
-3. La clase `ListaCorredores` permite representar a un conjunto de corredores. En la lista, como máximo habrá 200 corredores, aunque puede haber menos de ese número. Se utilizará un array, llamado lista, de 200 elementos junto con una propiedad `numCorredores` que permita saber cuantos corredores hay realmente. Métodos:
+3. (ListaCorredores) La clase `ListaCorredores` permite representar a un conjunto de corredores. En la lista, como máximo habrá 200 corredores, aunque puede haber menos de ese número. Se utilizará un array, llamado lista, de 200 elementos junto con una propiedad `numCorredores` que permita saber cuantos corredores hay realmente. Métodos:
 
     - `public ListaCorredores()`. Constructor. Crea la lista de corredores, incicialmente vacía.
     - `public void anyadir(Corredor c) throws ElementoDuplicadoException`. Añade un corredor al final de la lista de corredores (pero lo más al principio posible del array), siempre y cuando el corredor no esté ya en la lista, en cuyo caso se lanzará `ElementoDuplicadoException`
@@ -193,7 +193,7 @@
     - `Código` del libro reservado. (`entero`)
     - Numero de `ejemplares` (`entero`)
 
-1. Diseñar la clase `Reserva`, de manera que contemple la información descrita e implementar:
+1. (Reserva) Diseñar la clase `Reserva`, de manera que contemple la información descrita e implementar:
 
     - `public Reserva(String nif, String nombre, String tel, int codigo, int ejemplares)`. Constructor que recibe todos los datos de la reserva.
     - `public Reserva(String nif, String nombre, String tel, int codigo)`. Constructor que recibe los datos del cliente y el código del libro. Establece el número de ejemplares a uno. 
@@ -203,14 +203,14 @@
     - `public boolean equals(Object o)`. Dos reservas son iguales si son del mismo cliente y reservan el mismo libro.
     - `public int compareTo(Object o)`. Es menor la reserva cuyo código de libro es menor. El parámetro es de tipo `Object` así que revisa si debes hacer alguna "adaptación".
 
-2. Diseñar una clase Java `TestReservas` que permita probar la clase `Reserva` y sus métodos. Para ello se desarrollará el método `main` en el que:
+2. (TestReservas) Diseñar una clase Java `TestReservas` que permita probar la clase `Reserva` y sus métodos. Para ello se desarrollará el método `main` en el que:
 
     - Se creen dos reservas con los datos que introduce el usuario. Las reservas no pueden ser iguales (equals). Si la segunda reserva es igual a la primera se pedirá de nuevo los datos de la segunda al usuario.
     - Se incremente en uno el número de ejemplares de ambas reservas.
     - Se muestre la menor y a continuación la mayor.
     - Mostrar el listado de reservas cada vez que consideres oportuno.
 
-3. Diseñar una clase `ListaReservas` que implemente una lista de reservas. Como máximo puede haber 100 reservas en la lista. Se utilizará un array de Reservas que ocuparemos a partir de la posición 0 y un atributo que indique el número de reservas. Las reservas existentes ocuparán las primeras posiciones del array (sin espacios en blanco). Cada objeto `ListaReservas` es una lista independiente: el array y el contador son atributos de instancia (no `static`), y se crea con un constructor sin parámetros (`new ListaReservas()`), que deja la lista vacía. Implementar los siguientes métodos (de instancia):
+3. (ListaReservas) Diseñar una clase `ListaReservas` que implemente una lista de reservas. Como máximo puede haber 100 reservas en la lista. Se utilizará un array de Reservas que ocuparemos a partir de la posición 0 y un atributo que indique el número de reservas. Las reservas existentes ocuparán las primeras posiciones del array (sin espacios en blanco). Cada objeto `ListaReservas` es una lista independiente: el array y el contador son atributos de instancia (no `static`), y se crea con un constructor sin parámetros (`new ListaReservas()`), que deja la lista vacía. Implementar los siguientes métodos (de instancia):
 
     - `public void reservar (String nif, String nombre, String telefono, int libro, int ejemplares) throws ListaLlenaException, ElementoDuplicadoException`: Crea una reserva y la añade a la lista. Lanza `ElementoDuplicadoException` si la reserva ya estaba en la lista. Lanza `ListaLlenaException` si la lista de reservas está llena.
     - `public void cancelar (String nif, int libro) throws ElementoNoEncontradoException`. Dado un nif de cliente y un código de libro, anular la reserva correspondiente. Lanzar `ElementoNoEncontradoException` si la reserva no existe.
@@ -219,7 +219,7 @@
     - `public int numEjemplaresReservadosLibro (int codigo)`: Devuelve el número de ejemplares que hay reservados en total de un libro determinado.
     - `public void reservasLibro (int codigo)`: Dado un código de libro, muestra el nombre y el teléfono de todos los clientes que han reservado el libro.
 
-4. Realizar un programa `GestionReservas` que, utilizando un menú, permita:
+4. (GestionReservas) Realizar un programa `GestionReservas` que, utilizando un menú, permita:
 
     - Realizar reserva. Permite al usuario realizar una reserva.
     - Anular reserva: Se anula la reserva que indique el usuario (Nif de cliente y código de libro).
@@ -230,7 +230,7 @@
 
 0. Queremos realizar la parte de un programa de correo electrónico que gestiona la organización de los mensajes en distintas carpetas. Para ello desarrollaremos:
 
-1. La clase `Mensaje`. De un mensaje conocemos:
+1. (Mensaje) La clase `Mensaje`. De un mensaje conocemos:
 
     - `Codigo (int)` Número que permite identificar a los mensajes.
     - `Emisor (String)`: email del emisor.
@@ -246,7 +246,7 @@
     - `public static boolean validarEMail(String email)`: Método estático que devuelve true o false indicando si la dirección de correo indicada es válida o no. Una dirección es válida si tiene la forma `direccion@subdominio.dominio`
     - `public String toString()`
 
-2. Con la clase `TestCorreo` probaremos las clases y métodos desarrollados.
+2. (TestCorreo) Con la clase `TestCorreo` probaremos las clases y métodos desarrollados.
 
     - Crea varios mensajes con los datos que introduzca el usuario y muéstralos por pantalla.
     - Prueba el método `validarEMail` de la clase Mensaje con las direcciones siguientes (solo la primera es correcta):
@@ -255,7 +255,7 @@
         - `tuCorreo@gmail`
         - `tuCorreo.com@gmail`	
 
-3. La clase `Carpeta`, cada carpeta tiene un nombre y una lista de Mensajes. Para ello usaremos un array con capacidad para 100 mensajes y un atributo que indique el número de mensajes que contiene la carpeta. Además se implementarán los siguientes métodos:
+3. (Carpeta) La clase `Carpeta`, cada carpeta tiene un nombre y una lista de Mensajes. Para ello usaremos un array con capacidad para 100 mensajes y un atributo que indique el número de mensajes que contiene la carpeta. Además se implementarán los siguientes métodos:
 
     - `public Carpeta(String nombre)`: Constructor. Dado un nombre, crea la carpeta sin mensajes.
     - `public void anyadir(Mensaje m)`: Añade a la carpeta el mensaje indicado.
@@ -264,7 +264,7 @@
     - `public String toString()` que devuelva un `String` con el nombre de la carpeta y sus mensajes
     - `public static void moverMensaje(Carpeta origen, Carpeta destino, int codigo) throws ElementoNoEncontradoException`: Método estático. Recibe dos Carpetas de correo y un código de mensaje y mueve el mensaje indicado de una carpeta a otra. Para ello buscará el mensaje en la carpeta origen. Si existe lo eliminará y lo añadirá a la carpeta de destino. Si el mensaje indicado no está en la carpeta de origen lanza `ElementoNoEncontradoException`.
 
-4. Con la clase `TestCarpetas` probaremos las clases y métodos desarrollados:
+4. (TestCarpetas) Con la clase `TestCarpetas` probaremos las clases y métodos desarrollados:
 
     - Crea dos carpetas de correo de nombre `Mensajes recibidos` y `Mensajes eliminados` respectivamente.
     - Crea varios mensajes y añádelos a `Mensajes recibidos`.
@@ -275,7 +275,7 @@
 
 0. Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, se implementarán en Java las clases necesarias. 
 
-1. Una de ellas es la clase `Carta` que permite representar una carta de la baraja española. La información requerida para identificar una `Carta` es:
+1. (Carta) Una de ellas es la clase `Carta` que permite representar una carta de la baraja española. La información requerida para identificar una `Carta` es:
 
     - su `palo` (oros, copas, espadas o bastos) y
     - su `valor` (un entero entre 1 y 12).
@@ -291,7 +291,7 @@
     - Escribir un método `sigPalo` para devolver una nueva carta con el mismo valor que el de la carta actual pero del palo siguiente, según la ordenación anterior y sabiendo que el siguiente al palo bastos es oros.
     - Escribir un método `toString` para transformar en `String` la carta actual, con el siguiente formato: "valor de palo"; por ejemplo, "4 de oros" o "1 de bastos" (sobrescritura del método `toString` de `Object`).
 
-2. Implementar una clase `JuegoCartas` con los métodos siguientes:
+2. (JuegoCartas) Implementar una clase `JuegoCartas` con los métodos siguientes:
 
     - Un método de clase (estático) `public static int ganadora( Carta c1, Carta c2, int triunfo)` que dados dos objetos `Carta` y un número entero representando el palo de triunfo (o palo ganador), determine cuál es la carta ganadora. El método debe devolver 0 si las dos cartas son iguales. En caso contrario, devolverá -1 cuando la primera carta es la ganadora y 1 si la segunda carta es la ganadora.
 
