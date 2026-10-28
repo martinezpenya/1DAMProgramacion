@@ -18,6 +18,8 @@
         - `Autor` (String): Autor del libro.
         - `Estantería` (String): Estantería de la biblioteca en la que se encuentra el libro.
 
+        Con el constructor `public Libro(String titulo, String autor, String estanteria)` y los consultores `getTitulo()`, `getAutor()` y `getEstanteria()`.
+
     - Diseña la clase `CatalogoLibros` como una colección de libros (llamada `catalogo`). Utiliza el tipo de colección que crees que más se ajusta a los requisitos de la aplicación justificando la elección. Implementa los siguientes métodos:
 
     - `public CatalogoLibros(Libro v[])`: Constructor. Para simplificar, inicializa el catálogo y lo rellena con los libros del `array v`, en lugar de obtenerlos de un fichero.
@@ -115,6 +117,8 @@
     - Comprobar si el `ArrayList` `copiaArrayList` está vacio.
     - Convertir el `ArrayList` `misNumeros` en un `Array` y recorrerlo con un bucle mejorado.
 
+    Muestra por pantalla el resultado de cada paso (los `ArrayList` con `System.out.println` y las comprobaciones como `true`/`false`).
+
 2. **Actividad 2**. Un cine precisa una aplicación para controlar las personas de la cola para los estrenos de películas. Debemos crear una lista con la edad de las personas de la cola y tendremos que calcular la entrada según la edad de la persona (mínimo 5 años). Para la edad de la persona se generan aleatoriamente números entre 5 y 60 años. Al final, deberemos mostrar la cantidad total recaudada. El número de personas de la cola se elige al azar entre 0 y 50.
 
     La lista de precios se basa en la siguiente tabla.
@@ -133,7 +137,7 @@
     [18, 36, 50, 35, 28, 55]
     ```
 
-3. **Actividad 3**. Un supermercado nos pide que hagamos una aplicación que almacene los productos comprados. La aplicación debe almacenar `Productos` (clase `Actividad3Producto`) y cada producto al crearse contiene una `cantidad`, un `precio` (generados aleatoriamente). El nombre del producto será básico (producto1, producto2, producto3, etc.). Calcular el precio total de una lista de entre 1 y 10 productos (aleatorio). Mostrar un ticket con todo lo vendido y el precio final.
+3. **Actividad 3**. Un supermercado nos pide que hagamos una aplicación que almacene los productos comprados. La aplicación debe almacenar `Productos` (clase `Actividad3Producto`) y cada producto al crearse contiene una `cantidad`, un `precio` (generados aleatoriamente). El nombre del producto será básico (producto1, producto2, producto3, etc.). Calcular el precio total de una lista de entre 1 y 10 productos (aleatorio). Mostrar un ticket con todo lo vendido y el precio final. Para numerar los nombres, `Actividad3Producto` usa un atributo de clase `static int contadorProducto`, y el precio de cada línea lo calcula el método `public double getPrecioLinea()` (cantidad × precio).
 
     ```bash
     Producto1	3	47,95	143,84
@@ -145,7 +149,7 @@
     El precio final del ticket es de 1772,92 euros
     ```
 
-4. **Actividad 4**. Desarrollar un sistema de gestión de pacientes. Tendremos un archivador dónde iremos guardando todas las fichas de los pacientes. Las fichas (`Actividad4Paciente`) contienen la siguiente información: `nombre`, `apellidos` y `edad`.
+4. **Actividad 4**. Desarrollar un sistema de gestión de pacientes. Tendremos un archivador dónde iremos guardando todas las fichas de los pacientes. Las fichas (`Actividad4Paciente`) contienen la siguiente información: `nombre`, `apellidos` y `edad` (constructor `public Actividad4Paciente(String nombre, String apellidos, int edad)`). El listado se hace con un método `public static void listado(Collection<Actividad4Paciente> c)`.
     La clase `Actividad4` tiene un método `main` en el que se crea un archivador, dos o tres fichas que se guardarán en el archivador, se listará el contenido, se recorrerá el archivador borrando todas las fichas que cumplan dos condiciones (nombre "David" o menor de 10 años, por ejemplo) y por último se eliminará alguna ficha (directamente) y se volverá a listar su contenido.
 
     ```bash
@@ -228,7 +232,7 @@
 
 ## Ejercicios Genericidad
 
-1. Crear una clase Genericos (proyecto Genéricos, paquete Genericos) que incorpore los métodos genéricos que se indican a continuación. Los métodos creados serán *public* *static.* En el proyecto se creará además la clase o clases necesarias para probar los métodos desarrollados.
+1. (Genericos) Crear una clase Genericos (proyecto Genéricos, paquete Genericos) que incorpore los métodos genéricos que se indican a continuación. Los métodos creados serán *public* *static.* En el proyecto se creará además la clase o clases necesarias para probar los métodos desarrollados.
 
     1. `Object minimo (Object o1, Object o2)`, que devuelva el mínimo de dos objetos cualesquiera (que se suponen del mismo tipo). Una vez desarrollado, prueba el método para obtener el mínimo de dos objetos Integer. Pruébalo también para obtener el mínimo entre un Objeto Integer y un objeto String. En éste último caso, el programa ¿da error de ejecución? Si es así, explica por qué.
     2. `Object maximo (Object o1, Object o2)`, que devuelva el maximo de dos objetos cualesquiera (que se suponen del mismo tipo).
@@ -276,11 +280,20 @@
 
 ## Programación funcional. Funciones Lambda.
 
-1. Supongamos que tenemos implementada una clase `Libro` que tiene los atributos de `titulo`, `autor` y `precio`, con el correspondiente constructor y sus getters. Disponemos además de una lista de libros en una variable `libros`. Se pide implementar un método que muestre los títulos de los libros por pantalla, ordenados de menor a mayor.
+1. (Libros) Supongamos que tenemos implementada una clase `Libro` que tiene los atributos de `titulo`, `autor` y `precio`, con el correspondiente constructor y sus getters. Disponemos además de una lista de libros en una variable `libros`. Se pide implementar un método que muestre los títulos de los libros por pantalla, ordenados de menor a mayor.
 
-2. Disponemos de una clase llamada `Receta` que almacena los datos de una receta de cocina: su nombre, su categoría (carnes, pastas...) y sus calorías, incluyendo su constructor y getters. Supongamos que tenemos una lista de recetas llamada `recetas`. Se pide implementar las siguientes consultas en Java:
+    !!! warning "Importante"
+        El constructor es `Libro(String titulo, String autor, double precio)`. Para pasar los tests, la clase `TestLibro` tiene que usar esta lista de libros:
+        ```java
+        libros.add(new Libro("El juego de Ender", "Orson Scott Card", 8.95));
+        libros.add(new Libro("La tabla de Flandes", "Arturo Pérez Reverte", 7.90));
+        libros.add(new Libro("La historia interminable", "Michael Ende", 6.50));
+        libros.add(new Libro("El señor de los anillos", "J.R.R. Tolkien", 14.25));
+        ```
+
+2. (Recetas) Disponemos de una clase llamada `Receta` que almacena los datos de una receta de cocina: su nombre, su categoría (carne, pasta...) y sus calorías, incluyendo su constructor `Receta(String nombre, String categoria, int calorias)` y getters. Supongamos que tenemos una lista de recetas llamada `recetas`. Se pide implementar las siguientes consultas en Java:
     - Recetas de menos de 500 calorías
-    - Nombres de las recetas de "carnes", ordenadas alfabéticamente
+    - Nombres de las recetas de "carne", ordenadas alfabéticamente
     - Media de calorías de las recetas de "verduras"
     - Cuántas recetas hay de más de 800 calorías
     
@@ -295,18 +308,22 @@
         recetas.add(new Receta("Ensalada de pasta", "pasta", 325));
         ```
    
-3. Usando los streams de Java, que están muy relacionados con las expresiones lambda, debes crear una lista de 1000 números enteros aleatorios entre -5000 y 5000 y a partir de dicha lista vamos a imprimir por pantalla:
+3. (Numeros) Usando los streams de Java, que están muy relacionados con las expresiones lambda, debes crear una lista de 1000 números enteros aleatorios entre -5000 y 5000 y a partir de dicha lista vamos a imprimir por pantalla:
 
     - El máximo de los números pares.
     - El mínimo de los números múltiplos de 3.
     - El total de números negativos.
     - El total de números primos.
-    - El máximo número primo.
+    - El máximo número primo (recuerda que el 0 y el 1 no son primos).
+
+    Crea la lista de tres formas distintas, en `listaNumeros`, `listaNumerosv2` y `listaNumerosv3`, y muestra las tres completas. Los cálculos se hacen sobre una de ellas.
 
     !!! warning "Importante"
         Para pasar los tests debes generar una salida similar a esta:
         ```bash
         listaNumeros: [-579, -2887, 1443, -4055, 2871, -1416, 4804, 2668, -4048, 1834, -3107, 4901, 4716, -1410, ...
+        listaNumerosv2: [3120, -1877, 402, ...
+        listaNumerosv3: [-4410, 2765, -38, ...
         Máximo de los números pares: 4934
         Mínimo de los múltiplos de tres:-4992
         Total de números negativos: 513
@@ -315,7 +332,7 @@
         Máximo número primo: 4999
         ``` 
 
-5. Paquete `GranjaDAM`, crea una clase `Animal` con los siguientes atributos, constructor con todos los atributos, getters y setters:
+5. (GranjaDAM) Paquete `GranjaDAM`, crea una clase `Animal` con los siguientes atributos, constructor con todos los atributos, getters y setters:
 
     - String especie
     - String genero
@@ -334,7 +351,7 @@
     - `Map<String, List<Animal>> agruparPorAlimentacion ()`
     - `DoubleSummaryStatistics resumenPesoConPelo (boolean tienePelo)`
 
-6. Paquete `Clase`. Crear una clase `Alumno` con los atributos típicos de un alumno (nombre, fecha de nacimiento, dni, nia, teléfono, email, nota) y los correspondientes getters y setters (y constructor).
+6. (Clase) Paquete `Clase`. Crear una clase `Alumno` con los atributos típicos de un alumno (nombre, fecha de nacimiento, dni, nia, teléfono, email, nota) y los correspondientes getters y setters (y constructor).
 
     Crea una clase `Aula` la cual contendrá un `List<Alumno>` con los alumnos que van a un aula determinada. Crea también los métodos siguientes:
 
@@ -344,7 +361,7 @@
     - `void listadoPorNiaDescendente ()`
     - `boolean encontarAlumnosDelMismoMesQue (Alumno a)`
 
-7. Paquete `Olimpiada`. A partir de las siguientes clases...
+7. (Olimpiada) Paquete `Olimpiada`. A partir de las siguientes clases...
 
     ```mermaid
     classDiagram
