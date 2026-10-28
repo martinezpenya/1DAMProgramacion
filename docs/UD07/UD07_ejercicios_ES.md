@@ -20,6 +20,8 @@
 
         Con el constructor `public Libro(String titulo, String autor, String estanteria)` y los consultores `getTitulo()`, `getAutor()` y `getEstanteria()`.
 
+        Si guardas los libros en un `HashSet`, o los usas como clave de un `HashMap`, revisa en los apuntes el aviso sobre `equals` y `hashCode`.
+
     - Diseña la clase `CatalogoLibros` como una colección de libros (llamada `catalogo`). Utiliza el tipo de colección que crees que más se ajusta a los requisitos de la aplicación justificando la elección. Implementa los siguientes métodos:
 
     - `public CatalogoLibros(Libro v[])`: Constructor. Para simplificar, inicializa el catálogo y lo rellena con los libros del `array v`, en lugar de obtenerlos de un fichero.

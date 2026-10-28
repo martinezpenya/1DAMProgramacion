@@ -321,6 +321,26 @@ if (!conjunto.add(n)){
 
 Si el elemento ya está en el conjunto, el método `add` retornará `false` indicando que no se pueden insertar duplicados. Si todo va bien, retornará `true`.
 
+!!! warning "HashSet y HashMap con tus propias clases: `equals` y `hashCode`"
+    Para buscar un objeto (con `contains`, `add` o `get`), un `HashSet` o un `HashMap` hace dos pasos:
+
+    1. Calcula el `hashCode()` del objeto para saber en qué «cajón» de la tabla buscar.
+    2. Solo dentro de ese cajón compara con `equals()`.
+
+    Si tu clase redefine `equals` pero no `hashCode`, usa el `hashCode` de `Object`, que es distinto para cada objeto creado con `new`. Dos objetos «iguales» acaban en cajones distintos y no se encuentran:
+
+    ```java
+    Set<Libro> catalogo = new HashSet<>();
+    catalogo.add(new Libro("El Quijote", "Cervantes", "E1"));
+    catalogo.contains(new Libro("El Quijote", "Cervantes", "E1")); // false si Libro no tiene hashCode
+    ```
+
+    Soluciones:
+
+    - **Redefinir `equals()` y `hashCode()` juntos y con los mismos atributos** (en IntelliJ: *Code → Generate → equals() and hashCode()*). Es lo recomendado: dos objetos iguales según `equals` deben tener el mismo `hashCode`.
+    - Usar como clave un tipo que ya trae su `hashCode`, por ejemplo el título: `HashMap<String, Libro>`.
+    - Usar otra colección: `ArrayList` o `LinkedList` (buscan solo con `equals`) o `TreeSet` (usa `compareTo`).
+
 #### Acceso
 
 Y ahora te preguntarás, ¿cómo accedo a los elementos almacenados en un conjunto? Para obtener los elementos almacenados en un conjunto hay que usar iteradores, que permiten obtener los elementos del conjunto uno a uno de forma secuencial (no hay otra forma de acceder a los elementos de un conjunto, es su inconveniente). Los iteradores se ven en mayor profundidad más adelante, de momento, vamos a usar iteradores de forma transparente, a través de una estructura *for* especial, denominada bucle "for-each" o bucle "para cada". En el siguiente código se usa un bucle *for-each*, en él la variable i va tomando todos los valores almacenados en el conjunto hasta que llega al último:
@@ -638,6 +658,8 @@ HashMap<String,Integer> t = new HashMap<>();
 ```
 
 El mapa anterior permite usar cadenas como llaves y almacenar de forma asociada a cada llave, un número entero. Veamos los métodos principales de la interfaz `Map`, disponibles en todas las implementaciones. En los ejemplos, `V` es el tipo base usado para el valor (`Value`) y `K` el tipo base usado para la llave (`Key`):
+
+Las claves de un `HashMap` se buscan igual que los elementos de un `HashSet`: si la clave es un objeto de tu propia clase, necesita `equals` y `hashCode` (revisa el aviso del apartado de conjuntos).
 
 | Método.                                | Descripción.                                                 |
 | -------------------------------------- | ------------------------------------------------------------ |
