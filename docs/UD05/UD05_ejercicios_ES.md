@@ -2,7 +2,7 @@
 
 ## Ejercicios
 
-### Paquete: `UD05._1.gestionEmpleados`
+### Paquete: `UD05._1_1gestionEmpleados`
 
 0. Una empresa quiere hacer una gestión informatizada básica de sus empleados. Para ello, de cada empleado le interesa:
 
@@ -61,13 +61,14 @@
     - Trata de despedir a algún empleado que no exista en la empresa.
     - Muestra los datos de la empresa siempre que sea necesario para comprobar que las operaciones se realizan de forma correcta.
 
-### Paquete: `UD05._2.gestionHospital`
+### Paquete: `UD05._1_2gestionHospital`
 
 0. Se desea realizar una aplicación para gestionar el ingreso y el alta de pacientes de un hospital. Una de las clases que participará en la aplicación será la clase `Paciente`, que se detalla a continuación :
 
 1. La clase `Paciente` permite representar un paciente mediante los atributos: `nombre` (cadena), `edad` (entero), `estado` (entero entre 1 -más grave- y 5 -menos grave-, 6 si está curado), y con las siguientes operaciones:
 
     - `public Paciente (String n, int e)`. Constructor de un objeto `Paciente` de nombre `n`, de `e` años y cuyo estado es un valor aleatorio entre 1 y 5.
+    - `public Paciente (String n, int e, int estado)`. Constructor de un objeto `Paciente` con el estado indicado (útil para probar la clase).
     - `public int getEdad()`. Consultor que devuelve edad.
     - `public int getEstado()`. Consultor que devuelve estado.
     - `public void mejorar()`. Modificador que incrementa en uno el estado del paciente (mejora al paciente)
@@ -119,7 +120,7 @@
     - Realizar el proceso de `darAltas` mientras que el número de habitaciones libres del hospital no llegue a una cantidad (por ejemplo 198).
     - Mostrar los datos del hospital cuando se considere oportuno para comprobar la corrección de las operaciones que se hacen.
 
-### Paquete: `UD05._3.contrarreloj`
+### Paquete: `UD05._1_3contrarreloj`
 
 0. Se quiere realizar una aplicación para registrar las posiciones y tiempos de llegada en una carrera ciclista contrarreloj. 
 
@@ -166,7 +167,7 @@
         Tiempo: 29.70 minutos
         ```
 
-4. Clase `Contrarreloj`) Realizar un programa que simule una contrarreloj. Para llevar el control de una carrera contrarreloj se mantienen dos listas de corredores (dos objetos de tipo `ListaCorredores`):
+4. (Clase `ContraReloj`) Realizar un programa que simule una contrarreloj. Para llevar el control de una carrera contrarreloj se mantienen dos listas de corredores (dos objetos de tipo `ListaCorredores`):
 
     - (`hanSalido`) Una con los que han salido, que tiene a los corredores por orden de salida. El atributo tiempo de estos corredores será 0. Para que los corredores se mantengan por orden de salida, se añadiran a la lista utilizando el método añadir.
     - (`hanLlegado`) Otra con los corredores que hay llegado a la meta. A medida que los corredores llegan a la meta se les extrae de la primera lista, se les asigna un tiempo y se les inserta ordenadamente en esta segunda lista.
@@ -176,7 +177,7 @@
         3. `Clasificación`: Muestra la lista de corredores que `hanLlegado`. Dado que esta lista está ordenada por tiempo, mostrarla por pantalla nos da la clasificación.
         4. `Salir`: Sale del programa
 
-### Paquete: `UD05._4.reservasLibreria`
+### Paquete: `UD05._1_4reservasLibreria`
 
 0. Una librería quiere proporcionar a sus clientes el siguiente servicio:
     
@@ -207,7 +208,7 @@
     - Se muestre la menor y a continuación la mayor.
     - Mostrar el listado de reservas cada vez que consideres oportuno.
 
-3. Diseñar una clase `ListaReservas` que implemente una lista de reservas. Como máximo puede haber 100 reservas en la lista. Se utilizará un array de Reservas que ocuparemos a partir de la posición 0 y un atributo que indique el número de reservas. Las reservas existentes ocuparán las primeras posiciones del array (sin espacios en blanco). Implementar los siguientes métodos:
+3. Diseñar una clase `ListaReservas` que implemente una lista de reservas. Como máximo puede haber 100 reservas en la lista. Se utilizará un array de Reservas que ocuparemos a partir de la posición 0 y un atributo que indique el número de reservas. Las reservas existentes ocuparán las primeras posiciones del array (sin espacios en blanco). Cada objeto `ListaReservas` es una lista independiente: el array y el contador son atributos de instancia (no `static`), y se crea con un constructor sin parámetros (`new ListaReservas()`), que deja la lista vacía. Implementar los siguientes métodos (de instancia):
 
     - `public void reservar (String nif, String nombre, String telefono, int libro, int ejemplares) throws ListaLlenaException, ElementoDuplicadoException`: Crea una reserva y la añade a la lista. Lanza `ElementoDuplicadoException` si la reserva ya estaba en la lista. Lanza `ListaLlenaException` si la lista de reservas está llena.
     - `public void cancelar (String nif, int libro) throws ElementoNoEncontradoException`. Dado un nif de cliente y un código de libro, anular la reserva correspondiente. Lanzar `ElementoNoEncontradoException` si la reserva no existe.
@@ -222,7 +223,7 @@
     - Pedido: El usuario introduce un código de libro y el programa muestra el nº de reservas que se han hecho del libro. Esta opción de menú le resultará útil al usuario para poder hacer el pedido de un libro determinado.
     - Recepción: Cuando el usuario recibe un libro quiere llamar por teléfono a los clientes que lo reservaron. Solicitar al usuario un código de libro y mostrar los datos (nombre y teléfono) de los clientes que lo tienen reservado.
 
-### Paquete: `UD05._5.gestorCorreoElectronico`
+### Paquete: `UD05._1_5gestorCorreoElectronico`
 
 0. Queremos realizar la parte de un programa de correo electrónico que gestiona la organización de los mensajes en distintas carpetas. Para ello desarrollaremos:
 
@@ -267,7 +268,7 @@
     - Mueve el mensaje de código 1 desde la `Mensajes recibidos` a `Mensajes elimiminados`.
     - Muestra el contenido de las carpetas antes y después de cada operación (añadir, mover,...)
 
-### Paquete: `UD05._6.juegoDeCartas`
+### Paquete: `UD05._1_6juegoDeCartas`
 
 0. Se está desarrollando una aplicación que usa una baraja de cartas. Para ello, se implementarán en Java las clases necesarias. 
 
@@ -397,13 +398,16 @@
     Alumno{codigo=1, nombre=Luis, apellidos=Mas Ros, fecha=1990-10-05, calificacion=7.5, edad= 31}
     ```
 
-21. (PlazoEntrega) Introducir la fecha de entrega de un documento y nos diga si está  dentro o fuera de plazo teniendo en cuenta que la fecha de entrega  límite es la fecha actual.
+21. (PlazoEntrega) Introducir la fecha de entrega de un documento (con formato `dd/mm/yyyy`) y nos diga si está  dentro o fuera de plazo teniendo en cuenta que la fecha de entrega  límite es la fecha actual.
 
 22. (RetencionesTrabajadores) Introducir en un array `nombre`, `apellidos` y `sueldo` de varios trabajadores y la `fecha de alta` en la empresa. Las fechas deberán introducirse como fechas. Recorrer el array y mostrar para cada trabajador la retención que debe aplicarse  sobre el sueldo teniendo en cuenta que los trabajadores incorporados  antes de 1980 tienen una retención del 20%, los trabajadores con fecha  entre 1980 y 2000 una retención del 15% y los trabajadores con fecha  posterior al 2000 la retención que aplicaremos será el 5% del sueldo.
 
-23. (MayorEdad) Realiza un método estático que dada la `fecha de nacimiento` de una persona indique si es mayor de edad.
+    - La clase del trabajador tiene el constructor `(String nombre, String apellidos, double sueldo, LocalDate fechaAlta)` y su `toString` muestra la retención.
+    - El programa pregunta primero cuántos trabajadores hay y después, para cada uno, su nombre, apellidos, sueldo y fecha de alta (`dd/mm/yyyy`).
 
-24. (ClaseConversor) Realiza una clase `Conversor` que tenga las siguientes características: Toma como parámetro en el constructor un valor entero. Tiene un método `getNumero` que dependiendo del parámetro devolverá el mismo número (String) en el siguiente sistema de numeración: `B Binario`, `H Hexadecimal`, `O Octal`. Realiza un método `main` en la clase para probar todo lo anterior.
+23. (MayorEdad) Realiza un método estático `public static boolean esMayorEdad(LocalDate fechaNacimiento)` que dada la `fecha de nacimiento` de una persona indique si es mayor de edad.
+
+24. (ClaseConversor) Realiza una clase `Conversor` que tenga las siguientes características: Toma como parámetro en el constructor un valor entero. Tiene un método `getNumero` que dependiendo del parámetro devolverá el mismo número (String) en el siguiente sistema de numeración: `B Binario`, `H Hexadecimal`, `O Octal`. Si el sistema indicado no es ninguno de estos, devuelve `"Error"`. Realiza un método `main` en la clase para probar todo lo anterior.
 
 25. (ConversorFechas) Realiza una clase `ConversorFechas` que tenga los siguientes métodos:
 
