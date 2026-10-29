@@ -2,7 +2,7 @@
 
 ## Ejercicios Herencia
 
-1. Diseñar una jerarquía de clases para modelizar las **aulas de un centro de estudios**.
+1. (Aulas) Diseñar una jerarquía de clases para modelizar las **aulas de un centro de estudios**.
 
     De un `Aula` se conoce el `código` (numérico), la `longitud` y la `anchura`. Se desea un método que devuelva la capacidad del aula sabiendo que esta se calcula a partir de la superficie a razón de 1 alumnos por cada 1.4 metros cuadrados de superficie.
 
@@ -13,10 +13,10 @@
     - En las aulas normales, el `código` y la `superficie` y la `capacidad`.
     - En las aulas de música e informática el texto irá precedido por "Aula de música" o "Aula de informática", según corresponda.
 
-2. Un salón de **VideoJuegos** dispone de ordenadores en los que los clientes pueden jugar. Además de jugar en el establecimiento, la empresa alquila y vende juegos.
+2. (VideoJuegos) Un salón de **VideoJuegos** dispone de ordenadores en los que los clientes pueden jugar. Además de jugar en el establecimiento, la empresa alquila y vende juegos.
 
     1. Diseñar la clase `Juego` siguiendo las siguientes especificaciones: 
-        - Atributos protected: `titulo` (String), `fabricante` (String), `año` (int).
+        - Atributos protected: `titulo` (String), `fabricante` (String), `anyo` (int).
         - Constructor `public Juego(String t, String f, int a)`
         - Consultores de todos los atributos
         - `public String toString()`, que devuelve un String con los datos del Juego 
@@ -36,7 +36,12 @@
             - tiene un método `vender`, que decrementa el número de copias disponibles.
             - `toString()` devuelve todos los datos del `JuegoEnVenta`
 
-3. La **Fabrica Nacional de Moneda y Timbre** quiere almacenar cierta información técnica del dinero (billetes y monedas) que emite. En concreto, le interesa:
+    !!! info "Para pasar los tests"
+        - Constructores: `JuegoEnAlquiler(titulo, fabricante, anyo, precio, copias, dias)` y `JuegoEnVenta(titulo, fabricante, anyo, precio, copias)`.
+        - Un consultor de las copias disponibles cuyo nombre empiece por `getCopias`.
+        - El formato del `toString()` lo eliges tú, pero tiene que incluir todos los datos.
+
+3. (FNMT) La **Fabrica Nacional de Moneda y Timbre** quiere almacenar cierta información técnica del dinero (billetes y monedas) que emite. En concreto, le interesa:
 
     - `Valor`: Valor de la moneda o billete, en euros. (`double`)
     - `Año de emisión`: Año en que fué emitida la moneda o billete. (`int`)
@@ -47,7 +52,7 @@
         - `Altura del billete`, en mm (`double`)
         - `Anchura del billete`, en mm (`double`).
 
-    a. Diseñar la clase abstracta `Dinero` y sus subclases `Moneda` y `Billete`, desarrollando:
+    a. Diseñar la clase `Dinero` y sus subclases `Moneda` y `Billete`, desarrollando:
 
     - Constructores que reciban los datos necesarios para inicializar los atributos de la clase correspondiente
     - `equals`: Dos monedas o billetes son iguales si tienen el mismo año de emisión y valor.
@@ -56,7 +61,10 @@
 
     b. Diseñar la clase `TestDinero` para probar las clases desarrolladas: Crear objetos de las clases `Moneda` y `Billete` y mostrarlos por pantalla.
 
-4. Un **centro comercial** quiere mostrar cierta información sobre los televisores que vende. Los televisores pueden ser de dos tipos: de tubo o LCD. En concreto, de cada televisor le interesa mostrar
+    !!! info "Para pasar los tests"
+        Constructores: `Moneda(diametro, peso, valor, anyoEmision)` y `Billete(anchura, altura, valor, anyoEmision)`.
+
+4. (Televisores) Un **centro comercial** quiere mostrar cierta información sobre los televisores que vende. Los televisores pueden ser de dos tipos: de tubo o LCD. En concreto, de cada televisor le interesa mostrar
 
     - Marca (`String`)
     - Modelo (`String`)
@@ -76,7 +84,7 @@
 
     b. Diseñar la clase `TestTV` para probar las clases diseñadas. Crear algunos objetos de las clases `TVTubo` y `TVLCD` y mostrarlos por pantalla.
 
-5. De cada pareja de afirmaciones **indica cual es la verdadera**:
+5. (Verdadero o falso) De cada pareja de afirmaciones **indica cual es la verdadera**:
 
     a. Pareja 1
     
@@ -133,7 +141,7 @@
     - Una clase definida final y abstract resultaría inútil, puesto que no se podría instanciar ni heredar de ella.
     - Una clase definida final y abstract podría resultar útil.
 
-6. Dada las siguientes **definiciónes de clases**:
+6. (Cuestiones) Dadas las siguientes **definiciones de clases**:
 
     ```java
     public class Persona {
@@ -209,7 +217,7 @@
 
 ## Ejercicios Polimorfismo
 
-1. Dada la siguiente **jerarquía de clases**:
+1. (Obreros) Dada la siguiente **jerarquía de clases**:
 
     ```java
     public interface Montador{
@@ -267,7 +275,12 @@
     System.out.println(a.toString());
     ```
 
-2. Las clases siguientes implementan una **jerarquía de herencia**
+    Escribe el programa en el `main` de la clase `Test` y las respuestas en comentarios.
+
+    !!! warning "Para pasar los tests"
+        Deja **comentadas** (`//`) las líneas que dan error de compilación y escribe al lado por qué fallan. Si alguna se queda sin comentar, no compila ningún ejercicio de la unidad y la nota es 0.
+
+2. (CuestionHerencia) Las clases siguientes implementan una **jerarquía de herencia**
 
     ```java
     class Base {
@@ -335,9 +348,14 @@
     
     **Una vez corregido** el programa, **escribir la salida** por pantalla resultado de su ejecución.
 
+    Escribe el programa corregido en el `main` de `CuestionHerencia` y las respuestas en comentarios.
+
+    !!! warning "Para pasar los tests"
+        Deja **comentadas** (`//`) las líneas que dan error de compilación y escribe al lado por qué fallan. Si alguna se queda sin comentar, no compila ningún ejercicio de la unidad y la nota es 0.
+
 ## Actividades
 
-1. Realizar una aplicación para la gestión de la información de las personas vinculadas a una `Facultad`, que se pueden clasificar en tres tipos: estudiantes, profesores y personal de servicio.
+1. (Facultad) Realizar una aplicación para la gestión de la información de las personas vinculadas a una `Facultad`, que se pueden clasificar en tres tipos: estudiantes, profesores y personal de servicio.
     A continuación, se detalla qué tipo de información debe gestionar esta aplicación:
     - Por cada `Personas`, se debe conocer, al menos, su `nombre` y `apellidos`, su número de identificación (`id`) y su `estadoCivil`.
     - Con respecto a los `Empleados`, sean del tipo que sean, hay que saber su año de incorporación (`anyoIncorporacion`) a la facultad y qué número de `despacho` tienen asignado.
@@ -355,14 +373,25 @@
 
     En el método `main` crear un array de `Personas`. Crear diferentes instancias de las subclases e insertarlas en el array. Probar los diferentes métodos desarrollados.
 
-2. Crea una clase `Empleado` y una subclase `Encargado`. Los encargados reciben un 10% más de sueldo base que un empleado normal aunque realicen el mismo trabajo. Implementa dichas clases en el paquete objetos y sobrescribe el método `getSueldo()` para ambas clases.
+    !!! info "Para pasar los tests"
+        - Constructores con todos los datos, en este orden: `Alumnos(nombre, apellidos, id, estadoCivil, curso)`, `Profesores(nombre, apellidos, id, estadoCivil, anyoIncorporacion, despacho, departamento)` y `PersonalServicio(nombre, apellidos, id, estadoCivil, anyoIncorporacion, despacho, seccion)`.
+        - El nombre de cada método de las acciones contiene el dato que cambia (`estadoCivil`, `despacho`, `curso`, `departamento`, `seccion`): por ejemplo, `setDespacho` o `cambiarDespacho`.
+        - La información se muestra con `toString()` o con un método `mostrar()` o `imprimir()`.
 
-3. Crear la clase `Dado`, la cual desciende de la clase `Sorteo`. La clase `Dado`, en la llamada `lanzar()` mostrará un número aleatorio del 1 al 6. Crear la clase `Moneda`, la cual desciende de la clase `Sorteo`. Esta clase en la llamada al método `lanzar()` mostrará las palabras cara o cruz. Realizar una clase con un método `main` que compruebe todo lo realizado.
+2. (Encargado) Crea una clase `Empleado` y una subclase `Encargado`. Los encargados reciben un 10% más de sueldo base que un empleado normal aunque realicen el mismo trabajo. Implementa dichas clases en el paquete objetos y sobrescribe el método `getSueldo()` para ambas clases.
 
-    !!! warning "Extra: Ejemplo de Sorteo como clase abstracta Genérica"
-        Intenta convertir la clase Sorteo en una clase con genéricos `public abstract class Sorteo<E, T>` porque debería ser abstracta?, como sería el método `lanzar`?
+3. (Sorteo) Crear la clase `Dado`, la cual desciende de la clase `Sorteo`. La clase `Dado`, en la llamada `lanzar()` mostrará un número aleatorio del 1 al 6. Crear la clase `Moneda`, la cual desciende de la clase `Sorteo`. Esta clase en la llamada al método `lanzar()` mostrará las palabras cara o cruz. Realizar una clase con un método `main` que compruebe todo lo realizado.
 
-4. Realiza una clase `Huevo` con un atributo `tamaño` (`S`, `M`, `L`, `XL`) con el método `toString`. La clase `Huevo` está compuesta por dos clases internas, una `Clara` y otra `Yema`. Ambas clases tiene un atributo `color` y el método `toString`. Realiza un método `main` en el que se cree un objeto de tipo `Huevo`, `Clara` y `Yema`. Se le asigne valor a sus atributos y se muestren dichos valores.
+    !!! info "Para pasar los tests"
+        `Dado` y `Moneda` tienen un constructor sin parámetros. `lanzar()` puede mostrar el resultado o devolverlo.
+
+    !!! warning "Extra: Sorteo con genéricos"
+        ¿Tiene sentido crear un objeto `Sorteo` que no sea ni un dado ni una moneda? Piensa qué implica tu respuesta para la clase `Sorteo` y para su método `lanzar`. Después, intenta convertir `Sorteo` en una clase con genéricos, `Sorteo<E, T>`: ¿cómo sería entonces el método `lanzar`?
+
+4. (Huevo) Realiza una clase `Huevo` con un atributo `tamaño` (`S`, `M`, `L`, `XL`) con el método `toString`. La clase `Huevo` está compuesta por dos clases internas, una `Clara` y otra `Yema`. Ambas clases tiene un atributo `color` y el método `toString`. Realiza un método `main` en el que se cree un objeto de tipo `Huevo`, `Clara` y `Yema`. Se le asigne valor a sus atributos y se muestren dichos valores.
+
+    !!! info "Para pasar los tests"
+        Constructores: `Huevo(tamaño)`, `Clara(color)` y `Yema(color)`.
 
 ## Ejercicios Lionel
 
@@ -402,7 +431,6 @@ classDiagram
     Astro: #double temperaturaMedia
     Astro: #double gravedad
     Astro: +muestra()
-    <<abstract>> Astro
     class Planeta{
         #double distanciaSol
         #double orbitaSol
@@ -418,6 +446,10 @@ classDiagram
 ```
 
 Una posible solución sería crear una lista de objetos, insertar los planetas y satélites (directamente mediante código o solicitándolos por pantalla) y luego mostrar un pequeño menú que permita al usuario imprimir la información del astro que elija.
+
+!!! info "Para pasar los tests"
+    - Constructores con los datos en el orden del diagrama: `Planeta(nombre, radioEcuatorial, rotacionEje, masa, temperaturaMedia, gravedad, distanciaSol, orbitaSol)` y `Satelite(nombre, radioEcuatorial, rotacionEje, masa, temperaturaMedia, gravedad, distanciaPlaneta, orbitaPlanetaria, planeta)`, donde `planeta` es el `Planeta` del que depende.
+    - `muestra()` puede imprimir la información o devolverla.
 
 ### Mascotas
 
@@ -461,7 +493,6 @@ El diagrama UML sería:
         - boolean vuela
         + void volar()
     }
-    <<abstract>> Ave
     
     class Perro{
         - String raza
@@ -491,6 +522,10 @@ El diagrama UML sería:
     }     
 ```
 
+!!! info "Para pasar los tests"
+    - Constructores con todos los datos en el orden del diagrama: primero los de `Mascota`, después los de `Ave` (si es un ave) y al final los suyos. Por ejemplo, `Perro(nombre, edad, estado, fechaNacimiento, raza, tienePulgas)` o `Loro(nombre, edad, estado, fechaNacimiento, pico, vuela, origen, habla)`.
+    - Métodos de `Inventario`: `insertarAnimal`, `eliminarAnimal`, `vaciarInventario` y `mostrarListaAnimales`.
+
 ### Banco
 
 Vamos a hacer una aplicación que simule el funcionamiento de un banco.
@@ -504,16 +539,16 @@ Crea una clase **CuentaBancaria** con los atributos: **iban** y **saldo**. Imple
 
 Para los tres últimos métodos puede utilizarse internamente un método privado más general llamado **añadir(...)** que añada una cantidad (positiva o negativa) al saldo.
 
-También habrá un atributo común a todas las instancias llamado **interesAnualBasico**, que en principio puede ser constante.
+También habrá un atributo común a todas las instancias llamado **interesAnualBasico**, que en principio puede ser constante: un **2,5 %**.
 
-La clase tiene que ser ***abstracta*** y debe tener un método **calcularIntereses()** que se dejará sin implementar.
+Cada tipo de cuenta tiene que tener un método **calcularIntereses()**, que calcula los intereses de un año de forma distinta según el tipo de cuenta.
 
 También puede ser útil implementar un método para mostrar los datos de la cuenta.
 
 De esta clase heredarán dos subclases: **CuentaCorriente** y **CuentaAhorro**. La diferencia entre ambas será la manera de calcular los intereses:
 
 - A la primera se le incrementará el saldo teniendo en cuenta el interés anual básico.
-- La segunda tendrá una constante de clase llamada **saldoMinimo**. Si no se llega a este saldo el interés será la mitad del interés básico. Si se supera el saldo mínimo el interés aplicado será el doble del interés anual básico.
+- La segunda tendrá una constante de clase llamada **saldoMinimo** (1000 €). Si no se llega a este saldo el interés será la mitad del interés básico. Si se supera el saldo mínimo el interés aplicado será el doble del interés anual básico.
 
 Implementa una clase principal con función main para probar el funcionamiento de las tres clases: Crea varias cuentas bancarias de distintos tipos, pueden estar en un ArrayList si lo deseas; prueba a realizar ingresos, retiradas y transferencias; calcula los intereses y muéstralos por pantalla; etc.
 
@@ -524,15 +559,15 @@ classDiagram
     CuentaBancaria <|-- CuentaCorriente
     CuentaBancaria <|-- CuentaAhorro
 
-    CuentaBancaria : -numeroCuenta
+    CuentaBancaria : -iban
     CuentaBancaria : -saldo
     CuentaBancaria: -interesAnualBasico
-    CuentaBancaria: +getNumeroCuenta()
+    CuentaBancaria: +getIban()
     CuentaBancaria: +getSaldo()
     CuentaBancaria: +ingresar()
     CuentaBancaria: +retirar()
-    CuentaBancaria: +traspaso()
-    CuentaBancaria: +añadir()   
+    CuentaBancaria: +traspasar()
+    CuentaBancaria: -añadir()   
     CuentaBancaria: +calcularIntereses()   
    
     class CuentaCorriente{
@@ -544,6 +579,11 @@ classDiagram
         +calcularIntereses()
     }
 ```
+
+!!! info "Para pasar los tests"
+    - Constructores: `CuentaCorriente(iban, saldo)` y `CuentaAhorro(iban, saldo)`.
+    - Métodos `getSaldo()`, `ingresar(cantidad)`, `retirar(cantidad)` y `traspasar`, que mueve dinero de una cuenta a otra (los parámetros los decides tú).
+    - `calcularIntereses()` puede sumar los intereses al saldo o devolverlos.
 
 ### Empresa y empleados
 
@@ -602,7 +642,7 @@ Debes crear varias clases para un software de una empresa de transporte. Impleme
 - No se permiten vehículos genéricos, es decir, no se deben poder instanciar objetos que sean vehículos sin más. Pero debe ser posible instanciar vehículos terrestres, acuáticos o aéreos genéricos (es decir, que no sean coches, motos, barcos, submarinos, aviones o helicópteros).
 - El diseño debe obligar a que todas las clases de vehículos tengan un método imprimir() que imprima por pantalla la información del vehículo en una sola línea.
 
-Implementa todas las clases necesarias con: atributos, constructor con parámetros, getters/setters y el método imprimir. Utiliza **abstracción** y **herencia** de la forma más apropiada.
+Implementa todas las clases necesarias con: atributos, constructor con parámetros, getters, setters (solo de los datos que pueden cambiar) y el método imprimir. Utiliza **abstracción** y **herencia** de la forma más apropiada.
 
 Implementa también una clase Programa para hacer algunas pruebas: Instancia varios vehículos de todo tipo (coches, motos, barcos, submarinos, aviones y helicópteros) así como vehículos genericos (terrestres, acuáticos y aéreos). Crea un ArrayList y añade todos los vehículos. Recorre la lista y llama al método imprimir de todos los vehículos.
 
@@ -619,7 +659,7 @@ Existen 4 tipos de figuras.
 
 - **Cuadrado**: Sus cuatro lados son iguales.
 - **Rectángulo**: Tiene ancho y alto.
-- **Triángulo**: Tiene ancho y alto.
+- **Triángulo**: Es un triángulo rectángulo: su ancho y su alto son los catetos.
 - **Círculo**: Tiene radio.
 
 Crea las 4 clases de figuras de modo que implementen la interface iFigura2D. Define sus métodos.
@@ -633,3 +673,6 @@ Crea una clase ProgramaFiguras con un main en el que realizar las siguientes pru
 5. Muestra de nuevo la información de todas las figuras.
 6. Escala todas las figuras con escala = 0.1.
 7. Muestra de nuevo la información de todas las figuras.
+
+!!! info "Para pasar los tests"
+    Constructores: `Cuadrado(lado)`, `Rectangulo(ancho, alto)`, `Triangulo(ancho, alto)` y `Circulo(radio)`.
