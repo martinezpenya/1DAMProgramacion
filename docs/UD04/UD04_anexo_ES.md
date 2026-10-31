@@ -62,7 +62,7 @@ Se construyen de varias maneras
 Se construyen de varias maneras
 ```
 
-## Operando con Métodos de la clase `String`
+## Operando con Métodos de la clase `String` {: #metodos-string }
 
 La clase String contiene varios métodos que operan en cadenas. Aquí se detallan todos los métodos:
 
@@ -210,6 +210,28 @@ La clase String contiene varios métodos que operan en cadenas. Aquí se detalla
         
         Más información sobre expresiones regulares en java: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
 
+- `String[] split(String regex)`: Divide la cadena en un array de trozos, usando `regex` como separador. El separador no forma parte de ningún trozo.
+
+    ```java
+    String s = "manzana,pera,platano";
+    String[] frutas = s.split(","); // {"manzana", "pera", "platano"}
+    System.out.println(frutas[1]); // retorna pera
+    ```
+
+    !!! info "Más información"
+        Igual que en `replaceAll()`, `regex` es una expresión regular: si el separador es un carácter especial de regex (por ejemplo, un punto `.`), hay que escaparlo (`"\\."`). Ver la información sobre expresiones regulares en el bloque anterior.
+
+<div class="solo-web" markdown>
+
+!!! tip "Pruébalo tú: métodos de String"
+    Elige un método y unos parámetros para ver, carácter a carácter, qué hace sobre la cadena, incluidos los casos de error típicos (como un índice fuera de rango). Cambia a modo **"Encadenar métodos"** para construir paso a paso cadenas de llamadas como `texto.trim().toLowerCase().substring(2,5)`.
+
+<iframe src="https://martinezpenya.es/1DAMInteractivo/metodosString/" title="Visualizador de métodos de String" width="100%" height="900" frameborder="0" loading="lazy"></iframe>
+
+[Abrir el visualizador a pantalla completa](https://martinezpenya.es/1DAMInteractivo/metodosString/){ target=_blank }
+
+</div>
+
 ## Ejemplo de todos los métodos de `String`
 
 ```java
@@ -292,6 +314,11 @@ class DemoMetodosString
         System.out.println("String Original: " + strAll);
 		String strAll2 = strAll.replaceAll("\\s", "");
 		System.out.println("Eliminando todos los espacios en blanco -> " + strAll2);
+
+        // Dividir la cadena en un array de trozos
+        String csv = "manzana,pera,platano";
+        String[] frutas = csv.split(",");
+        System.out.println("Fruta en la posición 1: " + frutas[1]);
     }
 }
 ```
@@ -317,6 +344,7 @@ String Original: YavadesdeCero
 Reemplazando Y por J -> JavadesdeCero
 String Original: Ejemplo con espacios en blanco y tabs
 Eliminando todos los espacios en blanco -> Ejemploconespaciosenblancoytabs
+Fruta en la posición 1: pera
 ```
 
 ## Arrays de `String`
