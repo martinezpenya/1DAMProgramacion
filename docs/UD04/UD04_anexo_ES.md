@@ -580,7 +580,7 @@ String s = "1, " + "2, " + "3, " + "4, " ...;
 
 Entonces puedes usar el operador `+` sin problemas, porque el compilador usará `StringBuilder` automáticamente.
 
-## Formato de salida: `printf` y `String.format`
+## Formato de salida: `printf` y `String.format` {: #formato-printf }
 
 Java proporciona dos mecanismos equivalentes para formatear cadenas con valores insertados: `System.out.printf()` y `String.format()`. Ambos usan los mismos especificadores de formato.
 
@@ -682,4 +682,15 @@ Número   Cuadrado Cubo
 4        16       64      
 5        25       125
 ```
+
+<div class="solo-web" markdown>
+
+!!! tip "Pruébalo tú: formato de printf y String.format"
+    Escribe una cadena de formato con `%d`, `%f`, `%s`, `%c`, `%b`... y ve cómo cada especificador recoge su argumento, con el ancho, la alineación y los decimales aplicados carácter a carácter. Cambia a modo **"Tabla de filas"** para construir una tabla alineada con la misma plantilla en cada fila, igual que en el ejemplo de arriba.
+
+<iframe src="https://martinezpenya.es/1DAMInteractivo/formatoString/" title="Visualizador de formato de printf y String.format" width="100%" height="900" frameborder="0" loading="lazy"></iframe>
+
+[Abrir el visualizador a pantalla completa](https://martinezpenya.es/1DAMInteractivo/formatoString/){ target=_blank }
+
+</div>
 
